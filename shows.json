@@ -1,0 +1,12 @@
+{
+  "shows": {
+    "jack_mallers_show": {
+      "show_key": "jack_mallers_show",
+      "youtube_channel_url": "https://youtube.com/@thejackmallersshow",
+      "youtube_handle": "@thejackmallersshow",
+      "feeds": {
+        "rss": []
+      }
+    }
+  }
+}
