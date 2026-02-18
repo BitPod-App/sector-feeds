@@ -38,3 +38,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.2.0]: https://github.com/cjarguello/bitpod/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/cjarguello/bitpod/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/cjarguello/bitpod/releases/tag/v0.1.0
+The format is based on Keep a Changelog and this project follows Semantic Versioning.
+
+## [Unreleased]
+
+## [0.1.1] - 2026-02-18
+### Added
+- Introduced changelog and basic release/version discipline documentation.
