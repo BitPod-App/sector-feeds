@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bitpod"
+version = "0.2.0"
+description = "RSS-fetched podcasts turned into AI-friendly text transcripts"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "feedparser>=6.0.11",
+  "openai>=1.51.0",
+  "python-dateutil>=2.9.0",
+  "requests>=2.32.3",
+  "yt-dlp>=2024.10.22",
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["bitpod*"]

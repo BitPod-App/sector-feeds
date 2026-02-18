@@ -1,16 +1,99 @@
 # bitpod
-RSS-fetched podcasts turned into AI-friendly text transcripts for analyitics.
 
-## Versioning & releases
+Convert podcast and social-feed episodes into clean text transcripts for downstream BTC analysis and reporting.
 
-This project uses Semantic Versioning in pre-1.0 mode (`0.x.y`).
+## What This Repo Does
 
-- PATCH (`0.1.x`): fixes/docs/process updates
-- MINOR (`0.x.0`): backward-compatible feature additions
-- MAJOR (`1.0.0+`): stability/breaking milestone
+`bitpod` automates this workflow:
 
-Release flow:
-1. Bump version metadata.
-2. Update CHANGELOG.md.
-3. Open PR and merge.
-4. Tag release (example): `v0.1.1`.
+1. Discover and poll configured feeds.
+2. Identify new episodes.
+3. Download media for each episode.
+4. Transcribe media to clean text.
+5. Export transcripts in a deterministic structure for model consumption.
+
+## What Works Today
+
+- Jack Mallers Show processing path is implemented and serves as the validation baseline.
+- Feed discovery supports YouTube RSS URL extraction from channel inputs.
+- Sync supports mixed feed strategy per show (`youtube` plus optional `rss` list).
+- Episode processing is idempotent: successful episodes are skipped on reruns.
+- Transcript artifacts are written under `transcripts/<show>/<year>/` with status tracking in `index/processed.json`.
+
+## Why This Exists
+
+Immediate goal: reliable transcript generation from high-signal feeds.
+Primary consumer: GPT workflows that currently require clean text transcripts as input.
+
+## Quickstart
+
+```bash
+# from repo root
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -e .
+export OPENAI_API_KEY="your_key_here"
+```
+
+Optional: override root path for generated artifacts.
+
+```bash
+export BITPOD_ROOT="/path/to/bitpod"
+```
+
+## Usage
+
+```bash
+# discover configured feed(s) for Jack Mallers Show
+python -m bitpod discover --show jack_mallers_show
+
+# preview only (no downloads/transcription/writes)
+python -m bitpod sync --show jack_mallers_show --dry-run
+
+# sync/transcribe newest episodes (default max: 3)
+python -m bitpod sync --show jack_mallers_show
+
+# sync/transcribe newest N episodes
+python -m bitpod sync --show jack_mallers_show --max-episodes 5
+
+# process only recent episodes
+python -m bitpod sync --show jack_mallers_show --since-days 14
+
+# optional transcription model override
+python -m bitpod sync --show jack_mallers_show --model gpt-4o-mini-transcribe
+```
+
+## Inputs And Outputs
+
+Inputs
+- Show/feed definitions in `shows.json`.
+- Runtime config: `OPENAI_API_KEY` (required), `BITPOD_ROOT` (optional).
+
+Outputs
+- Transcript Markdown files in `transcripts/<show_key>/<YYYY>/`.
+- Processing status index in `index/processed.json`.
+- Discovered/normalized feed metadata in `shows.json`.
+
+## Supported Feeds (Current)
+
+- `jack_mallers_show`: confirmed working reference feed path.
+- Additional source types and social feed integrations: planned next.
+
+## Roadmap (Near Term)
+
+1. Confirm stable weekly transcript fetch/transcribe behavior for Jack Mallers Show.
+2. Expand support across multiple feed/source types.
+3. Standardize transcript cleanliness for downstream BTC scoring/reporting ingestion.
+4. Add lightweight reporting outputs once transcript reliability is consistently high.
+
+## Operations
+
+- Weekly runs should process only new episodes and skip known-successful ones.
+- Failed episodes should remain visible for retry.
+- Paths and output formats should remain stable to protect downstream automations.
+
+## Versioning And Changes
+
+- Versioning follows pre-1.0 SemVer (`0.x.y`).
+- Change history lives in [CHANGELOG.md](CHANGELOG.md).
