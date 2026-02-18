@@ -1,42 +1,42 @@
 # bitpod
 
-Minimal pipeline to discover podcast/video feeds, ingest new episodes, transcribe media with OpenAI, and commit transcript Markdown files into this repo.
+Convert podcast and social-feed episodes into clean text transcripts for downstream BTC analysis and reporting.
 
-## What this v1 does
+## What This Repo Does
 
-- Supports show config for `jack_mallers_show` out of the box.
-- Discovers YouTube RSS feed URL from a channel handle/URL.
-- Supports multiple feed sources per show (`youtube` + optional `rss` list).
-- Polls feed entries and skips episodes already marked successful.
-- Handles source types cleanly:
-  - YouTube video source URLs -> audio download via `yt-dlp`
-  - RSS enclosure media URLs (audio/video) -> direct media download
-- Transcribes media via OpenAI's official Python SDK.
-- Stores one Markdown transcript per episode under `transcripts/<show>/<year>/`.
-- Tracks episode processing outcomes in `index/processed.json`.
+`bitpod` automates this workflow:
 
-## Project layout
+1. Discover and poll configured feeds.
+2. Identify new episodes.
+3. Download media for each episode.
+4. Transcribe media to clean text.
+5. Export transcripts in a deterministic structure for model consumption.
 
-- `shows.json` (generated): show identities + discovered feed URLs
-- `index/processed.json` (generated): episode processing status index
-- `transcripts/<show_key>/<YYYY>/<YYYY-MM-DD>__<episode-slug>.md`
+## What Works Today
 
-## MacBook-friendly setup
+- Jack Mallers Show processing path is implemented and serves as the validation baseline.
+- Feed discovery supports YouTube RSS URL extraction from channel inputs.
+- Sync supports mixed feed strategy per show (`youtube` plus optional `rss` list).
+- Episode processing is idempotent: successful episodes are skipped on reruns.
+- Transcript artifacts are written under `transcripts/<show>/<year>/` with status tracking in `index/processed.json`.
+
+## Why This Exists
+
+Immediate goal: reliable transcript generation from high-signal feeds.
+Primary consumer: GPT workflows that currently require clean text transcripts as input.
+
+## Quickstart
 
 ```bash
+# from repo root
 python3 -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install -e .
-```
-
-Set your API key (do not commit it):
-
-```bash
 export OPENAI_API_KEY="your_key_here"
 ```
 
-Optional: override where bitpod reads/writes repo files (`shows.json`, `index/`, `transcripts/`):
+Optional: override root path for generated artifacts.
 
 ```bash
 export BITPOD_ROOT="/path/to/bitpod"
@@ -44,85 +44,56 @@ export BITPOD_ROOT="/path/to/bitpod"
 
 ## Usage
 
-Discover feeds for Jack Mallers Show:
-
 ```bash
+# discover configured feed(s) for Jack Mallers Show
 python -m bitpod discover --show jack_mallers_show
-```
 
-Safe preview (no downloads/transcription/writes):
-
-```bash
+# preview only (no downloads/transcription/writes)
 python -m bitpod sync --show jack_mallers_show --dry-run
-```
 
-Sync newest 3 episodes (default behavior):
-
-```bash
+# sync/transcribe newest episodes (default max: 3)
 python -m bitpod sync --show jack_mallers_show
-```
 
-Sync newest N episodes:
-
-```bash
+# sync/transcribe newest N episodes
 python -m bitpod sync --show jack_mallers_show --max-episodes 5
-```
 
-Sync only episodes from the last X days:
-
-```bash
+# process only recent episodes
 python -m bitpod sync --show jack_mallers_show --since-days 14
-```
 
-Optional: choose a transcription model:
-
-```bash
+# optional transcription model override
 python -m bitpod sync --show jack_mallers_show --model gpt-4o-mini-transcribe
 ```
 
-## Versioning & releases
+## Inputs And Outputs
 
-This project uses Semantic Versioning while pre-1.0 (`0.x.y`) for early-stage iteration:
+Inputs
+- Show/feed definitions in `shows.json`.
+- Runtime config: `OPENAI_API_KEY` (required), `BITPOD_ROOT` (optional).
 
-- **PATCH (`0.1.x`)**: bug fixes, safety/reliability improvements, docs/tests changes.
-- **MINOR (`0.x.0`)**: backward-compatible feature additions.
-- **MAJOR (`1.0.0+`)**: breaking/stability milestone once interfaces become stable.
+Outputs
+- Transcript Markdown files in `transcripts/<show_key>/<YYYY>/`.
+- Processing status index in `index/processed.json`.
+- Discovered/normalized feed metadata in `shows.json`.
 
-Release workflow (lightweight):
+## Supported Feeds (Current)
 
-1. Update `bitpod/__init__.py` and `pyproject.toml` with the same version.
-2. Add release notes to `CHANGELOG.md` under a new version heading.
-3. Commit and create a PR.
-4. Tag after merge.
+- `jack_mallers_show`: confirmed working reference feed path.
+- Additional source types and social feed integrations: planned next.
 
-## Architecture notes (low-cost discipline)
+## Roadmap (Near Term)
 
-Current module boundaries are intentionally simple and separable:
+1. Confirm stable weekly transcript fetch/transcribe behavior for Jack Mallers Show.
+2. Expand support across multiple feed/source types.
+3. Standardize transcript cleanliness for downstream BTC scoring/reporting ingestion.
+4. Add lightweight reporting outputs once transcript reliability is consistently high.
 
-- ingestion/discovery (`bitpod.discovery`, `bitpod.feeds`, `bitpod.sync`)
-- source/media acquisition (`bitpod.audio`)
-- transcription provider (`bitpod.transcribe.*`)
-- persistence/index (`bitpod.storage`, `bitpod.indexer`, `bitpod.paths`)
+## Operations
 
-## Notes
+- Weekly runs should process only new episodes and skip known-successful ones.
+- Failed episodes should remain visible for retry.
+- Paths and output formats should remain stable to protect downstream automations.
 
-- `discover` currently fully supports YouTube RSS discovery and is structured for future Apple/Spotify→PodcastIndex expansion.
-- Dry-run mode returns a structured `would_process` list and never downloads/transcribes.
-- Failures are recorded per episode in `index/processed.json` and do not stop the run.
-- Re-runs skip episodes with status `ok` and retry episodes marked `failed`.
-- If a configured transcription model is unavailable/invalid, transcription retries once with `whisper-1`.
-RSS-fetched podcasts turned into AI-friendly text transcripts for analyitics.
+## Versioning And Changes
 
-## Versioning & releases
-
-This project uses Semantic Versioning in pre-1.0 mode (`0.x.y`).
-
-- PATCH (`0.1.x`): fixes/docs/process updates
-- MINOR (`0.x.0`): backward-compatible feature additions
-- MAJOR (`1.0.0+`): stability/breaking milestone
-
-Release flow:
-1. Bump version metadata.
-2. Update CHANGELOG.md.
-3. Open PR and merge.
-4. Tag release (example): `v0.1.1`.
+- Versioning follows pre-1.0 SemVer (`0.x.y`).
+- Change history lives in [CHANGELOG.md](CHANGELOG.md).
