@@ -80,6 +80,32 @@ Outputs
 - `jack_mallers_show`: confirmed working reference feed path.
 - Additional source types and social feed integrations: planned next.
 
+## Stable Permalink For GPT Fetching
+
+Primary stable transcript pointer (Jack Mallers):
+- `transcripts/jack_mallers_show/mallers_bitpod.md`
+
+Raw GitHub URL:
+- `https://raw.githubusercontent.com/cjarguello/bitpod/main/transcripts/jack_mallers_show/mallers_bitpod.md`
+
+How it updates:
+1. Run `sync` successfully for `jack_mallers_show`.
+2. The latest successful transcript is selected from `index/processed.json`.
+3. `mallers_bitpod.md` is overwritten with that transcript content.
+4. Commit and push changes to `main` so the raw URL serves the update.
+
+Operational commands:
+
+```bash
+cd /Users/cjarguello/bitpod
+source .venv311/bin/activate
+python -m bitpod discover --show jack_mallers_show
+python -m bitpod sync --show jack_mallers_show --max-episodes 1
+git add transcripts/jack_mallers_show/mallers_bitpod.md index/processed.json shows.json
+git commit -m "chore: refresh latest Jack Mallers transcript pointer"
+git push origin main
+```
+
 ## Roadmap (Near Term)
 
 1. Confirm stable weekly transcript fetch/transcribe behavior for Jack Mallers Show.

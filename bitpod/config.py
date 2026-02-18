@@ -11,6 +11,7 @@ DEFAULT_SHOWS: dict[str, dict[str, Any]] = {
         "show_key": "jack_mallers_show",
         "youtube_handle": "@thejackmallersshow",
         "youtube_channel_url": "https://youtube.com/@thejackmallersshow",
+        "stable_pointer": "mallers_bitpod.md",
         "feeds": {"rss": []},
     }
 }

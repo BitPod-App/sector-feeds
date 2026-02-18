@@ -3,7 +3,10 @@ from __future__ import annotations
 import unittest
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
+from tempfile import TemporaryDirectory
 
+import bitpod.sync as sync_module
 from bitpod.sync import filter_episodes, get_feed_urls
 
 
@@ -45,6 +48,43 @@ class SyncFilteringTests(unittest.TestCase):
                 "https://example.com/feed.xml",
             ],
         )
+
+    def test_refresh_stable_pointer_uses_latest_successful_transcript(self) -> None:
+        with TemporaryDirectory() as tmp:
+            temp_root = Path(tmp)
+            older = temp_root / "older.md"
+            newer = temp_root / "newer.md"
+            older.write_text("old transcript", encoding="utf-8")
+            newer.write_text("new transcript", encoding="utf-8")
+
+            index = {
+                "episodes": {
+                    "jack_mallers_show::old": {
+                        "status": "ok",
+                        "transcript_path": str(older),
+                        "published_at": "2026-02-01T00:00:00+00:00",
+                        "updated_at": "2026-02-01T01:00:00+00:00",
+                    },
+                    "jack_mallers_show::new": {
+                        "status": "ok",
+                        "transcript_path": str(newer),
+                        "published_at": "2026-02-02T00:00:00+00:00",
+                        "updated_at": "2026-02-02T01:00:00+00:00",
+                    },
+                }
+            }
+            show = {"show_key": "jack_mallers_show", "stable_pointer": "mallers_bitpod.md"}
+
+            original_root = sync_module.TRANSCRIPTS_ROOT
+            sync_module.TRANSCRIPTS_ROOT = temp_root / "transcripts"
+            try:
+                sync_module._refresh_stable_pointer(show, index)
+            finally:
+                sync_module.TRANSCRIPTS_ROOT = original_root
+
+            pointer = temp_root / "transcripts" / "jack_mallers_show" / "mallers_bitpod.md"
+            self.assertTrue(pointer.exists())
+            self.assertEqual(pointer.read_text(encoding="utf-8"), "new transcript\n")
 
 
 if __name__ == "__main__":

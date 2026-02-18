@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from bitpod.indexer import episode_key, load_processed, now_iso, save_processed
+from bitpod.paths import TRANSCRIPTS_ROOT
 
 LOGGER = logging.getLogger(__name__)
 
@@ -122,6 +123,7 @@ def sync_show(
         finally:
             save_processed(index)
 
+    _refresh_stable_pointer(show, index)
     return stats
 
 
@@ -154,3 +156,67 @@ def _process_episode(show_key: str, episode: Any, index: dict[str, Any], key: st
             source_type=getattr(episode, "source_type", "unknown"),
             media_url=getattr(episode, "media_url", None),
         )
+
+
+def _parse_iso(ts: str | None) -> datetime:
+    if not ts:
+        return datetime.min.replace(tzinfo=timezone.utc)
+    try:
+        parsed = datetime.fromisoformat(ts.replace("Z", "+00:00"))
+    except ValueError:
+        return datetime.min.replace(tzinfo=timezone.utc)
+    if parsed.tzinfo is None:
+        return parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def _stable_pointer_name(show: dict[str, Any]) -> str:
+    configured = show.get("stable_pointer")
+    if isinstance(configured, str) and configured.strip():
+        return configured.strip()
+    if show.get("show_key") == "jack_mallers_show":
+        return "mallers_bitpod.md"
+    return "latest_bitpod.md"
+
+
+def _refresh_stable_pointer(show: dict[str, Any], index: dict[str, Any]) -> None:
+    show_key = show["show_key"]
+    candidates: list[dict[str, Any]] = []
+    prefix = f"{show_key}::"
+
+    for key, payload in index.get("episodes", {}).items():
+        if not key.startswith(prefix):
+            continue
+        if payload.get("status") != "ok":
+            continue
+
+        transcript_path_raw = payload.get("transcript_path")
+        if not isinstance(transcript_path_raw, str) or not transcript_path_raw:
+            continue
+
+        transcript_path = Path(transcript_path_raw)
+        if not transcript_path.is_absolute():
+            transcript_path = Path.cwd() / transcript_path
+        if not transcript_path.exists():
+            continue
+
+        candidates.append(
+            {
+                "path": transcript_path,
+                "published_at": _parse_iso(payload.get("published_at")),
+                "updated_at": _parse_iso(payload.get("updated_at")),
+            }
+        )
+
+    if not candidates:
+        return
+
+    latest = max(candidates, key=lambda item: (item["published_at"], item["updated_at"]))
+    source_path = latest["path"]
+    pointer_path = TRANSCRIPTS_ROOT / show_key / _stable_pointer_name(show)
+    pointer_path.parent.mkdir(parents=True, exist_ok=True)
+
+    text = source_path.read_text(encoding="utf-8")
+    if not text.endswith("\n"):
+        text += "\n"
+    pointer_path.write_text(text, encoding="utf-8")
