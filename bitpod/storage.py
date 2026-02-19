@@ -36,6 +36,8 @@ def write_transcript(
     transcript_text: str,
     transcription_model: str,
     segments: list[dict[str, Any]] | None = None,
+    transcript_source: str = "audio_transcription",
+    speaker_strategy: str = "guest_priority",
 ) -> Path:
     target = transcript_path(show_key, published_at, episode_title)
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -49,6 +51,10 @@ def write_transcript(
         "guid": guid,
         "fetched_at": _fmt_dt(fetched_at),
         "transcription_model": transcription_model,
+        "transcript_source": transcript_source,
+        "speaker_strategy": speaker_strategy,
+        "guest_weighting_hint": "guest_over_host",
+        "speaker_segments_present": bool(segments),
     }
 
     lines = ["---"]
@@ -63,7 +69,8 @@ def write_transcript(
             start = segment.get("start")
             end = segment.get("end")
             text = str(segment.get("text", "")).strip()
-            lines.append(f"- [{start} - {end}] {text}")
+            speaker = segment.get("speaker") or "unknown"
+            lines.append(f"- [{start} - {end}] ({speaker}) {text}")
         lines.append("")
 
     target.write_text("\n".join(lines), encoding="utf-8")

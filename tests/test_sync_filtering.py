@@ -7,7 +7,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 import bitpod.sync as sync_module
-from bitpod.sync import filter_episodes, get_feed_urls
+from bitpod.sync import _choose_best_source, filter_episodes, get_feed_urls
 
 
 @dataclass
@@ -16,6 +16,8 @@ class DummyEpisode:
     title: str
     published_at: datetime
     source_url: str
+    source_type: str = "unknown"
+    feed_url: str = ""
 
 
 def _ep(title: str, days_ago: int) -> DummyEpisode:
@@ -44,10 +46,30 @@ class SyncFilteringTests(unittest.TestCase):
         self.assertEqual(
             get_feed_urls(show),
             [
-                "https://www.youtube.com/feeds/videos.xml?channel_id=abc",
                 "https://example.com/feed.xml",
+                "https://www.youtube.com/feeds/videos.xml?channel_id=abc",
             ],
         )
+
+    def test_choose_best_source_prefers_rss_audio_over_youtube(self) -> None:
+        older = DummyEpisode(
+            guid="same",
+            title="Episode",
+            published_at=datetime(2026, 1, 1, tzinfo=timezone.utc),
+            source_url="https://youtube.com/watch?v=abc",
+            source_type="youtube_video",
+            feed_url="https://www.youtube.com/feeds/videos.xml?channel_id=abc",
+        )
+        newer = DummyEpisode(
+            guid="same",
+            title="Episode",
+            published_at=datetime(2026, 1, 2, tzinfo=timezone.utc),
+            source_url="https://example.com/audio.mp3",
+            source_type="rss_audio",
+            feed_url="https://example.com/feed.xml",
+        )
+        chosen = _choose_best_source(older, newer)
+        self.assertEqual(chosen.source_type, "rss_audio")
 
     def test_refresh_stable_pointer_uses_latest_successful_transcript(self) -> None:
         with TemporaryDirectory() as tmp:

@@ -8,15 +8,15 @@ Convert podcast and social-feed episodes into clean text transcripts for downstr
 
 1. Discover and poll configured feeds.
 2. Identify new episodes.
-3. Download media for each episode.
-4. Transcribe media to clean text.
+3. Select the best available source (audio/captions/media) based on policy.
+4. Transcribe to clean text with consistent metadata.
 5. Export transcripts in a deterministic structure for model consumption.
 
 ## What Works Today
 
 - Jack Mallers Show processing path is implemented and serves as the validation baseline.
-- Feed discovery supports YouTube RSS URL extraction from channel inputs.
-- Sync supports mixed feed strategy per show (`youtube` plus optional `rss` list).
+- RSS and YouTube feed ingestion are supported, with RSS prioritized for lower-cost audio ingestion.
+- YouTube captions can be used when quality passes a minimum threshold.
 - Episode processing is idempotent: successful episodes are skipped on reruns.
 - Transcript artifacts are written under `transcripts/<show>/<year>/` with status tracking in `index/processed.json`.
 
@@ -60,6 +60,15 @@ python -m bitpod sync --show jack_mallers_show --max-episodes 5
 # process only recent episodes
 python -m bitpod sync --show jack_mallers_show --since-days 14
 
+# control source tradeoff policy: audio-first | balanced | caption-first | media-first
+python -m bitpod sync --show jack_mallers_show --source-policy balanced
+
+# forbid fallback to YouTube media downloads (fail fast if captions are unusable)
+python -m bitpod sync --show jack_mallers_show --no-youtube-download
+
+# require a stronger caption quality floor before accepting caption text
+python -m bitpod sync --show jack_mallers_show --min-caption-words 180
+
 # optional transcription model override
 python -m bitpod sync --show jack_mallers_show --model gpt-4o-mini-transcribe
 ```
@@ -77,47 +86,21 @@ Outputs
 
 ## Supported Feeds (Current)
 
-- `jack_mallers_show`: confirmed working reference feed path.
+- `jack_mallers_show`: confirmed working reference feed path with RSS-first priority.
 - Additional source types and social feed integrations: planned next.
 
-## Stable Permalink For GPT Fetching
+## Stable Pointer
 
-Primary stable transcript pointer (Jack Mallers):
-- `transcripts/jack_mallers_show/mallers_bitpod.md`
-
-Raw GitHub URL:
-- `https://raw.githubusercontent.com/cjarguello/bitpod/main/transcripts/jack_mallers_show/mallers_bitpod.md`
-
-How it updates:
-1. Run `sync` successfully for `jack_mallers_show`.
-2. The latest successful transcript is selected from `index/processed.json`.
-3. `mallers_bitpod.md` is overwritten with that transcript content.
-4. Commit and push changes to `main` so the raw URL serves the update.
-
-Operational commands:
-
-```bash
-cd /Users/cjarguello/bitpod
-source .venv311/bin/activate
-python -m bitpod discover --show jack_mallers_show
-python -m bitpod sync --show jack_mallers_show --max-episodes 1
-git add transcripts/jack_mallers_show/mallers_bitpod.md index/processed.json shows.json
-git commit -m "chore: refresh latest Jack Mallers transcript pointer"
-git push origin main
-```
-
-## Roadmap (Near Term)
-
-1. Confirm stable weekly transcript fetch/transcribe behavior for Jack Mallers Show.
-2. Expand support across multiple feed/source types.
-3. Standardize transcript cleanliness for downstream BTC scoring/reporting ingestion.
-4. Add lightweight reporting outputs once transcript reliability is consistently high.
+- Stable transcript pointer file: `transcripts/jack_mallers_show/mallers_bitpod.md`
+- It is updated from the latest successful transcript after sync.
+- Avoid publishing direct transcript fetch URLs in public-facing docs.
 
 ## Operations
 
 - Weekly runs should process only new episodes and skip known-successful ones.
-- Failed episodes should remain visible for retry.
-- Paths and output formats should remain stable to protect downstream automations.
+- Failed episodes remain visible for retry.
+- `gpt_status` metadata is set to `pending` on successful transcript creation.
+- Paths and output formats remain stable to protect downstream automations.
 
 ## Versioning And Changes
 
