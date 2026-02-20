@@ -1,8 +1,12 @@
 {
   "shows": {
     "jack_mallers_show": {
+      "anchor_show_id": "e29097f4",
+      "discover_anchor_holy_grail": true,
       "feeds": {
-        "rss": [],
+        "rss": [
+          "https://anchor.fm/s/e29097f4/podcast/rss"
+        ],
         "youtube": "https://www.youtube.com/feeds/videos.xml?channel_id=UC3ol9RQbQHqle_Uly6w9LfA",
         "youtube_channel_id": "UC3ol9RQbQHqle_Uly6w9LfA"
       },

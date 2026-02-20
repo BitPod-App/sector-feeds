@@ -7,7 +7,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 import bitpod.sync as sync_module
-from bitpod.sync import filter_episodes, get_feed_urls
+from bitpod.sync import _choose_best_source, filter_episodes, get_feed_urls
 
 
 @dataclass
@@ -16,6 +16,7 @@ class DummyEpisode:
     title: str
     published_at: datetime
     source_url: str
+    source_type: str = "unknown"
 
 
 def _ep(title: str, days_ago: int) -> DummyEpisode:
@@ -44,10 +45,28 @@ class SyncFilteringTests(unittest.TestCase):
         self.assertEqual(
             get_feed_urls(show),
             [
-                "https://www.youtube.com/feeds/videos.xml?channel_id=abc",
                 "https://example.com/feed.xml",
+                "https://www.youtube.com/feeds/videos.xml?channel_id=abc",
             ],
         )
+
+    def test_choose_best_source_prefers_rss_audio_over_youtube(self) -> None:
+        newer_youtube = DummyEpisode(
+            guid="same",
+            title="newer",
+            published_at=datetime.now(timezone.utc),
+            source_url="https://youtube.com/watch?v=x",
+            source_type="youtube_video",
+        )
+        older_rss = DummyEpisode(
+            guid="same",
+            title="older",
+            published_at=datetime.now(timezone.utc) - timedelta(days=1),
+            source_url="https://podcast.example/ep1",
+            source_type="rss_audio",
+        )
+        chosen = _choose_best_source(newer_youtube, older_rss)
+        self.assertEqual(chosen.source_type, "rss_audio")
 
     def test_refresh_stable_pointer_uses_latest_successful_transcript(self) -> None:
         with TemporaryDirectory() as tmp:

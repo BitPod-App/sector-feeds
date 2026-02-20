@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import re
 from datetime import datetime, timezone
 from pathlib import Path
@@ -36,6 +37,8 @@ def write_transcript(
     transcript_text: str,
     transcription_model: str,
     segments: list[dict[str, Any]] | None = None,
+    transcript_source: str = "audio_transcription",
+    speaker_strategy: str = "guest_priority",
 ) -> Path:
     target = transcript_path(show_key, published_at, episode_title)
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -49,6 +52,10 @@ def write_transcript(
         "guid": guid,
         "fetched_at": _fmt_dt(fetched_at),
         "transcription_model": transcription_model,
+        "transcript_source": transcript_source,
+        "speaker_strategy": speaker_strategy,
+        "guest_weighting_hint": "guest_over_host",
+        "speaker_segments_present": bool(segments),
     }
 
     lines = ["---"]
@@ -68,3 +75,46 @@ def write_transcript(
 
     target.write_text("\n".join(lines), encoding="utf-8")
     return target
+
+
+def _artifact_paths(transcript_file: Path) -> tuple[Path, Path]:
+    stem = transcript_file.stem
+    plain = transcript_file.with_name(f"{stem}_plain.txt")
+    segments = transcript_file.with_name(f"{stem}_segments.jsonl")
+    return plain, segments
+
+
+def write_output_artifacts(
+    *,
+    transcript_file: Path,
+    transcript_text: str,
+    segments: list[dict[str, Any]] | None,
+    metadata: dict[str, Any],
+) -> tuple[Path, Path]:
+    plain_path, segments_path = _artifact_paths(transcript_file)
+    plain_path.parent.mkdir(parents=True, exist_ok=True)
+
+    header = ["---"]
+    for key, value in metadata.items():
+        escaped = str(value).replace('"', '\\"')
+        header.append(f'{key}: "{escaped}"')
+    header.extend(["---", "", transcript_text.strip(), ""])
+    plain_path.write_text("\n".join(header), encoding="utf-8")
+
+    segment_rows: list[str] = []
+    for segment in segments or []:
+        start = segment.get("start")
+        end = segment.get("end")
+        text = str(segment.get("text", "")).strip()
+        speaker = segment.get("speaker")
+        source = segment.get("source")
+        row = {
+            "start": start,
+            "end": end,
+            "speaker": speaker,
+            "text": text,
+            "source": source,
+        }
+        segment_rows.append(json.dumps(row, ensure_ascii=False))
+    segments_path.write_text("\n".join(segment_rows) + ("\n" if segment_rows else ""), encoding="utf-8")
+    return plain_path, segments_path
