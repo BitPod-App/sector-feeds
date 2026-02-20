@@ -37,7 +37,7 @@ def youtube_rss_for_channel_id(channel_id: str) -> str:
     return f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
 
 
-def discover_show_feeds(show: dict[str, Any]) -> dict[str, str]:
+def discover_show_feeds(show: dict[str, Any]) -> dict[str, Any]:
     feeds = dict(show.get("feeds", {}))
     handle = show.get("youtube_handle")
     channel_url = show.get("youtube_channel_url")
@@ -45,4 +45,18 @@ def discover_show_feeds(show: dict[str, Any]) -> dict[str, str]:
         channel_id = discover_youtube_channel_id(channel_url or handle)
         feeds["youtube"] = youtube_rss_for_channel_id(channel_id)
         feeds["youtube_channel_id"] = channel_id
+
+    anchor_show_id = show.get("anchor_show_id")
+    if show.get("discover_anchor_holy_grail") and isinstance(anchor_show_id, str) and anchor_show_id:
+        anchor_rss = f"https://anchor.fm/s/{anchor_show_id}/podcast/rss"
+        rss = feeds.get("rss")
+        if isinstance(rss, list):
+            if anchor_rss not in rss:
+                rss.append(anchor_rss)
+            feeds["rss"] = rss
+        elif isinstance(rss, str) and rss:
+            feeds["rss"] = [rss, anchor_rss] if rss != anchor_rss else [rss]
+        else:
+            feeds["rss"] = [anchor_rss]
+
     return feeds

@@ -1,15 +1,24 @@
 from __future__ import annotations
 
+import hashlib
 import logging
-import tempfile
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
 from bitpod.indexer import episode_key, load_processed, now_iso, save_processed
-from bitpod.paths import TRANSCRIPTS_ROOT
+from bitpod.paths import ROOT, TRANSCRIPTS_ROOT
 
 LOGGER = logging.getLogger(__name__)
+
+SOURCE_RANK = {
+    "rss_audio": 0,
+    "rss_video": 1,
+    "rss_media": 2,
+    "youtube_video": 3,
+    "rss_link": 4,
+    "unknown": 5,
+}
 
 
 def _mark(index: dict[str, Any], key: str, status: str, **kwargs: Any) -> None:
@@ -17,19 +26,29 @@ def _mark(index: dict[str, Any], key: str, status: str, **kwargs: Any) -> None:
     index["episodes"][key] = payload
 
 
+def _source_rank(source_type: str) -> int:
+    return SOURCE_RANK.get(source_type, SOURCE_RANK["unknown"])
+
+
+def _cache_key(show_key: str, guid: str) -> str:
+    payload = f"{show_key}::{guid}".encode("utf-8", errors="ignore")
+    return hashlib.sha1(payload).hexdigest()[:16]
+
+
 def get_feed_urls(show: dict[str, Any]) -> list[str]:
     feeds = show.get("feeds", {})
     urls: list[str] = []
 
-    youtube_feed = feeds.get("youtube")
-    if youtube_feed:
-        urls.append(str(youtube_feed))
-
+    # Prefer RSS first when available (usually cheaper for audio-first ingestion).
     rss_feeds = feeds.get("rss")
     if isinstance(rss_feeds, str) and rss_feeds:
         urls.append(rss_feeds)
     if isinstance(rss_feeds, list):
         urls.extend([str(url) for url in rss_feeds if url])
+
+    youtube_feed = feeds.get("youtube")
+    if youtube_feed:
+        urls.append(str(youtube_feed))
 
     deduped: list[str] = []
     seen: set[str] = set()
@@ -48,12 +67,28 @@ def filter_episodes(episodes: list[Any], max_episodes: int = 3, since_days: int 
     return ordered[:max_episodes]
 
 
+def _choose_best_source(existing: Any, candidate: Any) -> Any:
+    existing_rank = _source_rank(str(getattr(existing, "source_type", "unknown")))
+    candidate_rank = _source_rank(str(getattr(candidate, "source_type", "unknown")))
+    if candidate_rank < existing_rank:
+        return candidate
+    if candidate_rank > existing_rank:
+        return existing
+
+    if getattr(candidate, "published_at", datetime.min) >= getattr(existing, "published_at", datetime.min):
+        return candidate
+    return existing
+
+
 def sync_show(
     show: dict[str, Any],
     model: str = "gpt-4o-mini-transcribe",
     max_episodes: int = 3,
     since_days: int | None = None,
     dry_run: bool = False,
+    source_policy: str = "balanced",
+    no_youtube_download: bool = False,
+    min_caption_words: int = 120,
 ) -> dict[str, Any]:
     show_key = show["show_key"]
     feed_urls = get_feed_urls(show)
@@ -64,8 +99,10 @@ def sync_show(
         "processed": 0,
         "skipped": 0,
         "failed": 0,
+        "caption_used": 0,
         "dry_run": dry_run,
         "feeds": feed_urls,
+        "source_policy": source_policy,
     }
 
     if not feed_urls:
@@ -85,9 +122,11 @@ def sync_show(
 
     deduped_by_guid: dict[str, Any] = {}
     for episode in episodes:
-        deduped_by_guid[str(episode.guid)] = episode
-    episodes = list(deduped_by_guid.values())
+        guid = str(episode.guid)
+        current = deduped_by_guid.get(guid)
+        deduped_by_guid[guid] = episode if current is None else _choose_best_source(current, episode)
 
+    episodes = list(deduped_by_guid.values())
     stats["seen"] = len(episodes)
     selected = filter_episodes(episodes, max_episodes=max_episodes, since_days=since_days)
     stats["selected"] = len(selected)
@@ -100,6 +139,7 @@ def sync_show(
                 "source_url": ep.source_url,
                 "feed_url": ep.feed_url,
                 "source_type": getattr(ep, "source_type", "unknown"),
+                "source_rank": _source_rank(str(getattr(ep, "source_type", "unknown"))),
             }
             for ep in selected
         ]
@@ -114,8 +154,21 @@ def sync_show(
 
         LOGGER.info("Processing: %s", episode.title)
         try:
-            _process_episode(show_key, episode, index, key, model=model)
+            used_caption = _process_episode(
+                show=show,
+                show_key=show_key,
+                episode=episode,
+                index=index,
+                key=key,
+                model=model,
+                existing=existing,
+                source_policy=source_policy,
+                no_youtube_download=no_youtube_download,
+                min_caption_words=min_caption_words,
+            )
             stats["processed"] += 1
+            if used_caption:
+                stats["caption_used"] += 1
         except Exception as exc:  # noqa: BLE001
             LOGGER.exception("Failed episode %s: %s", episode.source_url, exc)
             _mark(index, key, "failed", reason=str(exc), source_url=episode.source_url)
@@ -127,35 +180,189 @@ def sync_show(
     return stats
 
 
-def _process_episode(show_key: str, episode: Any, index: dict[str, Any], key: str, model: str) -> None:
-    with tempfile.TemporaryDirectory(prefix="bitpod-") as tmp:
-        from bitpod.audio import acquire_media
-        from bitpod.storage import write_transcript
-        from bitpod.transcribe import transcribe_audio
+def _maybe_use_captions(
+    *,
+    show_key: str,
+    episode: Any,
+    index: dict[str, Any],
+    key: str,
+    min_caption_words: int,
+) -> bool:
+    from bitpod.audio import extract_youtube_caption_payload
+    from bitpod.storage import write_output_artifacts, write_transcript
 
-        media_path = acquire_media(episode, Path(tmp))
-        result = transcribe_audio(media_path, model=model)
-        transcript_file = write_transcript(
-            show_key=show_key,
-            episode_title=episode.title,
-            published_at=episode.published_at,
-            source_url=episode.source_url,
-            guid=episode.guid,
-            transcript_text=result.text,
-            transcription_model=result.model_used,
-            segments=result.segments,
-        )
-        _mark(
-            index,
-            key,
-            "ok",
-            transcript_path=str(transcript_file),
-            source_url=episode.source_url,
-            published_at=episode.published_at.isoformat(),
-            transcription_model=result.model_used,
-            source_type=getattr(episode, "source_type", "unknown"),
-            media_url=getattr(episode, "media_url", None),
-        )
+    caption_dir = ROOT / "cache" / "captions" / show_key / _cache_key(show_key, str(episode.guid))
+    payload = extract_youtube_caption_payload(str(episode.source_url), caption_dir, min_words=min_caption_words)
+    if not payload:
+        return False
+
+    segments = [
+        {
+            "start": cue.start,
+            "end": cue.end,
+            "text": cue.text,
+            "speaker": "unknown",
+            "source": "youtube_caption",
+        }
+        for cue in payload.cues
+    ]
+
+    transcript_file = write_transcript(
+        show_key=show_key,
+        episode_title=episode.title,
+        published_at=episode.published_at,
+        source_url=episode.source_url,
+        guid=episode.guid,
+        transcript_text=payload.text,
+        transcription_model="youtube_caption_auto",
+        segments=segments,
+        transcript_source="youtube_caption",
+        speaker_strategy="unknown",
+    )
+    plain_path, segments_path = write_output_artifacts(
+        transcript_file=transcript_file,
+        transcript_text=payload.text,
+        segments=segments,
+        metadata={
+            "source_platform": "youtube",
+            "source_url": episode.source_url,
+            "source_id": str(episode.guid),
+            "show_name": show_key,
+            "episode_title": episode.title,
+            "published_at_utc": episode.published_at.isoformat(),
+            "retrieved_at_utc": now_iso(),
+            "pipeline_version": "0.2.1",
+            "transcription_method": "youtube_captions_stitched",
+            "speaker_mode": "unknown",
+            "speakers_detected": "unknown",
+            "quality_word_count": payload.quality.get("word_count", 0),
+            "quality_repetition_ratio_5gram": payload.quality.get("repetition_ratio_5gram", 0),
+            "quality_lexical_diversity": payload.quality.get("lexical_diversity", 0),
+        },
+    )
+
+    _mark(
+        index,
+        key,
+        "ok",
+        transcript_path=str(transcript_file),
+        transcript_plain_path=str(plain_path),
+        transcript_segments_path=str(segments_path),
+        source_url=episode.source_url,
+        published_at=episode.published_at.isoformat(),
+        transcription_model="youtube_caption_auto",
+        source_type=getattr(episode, "source_type", "unknown"),
+        media_url=getattr(episode, "media_url", None),
+        source_mode="captions",
+        gpt_status="pending",
+        gpt_processed_at=None,
+    )
+    return True
+
+
+def _resolve_cached_media(existing: dict[str, Any] | None) -> Path | None:
+    if not existing:
+        return None
+    cache_path = existing.get("media_cache_path")
+    if isinstance(cache_path, str) and cache_path:
+        path = Path(cache_path)
+        if path.exists():
+            return path
+    return None
+
+
+def _download_media_with_cache(show_key: str, episode: Any) -> Path:
+    from bitpod.audio import acquire_media
+
+    media_dir = ROOT / "cache" / "media" / show_key / _cache_key(show_key, str(episode.guid))
+    media_dir.mkdir(parents=True, exist_ok=True)
+    return acquire_media(episode, media_dir, filename_hint=_cache_key(show_key, str(episode.guid)))
+
+
+def _process_episode(
+    *,
+    show: dict[str, Any],
+    show_key: str,
+    episode: Any,
+    index: dict[str, Any],
+    key: str,
+    model: str,
+    existing: dict[str, Any] | None,
+    source_policy: str,
+    no_youtube_download: bool,
+    min_caption_words: int,
+) -> bool:
+    from bitpod.storage import write_output_artifacts, write_transcript
+    from bitpod.transcribe import transcribe_audio
+
+    source_type = str(getattr(episode, "source_type", "unknown"))
+    try_captions = source_type.startswith("youtube") and source_policy in {"balanced", "audio-first", "caption-first"}
+    if try_captions and _maybe_use_captions(
+        show_key=show_key,
+        episode=episode,
+        index=index,
+        key=key,
+        min_caption_words=min_caption_words,
+    ):
+        return True
+
+    if source_type.startswith("youtube") and no_youtube_download:
+        raise RuntimeError("YouTube download disabled by --no-youtube-download and usable captions were unavailable")
+
+    media_path = _resolve_cached_media(existing)
+    if media_path is None:
+        media_path = _download_media_with_cache(show_key, episode)
+
+    result = transcribe_audio(media_path, model=model)
+    transcript_file = write_transcript(
+        show_key=show_key,
+        episode_title=episode.title,
+        published_at=episode.published_at,
+        source_url=episode.source_url,
+        guid=episode.guid,
+        transcript_text=result.text,
+        transcription_model=result.model_used,
+        segments=result.segments,
+        transcript_source="audio_transcription",
+        speaker_strategy="guest_priority",
+    )
+    plain_path, segments_path = write_output_artifacts(
+        transcript_file=transcript_file,
+        transcript_text=result.text,
+        segments=result.segments,
+        metadata={
+            "source_platform": "rss" if source_type.startswith("rss") else "youtube",
+            "source_url": episode.source_url,
+            "source_id": str(episode.guid),
+            "show_name": show_key,
+            "episode_title": episode.title,
+            "published_at_utc": episode.published_at.isoformat(),
+            "retrieved_at_utc": now_iso(),
+            "pipeline_version": "0.2.1",
+            "transcription_method": f"asr_{result.model_used}",
+            "speaker_mode": "unknown",
+            "speakers_detected": "unknown",
+        },
+    )
+
+    _mark(
+        index,
+        key,
+        "ok",
+        transcript_path=str(transcript_file),
+        transcript_plain_path=str(plain_path),
+        transcript_segments_path=str(segments_path),
+        source_url=episode.source_url,
+        published_at=episode.published_at.isoformat(),
+        transcription_model=result.model_used,
+        source_type=source_type,
+        media_url=getattr(episode, "media_url", None),
+        media_cache_path=str(media_path),
+        source_mode="media",
+        gpt_status="pending",
+        gpt_processed_at=None,
+    )
+    return False
 
 
 def _parse_iso(ts: str | None) -> datetime:

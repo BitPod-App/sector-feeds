@@ -8,17 +8,18 @@ Convert podcast and social-feed episodes into clean text transcripts for downstr
 
 1. Discover and poll configured feeds.
 2. Identify new episodes.
-3. Download media for each episode.
-4. Transcribe media to clean text.
-5. Export transcripts in a deterministic structure for model consumption.
+3. Choose the best available source (RSS audio, captions, or media) based on policy.
+4. Transcribe and normalize text.
+5. Export deterministic artifacts for model consumption.
 
 ## What Works Today
 
 - Jack Mallers Show processing path is implemented and serves as the validation baseline.
 - Feed discovery supports YouTube RSS URL extraction from channel inputs.
-- Sync supports mixed feed strategy per show (`youtube` plus optional `rss` list).
+- Sync supports mixed feed strategy per show (`youtube` plus optional `rss` list), with RSS prioritized.
 - Episode processing is idempotent: successful episodes are skipped on reruns.
 - Transcript artifacts are written under `transcripts/<show>/<year>/` with status tracking in `index/processed.json`.
+- Captions are parsed and stitched (de-overlap) before acceptance; low-quality captions fall back to media transcription.
 
 ## Why This Exists
 
@@ -54,6 +55,15 @@ python -m bitpod sync --show jack_mallers_show --dry-run
 # sync/transcribe newest episodes (default max: 3)
 python -m bitpod sync --show jack_mallers_show
 
+# choose source behavior
+python -m bitpod sync --show jack_mallers_show --source-policy balanced
+
+# fail fast if youtube captions are low quality (no media download fallback)
+python -m bitpod sync --show jack_mallers_show --no-youtube-download
+
+# require a stronger caption quality floor
+python -m bitpod sync --show jack_mallers_show --min-caption-words 300
+
 # sync/transcribe newest N episodes
 python -m bitpod sync --show jack_mallers_show --max-episodes 5
 
@@ -72,6 +82,8 @@ Inputs
 
 Outputs
 - Transcript Markdown files in `transcripts/<show_key>/<YYYY>/`.
+- Companion plain-text files: `*_plain.txt`.
+- Companion structured segments: `*_segments.jsonl`.
 - Processing status index in `index/processed.json`.
 - Discovered/normalized feed metadata in `shows.json`.
 
