@@ -1,3 +1,29 @@
 {
-  "episodes": {}
+  "episodes": {
+    "jack_mallers_show::1cd53d56-b516-4f7c-9fe1-1a40abaa225b": {
+      "reason": "Error code: 413 - {'error': {'message': '413: Maximum content size limit (26214400) exceeded (26276590 bytes read)', 'type': 'server_error', 'param': None, 'code': None}, 'usage': {'type': 'duration', 'seconds': 0}}",
+      "source_url": "https://podcasters.spotify.com/pod/show/thejackmallersshow/episodes/From-Software-to-Hard-Asset-Bitcoin-in-a-New-Liquidity-Regime-e3espcd",
+      "status": "failed",
+      "updated_at": "2026-02-19T02:40:10.026075+00:00"
+    },
+    "jack_mallers_show::5810f6f5-a4c5-4f91-8542-a731e0e8fe9a": {
+      "reason": "Error code: 413 - {'error': {'message': '413: Maximum content size limit (26214400) exceeded (26318258 bytes read)', 'type': 'server_error', 'param': None, 'code': None}, 'usage': {'type': 'duration', 'seconds': 0}}",
+      "source_url": "https://podcasters.spotify.com/pod/show/thejackmallersshow/episodes/Japan--AI---The-Next-Liquidity-Shock-For-Bitcoin-e3f6ucg",
+      "status": "failed",
+      "updated_at": "2026-02-19T02:38:33.997707+00:00"
+    },
+    "jack_mallers_show::yt:video:BFt82dw0ci8": {
+      "gpt_processed_at": null,
+      "gpt_status": "pending",
+      "media_url": null,
+      "published_at": "2026-02-17T01:05:55+00:00",
+      "source_mode": "captions",
+      "source_type": "youtube_video",
+      "source_url": "https://www.youtube.com/watch?v=BFt82dw0ci8",
+      "status": "ok",
+      "transcript_path": "/Users/cjarguello/bitpod/transcripts/jack_mallers_show/2026/2026-02-17__japan-ai-the-next-liquidity-shock-for-bitcoin.md",
+      "transcription_model": "youtube_caption_auto",
+      "updated_at": "2026-02-19T02:32:09.362621+00:00"
+    }
+  }
 }
