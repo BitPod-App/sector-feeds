@@ -6,6 +6,12 @@ This repository points to the external canonical Taylor skill at:
 
 Do not duplicate or override Taylor's canonical behavior/spec in this repo.
 
+## Taylor Skill Folder Status
+
+- Keep `~/.agents/skills/taylor` as the canonical Taylor spec + references (required).
+- Taylor runtime implementation lives in `tools/taylor` (repo-level runtime code).
+- Repo docs are pointer + health-check surfaces only; do not duplicate spec text.
+
 ## Canonical Reference Anchors
 
 - `~/.agents/skills/taylor/references/taylor-agent-contract.md`
