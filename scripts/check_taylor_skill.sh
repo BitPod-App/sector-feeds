@@ -2,6 +2,11 @@
 
 set -euo pipefail
 
+if ! command -v rg >/dev/null 2>&1; then
+  echo "Missing dependency: rg (ripgrep). Install with: brew install ripgrep"
+  exit 1
+fi
+
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 skill_root="${HOME}/.agents/skills/taylor"
 skill_file="${skill_root}/SKILL.md"
@@ -25,7 +30,7 @@ for f in "${required_files[@]}"; do
     exit 1
   fi
 done
-echo "OK: Taylor canonical spec present (${skill_root})"
+echo "OK: Required canonical files present (${skill_root})"
 
 if ! rg -q '^name:\s*taylor$' "${skill_file}"; then
   echo "Expected 'name: taylor' in ${skill_file}"
@@ -39,19 +44,19 @@ fi
 
 if ! rg -q 'references/report-template\.md' "${skill_file}" && \
    ! { [[ -f "${runtime_policy_file}" ]] && rg -q 'report-template\.md' "${runtime_policy_file}"; }; then
-  echo "Missing reference to report-template.md in ${skill_file}"
+  echo "Missing reference to report-template.md in SKILL.md or runtime policy"
   exit 1
 fi
 
-if ! rg -q 'periodic \+ ad hoc' "${skill_file}" && \
-   ! { [[ -f "${runtime_policy_file}" ]] && rg -Ei -q 'periodic.*ad hoc|ad hoc.*periodic' "${runtime_policy_file}"; }; then
-  echo "Missing periodic + ad hoc cadence framing in ${skill_file}"
+if ! rg -i -e 'periodic.*ad hoc|ad hoc.*periodic' -q "${skill_file}" && \
+   ! { [[ -f "${runtime_policy_file}" ]] && rg -i -e 'periodic.*ad hoc|ad hoc.*periodic' -q "${runtime_policy_file}"; }; then
+  echo "Missing periodic + ad hoc cadence framing in SKILL.md or runtime policy"
   exit 1
 fi
 
 if ! rg -q 'references/bridge-gpt-team-sessions\.md' "${skill_file}" && \
    ! { [[ -f "${runtime_policy_file}" ]] && rg -q 'bridge-gpt-team-sessions\.md' "${runtime_policy_file}"; }; then
-  echo "Missing reference to bridge-gpt-team-sessions.md in ${skill_file}"
+  echo "Missing reference to bridge-gpt-team-sessions.md in SKILL.md or runtime policy"
   exit 1
 fi
 
@@ -62,7 +67,7 @@ fi
 
 if [[ -f "${runtime_policy_file}" ]]; then
   echo "OK: Runtime policy detected (optional): ${runtime_policy_file}"
-  if ! rg -q '\.agents/skills/taylor|~/.agents/skills/taylor' "${runtime_policy_file}"; then
+  if ! rg -q '\.agents/skills/taylor|~/.agents/skills/taylor|\$\{HOME\}/\.agents/skills/taylor|/\.agents/skills/taylor' "${runtime_policy_file}"; then
     echo "Runtime policy exists but does not reference canonical external skill path: ${runtime_policy_file}"
     exit 1
   fi
