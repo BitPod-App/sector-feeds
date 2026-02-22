@@ -25,6 +25,7 @@ for f in "${required_files[@]}"; do
     exit 1
   fi
 done
+echo "OK: Taylor canonical spec present (${skill_root})"
 
 if ! rg -q '^name:\s*taylor$' "${skill_file}"; then
   echo "Expected 'name: taylor' in ${skill_file}"
@@ -60,6 +61,7 @@ if ! rg -q '^## North Star \(invariant\)$' "${app_mission_file}"; then
 fi
 
 if [[ -f "${runtime_policy_file}" ]]; then
+  echo "OK: Runtime policy detected (optional): ${runtime_policy_file}"
   if ! rg -q '\.agents/skills/taylor|~/.agents/skills/taylor' "${runtime_policy_file}"; then
     echo "Runtime policy exists but does not reference canonical external skill path: ${runtime_policy_file}"
     exit 1
