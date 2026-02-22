@@ -4,3 +4,4 @@ __pycache__/
 .venv311/
 *.egg-info/
 .DS_Store
+artifacts/review_bundles/
