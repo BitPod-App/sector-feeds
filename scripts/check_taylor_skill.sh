@@ -4,17 +4,25 @@ set -euo pipefail
 
 skill_root="${HOME}/.agents/skills/taylor"
 skill_file="${skill_root}/SKILL.md"
-reference_file="${skill_root}/references/app-mission-vision.md"
+app_mission_file="${skill_root}/references/app-mission-vision.md"
+agent_contract_file="${skill_root}/references/taylor-agent-contract.md"
+report_template_file="${skill_root}/references/report-template.md"
+bridge_sessions_file="${skill_root}/references/bridge-gpt-team-sessions.md"
 
-if [[ ! -f "${skill_file}" ]]; then
-  echo "Missing file: ${skill_file}"
-  exit 1
-fi
+required_files=(
+  "${skill_file}"
+  "${app_mission_file}"
+  "${agent_contract_file}"
+  "${report_template_file}"
+  "${bridge_sessions_file}"
+)
 
-if [[ ! -f "${reference_file}" ]]; then
-  echo "Missing file: ${reference_file}"
-  exit 1
-fi
+for f in "${required_files[@]}"; do
+  if [[ ! -f "${f}" ]]; then
+    echo "Missing file: ${f}"
+    exit 1
+  fi
+done
 
 if ! rg -q '^name:\s*taylor$' "${skill_file}"; then
   echo "Expected 'name: taylor' in ${skill_file}"
@@ -26,8 +34,23 @@ if ! rg -q '^## Project vision & architecture knowledge$' "${skill_file}"; then
   exit 1
 fi
 
-if ! rg -q '^## North Star \(invariant\)$' "${reference_file}"; then
-  echo "Missing '## North Star (invariant)' section in ${reference_file}"
+if ! rg -q 'references/report-template\.md' "${skill_file}"; then
+  echo "Missing reference to report-template.md in ${skill_file}"
+  exit 1
+fi
+
+if ! rg -q 'periodic \+ ad hoc' "${skill_file}"; then
+  echo "Missing periodic + ad hoc cadence framing in ${skill_file}"
+  exit 1
+fi
+
+if ! rg -q 'references/bridge-gpt-team-sessions\.md' "${skill_file}"; then
+  echo "Missing reference to bridge-gpt-team-sessions.md in ${skill_file}"
+  exit 1
+fi
+
+if ! rg -q '^## North Star \(invariant\)$' "${app_mission_file}"; then
+  echo "Missing '## North Star (invariant)' section in ${app_mission_file}"
   exit 1
 fi
 

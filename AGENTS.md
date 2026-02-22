@@ -1,18 +1,20 @@
-# Agent Setup Notes
+# Taylor Skill Pointer (Repo-Portable)
 
-This repository expects the `taylor` skill to live outside the repo at:
+This repository points to the external canonical Taylor skill at:
 
 - `~/.agents/skills/taylor/SKILL.md`
 
-## Expected Skill Baseline
+Do not duplicate or override Taylor's canonical behavior/spec in this repo.
 
-- Skill name field: `name: taylor`
-- Required section header: `## Project vision & architecture knowledge`
-- Required reference doc: `~/.agents/skills/taylor/references/app-mission-vision.md`
+## Canonical Reference Anchors
 
-## Bootstrap Check
+- `~/.agents/skills/taylor/references/taylor-agent-contract.md`
+- `~/.agents/skills/taylor/references/report-template.md` (periodic + ad hoc)
+- `~/.agents/skills/taylor/references/bridge-gpt-team-sessions.md`
 
-Run this from repo root to validate local setup:
+## Health Check
+
+Run from repo root:
 
 ```bash
 bash scripts/check_taylor_skill.sh
