@@ -104,6 +104,19 @@ base_sha="$(git rev-parse "${base_ref}")"
     echo '```'
   fi
 
+  if [[ -x "${repo_root}/scripts/check_taylor_agent.sh" ]]; then
+    ran_any=1
+    echo
+    echo "### Command"
+    echo '```bash'
+    echo "bash scripts/check_taylor_agent.sh"
+    echo '```'
+    echo "### Output"
+    echo '```text'
+    bash "${repo_root}/scripts/check_taylor_agent.sh"
+    echo '```'
+  fi
+
   if [[ ${ran_any} -eq 0 ]]; then
     echo "No verification commands configured."
   fi
@@ -113,5 +126,17 @@ base_sha="$(git rev-parse "${base_ref}")"
   echo "- None."
 } > "${out_file}"
 
+bundle_sha256="$(python3 - <<'PY' "${out_file}"
+import hashlib, pathlib, sys
+p = pathlib.Path(sys.argv[1])
+h = hashlib.sha256()
+with p.open('rb') as f:
+    for chunk in iter(lambda: f.read(65536), b''):
+        h.update(chunk)
+print(h.hexdigest())
+PY
+)"
+
 echo "Bundle created: ${out_file}"
+echo "BUNDLE_SHA256: ${bundle_sha256}"
 echo "Generation command: bash scripts/make_review_bundle.sh"

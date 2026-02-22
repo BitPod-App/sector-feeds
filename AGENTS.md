@@ -33,6 +33,7 @@ Run from repo root:
 
 ```bash
 bash scripts/check_taylor_skill.sh
+bash scripts/check_taylor_agent.sh
 ```
 
 ## Review Bundle Gate
@@ -63,3 +64,28 @@ When ending a Bridge GPT planning/review session, memory summary must be structu
 - Invariants (locked)
 - Next Actions (who/what)
 - Risks / Unknowns
+
+## Taylor Runtime Commands
+
+- `taylor whoami`
+- `taylor self-test`
+- `taylor ask "<question>" [--context <path>]`
+- `taylor chat`
+
+If `taylor` is not on your PATH yet:
+
+```bash
+export PATH="/Users/cjarguello/bitpod-app/tools/taylor/bin:$PATH"
+```
+
+## QA Modes
+
+- LOCAL (offline, enforced): deterministic local QA artifacts; merge gate for critical surfaces.
+- BRIDGE (optional, stronger proof): GPT-backed Taylor QA with header/footer/hash verification.
+- CHAT (human workflow): planning and interpretation, not a merge gate.
+
+## Merge Policy
+
+- Default merge gate: LOCAL QA artifacts are required for critical surface changes.
+- BRIDGE QA is additive evidence when available, but not required for merge.
+- Missing LOCAL QA artifacts on critical surfaces must fail closed.
