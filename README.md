@@ -139,6 +139,16 @@ bash scripts/report_mallers_weekly_status.sh
 # Generic, multi-show equivalents:
 bash scripts/run_show_weekly.sh <show_key>
 bash scripts/report_show_weekly_status.sh <show_key>
+
+# Ad hoc mode:
+# - sync only if latest selected episode is not already processed
+bash scripts/run_show_adhoc.sh <show_key>
+
+# - record GPT feedback consumption for latest run
+bash scripts/record_show_gpt_feedback.sh <show_key> <feedback_markdown_path>
+
+# - verify run + GPT consumption + feedback linkage
+bash scripts/verify_show_adhoc.sh <show_key>
 ```
 
 ## Roadmap (Near Term)

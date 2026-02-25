@@ -24,6 +24,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added generic multi-show weekly scripts:
   - `scripts/run_show_weekly.sh <show_key>`
   - `scripts/report_show_weekly_status.sh <show_key>`
+- Added show-agnostic ad hoc scripts:
+  - `scripts/run_show_adhoc.sh <show_key>`
+  - `scripts/record_show_gpt_feedback.sh <show_key> <feedback_md>`
+  - `scripts/verify_show_adhoc.sh <show_key>`
 - Added failure-stage classification and recommended next-action hints for weekly runs.
 
 ### Changed
