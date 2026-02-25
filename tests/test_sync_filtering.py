@@ -96,7 +96,7 @@ class SyncFilteringTests(unittest.TestCase):
                     },
                 }
             }
-            show = {"show_key": "jack_mallers_show", "stable_pointer": "mallers_bitpod.md"}
+            show = {"show_key": "jack_mallers_show", "stable_pointer": "jack_mallers.md"}
 
             original_root = sync_module.TRANSCRIPTS_ROOT
             sync_module.TRANSCRIPTS_ROOT = temp_root / "transcripts"
@@ -105,7 +105,7 @@ class SyncFilteringTests(unittest.TestCase):
             finally:
                 sync_module.TRANSCRIPTS_ROOT = original_root
 
-            pointer = temp_root / "transcripts" / "jack_mallers_show" / "mallers_bitpod.md"
+            pointer = temp_root / "transcripts" / "jack_mallers_show" / "jack_mallers.md"
             self.assertTrue(pointer.exists())
             self.assertEqual(pointer.read_text(encoding="utf-8"), "new transcript\n")
 

@@ -28,7 +28,7 @@ class WeeklyStatusTests(unittest.TestCase):
             transcripts_root = root / "transcripts"
             show_dir = transcripts_root / "jack_mallers_show"
             show_dir.mkdir(parents=True, exist_ok=True)
-            pointer = show_dir / "mallers_bitpod.md"
+            pointer = show_dir / "jack_mallers.md"
             pointer.write_text("existing pointer\n", encoding="utf-8")
 
             episode = DummyEpisode(
@@ -70,7 +70,7 @@ class WeeklyStatusTests(unittest.TestCase):
                 stats = sync_module.sync_show(
                     show={
                         "show_key": "jack_mallers_show",
-                        "stable_pointer": "mallers_bitpod.md",
+                        "stable_pointer": "jack_mallers.md",
                         "feeds": {"rss": ["https://example.com/feed.xml"]},
                     },
                     max_episodes=1,
@@ -89,7 +89,7 @@ class WeeklyStatusTests(unittest.TestCase):
             self.assertFalse(stats["latest_included_in_pointer"])
             self.assertEqual(pointer.read_text(encoding="utf-8"), "existing pointer\n")
 
-            status_json = show_dir / "mallers_bitpod_status.json"
+            status_json = show_dir / "jack_mallers_status.json"
             self.assertTrue(status_json.exists())
             payload = json.loads(status_json.read_text(encoding="utf-8"))
             self.assertEqual(payload["run_status"], "failed")

@@ -120,7 +120,7 @@ def sync_show(
     no_youtube_download: bool = False,
     min_caption_words: int = 120,
 ) -> dict[str, Any]:
-    from bitpod.storage import write_run_status_artifacts
+    from bitpod.storage import write_gpt_review_request, write_run_status_artifacts
 
     show_key = show["show_key"]
     run_started_at = now_iso()
@@ -173,7 +173,20 @@ def sync_show(
         status_payload["failure_reason"] = "No feed URL found. Run discover first."
         status_payload["suggested_next_action"] = _next_action_for_stage("discovery")
         status_payload["run_finished_at_utc"] = now_iso()
-        write_run_status_artifacts(show_key=show_key, payload=status_payload, status_basename=status_basename)
+        status_json_path, status_md_path = write_run_status_artifacts(
+            show_key=show_key,
+            payload=status_payload,
+            status_basename=status_basename,
+        )
+        status_payload["status_json_path"] = str(status_json_path)
+        status_payload["status_md_path"] = str(status_md_path)
+        review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
+        status_payload["gpt_review_request_path"] = str(review_path)
+        write_run_status_artifacts(
+            show_key=show_key,
+            payload=status_payload,
+            status_basename=status_basename,
+        )
         raise RuntimeError(f"No feed URL found for show {show_key}. Run discover first.")
 
     index = load_processed()
@@ -302,8 +315,19 @@ def sync_show(
         payload=status_payload,
         status_basename=status_basename,
     )
+    status_payload["status_json_path"] = str(status_json_path)
+    status_payload["status_md_path"] = str(status_md_path)
+    review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
+    status_payload["gpt_review_request_path"] = str(review_path)
+    # Persist paths in JSON status too.
+    status_json_path, status_md_path = write_run_status_artifacts(
+        show_key=show_key,
+        payload=status_payload,
+        status_basename=status_basename,
+    )
     stats["status_json_path"] = str(status_json_path)
     stats["status_md_path"] = str(status_md_path)
+    stats["gpt_review_request_path"] = str(review_path)
     stats["latest_included_in_pointer"] = bool(status_payload["included_in_pointer"])
     stats["run_status"] = status_payload["run_status"]
     return stats
@@ -531,7 +555,7 @@ def _stable_pointer_name(show: dict[str, Any]) -> str:
     if isinstance(configured, str) and configured.strip():
         return configured.strip()
     if show.get("show_key") == "jack_mallers_show":
-        return "mallers_bitpod.md"
+        return "jack_mallers.md"
     return "latest_bitpod.md"
 
 

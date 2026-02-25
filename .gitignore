@@ -7,5 +7,7 @@ __pycache__/
 artifacts/review_bundles/
 artifacts/taylor_qa/
 artifacts/mallers_weekly_report.md
+artifacts/*_weekly_report.md
 transcripts/*/*_status.json
 transcripts/*/*_status.md
+transcripts/*/*_gpt_review_request.md

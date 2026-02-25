@@ -14,11 +14,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Added explicit weekly run status artifacts:
-  - `transcripts/jack_mallers_show/mallers_bitpod_status.json`
-  - `transcripts/jack_mallers_show/mallers_bitpod_status.md`
+  - `transcripts/jack_mallers_show/jack_mallers_status.json`
+  - `transcripts/jack_mallers_show/jack_mallers_status.md`
+- Added GPT QA request artifact for every run:
+  - `transcripts/<show_key>/<stable_pointer_stem>_gpt_review_request.md`
 - Added weekly helper scripts:
   - `scripts/run_mallers_weekly.sh`
   - `scripts/report_mallers_weekly_status.sh`
+- Added generic multi-show weekly scripts:
+  - `scripts/run_show_weekly.sh <show_key>`
+  - `scripts/report_show_weekly_status.sh <show_key>`
 - Added failure-stage classification and recommended next-action hints for weekly runs.
 
 ### Changed

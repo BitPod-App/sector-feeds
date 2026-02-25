@@ -85,8 +85,8 @@ Outputs
 - Companion plain-text files: `*_plain.txt`.
 - Companion structured segments: `*_segments.jsonl`.
 - Weekly run status artifacts:
-  - `transcripts/jack_mallers_show/mallers_bitpod_status.json`
-  - `transcripts/jack_mallers_show/mallers_bitpod_status.md`
+  - `transcripts/jack_mallers_show/jack_mallers_status.json`
+  - `transcripts/jack_mallers_show/jack_mallers_status.md`
 - Processing status index in `index/processed.json`.
 - Discovered/normalized feed metadata in `shows.json`.
 
@@ -103,19 +103,19 @@ Per-show contract (API-like surface):
 ## Stable Pointer And Private GPT Workflow
 
 Primary stable transcript pointer (Jack Mallers):
-- `transcripts/jack_mallers_show/mallers_bitpod.md`
+- `transcripts/jack_mallers_show/jack_mallers.md`
 
 Raw GitHub URL:
-- `https://raw.githubusercontent.com/cjarguello/bitpod/main/transcripts/jack_mallers_show/mallers_bitpod.md`
+- `https://raw.githubusercontent.com/cjarguello/bitpod/main/transcripts/jack_mallers_show/jack_mallers.md`
 
 Note:
 - If the repository is private, GPT cannot fetch the raw URL directly.
-- Use local upload artifacts instead (`mallers_bitpod.md` plus `mallers_bitpod_status.md`).
+- Use local upload artifacts instead (`jack_mallers.md` plus `jack_mallers_status.md`).
 
 How it updates:
 1. Run `sync` successfully for `jack_mallers_show`.
 2. The latest successful transcript is selected from `index/processed.json`.
-3. `mallers_bitpod.md` is overwritten with that transcript content.
+3. `jack_mallers.md` is overwritten with that transcript content.
 4. Commit and push changes to `main` so the raw URL serves the update.
 
 Operational commands:
@@ -133,8 +133,12 @@ Weekly helper scripts:
 # Monday run (newest 1 episode, status artifacts always written)
 bash scripts/run_mallers_weekly.sh
 
-# Tuesday verification report (writes artifacts/mallers_weekly_report.md)
+# Tuesday verification report (writes artifacts/jack_mallers_show_weekly_report.md)
 bash scripts/report_mallers_weekly_status.sh
+
+# Generic, multi-show equivalents:
+bash scripts/run_show_weekly.sh <show_key>
+bash scripts/report_show_weekly_status.sh <show_key>
 ```
 
 ## Roadmap (Near Term)
