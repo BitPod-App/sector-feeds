@@ -7,7 +7,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 import bitpod.sync as sync_module
-from bitpod.sync import _choose_best_source, filter_episodes, get_feed_urls
+from bitpod.sync import _choose_best_source, _status_basename, filter_episodes, get_feed_urls
 
 
 @dataclass
@@ -67,6 +67,10 @@ class SyncFilteringTests(unittest.TestCase):
         )
         chosen = _choose_best_source(newer_youtube, older_rss)
         self.assertEqual(chosen.source_type, "rss_audio")
+
+    def test_status_basename_uses_stable_pointer_stem(self) -> None:
+        show = {"show_key": "demo_show", "stable_pointer": "demo_latest.md"}
+        self.assertEqual(_status_basename(show), "demo_latest_status")
 
     def test_refresh_stable_pointer_uses_latest_successful_transcript(self) -> None:
         with TemporaryDirectory() as tmp:

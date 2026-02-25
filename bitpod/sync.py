@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import logging
+from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -21,6 +22,15 @@ SOURCE_RANK = {
 }
 
 
+@dataclass
+class ProcessingError(RuntimeError):
+    stage: str
+    reason: str
+
+    def __post_init__(self) -> None:
+        super().__init__(f"{self.stage}: {self.reason}")
+
+
 def _mark(index: dict[str, Any], key: str, status: str, **kwargs: Any) -> None:
     payload = {"status": status, "updated_at": now_iso(), **kwargs}
     index["episodes"][key] = payload
@@ -33,6 +43,26 @@ def _source_rank(source_type: str) -> int:
 def _cache_key(show_key: str, guid: str) -> str:
     payload = f"{show_key}::{guid}".encode("utf-8", errors="ignore")
     return hashlib.sha1(payload).hexdigest()[:16]
+
+
+def _next_action_for_stage(stage: str | None) -> str:
+    mapping = {
+        "discovery": "Run discover and verify feed URLs in shows.json.",
+        "caption_quality_gate": "Lower --min-caption-words or allow media fallback.",
+        "media_download": "Verify source media URL reachability and retry sync.",
+        "transcription": "Check OpenAI key/quota/model availability and retry.",
+        "write_output": "Check filesystem permissions and available disk space.",
+        "sync": "Inspect logs and rerun sync for jack_mallers_show.",
+    }
+    if stage and stage in mapping:
+        return mapping[stage]
+    return "Rerun sync and inspect the show status markdown artifact for details."
+
+
+def _status_basename(show: dict[str, Any]) -> str:
+    stable_name = _stable_pointer_name(show)
+    stem = Path(stable_name).stem
+    return f"{stem}_status"
 
 
 def get_feed_urls(show: dict[str, Any]) -> list[str]:
@@ -90,7 +120,11 @@ def sync_show(
     no_youtube_download: bool = False,
     min_caption_words: int = 120,
 ) -> dict[str, Any]:
+    from bitpod.storage import write_run_status_artifacts
+
     show_key = show["show_key"]
+    run_started_at = now_iso()
+    run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     feed_urls = get_feed_urls(show)
 
     stats: dict[str, Any] = {
@@ -105,11 +139,41 @@ def sync_show(
         "source_policy": source_policy,
     }
 
+    # Always produce explicit status artifacts for non-dry runs.
+    status_basename = _status_basename(show)
+    status_payload: dict[str, Any] = {
+        "show_key": show_key,
+        "run_id": run_id,
+        "run_started_at_utc": run_started_at,
+        "run_finished_at_utc": None,
+        "run_status": "failed",
+        "latest_episode_guid": None,
+        "latest_episode_title": None,
+        "latest_episode_published_at_utc": None,
+        "attempted_episode_guid": None,
+        "attempted_episode_title": None,
+        "attempted_source_type": None,
+        "attempted_source_url": None,
+        "included_in_pointer": False,
+        "pointer_path": str(TRANSCRIPTS_ROOT / show_key / _stable_pointer_name(show)),
+        "pointer_updated_at_utc": None,
+        "plain_artifact_path": None,
+        "segments_artifact_path": None,
+        "failure_stage": None,
+        "failure_reason": None,
+        "suggested_next_action": None,
+    }
+
     if not feed_urls:
         if dry_run:
             stats["would_process"] = []
             stats["note"] = "No feeds configured yet. Run discover first."
             return stats
+        status_payload["failure_stage"] = "discovery"
+        status_payload["failure_reason"] = "No feed URL found. Run discover first."
+        status_payload["suggested_next_action"] = _next_action_for_stage("discovery")
+        status_payload["run_finished_at_utc"] = now_iso()
+        write_run_status_artifacts(show_key=show_key, payload=status_payload, status_basename=status_basename)
         raise RuntimeError(f"No feed URL found for show {show_key}. Run discover first.")
 
     index = load_processed()
@@ -145,13 +209,33 @@ def sync_show(
         ]
         return stats
 
+    latest_episode = selected[0] if selected else None
+    attempted_episode = latest_episode
+    latest_episode_succeeded = False
+
+    if latest_episode is not None:
+        status_payload["latest_episode_guid"] = str(latest_episode.guid)
+        status_payload["latest_episode_title"] = latest_episode.title
+        status_payload["latest_episode_published_at_utc"] = latest_episode.published_at.isoformat()
+
+    if not selected:
+        status_payload["failure_stage"] = "discovery"
+        status_payload["failure_reason"] = "No episodes selected under current filters."
+        status_payload["suggested_next_action"] = _next_action_for_stage("discovery")
+
     for episode in selected:
         key = episode_key(show_key, episode.guid)
         existing = index["episodes"].get(key)
         if existing and existing.get("status") == "ok":
             stats["skipped"] += 1
+            if latest_episode and str(episode.guid) == str(latest_episode.guid):
+                latest_episode_succeeded = True
             continue
 
+        status_payload["attempted_episode_guid"] = str(episode.guid)
+        status_payload["attempted_episode_title"] = episode.title
+        status_payload["attempted_source_type"] = getattr(episode, "source_type", "unknown")
+        status_payload["attempted_source_url"] = episode.source_url
         LOGGER.info("Processing: %s", episode.title)
         try:
             used_caption = _process_episode(
@@ -169,14 +253,59 @@ def sync_show(
             stats["processed"] += 1
             if used_caption:
                 stats["caption_used"] += 1
+            if latest_episode and str(episode.guid) == str(latest_episode.guid):
+                latest_episode_succeeded = True
+        except ProcessingError as exc:
+            LOGGER.exception("Failed episode %s: %s", episode.source_url, exc)
+            _mark(index, key, "failed", reason=exc.reason, stage=exc.stage, source_url=episode.source_url)
+            stats["failed"] += 1
+            status_payload["failure_stage"] = exc.stage
+            status_payload["failure_reason"] = exc.reason
+            status_payload["suggested_next_action"] = _next_action_for_stage(exc.stage)
         except Exception as exc:  # noqa: BLE001
             LOGGER.exception("Failed episode %s: %s", episode.source_url, exc)
-            _mark(index, key, "failed", reason=str(exc), source_url=episode.source_url)
+            _mark(index, key, "failed", reason=str(exc), stage="sync", source_url=episode.source_url)
             stats["failed"] += 1
+            status_payload["failure_stage"] = "sync"
+            status_payload["failure_reason"] = str(exc)
+            status_payload["suggested_next_action"] = _next_action_for_stage("sync")
         finally:
             save_processed(index)
 
-    _refresh_stable_pointer(show, index)
+    if latest_episode_succeeded:
+        _refresh_stable_pointer(show, index)
+        status_payload["included_in_pointer"] = True
+        status_payload["pointer_updated_at_utc"] = now_iso()
+        status_payload["run_status"] = "ok"
+    else:
+        status_payload["included_in_pointer"] = False
+        status_payload["run_status"] = "failed" if stats["failed"] > 0 or selected else "failed"
+        if not status_payload["failure_stage"]:
+            status_payload["failure_stage"] = "sync"
+            status_payload["failure_reason"] = "Latest episode was not included in pointer update."
+            status_payload["suggested_next_action"] = _next_action_for_stage("sync")
+
+    if latest_episode is not None:
+        latest_key = episode_key(show_key, latest_episode.guid)
+        latest_payload = index["episodes"].get(latest_key, {})
+        status_payload["plain_artifact_path"] = latest_payload.get("transcript_plain_path")
+        status_payload["segments_artifact_path"] = latest_payload.get("transcript_segments_path")
+        if status_payload["attempted_episode_guid"] is None:
+            status_payload["attempted_episode_guid"] = str(latest_episode.guid)
+            status_payload["attempted_episode_title"] = latest_episode.title
+            status_payload["attempted_source_type"] = getattr(latest_episode, "source_type", "unknown")
+            status_payload["attempted_source_url"] = latest_episode.source_url
+
+    status_payload["run_finished_at_utc"] = now_iso()
+    status_json_path, status_md_path = write_run_status_artifacts(
+        show_key=show_key,
+        payload=status_payload,
+        status_basename=status_basename,
+    )
+    stats["status_json_path"] = str(status_json_path)
+    stats["status_md_path"] = str(status_md_path)
+    stats["latest_included_in_pointer"] = bool(status_payload["included_in_pointer"])
+    stats["run_status"] = status_payload["run_status"]
     return stats
 
 
@@ -207,39 +336,42 @@ def _maybe_use_captions(
         for cue in payload.cues
     ]
 
-    transcript_file = write_transcript(
-        show_key=show_key,
-        episode_title=episode.title,
-        published_at=episode.published_at,
-        source_url=episode.source_url,
-        guid=episode.guid,
-        transcript_text=payload.text,
-        transcription_model="youtube_caption_auto",
-        segments=segments,
-        transcript_source="youtube_caption",
-        speaker_strategy="unknown",
-    )
-    plain_path, segments_path = write_output_artifacts(
-        transcript_file=transcript_file,
-        transcript_text=payload.text,
-        segments=segments,
-        metadata={
-            "source_platform": "youtube",
-            "source_url": episode.source_url,
-            "source_id": str(episode.guid),
-            "show_name": show_key,
-            "episode_title": episode.title,
-            "published_at_utc": episode.published_at.isoformat(),
-            "retrieved_at_utc": now_iso(),
-            "pipeline_version": "0.2.1",
-            "transcription_method": "youtube_captions_stitched",
-            "speaker_mode": "unknown",
-            "speakers_detected": "unknown",
-            "quality_word_count": payload.quality.get("word_count", 0),
-            "quality_repetition_ratio_5gram": payload.quality.get("repetition_ratio_5gram", 0),
-            "quality_lexical_diversity": payload.quality.get("lexical_diversity", 0),
-        },
-    )
+    try:
+        transcript_file = write_transcript(
+            show_key=show_key,
+            episode_title=episode.title,
+            published_at=episode.published_at,
+            source_url=episode.source_url,
+            guid=episode.guid,
+            transcript_text=payload.text,
+            transcription_model="youtube_caption_auto",
+            segments=segments,
+            transcript_source="youtube_caption",
+            speaker_strategy="unknown",
+        )
+        plain_path, segments_path = write_output_artifacts(
+            transcript_file=transcript_file,
+            transcript_text=payload.text,
+            segments=segments,
+            metadata={
+                "source_platform": "youtube",
+                "source_url": episode.source_url,
+                "source_id": str(episode.guid),
+                "show_name": show_key,
+                "episode_title": episode.title,
+                "published_at_utc": episode.published_at.isoformat(),
+                "retrieved_at_utc": now_iso(),
+                "pipeline_version": "0.2.1.1",
+                "transcription_method": "youtube_captions_stitched",
+                "speaker_mode": "unknown",
+                "speakers_detected": "unknown",
+                "quality_word_count": payload.quality.get("word_count", 0),
+                "quality_repetition_ratio_5gram": payload.quality.get("repetition_ratio_5gram", 0),
+                "quality_lexical_diversity": payload.quality.get("lexical_diversity", 0),
+            },
+        )
+    except Exception as exc:  # noqa: BLE001
+        raise ProcessingError(stage="write_output", reason=str(exc)) from exc
 
     _mark(
         index,
@@ -276,7 +408,10 @@ def _download_media_with_cache(show_key: str, episode: Any) -> Path:
 
     media_dir = ROOT / "cache" / "media" / show_key / _cache_key(show_key, str(episode.guid))
     media_dir.mkdir(parents=True, exist_ok=True)
-    return acquire_media(episode, media_dir, filename_hint=_cache_key(show_key, str(episode.guid)))
+    try:
+        return acquire_media(episode, media_dir, filename_hint=_cache_key(show_key, str(episode.guid)))
+    except Exception as exc:  # noqa: BLE001
+        raise ProcessingError(stage="media_download", reason=str(exc)) from exc
 
 
 def _process_episode(
@@ -297,53 +432,67 @@ def _process_episode(
 
     source_type = str(getattr(episode, "source_type", "unknown"))
     try_captions = source_type.startswith("youtube") and source_policy in {"balanced", "audio-first", "caption-first"}
-    if try_captions and _maybe_use_captions(
-        show_key=show_key,
-        episode=episode,
-        index=index,
-        key=key,
-        min_caption_words=min_caption_words,
-    ):
-        return True
+    caption_used = False
+
+    if try_captions:
+        caption_used = _maybe_use_captions(
+            show_key=show_key,
+            episode=episode,
+            index=index,
+            key=key,
+            min_caption_words=min_caption_words,
+        )
+        if caption_used:
+            return True
 
     if source_type.startswith("youtube") and no_youtube_download:
-        raise RuntimeError("YouTube download disabled by --no-youtube-download and usable captions were unavailable")
+        raise ProcessingError(
+            stage="caption_quality_gate",
+            reason="YouTube download disabled and usable captions were unavailable.",
+        )
 
     media_path = _resolve_cached_media(existing)
     if media_path is None:
         media_path = _download_media_with_cache(show_key, episode)
 
-    result = transcribe_audio(media_path, model=model)
-    transcript_file = write_transcript(
-        show_key=show_key,
-        episode_title=episode.title,
-        published_at=episode.published_at,
-        source_url=episode.source_url,
-        guid=episode.guid,
-        transcript_text=result.text,
-        transcription_model=result.model_used,
-        segments=result.segments,
-        transcript_source="audio_transcription",
-        speaker_strategy="guest_priority",
-    )
-    plain_path, segments_path = write_output_artifacts(
-        transcript_file=transcript_file,
-        transcript_text=result.text,
-        segments=result.segments,
-        metadata={
-            "source_platform": "rss" if source_type.startswith("rss") else "youtube",
-            "source_url": episode.source_url,
-            "source_id": str(episode.guid),
-            "show_name": show_key,
-            "episode_title": episode.title,
-            "published_at_utc": episode.published_at.isoformat(),
-            "retrieved_at_utc": now_iso(),
-            "pipeline_version": "0.2.1",
-            "transcription_method": f"asr_{result.model_used}",
-            "speaker_mode": "unknown",
-            "speakers_detected": "unknown",
-        },
-    )
+    try:
+        result = transcribe_audio(media_path, model=model)
+    except Exception as exc:  # noqa: BLE001
+        raise ProcessingError(stage="transcription", reason=str(exc)) from exc
+
+    try:
+        transcript_file = write_transcript(
+            show_key=show_key,
+            episode_title=episode.title,
+            published_at=episode.published_at,
+            source_url=episode.source_url,
+            guid=episode.guid,
+            transcript_text=result.text,
+            transcription_model=result.model_used,
+            segments=result.segments,
+            transcript_source="audio_transcription",
+            speaker_strategy="guest_priority",
+        )
+        plain_path, segments_path = write_output_artifacts(
+            transcript_file=transcript_file,
+            transcript_text=result.text,
+            segments=result.segments,
+            metadata={
+                "source_platform": "rss" if source_type.startswith("rss") else "youtube",
+                "source_url": episode.source_url,
+                "source_id": str(episode.guid),
+                "show_name": show_key,
+                "episode_title": episode.title,
+                "published_at_utc": episode.published_at.isoformat(),
+                "retrieved_at_utc": now_iso(),
+                "pipeline_version": "0.2.1.1",
+                "transcription_method": f"asr_{result.model_used}",
+                "speaker_mode": "unknown",
+                "speakers_detected": "unknown",
+            },
+        )
+    except Exception as exc:  # noqa: BLE001
+        raise ProcessingError(stage="write_output", reason=str(exc)) from exc
 
     _mark(
         index,

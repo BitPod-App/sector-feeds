@@ -10,6 +10,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Placeholder section for upcoming changes.
 
+## [0.2.1.1] - 2026-02-25
+
+### Added
+- Added explicit weekly run status artifacts:
+  - `transcripts/jack_mallers_show/mallers_bitpod_status.json`
+  - `transcripts/jack_mallers_show/mallers_bitpod_status.md`
+- Added weekly helper scripts:
+  - `scripts/run_mallers_weekly.sh`
+  - `scripts/report_mallers_weekly_status.sh`
+- Added failure-stage classification and recommended next-action hints for weekly runs.
+
+### Changed
+- Sync now always emits run-level status artifacts on non-dry runs.
+- Stable pointer updates only when the selected latest episode is successfully included.
+- Version bumped to `0.2.1.1`.
+
 ## [0.2.1] - 2026-02-20
 
 ### Added
@@ -48,7 +64,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial repository bootstrap.
 
-[Unreleased]: https://github.com/cjarguello/bitpod/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/cjarguello/bitpod/compare/v0.2.1.1...HEAD
+[0.2.1.1]: https://github.com/cjarguello/bitpod/compare/v0.2.1...v0.2.1.1
 [0.2.1]: https://github.com/cjarguello/bitpod/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/cjarguello/bitpod/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/cjarguello/bitpod/compare/v0.1.0...v0.1.1

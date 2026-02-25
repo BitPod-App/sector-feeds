@@ -84,21 +84,33 @@ Outputs
 - Transcript Markdown files in `transcripts/<show_key>/<YYYY>/`.
 - Companion plain-text files: `*_plain.txt`.
 - Companion structured segments: `*_segments.jsonl`.
+- Weekly run status artifacts:
+  - `transcripts/jack_mallers_show/mallers_bitpod_status.json`
+  - `transcripts/jack_mallers_show/mallers_bitpod_status.md`
 - Processing status index in `index/processed.json`.
 - Discovered/normalized feed metadata in `shows.json`.
+
+Per-show contract (API-like surface):
+- Each show has its own stable pointer (`stable_pointer` in `shows.json`).
+- Each show has its own status artifacts (`<stable_pointer_stem>_status.json|md`).
+- Schedules can differ per show while preserving the same output contract.
 
 ## Supported Feeds (Current)
 
 - `jack_mallers_show`: confirmed working reference feed path.
 - Additional source types and social feed integrations: planned next.
 
-## Stable Permalink For GPT Fetching
+## Stable Pointer And Private GPT Workflow
 
 Primary stable transcript pointer (Jack Mallers):
 - `transcripts/jack_mallers_show/mallers_bitpod.md`
 
 Raw GitHub URL:
 - `https://raw.githubusercontent.com/cjarguello/bitpod/main/transcripts/jack_mallers_show/mallers_bitpod.md`
+
+Note:
+- If the repository is private, GPT cannot fetch the raw URL directly.
+- Use local upload artifacts instead (`mallers_bitpod.md` plus `mallers_bitpod_status.md`).
 
 How it updates:
 1. Run `sync` successfully for `jack_mallers_show`.
@@ -109,13 +121,20 @@ How it updates:
 Operational commands:
 
 ```bash
-cd /Users/cjarguello/bitpod
+cd /Users/cjarguello/bitpod-app/bitpod
 source .venv311/bin/activate
 python -m bitpod discover --show jack_mallers_show
 python -m bitpod sync --show jack_mallers_show --max-episodes 1
-git add transcripts/jack_mallers_show/mallers_bitpod.md index/processed.json shows.json
-git commit -m "chore: refresh latest Jack Mallers transcript pointer"
-git push origin main
+```
+
+Weekly helper scripts:
+
+```bash
+# Monday run (newest 1 episode, status artifacts always written)
+bash scripts/run_mallers_weekly.sh
+
+# Tuesday verification report (writes artifacts/mallers_weekly_report.md)
+bash scripts/report_mallers_weekly_status.sh
 ```
 
 ## Roadmap (Near Term)
