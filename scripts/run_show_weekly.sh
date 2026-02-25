@@ -2,12 +2,13 @@
 set -euo pipefail
 
 if [ "$#" -lt 1 ]; then
-  echo "Usage: $0 <show_key> [min_caption_words]"
+  echo "Usage: $0 <show_key> [min_caption_words] [min_episode_age_minutes]"
   exit 2
 fi
 
 SHOW_KEY="$1"
 MIN_CAPTION_WORDS="${2:-${MIN_CAPTION_WORDS:-120}}"
+MIN_EPISODE_AGE_MINUTES="${3:-${MIN_EPISODE_AGE_MINUTES:-180}}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
@@ -17,7 +18,8 @@ cd "$REPO_ROOT"
   --show "$SHOW_KEY" \
   --max-episodes 1 \
   --source-policy balanced \
-  --min-caption-words "$MIN_CAPTION_WORDS"
+  --min-caption-words "$MIN_CAPTION_WORDS" \
+  --min-episode-age-minutes "$MIN_EPISODE_AGE_MINUTES"
 
 .venv311/bin/python - "$SHOW_KEY" "$REPO_ROOT" <<'PY'
 import json

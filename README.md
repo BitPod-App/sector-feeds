@@ -149,7 +149,20 @@ bash scripts/record_show_gpt_feedback.sh <show_key> <feedback_markdown_path>
 
 # - verify run + GPT consumption + feedback linkage
 bash scripts/verify_show_adhoc.sh <show_key>
+
+# Unified operator commands (chat-friendly wrappers):
+bash scripts/bitpod_status.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"]
+bash scripts/bitpod_sync.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"] [--min-episode-age-minutes 180] [--trigger-cmd "<cmd>"]
+bash scripts/bitpod_verify.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"] [--gpt-feedback-file <path>] [--gpt-note "<text>"]
 ```
+
+Timeline policy:
+- Default local timeline is `America/Managua` (no DST drift).
+- `--as-of` is optional and intended for historical debugging/replay.
+- For live-heavy YouTube sources, sync applies a default maturity guard (`--min-episode-age-minutes 180`) to avoid unfinished captures.
+
+Cadence policy:
+- Unknown-cadence shows should be checked frequently (scan model), but processing remains idempotent: if latest is already transcribed and pointer-ready, ad hoc sync skips work.
 
 ## Roadmap (Near Term)
 

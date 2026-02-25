@@ -38,6 +38,7 @@ def _cmd_sync(args: argparse.Namespace) -> int:
         source_policy=args.source_policy,
         no_youtube_download=args.no_youtube_download,
         min_caption_words=args.min_caption_words,
+        min_episode_age_minutes=args.min_episode_age_minutes,
     )
     print(json.dumps({"show": args.show, "stats": stats}, indent=2))
     return 0
@@ -75,6 +76,12 @@ def build_parser() -> argparse.ArgumentParser:
         type=int,
         default=120,
         help="Minimum stitched caption words required before captions are accepted",
+    )
+    sync_parser.add_argument(
+        "--min-episode-age-minutes",
+        type=int,
+        default=180,
+        help="Skip very recent YouTube/live episodes until they are at least this old",
     )
     sync_parser.set_defaults(func=_cmd_sync)
 

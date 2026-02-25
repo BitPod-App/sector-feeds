@@ -28,11 +28,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `scripts/run_show_adhoc.sh <show_key>`
   - `scripts/record_show_gpt_feedback.sh <show_key> <feedback_md>`
   - `scripts/verify_show_adhoc.sh <show_key>`
+- Added operator wrappers:
+  - `scripts/bitpod_status.sh`
+  - `scripts/bitpod_sync.sh`
+  - `scripts/bitpod_verify.sh`
 - Added failure-stage classification and recommended next-action hints for weekly runs.
+- Added YouTube episode maturity guardrail (`min_episode_age_minutes`, default `180`) to reduce unfinished live capture risk.
 
 ### Changed
 - Sync now always emits run-level status artifacts on non-dry runs.
 - Stable pointer updates only when the selected latest episode is successfully included.
+- Verify parity now requires GPT consumption status to be positive for requested shows.
 - Version bumped to `0.2.1.1`.
 
 ## [0.2.1] - 2026-02-20

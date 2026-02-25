@@ -119,6 +119,8 @@ def sync_show(
     source_policy: str = "balanced",
     no_youtube_download: bool = False,
     min_caption_words: int = 120,
+    min_episode_age_minutes: int = 180,
+    as_of_utc: datetime | None = None,
 ) -> dict[str, Any]:
     from bitpod.storage import write_gpt_review_request, write_run_status_artifacts
 
@@ -137,6 +139,7 @@ def sync_show(
         "dry_run": dry_run,
         "feeds": feed_urls,
         "source_policy": source_policy,
+        "min_episode_age_minutes": min_episode_age_minutes,
     }
 
     # Always produce explicit status artifacts for non-dry runs.
@@ -204,8 +207,23 @@ def sync_show(
         deduped_by_guid[guid] = episode if current is None else _choose_best_source(current, episode)
 
     episodes = list(deduped_by_guid.values())
+    cutoff_now = as_of_utc or datetime.now(timezone.utc)
+    episodes = [ep for ep in episodes if ep.published_at <= cutoff_now]
     stats["seen"] = len(episodes)
-    selected = filter_episodes(episodes, max_episodes=max_episodes, since_days=since_days)
+
+    # Live streams and very fresh uploads can be incomplete; hold recent YouTube episodes by default.
+    mature_cutoff = cutoff_now - timedelta(minutes=max(min_episode_age_minutes, 0))
+    matured_episodes: list[Any] = []
+    deferred_recent_youtube = 0
+    for ep in episodes:
+        source_type = str(getattr(ep, "source_type", "unknown"))
+        if source_type.startswith("youtube") and ep.published_at > mature_cutoff:
+            deferred_recent_youtube += 1
+            continue
+        matured_episodes.append(ep)
+
+    stats["deferred_recent_youtube"] = deferred_recent_youtube
+    selected = filter_episodes(matured_episodes, max_episodes=max_episodes, since_days=since_days)
     stats["selected"] = len(selected)
 
     if dry_run:
@@ -233,7 +251,13 @@ def sync_show(
 
     if not selected:
         status_payload["failure_stage"] = "discovery"
-        status_payload["failure_reason"] = "No episodes selected under current filters."
+        if deferred_recent_youtube > 0:
+            status_payload["failure_reason"] = (
+                f"No eligible episodes yet; deferred {deferred_recent_youtube} recent YouTube item(s) "
+                f"under min_episode_age_minutes={min_episode_age_minutes}."
+            )
+        else:
+            status_payload["failure_reason"] = "No episodes selected under current filters and maturity guard."
         status_payload["suggested_next_action"] = _next_action_for_stage("discovery")
 
     for episode in selected:
@@ -576,7 +600,7 @@ def _refresh_stable_pointer(show: dict[str, Any], index: dict[str, Any]) -> None
 
         transcript_path = Path(transcript_path_raw)
         if not transcript_path.is_absolute():
-            transcript_path = Path.cwd() / transcript_path
+            transcript_path = ROOT / transcript_path
         if not transcript_path.exists():
             continue
 
