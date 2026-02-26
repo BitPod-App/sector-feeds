@@ -26,8 +26,17 @@ binary_ext_regex='(mp3|mp4|mov|m4a|wav|flac|zip|tar|gz|7z|pdf|png|jpg|jpeg|webp|
 
 violations=0
 
+file_size_bytes() {
+  local path="$1"
+  if stat -f '%z' "${path}" >/dev/null 2>&1; then
+    stat -f '%z' "${path}"
+  else
+    stat -c '%s' "${path}"
+  fi
+}
+
 while IFS= read -r -d '' path; do
-  size="$(stat -f '%z' "${path}")"
+  size="$(file_size_bytes "${path}")"
   name_lc="$(printf '%s' "${path}" | tr '[:upper:]' '[:lower:]')"
 
   if [[ "${size}" -gt "${hard_max_bytes}" ]]; then
@@ -48,4 +57,3 @@ if [[ "${violations}" -gt 0 ]]; then
 fi
 
 echo "Repo size check passed."
-
