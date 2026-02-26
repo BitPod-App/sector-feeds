@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import logging
 import re
+import threading
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
@@ -34,11 +35,32 @@ class CaptionExtraction:
 def download_youtube_audio(source_url: str, output_dir: Path) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     outtmpl = str(output_dir / "%(id)s.%(ext)s")
+    progress_state: dict[str, int] = {"last_percent": -1}
+    progress_lock = threading.Lock()
+
+    def _progress_hook(payload: dict[str, Any]) -> None:
+        if payload.get("status") != "downloading":
+            return
+        total = payload.get("total_bytes") or payload.get("total_bytes_estimate")
+        downloaded = payload.get("downloaded_bytes")
+        if not isinstance(total, (int, float)) or not isinstance(downloaded, (int, float)) or total <= 0:
+            return
+
+        percent = int((downloaded / total) * 100)
+        # Throttle log spam: only emit every 10% plus completion.
+        bucket = min(100, (percent // 10) * 10)
+        with progress_lock:
+            if bucket <= progress_state["last_percent"]:
+                return
+            progress_state["last_percent"] = bucket
+        LOGGER.info("YouTube download progress: %s%%", bucket)
+
     opts = {
         "quiet": True,
         "format": "bestaudio/best",
         "outtmpl": outtmpl,
         "noplaylist": True,
+        "progress_hooks": [_progress_hook],
     }
 
     with yt_dlp.YoutubeDL(opts) as ydl:

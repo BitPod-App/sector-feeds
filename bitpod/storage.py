@@ -118,3 +118,99 @@ def write_output_artifacts(
         segment_rows.append(json.dumps(row, ensure_ascii=False))
     segments_path.write_text("\n".join(segment_rows) + ("\n" if segment_rows else ""), encoding="utf-8")
     return plain_path, segments_path
+
+
+def status_paths(show_key: str, status_basename: str = "latest_bitpod_status") -> tuple[Path, Path]:
+    base_dir = TRANSCRIPTS_ROOT / show_key
+    return base_dir / f"{status_basename}.json", base_dir / f"{status_basename}.md"
+
+
+def write_run_status_artifacts(
+    *,
+    show_key: str,
+    payload: dict[str, Any],
+    status_basename: str = "latest_bitpod_status",
+) -> tuple[Path, Path]:
+    json_path, md_path = status_paths(show_key, status_basename=status_basename)
+    json_path.parent.mkdir(parents=True, exist_ok=True)
+
+    json_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+    is_success = payload.get("run_status") == "ok" and bool(payload.get("included_in_pointer"))
+    headline = "SUCCESS" if is_success else "FAILED"
+    lines = [f"# {headline}", ""]
+    lines.append(f"- show: `{payload.get('show_key', show_key)}`")
+    lines.append(f"- run_id: `{payload.get('run_id', '')}`")
+    lines.append(f"- run_status: `{payload.get('run_status', '')}`")
+    lines.append(f"- latest_episode_title: `{payload.get('latest_episode_title', '')}`")
+    lines.append(f"- latest_episode_guid: `{payload.get('latest_episode_guid', '')}`")
+    lines.append(f"- latest_episode_published_at_utc: `{payload.get('latest_episode_published_at_utc', '')}`")
+    lines.append(f"- included_in_pointer: `{payload.get('included_in_pointer', False)}`")
+    lines.append(f"- pointer_path: `{payload.get('pointer_path', '')}`")
+    lines.append(f"- pointer_updated_at_utc: `{payload.get('pointer_updated_at_utc', '')}`")
+    lines.append(f"- plain_artifact_path: `{payload.get('plain_artifact_path', '')}`")
+    lines.append(f"- segments_artifact_path: `{payload.get('segments_artifact_path', '')}`")
+
+    failure_stage = payload.get("failure_stage")
+    failure_reason = payload.get("failure_reason")
+    if failure_stage or failure_reason:
+        lines.extend(["", "## Failure Details"])
+        lines.append(f"- failure_stage: `{failure_stage}`")
+        lines.append(f"- failure_reason: `{failure_reason}`")
+        lines.append(f"- suggested_next_action: `{payload.get('suggested_next_action', '')}`")
+
+    md_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return json_path, md_path
+
+
+def write_gpt_review_request(
+    *,
+    show_key: str,
+    payload: dict[str, Any],
+    status_basename: str = "latest_bitpod_status",
+) -> Path:
+    review_basename = status_basename.replace("_status", "_gpt_review_request")
+    _, md_status = status_paths(show_key, status_basename=status_basename)
+    review_path = md_status.with_name(f"{review_basename}.md")
+    review_path.parent.mkdir(parents=True, exist_ok=True)
+
+    lines = [
+        "# GPT Review Request",
+        "",
+        "Use this file to review the latest ingestion/transcription run and provide actionable QA feedback.",
+        "",
+        "## Run Summary",
+        f"- show_key: `{payload.get('show_key')}`",
+        f"- run_id: `{payload.get('run_id')}`",
+        f"- run_status: `{payload.get('run_status')}`",
+        f"- latest_episode_title: `{payload.get('latest_episode_title')}`",
+        f"- latest_episode_guid: `{payload.get('latest_episode_guid')}`",
+        f"- latest_episode_published_at_utc: `{payload.get('latest_episode_published_at_utc')}`",
+        f"- included_in_pointer: `{payload.get('included_in_pointer')}`",
+        "",
+        "## Artifacts",
+        f"- pointer_path: `{payload.get('pointer_path')}`",
+        f"- status_json_path: `{payload.get('status_json_path')}`",
+        f"- status_md_path: `{payload.get('status_md_path')}`",
+        f"- plain_artifact_path: `{payload.get('plain_artifact_path')}`",
+        f"- segments_artifact_path: `{payload.get('segments_artifact_path')}`",
+        "",
+        "## Failure Context",
+        f"- failure_stage: `{payload.get('failure_stage')}`",
+        f"- failure_reason: `{payload.get('failure_reason')}`",
+        f"- suggested_next_action: `{payload.get('suggested_next_action')}`",
+        "",
+        "## GPT Instructions",
+        "- If run failed: explain root cause, likely fix, and lowest-risk retry path.",
+        "- If run succeeded: assess transcript quality (clarity, duplication, structure, speaker usefulness).",
+        "- Provide concise patch recommendations to improve reliability and quality.",
+        "- Flag whether transcript is usable for downstream macro/bitcoin event processing.",
+        "",
+        "## Expected GPT Output Format",
+        "1. Status assessment (`usable` / `degraded` / `failed`)",
+        "2. Quality findings (ordered by severity)",
+        "3. Suggested fixes (specific and testable)",
+        "4. Retry recommendation (yes/no + command)",
+    ]
+    review_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return review_path

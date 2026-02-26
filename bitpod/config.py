@@ -13,7 +13,7 @@ DEFAULT_SHOWS: dict[str, dict[str, Any]] = {
         "youtube_channel_url": "https://youtube.com/@thejackmallersshow",
         "anchor_show_id": "e29097f4",
         "discover_anchor_holy_grail": True,
-        "stable_pointer": "mallers_bitpod.md",
+        "stable_pointer": "jack_mallers.md",
         "feeds": {"rss": ["https://anchor.fm/s/e29097f4/podcast/rss"]},
     }
 }

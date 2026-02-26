@@ -10,6 +10,41 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Placeholder section for upcoming changes.
 
+## [0.2.1.1] - 2026-02-25
+
+### Added
+- Added explicit weekly run status artifacts:
+  - `transcripts/jack_mallers_show/jack_mallers_status.json`
+  - `transcripts/jack_mallers_show/jack_mallers_status.md`
+- Added GPT QA request artifact for every run:
+  - `transcripts/<show_key>/<stable_pointer_stem>_gpt_review_request.md`
+- Added weekly helper scripts:
+  - `scripts/run_mallers_weekly.sh`
+  - `scripts/report_mallers_weekly_status.sh`
+- Added generic multi-show weekly scripts:
+  - `scripts/run_show_weekly.sh <show_key>`
+  - `scripts/report_show_weekly_status.sh <show_key>`
+- Added show-agnostic ad hoc scripts:
+  - `scripts/run_show_adhoc.sh <show_key>`
+  - `scripts/record_show_gpt_feedback.sh <show_key> <feedback_md>`
+  - `scripts/verify_show_adhoc.sh <show_key>`
+- Added operator wrappers:
+  - `scripts/bitpod_status.sh`
+  - `scripts/bitpod_sync.sh`
+  - `scripts/bitpod_verify.sh`
+- Added failure-stage classification and recommended next-action hints for weekly runs.
+- Added YouTube episode maturity guardrail (`min_episode_age_minutes`, default `180`) to reduce unfinished live capture risk.
+- Added cost-aware GPT report generator script with default excerpt mode:
+  - `scripts/gpt_report_from_transcript.py`
+  - token estimate logging to `artifacts/cost-meter/bridge_cost_estimates.jsonl`
+
+### Changed
+- Sync now always emits run-level status artifacts on non-dry runs.
+- Stable pointer updates only when the selected latest episode is successfully included.
+- Verify parity now requires GPT consumption status to be positive for requested shows.
+- Added transcription payload-size fallback path with ffmpeg compression ladder for oversized audio uploads (413 handling).
+- Version bumped to `0.2.1.1`.
+
 ## [0.2.1] - 2026-02-20
 
 ### Added
@@ -48,7 +83,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial repository bootstrap.
 
-[Unreleased]: https://github.com/cjarguello/bitpod/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/cjarguello/bitpod/compare/v0.2.1.1...HEAD
+[0.2.1.1]: https://github.com/cjarguello/bitpod/compare/v0.2.1...v0.2.1.1
 [0.2.1]: https://github.com/cjarguello/bitpod/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/cjarguello/bitpod/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/cjarguello/bitpod/compare/v0.1.0...v0.1.1
