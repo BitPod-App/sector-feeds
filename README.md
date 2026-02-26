@@ -166,6 +166,10 @@ bash scripts/bitpod_verify.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:M
 # Deploy public permalink artifacts to Cloudflare Pages (static only):
 bash scripts/deploy_public_permalinks_pages.sh [project_name] [branch]
 
+# Paranoid-public Cloudflare hardening checklist:
+# - custom domain + AI crawler controls + bot policy
+# - see CLOUDFLARE_PARANOID_PUBLIC_CHECKLIST.md
+
 # Cost-controlled GPT report generation from transcript:
 # default mode sends excerpt only (not full transcript)
 .venv311/bin/python scripts/gpt_report_from_transcript.py \
