@@ -18,7 +18,7 @@ from bitpod.sync import _choose_best_source, get_feed_urls, sync_show
 LOCAL_TZ = ZoneInfo("America/Managua")
 REPORT_DIR = ROOT / "artifacts" / "gpt-bitreports"
 FEEDBACK_DIR = ROOT / "artifacts" / "gpt-feedback"
-REPORT_PATTERN = re.compile(r"gpt-bitreport-pods-(all|partial|none)-([0-9]{8}-[0-9]{4})\\.md$")
+REPORT_PATTERN = re.compile(r"gpt-bitreport-pods-(all|partial|none)-([0-9]{8}-[0-9]{4})\.md$")
 
 
 @dataclass
@@ -107,6 +107,7 @@ def build_show_state(show_key: str, as_of_utc: datetime) -> ShowState:
     failure_reason = None
     failure_stage = None
 
+    payload: dict[str, Any] = {}
     if status_json.exists():
         payload = json.loads(status_json.read_text(encoding="utf-8"))
         run_id = payload.get("run_id")
@@ -119,6 +120,13 @@ def build_show_state(show_key: str, as_of_utc: datetime) -> ShowState:
         existing = index.get("episodes", {}).get(key, {})
         transcript_path = existing.get("transcript_path")
         latest_ready = bool(existing.get("status") == "ok" and isinstance(transcript_path, str) and transcript_path and Path(transcript_path).exists())
+    else:
+        # If feed lookup is temporarily unavailable, trust last successful pointer status artifact.
+        latest_ready = bool(
+            payload.get("run_status") == "ok"
+            and payload.get("included_in_pointer") is True
+            and (ROOT / "transcripts" / show_key / stable_pointer).exists()
+        )
 
     pointer_path = ROOT / "transcripts" / show_key / stable_pointer
     return ShowState(

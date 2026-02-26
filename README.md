@@ -154,12 +154,27 @@ bash scripts/verify_show_adhoc.sh <show_key>
 bash scripts/bitpod_status.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"]
 bash scripts/bitpod_sync.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"] [--min-episode-age-minutes 180] [--trigger-cmd "<cmd>"]
 bash scripts/bitpod_verify.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"] [--gpt-feedback-file <path>] [--gpt-note "<text>"]
+
+# Cost-controlled GPT report generation from transcript:
+# default mode sends excerpt only (not full transcript)
+.venv311/bin/python scripts/gpt_report_from_transcript.py \
+  --transcript-path transcripts/jack_mallers_show/jack_mallers.md \
+  --report-name gpt-bitreport-pods-all-YYYYMMDD-HHMM.md \
+  --show-key jack_mallers_show
+
+# full transcript mode (explicit opt-in only)
+.venv311/bin/python scripts/gpt_report_from_transcript.py \
+  --transcript-path transcripts/jack_mallers_show/jack_mallers.md \
+  --report-name gpt-bitreport-pods-all-YYYYMMDD-HHMM.md \
+  --show-key jack_mallers_show \
+  --full-text
 ```
 
 Timeline policy:
 - Default local timeline is `America/Managua` (no DST drift).
 - `--as-of` is optional and intended for historical debugging/replay.
 - For live-heavy YouTube sources, sync applies a default maturity guard (`--min-episode-age-minutes 180`) to avoid unfinished captures.
+- GPT bridge cost estimates are logged to `artifacts/cost-meter/bridge_cost_estimates.jsonl`.
 
 Cadence policy:
 - Unknown-cadence shows should be checked frequently (scan model), but processing remains idempotent: if latest is already transcribed and pointer-ready, ad hoc sync skips work.
