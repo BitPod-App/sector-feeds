@@ -90,6 +90,11 @@ Outputs
 - Processing status index in `index/processed.json`.
 - Discovered/normalized feed metadata in `shows.json`.
 
+Artifact tracking policy:
+- Runtime/cache outputs are local-only and git-ignored (for example: `cache/`, `.wrangler/`, `artifacts/public/`, `artifacts/private/`, cost logs, and feedback logs).
+- Canonical transcript artifacts under `transcripts/` remain tracked unless explicitly changed by project policy.
+- Before push, run `make audit` to enforce size guard + unit tests.
+
 Per-show contract (API-like surface):
 - Each show has its own stable pointer (`stable_pointer` in `shows.json`).
 - Each show has its own status artifacts (`<stable_pointer_stem>_status.json|md`).
@@ -239,3 +244,7 @@ Cadence policy:
 
 - Versioning follows pre-1.0 SemVer (`0.x.y`).
 - Change history lives in [CHANGELOG.md](CHANGELOG.md).
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the local quality gate and pre-push checklist.
