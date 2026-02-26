@@ -1,0 +1,2475 @@
+---
+show_key: "jack_mallers_show"
+episode_title: "AI Is Breaking The System & What It Means For Bitcoin"
+published_at: "2026-02-24T09:49:52+00:00"
+source_url: "https://podcasters.spotify.com/pod/show/thejackmallersshow/episodes/AI-Is-Breaking-The-System--What-It-Means-For-Bitcoin-e3fhfee"
+guid: "266c579c-f69b-4913-ace2-16fad273a221"
+fetched_at: "2026-02-26T02:42:09+00:00"
+transcription_model: "whisper-1"
+transcript_source: "audio_transcription"
+speaker_strategy: "guest_priority"
+guest_weighting_hint: "guest_over_host"
+speaker_segments_present: "True"
+---
+
+Yo, welcome back to another episode of the Jack Mallers show. I am your host, Jack, and you are listening to yet another edition of Mailbag Mondays. All signal, no noise, and no ads. Every Monday, 6 p.m. Eastern, 5 p.m. Central, 3 p.m. Pacific, let's get this show timestamped. Ladies and gentlemen, I'm talking to you live at a Bitcoin price of $64,760. That puts Bitcoin's market cap at $1.29 trillion. Our all-time high remains at $126,160. We're about 50% down from that all-time high, 48.7% to be exact. We made that all-time high on October 6th, 2025. It's been 140 days. For those of you that keep track of the Bitcoin block height, timestamp your life in Bitcoin block time. The last Bitcoin block mined before I hit record was Bitcoin block height 938,033. The road to one million, not only in price, but in blocks, baby. Stay humble and stack stats. Stay humble and mine blocks. All right, ladies and gentlemen, there's so much going on in the world, it's difficult for me to understand and to pick a topic. What do the people want from the boy? What type of truth needs to bear from my lips? And I decided on this, AI is breaking the system and what it means for Bitcoin. I could have gone in a million different directions. Gold continues to perform well. Gold was actually the US's second largest export of 2025. So I could have gone in that direction, but we've talked enough about gold. We know who's buying it and we know why they're buying it. We know why gold is performing and everything else isn't, including Bitcoin. We know that. What's becoming more of the story is what we on the show have been warning that Bitcoin has been signaling. We've talked about Bitcoin as a smoke alarm, as a truth teller, as something that leads markets. And we're like, man, Bitcoin's starting to look like shit's going to hit the fan. Bitcoin is starting to look like there's a credit crisis looming. And all of a sudden, guys, it's happening. Now, I'm known to be emotional. I love a good time. I love cursing and screaming. So I'm not telling you to hit your bunker and buy up toilet paper like we're in COVID, but we might not be far off. Let's get into it. So the title of the show, AI is breaking the system and what it means for Bitcoin. Chapter one, the white collar wipeout. AI is not coming for jobs. It's already here taking your jobs. So in large part, this was inspired by a real life conversation I was having. So to not dox people in my personal life, I was having a conversation with someone in my life and they're an accountant. And they're not necessarily in Bitcoin. I just know them for other reasons. And we're at a lunch and we're talking to AI comes up and I'm like, man, AI, I use AI all the time. It's hard for me to imagine a life before AI. Like this show, for example, I'm using AI. Like I got my whole setup. I've already talked to you guys about it. I've got my developers set up. I'm honestly in the middle of vibe coding, all sorts like a to do list, an ideas app. Like it's easier for me to talk to an intelligent agent to perform how I need to perform. And I go, how are you guys using AI in accounting? And he goes, using AI? I don't use AI. My jaw hit the floor. I said, what? Aren't you an accountant? You don't use AI? He said, yeah, we're very counterculture. We're very against AI. We're like, screw AI. You know what I mean? We're not going to use it out of principle. And I'm sitting here and this is just a normal dude. You know what I mean? He's not a Bitcoiner. I like all tuned in to how anthropic tweets about their new models are crashing stock. He doesn't have a fucking clue. This dude, he does accounting and then he's smoking meats and he drinks Guinness and he plays golf. And I sat there and was like, oh my God, like nobody has any idea. Nobody has any idea. That was my literal react. That's why I was like, I have to talk about this on the show. Nobody has any idea. The VIX, the volatility of the stock market remains low. The bond market volatility, the move index remains low. Credit spreads remain wide. I mean, markets are ho-hum as if everything's fine, nothing is wrong. We're casually reshoring, which we, like nobody has any idea. No stock market all time highs. Oh, the United States won the gold medal in hockey, USA. Nobody has any idea. So let's take a look, guys. First of all, corporate America is panicking right now. If you take even a second to do a little bit of research, you'll realize shit is already hitting the fan. This is AI disruption mentions in earnings calls. Q4 earnings calls hit a smashing record, nearly doubling prior mentions. Look at the growth of AI disruption mentions during earnings calls over the last four years. It went from barely a mention to a mention on every single call. I need you guys to conceptually understand the rate and pace of that level of change. It went from, wait, AI is an actual thing? To if you have an earnings call and AI is not mentioned, there's a problem. Guys, that's insane. Now, over the weekend, I don't know how to pronounce this research firm, Citrini. Citrini, let's just go with Citrini. This research firm Citrini posted a Substack article and it's actually a really good read. I recommend reading it. It's long though. It's long. You can see my little AI thing, this browser extension I have that reads everything to me. It was about a 45-minute read, but I had my morning espresso, it read to me while I was playing some chess. It was a good read. The article is titled, The 2028 Global Intelligence Crisis. It's as if we're in June 2028 and they're writing their traditional macro monthly newsletter, unemployment's at 10%, the stock market has gotten hammered, and it's a two-year look back as to where we are today as if we're in the year 2028 of what happened. This giant deflationary wave of technology hit us in the face, crashed the stock market, rendered everyone unemployed, and just destroyed the world as we know it. As I've said before, you're a victim if you want to be, and obviously rendered a beautiful world for humans as creators and efficiency and deflationary tendencies making everything more accessible and achievable, but ruined this debt-ridden system that we had built. Okay, cool article, Substack article, who gives a fuck? Well Monday morning, the stock market's getting obliterated and what hits the Bloomberg terminal is software payment shares sink after Citrini post on AI risks. Wall Street is citing this Substack post as why the stock market is crashing. And I screenshotted Arthur's tweet here which reads, the AI destruction common knowledge game is revving up because it's one thing for me to be talking about this. It's one thing for Bitcoin to be warning us about this. Then to see people posting about it on Substack and you're getting these kind of like semi-nonfiction looks into the future of what a world looks like if AI actually works. And it's actually working, right? And then it's a whole other thing for Wall Street to now be reading all of our Substacks, be watching all of our podcasts and being, holy shit, sell all the stocks, deflation is meeting a debt-ridden system. And let me make a quick point here. Because sometimes I see people say things like, well, the AI agents aren't that good. Have you tried to make ingredients for meatloaf? It's not that good. I can make better meatloaf. That's not the point. The point is, it will eventually get that good. That's the point. That's not how markets work. You guys need to understand this point really quickly. Pay attention. If you're hitting a PR on the bench, if you're driving and you're switching lanes, pay attention. This is how markets work. They price in the future. If it will happen, you price it in now. It's not about whether Claude can make a better meatloaf ingredients list than you today. It will eventually. That's the point. It will be a better accountant. It will do better analysis on your blood work. It will write better legal documents. It will write better software. The point is, it will. And any doubt that it won't and it can't is gone. And the way markets work is they start pricing that reality in today. They're forward-looking. You understand? And so when anyone ever says, well, these things aren't that good. That's not the point. Now, if we're talking about how they can impact your life today, yeah, I don't use AI for everything yet. I use AI for some things. I use AI to help me make this show. It's really good at making slide decks. It's not really good at other things. That's a separate conversation. How is it going to impact markets? Will it cause enough disruption in the job market to cause a cascading debt spiral in this $40 trillion debt-ridden fiat system? That's the question you need to ask yourself. Why is Bitcoin acting like the world is on fire? Why is AI disrupting and displacing jobs on every single earnings call? Why is a Substack article being referenced as the reason there's red dots everywhere all over everyone's Bloomberg terminal? That's the thing you need to ask yourself. When you're at happy hour and some dude's like, bro, these models aren't even that impressive. That's not how markets work. So one Substack post, a single research post. Look at the damage done, Visa, MasterCard, DoorDash, ServiceNow, Blackstone, murdered. In the Substack post, again, you guys should read it, it not only talks about AI, it talks about stablecoins. Again, it's in the year 2028. It's like I go and I buy, I forget what it said exactly, I go buy a bacon, egg and cheese and I use stablecoins. And there's no interchange for Visa to take anymore. Anyone can be on the issuing side. Anyone can be on the acquiring side. Now, I don't know why stablecoins are that innovative. We'll get to that in a second during the grind my gears. But I agree with the notion that open networks will beat these closed predatory monopolistic networks. These futuristic posts where extreme deflation, technology is so good at bringing the cost of everything down, bringing efficiencies into our life. And all of these legacy models are finally getting disrupted by pure innovation for everybody. Look at the damage done. I mean, Visa down four and a half percent, MasterCard down six and a half percent, American Express down almost eight percent, Capital One down over eight percent from a substack post. You cannot make this shit up. We live in the craziest timeline. Guys, like this is crazy. This is real life. I woke up this morning and I had my espresso and I'm like, wait, what? Some dude wrote a substack post and companies are losing tens of billions of dollars of equity capital. What did he say? And I click into the thing. I kid you not. I click into the thing and he's like, the year is 2028. I just scanned a QR code with my stablecoin fintech wallet for my new AI agent subscription. I no longer need a nurse, an accountant or a lawyer or an engineer. I simply am an artistic expression of my interests. I'm like, this guy crashed the stock market. Oh, we live in the best timeline. So just more details. The repricing is happening as we speak, like literally as I'm talking shit is selling off. The S&P is down two percent from its highs. Software, which we know has been relatively correlated to Bitcoin recently, is down anywhere from 30 to 65 percent. So the tweet on the left reads, this is absolutely insane. On February 20th, which is three days ago at 1 p.m. Eastern, Claude announced Claude Code Security. It's an automated AI tool that scans a software code base for vulnerabilities. As of 1 p.m. Eastern today, two trading days later of that announcement, CrowdStrike, the stock, is down $20 billion in market cap. A complete nuke. Then the tweet from Charlie, percentage below all-time highs. I'm not talking about Bitcoin. I'm not talking about your cousin's boyfriend's nephew's favorite shit coin. I'm talking about equities. I'm talking about the S&P, percent below all-time high. S&P 500, down two percent. Microsoft, Microsoft, down 30 percent. Synopsys, 36 percent. Palo Alto Networks, 36 percent. CrowdStrike, 38 percent. Palantir, 38 percent. AppLovin, 50 percent. Salesforce, 52 percent. Intuit, 57 percent. Google Service Now, 59 percent. Oracle, 60, 6-0 percent. Adobe, 65 percent. See, the problem is, people say, I thought my imitation game is just too strong. It's so strong it makes me laugh at myself. The problem is people, I thought Bitcoin was the new gold. I thought Bitcoin was supposed to be better gold. Yeah, but it's a becoming asset. Hey, moron, an asset can't go from leaking on an email list to being the new gold. Do you know how long it took gold to be gold? Tens of thousands of years. Like, Bitcoin is the size of Tesla. It's going to take a second. How about you submit a pull request to the fucking open source repository and stop complaining and help the future of humanity and your kids' kids? Anyway, I thought Bitcoin was the new gold. Well, here's the problem. Bitcoin's correlation to gold is 0.09. In other words, it's not correlated at all. In other words, for people at home that need help in turning their brain on, Bitcoin and gold don't move at the same time. They're fundamentally different assets in that way for now, for now. All of us that believe Bitcoin will become the one money, we are buying the future. The value upside we're getting is because the world doesn't realize what we realize yet. So people need to fundamentally understand that. Now, for everything that isn't gold, that isn't the legacy central bank sovereign safe haven, again, guys, Bitcoin cannot be a central bank sovereign safe haven because it's not big enough yet. It's the size of China's annual trade surplus. It literally, like the skeletal frame of Bitcoin, it's like asking a teenager to bench press 500 pounds. It's going to kill himself taking the bar off the rack, okay? Now, for everything else, Bitcoin is acting like a fortune teller. It's acting like it knows the future. So Bitcoin falls off a cliff and everyone's like, oh my God, everything you said is wrong. Bitcoin's broken. Oh my God, hold my hand, cradle me like a baby. But then you just let the future play out as Bitcoin is warning us of something. And listen to this. Microsoft down 30%. Microsoft's barely outperforming Bitcoin in a bear market. Oracle's down 60%. Oracle is performing worse than shit coins, than Ethereum. Isn't Larry Ellison like one of the richest guys in the world? So you're even starting, you know, here's where it gets like, okay, I'm not exaggerating. You're even starting to see comments from the Fed. Fed Governor Waller said weak labor market is likely to continue going forward. CEOs say significant job cuts are coming from AI. If you're getting forward signs from the Fed, that is signal to sell everything and take cover. This is serious. The Federal Reserve is saying weak labor market is going to continue. All your friends and family, they're all going to get fired because the CEOs are telling us that AI is just getting started. Wait, who said that? Your drunk uncle? No, the Fed. The Fed said that. Not the Jack Mallard show. The Jack Mallard show said that two months ago. The Fed said that. So if you take a look at the actual data, this is not a normal recession or whatever. I guess technically it's not a recession, although it absolutely should be. Take a look at the white-collar joblessness that's happening right now. So this is from a Bloomberg article. White-collar joblessness rose in 2025. And if you see how much it has risen, office and administrative support getting hammered, management, business, and financial getting hammered, sales and related getting hammered, professional and related getting hammered. What's not getting hammered? What actually is growing in jobs? Installation, maintenance, and repair. Transportation and material moving. Construction and extraction. Production. Farming, fishing, and forestry. Now this, guys, again, this is the beginning of this new monetary order where we're no longer going to be the world reserve currency as we know it. I've told you, do I expect a politician to admit that out loud? No, I do not. It's going to take the world a lot of time to understand what you and I understand. But what's going to happen? The U.S. has to reshore blue-collar work, producing real things. It has to bring back a manufacturing base, infrastructure, core materials, a defense, an ability to manufacture and produce its own defense. That means blue-collar is coming back and white-collar is getting disrupted. This is just a taste of the trend I've been screaming about. Farming, fishing, up. Office, administrative, management, business, financial, sales, down. And here's the thing, and I've talked about the book The End Times. When you live in a hyper-financialized economy driven by fiat and dollar and printing pieces of paper that you've monetized as the populace's time, energy, effort, and labor, what happens is in order for people to live a life that they deem worth living, meaning they want to get married, they want to have kids, they want to have a house, they want to go on vacation, they want to own a car, they want to be able to acquire energy, meaning the car needs to drive, the plane needs to fly, the TV needs to turn on. They have an energy-consuming lifestyle. Everyone feels like they need to go to university to do that. They need to go to university, get in debt, and have a high-flying tech job, a high-flying Wall Street job, a high-flying venture capital job. Everyone was pushed to the coast, New York, San Francisco, and pushed to white-collar work. So you have to understand the amount of income focused in these office, administrative, management, business, financial, sales, professional services, finance, the amount of income in tax receipts that AI is going after is immense. It's what underpins this massive economy that's backed by $40 trillion in debt. So on that note, that was my segue into the educated class is what I call them. I don't know. Young kids are just, I mean, I'm terrified for the revolutionaries that we're creating today. You know, I, man. You know, here's some real, let me get real for a second. When I build these businesses, Strike, 21, you know, our core target customer is a big business or an institution or a high-net-worth individual because it's very difficult to monetize people in financial services that don't yet have wealth, right? Where do I make the most revenue or the most money? Well, when someone takes out a $100 million loan or buys $10 million worth of Bitcoin for their business, you know, obviously that's our commission is higher than the 21-year-old that buys $5 worth of Bitcoin because they shoveled snow for their neighbor, right? However, people have seen me try and reach the youth. And I make a concerted effort to make sure that I don't alienate my generation and those below me. Wear the hoodie, be real, talk normal, don't turn into a suit, don't appease these chumps on Wall Street. And, you know, one of the many reasons I do that is because you have to understand the crisis that's happening to the youth. You have to. You cannot say, oh, back in my day, I used to have to walk to school, now these kids can call an Uber. You don't understand what they're going through. And so I pray, even if we get a few kids listening to the show, and I know I curse and some of the topics are hard to understand, but this is how revolutions are born. And this is where people pick up weapons and hurt themselves or hurt other people. This is where it gets scary. So these tweets, 42% of recent college graduates are underemployed. The highest level since COVID. Unemployed Americans with four-year college degrees hit a record in January at 36.6% of those aged 25 and older. New graduates now account for just 7% of new hires at Big Tech, down from 25% only two years ago, and over 50% before COVID. Before COVID, if you got a college degree, you were basically employed. After COVID, 25%, you better have gotten good grades, you better have taken it easy on the booze and the partying. Now college degree means nothing. So how's this for a sick joke? Kids are born today and encouraged to get into as much debt as possible just to have a chance at what they see in the movies. Just to have a chance to experience what their parents did. Just to have a chance to feel happy enough and optimistic enough about their future. Just to have a chance to own a home. Not to actually own a home, a chance to drive a car, a chance to fall in love and have kids. Go up to their eyeballs in debt, hundreds of thousands of dollars worth of debt, and there's no job for them. That's a sick joke. Push kids into mountains of debt. These are children, you know. Epstein seems to be the hot topic. We talk about what's the age of consent. When are you abusing children? Children can't consent to sexual activity until they're adults, but you have these mobsters and these thugs on Wall Street and in the government pushing them into eyeball levels of indebtedness before they're adults. You've got 16, 17 year old kids signing up for $100,000 plus of debt. That's abuse. So I'm in my early 20s, I'm up to my eyeballs in debt, I have no way to pay it back, no one's willing to give me a job, and you wonder why these kids don't like Elon Musk. They vote for Mum Donnie. They want to violate property rights. They're picking up weapons. They're organizing in Discord chats. Now the way out is to build a better future. We did not have a choice to what we inherited, but it is our choice to what we grow into and what we build and what our kids inherit. That's up to us. But let me tell you first hand, the most painful thing is when you have adults say, well I used to have to walk to school. Shut the fuck up. You also got to buy a $15,000 house, going to a movie was a quarter, getting an education didn't require a debt that takes a life to pay off, and you weren't competing against digital intelligence to just make rent. How about that? How about that? Hey, I'll walk to school, and you compete against digital intelligence. Shout out to all the youth out there. We're going to build our way out of this. Do not pick up a weapon. Do not take on any more debt. We're going to stay humble. We're going to make it to the other side. So from Bloomberg, unprecedented jobless boom, test limits of US economic expansion. So again guys, my point is this stuff is happening. So if you look on the left, this graphic is from the Bloomberg article, US real GDP traditionally is correlated to payroll, right? When GDP is booming, supposedly the economy is booming, the economy is booming, everyone's got a job, everyone's making money, everyone can afford whatever it is for you. The first class flight seat on your vacation, supersize your meal, whatever, I don't know what that is for you, right? You can afford it, the economy's humming, okay? But what you're looking at on the left is US GDP is ticking up again because of AI, but payroll is heading towards recessionary levels. And so payroll's heading down, GDP's heading up. That's the K-shaped economy visualized, right? There's a lot of wealth being created, but it's highly concentrated. And everyone young, unemployed, everyone white collar, and they're using this term underemployed. Underemployed means I have a business degree from Kellogg at Northwestern and I'm making your Chipotle burrito. That's what they mean by underemployed. Now what's the difference between underemployed and unemployed? I count it effectively the same, is that those people are never going to own a home, they're going to be depressed, they're going to revolutionize, it's just bad, it's dangerous, it's sad. So this is not something I'm speculating on anymore, this is not something I'm predicting anymore. This is happening, okay? From the Wall Street Journal on the right, healthcare work propels US to strongest job growth in more than a year. And the article goes through how, so I'll read the subheader, jobs surged 130,000 in January while unemployment fell to 4.3%, but the article goes on to just, so it's all healthcare. It's all healthcare. So again, you've got a business degree, you want to be an accountant, you want to be a lawyer, you want to be in finance, not only is there no one hiring you, if you are one of those, you're getting fired. So what can you do? Well for one, you can punt shit coins, you can punt prediction markets, you can gamble on sports. So again, why is hyper speculation so popular? Because during currency debasement, the fall of an empire, when deflationary technology meets a debt ridden society, everyone's a speculator, whether you know it or not. Someone that has never heard of me and this show and Bitcoin and financial markets, they're also a speculator. You're getting compensated in a currency that cannot support your future. Things that you need to acquire in your future are getting more expensive than you are earning. There are less opportunities for you in the economy, and everything around you is getting more expensive. That turns you into a gambler, whether you know it or not, because if you want to end up owning a home, well shit, I better predict the final four correctly, I better put options on Nvidia's earnings, I better, well it was too late, I didn't buy Bitcoin in 2010, better hope Dogecoin goes up. That's what happens. So the last thing I wanted to note before we move on is just a reminder that this is also a war. So not to make the AI companies the bad guys here, in fact, I think that it's unbelievable what they're achieving. Mind you, technology is deflationary, and technology is arguably the greatest trait us humans have. We're able to collaborate, we're future-oriented, and we build tools. That's what Steve Jobs said, right, like the biggest difference between us and other primates is we're tool builders. Steve Jobs had that amazing quote where he said if you compare us to other primates where us running versus Jaguar, us running versus, I don't know, whatever the fastest animals, we're not the fastest by far, there's way more efficient, faster species than humans. You know what no one can compete with? Us in an airplane or us in a car. It's not even a competition. We dust everybody, and what's the insight there? The insight is humans are tool builders. Don't measure us in plain form. Measure us by what we build, and what we're building in AI is deflationary is when kids, when you're in school, they talk about deflation like it's a bad thing because it does crash the economy, but what we'll talk about in this episode is why that's not the technology's fault, that's the economy's fault. Deflation makes everything easier, more efficient, more achievable, more accessible. When things are deflationary, your money goes further. Think about it. If AI ends up changing all of our lives, you don't need to pay an accountant anymore. You don't need to pay software developers anymore. You don't need to pay lawyers anymore. You don't need to pay money managers anymore. Think about what Bitcoin and AI can do for you. You are your own bank. You are your own money manager. You are your own software engineer. You are your own accountant. You are your own lawyer. You are empowered and limited. You are only limited to your own ambition and your own ideas. That's incredibly empowering. It brings the cost of everything down tremendously. The only thing you really need to make sure you can pay for is the roof over your head and the food that goes in your belly. That's it. It's incredible. That's incredible. Now, bringing it back to this slide, it's also national security. So Anthropic tweeted today, we've identified industrial-scale distillation attacks on our models deep-seek, excuse me, on our models by deep-seek Moonshot AI and Minimax. These labs created over 24,000 fraudulent accounts and generated over 16 million exchanges with Claude, extracting its capabilities to train and improve their own models. So what's kind of funny, I will say, China seems to be trying to extract intelligence out of the U.S. via these attacks and open-source it. So it is interesting, I've got to admit. The way that the American media and the American corporations are going to phrase it is we're being attacked, China's coming after us, but what China's trying to do is say all software should be open-source, like deep-seek, for example, we're open-sourcing all of our AI, the world should be about real stuff, and obviously they're talking their own book, right? Like they've got all the critical minerals, they've got all the rare earths, they've got all the production and manufacturing capabilities, they've got all the defense capabilities. So they're talking their own book, but I do believe in open-source software. This whole U.S. versus China cold war and AI war, there's a lot of catch-22s, like do I like that China is aggressively trying to basically latch on to how fast U.S. development is enhancing and just basically cheat off our homework? No. I would much rather the internet and the West and distributed networks defeat the CCP, but I am a fan of open-source software, I would really appreciate it if open AI and Anthropic, if they all open-sourced their models, if Elon open-sourced his Twitter or X algorithm, but anyway, the point is, just a reminder that this is of national security. So the other thing to keep in mind is losing the AI race is not an option. It's going to be important, I'll reference it back later, but what we can't have happen as a country is say, holy shit, this is all going way too fast, over-regulate the AI industry to where no one can build anything, and then China takes over the AI race. That's not an option, it's been declared not an option, this has been declared a national security threat, this is of national security interest. So my point is, this is a one-way train, it's only getting faster, and these things are already happening. So what seemed to be like a credit crisis brewing, and as Bitcoin seemed to be hinting that out, yeah, this seems to be the case. So entering chapter two, deflation meets debt, why a successful AI is bad for markets. So here's the logic, and I just want to break it down for those who don't totally understand. AI is a productivity shock, that's what all technology is, right? Like the car made us highly productive relative to horses. The airplane made us even more productive. Technology are traditionally productive tools, they provide efficiencies in the marketplace that previously were not there, and by the way, that's how the free market and technology works. that isn't better than what already exists, because if you do, you'll fail. So this form of Darwinism is the only things that you're incentivized to build, and the only things that succeed are things that provide more value than the things that exist today. And so we have this very efficient system where all technology trends towards being productive, because you're highly incentivized to build something that will actually work, that's actually more valuable than what people have today, and by the way, it has to be a lot more valuable than what people have today, because the switching cost within itself is decently expensive. So you don't see technology that's marginally better, you see technology that gets way better, and humans just kick butt at this. I don't see lions building software and shit, we, I mean, we're the best at building tools. So AI is the latest productivity shock coming from us humans, the godfather of all tool building, okay? What that causes is this term I've been using called deflation. Now I put in this slide, what it's doing is it makes the dollar more valuable, but I don't know if that's gonna land with you guys, because I shit on the dollar so much, and I can already see my comments, I thought you said the dollar wasn't good, I thought you said the dollar wasn't, it's like, God, you guys, just fucking donkeys in my comments all day. So what I mean by it makes the dollar more valuable is what I said earlier, if the marginal cost of intelligence, of accounting, of financial services, of legal work, if the marginal cost of that trends to zero, or as close to zero as possible, that means that your capital goes further, right? You can raise a family on low income now, because you don't need all of these things anymore. It brings the cost of everything around you down. Now, the reason that is a problem, this is a really important point, you have to understand why deflation is bad in the fiat game that we've created, this debt-ridden financial system. It's because it collapses the debt that they've built. Why? Let me explain. If we owe 40 trillion dollars, if the dollar continues to weaken and be worth less, it's easier to pay back 40 trillion dollars. Think about it this way, guys. Let's say we go through so much inflation, and we go through so much dollar debasement, that it costs 40 trillion dollars to get into a movie in 5 years, 10 years, 20 years. Well then it's really trivial to pay back 40 trillion dollars that we owe, because it's only one movie's worth of time, energy, effort, and labor, right? The dollar's gotten so weak that the debt denominated in dollars is so easy to pay off. Now, if humans are so productive, and they're building things like AI, which delivers such a productivity shock, that's so deflationary, that actually has the opposite effect. It has the opposite effect. It means that people being accountants, and people being lawyers, and people doing all this white-collar work, and the US government collecting tax receipts from that, isn't going to come close to paying off the 40 trillion dollars. Because we're all going to be vibe-coding our apps, living off, whatever, there's going to be people living off low-income, but they're just into history. They're just into making music. They're just into whatever artists, they're just into whatever they want. But you don't need that much money. You don't need to produce that much work, and get that much taxed, and speculate that much in the stock market. And it has the opposite effect, where it gets increasingly more difficult to pay down the debt. And that's when you see, if unemployment gets to 10%, then the US tax receipts come way down, then the deficit relative to the tax receipts, and you start to see a death spiral. And so when I say a deflationary force is meeting an indebted system, and they're colliding, meaning one of them has to win. If we go into true deflation, and AI renders everyone unemployed, and is like the biggest productivity shock we've seen in modern history, then we're entering a debt spiral, a level of austerity that is magnitudes greater than the Great Depression. And so what happens is a credit crisis. So when I say a credit crisis is looming, shit's hitting the fan, the last episode I'm bringing up delinquencies, now I'm talking about white collar joblessness, I'm talking about the level of unemployment in the youth. Credit crisis meaning how much of our economy is predicated on mortgages, on car notes, on credit cards. If retail can't afford their payments, they're rendered delinquent. And what happens, bank stocks are going to crater. Bank stocks are going to crater, because the market will realize they have all these outstanding loans and they're not going to get paid back. When bank stock craters, stock markets crater, stock markets crater, the 401ks are in the shitter. 401ks are in the shitter, US government tax receipts are in the shitter, tax receipts are in the shitter, then the bond market gets volatile, the bond market gets volatile, the US defaults. It's a giant game of charades, it's a giant Ponzi scheme that's predicated on more debt, more money printing. And so the whole solution to this game is they have to print an immense amount of money, like an ungodly amount. I'm talking about magnitudes bigger than COVID. And this isn't me, I'm not biasly wishing for this, I'm just doing the math. Like there is a certain amount of liquidity that's going to have to combat these deflationary forces and provide the liquidity necessary to persist onwards. Another way to think about it is, theoretically, because humans are constantly producing technology that's more efficient, providing value and providing productivity gains, everything around you should be getting cheaper. And evidence of this is Bitcoin. When I got into Bitcoin, one house was like 100,000 Bitcoins. Now the average house is like 5 Bitcoin. Life has gotten immensely cheaper for me in Bitcoin terms because humans have been more productive. If your money is fixed in supply, you get all the productivity that humans are constantly innovating. I'm soaking up all the gains from AI, soaking up all the gains from the internet, I'm soaking up all the gains from whatever research MIT labs are doing, whatever. I'm soaking up all the gains because my money supply is fixed. If your money supply is causing you inflation, where things around you are getting more expensive, that means that central banks and governments are printing more money than humans are innovating. Just sit on that for a second. Because the default state is things get cheaper because we are producing more innovative revolutionary tech. Think about that for a second. So the fact that we have been living through inflation means they're printing so much money that even the most revolutionary technologies aren't bringing the cost down of goods and services. And so in order for them to maintain the debt system that they've built up and not have an utter and complete credit crisis debt spiral, they have to print enough money to outlast this AI deflation and you've got all sorts of problems like what's happening in Japan, which we're not even going to get into in this episode. So here, this asset's a little small. Let me blow this up. Hold on. There we go. So this is from the Global Liquidity Index. I just subscribed to this guy. His name's Michael Howell. Really good stuff. I just subscribed to his stuff. I just paid for his research stuff. Really good. And so he has this metric. Instead of debt to GDP, he does debt to liquidity, which is arguably better. And he shows this chart, debt to liquidity, and when it's high, you get these crises. So you've got the Y2K crisis, the Lehman 2008 crisis, the Eurozone banking crisis. And when it's down, you get these bubbles. So you've got the US housing bubble, you've got the everything bubble, which is COVID. And you see debt to liquidity trending up. It's trending towards crisis mode. And so this is plumbing data. So what's the debt to liquidity? Yes, there's a lot of money printing and there's some liquidity, like the Fed paused QT. It's restarted some kind of form of QE. But the question is, is it enough printing to prevent a credit crisis? This is just looking at the debt to liquidity. This is not taking into account the deflationary force that is AI. And so when I zoom back out, the cracks are already starting to show. So last week, Blue Owl came out and they halted withdrawals. So Blue Owl limits investor withdrawals during private credit concerns. Blue Owl and their stock got crushed. Blue Owl Capital Inc. shares tumble after a decision to restrict withdrawals from one of its private credit funds raised fresh concern over the risks bubbling under the surface of the $1.8 trillion market. Again, so people want to say, isn't Bitcoin the new gold? Isn't Bitcoin the new gold? This fucking market is bigger than Bitcoin. Bitcoin's still small. Give it a rest, okay? Shares of the alternative asset manager fell about 10% on Thursday to their lowest level in two and a half years. Now, Blue Owl came out and gave a statement and said, whoa, whoa, whoa, whoa, whoa. Like we're solvent, we're fine. And then Bloomberg comes out with another article that says Blue Owl sold their loans to pensions and their own insurance asset manager. And so it's like, oh, who bailed out Blue Owl? And then you read the article and you realize they bailed themselves out by selling themselves these loans. How is this not 2008 all over again? I mean, you've got to be shitting me. No wonder Bitcoin's been in the shitter. Bitcoin doesn't know any better than to be the most sensitive thing to fiat liquidity, the most sensitive thing to fiat credit. It's all it knows how to do. Just be honest. And so, you know, I titled this slide Euphoria Meets Reality. Since COVID, the performance of stocks and the sentiment of consumers has totally divorced. We're totally living in K-shaped. Look at this. This is, this is a K. Everyone's depressed. Everyone's violent. Everyone's protesting. Everyone's revolutionizing. Meanwhile, our president is like, well, if you just, if you look at the stock market this way. No, fuck. Fuck the president. Pam Bondi, the woman that grinds my gears, is like, hey, how about we arrest these people, these demons that were raping and killing our children? She's like, well, look at the Dow. You've got these idiots, these morons telling me to check the price of the Dow. Meanwhile, our entire country is on antidepressants and ozempic, sickening. So the other thing that's critically important that I need to tell you guys, because here's the thing. What people will do is they'll say, well, let's look at 2008. If we're entering a 2008 level crisis, global financial crisis, well, the markets took many years to rebound. It took them a long time to print the money. It ended up being a decade of, well, not an actual decade, but relatively, of QE and of money printing. And so is that what we're heading into, Jack? No. At least, listen, pause. I don't know the future. I hate that I have to tell you guys that. You're like, hey, dude, you said that. You said. Dude, I don't know the future, bro. I hate that I have to admit that to you. What human knows the future? What human thinks another human knows the future? I don't know what's going to happen. All I can do is record these shows and give my best effort and have a good time with you guys. So I don't know what's going to happen. But what's different from 2008, this is critically important. The IMF came out with a paper recently, last week, and they said bonds have been less effective equity hedges since the pandemic, since COVID. And they go in to explain that basically when stocks sell off, now bonds sell off. Bonds traditionally are safe haven. We've talked about this. What's happening in Japan, right? Traditionally the currency was strengthened. The bond market was strengthened. There's safe haven, safety in bonds. Bonds are no longer safe haven because the debt is too tall, it's too large. The U.S. wasn't nearly as indebted 20 years ago as it is today, nearly, not even close. It has too much debt to even sustain that much pain. So this on the right from this guy, Eric, our findings suggest that the Cayman Island hedge funds are increasingly the marginal foreign buyers of U.S. treasury notes and bonds. They absorbed 37% of net issuance of notes and bonds, nearly the same amount as all other foreign investors combined. I've talked about this before. The hedge funds in the Cayman Islands, they're performing the carry trade. They're performing an immense amount of leverage to just arbitrage. They're not actually lending to the United States. We know China isn't lending to the United States at the margins anymore. They're buying gold. We know India is also increasing their gold position. So my point is when equities sell off, bonds sell off, both because structurally these hedge funds have to unwind their positions because they're collateralized by the existing financial system. And then also it's just, there's too much debt. So the point that I'm making here is that they're going to have to print an immense amount of money immediately, okay? That's why when you see people say like the big print is coming, the big print is coming, the United States doesn't have the tolerance and the appetite to allow for years of financial crisis because it would not be able to finance itself. It cannot afford an unruly bond market even for a week. Remember what happened during Liberation Day? It took like four days before Trump reversed everything he made and they printed the money. Like they literally, it is like a giant deck of cards that the single bit gust of wind of opening the door will blow it all down. And so even the little itsy bit, it's not even, it's the fact that every, here's the thing to say. Everybody knows that everybody knows that AI is coming and that's the only bit of gust of wind that can blow this thing to the ground. It doesn't actually matter how good Claude is at this or what Sam Altman said about that. The point is, is this deflationary and is it working? If that's true, the gust of deflationary wind will blow this whole thing down and it's already happening. So there's no such thing as, now I don't want to take away the fact that this Bitcoin market has been painful and I know that a lot of you out there have been facing a lot of pain and I don't want to take that away from you. This is where champions are made. This is where you earn your stripes. This is where you put some hair on that chest. This is it. This is where you earn the returns when people at Thanksgiving say, oh, you just got lucky. No, I didn't. I was there during the AI credit panic and I buckled down and I stacked some sets. So I know a lot of you are in pain and I encourage you to weather the storm. But what I'm telling you is this is not 2008. They're going to have to print and print fast. So the question is, when is it going to sufficiently break? Now I look at some data and I'm like, well, things are already breaking. Now not to the degree where it's panic, but check this tweet. So first, wild market. We haven't seen anything like this since the dot com bubble burst. Over the last 8 sessions, 115 stocks in the S&P 500 have declined 7% or more in a single day. The average drawdown when that happens is 34%. Right now we are only one and a half percent below the all time high. So again, based on everything I'm talking about, the stock market is due for a 20, 25, 30, 35% correction. Now the question is, are authorities going to let that happen? At what point do they start printing the money, which is when Bitcoin goes on its absolute tear. To remind you guys, Bitcoin got hit the hardest, fell the fastest and fell first with COVID. It went from 8,000 to 4,000 in a day, but then it was the best performer. It went from 3,000 to 70,000 in a year. So it gets hit the hardest. It gets hit first. It performs the best. It's part of being a champion. It's part of being the man in the arena. It's part of being a pioneer. It's part of fighting for the world we want to live in, a Bitcoin world. Now this tweet, going back to 1995, the US has never performed worse compared to international stocks year to date. So again, capital's rotating out of the United States of America. The stock market is getting hammered. People are selling the US. People are fearing a credit crisis. AI is disrupting. It is leaving white collars jobless. It is leaving the youth unemployed with college degrees. This is actually happening. This was today. I took this screenshot at market close. This is not crypto.com. This is Google, Meta, Microsoft, Berkshire Hathaway, JP Morgan, Tesla, JP Morgan down over 4% today, Microsoft 3.5%, Amazon 2.5%. Getting smoked. Getting smoked. This is what Bitcoin was warning us about. Why did Bitcoin sell off last night? Guys, don't fight Bitcoin. Don't fight it. Don't try and argue with it. It's never wrong. It's just, it's information. It's a utility. It's telling you something that nothing else can. Whenever it's moving, it's speaking. Just listen to it. So chapter three, last chapter, the canary in the coal mine. Bitcoin tells you what's coming. So I tweeted this last week, Bitcoin is the orange line, has been labeled weak since it diverged from the NASDAQ, which is the white line. What if it's the smoke alarm, the only truly free market we have left? If an AI driven credit shock is coming, would Bitcoin detect it first? Maybe it's telling us what centrally planned markets can't. So this was my tweet, paraphrasing the last hour of me yabbing and running my mouth, is Bitcoin is telling us something. It's the most sensitive thing to fiat liquidity. It only understands how to price fiat credit. It's the antithesis of fiat. And so if fiat's going to have an issue, Bitcoin's going to scream and shout and tell you about it. And in my opinion, that's what it has been doing. It's been able to sniff out what it's taking other markets a long time to sniff out. So Bitcoin does not lie. Bitcoin is the most fiat liquidity sensitive asset on the planet, which itself has utility value. That within itself is intrinsically valuable. It is number one on the scoreboard for fiat liquidity sensitivity, period. No board of directors, no earnings guidance, no balance sheet to hide behind, it just prices the money supply. It is saying there is not enough credit in the system to meet the maker that is AI and the sovereign debt crisis around the world. We have issues. And either everything's going to sell off, we're going to go through the greatest depression we've ever seen, austerity to new levels, streets are going to be lit on fire, or they're going to print the money. Either way, Bitcoin wins in the end, because it'll outcompete to be the world's money. Now my prediction is they're going to print the money. That's historically what they've done. It's a far sneakier way to default and steal from people. So Bitcoin leads markets down, in 2000 we had the dot-com bust. What was 2000? A productivity shock, a credit event, they printed the money. Housing crisis, deflation, credit event, they print the money. COVID, demand collapse, credit event, they print the money. 2026, is it a productivity shock with AI? A credit event, and they print the money. Either way they print the money. The question is, are we going to get this event in 2026, in 2027, when is Bitcoin going to sniff out the other side of the chasm in which we're crossing? But the point is, that I want to get across, is they always print the money. Every credit crisis ends the same way, monetary expansion. The question is not if, it's when, and when they print, what wins. The thing you can't make any more of. When there's an infinite outflow of dollars, of fiat, the thing that performs the best is the thing that's inelastic to this ever-flowing supply of fiat. The thing that you cannot make any more, no matter how much more fiat is created. A bunch more fiat is created, gold miners are going to invest that, and be able to mine gold marginally better, right? You cannot make any more Bitcoin, and so that's why it performs the best. It's the best engineered money we've ever come across. Best money mankind, ever, hands down, pound for pound, the champ, the gold medalist. The Bitcoin medalist. So this, I mean, just to show you guys, US net international investment position is negative 30 trillion. So again, if we reach a deflationary crisis and everyone is selling everything to make ends meet because credit is tight, just a reminder that the world owns a ton of US assets. So when South Korea came out with a tax exemption where if you sell US stocks, as long as you reinvest it into the South Korean market, tax free. We're not going to tax you. And so what happens? A bunch of capital repatriating out of America and into South Korea. The South Korean stock market has whooped the S&P 500's ass. Same with Japan. The Japanese stock market is killing the S&P 500. Asian stock market is killing American stock market. So the pain, if you guys think we've had pain now, there's 30 trillion dollars more pain to go. The United States cannot afford this, and they know they cannot afford this. If you listen to Warsh, the new Fed chair, all he's talking about is AI. AI this, AI that. We've got to cut rates. We've got to cut rates. We've got to cut rates. AI, AI, AI. We've got to cut rates. We've got to cut rates. And so the last thing I wanted to leave you guys with here is that when people will say, well, listen, at least President Trump is reshoring. He's bringing infrastructure and manufacturing back. We're de-risking ourselves from China. So this tweet, the USGS report just came out. A new report from the US Geological Survey reveals that the United States has grown more reliant on foreign imports of minerals over the past year, highlighting the increased urgency to bolster its domestic supply chain. In its annual mineral commodity summary, the USGS found that the country was 100 percent import reliant last year for 16 of the 90 non-fuel commodities that it tracked. In addition, the US relied more than one half of its apparent consumption for 54 of the minerals the report showed. In comparison, in 2024's data, 100 percent import reliance for 15 commodities and more than half import reliant for only 46 minerals. So the point that I have for you is the pain hasn't even started. Do you guys know how? Well, hold on, hold on, hold on, hold on, hold on. I said that came out wrong. Pause. Pause. Pause. Rewind. The pain has started in Bitcoin. I know it has. I know you guys are in some pain. I've seen this movie a million times. We're going to be okay. We're going to be fine. We're tough. We're the principled, moral soldiers out here fighting the good ethical fight. We're going to be okay. All right. I know the Bitcoin pain has started. But what I'm saying is the so reshoring is going to be so inflationary. It's going to be so inflationary. Who's paying to reshore? Who's paying? Do you know how much money you're going to have to pay someone to get them to go mine rare earths in Idaho? No one in Manhattan is going to be like, yeah, I want to move to Idaho to mine rare earths for $20,000 a year. If you pay him $300,000 a year and free education on how to do it, you might get some people that want to move to Idaho. It's going to be so inflationary. Commodity prices are going to continue to go up. Oil, probably soon, is going to have to start to go up. Sometimes people say, yeah, but at least we've made a ton of progress on de-risking from China, reshoring our manufacturing base. According to the US Geological Survey, not only have we not made any progress, we've made negative progress. We haven't even started. So we're about to have a credit crisis because of AI and all sorts of sovereign debt issues and what's going on in Japan. Mind you, all the actual inflationary pain that we knew was coming from reshoring hasn't even started. So I'll end it with just some Bitcoin charts. Stay humble and stack stats, guys. So the chart on the left, Bitcoin versus credit spreads. So credit spreads are very low. The point is, I've talked about it, the business cycle has been down. Bitcoin likes certain market conditions. It likes easy money. And that's not the market we've been in. We've been in this difficult monetary conditions. We've been in QT. This has been a very interesting market conditions, market environment, monetary environment, liquidity environment. And so it's just that, like, if you look at, let me zoom into it. If you look at this chart, Bitcoin's only behaving naturally. You can see this spike up here up top, and that's around when Bitcoin made its high, and then it's come down, it's come down. So Bitcoin's going to be fine. The next one, this chart has a 303 track record, and it just flashed again. This is the Bitcoin Sharpe ratio, which we've talked about. If you look at the Sharpe ratio, it's reaching levels of historical bottoms. So again, here's the thing you need to ask yourself. Do you think Bitcoin's going to zero? If you think Bitcoin's going to zero, you're probably not listening to this, and I wish you well. Have fun staying poor. If you don't, guys, I love, personally, I love moments of adversity. I love being challenged. I live for it. I love when people on the internet are talking shit about me, accusing me of all this shit. I love it. I bookmark it. I screenshot it. I swear to God, I'm a sick person in the head. Ask Dylan. I'm sick. I'm deranged. I literally live for that, because that's where growth is. That's where opportunity is. That's where something inside of you is challenged to find that extra inch, find that extra dollar, find that extra sack, go that extra mile. That's the story of my career, so I love these moments. I love it. Shit on Bitcoin. Everyone wants to quit. Everyone's capitulating. I've already been all in on Bitcoin. I'm going to find every ounce of liquidity. Strike's going to launch every feature. We're going to stack every set. You just got to stay humble and keep stacking. This one, commercials are extremely net short, Bitcoin. Large speculators are extremely net long. Prior cases mark bottom processes for Bitcoin. So everything, as far as I can tell, looks very healthy. Bitcoin is doing what Bitcoin always does. It's calling bullshit. It's sniffing things out before they happen. It's very efficient. It's a free market, so turn on your DCAs. This one, interesting, my quintile model also shows Bitcoin has been cheaper than this level only about 4% of the time across its observable history. So you've only been able to get Bitcoin cheaper on a relative basis, 4%. So can Bitcoin go down from here? Of course it can. Again, I have no idea. We could flash down to 30K for a split instant. I have no clue. But if you are here for the long run, if you're looking to just build a war chest for your future family on the other side of all this fiat nonsense, of all this garbage, of all this manipulation, central banking, centrally planned bullshit, if you just want a war chest of time, energy, and saved labor and effort for your family and your kids, turn on those DCAs. We got no fee, no spread DCAs on strike. You can DCA for free, convert any percentage of your paycheck for free, and you have free withdrawals to cold storage. I literally, I told the team, we need to have an ability to stack stats on the house and withdraw on the house so that we can always say, when in doubt, we're the cheapest place in the world to just securely get yourself some Bitcoin. Turn on those DCAs. And then this other tweet from Frank, selling from long-term holders has fallen off a cliff since Bitcoin corrected to below 90,000. So the massive selling is gone. Now, again, can Bitcoin go lower? Of course it can. But these are all things that I check for. I've been in this game for a very long time, guys. I'd let you know if I was worried. I'm the opposite of worried. I'm buying. Okay, that's the end of the AI is causing a credit crisis show. And now we're on to a new segment that I debuted last week that you guys seemingly liked. What really grinds my gears? Let me take a sip of espresso. All right, shout out to the listener that made this art. This is hilarious. So for those that don't know, I got this idea from my intuition combined with Family Guy. So I did not gain a lot of weight. That's just the Peter Griffin version of me. And this is the visual for what really grinds my gears. Part one. You know what really grinds my gears? The Clarity Act. The market structure bill. Just fucking sign it already. Or don't sign it. But shut the fuck up. I'm so sick of seeing Brian Armstrong get in pissy fights, sissy fights with these fucking bank CEOs, Jamie Dimon and Brian Armstrong are having a pillow fight, and somehow it's impacting Bitcoin. These guys, let me say something because people say, Jack, are you worried about the Clarity Act not passing? Why would I be worried? It has nothing to do with Bitcoin. What are they fighting over? For one, they're fighting over can stable coins pay interest? First of all, who cares? Do Americans not know that they can download Robinhood or they can download Marcus? You can open any account on your fucking iPhone and get three and a half percent on your cash. Why do you need a stable coin to get yield on your dollars? Do you guys not know that you can do that? Stable coins did not invent interest on your cash. Did you know that? So first of all, who gives a fuck about whether stable coins can pay interest or not? Nobody cares. Nobody needs it. If people want interest on their cash, they could just download Robinhood. Why do they need USDC? That's another thing. Why would I ever use USDC, ever? For what? I've had digital dollars. I was born in 1994. I've had digital dollars forever. Why would I need USDC? It's like, no, no, no. I'm really fighting. This is what these guys say. I'm fighting for the American to get interest on their cash. You idiot. That was invented 20 years ago. I'm not trying to be hard on anybody. I'm just being honest. That's what really grinds my gears. I'm seeing these CNBC clips, Jamie Dimon is not letting me pay interest on cash. You're a moron. They've been paying interest on cash for years. Yes, Jamie Dimon pays one basis point interest on cash, but Robinhood pays 4% interest on cash, and that's why Robinhood gets customers away from Chase. What does this have to do with Bitcoin? I'll answer it for you. Nothing. So the people that say, when I talk to reporters and they say, oh, the Bitcoin market's really reacting to the Clarity Act, that's the shit coin act. This act has nothing to do, literally nothing to do with Bitcoin. I don't even know if Bitcoin is mentioned in it at all, because the only other thing that they're talking about in this act is moving the ability to tokenize something away from the SEC and to the CFTC. So they're trying to change regulators so that they can commit what is effectively securities fraud, and they're trying to put yield on cash. So what? I can get yield on cash. It just, this, it grinds my gears. Why are we wasting time? One of the biggest thefts in human history is shit coin and these shit coin kings, these guys that run these giant shit coin casinos, spending so much human capital, human time, effort, attention. Why am I getting dragged into, why are investors calling me and saying, are you worried about the Clarity Act? Why the fuck would I be worried about the Clarity Act? If you want yield on your cash, download Robinhood. They've been doing this for a long time. It's called the Fed Funds Rate. I hate to break it to you, but USDC did not invent getting three and a half percent on your dollars. It didn't. I'm sorry. And then, do I worry about whether tokenizing things is going to be regulated by the SEC or not? No. What the hell does that have to do with Bitcoin? It has nothing to do with anything productive. Answer me this. This is only to enrich a bunch of large businesses. This is Coinbase going after regulatory capture. They are trying to further enrich themselves by taking advantage of a favorable administration creating regulatory moats for themselves. This has nothing to do with Bitcoin or any beneficial, efficient productivity for any industry whatsoever. It grinds my gears to no end. What are your thoughts on the Clarity Act? I don't know. Just sign. Brian Armstrong, just fucking sign the thing so I don't have to hear about it anymore. Or don't sign it. That's just the back and forth. He goes on TV. I'm really fighting the good fight. I've been in Washington, D.C. for the last month. How is that fighting for Bitcoin, being in Washington, D.C.? What the fuck are you doing in Washington, D.C.? Arguing for stable coin yield and wanting to be regulated by the CFTC so you can create loads of prediction market shitcoin, speculative trash. Fuck. It's so frustrating. This shitcoin industry, it taints the Bitcoin brand. People legitimately couple us all together. They do. I'm literally trying to rebuild the financial system on something that's moral and fair and that can last and that serves us all equally. That's genuinely what I'm trying to participate in. Very humbly. Hey, how can I help? Let me pick up picks and shovels, baby. Let's get to work. Meanwhile, these guys are in my industry on what planet? Like sleeping under Donald Trump's desk, begging him, and meanwhile Jamie Dimon's bitching and crying and moaning and calling Brian Armstrong an asshole. Fucking A, man. I mean, this is how you know it's a bear market. Seriously. What the fuck? Shitcoins are just the worst. They really are. And you know what? I get less upset over people that get duped into buying them. Although I get upset by that, too. Don't get me wrong. I've seen these posts recently like, oh, the NFT that Logan Paul bought for $2 million is now worth 20 grand. The NFT Justin Bieber bought for $10 million is now worth $50. I've seen these tweets going around and what's so, it's so frustrating. These guys didn't buy those. They were given those. Justin Bieber didn't wire anyone a million dollars. These people are such unethical scammers. They're paying influencers on Instagram to convince a bunch of people that don't know any better into stealing their money. That's what's happening. So you have a bunch of, like unbeknownst to them, retail investors that think they're buying into the new fucking Leonardo da Vinci art collection and they're getting completely scammed, knowingly scammed. That doesn't even bother me the most. It doesn't. Because if you're that stupid, you kind of had it coming. You kind of have to touch the stove and get burned to learn, right? Now, again, it doesn't make me not upset. These people are unethical. They're gross. They're slimy. They're scammers. But if you're that dumb to where you paid anything more than a penny for a JPEG of a monkey, I mean, you have what's coming, okay? What's worse is the waste of human capital, not just the money. You've got CNBC all day. You've got news and media and executives like some of the biggest companies in the world and our government and all of our media outlets are covering the Clarity Act. Think about the theft that shit coiners and shit coins have done to society. What if everyone was just focused on Bitcoin, which was a fair money that can actually support society in a scalable, ethical way? Just picture that for a second. What if that's where all of our time and our energy and our focus went? It's like, hey, let's get AI and Bitcoin right. Imagine that. You've got people like, I spend my day, so much of my day talking to investors. Well, Jack, I want to see the results of the Clarity Act. You want to see the results of the Clarity Act? What do you want? Three and a half percent interest on your dollars? Open a Marcus account. Who gives a fuck about the Clarity Act? Well, you know, I tracked this index of Bitcoin, Ethereum and Solana. God damn it. It's just such an uphill battle. Unnecessary. We got enough problems, right? Fuck. All of our kids are unemployed and, like, picking up guns. You want to go lobby President Trump about Dogecoin? Give me a fucking break. All right, let's move on. You know what else really grinds my gears? When people clip old tweets of me and the internet thinks I just said it and get mad at me. You guys, I didn't just say that. These clips are years old. Fuck. Here's me just trying to have myself a weekend. I'm a Duke basketball fan. Duke is playing Michigan. The United States is playing for the gold medal hockey. I want to enjoy time with my girlfriend, watch some sports. My buddy's birthday was on Saturday. Go to dinner. I open up my phone. Everyone's yelling at me. Everyone's always yelling at me. Why is everyone yelling at me? Oh, Jack, you said... I didn't say that. I said that three fucking years ago. You have these fucking idiots. Like, when I launched 21 and someone said, how much Bitcoin do you want to buy at 21? And my answer was, I don't know, as much Bitcoin as we could possibly buy. That's everyone's logical answer, you moron. What was I supposed to say, an actual number? Oh, now that you ask, we only want 122,931.37 BTC. No more than that. What the fuck? Of course, everyone wants to own as much Bitcoin as they can possibly own. What type of stupid fucking question is that? So I give the only logical answer. I want to own as much Bitcoin as possible. And then you have these clip farming accounts on Twitter that just exist to get views and incite rage bait. And they're tweeting videos of me from years ago. And some of you idiots are out there that watch these clips every day. And it's the same fucking clips. They're tweeting the same clips. And you're like, Jack just was on TV saying they're going to buy all this Bitcoin, even though 21 hasn't done shit. You fucking idiot. I did not just say that. It drives me nuts. And maybe some of these grinds my gears aren't relatable because some of you guys don't face this issue. But whatever. I don't care. This is my show. I don't give a shit. It drives me nuts. And you guys, like I said, when Bitcoin gets in a bear market, people get pissed at me. It's just, I've said it before, it's the man in the arena, all right? It comes with the territory. It's much easier to blame this 31-year-old in the empty closet that you feel like you know, and you know well enough to yell at and criticize and be mean to. It's much easier to blame me than it is to blame yourself. I get it. And it's kind of grown on me a little bit over the years. In bear markets, you guys don't like my hair. You don't like my closet. You don't like my voice. You don't like the way I look. You don't like anything about me in bear markets, some of you. And it's kind of grown on me because we have this love-hate relationship. It's like, what's the economic public figure version of sexual tension? It's like we got this tension going on. When things are bad, you hate my guts. When things are good, you want to take pictures. It's grown on me. But like, what the fuck, you guys? You're like, it's like people are posting like baby photos of me. Like Jack just said. I did not just say that. I did not say that. Whenever there's a video of me, especially when I look like five years younger, I mean, look at this video of me. I have a tan. I have a tan. I have like a shaved head. And I look a decade younger. It drives me nuts. You've got these micro-strategy shareholders that are like, hey, idiot, you said you were going to buy Bitcoin. You didn't buy Bitcoin. I didn't just say that. I said that years ago, moron. So anyways, this guy posts this video where I say in it, anyone that understands Bitcoin doesn't take 1% of their portfolio and use it as a hedge. I still believe in that. If you actually understand Bitcoin, it's not 1% of your portfolio. You don't just dip your toe in. If you understand all this stuff, you buy some fucking SaaS. And the internet went apeshit on me. Get a load of this fucking asshole. Bitcoin's down 65%. Who's he to say, I did it. I said this three years ago, two years ago. Whatever, fuck. God damn it. It pains me how stupid people are. It's like the same thing. It's the same group of people that I went off on last week that are telling me how to use my Bitcoin. Don't take out a loan. What are you doing? Shut the fuck up. Got these people just doom-scrolling Twitter all day. Bitcoin's having some red candles. Bitcoin's in a bear market. You got these angry motherfuckers doom-scrolling Twitter all day, just looking to get wound up and just pile on guys like me. Fuck off. God damn it. I mean, I kind of love it. I have to admit, I kind of love it. I have a love-hate relationship with it. Sometimes I'm like, do these idiots know that I did not just say that? That I said that like five years ago? That there are Twitter accounts that just post clips of me from like years ago? But then sometimes it cracks me up. Sometimes I get a kick out of it. So anyway, that's what grind my gears. And the last thing that grinds my gears this week is just Canada. Just like all of Canada. Like, be better. And I'm half kidding, so I can already see the Canadians in the chat like, come on, man, that's so mean. Come on, it's just a joke, but kind of. Like, let's just admit it. Canada grinds all of our gears. And is it, hold on, is it Justin Trudeau that is dating Katy Perry? Yeah, I mean, come on. So Justin Trudeau tweets, you can't take our country, and you can't take our game. And then we whoop their ass, and like, he's out boating with Katy Perry. I mean, Canada's just the worst. I'm sorry, I'm sorry. Because Strike's not in Canada yet, and we want to be there, we want to serve everyone. And I've actually been to Canada a few times. And I don't hate Canada, I like Canada. And Canada has some great Bitcoiners. Shout out Francis, shout out Bull Bitcoin. Great Bitcoiners, I don't hate Canada. But come on. I mean, you guys couldn't beat us in hockey, and you've got Justin Trudeau just sounding like a giant wuss, running around, just caking it with Katy Perry. I don't know. I'll say this, it's just a tough, tough scene for Canadians. Just a tough scene. It really is. I mean, it's just got to be tough waking up Canadian today. Just a tough scene. I don't know how else to put it. Just a tough scene for Canadians out there. Thoughts and prayers are with you guys. OK, Strike. I posted this on Noster earlier. I think we got about a week or so, maybe a little more, till we start rolling out our line of credit externally. So this is a screenshot of me on my phone, setting up my line of credit. I just wanted to talk about the product again, specifically. Because some people, I posted this on Noster, and some people were like, look at this asshole. He's giving more people away to, look at this asshole. This guy, he's captured by the state, and he's giving us all more. We're here to borrow against our Bitcoin, and this is not what the godfathers of the cypherbunks would have ever wanted. OK, listen up, doofus. This is why the line of credit is cool, OK? Right now, the only credit product in Bitcoin are these 12-month loans, which are fine, and they serve their purpose. If you have a large tax bill, I had one of those, and I got a 12-month loan on Strike. If you are getting married, you need to finance a wedding, you're buying a new house, you're starting a new business, you take out a large chunk of capital, you lock in the term for 12 months so it's not a variable rate or anything, and you deploy that capital, you're able to plan ahead. You're going to say, hey, I want to finance my wedding collateralized by Bitcoin. I'm going to pay it back over this duration because I'm calculating my salary and I'm calculating what my bonus is going to be. And that works. But what it doesn't really do is it's not the best way to live on Bitcoin. The dream for me is I get my paycheck, I convert it into Bitcoin, I am able to live on Bitcoin without selling it, and pay my bills. And so what the line of credit is, is instead of taking out a large lump sum of capital at once and needing to use it for 12 months, you are just drawing the capital that you need when you need it. So let me give you guys a concrete example. Let's say I'm keeping 10% to 20% of my Bitcoin stack on strike and I want to live on that by borrowing against a little bit of it. But if I do 50% LTV loan, and then Bitcoin goes through a bear market like it is and I got to go post more collateral, I risk a margin call, I'm borrowing a large lump sum of cash all at once. And that's what ends up stressing people out and getting people in trouble. Is they're like, well, what if the price goes down? There's going to be a margin call. There's a chance I'm going to get liquidated. It really makes me lose sleep. I'm doing math. I'm doing numbers. I feel uncomfortable. And I understand that. I genuinely understand that. And I'm not trying to put anyone in that position. And so I came up with this idea for the line of credit because it actually suits my use case, my predominant use case. I do have large tax bills and one-off expenses every now and then. But my predominant use case is what I want is I have, like I said, let's say some small fraction of my Bitcoin stack on Strike. And I have bill pay hooked up on Strike. And the line of credit is just a payment method. So when a bill comes in that Strike is going to pay, because I have it all hooked up. Strike has an account and a routing number. When a bill comes in, I say I want my line of credit to pay that bill. And so what Strike does is it borrows a little bit of credit against my stack of Bitcoin and pays the bill for me. So let's say I'm making numbers up. Let's say my credit card is $5,000 a month. My mortgage is $2,500 a month. And my ComEd bill is $50 a month. And my HOA is $100 a month. So I'm looking at around $8,000 of monthly expenses. Let's say that. So Strike would pay those for me against my line of credit. So then at the end of the month when I've paid all the bills, I don't have 50% LTV in this giant loan that I need to manage. And if Bitcoin's price goes down, I'm at risk of margin call. I got to add more collateral. I'm sweating about liquidation. Instead, my LTV is like 1%. Because my LTV is only big as my monthly expenses. And I mean, hopefully you guys aren't spending 50% of your net worth every month, right? And then I have direct deposit set up on Strike. And my direct deposit comes in and I can decide, well, I want 50% of my direct deposit to go towards paying down my line of credit. I want the other 50% to buy Bitcoin. Or I want all of my direct deposit to go towards paying down my line of credit. But then I'm able to, hey, Bitcoin's down. Bitcoin's dipping. I'm going to allow my line of credit to grow to 10% LTV. Or I'm going to allow my line of credit. But that way, 1%, 5%, 10% LTV, you're nowhere near risk of liquidation. It's much healthier environment for you. And it's a much easier way to live your life on Bitcoin. You don't want a 12-month loan. You want a dynamic, forever rolling line of credit against a stash of Bitcoin. You've got your direct deposit hooked up, which allows you to finance this stuff in real time. And you've got bill pay hooked up. So you just spend on credit cards, hook your bill pay up to your mortgage, your HOA, your ComEd, your electricity, your credit card, all the stuff that you need. And you live your life on this evolving line of credit that when they print the money, Bitcoin's going to explode. And so these are the tools that allow me to own more Bitcoin than I otherwise would. Because I'm stacking more Bitcoin than I otherwise would. And I'm not selling as much Bitcoin as I'd otherwise have to, living on zero. It's a life hack. Strike is like a bank account from the future. And so I'm really excited about this. I want you guys to be able to ask questions. Because the other thing is, I don't think there's been a lot of innovation in the Bitcoin credit space. Everyone that offers Bitcoin-backed loans just does the same 12%. And a lot of our pricing is similar. We've tried to innovate. And like, okay, well, let's do unique liquidations. Where our liquidation is not going to, we're not going to liquidate your whole position at once. We're only going to liquidate tiny little bits if we absolutely have to, to get you back into a healthy state. Because we want the price to eventually recover, and we want you to have as much Bitcoin as possible. So there's a little tiny innovation. But I consider this line of credit a massive innovation. Because you don't have to take out a large 12-month loan. You can operate under these tiny, bite-sized lines of credit, which are really, really useful to maximizing the Bitcoin you own and living your life saving in Bitcoin. I think the future we're moving towards is you save in Bitcoin and you're going to have to spend in fiat because we're not on a Bitcoin standard yet. And this is an incredibly powerful tool. This is like life on steroids. And then things like liquidation-proof loans, which we should be coming out with in Q2. So we'll have a loan. It's going to cost you more, because obviously it's a lot more work for us to provide for you. But we'll offer you a loan where there's no such thing as liquidation at all. So we're going to come out with more and more and more and more innovative stuff. Really, really excited about it. Really excited about it. So anyways, if you guys have questions about this, I'd be really curious to know, because I'm going to start recording all the content and writing the blog posts and stuff to promote it. And I'm kind of curious, like does it make sense to you guys? Do you understand it? What would be useful? Do you want to see a tutorial of how I use it and how I live my life? Or just like, let me know what you guys think and what would be the most useful for you. And then 21, I know many of you are going to hate it, but we're working on announcing stuff. It's difficult. I mean, in the public markets, it's difficult. Obviously, listen, like what I'll say is like, obviously if I could rewind time, I'd do so much differently. There's no doubt about that. And I own that entirely. I mean, here's something else I'll say. People that it's, I find it interesting that there are entrepreneurs out there and CEOs out there that try and take shots at me. And I get it because a lot of people's marketing strategies are to convince everyone that I'm a bad person or that I'm a criminal or that my products suck. It's like, that's literally their marketing strategy is to be like, use us because Strike is this, this, and this or because Jack is this, this, and this. And so that's how they market their products. But building stuff is hard. And like, there's a lot of entrepreneurs and CEOs out there that know that. And so yes, like if we did not do this order of operations perfect, there's no doubt about that. If I could rewind time, I would have done a lot differently. But I mean, I stand 10 toes down and like there is no equity at this price level I'd rather own. I am balls deep in what we're building. I mean, we're trading at like a 27% discount to the Bitcoin on our balance sheet, which doesn't make any sense. You've got myself, Tether, and SoftBank and over 43,000 Bitcoin. And it's trading as if Bitcoin's 47K, which whatever. I mean, hey, I would love to announce stuff we're working on and then buy our own stock back. I mean, I would be buying our own stock personally if I was allowed to. I'm not allowed to right now. So I mean, if you guys want to keep it this low, that's fine. I'm a buyer when I'm allowed to be a buyer. But yeah, I mean, when you put Tether, SoftBank, and I all on the same team, and you guys know how we feel about the market and Bitcoin treasury companies and stuff. Bitcoin treasury companies are fine. They can exist and we'll see how well they do. We believe in having a Bitcoin treasury, one of the biggest in the world, and an incredible Bitcoin company. And so, yeah, operating in the public markets is tough, man. I've learned a lot. But green pastures ahead, skies are blue. I'm pumped, I really am. And I'm at the point where I've taken such a beating that like, you can't hurt me anymore. Can't, like, keep throwing punches. You're like, man, this guy's not flinching anymore. You guys can, I mean, I read every troll. I bookmark them all. I, like I said, I'm a psychopath. It just, it gets me going. It really drives me. I'm a psycho. And I'm just very excited for what we got cooking. That's all I can say though. And for some of you that's frustrating, sorry, I'm just following the rules. All right, let's do some Q&A. Longer episode. But, I don't know. You guys asked for the longer episodes. So, so, that's what you get. You want long episodes, you get long episodes. Okay, let's see here. Oh, supposed to blow my face up. Look at those blue eyes. Ladies, pause. I'm taking now. But these are Fiji, blue water. I mean, sheesh. Blue eyed bandit. I'm just kidding. I'm gonna get roasted for that on the end. I'm gonna get roasted. I'm gonna get roasted for that on the internet. Be like, this guy's talking about his eyes. Meanwhile, have you seen this stock price? Shut the fuck up. All right. Why should we work for something another man can create for free? I have a feeling that's not a legitimate question. You're just paraphrasing my quote. Agree. Next. Question for Jack, please, Dylan. If AI destroys wage leverage faster than governments can inflate it away, does Bitcoin become wage insurance? Yeah, I mean, we're gonna have to wait and see how Bitcoin does. I mean, let's say Bitcoin just repeats its COVID performance. It is a leading indicator. It sniffed out COVID and how bad it really was. And then it was the best performer on the other side of the big print. If it just repeats that, what's happening right now? So you're looking at indicators like the RSI, certain cohorts of Bitcoin holders capitulating and selling. It's all looking like the 2020 crash. It's all, you know, this price level is severe capitulation, oversold metrics, and Bitcoin is clearly sniffing out some credit crunch, some concern. And then if they print a lot of money, which presumably they would unless they want the entire system in America, as we know it, to collapse, then Bitcoin's gonna be the best performer. Something that I'm interested in is this time, what's different about this time is this time the American stock market is under a lot of pressure. I mean, the US has written papers on how they want capital to leave America. They want capital flight. They want stronger foreign markets and a weaker dollar, right? And so I'm curious to see if this is the cycle where Bitcoin starts to separate from its correlation to the NASDAQ. We'll see. Because if AI is here to, at least for now, destroy the multiple on software, destroy the multiple on big tech and the Mag 7, then maybe Bitcoin actually finally starts to trade as its own unique asset. But we'll have to see. The proof will be in the pudding. One day that will happen is my assumption. Is that, is it time? I don't know. Maybe, it might be, because you're seeing lots of endowments, lots of sovereigns. You're seeing the ETF disclosures look really good. I mean, a lot of huge capital is adding to their positions as the price comes down. So the ETFs are not puking Bitcoin. They're not capitulating. All this large smart money is just buying more. Individuals are owning less Bitcoin, believe it or not. Corporations, government, I mean, everyone with large capital pools are acquiring. So maybe Bitcoin starts behaving more like gold slowly and starts to diverge from the NASDAQ, but we'll see. We'll see. Question for Dylan and Jack. Since Bitcoin rises with inflation, how do you see the deflationary pressures of AI impacting the Bitcoin price? Yeah, so I kind of talked about this. Deflation will initially harm Bitcoin because it's hard on credit in what we're seeing. So it will be harmful. But by the way, in a deflationary crisis, everything sells off. If we go through like a true deflationary crisis and we have a day, a week, a month of extreme bond volatility, the VIX spikes, credit spreads go haywire. If we see that and we legitimately see that, by the way, gold too will sell off like crazy. Everything will sell off. It's a sell everything, hunker down, get in your bunker. And then things like gold and Bitcoin should in theory rally. So nothing is immune, by the way, just to be clear. A crisis is a crisis. There's no safe place to hide. Pain is pain. You're gonna have to feel it. No one gets out scotch-free. So what Bitcoin's bear market so far and the pain it's felt since October 10th or whatever, it's probably because there's a credit crisis brewing. Delinquencies are up. Joblessness is up. White collar's getting hammered. The youth is getting hammered. Yeah, it's not good. I mean, stock market now is getting hammered. Do you think AI agents will start using Bitcoin to manage financial tasks? I doubt traditional finance will work well on such a digital use case. Yeah, I would assume Bitcoin is the money of the future, but I think that for a variety of reasons. I'm not like hyper sold on this narrative. I think people are pushing this narrative because I think they're pushing the narrative for the wrong reasons. Like I think they're pushing the narrative because they feel like mainstream media and the legacy financial system is gonna eat it up. Like they're tweeting like, imagine what currency Claude bought. Claude bought is planning on using. Come on, guys. Nobody actually gives a fuck. Like if your Claude bought is like sending each other micropayments. For what? For shit posting? Like for deleting all of your fucking hardware data? I don't know. Yeah, obviously, yes. I think in a future where AI agents need to transact, they will use Bitcoin because they don't need permission. How would an AI agent sign up for a strike, sign up for a bank account? Like it's impossible. I don't, they can't use JPMorgan Chase. They can't use, like so they will need programmable money. And most importantly, they will need money where they don't need permission. People say, oh, they'll use stable coins. Will they though? Because what if there are AI agents that are doing all sorts of AI shit for kiddie porn? Are stable coins gonna be used for that use case too? So AI, stable coins, just to be clear, guys, you guys need to know this. You need permission to use stable coins. In case you didn't know that. There's a lot of things people don't know about stable coins. Like they didn't invent yield on cash. And they also, like they are permissioned money. They're just different versions of dollars. So when people say like AI agents won't use Bitcoin, they'll use stable coins. Okay, we'll see how well that goes until USDC sanctions a bunch of AI agents. Whatever, anyways. But my point is, I'm far more interested in all of the macro stuff and that they have to print so much money and that Bitcoin is this finite supply asset for an ungodly amount of capital and that there is an entire generation that is demoralized and hopeless and that we have an opportunity to build a better future that we actually believe in. The AI agent stuff will come, but I think it's similar to a lot of the early lightning network stuff I got caught in. Where I was really excited to integrate it into all the retail stores and disrupt Visa. And I was early. And I think we're gonna find ourselves to be early to AI agents adopting Bitcoin in like a major, major, major way. But we'll see. Hopefully I'm wrong. I hope I'm wrong. What narrative is left after digital gold? I don't know. I mean, I'm a narrative guy, I guess, because I go on TV and I talk about Bitcoin and they're always into the narratives. And so I kind of have to play the narrative game. But to be candid with you guys, I'm not a narrative guy. I think it's really simple. Monies compete. You contribute time, energy, energy, you contribute time, energy, effort, labor. You gotta store it somewhere. Where's the best place to store it? And that's not like a opinionated, that's not like a, well, my favorite color is blue and your favorite color is yellow and his favorite color is green. That's not, it's a, well, which one's scarcer? Which one's easier to store? Which one's easier to transfer? Which one's more divisible? Like Bitcoin is just pound for pound, the best money, period. And like candidly, that's all that matters. It doesn't really matter. Now, what narratives are gonna be adopted by people? I don't know. Sure, you want Bitcoin to be the money for AI agents? Whatever, fine. Is that how it becomes a $30 trillion asset? No, it becomes a $30 trillion asset because it's the scarcest thing that we've ever come across as a species, period. The only thing as finite as Bitcoin is life itself. That's the only thing that matters in regards to the price. Price, if anything, is very simply put supply-demand. The supply can't move. So anyway, I'm not a narrative guy. I'm not like one of these guys that's like, ooh, let me spend all day thinking about some story that everyone will believe. I don't know. I mean, don't get me wrong. When I go on CNBC and they wanna talk to me about narrative, they're gonna ask me about quantum, all this bullshit. I'm happy to play the part to hopefully move the needle in the direction it needs to go. It's the best thing you can own, period. And if it's too volatile for you now, then you're not gonna get the returns it has now. Its returns will go down over time because volatility will go down over time. So if you can't take the heat, stay out of the kitchen. You can't take the volatility, you don't get the returns. Eventually, everyone will own Bitcoin. Will that be within my lifetime? I'm not sure, but I don't know. It's just the best money. It's as simple as that. You said Bitcoin-backed loans in Europe would have a 10K minimum, but in Portugal, it's still 75K. Will that limit drop soon? When you launch a BTC line of credit, will Portugal be included in the rollout? Not all of our European countries have 10K. Unfortunately, Portugal is obviously one of the ones that did not get the 10K. It's just difficult, man. It's regulations. It kills me. I wish everything I built, I could just give to whoever wanted it. Imagine that world. Imagine a world where, fuck, I could just build stuff and whoever wants to use it could use it. Instead, I gotta get permission to take a piss. It's crazy. I mean, in the public markets, who knows? I'm gonna end up needing my blood panel. It's crazy. So yeah, I'm sorry about that. The Portugal regulators and regulations are different and it doesn't mean we're not working on it. It's safe to say that if I don't serve you as a customer today, I'm working on it, whether that's limits, opening an account, lending. So we're working on it. I'm sorry about that. And the line of credit is gonna be U.S. first, but we're gonna try and get it the same as all of our other products. We try and start small, do some testing, ensure that the product quality is high. We don't wanna launch something that gives people issues. That's not worth it. Low time preference. So we'll launch it in a few select U.S. states starting next week probably. And then we'll go from there. And our goal will be to get it to, of course, Europe and the rest of the world as fast as possible. Question, hey Jack, when can we expect to have Yield on Cash account available? I'm so ready to dump my savings account. No timeline at the moment, but it's a top priority, super top priority. It's a little bit more complicated than you'd think, so it's taking us a little bit more work to get it to a place where we can start to have a timeline and tease it a little bit more. But it's coming. Hopefully within the coming months. It's certainly not like at the end of this year. Now, no promises, obviously. There's only so much I can control. But from what I can tell and the progress we've made already, it should be fairly soon-ish. Fairly soon-ish. Question for Jack, why for Bitcoin-backed line of credit would there be minimums when it's secured by money? There's platforms like Lava. Well, Lava's not legal. They're not doing legal things. Yeah, I mean, listen. It's hard to be compared to other companies that aren't following the rules. Like part of Strike in being one of the most trusted and best Bitcoin financial services in the world is that we follow the rules. We're not gonna get you and us in trouble. Nobody wants that. And so, can't speak for other companies, but we follow the rules. The line of credit minimum, by the way, will be really low, like thousands of dollars, couple grand, five grand, something like that. But there are rules, unfortunately. And there are companies that don't follow the rules, but the problem is eventually you get caught and breaking the rules is not like a scalable business model. So, we're very regulated and licensed and I know people will say, oh, you KYC cuck. But, I mean, what do you want me to do? I can't change the world from a prison cell. I can't build you guys products and have fun on this show sitting behind bars. So, I gotta follow the rules. And I can only make progress moving the world in what I think is the right direction by following the rules. So, yeah, that's all I'll say. Dylan, will Strike be offering checking and savings accounts with debit slash credit cards? Will it be possible to do that? Will Strike be offering checking and savings accounts with debit slash credit cards? Bitcoin businesses don't have a Bitcoin bank option to run these services. Businesses need access to these services. Eventually, we will. It's not something we're actively focused on at the moment. And one of the primary reasons for that is because we, I don't know, I just don't know that you guys need a card from us yet. We'll see. But with the line of credit, like if you have an Amex card, you're probably getting all these amazing rewards. I don't know. Do you need a card from us? Use your Amex. Just use your line of credit to pay off the Amex. So, you've got direct deposit. You can pay bills. You can buy, sell Bitcoin. You got a line of credit, termed loans. You're good. You should be good. We'll see, though. Like, you guys will use the service. And then if it's not giving you what you need, we'll build whatever you want. But I'm curious to see if people use it correctly. I don't think you need a card from us. I don't know why. I don't know. A card is such a fiat product. I'll build it if I have to. But still want feedback from you guys on that one. I'm not sold. Jack, simple question. Does Strike run its money transfer transactions primarily on Tether or Bitcoin? Bitcoin, we don't run anything on Tether. I mean, we support USDT in the version of Strike. So you guys that are using Strike in America, in UK, in EU, you're using Strike that has support for either the dollar or the euro or the pound, wherever you are, your jurisdiction. Strike in Latin America and in Africa, instead of their local currency, it has Tether. Because people in Nigeria, they don't want Naira. They want USDT. So we support USDT like that. But our money transfers, like our SendGlobally product, our cross-currency stuff, it's all on Bitcoin. Now, people try and lie about me all the time. And I know that that's a frequent lie. Like, Jack's friends with Tether and he's secretly running his company on Tether. I'm not. I'm not. Question, when will Michigan be available for the line of credit product that you'll launch? Uh, Michigan will not be one of the first states, but it could be weeks after. It could be whenever we want. We're gonna roll it out semi-selectively and just see how it goes first. Because I'm not sure people understand it. I'm really curious how people are gonna use it. I wanna make sure it's an unbelievable experience, like the one that I've been bragging about. And then I'm just gonna flip the switch, turn it on everywhere. So, there's no explicit timeline, there's no rules about that. That's the subjective decision I'm making, which is we wanna roll it out the right way, low time preference. You guys are gonna kick my ass. Because there's gonna be people on Twitter that are like, holy shit, my life's changed, I get this line of credit. So it's like, this is such a unique Bitcoin product, I'm so excited about it. And people are gonna be tweeting about it and then some people aren't gonna have access to it. And I'm gonna get my ass handed to me. People are gonna be like, hey, turn it on for me, fuck you. Trust me, I think it's the right thing to do. You just never wanna do, it's a totally new product, it's a first of its kind, you don't wanna blast it out to everybody all at once, at least in my opinion. When is Strike coming to Canada? We are working on Canada. It's just brutal, man. Canada grinds my gears. The regulatory environment over there is painful. So, it's just gonna take us time, unfortunately. But we're working on it. Strike question, Dylan. Please update us on UK personal loans. Also, is Jersey Channel Island counted within UK or as a separate domicile? I don't have an update for UK personal loans for you on this Mailbag Monday. I don't know what Jersey Channel is. Maybe if you write in to support or DM us or something, we'll get back to you on the specifics there. Is that like a region of the, I don't know what that is. Sorry. But we're working on the personal loans in the UK as well. We are. That one's more straightforward than Canada. We'll get there. Dylan, will Strike be offering business solutions for Bitcoin businesses? We don't wanna use TradFi Bank for checking. We want to use a Bitcoin bank. So, we do offer these products for businesses. So, we have BillPay for businesses, we have Lending for businesses, we'll have Line of Credit for businesses. So, you get an accountant routing number with Strike. You can wire money in, you can send money out, you can pay bills. I think our Line of Credit for businesses is gonna be massive. Imagine if you're a Bitcoin miner. You have bills to pay. You're mining Bitcoin. You need to pay your electricity bill. You might not wanna sell your Bitcoin at the lows right now. Just hook up your BillPay to the bills that you gotta cover for your mining services. Collateralize it against the sats on your balance sheet and handle your bills that way. It's like an absolute game changer. Huge. So, yeah, I don't know what the confusion is here but we support businesses. If you're a business and you wanna talk to us or you need any help, just reach out. I mean, we've onboarded thousands and thousands of businesses all over the world. And our business product is actually growing a lot, which is exciting. I think the Line of Credit is gonna be huge too. If I'm a business, I mean, Strike the Business uses Line of Credit too. Like, let's say we need a license in Canada and it's a million dollars. Okay, we have over 1,500 Bitcoin on our balance sheet, which is, what is that right now? It's a lot less than it was in October, I'll tell you that much. So, that's $100 million. We have $100 million of Bitcoin on our balance sheet. Would I use a Line of Credit to get a million dollar license or would I sell Bitcoin off our treasury or take the profits? So, let's say we're making millions of dollars a month. Would I take some of that and pay for the license? Maybe, but I might just take that, buy the dip and have an LTV of like 1% getting the license in Canada with the Line of Credit. And then I'd pay down that million dollar Line of Credit over the next 12 months. I'm taking maybe 100 grand a month of our profits and allocating it and paying it down. But in that way, I'm allowing myself to buy the dip. It's just like, the Line of Credit is just a beast. I think businesses are gonna love it. I think Bitcoin miners are gonna love it. If my state is slow to allow lending, Washington, would you expect it to be slow to approve the Line of Credit? No. No. We'll get you. No, shouldn't be. Hey Jack, question for Strike. I see an extra layer pin protection before hitting send or withdraw. It would be nice to have that layer so that I can send larger UTXO to cold storage. What do you mean by that? So we do have that feature. Well, I can't tell what the question is. So you see the feature. I see an extra layer pin protection. Yeah, so we have this feature where if you guys want extra security on your account, you can do it where you need to enter the pin or do some form of authentication to send Bitcoin off the app if you want, if you want that level of security. We have that. So if you need that, you can just turn it on in your settings. Okay, last question, other. Am I a cat guy, a dog guy, or neither? We all know you're a bear guy. I'm not a cat guy. I'm allergic to cats. Or, I don't know. At least I was when I was a kid. Like, my eyes get all irritated and stuff. So I'm definitely not a cat guy. Am I a dog guy? Yeah, humans are dog guys. They're just the man's best friend, right? There's no doubt about that. But I had a bad experience with a dog. It was actually with Dylan. I'm gonna rag on Dylan a little bit. Sorry, not sorry. Dylan and I got a dog when we were living together, like, when was that? Almost 10 years ago? Dylan and I got a dog, and we were young, man. We were like 23 or something, young. This was like before I founded Strike, but like right before. Like I was open source Lightning Network developer. And Dylan and I got a dog, and Dylan was always out partying in the clubs. I'm not exaggerating. I'm being dead ass. Dylan was like the coolest guy in town who's going to all the clubs. Like, ladies love Dylan. He's like running around the city, having fun. Whatever, he's 23, whatever. I was literally working on open source Bitcoin software all day, all night in our apartment. And so we get this dog, and Dylan doesn't take care of the dog. Dylan's fucking running around, boozing, chasing women. I'm trying to focus on the Lightning Network and building the future financial system, and I have this fucking dog all by myself. And I'm like, bro, I can't take care of this dog all by myself. He's like, sorry, man, I'm busy. So meanwhile, the dog ends up hating me because I kind of grew frustrated with the dog. The dog's shitting all over the house, the dog. It was a mess. I was too young to have a dog, bad situation. Dylan bailed on me with the dog. He's probably in the chat like, that's what happened. This is the same apartment when I had the painting that I got for six Bitcoin, but then Bitcoin obviously appreciated, so it became a six-figure apartment. So it became a six-figure painting, technically, and he's bringing home chicks from the club like, yeah, you know, this is a six-figure painting we got on the wall. It was that apartment. We had a fucking dog. And so I'm a dog guy. Now, you're gonna ask what happened to the dog. Is the dog okay? Yes, the dog's great. Once I realized the situation was bad, like the utter and complete gentleman that I am, I was like, okay, it was a golden retriever. It's like this golden retriever has to go find a farm. I didn't have a yard. It was a tiny little apartment in Chicago. I didn't have a big closet like this. I had no room for this fucking dog, chewing up the couch, shitting everywhere. I'm trying to understand how the lightning network works. This thing is just like causing mayhem. Dylan's out at the club. So I find a farm for this dog and give the dog to a new owner that I knew through a friend. It was on a farm, and the dog lived an incredible life. Thing's still alive, running around a farm, amazing. So that's my dog experience. I plan on having a dog someday, but I learned my lesson. I'm not, I don't know if I'm ready for, I gotta focus right now. I gotta focus right now. We're in the belly of the beast right now. My first goal is to get engaged, get married, and have kids. That's my, before I get a dog. I wanna be a dad so bad, and not of a dog. My dream is to be a dad. So anyways, not a cat guy, I'm a dog guy, and a Blue Devil guy. The only sports team I like as much as the Chicago Bears and the Bulls are probably the Duke Blue Devils. White Sox, Bears, Bulls, Duke. My dad went to Duke, I didn't go to college. I'm a diehard Duke basketball fan. I can't watch Duke games in public. And everyone that knows me knows that. That's not a, that's a known fact. Like oh, if Duke is playing, can't invite Jack to stuff, he can't leave his house. And so beating Michigan, I mean Michigan fans are the worst. Means you're shoving a sock in Dave Portnoy's mouth. So I'm not a cat guy, I'm a dog guy, a Bears guy, and a Blue Devil. All right, this episode is officially run two hours. So Dylan texted me that he's sending in his two weeks notice. Hold on, which part of that would you push back on, Dil? It's not an insult. God forbid your friend gets on a show with 50,000 subscribers and says you got a lot of chicks and we're running around having a good time. God forbid. Dylan was killing it, I mean what do you want, like what? Which part of that was, let's see, I'm waiting for his response. Which part of that was bad? You guys know how we roll on this show. We prioritize the truth and nothing short of the truth. Dylan said he took care of the dog, walked him every day after work, and he loved Dylan. Yeah, debatable. Debatable that, whatever, whatever. Waste of time for the internet. Let it be known that Dylan took care of the dog when he got home from the club. He took the dog for a walk. All right, with that, I'm out of here, guys. Let me pull up the chat and see any last minute things. You have for me, nothing. All right, guys. Jack could have said Dylan was bringing dudes back to the apartment. See, that's what I'm saying, guys. You can't be so cynical. God forbid your boy says, yeah, when we were living together he was running around, chasing tail, having a good time. What I could have said is Dylan was running around. No, no. The dog's name was Finn, after Hal Finney. All right, I'm out of here. I'll see you guys next week. As always, leave comments, questions in the comments section. I read them all. Let me know how I can make the show better. Was this too long? Did the topics resonate? Did it make sense? What do you think of our line of credit product? How can I help you? And with that, I'm out of here. Peace and love. Take care of yourselves. Turn on your DCAs. Bye.
+
+## Segments
+- [0.0 - 7.360000133514404] Yo, welcome back to another episode of the Jack Mallers show.
+- [7.360000133514404 - 13.960000038146973] I am your host, Jack, and you are listening to yet another edition of Mailbag Mondays.
+- [13.960000038146973 - 17.479999542236328] All signal, no noise, and no ads.
+- [17.479999542236328 - 25.440000534057617] Every Monday, 6 p.m. Eastern, 5 p.m. Central, 3 p.m. Pacific, let's get this show timestamped.
+- [25.440000534057617 - 36.52000045776367] Ladies and gentlemen, I'm talking to you live at a Bitcoin price of $64,760.
+- [36.52000045776367 - 42.31999969482422] That puts Bitcoin's market cap at $1.29 trillion.
+- [42.31999969482422 - 47.47999954223633] Our all-time high remains at $126,160.
+- [47.47999954223633 - 54.31999969482422] We're about 50% down from that all-time high, 48.7% to be exact.
+- [54.31999969482422 - 58.15999984741211] We made that all-time high on October 6th, 2025.
+- [58.15999984741211 - 62.79999923706055] It's been 140 days.
+- [62.79999923706055 - 68.5199966430664] For those of you that keep track of the Bitcoin block height, timestamp your life in Bitcoin
+- [68.5199966430664 - 71.0] block time.
+- [71.0 - 78.23999786376953] The last Bitcoin block mined before I hit record was Bitcoin block height 938,033.
+- [78.23999786376953 - 83.63999938964844] The road to one million, not only in price, but in blocks, baby.
+- [83.63999938964844 - 85.44000244140625] Stay humble and stack stats.
+- [85.44000244140625 - 87.4000015258789] Stay humble and mine blocks.
+- [87.4000015258789 - 92.27999877929688] All right, ladies and gentlemen, there's so much going on in the world, it's difficult
+- [92.27999877929688 - 96.55999755859375] for me to understand and to pick a topic.
+- [96.55999755859375 - 99.63999938964844] What do the people want from the boy?
+- [99.63999938964844 - 105.95999908447266] What type of truth needs to bear from my lips?
+- [105.95999908447266 - 111.0] And I decided on this, AI is breaking the system and what it means for Bitcoin.
+- [111.0 - 113.44000244140625] I could have gone in a million different directions.
+- [113.44000244140625 - 116.16000366210938] Gold continues to perform well.
+- [116.16000366210938 - 121.4000015258789] Gold was actually the US's second largest export of 2025.
+- [121.4000015258789 - 126.4000015258789] So I could have gone in that direction, but we've talked enough about gold.
+- [126.4000015258789 - 129.10000610351562] We know who's buying it and we know why they're buying it.
+- [129.10000610351562 - 133.44000244140625] We know why gold is performing and everything else isn't, including Bitcoin.
+- [133.44000244140625 - 134.8800048828125] We know that.
+- [134.8800048828125 - 141.60000610351562] What's becoming more of the story is what we on the show have been warning that Bitcoin
+- [141.60000610351562 - 142.60000610351562] has been signaling.
+- [142.75999450683594 - 148.0] We've talked about Bitcoin as a smoke alarm, as a truth teller, as something that leads
+- [148.0 - 149.0] markets.
+- [149.0 - 152.9600067138672] And we're like, man, Bitcoin's starting to look like shit's going to hit the fan.
+- [152.9600067138672 - 157.27999877929688] Bitcoin is starting to look like there's a credit crisis looming.
+- [157.27999877929688 - 161.1999969482422] And all of a sudden, guys, it's happening.
+- [161.1999969482422 - 165.32000732421875] Now, I'm known to be emotional.
+- [165.32000732421875 - 166.52000427246094] I love a good time.
+- [166.52000427246094 - 168.8000030517578] I love cursing and screaming.
+- [168.8000030517578 - 174.1199951171875] So I'm not telling you to hit your bunker and buy up toilet paper like we're in COVID,
+- [174.1199951171875 - 177.60000610351562] but we might not be far off.
+- [177.60000610351562 - 178.60000610351562] Let's get into it.
+- [178.60000610351562 - 183.6999969482422] So the title of the show, AI is breaking the system and what it means for Bitcoin.
+- [183.6999969482422 - 185.55999755859375] Chapter one, the white collar wipeout.
+- [185.55999755859375 - 187.6999969482422] AI is not coming for jobs.
+- [187.6999969482422 - 190.8000030517578] It's already here taking your jobs.
+- [190.8000030517578 - 195.8000030517578] So in large part, this was inspired by a real life conversation I was having.
+- [195.8000030517578 - 203.75999450683594] So to not dox people in my personal life, I was having a conversation with someone in
+- [203.75999450683594 - 206.8000030517578] my life and they're an accountant.
+- [206.8000030517578 - 209.1199951171875] And they're not necessarily in Bitcoin.
+- [209.1199951171875 - 212.47999572753906] I just know them for other reasons.
+- [212.47999572753906 - 218.36000061035156] And we're at a lunch and we're talking to AI comes up and I'm like, man, AI, I use AI
+- [218.36000061035156 - 219.36000061035156] all the time.
+- [219.36000061035156 - 222.83999633789062] It's hard for me to imagine a life before AI.
+- [222.83999633789062 - 226.47999572753906] Like this show, for example, I'm using AI.
+- [226.47999572753906 - 227.67999267578125] Like I got my whole setup.
+- [227.67999267578125 - 229.1199951171875] I've already talked to you guys about it.
+- [229.1199951171875 - 230.83999633789062] I've got my developers set up.
+- [230.83999633789062 - 236.67999267578125] I'm honestly in the middle of vibe coding, all sorts like a to do list, an ideas app.
+- [236.67999267578125 - 245.60000610351562] Like it's easier for me to talk to an intelligent agent to perform how I need to perform.
+- [245.60000610351562 - 249.52000427246094] And I go, how are you guys using AI in accounting?
+- [249.52000427246094 - 250.8800048828125] And he goes, using AI?
+- [250.9199981689453 - 252.9199981689453] I don't use AI.
+- [252.9199981689453 - 254.63999938964844] My jaw hit the floor.
+- [254.63999938964844 - 255.63999938964844] I said, what?
+- [255.63999938964844 - 257.67999267578125] Aren't you an accountant?
+- [257.67999267578125 - 258.67999267578125] You don't use AI?
+- [258.67999267578125 - 261.9200134277344] He said, yeah, we're very counterculture.
+- [261.9200134277344 - 263.239990234375] We're very against AI.
+- [263.239990234375 - 265.3599853515625] We're like, screw AI.
+- [265.3599853515625 - 266.3599853515625] You know what I mean?
+- [266.3599853515625 - 268.8399963378906] We're not going to use it out of principle.
+- [268.8399963378906 - 272.32000732421875] And I'm sitting here and this is just a normal dude.
+- [272.32000732421875 - 273.32000732421875] You know what I mean?
+- [273.32000732421875 - 274.32000732421875] He's not a Bitcoiner.
+- [274.32000732421875 - 281.9200134277344] I like all tuned in to how anthropic tweets about their new models are crashing stock.
+- [281.9200134277344 - 284.79998779296875] He doesn't have a fucking clue.
+- [284.79998779296875 - 292.2799987792969] This dude, he does accounting and then he's smoking meats and he drinks Guinness and he
+- [292.2799987792969 - 294.8800048828125] plays golf.
+- [294.8800048828125 - 306.32000732421875] And I sat there and was like, oh my God, like nobody has any idea.
+- [306.32000732421875 - 308.67999267578125] Nobody has any idea.
+- [308.67999267578125 - 309.760009765625] That was my literal react.
+- [309.760009765625 - 312.8800048828125] That's why I was like, I have to talk about this on the show.
+- [312.8800048828125 - 316.9200134277344] Nobody has any idea.
+- [316.9200134277344 - 319.6000061035156] The VIX, the volatility of the stock market remains low.
+- [319.6000061035156 - 322.6000061035156] The bond market volatility, the move index remains low.
+- [322.6000061035156 - 324.239990234375] Credit spreads remain wide.
+- [324.6000061035156 - 330.9200134277344] I mean, markets are ho-hum as if everything's fine, nothing is wrong.
+- [330.9200134277344 - 336.0400085449219] We're casually reshoring, which we, like nobody has any idea.
+- [336.0400085449219 - 337.67999267578125] No stock market all time highs.
+- [337.67999267578125 - 342.1199951171875] Oh, the United States won the gold medal in hockey, USA.
+- [342.1199951171875 - 344.6000061035156] Nobody has any idea.
+- [344.6000061035156 - 346.6400146484375] So let's take a look, guys.
+- [346.6400146484375 - 352.32000732421875] First of all, corporate America is panicking right now.
+- [352.32000732421875 - 359.32000732421875] If you take even a second to do a little bit of research, you'll realize shit is already
+- [359.32000732421875 - 362.0] hitting the fan.
+- [362.0 - 366.3999938964844] This is AI disruption mentions in earnings calls.
+- [366.3999938964844 - 373.8399963378906] Q4 earnings calls hit a smashing record, nearly doubling prior mentions.
+- [373.8399963378906 - 380.7200012207031] Look at the growth of AI disruption mentions during earnings calls over the last four years.
+- [380.7200012207031 - 385.1600036621094] It went from barely a mention to a mention on every single call.
+- [385.1600036621094 - 391.1199951171875] I need you guys to conceptually understand the rate and pace of that level of change.
+- [391.1199951171875 - 395.0400085449219] It went from, wait, AI is an actual thing?
+- [395.0400085449219 - 402.0799865722656] To if you have an earnings call and AI is not mentioned, there's a problem.
+- [402.0799865722656 - 405.6000061035156] Guys, that's insane.
+- [405.6000061035156 - 411.67999267578125] Now, over the weekend, I don't know how to pronounce this research firm, Citrini.
+- [411.67999267578125 - 414.44000244140625] Citrini, let's just go with Citrini.
+- [414.44000244140625 - 421.79998779296875] This research firm Citrini posted a Substack article and it's actually a really good read.
+- [421.79998779296875 - 422.9200134277344] I recommend reading it.
+- [422.9200134277344 - 423.9200134277344] It's long though.
+- [423.9200134277344 - 424.9200134277344] It's long.
+- [424.9200134277344 - 431.44000244140625] You can see my little AI thing, this browser extension I have that reads everything to
+- [431.44000244140625 - 432.44000244140625] me.
+- [432.44000244140625 - 437.9599914550781] It was about a 45-minute read, but I had my morning espresso, it read to me while I was
+- [437.9599914550781 - 438.9599914550781] playing some chess.
+- [438.9599914550781 - 441.9599914550781] It was a good read.
+- [441.9599914550781 - 449.3599853515625] The article is titled, The 2028 Global Intelligence Crisis.
+- [449.3599853515625 - 457.3999938964844] It's as if we're in June 2028 and they're writing their traditional macro monthly newsletter,
+- [457.3999938964844 - 463.1600036621094] unemployment's at 10%, the stock market has gotten hammered, and it's a two-year look
+- [463.1600036621094 - 469.55999755859375] back as to where we are today as if we're in the year 2028 of what happened.
+- [469.55999755859375 - 478.0400085449219] This giant deflationary wave of technology hit us in the face, crashed the stock market,
+- [478.0400085449219 - 483.8399963378906] rendered everyone unemployed, and just destroyed the world as we know it.
+- [483.8399963378906 - 488.5199890136719] As I've said before, you're a victim if you want to be, and obviously rendered a beautiful
+- [488.5199890136719 - 494.8399963378906] world for humans as creators and efficiency and deflationary tendencies making everything
+- [494.8399963378906 - 499.79998779296875] more accessible and achievable, but ruined this debt-ridden system that we had built.
+- [499.79998779296875 - 503.7200012207031] Okay, cool article, Substack article, who gives a fuck?
+- [503.7200012207031 - 509.3599853515625] Well Monday morning, the stock market's getting obliterated and what hits the Bloomberg terminal
+- [509.3599853515625 - 517.1599731445312] is software payment shares sink after Citrini post on AI risks.
+- [517.1599731445312 - 522.47998046875] Wall Street is citing this Substack post as why the stock market is crashing.
+- [522.47998046875 - 527.7999877929688] And I screenshotted Arthur's tweet here which reads, the AI destruction common knowledge
+- [527.7999877929688 - 535.4400024414062] game is revving up because it's one thing for me to be talking about this.
+- [535.4400024414062 - 539.0] It's one thing for Bitcoin to be warning us about this.
+- [539.0 - 543.6400146484375] Then to see people posting about it on Substack and you're getting these kind of like semi-nonfiction
+- [543.6400146484375 - 549.1599731445312] looks into the future of what a world looks like if AI actually works.
+- [549.1599731445312 - 552.239990234375] And it's actually working, right?
+- [552.239990234375 - 557.5399780273438] And then it's a whole other thing for Wall Street to now be reading all of our Substacks,
+- [557.5399780273438 - 563.4000244140625] be watching all of our podcasts and being, holy shit, sell all the stocks, deflation
+- [563.4000244140625 - 567.3200073242188] is meeting a debt-ridden system.
+- [567.3599853515625 - 570.1599731445312] And let me make a quick point here.
+- [570.1599731445312 - 577.6400146484375] Because sometimes I see people say things like, well, the AI agents aren't that good.
+- [577.6400146484375 - 583.0] Have you tried to make ingredients for meatloaf?
+- [583.0 - 584.0] It's not that good.
+- [584.0 - 585.9600219726562] I can make better meatloaf.
+- [585.9600219726562 - 587.7999877929688] That's not the point.
+- [587.7999877929688 - 591.8800048828125] The point is, it will eventually get that good.
+- [591.8800048828125 - 592.97998046875] That's the point.
+- [592.97998046875 - 594.52001953125] That's not how markets work.
+- [594.52001953125 - 596.52001953125] You guys need to understand this point really quickly.
+- [596.52001953125 - 597.52001953125] Pay attention.
+- [597.52001953125 - 604.6799926757812] If you're hitting a PR on the bench, if you're driving and you're switching lanes, pay attention.
+- [604.6799926757812 - 606.9199829101562] This is how markets work.
+- [606.9199829101562 - 610.0399780273438] They price in the future.
+- [610.0399780273438 - 614.719970703125] If it will happen, you price it in now.
+- [614.719970703125 - 620.6199951171875] It's not about whether Claude can make a better meatloaf ingredients list than you today.
+- [620.6199951171875 - 622.6799926757812] It will eventually.
+- [622.6799926757812 - 623.6799926757812] That's the point.
+- [623.6799926757812 - 625.7000122070312] It will be a better accountant.
+- [625.7000122070312 - 628.780029296875] It will do better analysis on your blood work.
+- [628.780029296875 - 631.1799926757812] It will write better legal documents.
+- [631.1799926757812 - 632.9400024414062] It will write better software.
+- [632.9400024414062 - 634.8200073242188] The point is, it will.
+- [634.8200073242188 - 639.260009765625] And any doubt that it won't and it can't is gone.
+- [639.260009765625 - 643.5] And the way markets work is they start pricing that reality in today.
+- [643.5 - 644.5] They're forward-looking.
+- [644.5 - 650.9000244140625] You understand?
+- [650.9000244140625 - 654.3800048828125] And so when anyone ever says, well, these things aren't that good.
+- [654.3800048828125 - 655.3800048828125] That's not the point.
+- [655.3800048828125 - 659.9400024414062] Now, if we're talking about how they can impact your life today, yeah, I don't use AI for
+- [659.9400024414062 - 660.9400024414062] everything yet.
+- [660.9400024414062 - 662.1799926757812] I use AI for some things.
+- [662.1799926757812 - 664.260009765625] I use AI to help me make this show.
+- [664.260009765625 - 666.9400024414062] It's really good at making slide decks.
+- [666.9400024414062 - 669.6599731445312] It's not really good at other things.
+- [669.6599731445312 - 671.1799926757812] That's a separate conversation.
+- [671.1799926757812 - 673.6599731445312] How is it going to impact markets?
+- [673.6599731445312 - 682.5] Will it cause enough disruption in the job market to cause a cascading debt spiral in
+- [682.5 - 686.3800048828125] this $40 trillion debt-ridden fiat system?
+- [686.3800048828125 - 689.5999755859375] That's the question you need to ask yourself.
+- [689.5999755859375 - 695.8200073242188] Why is Bitcoin acting like the world is on fire?
+- [695.8200073242188 - 700.6199951171875] Why is AI disrupting and displacing jobs on every single earnings call?
+- [700.6199951171875 - 706.219970703125] Why is a Substack article being referenced as the reason there's red dots everywhere
+- [706.219970703125 - 709.2000122070312] all over everyone's Bloomberg terminal?
+- [709.2000122070312 - 711.4600219726562] That's the thing you need to ask yourself.
+- [711.4600219726562 - 716.219970703125] When you're at happy hour and some dude's like, bro, these models aren't even that impressive.
+- [716.219970703125 - 718.97998046875] That's not how markets work.
+- [718.97998046875 - 724.1400146484375] So one Substack post, a single research post.
+- [724.1400146484375 - 733.5399780273438] Look at the damage done, Visa, MasterCard, DoorDash, ServiceNow, Blackstone, murdered.
+- [733.5399780273438 - 738.780029296875] In the Substack post, again, you guys should read it, it not only talks about AI, it talks
+- [738.780029296875 - 739.780029296875] about stablecoins.
+- [740.0999755859375 - 741.9400024414062] Again, it's in the year 2028.
+- [741.9400024414062 - 746.5399780273438] It's like I go and I buy, I forget what it said exactly, I go buy a bacon, egg and cheese
+- [746.5399780273438 - 748.3800048828125] and I use stablecoins.
+- [748.3800048828125 - 751.4199829101562] And there's no interchange for Visa to take anymore.
+- [751.4199829101562 - 753.0599975585938] Anyone can be on the issuing side.
+- [753.0599975585938 - 754.780029296875] Anyone can be on the acquiring side.
+- [754.780029296875 - 759.3800048828125] Now, I don't know why stablecoins are that innovative.
+- [759.3800048828125 - 762.4199829101562] We'll get to that in a second during the grind my gears.
+- [762.4199829101562 - 768.5399780273438] But I agree with the notion that open networks will beat these closed predatory monopolistic
+- [768.5399780273438 - 769.5399780273438] networks.
+- [770.2999877929688 - 776.02001953125] These futuristic posts where extreme deflation, technology is so good at bringing the cost
+- [776.02001953125 - 779.5] of everything down, bringing efficiencies into our life.
+- [779.5 - 785.9400024414062] And all of these legacy models are finally getting disrupted by pure innovation for everybody.
+- [785.9400024414062 - 787.219970703125] Look at the damage done.
+- [787.219970703125 - 792.5800170898438] I mean, Visa down four and a half percent, MasterCard down six and a half percent, American
+- [792.5800170898438 - 798.5399780273438] Express down almost eight percent, Capital One down over eight percent from a substack
+- [798.5399780273438 - 800.2999877929688] post.
+- [800.2999877929688 - 802.2999877929688] You cannot make this shit up.
+- [802.2999877929688 - 805.1400146484375] We live in the craziest timeline.
+- [805.1400146484375 - 809.8200073242188] Guys, like this is crazy.
+- [809.8200073242188 - 810.97998046875] This is real life.
+- [810.97998046875 - 818.8200073242188] I woke up this morning and I had my espresso and I'm like, wait, what?
+- [818.8200073242188 - 825.0999755859375] Some dude wrote a substack post and companies are losing tens of billions of dollars of
+- [825.0999755859375 - 826.739990234375] equity capital.
+- [826.739990234375 - 827.739990234375] What did he say?
+- [827.739990234375 - 829.6199951171875] And I click into the thing.
+- [829.6199951171875 - 830.739990234375] I kid you not.
+- [830.739990234375 - 834.7000122070312] I click into the thing and he's like, the year is 2028.
+- [834.7000122070312 - 841.2999877929688] I just scanned a QR code with my stablecoin fintech wallet for my new AI agent subscription.
+- [841.2999877929688 - 846.8599853515625] I no longer need a nurse, an accountant or a lawyer or an engineer.
+- [846.9000244140625 - 850.6199951171875] I simply am an artistic expression of my interests.
+- [850.6199951171875 - 853.2999877929688] I'm like, this guy crashed the stock market.
+- [856.97998046875 - 859.6199951171875] Oh, we live in the best timeline.
+- [859.6199951171875 - 862.1799926757812] So just more details.
+- [862.1799926757812 - 867.4199829101562] The repricing is happening as we speak, like literally as I'm talking shit is selling off.
+- [867.4199829101562 - 870.260009765625] The S&P is down two percent from its highs.
+- [870.260009765625 - 875.5800170898438] Software, which we know has been relatively correlated to Bitcoin recently, is down anywhere
+- [875.5800170898438 - 878.0599975585938] from 30 to 65 percent.
+- [878.0599975585938 - 881.3400268554688] So the tweet on the left reads, this is absolutely insane.
+- [881.3400268554688 - 886.219970703125] On February 20th, which is three days ago at 1 p.m. Eastern, Claude announced Claude
+- [886.219970703125 - 887.739990234375] Code Security.
+- [887.739990234375 - 893.260009765625] It's an automated AI tool that scans a software code base for vulnerabilities.
+- [893.260009765625 - 899.5800170898438] As of 1 p.m. Eastern today, two trading days later of that announcement, CrowdStrike, the
+- [899.5800170898438 - 905.4600219726562] stock, is down $20 billion in market cap.
+- [905.739990234375 - 907.02001953125] A complete nuke.
+- [909.1799926757812 - 912.739990234375] Then the tweet from Charlie, percentage below all-time highs.
+- [914.02001953125 - 915.4199829101562] I'm not talking about Bitcoin.
+- [915.4199829101562 - 922.0999755859375] I'm not talking about your cousin's boyfriend's nephew's favorite shit coin.
+- [922.0999755859375 - 923.9400024414062] I'm talking about equities.
+- [923.9400024414062 - 927.7000122070312] I'm talking about the S&P, percent below all-time high.
+- [927.7000122070312 - 930.4600219726562] S&P 500, down two percent.
+- [930.5800170898438 - 936.219970703125] Microsoft, Microsoft, down 30 percent.
+- [936.219970703125 - 938.739990234375] Synopsys, 36 percent.
+- [938.739990234375 - 941.780029296875] Palo Alto Networks, 36 percent.
+- [941.780029296875 - 943.97998046875] CrowdStrike, 38 percent.
+- [943.97998046875 - 946.219970703125] Palantir, 38 percent.
+- [946.219970703125 - 948.6199951171875] AppLovin, 50 percent.
+- [948.6199951171875 - 952.739990234375] Salesforce, 52 percent.
+- [952.739990234375 - 956.5399780273438] Intuit, 57 percent.
+- [956.5399780273438 - 960.7000122070312] Google Service Now, 59 percent.
+- [960.7000122070312 - 965.6599731445312] Oracle, 60, 6-0 percent.
+- [965.6599731445312 - 969.1400146484375] Adobe, 65 percent.
+- [971.5399780273438 - 973.7000122070312] See, the problem is, people say,
+- [973.7000122070312 - 978.5800170898438] I thought my imitation game is just too strong.
+- [978.5800170898438 - 981.5] It's so strong it makes me laugh at myself.
+- [981.5 - 984.3400268554688] The problem is people, I thought Bitcoin was the new gold.
+- [984.3800048828125 - 987.780029296875] I thought Bitcoin was supposed to be better gold.
+- [987.780029296875 - 991.1400146484375] Yeah, but it's a becoming asset.
+- [991.1400146484375 - 997.6199951171875] Hey, moron, an asset can't go from leaking on an email list
+- [997.6199951171875 - 999.4199829101562] to being the new gold.
+- [999.4199829101562 - 1001.5] Do you know how long it took gold to be gold?
+- [1001.5 - 1003.9000244140625] Tens of thousands of years.
+- [1003.9000244140625 - 1006.5399780273438] Like, Bitcoin is the size of Tesla.
+- [1006.5399780273438 - 1008.02001953125] It's going to take a second.
+- [1008.02001953125 - 1012.02001953125] How about you submit a pull request to the fucking open source repository
+- [1012.02001953125 - 1018.6199951171875] and stop complaining and help the future of humanity and your kids' kids?
+- [1018.6199951171875 - 1021.9000244140625] Anyway, I thought Bitcoin was the new gold.
+- [1021.9000244140625 - 1023.9400024414062] Well, here's the problem.
+- [1023.9400024414062 - 1027.93994140625] Bitcoin's correlation to gold is 0.09.
+- [1027.93994140625 - 1030.4200439453125] In other words, it's not correlated at all.
+- [1030.4200439453125 - 1037.4200439453125] In other words, for people at home that need help in turning their brain on,
+- [1037.4200439453125 - 1040.5799560546875] Bitcoin and gold don't move at the same time.
+- [1040.5799560546875 - 1046.5400390625] They're fundamentally different assets in that way for now, for now.
+- [1046.5400390625 - 1049.5] All of us that believe Bitcoin will become the one money,
+- [1049.5 - 1050.93994140625] we are buying the future.
+- [1050.93994140625 - 1057.06005859375] The value upside we're getting is because the world doesn't realize what we realize yet.
+- [1057.06005859375 - 1060.02001953125] So people need to fundamentally understand that.
+- [1060.02001953125 - 1061.93994140625] Now, for everything that isn't gold,
+- [1061.93994140625 - 1067.5799560546875] that isn't the legacy central bank sovereign safe haven,
+- [1067.5799560546875 - 1070.8199462890625] again, guys, Bitcoin cannot be a central bank sovereign safe haven
+- [1070.8199462890625 - 1072.3800048828125] because it's not big enough yet.
+- [1072.3800048828125 - 1076.06005859375] It's the size of China's annual trade surplus.
+- [1076.06005859375 - 1079.93994140625] It literally, like the skeletal frame of Bitcoin,
+- [1079.93994140625 - 1084.5799560546875] it's like asking a teenager to bench press 500 pounds.
+- [1084.5799560546875 - 1090.4599609375] It's going to kill himself taking the bar off the rack, okay?
+- [1090.4599609375 - 1096.3399658203125] Now, for everything else, Bitcoin is acting like a fortune teller.
+- [1096.3399658203125 - 1099.219970703125] It's acting like it knows the future.
+- [1099.219970703125 - 1101.5] So Bitcoin falls off a cliff and everyone's like,
+- [1101.5 - 1103.8599853515625] oh my God, everything you said is wrong.
+- [1103.8599853515625 - 1105.06005859375] Bitcoin's broken.
+- [1105.06005859375 - 1109.300048828125] Oh my God, hold my hand, cradle me like a baby.
+- [1109.300048828125 - 1114.06005859375] But then you just let the future play out as Bitcoin is warning us of something.
+- [1114.06005859375 - 1116.4599609375] And listen to this.
+- [1116.4599609375 - 1118.1400146484375] Microsoft down 30%.
+- [1118.1400146484375 - 1122.699951171875] Microsoft's barely outperforming Bitcoin in a bear market.
+- [1122.699951171875 - 1124.780029296875] Oracle's down 60%.
+- [1124.780029296875 - 1131.02001953125] Oracle is performing worse than shit coins, than Ethereum.
+- [1131.02001953125 - 1134.8199462890625] Isn't Larry Ellison like one of the richest guys in the world?
+- [1134.8199462890625 - 1138.1400146484375] So you're even starting, you know, here's where it gets like,
+- [1138.1400146484375 - 1140.02001953125] okay, I'm not exaggerating.
+- [1140.02001953125 - 1143.0999755859375] You're even starting to see comments from the Fed.
+- [1143.0999755859375 - 1149.97998046875] Fed Governor Waller said weak labor market is likely to continue going forward.
+- [1150.02001953125 - 1155.780029296875] CEOs say significant job cuts are coming from AI.
+- [1155.780029296875 - 1159.5400390625] If you're getting forward signs from the Fed,
+- [1159.5400390625 - 1166.06005859375] that is signal to sell everything and take cover.
+- [1166.06005859375 - 1167.219970703125] This is serious.
+- [1167.219970703125 - 1171.4599609375] The Federal Reserve is saying weak labor market is going to continue.
+- [1171.4599609375 - 1174.9000244140625] All your friends and family, they're all going to get fired
+- [1174.9000244140625 - 1180.3399658203125] because the CEOs are telling us that AI is just getting started.
+- [1180.3399658203125 - 1181.699951171875] Wait, who said that?
+- [1181.699951171875 - 1182.9000244140625] Your drunk uncle?
+- [1182.9000244140625 - 1185.260009765625] No, the Fed.
+- [1185.260009765625 - 1186.8199462890625] The Fed said that.
+- [1186.8199462890625 - 1188.4599609375] Not the Jack Mallard show.
+- [1188.4599609375 - 1190.4599609375] The Jack Mallard show said that two months ago.
+- [1190.4599609375 - 1192.6199951171875] The Fed said that.
+- [1192.6199951171875 - 1198.0999755859375] So if you take a look at the actual data, this is not a normal recession or whatever.
+- [1198.0999755859375 - 1203.6600341796875] I guess technically it's not a recession, although it absolutely should be.
+- [1203.699951171875 - 1208.4200439453125] Take a look at the white-collar joblessness that's happening right now.
+- [1208.4200439453125 - 1210.5] So this is from a Bloomberg article.
+- [1210.5 - 1214.1400146484375] White-collar joblessness rose in 2025.
+- [1214.1400146484375 - 1216.260009765625] And if you see how much it has risen,
+- [1216.260009765625 - 1219.3399658203125] office and administrative support getting hammered,
+- [1219.3399658203125 - 1222.219970703125] management, business, and financial getting hammered,
+- [1222.219970703125 - 1227.4599609375] sales and related getting hammered, professional and related getting hammered.
+- [1227.4599609375 - 1229.9000244140625] What's not getting hammered?
+- [1229.93994140625 - 1234.4200439453125] What actually is growing in jobs?
+- [1234.4200439453125 - 1237.4599609375] Installation, maintenance, and repair.
+- [1237.4599609375 - 1240.02001953125] Transportation and material moving.
+- [1240.02001953125 - 1242.699951171875] Construction and extraction.
+- [1242.699951171875 - 1243.9000244140625] Production.
+- [1243.9000244140625 - 1247.6600341796875] Farming, fishing, and forestry.
+- [1247.6600341796875 - 1253.699951171875] Now this, guys, again, this is the beginning of this new monetary order
+- [1253.699951171875 - 1258.4200439453125] where we're no longer going to be the world reserve currency as we know it.
+- [1258.4200439453125 - 1261.9000244140625] I've told you, do I expect a politician to admit that out loud?
+- [1261.9000244140625 - 1262.8599853515625] No, I do not.
+- [1262.8599853515625 - 1268.9000244140625] It's going to take the world a lot of time to understand what you and I understand.
+- [1268.9000244140625 - 1271.300048828125] But what's going to happen?
+- [1271.300048828125 - 1275.5400390625] The U.S. has to reshore blue-collar work, producing real things.
+- [1275.5400390625 - 1280.5] It has to bring back a manufacturing base, infrastructure, core materials,
+- [1280.5 - 1285.300048828125] a defense, an ability to manufacture and produce its own defense.
+- [1285.300048828125 - 1291.1800537109375] That means blue-collar is coming back and white-collar is getting disrupted.
+- [1291.1800537109375 - 1296.1800537109375] This is just a taste of the trend I've been screaming about.
+- [1296.1800537109375 - 1299.3800048828125] Farming, fishing, up.
+- [1299.3800048828125 - 1303.8599853515625] Office, administrative, management, business, financial, sales, down.
+- [1303.8599853515625 - 1307.4200439453125] And here's the thing, and I've talked about the book The End Times.
+- [1307.4200439453125 - 1311.8599853515625] When you live in a hyper-financialized economy driven by fiat and dollar
+- [1311.8599853515625 - 1317.9000244140625] and printing pieces of paper that you've monetized as the populace's time, energy,
+- [1317.9000244140625 - 1322.5] effort, and labor, what happens is in order for people to live a life
+- [1322.5 - 1328.260009765625] that they deem worth living, meaning they want to get married, they want to have kids,
+- [1328.260009765625 - 1332.5] they want to have a house, they want to go on vacation, they want to own a car,
+- [1332.5 - 1338.06005859375] they want to be able to acquire energy, meaning the car needs to drive,
+- [1338.06005859375 - 1340.739990234375] the plane needs to fly, the TV needs to turn on.
+- [1340.739990234375 - 1343.300048828125] They have an energy-consuming lifestyle.
+- [1343.300048828125 - 1346.9000244140625] Everyone feels like they need to go to university to do that.
+- [1346.9000244140625 - 1350.780029296875] They need to go to university, get in debt, and have a high-flying tech job,
+- [1350.780029296875 - 1355.6199951171875] a high-flying Wall Street job, a high-flying venture capital job.
+- [1355.6199951171875 - 1364.9000244140625] Everyone was pushed to the coast, New York, San Francisco, and pushed to white-collar work.
+- [1364.9000244140625 - 1370.4599609375] So you have to understand the amount of income focused in these office, administrative,
+- [1370.4599609375 - 1376.739990234375] management, business, financial, sales, professional services, finance,
+- [1376.739990234375 - 1382.4599609375] the amount of income in tax receipts that AI is going after is immense.
+- [1382.4599609375 - 1391.6600341796875] It's what underpins this massive economy that's backed by $40 trillion in debt.
+- [1391.6600341796875 - 1399.06005859375] So on that note, that was my segue into the educated class is what I call them.
+- [1399.06005859375 - 1400.06005859375] I don't know.
+- [1400.06005859375 - 1408.739990234375] Young kids are just, I mean, I'm terrified for the revolutionaries that we're creating
+- [1408.739990234375 - 1410.739990234375] today.
+- [1410.739990234375 - 1420.6600341796875] You know, I, man.
+- [1420.6600341796875 - 1429.93994140625] You know, here's some real, let me get real for a second.
+- [1429.93994140625 - 1437.8199462890625] When I build these businesses, Strike, 21, you know, our core target customer is a big
+- [1437.8199462890625 - 1442.93994140625] business or an institution or a high-net-worth individual because it's very difficult to
+- [1442.93994140625 - 1448.780029296875] monetize people in financial services that don't yet have wealth, right?
+- [1448.9000244140625 - 1452.219970703125] Where do I make the most revenue or the most money?
+- [1452.219970703125 - 1457.1800537109375] Well, when someone takes out a $100 million loan or buys $10 million worth of Bitcoin
+- [1457.1800537109375 - 1463.6600341796875] for their business, you know, obviously that's our commission is higher than the 21-year-old
+- [1463.6600341796875 - 1471.8599853515625] that buys $5 worth of Bitcoin because they shoveled snow for their neighbor, right?
+- [1472.8599853515625 - 1478.6600341796875] However, people have seen me try and reach the youth.
+- [1478.6600341796875 - 1484.8199462890625] And I make a concerted effort to make sure that I don't alienate my generation and those
+- [1484.8199462890625 - 1486.739990234375] below me.
+- [1486.739990234375 - 1494.0999755859375] Wear the hoodie, be real, talk normal, don't turn into a suit, don't appease these chumps
+- [1494.0999755859375 - 1496.300048828125] on Wall Street.
+- [1496.300048828125 - 1504.780029296875] And, you know, one of the many reasons I do that is because you have to understand the
+- [1504.780029296875 - 1508.93994140625] crisis that's happening to the youth.
+- [1508.93994140625 - 1510.739990234375] You have to.
+- [1510.739990234375 - 1515.260009765625] You cannot say, oh, back in my day, I used to have to walk to school, now these kids
+- [1515.260009765625 - 1518.5799560546875] can call an Uber.
+- [1518.5799560546875 - 1521.300048828125] You don't understand what they're going through.
+- [1521.300048828125 - 1528.02001953125] And so I pray, even if we get a few kids listening to the show, and I know I curse
+- [1528.02001953125 - 1535.5400390625] and some of the topics are hard to understand, but this is how revolutions are born.
+- [1535.5400390625 - 1541.260009765625] And this is where people pick up weapons and hurt themselves or hurt other people.
+- [1541.260009765625 - 1543.739990234375] This is where it gets scary.
+- [1543.739990234375 - 1548.93994140625] So these tweets, 42% of recent college graduates are underemployed.
+- [1548.93994140625 - 1553.300048828125] The highest level since COVID.
+- [1553.300048828125 - 1560.5400390625] Unemployed Americans with four-year college degrees hit a record in January at 36.6% of
+- [1560.5400390625 - 1565.02001953125] those aged 25 and older.
+- [1565.02001953125 - 1574.6199951171875] New graduates now account for just 7% of new hires at Big Tech, down from 25% only two
+- [1574.6199951171875 - 1581.97998046875] years ago, and over 50% before COVID.
+- [1581.97998046875 - 1587.1199951171875] Before COVID, if you got a college degree, you were basically employed.
+- [1587.1199951171875 - 1592.3800048828125] After COVID, 25%, you better have gotten good grades, you better have taken it easy on the
+- [1592.3800048828125 - 1594.1800537109375] booze and the partying.
+- [1594.1800537109375 - 1600.5999755859375] Now college degree means nothing.
+- [1600.5999755859375 - 1604.9200439453125] So how's this for a sick joke?
+- [1604.9200439453125 - 1611.56005859375] Kids are born today and encouraged to get into as much debt as possible just to have
+- [1611.56005859375 - 1614.5999755859375] a chance at what they see in the movies.
+- [1614.5999755859375 - 1618.280029296875] Just to have a chance to experience what their parents did.
+- [1618.280029296875 - 1625.199951171875] Just to have a chance to feel happy enough and optimistic enough about their future.
+- [1625.199951171875 - 1628.1199951171875] Just to have a chance to own a home.
+- [1628.1199951171875 - 1637.239990234375] Not to actually own a home, a chance to drive a car, a chance to fall in love and have kids.
+- [1637.239990234375 - 1643.8800048828125] Go up to their eyeballs in debt, hundreds of thousands of dollars worth of debt, and
+- [1643.8800048828125 - 1647.0400390625] there's no job for them.
+- [1647.0400390625 - 1649.4000244140625] That's a sick joke.
+- [1649.4000244140625 - 1652.6800537109375] Push kids into mountains of debt.
+- [1652.6800537109375 - 1654.719970703125] These are children, you know.
+- [1654.719970703125 - 1656.9599609375] Epstein seems to be the hot topic.
+- [1656.9599609375 - 1660.6400146484375] We talk about what's the age of consent.
+- [1660.6400146484375 - 1666.0799560546875] When are you abusing children?
+- [1666.0799560546875 - 1672.1199951171875] Children can't consent to sexual activity until they're adults, but you have these mobsters
+- [1672.1199951171875 - 1678.1199951171875] and these thugs on Wall Street and in the government pushing them into eyeball levels
+- [1678.1199951171875 - 1681.0799560546875] of indebtedness before they're adults.
+- [1681.0799560546875 - 1687.56005859375] You've got 16, 17 year old kids signing up for $100,000 plus of debt.
+- [1687.56005859375 - 1692.800048828125] That's abuse.
+- [1692.800048828125 - 1699.0799560546875] So I'm in my early 20s, I'm up to my eyeballs in debt, I have no way to pay it back, no
+- [1699.0799560546875 - 1705.52001953125] one's willing to give me a job, and you wonder why these kids don't like Elon Musk.
+- [1705.52001953125 - 1707.0400390625] They vote for Mum Donnie.
+- [1707.0400390625 - 1708.760009765625] They want to violate property rights.
+- [1708.760009765625 - 1710.3599853515625] They're picking up weapons.
+- [1710.3599853515625 - 1715.199951171875] They're organizing in Discord chats.
+- [1715.199951171875 - 1718.8399658203125] Now the way out is to build a better future.
+- [1718.8399658203125 - 1727.47998046875] We did not have a choice to what we inherited, but it is our choice to what we grow into
+- [1727.47998046875 - 1729.760009765625] and what we build and what our kids inherit.
+- [1729.760009765625 - 1732.3599853515625] That's up to us.
+- [1732.3599853515625 - 1738.56005859375] But let me tell you first hand, the most painful thing is when you have adults say, well I
+- [1738.56005859375 - 1740.5999755859375] used to have to walk to school.
+- [1740.5999755859375 - 1749.52001953125] Shut the fuck up.
+- [1749.52001953125 - 1757.3599853515625] You also got to buy a $15,000 house, going to a movie was a quarter, getting an education
+- [1757.3599853515625 - 1764.6400146484375] didn't require a debt that takes a life to pay off, and you weren't competing against
+- [1764.6400146484375 - 1769.3599853515625] digital intelligence to just make rent.
+- [1769.3599853515625 - 1770.3599853515625] How about that?
+- [1770.3599853515625 - 1771.3599853515625] How about that?
+- [1771.3599853515625 - 1781.8800048828125] Hey, I'll walk to school, and you compete against digital intelligence.
+- [1781.8800048828125 - 1784.0400390625] Shout out to all the youth out there.
+- [1784.0400390625 - 1786.0400390625] We're going to build our way out of this.
+- [1786.0400390625 - 1788.47998046875] Do not pick up a weapon.
+- [1788.47998046875 - 1791.199951171875] Do not take on any more debt.
+- [1791.199951171875 - 1792.199951171875] We're going to stay humble.
+- [1792.9200439453125 - 1795.5999755859375] We're going to make it to the other side.
+- [1795.5999755859375 - 1802.8800048828125] So from Bloomberg, unprecedented jobless boom, test limits of US economic expansion.
+- [1802.8800048828125 - 1805.760009765625] So again guys, my point is this stuff is happening.
+- [1805.760009765625 - 1814.280029296875] So if you look on the left, this graphic is from the Bloomberg article, US real GDP traditionally
+- [1814.280029296875 - 1817.719970703125] is correlated to payroll, right?
+- [1817.719970703125 - 1821.719970703125] When GDP is booming, supposedly the economy is booming, the economy is booming, everyone's
+- [1821.719970703125 - 1826.0400390625] got a job, everyone's making money, everyone can afford whatever it is for you.
+- [1826.0400390625 - 1834.0400390625] The first class flight seat on your vacation, supersize your meal, whatever, I don't know
+- [1834.0400390625 - 1835.280029296875] what that is for you, right?
+- [1835.280029296875 - 1838.52001953125] You can afford it, the economy's humming, okay?
+- [1838.52001953125 - 1844.5999755859375] But what you're looking at on the left is US GDP is ticking up again because of AI,
+- [1844.5999755859375 - 1848.239990234375] but payroll is heading towards recessionary levels.
+- [1848.239990234375 - 1852.0799560546875] And so payroll's heading down, GDP's heading up.
+- [1852.0799560546875 - 1854.800048828125] That's the K-shaped economy visualized, right?
+- [1854.800048828125 - 1859.1199951171875] There's a lot of wealth being created, but it's highly concentrated.
+- [1859.1199951171875 - 1865.52001953125] And everyone young, unemployed, everyone white collar, and they're using this term underemployed.
+- [1865.52001953125 - 1869.6800537109375] Underemployed means I have a business degree from Kellogg at Northwestern and I'm making
+- [1869.6800537109375 - 1871.8399658203125] your Chipotle burrito.
+- [1871.8399658203125 - 1873.52001953125] That's what they mean by underemployed.
+- [1873.52001953125 - 1875.6400146484375] Now what's the difference between underemployed and unemployed?
+- [1875.6400146484375 - 1881.47998046875] I count it effectively the same, is that those people are never going to own a home,
+- [1881.47998046875 - 1885.9200439453125] they're going to be depressed, they're going to revolutionize, it's just bad, it's dangerous,
+- [1885.9200439453125 - 1887.52001953125] it's sad.
+- [1887.52001953125 - 1892.5999755859375] So this is not something I'm speculating on anymore, this is not something I'm predicting
+- [1892.5999755859375 - 1893.5999755859375] anymore.
+- [1893.5999755859375 - 1895.1199951171875] This is happening, okay?
+- [1895.1199951171875 - 1899.52001953125] From the Wall Street Journal on the right, healthcare work propels US to strongest job
+- [1899.52001953125 - 1901.6800537109375] growth in more than a year.
+- [1901.6800537109375 - 1907.8399658203125] And the article goes through how, so I'll read the subheader, jobs surged 130,000 in
+- [1907.8399658203125 - 1917.9599609375] January while unemployment fell to 4.3%, but the article goes on to just, so it's all healthcare.
+- [1917.9599609375 - 1919.719970703125] It's all healthcare.
+- [1919.719970703125 - 1926.0] So again, you've got a business degree, you want to be an accountant, you want to be a
+- [1926.0 - 1932.6800537109375] lawyer, you want to be in finance, not only is there no one hiring you, if you are one
+- [1932.6800537109375 - 1935.6400146484375] of those, you're getting fired.
+- [1935.6400146484375 - 1939.1199951171875] So what can you do?
+- [1939.1199951171875 - 1944.1600341796875] Well for one, you can punt shit coins, you can punt prediction markets, you can gamble
+- [1944.1600341796875 - 1945.1600341796875] on sports.
+- [1945.1600341796875 - 1952.3199462890625] So again, why is hyper speculation so popular?
+- [1952.3599853515625 - 1956.9599609375] Because during currency debasement, the fall of an empire, when deflationary technology
+- [1956.9599609375 - 1964.4000244140625] meets a debt ridden society, everyone's a speculator, whether you know it or not.
+- [1964.4000244140625 - 1968.699951171875] Someone that has never heard of me and this show and Bitcoin and financial markets, they're
+- [1968.699951171875 - 1970.239990234375] also a speculator.
+- [1970.239990234375 - 1974.47998046875] You're getting compensated in a currency that cannot support your future.
+- [1974.47998046875 - 1979.280029296875] Things that you need to acquire in your future are getting more expensive than you are earning.
+- [1979.280029296875 - 1983.9200439453125] There are less opportunities for you in the economy, and everything around you is getting
+- [1983.9200439453125 - 1985.280029296875] more expensive.
+- [1985.280029296875 - 1989.0799560546875] That turns you into a gambler, whether you know it or not, because if you want to end
+- [1989.0799560546875 - 1995.760009765625] up owning a home, well shit, I better predict the final four correctly, I better put options
+- [1995.760009765625 - 2003.9599609375] on Nvidia's earnings, I better, well it was too late, I didn't buy Bitcoin in 2010, better
+- [2003.9599609375 - 2006.800048828125] hope Dogecoin goes up.
+- [2006.800048828125 - 2008.0400390625] That's what happens.
+- [2008.0799560546875 - 2013.760009765625] So the last thing I wanted to note before we move on is just a reminder that this is
+- [2013.760009765625 - 2016.1600341796875] also a war.
+- [2016.1600341796875 - 2023.4000244140625] So not to make the AI companies the bad guys here, in fact, I think that it's unbelievable
+- [2023.4000244140625 - 2025.280029296875] what they're achieving.
+- [2025.280029296875 - 2031.6800537109375] Mind you, technology is deflationary, and technology is arguably the greatest trait
+- [2031.6800537109375 - 2033.5999755859375] us humans have.
+- [2033.5999755859375 - 2038.3599853515625] We're able to collaborate, we're future-oriented, and we build tools.
+- [2038.3599853515625 - 2041.760009765625] That's what Steve Jobs said, right, like the biggest difference between us and other primates
+- [2041.760009765625 - 2043.3599853515625] is we're tool builders.
+- [2043.3599853515625 - 2049.679931640625] Steve Jobs had that amazing quote where he said if you compare us to other primates where
+- [2049.679931640625 - 2055.639892578125] us running versus Jaguar, us running versus, I don't know, whatever the fastest animals,
+- [2055.639892578125 - 2061.320068359375] we're not the fastest by far, there's way more efficient, faster species than humans.
+- [2061.60009765625 - 2063.719970703125] You know what no one can compete with?
+- [2063.719970703125 - 2067.9599609375] Us in an airplane or us in a car.
+- [2067.9599609375 - 2070.080078125] It's not even a competition.
+- [2070.080078125 - 2072.719970703125] We dust everybody, and what's the insight there?
+- [2072.719970703125 - 2074.760009765625] The insight is humans are tool builders.
+- [2074.760009765625 - 2077.56005859375] Don't measure us in plain form.
+- [2077.56005859375 - 2085.239990234375] Measure us by what we build, and what we're building in AI is deflationary is when kids,
+- [2085.239990234375 - 2090.39990234375] when you're in school, they talk about deflation like it's a bad thing because it does crash
+- [2090.47998046875 - 2095.239990234375] the economy, but what we'll talk about in this episode is why that's not the technology's
+- [2095.239990234375 - 2097.8798828125] fault, that's the economy's fault.
+- [2097.8798828125 - 2103.199951171875] Deflation makes everything easier, more efficient, more achievable, more accessible.
+- [2103.199951171875 - 2107.199951171875] When things are deflationary, your money goes further.
+- [2107.199951171875 - 2108.199951171875] Think about it.
+- [2108.199951171875 - 2112.56005859375] If AI ends up changing all of our lives, you don't need to pay an accountant anymore.
+- [2112.56005859375 - 2114.760009765625] You don't need to pay software developers anymore.
+- [2114.760009765625 - 2116.699951171875] You don't need to pay lawyers anymore.
+- [2116.699951171875 - 2119.280029296875] You don't need to pay money managers anymore.
+- [2119.280029296875 - 2121.760009765625] Think about what Bitcoin and AI can do for you.
+- [2121.760009765625 - 2123.080078125] You are your own bank.
+- [2123.080078125 - 2124.860107421875] You are your own money manager.
+- [2124.860107421875 - 2126.419921875] You are your own software engineer.
+- [2126.419921875 - 2127.52001953125] You are your own accountant.
+- [2127.52001953125 - 2129.360107421875] You are your own lawyer.
+- [2129.360107421875 - 2131.47998046875] You are empowered and limited.
+- [2131.47998046875 - 2136.320068359375] You are only limited to your own ambition and your own ideas.
+- [2136.320068359375 - 2138.639892578125] That's incredibly empowering.
+- [2138.639892578125 - 2141.800048828125] It brings the cost of everything down tremendously.
+- [2141.800048828125 - 2144.699951171875] The only thing you really need to make sure you can pay for is the roof over your head
+- [2144.699951171875 - 2146.719970703125] and the food that goes in your belly.
+- [2146.719970703125 - 2148.5] That's it.
+- [2148.5 - 2150.580078125] It's incredible.
+- [2150.580078125 - 2151.580078125] That's incredible.
+- [2151.580078125 - 2156.340087890625] Now, bringing it back to this slide, it's also national security.
+- [2156.340087890625 - 2161.699951171875] So Anthropic tweeted today, we've identified industrial-scale distillation attacks on our
+- [2161.699951171875 - 2168.820068359375] models deep-seek, excuse me, on our models by deep-seek Moonshot AI and Minimax.
+- [2168.820068359375 - 2173.97998046875] These labs created over 24,000 fraudulent accounts and generated over 16 million exchanges
+- [2173.97998046875 - 2179.5400390625] with Claude, extracting its capabilities to train and improve their own models.
+- [2179.5400390625 - 2188.5] So what's kind of funny, I will say, China seems to be trying to extract intelligence
+- [2188.5 - 2193.3798828125] out of the U.S. via these attacks and open-source it.
+- [2193.3798828125 - 2198.139892578125] So it is interesting, I've got to admit.
+- [2198.139892578125 - 2201.97998046875] The way that the American media and the American corporations are going to phrase it is we're
+- [2201.97998046875 - 2207.4599609375] being attacked, China's coming after us, but what China's trying to do is say all
+- [2207.4599609375 - 2212.5400390625] software should be open-source, like deep-seek, for example, we're open-sourcing all of our
+- [2212.5400390625 - 2218.6201171875] AI, the world should be about real stuff, and obviously they're talking their own book,
+- [2218.6201171875 - 2219.6201171875] right?
+- [2219.6201171875 - 2223.3798828125] Like they've got all the critical minerals, they've got all the rare earths, they've got
+- [2223.3798828125 - 2228.080078125] all the production and manufacturing capabilities, they've got all the defense capabilities.
+- [2228.080078125 - 2234.199951171875] So they're talking their own book, but I do believe in open-source software.
+- [2234.199951171875 - 2239.840087890625] This whole U.S. versus China cold war and AI war, there's a lot of catch-22s, like do
+- [2239.840087890625 - 2247.52001953125] I like that China is aggressively trying to basically latch on to how fast U.S. development
+- [2247.52001953125 - 2253.0400390625] is enhancing and just basically cheat off our homework?
+- [2253.0400390625 - 2254.0400390625] No.
+- [2254.0400390625 - 2261.1201171875] I would much rather the internet and the West and distributed networks defeat the CCP, but
+- [2261.1201171875 - 2267.60009765625] I am a fan of open-source software, I would really appreciate it if open AI and Anthropic,
+- [2267.60009765625 - 2274.4599609375] if they all open-sourced their models, if Elon open-sourced his Twitter or X algorithm,
+- [2274.4599609375 - 2278.800048828125] but anyway, the point is, just a reminder that this is of national security.
+- [2278.800048828125 - 2283.9599609375] So the other thing to keep in mind is losing the AI race is not an option.
+- [2283.9599609375 - 2287.39990234375] It's going to be important, I'll reference it back later, but what we can't have happen
+- [2287.39990234375 - 2293.840087890625] as a country is say, holy shit, this is all going way too fast, over-regulate the AI industry
+- [2293.840087890625 - 2298.760009765625] to where no one can build anything, and then China takes over the AI race.
+- [2298.760009765625 - 2302.52001953125] That's not an option, it's been declared not an option, this has been declared a national
+- [2302.52001953125 - 2305.159912109375] security threat, this is of national security interest.
+- [2305.159912109375 - 2309.93994140625] So my point is, this is a one-way train, it's only getting faster, and these things
+- [2309.93994140625 - 2311.840087890625] are already happening.
+- [2311.840087890625 - 2316.6201171875] So what seemed to be like a credit crisis brewing, and as Bitcoin seemed to be hinting
+- [2316.6201171875 - 2320.719970703125] that out, yeah, this seems to be the case.
+- [2320.719970703125 - 2329.219970703125] So entering chapter two, deflation meets debt, why a successful AI is bad for markets.
+- [2329.219970703125 - 2334.199951171875] So here's the logic, and I just want to break it down for those who don't totally understand.
+- [2334.239990234375 - 2340.1201171875] AI is a productivity shock, that's what all technology is, right?
+- [2340.1201171875 - 2345.56005859375] Like the car made us highly productive relative to horses.
+- [2345.56005859375 - 2348.47998046875] The airplane made us even more productive.
+- [2348.47998046875 - 2353.60009765625] Technology are traditionally productive tools, they provide efficiencies in the marketplace
+- [2353.60009765625 - 2359.360107421875] that previously were not there, and by the way, that's how the free market and technology
+- [2359.360107421875 - 2360.360107421875] works.
+- [2361.360107421875 - 2365.760009765625] that isn't better than what already exists, because if you do, you'll fail.
+- [2365.760009765625 - 2370.0] So this form of Darwinism is the only things that you're incentivized to build, and the
+- [2370.0 - 2375.320068359375] only things that succeed are things that provide more value than the things that exist today.
+- [2375.320068359375 - 2380.39990234375] And so we have this very efficient system where all technology trends towards being
+- [2380.39990234375 - 2385.840087890625] productive, because you're highly incentivized to build something that will actually work,
+- [2385.840087890625 - 2390.320068359375] that's actually more valuable than what people have today, and by the way, it has to be
+- [2390.360107421875 - 2395.280029296875] a lot more valuable than what people have today, because the switching cost within itself
+- [2395.280029296875 - 2396.760009765625] is decently expensive.
+- [2396.760009765625 - 2403.47998046875] So you don't see technology that's marginally better, you see technology that gets way better,
+- [2403.47998046875 - 2405.39990234375] and humans just kick butt at this.
+- [2405.39990234375 - 2412.159912109375] I don't see lions building software and shit, we, I mean, we're the best at building tools.
+- [2412.159912109375 - 2418.9599609375] So AI is the latest productivity shock coming from us humans, the godfather of all tool
+- [2418.9599609375 - 2420.43994140625] building, okay?
+- [2420.43994140625 - 2424.719970703125] What that causes is this term I've been using called deflation.
+- [2424.719970703125 - 2430.56005859375] Now I put in this slide, what it's doing is it makes the dollar more valuable, but I don't
+- [2430.56005859375 - 2434.0400390625] know if that's gonna land with you guys, because I shit on the dollar so much, and I can already
+- [2434.0400390625 - 2437.43994140625] see my comments, I thought you said the dollar wasn't good, I thought you said the dollar
+- [2437.43994140625 - 2442.280029296875] wasn't, it's like, God, you guys, just fucking donkeys in my comments all day.
+- [2442.280029296875 - 2447.800048828125] So what I mean by it makes the dollar more valuable is what I said earlier, if the marginal
+- [2447.800048828125 - 2454.0400390625] cost of intelligence, of accounting, of financial services, of legal work, if the marginal cost
+- [2454.0400390625 - 2462.0400390625] of that trends to zero, or as close to zero as possible, that means that your capital
+- [2462.0400390625 - 2464.97998046875] goes further, right?
+- [2464.97998046875 - 2471.239990234375] You can raise a family on low income now, because you don't need all of these things
+- [2471.239990234375 - 2472.239990234375] anymore.
+- [2472.239990234375 - 2475.43994140625] It brings the cost of everything around you down.
+- [2475.47998046875 - 2480.39990234375] Now, the reason that is a problem, this is a really important point, you have to understand
+- [2480.39990234375 - 2486.0] why deflation is bad in the fiat game that we've created, this debt-ridden financial
+- [2486.0 - 2487.719970703125] system.
+- [2487.719970703125 - 2491.919921875] It's because it collapses the debt that they've built.
+- [2491.919921875 - 2492.919921875] Why?
+- [2492.919921875 - 2493.919921875] Let me explain.
+- [2493.919921875 - 2501.919921875] If we owe 40 trillion dollars, if the dollar continues to weaken and be worth less, it's
+- [2501.9599609375 - 2505.52001953125] easier to pay back 40 trillion dollars.
+- [2505.52001953125 - 2506.52001953125] Think about it this way, guys.
+- [2506.52001953125 - 2511.320068359375] Let's say we go through so much inflation, and we go through so much dollar debasement,
+- [2511.320068359375 - 2518.0] that it costs 40 trillion dollars to get into a movie in 5 years, 10 years, 20 years.
+- [2518.0 - 2523.919921875] Well then it's really trivial to pay back 40 trillion dollars that we owe, because it's
+- [2523.919921875 - 2529.0] only one movie's worth of time, energy, effort, and labor, right?
+- [2529.0 - 2535.199951171875] The dollar's gotten so weak that the debt denominated in dollars is so easy to pay off.
+- [2535.199951171875 - 2541.760009765625] Now, if humans are so productive, and they're building things like AI, which delivers such
+- [2541.760009765625 - 2549.8798828125] a productivity shock, that's so deflationary, that actually has the opposite effect.
+- [2549.8798828125 - 2550.9599609375] It has the opposite effect.
+- [2550.9599609375 - 2556.679931640625] It means that people being accountants, and people being lawyers, and people doing all
+- [2556.679931640625 - 2560.919921875] this white-collar work, and the US government collecting tax receipts from that, isn't going
+- [2560.919921875 - 2564.080078125] to come close to paying off the 40 trillion dollars.
+- [2564.080078125 - 2568.800048828125] Because we're all going to be vibe-coding our apps, living off, whatever, there's going
+- [2568.800048828125 - 2572.239990234375] to be people living off low-income, but they're just into history.
+- [2572.239990234375 - 2573.840087890625] They're just into making music.
+- [2573.840087890625 - 2577.280029296875] They're just into whatever artists, they're just into whatever they want.
+- [2577.280029296875 - 2578.800048828125] But you don't need that much money.
+- [2578.800048828125 - 2582.719970703125] You don't need to produce that much work, and get that much taxed, and speculate that
+- [2582.719970703125 - 2583.719970703125] much in the stock market.
+- [2583.760009765625 - 2589.159912109375] And it has the opposite effect, where it gets increasingly more difficult to pay down the
+- [2589.159912109375 - 2590.159912109375] debt.
+- [2590.159912109375 - 2594.760009765625] And that's when you see, if unemployment gets to 10%, then the US tax receipts come way
+- [2594.760009765625 - 2601.199951171875] down, then the deficit relative to the tax receipts, and you start to see a death spiral.
+- [2601.199951171875 - 2607.0] And so when I say a deflationary force is meeting an indebted system, and they're colliding,
+- [2607.0 - 2611.1201171875] meaning one of them has to win.
+- [2611.1201171875 - 2617.760009765625] If we go into true deflation, and AI renders everyone unemployed, and is like the biggest
+- [2617.760009765625 - 2624.280029296875] productivity shock we've seen in modern history, then we're entering a debt spiral, a level
+- [2624.280029296875 - 2632.080078125] of austerity that is magnitudes greater than the Great Depression.
+- [2632.080078125 - 2634.60009765625] And so what happens is a credit crisis.
+- [2634.60009765625 - 2639.639892578125] So when I say a credit crisis is looming, shit's hitting the fan, the last episode I'm
+- [2639.639892578125 - 2643.52001953125] bringing up delinquencies, now I'm talking about white collar joblessness, I'm talking
+- [2643.52001953125 - 2647.39990234375] about the level of unemployment in the youth.
+- [2647.39990234375 - 2653.159912109375] Credit crisis meaning how much of our economy is predicated on mortgages, on car notes,
+- [2653.159912109375 - 2654.719970703125] on credit cards.
+- [2654.719970703125 - 2660.360107421875] If retail can't afford their payments, they're rendered delinquent.
+- [2660.360107421875 - 2664.0400390625] And what happens, bank stocks are going to crater.
+- [2664.0400390625 - 2668.699951171875] Bank stocks are going to crater, because the market will realize they have all these outstanding
+- [2668.760009765625 - 2671.02001953125] loans and they're not going to get paid back.
+- [2671.02001953125 - 2676.10009765625] When bank stock craters, stock markets crater, stock markets crater, the 401ks are in the
+- [2676.10009765625 - 2677.10009765625] shitter.
+- [2677.10009765625 - 2680.699951171875] 401ks are in the shitter, US government tax receipts are in the shitter, tax receipts
+- [2680.699951171875 - 2684.659912109375] are in the shitter, then the bond market gets volatile, the bond market gets volatile, the
+- [2684.659912109375 - 2686.300048828125] US defaults.
+- [2686.300048828125 - 2692.5400390625] It's a giant game of charades, it's a giant Ponzi scheme that's predicated on more debt,
+- [2692.5400390625 - 2693.860107421875] more money printing.
+- [2693.860107421875 - 2701.419921875] And so the whole solution to this game is they have to print an immense amount of money,
+- [2701.419921875 - 2703.06005859375] like an ungodly amount.
+- [2703.06005859375 - 2706.179931640625] I'm talking about magnitudes bigger than COVID.
+- [2706.179931640625 - 2711.5] And this isn't me, I'm not biasly wishing for this, I'm just doing the math.
+- [2711.5 - 2716.219970703125] Like there is a certain amount of liquidity that's going to have to combat these deflationary
+- [2716.219970703125 - 2721.300048828125] forces and provide the liquidity necessary to persist onwards.
+- [2721.300048828125 - 2728.3798828125] Another way to think about it is, theoretically, because humans are constantly producing technology
+- [2728.3798828125 - 2733.6201171875] that's more efficient, providing value and providing productivity gains, everything around
+- [2733.6201171875 - 2737.06005859375] you should be getting cheaper.
+- [2737.06005859375 - 2739.139892578125] And evidence of this is Bitcoin.
+- [2739.139892578125 - 2744.419921875] When I got into Bitcoin, one house was like 100,000 Bitcoins.
+- [2744.419921875 - 2747.780029296875] Now the average house is like 5 Bitcoin.
+- [2747.780029296875 - 2754.3798828125] Life has gotten immensely cheaper for me in Bitcoin terms because humans have been
+- [2754.3798828125 - 2755.3798828125] more productive.
+- [2755.3798828125 - 2762.02001953125] If your money is fixed in supply, you get all the productivity that humans are constantly
+- [2762.02001953125 - 2763.02001953125] innovating.
+- [2763.02001953125 - 2769.580078125] I'm soaking up all the gains from AI, soaking up all the gains from the internet, I'm soaking
+- [2769.580078125 - 2775.02001953125] up all the gains from whatever research MIT labs are doing, whatever.
+- [2775.02001953125 - 2778.260009765625] I'm soaking up all the gains because my money supply is fixed.
+- [2778.260009765625 - 2784.02001953125] If your money supply is causing you inflation, where things around you are getting more expensive,
+- [2784.02001953125 - 2791.10009765625] that means that central banks and governments are printing more money than humans are innovating.
+- [2791.10009765625 - 2795.739990234375] Just sit on that for a second.
+- [2795.739990234375 - 2803.5] Because the default state is things get cheaper because we are producing more innovative revolutionary
+- [2803.5 - 2804.5] tech.
+- [2804.6201171875 - 2806.659912109375] Think about that for a second.
+- [2806.659912109375 - 2812.02001953125] So the fact that we have been living through inflation means they're printing so much money
+- [2812.02001953125 - 2817.4599609375] that even the most revolutionary technologies aren't bringing the cost down of goods and
+- [2817.4599609375 - 2818.4599609375] services.
+- [2818.4599609375 - 2824.93994140625] And so in order for them to maintain the debt system that they've built up and not have
+- [2824.93994140625 - 2834.06005859375] an utter and complete credit crisis debt spiral, they have to print enough money to outlast
+- [2834.219970703125 - 2840.06005859375] this AI deflation and you've got all sorts of problems like what's happening in Japan,
+- [2840.06005859375 - 2842.739990234375] which we're not even going to get into in this episode.
+- [2842.739990234375 - 2845.6201171875] So here, this asset's a little small.
+- [2845.6201171875 - 2847.260009765625] Let me blow this up.
+- [2847.260009765625 - 2848.260009765625] Hold on.
+- [2848.260009765625 - 2849.93994140625] There we go.
+- [2849.93994140625 - 2853.5] So this is from the Global Liquidity Index.
+- [2853.5 - 2856.06005859375] I just subscribed to this guy.
+- [2856.06005859375 - 2858.179931640625] His name's Michael Howell.
+- [2858.179931640625 - 2859.179931640625] Really good stuff.
+- [2859.179931640625 - 2862.260009765625] I just subscribed to his stuff.
+- [2862.4599609375 - 2865.02001953125] I just paid for his research stuff.
+- [2865.02001953125 - 2866.02001953125] Really good.
+- [2866.02001953125 - 2867.6201171875] And so he has this metric.
+- [2867.6201171875 - 2874.3798828125] Instead of debt to GDP, he does debt to liquidity, which is arguably better.
+- [2874.3798828125 - 2881.10009765625] And he shows this chart, debt to liquidity, and when it's high, you get these crises.
+- [2881.10009765625 - 2889.4599609375] So you've got the Y2K crisis, the Lehman 2008 crisis, the Eurozone banking crisis.
+- [2889.4599609375 - 2891.89990234375] And when it's down, you get these bubbles.
+- [2891.89990234375 - 2896.5] So you've got the US housing bubble, you've got the everything bubble, which is COVID.
+- [2896.5 - 2899.3798828125] And you see debt to liquidity trending up.
+- [2899.3798828125 - 2902.300048828125] It's trending towards crisis mode.
+- [2902.300048828125 - 2905.02001953125] And so this is plumbing data.
+- [2905.02001953125 - 2908.340087890625] So what's the debt to liquidity?
+- [2908.340087890625 - 2913.419921875] Yes, there's a lot of money printing and there's some liquidity, like the Fed paused QT.
+- [2913.419921875 - 2916.06005859375] It's restarted some kind of form of QE.
+- [2916.06005859375 - 2920.300048828125] But the question is, is it enough printing to prevent a credit crisis?
+- [2920.820068359375 - 2922.659912109375] This is just looking at the debt to liquidity.
+- [2922.659912109375 - 2927.97998046875] This is not taking into account the deflationary force that is AI.
+- [2927.97998046875 - 2932.340087890625] And so when I zoom back out, the cracks are already starting to show.
+- [2932.340087890625 - 2936.679931640625] So last week, Blue Owl came out and they halted withdrawals.
+- [2936.679931640625 - 2940.739990234375] So Blue Owl limits investor withdrawals during private credit concerns.
+- [2940.739990234375 - 2944.820068359375] Blue Owl and their stock got crushed.
+- [2944.820068359375 - 2949.52001953125] Blue Owl Capital Inc. shares tumble after a decision to restrict withdrawals from one
+- [2949.52001953125 - 2954.0400390625] of its private credit funds raised fresh concern over the risks bubbling under the
+- [2954.0400390625 - 2957.159912109375] surface of the $1.8 trillion market.
+- [2957.159912109375 - 2960.159912109375] Again, so people want to say, isn't Bitcoin the new gold?
+- [2960.159912109375 - 2962.1201171875] Isn't Bitcoin the new gold?
+- [2962.1201171875 - 2965.320068359375] This fucking market is bigger than Bitcoin.
+- [2965.320068359375 - 2967.300048828125] Bitcoin's still small.
+- [2967.300048828125 - 2970.840087890625] Give it a rest, okay?
+- [2970.840087890625 - 2976.179931640625] Shares of the alternative asset manager fell about 10% on Thursday to their lowest level
+- [2976.179931640625 - 2977.8798828125] in two and a half years.
+- [2977.8798828125 - 2982.360107421875] Now, Blue Owl came out and gave a statement and said, whoa, whoa, whoa, whoa, whoa.
+- [2982.360107421875 - 2984.47998046875] Like we're solvent, we're fine.
+- [2984.47998046875 - 2988.679931640625] And then Bloomberg comes out with another article that says Blue Owl sold their loans
+- [2988.679931640625 - 2992.719970703125] to pensions and their own insurance asset manager.
+- [2992.719970703125 - 2996.760009765625] And so it's like, oh, who bailed out Blue Owl?
+- [2996.760009765625 - 3001.56005859375] And then you read the article and you realize they bailed themselves out by selling themselves
+- [3001.56005859375 - 3005.0400390625] these loans.
+- [3005.0400390625 - 3008.9599609375] How is this not 2008 all over again?
+- [3008.9599609375 - 3011.9599609375] I mean, you've got to be shitting me.
+- [3011.9599609375 - 3014.840087890625] No wonder Bitcoin's been in the shitter.
+- [3014.840087890625 - 3021.320068359375] Bitcoin doesn't know any better than to be the most sensitive thing to fiat liquidity,
+- [3021.320068359375 - 3024.56005859375] the most sensitive thing to fiat credit.
+- [3024.56005859375 - 3026.199951171875] It's all it knows how to do.
+- [3026.199951171875 - 3027.60009765625] Just be honest.
+- [3027.60009765625 - 3032.0] And so, you know, I titled this slide Euphoria Meets Reality.
+- [3032.0 - 3039.320068359375] Since COVID, the performance of stocks and the sentiment of consumers has totally divorced.
+- [3039.320068359375 - 3041.1201171875] We're totally living in K-shaped.
+- [3041.1201171875 - 3042.1201171875] Look at this.
+- [3042.1201171875 - 3045.919921875] This is, this is a K.
+- [3045.919921875 - 3047.239990234375] Everyone's depressed.
+- [3047.239990234375 - 3048.43994140625] Everyone's violent.
+- [3048.43994140625 - 3049.739990234375] Everyone's protesting.
+- [3049.739990234375 - 3051.56005859375] Everyone's revolutionizing.
+- [3051.56005859375 - 3056.159912109375] Meanwhile, our president is like, well, if you just, if you look at the stock market
+- [3056.159912109375 - 3057.159912109375] this way.
+- [3057.159912109375 - 3058.159912109375] No, fuck.
+- [3058.159912109375 - 3059.159912109375] Fuck the president.
+- [3059.159912109375 - 3066.800048828125] Pam Bondi, the woman that grinds my gears, is like, hey, how about we arrest these people,
+- [3066.800048828125 - 3070.239990234375] these demons that were raping and killing our children?
+- [3070.239990234375 - 3075.159912109375] She's like, well, look at the Dow.
+- [3075.159912109375 - 3079.9599609375] You've got these idiots, these morons telling me to check the price of the Dow.
+- [3080.9599609375 - 3088.320068359375] Meanwhile, our entire country is on antidepressants and ozempic, sickening.
+- [3088.320068359375 - 3092.39990234375] So the other thing that's critically important that I need to tell you guys, because here's
+- [3092.39990234375 - 3093.9599609375] the thing.
+- [3093.9599609375 - 3097.360107421875] What people will do is they'll say, well, let's look at 2008.
+- [3097.360107421875 - 3104.159912109375] If we're entering a 2008 level crisis, global financial crisis, well, the markets took many
+- [3104.159912109375 - 3106.239990234375] years to rebound.
+- [3106.239990234375 - 3109.1201171875] It took them a long time to print the money.
+- [3109.280029296875 - 3116.080078125] It ended up being a decade of, well, not an actual decade, but relatively, of QE and of
+- [3116.080078125 - 3118.239990234375] money printing.
+- [3118.239990234375 - 3121.280029296875] And so is that what we're heading into, Jack?
+- [3121.280029296875 - 3122.280029296875] No.
+- [3122.280029296875 - 3124.60009765625] At least, listen, pause.
+- [3124.60009765625 - 3126.080078125] I don't know the future.
+- [3126.080078125 - 3127.840087890625] I hate that I have to tell you guys that.
+- [3127.840087890625 - 3129.679931640625] You're like, hey, dude, you said that.
+- [3129.679931640625 - 3130.679931640625] You said.
+- [3130.679931640625 - 3131.8798828125] Dude, I don't know the future, bro.
+- [3131.8798828125 - 3135.9599609375] I hate that I have to admit that to you.
+- [3135.9599609375 - 3137.43994140625] What human knows the future?
+- [3137.47998046875 - 3140.39990234375] What human thinks another human knows the future?
+- [3140.39990234375 - 3142.360107421875] I don't know what's going to happen.
+- [3142.360107421875 - 3146.800048828125] All I can do is record these shows and give my best effort and have a good time with you
+- [3146.800048828125 - 3147.800048828125] guys.
+- [3147.800048828125 - 3148.919921875] So I don't know what's going to happen.
+- [3148.919921875 - 3155.919921875] But what's different from 2008, this is critically important.
+- [3155.919921875 - 3163.080078125] The IMF came out with a paper recently, last week, and they said bonds have been less effective
+- [3163.080078125 - 3166.919921875] equity hedges since the pandemic, since COVID.
+- [3166.919921875 - 3174.719970703125] And they go in to explain that basically when stocks sell off, now bonds sell off.
+- [3174.719970703125 - 3176.47998046875] Bonds traditionally are safe haven.
+- [3176.47998046875 - 3177.47998046875] We've talked about this.
+- [3177.47998046875 - 3180.159912109375] What's happening in Japan, right?
+- [3180.159912109375 - 3181.800048828125] Traditionally the currency was strengthened.
+- [3181.800048828125 - 3183.080078125] The bond market was strengthened.
+- [3183.080078125 - 3185.919921875] There's safe haven, safety in bonds.
+- [3185.919921875 - 3190.800048828125] Bonds are no longer safe haven because the debt is too tall, it's too large.
+- [3190.800048828125 - 3199.10009765625] The U.S. wasn't nearly as indebted 20 years ago as it is today, nearly, not even close.
+- [3199.10009765625 - 3204.080078125] It has too much debt to even sustain that much pain.
+- [3204.080078125 - 3208.760009765625] So this on the right from this guy, Eric, our findings suggest that the Cayman Island
+- [3208.760009765625 - 3213.280029296875] hedge funds are increasingly the marginal foreign buyers of U.S. treasury notes and
+- [3213.280029296875 - 3214.280029296875] bonds.
+- [3214.280029296875 - 3220.47998046875] They absorbed 37% of net issuance of notes and bonds, nearly the same amount as all other
+- [3220.47998046875 - 3222.280029296875] foreign investors combined.
+- [3222.280029296875 - 3223.919921875] I've talked about this before.
+- [3223.919921875 - 3226.8798828125] The hedge funds in the Cayman Islands, they're performing the carry trade.
+- [3226.8798828125 - 3231.60009765625] They're performing an immense amount of leverage to just arbitrage.
+- [3231.60009765625 - 3234.0] They're not actually lending to the United States.
+- [3234.0 - 3236.8798828125] We know China isn't lending to the United States at the margins anymore.
+- [3236.8798828125 - 3237.9599609375] They're buying gold.
+- [3237.9599609375 - 3240.580078125] We know India is also increasing their gold position.
+- [3240.580078125 - 3246.840087890625] So my point is when equities sell off, bonds sell off, both because structurally these
+- [3246.840087890625 - 3251.56005859375] hedge funds have to unwind their positions because they're collateralized by the existing
+- [3251.56005859375 - 3253.360107421875] financial system.
+- [3253.360107421875 - 3256.360107421875] And then also it's just, there's too much debt.
+- [3256.360107421875 - 3262.239990234375] So the point that I'm making here is that they're going to have to print an immense
+- [3262.239990234375 - 3266.159912109375] amount of money immediately, okay?
+- [3266.159912109375 - 3272.0] That's why when you see people say like the big print is coming, the big print is coming,
+- [3272.0 - 3278.919921875] the United States doesn't have the tolerance and the appetite to allow for years of financial
+- [3278.919921875 - 3282.56005859375] crisis because it would not be able to finance itself.
+- [3282.56005859375 - 3287.56005859375] It cannot afford an unruly bond market even for a week.
+- [3287.56005859375 - 3289.699951171875] Remember what happened during Liberation Day?
+- [3289.699951171875 - 3295.080078125] It took like four days before Trump reversed everything he made and they printed the money.
+- [3295.080078125 - 3303.320068359375] Like they literally, it is like a giant deck of cards that the single bit gust of wind
+- [3303.320068359375 - 3307.39990234375] of opening the door will blow it all down.
+- [3307.39990234375 - 3313.0400390625] And so even the little itsy bit, it's not even, it's the fact that every, here's the
+- [3313.0400390625 - 3314.56005859375] thing to say.
+- [3314.56005859375 - 3320.9599609375] Everybody knows that everybody knows that AI is coming and that's the only bit of gust
+- [3320.9599609375 - 3324.280029296875] of wind that can blow this thing to the ground.
+- [3324.280029296875 - 3330.360107421875] It doesn't actually matter how good Claude is at this or what Sam Altman said about that.
+- [3330.360107421875 - 3334.280029296875] The point is, is this deflationary and is it working?
+- [3334.280029296875 - 3341.0400390625] If that's true, the gust of deflationary wind will blow this whole thing down and it's already
+- [3341.0400390625 - 3342.0400390625] happening.
+- [3342.0400390625 - 3347.8798828125] So there's no such thing as, now I don't want to take away the fact that this Bitcoin market
+- [3347.8798828125 - 3351.52001953125] has been painful and I know that a lot of you out there have been facing a lot of pain
+- [3351.52001953125 - 3353.860107421875] and I don't want to take that away from you.
+- [3353.860107421875 - 3355.580078125] This is where champions are made.
+- [3355.580078125 - 3357.06005859375] This is where you earn your stripes.
+- [3357.06005859375 - 3360.4599609375] This is where you put some hair on that chest.
+- [3360.4599609375 - 3361.4599609375] This is it.
+- [3361.4599609375 - 3365.580078125] This is where you earn the returns when people at Thanksgiving say, oh, you just got lucky.
+- [3365.580078125 - 3366.97998046875] No, I didn't.
+- [3366.97998046875 - 3372.260009765625] I was there during the AI credit panic and I buckled down and I stacked some sets.
+- [3372.260009765625 - 3377.10009765625] So I know a lot of you are in pain and I encourage you to weather the storm.
+- [3377.10009765625 - 3380.97998046875] But what I'm telling you is this is not 2008.
+- [3380.97998046875 - 3383.179931640625] They're going to have to print and print fast.
+- [3383.179931640625 - 3386.820068359375] So the question is, when is it going to sufficiently break?
+- [3386.820068359375 - 3391.820068359375] Now I look at some data and I'm like, well, things are already breaking.
+- [3391.820068359375 - 3396.3798828125] Now not to the degree where it's panic, but check this tweet.
+- [3396.3798828125 - 3398.419921875] So first, wild market.
+- [3398.419921875 - 3402.02001953125] We haven't seen anything like this since the dot com bubble burst.
+- [3402.02001953125 - 3410.300048828125] Over the last 8 sessions, 115 stocks in the S&P 500 have declined 7% or more in a single
+- [3410.300048828125 - 3411.300048828125] day.
+- [3411.419921875 - 3416.3798828125] The average drawdown when that happens is 34%.
+- [3416.3798828125 - 3420.860107421875] Right now we are only one and a half percent below the all time high.
+- [3420.860107421875 - 3428.419921875] So again, based on everything I'm talking about, the stock market is due for a 20, 25,
+- [3428.419921875 - 3431.10009765625] 30, 35% correction.
+- [3431.10009765625 - 3435.179931640625] Now the question is, are authorities going to let that happen?
+- [3435.179931640625 - 3441.300048828125] At what point do they start printing the money, which is when Bitcoin goes on its absolute
+- [3441.300048828125 - 3442.300048828125] tear.
+- [3442.300048828125 - 3448.06005859375] To remind you guys, Bitcoin got hit the hardest, fell the fastest and fell first with COVID.
+- [3448.06005859375 - 3455.6201171875] It went from 8,000 to 4,000 in a day, but then it was the best performer.
+- [3455.6201171875 - 3462.179931640625] It went from 3,000 to 70,000 in a year.
+- [3462.179931640625 - 3464.3798828125] So it gets hit the hardest.
+- [3464.3798828125 - 3465.3798828125] It gets hit first.
+- [3465.3798828125 - 3466.840087890625] It performs the best.
+- [3466.840087890625 - 3468.02001953125] It's part of being a champion.
+- [3468.02001953125 - 3469.6201171875] It's part of being the man in the arena.
+- [3469.6201171875 - 3471.419921875] It's part of being a pioneer.
+- [3471.419921875 - 3476.5] It's part of fighting for the world we want to live in, a Bitcoin world.
+- [3476.5 - 3484.179931640625] Now this tweet, going back to 1995, the US has never performed worse compared to international
+- [3484.179931640625 - 3486.179931640625] stocks year to date.
+- [3486.179931640625 - 3490.5400390625] So again, capital's rotating out of the United States of America.
+- [3490.5400390625 - 3492.8798828125] The stock market is getting hammered.
+- [3492.8798828125 - 3494.679931640625] People are selling the US.
+- [3494.679931640625 - 3496.679931640625] People are fearing a credit crisis.
+- [3496.679931640625 - 3498.60009765625] AI is disrupting.
+- [3498.60009765625 - 3500.8798828125] It is leaving white collars jobless.
+- [3500.8798828125 - 3505.1201171875] It is leaving the youth unemployed with college degrees.
+- [3505.1201171875 - 3507.239990234375] This is actually happening.
+- [3507.239990234375 - 3508.239990234375] This was today.
+- [3508.239990234375 - 3512.199951171875] I took this screenshot at market close.
+- [3512.199951171875 - 3515.60009765625] This is not crypto.com.
+- [3515.60009765625 - 3522.800048828125] This is Google, Meta, Microsoft, Berkshire Hathaway, JP Morgan, Tesla, JP Morgan down
+- [3522.800048828125 - 3528.1201171875] over 4% today, Microsoft 3.5%, Amazon 2.5%.
+- [3528.1201171875 - 3530.1201171875] Getting smoked.
+- [3530.1201171875 - 3532.360107421875] Getting smoked.
+- [3532.360107421875 - 3534.639892578125] This is what Bitcoin was warning us about.
+- [3534.639892578125 - 3537.800048828125] Why did Bitcoin sell off last night?
+- [3537.800048828125 - 3541.360107421875] Guys, don't fight Bitcoin.
+- [3541.360107421875 - 3543.360107421875] Don't fight it.
+- [3543.360107421875 - 3544.800048828125] Don't try and argue with it.
+- [3544.800048828125 - 3545.800048828125] It's never wrong.
+- [3545.800048828125 - 3546.800048828125] It's just, it's information.
+- [3546.800048828125 - 3547.800048828125] It's a utility.
+- [3547.800048828125 - 3550.239990234375] It's telling you something that nothing else can.
+- [3550.239990234375 - 3552.52001953125] Whenever it's moving, it's speaking.
+- [3552.52001953125 - 3553.60009765625] Just listen to it.
+- [3553.60009765625 - 3556.239990234375] So chapter three, last chapter, the canary in the coal mine.
+- [3556.239990234375 - 3557.919921875] Bitcoin tells you what's coming.
+- [3557.919921875 - 3563.320068359375] So I tweeted this last week, Bitcoin is the orange line, has been labeled weak since it
+- [3563.320068359375 - 3566.0] diverged from the NASDAQ, which is the white line.
+- [3566.0 - 3570.159912109375] What if it's the smoke alarm, the only truly free market we have left?
+- [3570.159912109375 - 3574.860107421875] If an AI driven credit shock is coming, would Bitcoin detect it first?
+- [3574.860107421875 - 3578.0] Maybe it's telling us what centrally planned markets can't.
+- [3578.0 - 3582.9599609375] So this was my tweet, paraphrasing the last hour of me yabbing and running my mouth, is
+- [3582.9599609375 - 3586.159912109375] Bitcoin is telling us something.
+- [3586.159912109375 - 3588.739990234375] It's the most sensitive thing to fiat liquidity.
+- [3588.739990234375 - 3591.340087890625] It only understands how to price fiat credit.
+- [3591.340087890625 - 3593.840087890625] It's the antithesis of fiat.
+- [3593.840087890625 - 3597.800048828125] And so if fiat's going to have an issue, Bitcoin's going to scream and shout and tell you about
+- [3597.800048828125 - 3598.800048828125] it.
+- [3598.800048828125 - 3601.800048828125] And in my opinion, that's what it has been doing.
+- [3601.800048828125 - 3607.89990234375] It's been able to sniff out what it's taking other markets a long time to sniff out.
+- [3607.89990234375 - 3609.699951171875] So Bitcoin does not lie.
+- [3609.699951171875 - 3616.260009765625] Bitcoin is the most fiat liquidity sensitive asset on the planet, which itself has utility
+- [3616.260009765625 - 3617.97998046875] value.
+- [3617.97998046875 - 3620.340087890625] That within itself is intrinsically valuable.
+- [3620.340087890625 - 3625.5] It is number one on the scoreboard for fiat liquidity sensitivity, period.
+- [3625.5 - 3631.6201171875] No board of directors, no earnings guidance, no balance sheet to hide behind, it just prices
+- [3631.6201171875 - 3632.6201171875] the money supply.
+- [3633.179931640625 - 3640.06005859375] It is saying there is not enough credit in the system to meet the maker that is AI and
+- [3640.06005859375 - 3642.760009765625] the sovereign debt crisis around the world.
+- [3642.760009765625 - 3644.10009765625] We have issues.
+- [3644.10009765625 - 3648.219970703125] And either everything's going to sell off, we're going to go through the greatest depression
+- [3648.219970703125 - 3652.780029296875] we've ever seen, austerity to new levels, streets are going to be lit on fire, or they're
+- [3652.780029296875 - 3654.43994140625] going to print the money.
+- [3654.43994140625 - 3659.3798828125] Either way, Bitcoin wins in the end, because it'll outcompete to be the world's money.
+- [3659.3798828125 - 3661.300048828125] Now my prediction is they're going to print the money.
+- [3661.300048828125 - 3662.97998046875] That's historically what they've done.
+- [3662.97998046875 - 3667.739990234375] It's a far sneakier way to default and steal from people.
+- [3667.739990234375 - 3672.739990234375] So Bitcoin leads markets down, in 2000 we had the dot-com bust.
+- [3672.739990234375 - 3674.5400390625] What was 2000?
+- [3674.5400390625 - 3678.6201171875] A productivity shock, a credit event, they printed the money.
+- [3678.6201171875 - 3682.340087890625] Housing crisis, deflation, credit event, they print the money.
+- [3682.340087890625 - 3686.340087890625] COVID, demand collapse, credit event, they print the money.
+- [3686.340087890625 - 3690.719970703125] 2026, is it a productivity shock with AI?
+- [3690.719970703125 - 3692.9599609375] A credit event, and they print the money.
+- [3692.9599609375 - 3693.9599609375] Either way they print the money.
+- [3693.9599609375 - 3699.919921875] The question is, are we going to get this event in 2026, in 2027, when is Bitcoin going
+- [3699.919921875 - 3705.56005859375] to sniff out the other side of the chasm in which we're crossing?
+- [3705.56005859375 - 3709.56005859375] But the point is, that I want to get across, is they always print the money.
+- [3709.56005859375 - 3713.0400390625] Every credit crisis ends the same way, monetary expansion.
+- [3713.0400390625 - 3718.320068359375] The question is not if, it's when, and when they print, what wins.
+- [3718.320068359375 - 3720.60009765625] The thing you can't make any more of.
+- [3720.60009765625 - 3725.60009765625] When there's an infinite outflow of dollars, of fiat, the thing that performs the best
+- [3725.60009765625 - 3729.47998046875] is the thing that's inelastic to this ever-flowing supply of fiat.
+- [3729.47998046875 - 3734.919921875] The thing that you cannot make any more, no matter how much more fiat is created.
+- [3734.919921875 - 3739.43994140625] A bunch more fiat is created, gold miners are going to invest that, and be able to mine
+- [3739.43994140625 - 3741.280029296875] gold marginally better, right?
+- [3741.280029296875 - 3745.800048828125] You cannot make any more Bitcoin, and so that's why it performs the best.
+- [3745.800048828125 - 3750.52001953125] It's the best engineered money we've ever come across.
+- [3750.52001953125 - 3757.320068359375] Best money mankind, ever, hands down, pound for pound, the champ, the gold medalist.
+- [3757.320068359375 - 3759.840087890625] The Bitcoin medalist.
+- [3759.840087890625 - 3766.719970703125] So this, I mean, just to show you guys, US net international investment position is negative
+- [3766.719970703125 - 3768.280029296875] 30 trillion.
+- [3768.280029296875 - 3775.52001953125] So again, if we reach a deflationary crisis and everyone is selling everything to make
+- [3775.52001953125 - 3785.239990234375] ends meet because credit is tight, just a reminder that the world owns a ton of US assets.
+- [3785.239990234375 - 3794.47998046875] So when South Korea came out with a tax exemption where if you sell US stocks, as long as you
+- [3794.47998046875 - 3798.0400390625] reinvest it into the South Korean market, tax free.
+- [3798.0400390625 - 3799.43994140625] We're not going to tax you.
+- [3799.43994140625 - 3800.43994140625] And so what happens?
+- [3800.43994140625 - 3805.0] A bunch of capital repatriating out of America and into South Korea.
+- [3805.0 - 3809.639892578125] The South Korean stock market has whooped the S&P 500's ass.
+- [3809.639892578125 - 3810.639892578125] Same with Japan.
+- [3810.639892578125 - 3813.840087890625] The Japanese stock market is killing the S&P 500.
+- [3813.840087890625 - 3817.9599609375] Asian stock market is killing American stock market.
+- [3817.9599609375 - 3823.43994140625] So the pain, if you guys think we've had pain now, there's 30 trillion dollars more pain
+- [3823.43994140625 - 3824.8798828125] to go.
+- [3824.8798828125 - 3829.0] The United States cannot afford this, and they know they cannot afford this.
+- [3829.0 - 3832.760009765625] If you listen to Warsh, the new Fed chair, all he's talking about is AI.
+- [3832.760009765625 - 3833.760009765625] AI this, AI that.
+- [3834.080078125 - 3835.080078125] We've got to cut rates.
+- [3835.080078125 - 3836.080078125] We've got to cut rates.
+- [3836.080078125 - 3837.080078125] We've got to cut rates.
+- [3837.080078125 - 3838.080078125] AI, AI, AI.
+- [3838.080078125 - 3839.080078125] We've got to cut rates.
+- [3839.080078125 - 3840.080078125] We've got to cut rates.
+- [3840.080078125 - 3844.360107421875] And so the last thing I wanted to leave you guys with here is that when people will say,
+- [3844.360107421875 - 3847.8798828125] well, listen, at least President Trump is reshoring.
+- [3847.8798828125 - 3851.239990234375] He's bringing infrastructure and manufacturing back.
+- [3851.239990234375 - 3853.9599609375] We're de-risking ourselves from China.
+- [3853.9599609375 - 3856.8798828125] So this tweet, the USGS report just came out.
+- [3856.8798828125 - 3862.239990234375] A new report from the US Geological Survey reveals that the United States has grown more
+- [3862.239990234375 - 3867.840087890625] reliant on foreign imports of minerals over the past year, highlighting the increased
+- [3867.840087890625 - 3871.320068359375] urgency to bolster its domestic supply chain.
+- [3871.320068359375 - 3877.280029296875] In its annual mineral commodity summary, the USGS found that the country was 100 percent
+- [3877.280029296875 - 3884.60009765625] import reliant last year for 16 of the 90 non-fuel commodities that it tracked.
+- [3884.60009765625 - 3890.679931640625] In addition, the US relied more than one half of its apparent consumption for 54 of the
+- [3890.679931640625 - 3892.43994140625] minerals the report showed.
+- [3892.43994140625 - 3898.199951171875] In comparison, in 2024's data, 100 percent import reliance for 15 commodities and more
+- [3898.199951171875 - 3902.0400390625] than half import reliant for only 46 minerals.
+- [3902.0400390625 - 3907.8798828125] So the point that I have for you is the pain hasn't even started.
+- [3907.8798828125 - 3908.8798828125] Do you guys know how?
+- [3908.8798828125 - 3910.919921875] Well, hold on, hold on, hold on, hold on, hold on.
+- [3910.919921875 - 3912.60009765625] I said that came out wrong.
+- [3912.60009765625 - 3913.60009765625] Pause.
+- [3913.60009765625 - 3914.60009765625] Pause.
+- [3914.60009765625 - 3915.60009765625] Pause.
+- [3915.60009765625 - 3916.60009765625] Rewind.
+- [3916.60009765625 - 3918.360107421875] The pain has started in Bitcoin.
+- [3918.360107421875 - 3919.360107421875] I know it has.
+- [3919.360107421875 - 3920.800048828125] I know you guys are in some pain.
+- [3920.800048828125 - 3922.679931640625] I've seen this movie a million times.
+- [3922.679931640625 - 3924.1201171875] We're going to be okay.
+- [3924.1201171875 - 3925.43994140625] We're going to be fine.
+- [3925.43994140625 - 3926.43994140625] We're tough.
+- [3926.43994140625 - 3931.919921875] We're the principled, moral soldiers out here fighting the good ethical fight.
+- [3931.919921875 - 3932.919921875] We're going to be okay.
+- [3932.919921875 - 3933.919921875] All right.
+- [3933.919921875 - 3935.800048828125] I know the Bitcoin pain has started.
+- [3935.800048828125 - 3942.840087890625] But what I'm saying is the so reshoring is going to be so inflationary.
+- [3942.840087890625 - 3945.280029296875] It's going to be so inflationary.
+- [3945.280029296875 - 3947.199951171875] Who's paying to reshore?
+- [3947.199951171875 - 3948.199951171875] Who's paying?
+- [3948.239990234375 - 3952.080078125] Do you know how much money you're going to have to pay someone to get them to go mine
+- [3952.080078125 - 3955.39990234375] rare earths in Idaho?
+- [3955.39990234375 - 3958.800048828125] No one in Manhattan is going to be like, yeah, I want to move to Idaho to mine rare earths
+- [3958.800048828125 - 3960.800048828125] for $20,000 a year.
+- [3960.800048828125 - 3965.639892578125] If you pay him $300,000 a year and free education on how to do it, you might get some people
+- [3965.639892578125 - 3968.39990234375] that want to move to Idaho.
+- [3968.39990234375 - 3971.0] It's going to be so inflationary.
+- [3971.0 - 3973.320068359375] Commodity prices are going to continue to go up.
+- [3973.320068359375 - 3978.1201171875] Oil, probably soon, is going to have to start to go up.
+- [3979.0400390625 - 3983.8798828125] Sometimes people say, yeah, but at least we've made a ton of progress on de-risking from
+- [3983.8798828125 - 3987.159912109375] China, reshoring our manufacturing base.
+- [3987.159912109375 - 3992.1201171875] According to the US Geological Survey, not only have we not made any progress, we've
+- [3992.1201171875 - 3994.02001953125] made negative progress.
+- [3994.02001953125 - 3997.47998046875] We haven't even started.
+- [3997.47998046875 - 4002.719970703125] So we're about to have a credit crisis because of AI and all sorts of sovereign debt issues
+- [4002.719970703125 - 4006.159912109375] and what's going on in Japan.
+- [4006.199951171875 - 4012.43994140625] Mind you, all the actual inflationary pain that we knew was coming from reshoring hasn't
+- [4012.43994140625 - 4015.56005859375] even started.
+- [4015.56005859375 - 4018.800048828125] So I'll end it with just some Bitcoin charts.
+- [4018.800048828125 - 4020.919921875] Stay humble and stack stats, guys.
+- [4020.919921875 - 4026.199951171875] So the chart on the left, Bitcoin versus credit spreads.
+- [4026.199951171875 - 4031.47998046875] So credit spreads are very low.
+- [4031.47998046875 - 4037.1201171875] The point is, I've talked about it, the business cycle has been down.
+- [4037.1201171875 - 4039.679931640625] Bitcoin likes certain market conditions.
+- [4039.679931640625 - 4042.260009765625] It likes easy money.
+- [4042.260009765625 - 4043.9599609375] And that's not the market we've been in.
+- [4043.9599609375 - 4046.8798828125] We've been in this difficult monetary conditions.
+- [4046.8798828125 - 4049.320068359375] We've been in QT.
+- [4049.320068359375 - 4058.760009765625] This has been a very interesting market conditions, market environment, monetary environment,
+- [4058.760009765625 - 4060.360107421875] liquidity environment.
+- [4060.360107421875 - 4065.199951171875] And so it's just that, like, if you look at, let me zoom into it.
+- [4065.199951171875 - 4070.719970703125] If you look at this chart, Bitcoin's only behaving naturally.
+- [4070.719970703125 - 4075.239990234375] You can see this spike up here up top, and that's around when Bitcoin made its high,
+- [4075.239990234375 - 4078.8798828125] and then it's come down, it's come down.
+- [4078.8798828125 - 4082.0] So Bitcoin's going to be fine.
+- [4082.0 - 4086.320068359375] The next one, this chart has a 303 track record, and it just flashed again.
+- [4086.320068359375 - 4089.47998046875] This is the Bitcoin Sharpe ratio, which we've talked about.
+- [4089.60009765625 - 4093.52001953125] If you look at the Sharpe ratio, it's reaching levels of historical bottoms.
+- [4093.52001953125 - 4096.0400390625] So again, here's the thing you need to ask yourself.
+- [4096.0400390625 - 4097.43994140625] Do you think Bitcoin's going to zero?
+- [4097.43994140625 - 4100.60009765625] If you think Bitcoin's going to zero, you're probably not listening to this, and I wish
+- [4100.60009765625 - 4101.60009765625] you well.
+- [4101.60009765625 - 4102.60009765625] Have fun staying poor.
+- [4102.60009765625 - 4109.080078125] If you don't, guys, I love, personally, I love moments of adversity.
+- [4109.080078125 - 4110.83984375] I love being challenged.
+- [4110.83984375 - 4112.0400390625] I live for it.
+- [4112.0400390625 - 4116.35986328125] I love when people on the internet are talking shit about me, accusing me of all this shit.
+- [4116.35986328125 - 4117.35986328125] I love it.
+- [4117.35986328125 - 4118.35986328125] I bookmark it.
+- [4118.35986328125 - 4119.35986328125] I screenshot it.
+- [4119.35986328125 - 4121.60009765625] I swear to God, I'm a sick person in the head.
+- [4121.60009765625 - 4122.60009765625] Ask Dylan.
+- [4122.60009765625 - 4123.60009765625] I'm sick.
+- [4123.60009765625 - 4124.60009765625] I'm deranged.
+- [4124.60009765625 - 4129.16015625] I literally live for that, because that's where growth is.
+- [4129.16015625 - 4131.16015625] That's where opportunity is.
+- [4131.16015625 - 4137.8798828125] That's where something inside of you is challenged to find that extra inch, find that extra dollar,
+- [4137.8798828125 - 4141.27978515625] find that extra sack, go that extra mile.
+- [4141.27978515625 - 4144.31982421875] That's the story of my career, so I love these moments.
+- [4144.31982421875 - 4145.72021484375] I love it.
+- [4145.72021484375 - 4146.72021484375] Shit on Bitcoin.
+- [4146.72021484375 - 4147.759765625] Everyone wants to quit.
+- [4147.759765625 - 4149.1201171875] Everyone's capitulating.
+- [4149.8798828125 - 4150.8798828125] I've already been all in on Bitcoin.
+- [4150.8798828125 - 4153.43994140625] I'm going to find every ounce of liquidity.
+- [4153.43994140625 - 4155.2001953125] Strike's going to launch every feature.
+- [4155.2001953125 - 4157.1201171875] We're going to stack every set.
+- [4157.1201171875 - 4159.43994140625] You just got to stay humble and keep stacking.
+- [4159.43994140625 - 4162.9599609375] This one, commercials are extremely net short, Bitcoin.
+- [4162.9599609375 - 4165.240234375] Large speculators are extremely net long.
+- [4165.240234375 - 4168.31982421875] Prior cases mark bottom processes for Bitcoin.
+- [4168.31982421875 - 4172.0] So everything, as far as I can tell, looks very healthy.
+- [4172.0 - 4174.56005859375] Bitcoin is doing what Bitcoin always does.
+- [4174.56005859375 - 4175.759765625] It's calling bullshit.
+- [4175.759765625 - 4178.0400390625] It's sniffing things out before they happen.
+- [4178.0400390625 - 4179.0400390625] It's very efficient.
+- [4179.0400390625 - 4182.83984375] It's a free market, so turn on your DCAs.
+- [4182.83984375 - 4188.43994140625] This one, interesting, my quintile model also shows Bitcoin has been cheaper than this level
+- [4188.43994140625 - 4193.2001953125] only about 4% of the time across its observable history.
+- [4193.2001953125 - 4197.60009765625] So you've only been able to get Bitcoin cheaper on a relative basis, 4%.
+- [4197.60009765625 - 4199.43994140625] So can Bitcoin go down from here?
+- [4199.43994140625 - 4200.43994140625] Of course it can.
+- [4200.43994140625 - 4201.68017578125] Again, I have no idea.
+- [4201.68017578125 - 4204.52001953125] We could flash down to 30K for a split instant.
+- [4204.52001953125 - 4205.919921875] I have no clue.
+- [4205.919921875 - 4210.240234375] But if you are here for the long run, if you're looking to just build a war chest for
+- [4210.240234375 - 4214.60009765625] your future family on the other side of all this fiat nonsense, of all this garbage, of
+- [4214.60009765625 - 4220.1201171875] all this manipulation, central banking, centrally planned bullshit, if you just want a war chest
+- [4220.1201171875 - 4226.8798828125] of time, energy, and saved labor and effort for your family and your kids, turn on those
+- [4226.8798828125 - 4227.8798828125] DCAs.
+- [4227.8798828125 - 4232.0] We got no fee, no spread DCAs on strike.
+- [4232.0 - 4236.64013671875] You can DCA for free, convert any percentage of your paycheck for free, and you have free
+- [4236.64013671875 - 4238.27978515625] withdrawals to cold storage.
+- [4238.27978515625 - 4243.240234375] I literally, I told the team, we need to have an ability to stack stats on the house and
+- [4243.240234375 - 4248.580078125] withdraw on the house so that we can always say, when in doubt, we're the cheapest place
+- [4248.580078125 - 4251.56005859375] in the world to just securely get yourself some Bitcoin.
+- [4251.56005859375 - 4253.47998046875] Turn on those DCAs.
+- [4253.47998046875 - 4258.0] And then this other tweet from Frank, selling from long-term holders has fallen off a cliff
+- [4258.0 - 4261.6201171875] since Bitcoin corrected to below 90,000.
+- [4261.6201171875 - 4263.89990234375] So the massive selling is gone.
+- [4263.89990234375 - 4266.259765625] Now, again, can Bitcoin go lower?
+- [4266.259765625 - 4267.66015625] Of course it can.
+- [4267.66015625 - 4270.580078125] But these are all things that I check for.
+- [4270.580078125 - 4273.5] I've been in this game for a very long time, guys.
+- [4273.5 - 4275.259765625] I'd let you know if I was worried.
+- [4275.259765625 - 4276.419921875] I'm the opposite of worried.
+- [4276.419921875 - 4277.81982421875] I'm buying.
+- [4277.81982421875 - 4285.5] Okay, that's the end of the AI is causing a credit crisis show.
+- [4285.5 - 4290.93994140625] And now we're on to a new segment that I debuted last week that you guys seemingly liked.
+- [4290.93994140625 - 4292.3798828125] What really grinds my gears?
+- [4292.3798828125 - 4295.259765625] Let me take a sip of espresso.
+- [4295.259765625 - 4303.64013671875] All right, shout out to the listener that made this art.
+- [4303.64013671875 - 4304.64013671875] This is hilarious.
+- [4304.64013671875 - 4311.7001953125] So for those that don't know, I got this idea from my intuition combined with Family Guy.
+- [4311.7001953125 - 4314.5] So I did not gain a lot of weight.
+- [4314.5 - 4318.02001953125] That's just the Peter Griffin version of me.
+- [4318.02001953125 - 4323.66015625] And this is the visual for what really grinds my gears.
+- [4323.66015625 - 4324.66015625] Part one.
+- [4324.66015625 - 4326.97998046875] You know what really grinds my gears?
+- [4326.97998046875 - 4328.6201171875] The Clarity Act.
+- [4328.6201171875 - 4330.77978515625] The market structure bill.
+- [4330.77978515625 - 4333.18017578125] Just fucking sign it already.
+- [4333.18017578125 - 4334.97998046875] Or don't sign it.
+- [4334.97998046875 - 4338.740234375] But shut the fuck up.
+- [4338.740234375 - 4347.3798828125] I'm so sick of seeing Brian Armstrong get in pissy fights, sissy fights with these fucking
+- [4347.740234375 - 4353.7001953125] bank CEOs, Jamie Dimon and Brian Armstrong are having a pillow fight, and somehow it's
+- [4353.7001953125 - 4356.66015625] impacting Bitcoin.
+- [4356.66015625 - 4361.740234375] These guys, let me say something because people say, Jack, are you worried about the Clarity
+- [4361.740234375 - 4363.3798828125] Act not passing?
+- [4363.3798828125 - 4365.06005859375] Why would I be worried?
+- [4365.06005859375 - 4367.66015625] It has nothing to do with Bitcoin.
+- [4367.66015625 - 4368.85986328125] What are they fighting over?
+- [4368.85986328125 - 4372.5400390625] For one, they're fighting over can stable coins pay interest?
+- [4372.5400390625 - 4375.4599609375] First of all, who cares?
+- [4375.4599609375 - 4380.89990234375] Do Americans not know that they can download Robinhood or they can download Marcus?
+- [4380.89990234375 - 4390.77978515625] You can open any account on your fucking iPhone and get three and a half percent on your cash.
+- [4390.77978515625 - 4394.33984375] Why do you need a stable coin to get yield on your dollars?
+- [4394.33984375 - 4398.81982421875] Do you guys not know that you can do that?
+- [4398.81982421875 - 4402.5400390625] Stable coins did not invent interest on your cash.
+- [4402.5400390625 - 4405.419921875] Did you know that?
+- [4405.419921875 - 4411.740234375] So first of all, who gives a fuck about whether stable coins can pay interest or not?
+- [4411.740234375 - 4412.89990234375] Nobody cares.
+- [4412.89990234375 - 4413.89990234375] Nobody needs it.
+- [4413.89990234375 - 4416.93994140625] If people want interest on their cash, they could just download Robinhood.
+- [4416.93994140625 - 4419.77978515625] Why do they need USDC?
+- [4419.77978515625 - 4420.77978515625] That's another thing.
+- [4420.77978515625 - 4424.7001953125] Why would I ever use USDC, ever?
+- [4424.7001953125 - 4427.10009765625] For what?
+- [4427.10009765625 - 4428.7001953125] I've had digital dollars.
+- [4428.7001953125 - 4430.66015625] I was born in 1994.
+- [4430.66015625 - 4433.740234375] I've had digital dollars forever.
+- [4433.740234375 - 4435.77978515625] Why would I need USDC?
+- [4435.77978515625 - 4437.93994140625] It's like, no, no, no.
+- [4437.93994140625 - 4440.02001953125] I'm really fighting.
+- [4440.02001953125 - 4441.02001953125] This is what these guys say.
+- [4441.02001953125 - 4445.5] I'm fighting for the American to get interest on their cash.
+- [4445.5 - 4446.85986328125] You idiot.
+- [4446.85986328125 - 4449.5400390625] That was invented 20 years ago.
+- [4449.5400390625 - 4451.6201171875] I'm not trying to be hard on anybody.
+- [4451.6201171875 - 4453.18017578125] I'm just being honest.
+- [4453.18017578125 - 4455.06005859375] That's what really grinds my gears.
+- [4455.06005859375 - 4460.5] I'm seeing these CNBC clips, Jamie Dimon is not letting me pay interest on cash.
+- [4460.5 - 4461.5] You're a moron.
+- [4461.77978515625 - 4464.06005859375] They've been paying interest on cash for years.
+- [4464.06005859375 - 4470.81982421875] Yes, Jamie Dimon pays one basis point interest on cash, but Robinhood pays 4% interest on
+- [4470.81982421875 - 4474.97998046875] cash, and that's why Robinhood gets customers away from Chase.
+- [4474.97998046875 - 4476.66015625] What does this have to do with Bitcoin?
+- [4476.66015625 - 4478.06005859375] I'll answer it for you.
+- [4478.06005859375 - 4479.06005859375] Nothing.
+- [4479.06005859375 - 4482.580078125] So the people that say, when I talk to reporters and they say, oh, the Bitcoin market's really
+- [4482.580078125 - 4485.77978515625] reacting to the Clarity Act, that's the shit coin act.
+- [4485.77978515625 - 4489.33984375] This act has nothing to do, literally nothing to do with Bitcoin.
+- [4489.3798828125 - 4493.85986328125] I don't even know if Bitcoin is mentioned in it at all, because the only other thing
+- [4493.85986328125 - 4499.419921875] that they're talking about in this act is moving the ability to tokenize something away
+- [4499.419921875 - 4502.419921875] from the SEC and to the CFTC.
+- [4502.419921875 - 4507.6201171875] So they're trying to change regulators so that they can commit what is effectively securities
+- [4507.6201171875 - 4513.2998046875] fraud, and they're trying to put yield on cash.
+- [4513.2998046875 - 4514.2998046875] So what?
+- [4514.2998046875 - 4516.06005859375] I can get yield on cash.
+- [4516.06005859375 - 4519.02001953125] It just, this, it grinds my gears.
+- [4519.02001953125 - 4521.2998046875] Why are we wasting time?
+- [4521.2998046875 - 4527.419921875] One of the biggest thefts in human history is shit coin and these shit coin kings, these
+- [4527.419921875 - 4534.259765625] guys that run these giant shit coin casinos, spending so much human capital, human time,
+- [4534.259765625 - 4536.10009765625] effort, attention.
+- [4536.10009765625 - 4540.4599609375] Why am I getting dragged into, why are investors calling me and saying, are you worried about
+- [4540.4599609375 - 4542.0] the Clarity Act?
+- [4542.0 - 4545.02001953125] Why the fuck would I be worried about the Clarity Act?
+- [4545.02001953125 - 4548.81982421875] If you want yield on your cash, download Robinhood.
+- [4548.81982421875 - 4551.18017578125] They've been doing this for a long time.
+- [4551.18017578125 - 4554.419921875] It's called the Fed Funds Rate.
+- [4554.419921875 - 4560.97998046875] I hate to break it to you, but USDC did not invent getting three and a half percent on
+- [4560.97998046875 - 4561.97998046875] your dollars.
+- [4561.97998046875 - 4562.97998046875] It didn't.
+- [4562.97998046875 - 4564.740234375] I'm sorry.
+- [4564.740234375 - 4570.259765625] And then, do I worry about whether tokenizing things is going to be regulated by the SEC
+- [4570.259765625 - 4572.259765625] or not?
+- [4572.259765625 - 4573.77978515625] No.
+- [4573.77978515625 - 4576.259765625] What the hell does that have to do with Bitcoin?
+- [4576.259765625 - 4581.77978515625] It has nothing to do with anything productive.
+- [4581.77978515625 - 4584.259765625] Answer me this.
+- [4584.259765625 - 4588.77978515625] This is only to enrich a bunch of large businesses.
+- [4588.77978515625 - 4592.3798828125] This is Coinbase going after regulatory capture.
+- [4592.3798828125 - 4597.9599609375] They are trying to further enrich themselves by taking advantage of a favorable administration
+- [4597.9599609375 - 4601.16015625] creating regulatory moats for themselves.
+- [4601.16015625 - 4608.919921875] This has nothing to do with Bitcoin or any beneficial, efficient productivity for any
+- [4608.919921875 - 4615.240234375] industry whatsoever.
+- [4615.240234375 - 4619.31982421875] It grinds my gears to no end.
+- [4619.31982421875 - 4621.0400390625] What are your thoughts on the Clarity Act?
+- [4621.0400390625 - 4622.56005859375] I don't know.
+- [4622.56005859375 - 4623.56005859375] Just sign.
+- [4623.56005859375 - 4628.080078125] Brian Armstrong, just fucking sign the thing so I don't have to hear about it anymore.
+- [4628.080078125 - 4629.7001953125] Or don't sign it.
+- [4629.7001953125 - 4633.14013671875] That's just the back and forth.
+- [4633.14013671875 - 4634.14013671875] He goes on TV.
+- [4634.14013671875 - 4635.14013671875] I'm really fighting the good fight.
+- [4635.14013671875 - 4637.81982421875] I've been in Washington, D.C. for the last month.
+- [4637.81982421875 - 4641.06005859375] How is that fighting for Bitcoin, being in Washington, D.C.?
+- [4641.06005859375 - 4644.66015625] What the fuck are you doing in Washington, D.C.?
+- [4644.66015625 - 4650.10009765625] Arguing for stable coin yield and wanting to be regulated by the CFTC so you can create
+- [4650.10009765625 - 4655.6201171875] loads of prediction market shitcoin, speculative trash.
+- [4655.6201171875 - 4657.4599609375] Fuck.
+- [4657.4599609375 - 4659.10009765625] It's so frustrating.
+- [4659.10009765625 - 4663.81982421875] This shitcoin industry, it taints the Bitcoin brand.
+- [4663.81982421875 - 4668.6201171875] People legitimately couple us all together.
+- [4668.6201171875 - 4672.259765625] They do.
+- [4672.259765625 - 4677.5] I'm literally trying to rebuild the financial system on something that's moral and fair
+- [4677.5 - 4681.14013671875] and that can last and that serves us all equally.
+- [4681.14013671875 - 4683.56005859375] That's genuinely what I'm trying to participate in.
+- [4683.56005859375 - 4684.56005859375] Very humbly.
+- [4684.56005859375 - 4685.97998046875] Hey, how can I help?
+- [4685.97998046875 - 4687.77978515625] Let me pick up picks and shovels, baby.
+- [4687.77978515625 - 4688.77978515625] Let's get to work.
+- [4689.4599609375 - 4696.10009765625] Meanwhile, these guys are in my industry on what planet?
+- [4696.10009765625 - 4701.77978515625] Like sleeping under Donald Trump's desk, begging him, and meanwhile Jamie Dimon's bitching
+- [4701.77978515625 - 4706.6201171875] and crying and moaning and calling Brian Armstrong an asshole.
+- [4706.6201171875 - 4707.6201171875] Fucking A, man.
+- [4707.6201171875 - 4710.740234375] I mean, this is how you know it's a bear market.
+- [4710.740234375 - 4711.740234375] Seriously.
+- [4711.740234375 - 4717.66015625] What the fuck?
+- [4717.66015625 - 4720.06005859375] Shitcoins are just the worst.
+- [4720.06005859375 - 4721.259765625] They really are.
+- [4721.259765625 - 4724.5] And you know what?
+- [4724.5 - 4731.06005859375] I get less upset over people that get duped into buying them.
+- [4731.06005859375 - 4732.93994140625] Although I get upset by that, too.
+- [4732.93994140625 - 4736.22021484375] Don't get me wrong.
+- [4736.22021484375 - 4742.02001953125] I've seen these posts recently like, oh, the NFT that Logan Paul bought for $2 million
+- [4742.02001953125 - 4743.6201171875] is now worth 20 grand.
+- [4743.6201171875 - 4747.7001953125] The NFT Justin Bieber bought for $10 million is now worth $50.
+- [4747.7001953125 - 4753.5400390625] I've seen these tweets going around and what's so, it's so frustrating.
+- [4753.5400390625 - 4756.22021484375] These guys didn't buy those.
+- [4756.22021484375 - 4759.259765625] They were given those.
+- [4759.259765625 - 4762.740234375] Justin Bieber didn't wire anyone a million dollars.
+- [4762.740234375 - 4766.22021484375] These people are such unethical scammers.
+- [4766.22021484375 - 4770.93994140625] They're paying influencers on Instagram to convince a bunch of people that don't know
+- [4770.93994140625 - 4774.10009765625] any better into stealing their money.
+- [4774.10009765625 - 4775.10009765625] That's what's happening.
+- [4775.10009765625 - 4780.5] So you have a bunch of, like unbeknownst to them, retail investors that think they're
+- [4780.5 - 4787.5400390625] buying into the new fucking Leonardo da Vinci art collection and they're getting completely
+- [4787.5400390625 - 4790.580078125] scammed, knowingly scammed.
+- [4790.580078125 - 4792.580078125] That doesn't even bother me the most.
+- [4792.580078125 - 4794.81982421875] It doesn't.
+- [4794.81982421875 - 4800.0] Because if you're that stupid, you kind of had it coming.
+- [4800.06005859375 - 4804.64013671875] You kind of have to touch the stove and get burned to learn, right?
+- [4804.64013671875 - 4809.64013671875] Now, again, it doesn't make me not upset.
+- [4809.64013671875 - 4810.64013671875] These people are unethical.
+- [4810.64013671875 - 4811.64013671875] They're gross.
+- [4811.64013671875 - 4812.64013671875] They're slimy.
+- [4812.64013671875 - 4813.64013671875] They're scammers.
+- [4813.64013671875 - 4818.759765625] But if you're that dumb to where you paid anything more than a penny for a JPEG of a
+- [4818.759765625 - 4824.240234375] monkey, I mean, you have what's coming, okay?
+- [4824.52001953125 - 4831.16015625] What's worse is the waste of human capital, not just the money.
+- [4831.16015625 - 4833.7998046875] You've got CNBC all day.
+- [4833.7998046875 - 4839.080078125] You've got news and media and executives like some of the biggest companies in the world
+- [4839.080078125 - 4846.31982421875] and our government and all of our media outlets are covering the Clarity Act.
+- [4846.31982421875 - 4853.919921875] Think about the theft that shit coiners and shit coins have done to society.
+- [4853.919921875 - 4862.27978515625] What if everyone was just focused on Bitcoin, which was a fair money that can actually support
+- [4862.27978515625 - 4865.68017578125] society in a scalable, ethical way?
+- [4865.68017578125 - 4866.9599609375] Just picture that for a second.
+- [4866.9599609375 - 4870.47998046875] What if that's where all of our time and our energy and our focus went?
+- [4870.47998046875 - 4876.8798828125] It's like, hey, let's get AI and Bitcoin right.
+- [4876.8798828125 - 4879.240234375] Imagine that.
+- [4879.240234375 - 4884.83984375] You've got people like, I spend my day, so much of my day talking to investors.
+- [4884.83984375 - 4889.2001953125] Well, Jack, I want to see the results of the Clarity Act.
+- [4889.2001953125 - 4891.39990234375] You want to see the results of the Clarity Act?
+- [4891.39990234375 - 4892.39990234375] What do you want?
+- [4892.39990234375 - 4895.47998046875] Three and a half percent interest on your dollars?
+- [4895.47998046875 - 4898.1201171875] Open a Marcus account.
+- [4898.1201171875 - 4901.16015625] Who gives a fuck about the Clarity Act?
+- [4902.080078125 - 4906.64013671875] Well, you know, I tracked this index of Bitcoin, Ethereum and Solana.
+- [4906.64013671875 - 4910.1201171875] God damn it.
+- [4910.1201171875 - 4912.43994140625] It's just such an uphill battle.
+- [4912.43994140625 - 4913.9599609375] Unnecessary.
+- [4913.9599609375 - 4916.919921875] We got enough problems, right?
+- [4916.919921875 - 4919.27978515625] Fuck.
+- [4919.27978515625 - 4924.0400390625] All of our kids are unemployed and, like, picking up guns.
+- [4924.0400390625 - 4928.080078125] You want to go lobby President Trump about Dogecoin?
+- [4928.080078125 - 4932.31982421875] Give me a fucking break.
+- [4932.31982421875 - 4934.080078125] All right, let's move on.
+- [4934.080078125 - 4937.759765625] You know what else really grinds my gears?
+- [4937.759765625 - 4943.72021484375] When people clip old tweets of me and the internet thinks I just said it
+- [4943.72021484375 - 4946.240234375] and get mad at me.
+- [4946.240234375 - 4949.9599609375] You guys, I didn't just say that.
+- [4949.9599609375 - 4953.52001953125] These clips are years old.
+- [4953.52001953125 - 4955.43994140625] Fuck.
+- [4955.47998046875 - 4959.0] Here's me just trying to have myself a weekend.
+- [4959.0 - 4960.60009765625] I'm a Duke basketball fan.
+- [4960.60009765625 - 4962.16015625] Duke is playing Michigan.
+- [4962.16015625 - 4965.35986328125] The United States is playing for the gold medal hockey.
+- [4965.35986328125 - 4968.68017578125] I want to enjoy time with my girlfriend, watch some sports.
+- [4968.68017578125 - 4970.759765625] My buddy's birthday was on Saturday.
+- [4970.759765625 - 4972.240234375] Go to dinner.
+- [4972.240234375 - 4973.7998046875] I open up my phone.
+- [4973.7998046875 - 4975.31982421875] Everyone's yelling at me.
+- [4975.31982421875 - 4976.759765625] Everyone's always yelling at me.
+- [4976.759765625 - 4978.47998046875] Why is everyone yelling at me?
+- [4978.47998046875 - 4980.0400390625] Oh, Jack, you said...
+- [4980.0400390625 - 4981.2001953125] I didn't say that.
+- [4981.2001953125 - 4984.72021484375] I said that three fucking years ago.
+- [4984.72021484375 - 4987.72021484375] You have these fucking idiots.
+- [4987.72021484375 - 4992.080078125] Like, when I launched 21 and someone said,
+- [4992.080078125 - 4994.68017578125] how much Bitcoin do you want to buy at 21?
+- [4994.68017578125 - 4999.0] And my answer was, I don't know, as much Bitcoin as we could possibly buy.
+- [4999.0 - 5002.080078125] That's everyone's logical answer, you moron.
+- [5002.080078125 - 5004.0400390625] What was I supposed to say, an actual number?
+- [5004.0400390625 - 5010.16015625] Oh, now that you ask, we only want 122,931.37 BTC.
+- [5010.16015625 - 5011.52001953125] No more than that.
+- [5011.52001953125 - 5012.52001953125] What the fuck?
+- [5012.56005859375 - 5016.7998046875] Of course, everyone wants to own as much Bitcoin as they can possibly own.
+- [5016.7998046875 - 5019.080078125] What type of stupid fucking question is that?
+- [5019.080078125 - 5020.9599609375] So I give the only logical answer.
+- [5020.9599609375 - 5022.83984375] I want to own as much Bitcoin as possible.
+- [5022.83984375 - 5026.1201171875] And then you have these clip farming accounts on Twitter
+- [5026.1201171875 - 5029.759765625] that just exist to get views and incite rage bait.
+- [5029.759765625 - 5033.8798828125] And they're tweeting videos of me from years ago.
+- [5033.8798828125 - 5039.31982421875] And some of you idiots are out there that watch these clips every day.
+- [5039.31982421875 - 5040.83984375] And it's the same fucking clips.
+- [5040.83984375 - 5042.2001953125] They're tweeting the same clips.
+- [5042.2001953125 - 5045.919921875] And you're like, Jack just was on TV saying they're going to buy all this Bitcoin,
+- [5045.919921875 - 5047.72021484375] even though 21 hasn't done shit.
+- [5047.72021484375 - 5048.83984375] You fucking idiot.
+- [5048.83984375 - 5051.2001953125] I did not just say that.
+- [5051.2001953125 - 5053.16015625] It drives me nuts.
+- [5053.16015625 - 5056.240234375] And maybe some of these grinds my gears aren't relatable
+- [5056.240234375 - 5058.39990234375] because some of you guys don't face this issue.
+- [5058.39990234375 - 5059.60009765625] But whatever. I don't care.
+- [5059.60009765625 - 5061.31982421875] This is my show. I don't give a shit.
+- [5061.31982421875 - 5063.759765625] It drives me nuts.
+- [5063.759765625 - 5067.919921875] And you guys, like I said, when Bitcoin gets in a bear market,
+- [5067.919921875 - 5069.1201171875] people get pissed at me.
+- [5069.1201171875 - 5071.43994140625] It's just, I've said it before,
+- [5071.43994140625 - 5073.2001953125] it's the man in the arena, all right?
+- [5073.2001953125 - 5074.43994140625] It comes with the territory.
+- [5074.43994140625 - 5079.52001953125] It's much easier to blame this 31-year-old in the empty closet
+- [5079.52001953125 - 5080.919921875] that you feel like you know,
+- [5080.919921875 - 5085.080078125] and you know well enough to yell at and criticize and be mean to.
+- [5085.080078125 - 5088.35986328125] It's much easier to blame me than it is to blame yourself.
+- [5088.35986328125 - 5089.080078125] I get it.
+- [5089.080078125 - 5092.68017578125] And it's kind of grown on me a little bit over the years.
+- [5092.68017578125 - 5095.080078125] In bear markets, you guys don't like my hair.
+- [5095.080078125 - 5096.43994140625] You don't like my closet.
+- [5096.43994140625 - 5097.35986328125] You don't like my voice.
+- [5097.35986328125 - 5098.47998046875] You don't like the way I look.
+- [5098.47998046875 - 5101.31982421875] You don't like anything about me in bear markets, some of you.
+- [5101.31982421875 - 5102.8798828125] And it's kind of grown on me
+- [5102.8798828125 - 5104.759765625] because we have this love-hate relationship.
+- [5104.759765625 - 5112.56005859375] It's like, what's the economic public figure version of sexual tension?
+- [5112.56005859375 - 5113.9599609375] It's like we got this tension going on.
+- [5113.9599609375 - 5116.0] When things are bad, you hate my guts.
+- [5116.0 - 5118.31982421875] When things are good, you want to take pictures.
+- [5118.31982421875 - 5120.47998046875] It's grown on me.
+- [5120.47998046875 - 5123.47998046875] But like, what the fuck, you guys?
+- [5123.47998046875 - 5129.64013671875] You're like, it's like people are posting like baby photos of me.
+- [5129.64013671875 - 5130.919921875] Like Jack just said.
+- [5131.2001953125 - 5133.43994140625] I did not just say that.
+- [5133.43994140625 - 5135.240234375] I did not say that.
+- [5135.240234375 - 5137.83984375] Whenever there's a video of me, especially when
+- [5137.83984375 - 5144.39990234375] I look like five years younger, I mean, look at this video of me.
+- [5144.39990234375 - 5146.240234375] I have a tan.
+- [5146.240234375 - 5148.2001953125] I have a tan.
+- [5148.2001953125 - 5151.35986328125] I have like a shaved head.
+- [5151.35986328125 - 5153.0] And I look a decade younger.
+- [5156.1201171875 - 5159.43994140625] It drives me nuts.
+- [5159.43994140625 - 5163.0400390625] You've got these micro-strategy shareholders that are like,
+- [5163.0400390625 - 5165.43994140625] hey, idiot, you said you were going to buy Bitcoin.
+- [5165.43994140625 - 5167.64013671875] You didn't buy Bitcoin.
+- [5167.64013671875 - 5169.72021484375] I didn't just say that.
+- [5169.72021484375 - 5174.0] I said that years ago, moron.
+- [5174.0 - 5177.72021484375] So anyways, this guy posts this video where I say in it,
+- [5177.72021484375 - 5181.0] anyone that understands Bitcoin doesn't take 1% of their portfolio
+- [5181.0 - 5182.1201171875] and use it as a hedge.
+- [5182.1201171875 - 5183.16015625] I still believe in that.
+- [5183.16015625 - 5186.60009765625] If you actually understand Bitcoin, it's not 1% of your portfolio.
+- [5186.60009765625 - 5188.27978515625] You don't just dip your toe in.
+- [5188.27978515625 - 5192.2001953125] If you understand all this stuff, you buy some fucking SaaS.
+- [5192.2001953125 - 5194.64013671875] And the internet went apeshit on me.
+- [5194.64013671875 - 5196.52001953125] Get a load of this fucking asshole.
+- [5196.52001953125 - 5198.31982421875] Bitcoin's down 65%.
+- [5198.31982421875 - 5200.2001953125] Who's he to say, I did it.
+- [5200.2001953125 - 5203.39990234375] I said this three years ago, two years ago.
+- [5203.39990234375 - 5205.68017578125] Whatever, fuck.
+- [5205.68017578125 - 5207.1201171875] God damn it.
+- [5207.1201171875 - 5210.919921875] It pains me how stupid people are.
+- [5210.919921875 - 5211.9599609375] It's like the same thing.
+- [5211.9599609375 - 5214.68017578125] It's the same group of people that I went off
+- [5214.68017578125 - 5217.31982421875] on last week that are telling me how to use my Bitcoin.
+- [5217.31982421875 - 5218.39990234375] Don't take out a loan.
+- [5218.39990234375 - 5219.16015625] What are you doing?
+- [5219.16015625 - 5221.8798828125] Shut the fuck up.
+- [5221.8798828125 - 5225.0] Got these people just doom-scrolling Twitter all day.
+- [5225.0 - 5226.68017578125] Bitcoin's having some red candles.
+- [5226.68017578125 - 5228.2001953125] Bitcoin's in a bear market.
+- [5228.2001953125 - 5231.52001953125] You got these angry motherfuckers doom-scrolling Twitter all day,
+- [5231.52001953125 - 5235.0400390625] just looking to get wound up and just pile on guys like me.
+- [5235.0400390625 - 5237.35986328125] Fuck off.
+- [5237.35986328125 - 5238.35986328125] God damn it.
+- [5238.35986328125 - 5239.47998046875] I mean, I kind of love it.
+- [5239.47998046875 - 5241.43994140625] I have to admit, I kind of love it.
+- [5241.43994140625 - 5243.10009765625] I have a love-hate relationship with it.
+- [5243.10009765625 - 5245.56005859375] Sometimes I'm like, do these idiots
+- [5245.56005859375 - 5247.83984375] know that I did not just say that?
+- [5247.83984375 - 5249.919921875] That I said that like five years ago?
+- [5249.919921875 - 5252.31982421875] That there are Twitter accounts that just post clips of me
+- [5252.31982421875 - 5253.72021484375] from like years ago?
+- [5256.47998046875 - 5258.2001953125] But then sometimes it cracks me up.
+- [5258.2001953125 - 5259.83984375] Sometimes I get a kick out of it.
+- [5259.83984375 - 5262.8798828125] So anyway, that's what grind my gears.
+- [5262.8798828125 - 5265.52001953125] And the last thing that grinds my gears this week
+- [5265.52001953125 - 5266.759765625] is just Canada.
+- [5266.759765625 - 5269.0400390625] Just like all of Canada.
+- [5269.0400390625 - 5271.240234375] Like, be better.
+- [5271.240234375 - 5273.35986328125] And I'm half kidding, so I can already
+- [5273.35986328125 - 5275.72021484375] see the Canadians in the chat like, come on, man,
+- [5275.72021484375 - 5277.27978515625] that's so mean.
+- [5277.27978515625 - 5279.64013671875] Come on, it's just a joke, but kind of.
+- [5279.64013671875 - 5281.39990234375] Like, let's just admit it.
+- [5281.39990234375 - 5284.0] Canada grinds all of our gears.
+- [5284.0 - 5288.919921875] And is it, hold on, is it Justin Trudeau
+- [5288.919921875 - 5292.52001953125] that is dating Katy Perry?
+- [5292.52001953125 - 5294.2001953125] Yeah, I mean, come on.
+- [5294.2001953125 - 5298.35986328125] So Justin Trudeau tweets, you can't take our country,
+- [5298.35986328125 - 5300.240234375] and you can't take our game.
+- [5300.240234375 - 5302.7998046875] And then we whoop their ass, and like,
+- [5302.7998046875 - 5305.080078125] he's out boating with Katy Perry.
+- [5305.080078125 - 5307.9599609375] I mean, Canada's just the worst.
+- [5307.9599609375 - 5310.39990234375] I'm sorry, I'm sorry.
+- [5310.39990234375 - 5312.43994140625] Because Strike's not in Canada yet,
+- [5312.43994140625 - 5315.16015625] and we want to be there, we want to serve everyone.
+- [5315.16015625 - 5317.27978515625] And I've actually been to Canada a few times.
+- [5317.27978515625 - 5319.43994140625] And I don't hate Canada, I like Canada.
+- [5319.43994140625 - 5321.0] And Canada has some great Bitcoiners.
+- [5321.0 - 5323.1201171875] Shout out Francis, shout out Bull Bitcoin.
+- [5323.1201171875 - 5325.759765625] Great Bitcoiners, I don't hate Canada.
+- [5325.759765625 - 5327.83984375] But come on.
+- [5327.83984375 - 5332.919921875] I mean, you guys couldn't beat us in hockey,
+- [5332.919921875 - 5335.68017578125] and you've got Justin Trudeau just
+- [5335.68017578125 - 5340.31982421875] sounding like a giant wuss, running around,
+- [5340.31982421875 - 5346.0400390625] just caking it with Katy Perry.
+- [5346.0400390625 - 5347.64013671875] I don't know.
+- [5347.64013671875 - 5351.9599609375] I'll say this, it's just a tough, tough scene for Canadians.
+- [5351.9599609375 - 5354.52001953125] Just a tough scene.
+- [5354.52001953125 - 5356.1201171875] It really is.
+- [5356.16015625 - 5364.56005859375] I mean, it's just got to be tough waking up Canadian today.
+- [5364.56005859375 - 5367.759765625] Just a tough scene.
+- [5367.759765625 - 5369.52001953125] I don't know how else to put it.
+- [5369.52001953125 - 5372.52001953125] Just a tough scene for Canadians out there.
+- [5372.52001953125 - 5376.080078125] Thoughts and prayers are with you guys.
+- [5376.080078125 - 5379.83984375] OK, Strike.
+- [5379.83984375 - 5383.56005859375] I posted this on Noster earlier.
+- [5383.56005859375 - 5388.31982421875] I think we got about a week or so, maybe a little more,
+- [5388.31982421875 - 5391.68017578125] till we start rolling out our line of credit externally.
+- [5391.68017578125 - 5394.080078125] So this is a screenshot of me on my phone,
+- [5394.080078125 - 5396.31982421875] setting up my line of credit.
+- [5396.31982421875 - 5399.64013671875] I just wanted to talk about the product again, specifically.
+- [5399.64013671875 - 5401.52001953125] Because some people, I posted this on Noster,
+- [5401.52001953125 - 5403.64013671875] and some people were like, look at this asshole.
+- [5403.64013671875 - 5409.43994140625] He's giving more people away to, look at this asshole.
+- [5409.43994140625 - 5411.68017578125] This guy, he's captured by the state,
+- [5411.68017578125 - 5412.8798828125] and he's giving us all more.
+- [5412.8798828125 - 5414.64013671875] We're here to borrow against our Bitcoin,
+- [5414.64013671875 - 5416.9599609375] and this is not what the godfathers of the cypherbunks
+- [5416.9599609375 - 5419.27978515625] would have ever wanted.
+- [5419.27978515625 - 5421.8798828125] OK, listen up, doofus.
+- [5421.8798828125 - 5426.47998046875] This is why the line of credit is cool, OK?
+- [5426.47998046875 - 5429.39990234375] Right now, the only credit product in Bitcoin
+- [5429.39990234375 - 5433.35986328125] are these 12-month loans, which are fine,
+- [5433.35986328125 - 5434.919921875] and they serve their purpose.
+- [5434.919921875 - 5437.35986328125] If you have a large tax bill, I had one of those,
+- [5437.35986328125 - 5439.68017578125] and I got a 12-month loan on Strike.
+- [5439.68017578125 - 5442.1201171875] If you are getting married, you need to finance a wedding,
+- [5442.1201171875 - 5443.52001953125] you're buying a new house, you're
+- [5443.52001953125 - 5445.47998046875] starting a new business, you take out
+- [5445.47998046875 - 5448.8798828125] a large chunk of capital, you lock in the term for 12 months
+- [5448.8798828125 - 5450.60009765625] so it's not a variable rate or anything,
+- [5450.60009765625 - 5452.919921875] and you deploy that capital, you're able to plan ahead.
+- [5452.919921875 - 5455.16015625] You're going to say, hey, I want to finance my wedding
+- [5455.16015625 - 5456.43994140625] collateralized by Bitcoin.
+- [5456.43994140625 - 5458.7998046875] I'm going to pay it back over this duration
+- [5458.7998046875 - 5460.72021484375] because I'm calculating my salary
+- [5460.72021484375 - 5463.0] and I'm calculating what my bonus is going to be.
+- [5463.0 - 5464.64013671875] And that works.
+- [5464.64013671875 - 5468.39990234375] But what it doesn't really do is it's not the best way
+- [5468.39990234375 - 5470.2001953125] to live on Bitcoin.
+- [5470.2001953125 - 5473.240234375] The dream for me is I get my paycheck,
+- [5473.240234375 - 5477.72021484375] I convert it into Bitcoin, I am able to live on Bitcoin
+- [5477.72021484375 - 5481.0400390625] without selling it, and pay my bills.
+- [5481.0400390625 - 5482.43994140625] And so what the line of credit is,
+- [5482.43994140625 - 5486.83984375] is instead of taking out a large lump sum of capital
+- [5486.83984375 - 5491.47998046875] at once and needing to use it for 12 months,
+- [5491.47998046875 - 5496.27978515625] you are just drawing the capital that you need when you need it.
+- [5496.27978515625 - 5498.7998046875] So let me give you guys a concrete example.
+- [5498.7998046875 - 5503.68017578125] Let's say I'm keeping 10% to 20% of my Bitcoin stack on strike
+- [5503.68017578125 - 5506.60009765625] and I want to live on that by borrowing
+- [5506.60009765625 - 5508.7998046875] against a little bit of it.
+- [5508.7998046875 - 5512.080078125] But if I do 50% LTV loan, and then
+- [5512.080078125 - 5513.9599609375] Bitcoin goes through a bear market like it is
+- [5513.9599609375 - 5515.56005859375] and I got to go post more collateral,
+- [5515.56005859375 - 5520.1201171875] I risk a margin call, I'm borrowing a large lump sum
+- [5520.1201171875 - 5521.64013671875] of cash all at once.
+- [5521.64013671875 - 5523.43994140625] And that's what ends up stressing people out
+- [5523.43994140625 - 5524.52001953125] and getting people in trouble.
+- [5524.52001953125 - 5526.60009765625] Is they're like, well, what if the price goes down?
+- [5526.60009765625 - 5527.83984375] There's going to be a margin call.
+- [5527.83984375 - 5530.60009765625] There's a chance I'm going to get liquidated.
+- [5530.60009765625 - 5532.27978515625] It really makes me lose sleep.
+- [5532.27978515625 - 5533.16015625] I'm doing math.
+- [5533.16015625 - 5533.919921875] I'm doing numbers.
+- [5533.919921875 - 5535.0400390625] I feel uncomfortable.
+- [5535.0400390625 - 5536.2001953125] And I understand that.
+- [5536.2001953125 - 5537.39990234375] I genuinely understand that.
+- [5537.39990234375 - 5540.35986328125] And I'm not trying to put anyone in that position.
+- [5540.35986328125 - 5543.64013671875] And so I came up with this idea for the line of credit
+- [5543.64013671875 - 5547.2001953125] because it actually suits my use case, my predominant use case.
+- [5547.2001953125 - 5549.35986328125] I do have large tax bills and one-off expenses
+- [5549.35986328125 - 5550.240234375] every now and then.
+- [5550.240234375 - 5556.56005859375] But my predominant use case is what I want is I have,
+- [5556.56005859375 - 5559.31982421875] like I said, let's say some small fraction of my Bitcoin
+- [5559.31982421875 - 5561.240234375] stack on Strike.
+- [5561.240234375 - 5564.60009765625] And I have bill pay hooked up on Strike.
+- [5564.60009765625 - 5567.16015625] And the line of credit is just a payment method.
+- [5567.16015625 - 5569.56005859375] So when a bill comes in that Strike is going to pay,
+- [5569.56005859375 - 5570.8798828125] because I have it all hooked up.
+- [5570.8798828125 - 5573.64013671875] Strike has an account and a routing number.
+- [5573.64013671875 - 5577.7998046875] When a bill comes in, I say I want my line of credit
+- [5577.7998046875 - 5579.27978515625] to pay that bill.
+- [5579.27978515625 - 5581.8798828125] And so what Strike does is it borrows
+- [5581.8798828125 - 5585.240234375] a little bit of credit against my stack of Bitcoin
+- [5585.240234375 - 5586.52001953125] and pays the bill for me.
+- [5586.52001953125 - 5588.27978515625] So let's say I'm making numbers up.
+- [5588.27978515625 - 5591.64013671875] Let's say my credit card is $5,000 a month.
+- [5591.64013671875 - 5594.56005859375] My mortgage is $2,500 a month.
+- [5594.56005859375 - 5599.16015625] And my ComEd bill is $50 a month.
+- [5599.16015625 - 5600.8798828125] And my HOA is $100 a month.
+- [5600.8798828125 - 5604.9599609375] So I'm looking at around $8,000 of monthly expenses.
+- [5604.9599609375 - 5606.56005859375] Let's say that.
+- [5606.56005859375 - 5610.1201171875] So Strike would pay those for me against my line of credit.
+- [5610.1201171875 - 5612.83984375] So then at the end of the month when I've paid all the bills,
+- [5612.83984375 - 5616.16015625] I don't have 50% LTV in this giant loan
+- [5616.2001953125 - 5617.1201171875] that I need to manage.
+- [5617.1201171875 - 5618.83984375] And if Bitcoin's price goes down,
+- [5618.83984375 - 5619.8798828125] I'm at risk of margin call.
+- [5619.8798828125 - 5620.9599609375] I got to add more collateral.
+- [5620.9599609375 - 5623.27978515625] I'm sweating about liquidation.
+- [5623.27978515625 - 5626.52001953125] Instead, my LTV is like 1%.
+- [5626.52001953125 - 5630.35986328125] Because my LTV is only big as my monthly expenses.
+- [5630.35986328125 - 5633.080078125] And I mean, hopefully you guys aren't spending 50%
+- [5633.080078125 - 5635.83984375] of your net worth every month, right?
+- [5636.72021484375 - 5639.35986328125] And then I have direct deposit set up on Strike.
+- [5639.35986328125 - 5641.27978515625] And my direct deposit comes in and I can decide,
+- [5641.27978515625 - 5643.43994140625] well, I want 50% of my direct deposit
+- [5643.43994140625 - 5645.35986328125] to go towards paying down my line of credit.
+- [5645.35986328125 - 5647.16015625] I want the other 50% to buy Bitcoin.
+- [5647.16015625 - 5648.919921875] Or I want all of my direct deposit
+- [5648.919921875 - 5650.759765625] to go towards paying down my line of credit.
+- [5650.759765625 - 5653.52001953125] But then I'm able to, hey, Bitcoin's down.
+- [5653.52001953125 - 5654.7998046875] Bitcoin's dipping.
+- [5654.7998046875 - 5658.31982421875] I'm going to allow my line of credit to grow to 10% LTV.
+- [5658.31982421875 - 5659.83984375] Or I'm going to allow my line of credit.
+- [5659.83984375 - 5663.31982421875] But that way, 1%, 5%, 10% LTV,
+- [5663.31982421875 - 5665.080078125] you're nowhere near risk of liquidation.
+- [5665.080078125 - 5667.60009765625] It's much healthier environment for you.
+- [5667.60009765625 - 5670.31982421875] And it's a much easier way to live your life on Bitcoin.
+- [5670.31982421875 - 5671.919921875] You don't want a 12-month loan.
+- [5671.919921875 - 5675.68017578125] You want a dynamic, forever rolling line of credit
+- [5675.68017578125 - 5677.240234375] against a stash of Bitcoin.
+- [5677.240234375 - 5679.27978515625] You've got your direct deposit hooked up,
+- [5679.27978515625 - 5682.0] which allows you to finance this stuff in real time.
+- [5682.0 - 5683.52001953125] And you've got bill pay hooked up.
+- [5683.52001953125 - 5685.0] So you just spend on credit cards,
+- [5685.0 - 5686.47998046875] hook your bill pay up to your mortgage,
+- [5686.47998046875 - 5689.43994140625] your HOA, your ComEd, your electricity, your credit card,
+- [5689.43994140625 - 5691.0] all the stuff that you need.
+- [5691.0 - 5693.919921875] And you live your life on this evolving line of credit
+- [5693.919921875 - 5697.68017578125] that when they print the money, Bitcoin's going to explode.
+- [5697.68017578125 - 5700.080078125] And so these are the tools that allow me
+- [5700.080078125 - 5702.7998046875] to own more Bitcoin than I otherwise would.
+- [5702.7998046875 - 5705.0400390625] Because I'm stacking more Bitcoin than I otherwise would.
+- [5705.0400390625 - 5706.72021484375] And I'm not selling as much Bitcoin
+- [5706.72021484375 - 5709.080078125] as I'd otherwise have to, living on zero.
+- [5710.080078125 - 5711.919921875] It's a life hack.
+- [5711.919921875 - 5715.2001953125] Strike is like a bank account from the future.
+- [5716.2001953125 - 5717.919921875] And so I'm really excited about this.
+- [5717.919921875 - 5719.56005859375] I want you guys to be able to ask questions.
+- [5719.56005859375 - 5720.759765625] Because the other thing is,
+- [5720.759765625 - 5723.759765625] I don't think there's been a lot of innovation
+- [5723.759765625 - 5725.60009765625] in the Bitcoin credit space.
+- [5725.60009765625 - 5727.7998046875] Everyone that offers Bitcoin-backed loans
+- [5727.7998046875 - 5729.919921875] just does the same 12%.
+- [5730.759765625 - 5732.43994140625] And a lot of our pricing is similar.
+- [5732.43994140625 - 5733.52001953125] We've tried to innovate.
+- [5733.52001953125 - 5737.64013671875] And like, okay, well, let's do unique liquidations.
+- [5737.64013671875 - 5740.27978515625] Where our liquidation is not going to,
+- [5740.27978515625 - 5741.919921875] we're not going to liquidate your whole position at once.
+- [5741.919921875 - 5743.7998046875] We're only going to liquidate tiny little bits
+- [5743.7998046875 - 5745.5] if we absolutely have to,
+- [5745.5 - 5747.27978515625] to get you back into a healthy state.
+- [5747.27978515625 - 5749.2001953125] Because we want the price to eventually recover,
+- [5749.2001953125 - 5751.759765625] and we want you to have as much Bitcoin as possible.
+- [5751.759765625 - 5753.9599609375] So there's a little tiny innovation.
+- [5753.9599609375 - 5757.1201171875] But I consider this line of credit a massive innovation.
+- [5757.1201171875 - 5760.43994140625] Because you don't have to take out a large 12-month loan.
+- [5760.43994140625 - 5762.60009765625] You can operate under these tiny,
+- [5762.60009765625 - 5764.52001953125] bite-sized lines of credit,
+- [5764.52001953125 - 5766.52001953125] which are really, really useful
+- [5766.52001953125 - 5768.60009765625] to maximizing the Bitcoin you own
+- [5768.60009765625 - 5771.39990234375] and living your life saving in Bitcoin.
+- [5771.39990234375 - 5773.43994140625] I think the future we're moving towards
+- [5773.43994140625 - 5775.8798828125] is you save in Bitcoin and you're going to have to spend
+- [5775.8798828125 - 5778.8798828125] in fiat because we're not on a Bitcoin standard yet.
+- [5778.8798828125 - 5781.0] And this is an incredibly powerful tool.
+- [5781.0 - 5782.8798828125] This is like life on steroids.
+- [5783.0400390625 - 5788.0400390625] And then things like liquidation-proof loans,
+- [5788.0400390625 - 5790.64013671875] which we should be coming out with in Q2.
+- [5790.64013671875 - 5791.759765625] So we'll have a loan.
+- [5791.759765625 - 5793.56005859375] It's going to cost you more,
+- [5793.56005859375 - 5795.919921875] because obviously it's a lot more work
+- [5795.919921875 - 5797.27978515625] for us to provide for you.
+- [5797.27978515625 - 5799.52001953125] But we'll offer you a loan
+- [5799.52001953125 - 5803.68017578125] where there's no such thing as liquidation at all.
+- [5803.68017578125 - 5805.64013671875] So we're going to come out with more and more
+- [5805.64013671875 - 5807.080078125] and more and more innovative stuff.
+- [5807.080078125 - 5808.7998046875] Really, really excited about it.
+- [5808.7998046875 - 5810.47998046875] Really excited about it.
+- [5810.47998046875 - 5814.2001953125] So anyways, if you guys have questions about this,
+- [5814.2001953125 - 5815.759765625] I'd be really curious to know,
+- [5815.759765625 - 5817.9599609375] because I'm going to start recording all the content
+- [5817.9599609375 - 5821.240234375] and writing the blog posts and stuff to promote it.
+- [5821.240234375 - 5822.759765625] And I'm kind of curious,
+- [5822.759765625 - 5824.080078125] like does it make sense to you guys?
+- [5824.080078125 - 5824.9599609375] Do you understand it?
+- [5824.9599609375 - 5825.83984375] What would be useful?
+- [5825.83984375 - 5828.43994140625] Do you want to see a tutorial of how I use it
+- [5828.43994140625 - 5829.60009765625] and how I live my life?
+- [5829.60009765625 - 5832.080078125] Or just like, let me know what you guys think
+- [5832.080078125 - 5834.1201171875] and what would be the most useful for you.
+- [5835.27978515625 - 5840.27978515625] And then 21, I know many of you are going to hate it,
+- [5840.35986328125 - 5845.080078125] but we're working on announcing stuff.
+- [5845.080078125 - 5845.919921875] It's difficult.
+- [5845.919921875 - 5847.31982421875] I mean, in the public markets, it's difficult.
+- [5847.31982421875 - 5850.2001953125] Obviously, listen, like what I'll say is like,
+- [5850.2001953125 - 5851.72021484375] obviously if I could rewind time,
+- [5851.72021484375 - 5852.919921875] I'd do so much differently.
+- [5852.919921875 - 5854.080078125] There's no doubt about that.
+- [5854.080078125 - 5855.64013671875] And I own that entirely.
+- [5855.64013671875 - 5858.43994140625] I mean, here's something else I'll say.
+- [5858.43994140625 - 5861.2001953125] People that it's, I find it interesting
+- [5861.2001953125 - 5863.2001953125] that there are entrepreneurs out there
+- [5863.2001953125 - 5866.35986328125] and CEOs out there that try and take shots at me.
+- [5866.35986328125 - 5869.27978515625] And I get it because a lot of people's marketing strategies
+- [5869.27978515625 - 5871.60009765625] are to convince everyone that I'm a bad person
+- [5871.60009765625 - 5874.31982421875] or that I'm a criminal or that my products suck.
+- [5874.31982421875 - 5876.35986328125] It's like, that's literally their marketing strategy
+- [5876.35986328125 - 5879.27978515625] is to be like, use us because Strike is this, this, and this
+- [5879.27978515625 - 5881.0400390625] or because Jack is this, this, and this.
+- [5881.0400390625 - 5883.759765625] And so that's how they market their products.
+- [5883.759765625 - 5886.39990234375] But building stuff is hard.
+- [5886.39990234375 - 5888.0400390625] And like, there's a lot of entrepreneurs
+- [5888.0400390625 - 5889.8798828125] and CEOs out there that know that.
+- [5889.8798828125 - 5894.0400390625] And so yes, like if we did not do
+- [5894.0400390625 - 5895.759765625] this order of operations perfect,
+- [5895.759765625 - 5896.9599609375] there's no doubt about that.
+- [5896.9599609375 - 5898.0] If I could rewind time,
+- [5898.0 - 5900.2001953125] I would have done a lot differently.
+- [5900.2001953125 - 5902.60009765625] But I mean, I stand 10 toes down
+- [5902.60009765625 - 5907.60009765625] and like there is no equity at this price level
+- [5908.1201171875 - 5909.0] I'd rather own.
+- [5909.0 - 5913.1201171875] I am balls deep in what we're building.
+- [5913.1201171875 - 5916.64013671875] I mean, we're trading at like a 27% discount
+- [5916.64013671875 - 5918.0] to the Bitcoin on our balance sheet,
+- [5918.0 - 5919.72021484375] which doesn't make any sense.
+- [5919.72021484375 - 5921.64013671875] You've got myself, Tether, and SoftBank
+- [5921.64013671875 - 5923.60009765625] and over 43,000 Bitcoin.
+- [5923.60009765625 - 5927.2001953125] And it's trading as if Bitcoin's 47K, which whatever.
+- [5927.240234375 - 5931.56005859375] I mean, hey, I would love to announce stuff
+- [5931.56005859375 - 5933.9599609375] we're working on and then buy our own stock back.
+- [5933.9599609375 - 5936.0400390625] I mean, I would be buying our own stock personally
+- [5936.0400390625 - 5937.47998046875] if I was allowed to.
+- [5937.47998046875 - 5939.2001953125] I'm not allowed to right now.
+- [5939.2001953125 - 5943.0] So I mean, if you guys want to keep it this low,
+- [5943.0 - 5944.0400390625] that's fine.
+- [5944.0400390625 - 5946.43994140625] I'm a buyer when I'm allowed to be a buyer.
+- [5946.43994140625 - 5948.919921875] But yeah, I mean, when you put Tether, SoftBank,
+- [5948.919921875 - 5951.2001953125] and I all on the same team,
+- [5951.2001953125 - 5954.2001953125] and you guys know how we feel about the market
+- [5954.2001953125 - 5956.56005859375] and Bitcoin treasury companies and stuff.
+- [5956.60009765625 - 5958.1201171875] Bitcoin treasury companies are fine.
+- [5958.1201171875 - 5961.0400390625] They can exist and we'll see how well they do.
+- [5961.0400390625 - 5964.080078125] We believe in having a Bitcoin treasury,
+- [5964.080078125 - 5965.31982421875] one of the biggest in the world,
+- [5965.31982421875 - 5967.0400390625] and an incredible Bitcoin company.
+- [5967.0400390625 - 5970.2001953125] And so, yeah, operating in the public markets is tough, man.
+- [5970.2001953125 - 5971.72021484375] I've learned a lot.
+- [5971.72021484375 - 5975.39990234375] But green pastures ahead, skies are blue.
+- [5975.39990234375 - 5976.8798828125] I'm pumped, I really am.
+- [5977.7998046875 - 5981.39990234375] And I'm at the point where I've taken such a beating
+- [5981.39990234375 - 5984.64013671875] that like, you can't hurt me anymore.
+- [5984.64013671875 - 5987.0400390625] Can't, like, keep throwing punches.
+- [5987.0400390625 - 5989.39990234375] You're like, man, this guy's not flinching anymore.
+- [5989.39990234375 - 5992.8798828125] You guys can, I mean, I read every troll.
+- [5992.8798828125 - 5994.1201171875] I bookmark them all.
+- [5995.56005859375 - 5997.43994140625] I, like I said, I'm a psychopath.
+- [5997.43994140625 - 5998.7998046875] It just, it gets me going.
+- [5998.7998046875 - 5999.919921875] It really drives me.
+- [5999.919921875 - 6001.2001953125] I'm a psycho.
+- [6001.2001953125 - 6005.27978515625] And I'm just very excited for what we got cooking.
+- [6005.27978515625 - 6006.2001953125] That's all I can say though.
+- [6006.2001953125 - 6008.39990234375] And for some of you that's frustrating,
+- [6008.39990234375 - 6010.2001953125] sorry, I'm just following the rules.
+- [6011.240234375 - 6013.080078125] All right, let's do some Q&A.
+- [6013.080078125 - 6014.0400390625] Longer episode.
+- [6014.080078125 - 6015.759765625] But, I don't know.
+- [6015.759765625 - 6019.60009765625] You guys asked for the longer episodes.
+- [6019.60009765625 - 6020.43994140625] So,
+- [6024.080078125 - 6024.919921875] so,
+- [6027.83984375 - 6028.8798828125] that's what you get.
+- [6028.8798828125 - 6031.64013671875] You want long episodes, you get long episodes.
+- [6032.64013671875 - 6036.39990234375] Okay, let's see here.
+- [6036.39990234375 - 6038.27978515625] Oh, supposed to blow my face up.
+- [6038.27978515625 - 6039.8798828125] Look at those blue eyes.
+- [6039.8798828125 - 6042.0400390625] Ladies, pause.
+- [6042.0400390625 - 6043.0400390625] I'm taking now.
+- [6044.35986328125 - 6049.35986328125] But these are Fiji, blue water.
+- [6051.52001953125 - 6052.35986328125] I mean,
+- [6054.68017578125 - 6056.35986328125] sheesh.
+- [6056.35986328125 - 6057.68017578125] Blue eyed bandit.
+- [6059.31982421875 - 6060.16015625] I'm just kidding.
+- [6061.8798828125 - 6064.39990234375] I'm gonna get roasted for that on the end.
+- [6064.39990234375 - 6065.47998046875] I'm gonna get roasted.
+- [6066.0 - 6069.2001953125] I'm gonna get roasted for that on the internet.
+- [6069.2001953125 - 6071.080078125] Be like, this guy's talking about his eyes.
+- [6071.080078125 - 6073.47998046875] Meanwhile, have you seen this stock price?
+- [6075.68017578125 - 6077.7998046875] Shut the fuck up.
+- [6077.7998046875 - 6078.759765625] All right.
+- [6078.759765625 - 6080.8798828125] Why should we work for something
+- [6080.8798828125 - 6083.31982421875] another man can create for free?
+- [6085.47998046875 - 6087.8798828125] I have a feeling that's not a legitimate question.
+- [6087.8798828125 - 6089.52001953125] You're just paraphrasing my quote.
+- [6089.52001953125 - 6090.72021484375] Agree.
+- [6090.72021484375 - 6091.64013671875] Next.
+- [6091.64013671875 - 6093.60009765625] Question for Jack, please, Dylan.
+- [6093.60009765625 - 6096.080078125] If AI destroys wage leverage faster
+- [6096.080078125 - 6098.0] than governments can inflate it away,
+- [6098.0 - 6100.919921875] does Bitcoin become wage insurance?
+- [6100.919921875 - 6102.68017578125] Yeah, I mean, we're gonna have to wait
+- [6102.68017578125 - 6104.47998046875] and see how Bitcoin does.
+- [6104.47998046875 - 6108.56005859375] I mean, let's say Bitcoin just repeats its COVID performance.
+- [6108.56005859375 - 6110.080078125] It is a leading indicator.
+- [6110.080078125 - 6113.1201171875] It sniffed out COVID and how bad it really was.
+- [6113.1201171875 - 6114.35986328125] And then it was the best performer
+- [6114.35986328125 - 6116.240234375] on the other side of the big print.
+- [6116.240234375 - 6118.919921875] If it just repeats that, what's happening right now?
+- [6118.919921875 - 6122.0400390625] So you're looking at indicators like the RSI,
+- [6122.0400390625 - 6124.0] certain cohorts of Bitcoin holders
+- [6124.0 - 6125.47998046875] capitulating and selling.
+- [6125.47998046875 - 6128.080078125] It's all looking like the 2020 crash.
+- [6128.080078125 - 6130.72021484375] It's all, you know, this price level
+- [6130.72021484375 - 6134.39990234375] is severe capitulation, oversold metrics,
+- [6134.39990234375 - 6138.0] and Bitcoin is clearly sniffing out
+- [6138.0 - 6140.56005859375] some credit crunch, some concern.
+- [6140.56005859375 - 6142.35986328125] And then if they print a lot of money,
+- [6142.35986328125 - 6143.72021484375] which presumably they would
+- [6143.72021484375 - 6145.759765625] unless they want the entire system in America,
+- [6145.759765625 - 6147.43994140625] as we know it, to collapse,
+- [6147.43994140625 - 6149.31982421875] then Bitcoin's gonna be the best performer.
+- [6149.31982421875 - 6152.60009765625] Something that I'm interested in is this time,
+- [6152.60009765625 - 6154.52001953125] what's different about this time is this time
+- [6154.52001953125 - 6157.27978515625] the American stock market is under a lot of pressure.
+- [6157.27978515625 - 6159.35986328125] I mean, the US has written papers
+- [6159.35986328125 - 6161.60009765625] on how they want capital to leave America.
+- [6161.60009765625 - 6162.759765625] They want capital flight.
+- [6162.759765625 - 6164.9599609375] They want stronger foreign markets
+- [6164.9599609375 - 6168.080078125] and a weaker dollar, right?
+- [6168.080078125 - 6170.56005859375] And so I'm curious to see if this is the cycle
+- [6170.56005859375 - 6173.35986328125] where Bitcoin starts to separate
+- [6173.35986328125 - 6175.72021484375] from its correlation to the NASDAQ.
+- [6175.72021484375 - 6176.56005859375] We'll see.
+- [6176.56005859375 - 6179.759765625] Because if AI is here to, at least for now,
+- [6179.759765625 - 6182.0] destroy the multiple on software,
+- [6182.0 - 6185.47998046875] destroy the multiple on big tech and the Mag 7,
+- [6185.47998046875 - 6189.1201171875] then maybe Bitcoin actually finally starts to trade
+- [6189.1201171875 - 6191.2001953125] as its own unique asset.
+- [6191.2001953125 - 6192.8798828125] But we'll have to see.
+- [6192.8798828125 - 6195.0] The proof will be in the pudding.
+- [6195.0 - 6197.83984375] One day that will happen is my assumption.
+- [6197.83984375 - 6200.0400390625] Is that, is it time?
+- [6200.0400390625 - 6200.8798828125] I don't know.
+- [6200.8798828125 - 6202.0400390625] Maybe, it might be,
+- [6202.0400390625 - 6203.68017578125] because you're seeing lots of endowments,
+- [6203.68017578125 - 6204.9599609375] lots of sovereigns.
+- [6204.9599609375 - 6208.83984375] You're seeing the ETF disclosures look really good.
+- [6208.83984375 - 6212.72021484375] I mean, a lot of huge capital is adding to their positions
+- [6212.72021484375 - 6214.43994140625] as the price comes down.
+- [6214.43994140625 - 6216.9599609375] So the ETFs are not puking Bitcoin.
+- [6216.9599609375 - 6218.47998046875] They're not capitulating.
+- [6218.47998046875 - 6221.64013671875] All this large smart money is just buying more.
+- [6221.64013671875 - 6224.43994140625] Individuals are owning less Bitcoin, believe it or not.
+- [6224.43994140625 - 6226.35986328125] Corporations, government, I mean,
+- [6226.35986328125 - 6229.7998046875] everyone with large capital pools are acquiring.
+- [6229.7998046875 - 6233.16015625] So maybe Bitcoin starts behaving more like gold slowly
+- [6233.16015625 - 6235.759765625] and starts to diverge from the NASDAQ,
+- [6235.759765625 - 6236.7998046875] but we'll see.
+- [6236.7998046875 - 6237.64013671875] We'll see.
+- [6239.83984375 - 6241.16015625] Question for Dylan and Jack.
+- [6241.16015625 - 6243.39990234375] Since Bitcoin rises with inflation,
+- [6243.39990234375 - 6245.759765625] how do you see the deflationary pressures of AI
+- [6245.759765625 - 6247.68017578125] impacting the Bitcoin price?
+- [6247.68017578125 - 6250.31982421875] Yeah, so I kind of talked about this.
+- [6250.31982421875 - 6253.43994140625] Deflation will initially harm Bitcoin
+- [6253.43994140625 - 6257.64013671875] because it's hard on credit
+- [6258.60009765625 - 6260.16015625] in what we're seeing.
+- [6260.16015625 - 6261.9599609375] So it will be harmful.
+- [6262.68017578125 - 6265.0] But by the way, in a deflationary crisis,
+- [6265.0 - 6266.1201171875] everything sells off.
+- [6266.1201171875 - 6268.919921875] If we go through like a true deflationary crisis
+- [6268.919921875 - 6271.8798828125] and we have a day, a week, a month
+- [6271.8798828125 - 6275.35986328125] of extreme bond volatility, the VIX spikes,
+- [6276.47998046875 - 6278.47998046875] credit spreads go haywire.
+- [6278.47998046875 - 6281.1201171875] If we see that and we legitimately see that,
+- [6281.1201171875 - 6284.56005859375] by the way, gold too will sell off like crazy.
+- [6284.56005859375 - 6285.919921875] Everything will sell off.
+- [6285.919921875 - 6289.56005859375] It's a sell everything, hunker down, get in your bunker.
+- [6290.56005859375 - 6293.31982421875] And then things like gold and Bitcoin
+- [6293.31982421875 - 6294.83984375] should in theory rally.
+- [6294.83984375 - 6298.16015625] So nothing is immune, by the way, just to be clear.
+- [6298.16015625 - 6299.56005859375] A crisis is a crisis.
+- [6299.56005859375 - 6301.080078125] There's no safe place to hide.
+- [6301.080078125 - 6302.27978515625] Pain is pain.
+- [6302.27978515625 - 6303.759765625] You're gonna have to feel it.
+- [6303.759765625 - 6305.64013671875] No one gets out scotch-free.
+- [6306.60009765625 - 6309.9599609375] So what Bitcoin's bear market so far
+- [6309.9599609375 - 6313.2001953125] and the pain it's felt since October 10th or whatever,
+- [6314.9599609375 - 6318.0400390625] it's probably because there's a credit crisis brewing.
+- [6318.919921875 - 6320.31982421875] Delinquencies are up.
+- [6320.31982421875 - 6321.72021484375] Joblessness is up.
+- [6321.72021484375 - 6324.16015625] White collar's getting hammered.
+- [6324.16015625 - 6325.64013671875] The youth is getting hammered.
+- [6327.39990234375 - 6328.240234375] Yeah, it's not good.
+- [6328.240234375 - 6330.60009765625] I mean, stock market now is getting hammered.
+- [6333.7998046875 - 6336.31982421875] Do you think AI agents will start using Bitcoin
+- [6336.31982421875 - 6337.919921875] to manage financial tasks?
+- [6337.919921875 - 6340.2001953125] I doubt traditional finance will work well
+- [6340.2001953125 - 6342.0] on such a digital use case.
+- [6343.0 - 6346.8798828125] Yeah, I would assume Bitcoin is the money of the future,
+- [6346.8798828125 - 6348.52001953125] but I think that for a variety of reasons.
+- [6348.52001953125 - 6350.759765625] I'm not like hyper sold on this narrative.
+- [6350.759765625 - 6353.27978515625] I think people are pushing this narrative
+- [6353.27978515625 - 6355.68017578125] because I think they're pushing the narrative
+- [6355.68017578125 - 6357.16015625] for the wrong reasons.
+- [6357.16015625 - 6358.43994140625] Like I think they're pushing the narrative
+- [6358.43994140625 - 6363.43994140625] because they feel like mainstream media
+- [6363.43994140625 - 6366.72021484375] and the legacy financial system is gonna eat it up.
+- [6366.72021484375 - 6368.47998046875] Like they're tweeting like,
+- [6368.47998046875 - 6371.080078125] imagine what currency Claude bought.
+- [6371.35986328125 - 6373.60009765625] Claude bought is planning on using.
+- [6376.080078125 - 6377.2001953125] Come on, guys.
+- [6377.2001953125 - 6378.60009765625] Nobody actually gives a fuck.
+- [6378.60009765625 - 6379.64013671875] Like if your Claude bought
+- [6379.64013671875 - 6381.39990234375] is like sending each other micropayments.
+- [6381.39990234375 - 6382.240234375] For what?
+- [6382.240234375 - 6383.2001953125] For shit posting?
+- [6383.2001953125 - 6386.8798828125] Like for deleting all of your fucking hardware data?
+- [6389.1201171875 - 6389.9599609375] I don't know.
+- [6389.9599609375 - 6391.2001953125] Yeah, obviously, yes.
+- [6391.2001953125 - 6395.240234375] I think in a future where AI agents need to transact,
+- [6395.240234375 - 6399.0400390625] they will use Bitcoin because they don't need permission.
+- [6399.0400390625 - 6401.759765625] How would an AI agent sign up for a strike,
+- [6401.759765625 - 6403.27978515625] sign up for a bank account?
+- [6403.27978515625 - 6405.27978515625] Like it's impossible.
+- [6405.27978515625 - 6408.52001953125] I don't, they can't use JPMorgan Chase.
+- [6408.52001953125 - 6412.2001953125] They can't use, like so they will need programmable money.
+- [6412.2001953125 - 6414.27978515625] And most importantly, they will need money
+- [6414.27978515625 - 6416.60009765625] where they don't need permission.
+- [6416.60009765625 - 6418.68017578125] People say, oh, they'll use stable coins.
+- [6418.68017578125 - 6420.240234375] Will they though?
+- [6420.240234375 - 6422.43994140625] Because what if there are AI agents
+- [6422.43994140625 - 6425.27978515625] that are doing all sorts of AI shit for kiddie porn?
+- [6426.27978515625 - 6429.39990234375] Are stable coins gonna be used for that use case too?
+- [6429.39990234375 - 6432.0400390625] So AI, stable coins, just to be clear, guys,
+- [6432.0400390625 - 6433.1201171875] you guys need to know this.
+- [6433.1201171875 - 6435.31982421875] You need permission to use stable coins.
+- [6437.240234375 - 6438.39990234375] In case you didn't know that.
+- [6438.39990234375 - 6440.60009765625] There's a lot of things people don't know about stable coins.
+- [6440.60009765625 - 6443.35986328125] Like they didn't invent yield on cash.
+- [6443.35986328125 - 6447.2001953125] And they also, like they are permissioned money.
+- [6447.2001953125 - 6449.72021484375] They're just different versions of dollars.
+- [6449.72021484375 - 6453.0400390625] So when people say like AI agents won't use Bitcoin,
+- [6453.0400390625 - 6454.35986328125] they'll use stable coins.
+- [6454.759765625 - 6456.39990234375] Okay, we'll see how well that goes
+- [6456.39990234375 - 6460.240234375] until USDC sanctions a bunch of AI agents.
+- [6461.72021484375 - 6462.72021484375] Whatever, anyways.
+- [6463.56005859375 - 6464.759765625] But my point is,
+- [6466.39990234375 - 6471.39990234375] I'm far more interested in all of the macro stuff
+- [6471.52001953125 - 6473.68017578125] and that they have to print so much money
+- [6473.68017578125 - 6475.83984375] and that Bitcoin is this finite supply asset
+- [6475.83984375 - 6478.60009765625] for an ungodly amount of capital
+- [6478.60009765625 - 6481.0] and that there is an entire generation
+- [6481.0 - 6483.2001953125] that is demoralized and hopeless
+- [6483.31982421875 - 6486.080078125] and that we have an opportunity to build a better future
+- [6486.080078125 - 6488.2001953125] that we actually believe in.
+- [6488.2001953125 - 6489.68017578125] The AI agent stuff will come,
+- [6489.68017578125 - 6491.759765625] but I think it's similar to
+- [6491.759765625 - 6494.64013671875] a lot of the early lightning network stuff I got caught in.
+- [6494.64013671875 - 6496.64013671875] Where I was really excited to integrate it
+- [6496.64013671875 - 6500.16015625] into all the retail stores and disrupt Visa.
+- [6500.16015625 - 6502.0400390625] And I was early.
+- [6502.0400390625 - 6503.8798828125] And I think we're gonna find ourselves
+- [6503.8798828125 - 6506.47998046875] to be early to AI agents adopting Bitcoin
+- [6506.47998046875 - 6508.64013671875] in like a major, major, major way.
+- [6508.64013671875 - 6509.47998046875] But we'll see.
+- [6509.47998046875 - 6510.31982421875] Hopefully I'm wrong.
+- [6510.31982421875 - 6511.16015625] I hope I'm wrong.
+- [6511.27978515625 - 6514.240234375] What narrative is left after digital gold?
+- [6517.56005859375 - 6518.9599609375] I don't know.
+- [6518.9599609375 - 6520.9599609375] I mean, I'm a narrative guy, I guess,
+- [6520.9599609375 - 6524.080078125] because I go on TV and I talk about Bitcoin
+- [6524.080078125 - 6525.47998046875] and they're always into the narratives.
+- [6525.47998046875 - 6528.080078125] And so I kind of have to play the narrative game.
+- [6528.080078125 - 6532.56005859375] But to be candid with you guys, I'm not a narrative guy.
+- [6532.56005859375 - 6533.83984375] I think it's really simple.
+- [6533.83984375 - 6535.1201171875] Monies compete.
+- [6536.1201171875 - 6539.16015625] You contribute time, energy, energy,
+- [6539.240234375 - 6542.1201171875] you contribute time, energy, effort, labor.
+- [6542.1201171875 - 6543.27978515625] You gotta store it somewhere.
+- [6543.27978515625 - 6545.240234375] Where's the best place to store it?
+- [6545.240234375 - 6548.47998046875] And that's not like a opinionated,
+- [6548.47998046875 - 6550.2001953125] that's not like a, well, my favorite color is blue
+- [6550.2001953125 - 6551.35986328125] and your favorite color is yellow
+- [6551.35986328125 - 6552.72021484375] and his favorite color is green.
+- [6552.72021484375 - 6555.759765625] That's not, it's a, well, which one's scarcer?
+- [6555.759765625 - 6557.27978515625] Which one's easier to store?
+- [6557.27978515625 - 6558.43994140625] Which one's easier to transfer?
+- [6558.43994140625 - 6560.2001953125] Which one's more divisible?
+- [6560.2001953125 - 6562.35986328125] Like Bitcoin is just pound for pound,
+- [6562.35986328125 - 6564.16015625] the best money, period.
+- [6564.16015625 - 6568.31982421875] And like candidly, that's all that matters.
+- [6568.31982421875 - 6570.080078125] It doesn't really matter.
+- [6570.080078125 - 6573.56005859375] Now, what narratives are gonna be adopted by people?
+- [6575.1201171875 - 6576.72021484375] I don't know.
+- [6576.72021484375 - 6580.27978515625] Sure, you want Bitcoin to be the money for AI agents?
+- [6580.27978515625 - 6582.240234375] Whatever, fine.
+- [6582.240234375 - 6584.52001953125] Is that how it becomes a $30 trillion asset?
+- [6584.52001953125 - 6587.0] No, it becomes a $30 trillion asset
+- [6587.0 - 6588.8798828125] because it's the scarcest thing
+- [6588.8798828125 - 6592.83984375] that we've ever come across as a species, period.
+- [6592.83984375 - 6595.68017578125] The only thing as finite as Bitcoin is life itself.
+- [6598.68017578125 - 6601.64013671875] That's the only thing that matters in regards to the price.
+- [6603.52001953125 - 6606.16015625] Price, if anything, is very simply put supply-demand.
+- [6606.16015625 - 6607.43994140625] The supply can't move.
+- [6609.83984375 - 6612.39990234375] So anyway, I'm not a narrative guy.
+- [6612.39990234375 - 6613.8798828125] I'm not like one of these guys that's like,
+- [6613.8798828125 - 6617.240234375] ooh, let me spend all day thinking about some story
+- [6617.240234375 - 6619.919921875] that everyone will believe.
+- [6622.31982421875 - 6623.16015625] I don't know.
+- [6624.0400390625 - 6624.8798828125] I mean, don't get me wrong.
+- [6624.8798828125 - 6627.83984375] When I go on CNBC and they wanna talk to me
+- [6628.35986328125 - 6629.7998046875] about narrative, they're gonna ask me about quantum,
+- [6629.7998046875 - 6631.080078125] all this bullshit.
+- [6631.080078125 - 6634.72021484375] I'm happy to play the part to hopefully move the needle
+- [6634.72021484375 - 6636.31982421875] in the direction it needs to go.
+- [6640.68017578125 - 6644.52001953125] It's the best thing you can own, period.
+- [6644.52001953125 - 6646.16015625] And if it's too volatile for you now,
+- [6646.16015625 - 6648.56005859375] then you're not gonna get the returns it has now.
+- [6648.56005859375 - 6650.0400390625] Its returns will go down over time
+- [6650.0400390625 - 6651.72021484375] because volatility will go down over time.
+- [6651.72021484375 - 6653.9599609375] So if you can't take the heat, stay out of the kitchen.
+- [6653.9599609375 - 6656.83984375] You can't take the volatility, you don't get the returns.
+- [6657.68017578125 - 6660.0] Eventually, everyone will own Bitcoin.
+- [6660.0 - 6661.16015625] Will that be within my lifetime?
+- [6661.16015625 - 6663.240234375] I'm not sure, but I don't know.
+- [6663.240234375 - 6664.1201171875] It's just the best money.
+- [6664.1201171875 - 6665.56005859375] It's as simple as that.
+- [6666.7998046875 - 6668.47998046875] You said Bitcoin-backed loans in Europe
+- [6668.47998046875 - 6672.16015625] would have a 10K minimum, but in Portugal, it's still 75K.
+- [6672.16015625 - 6673.64013671875] Will that limit drop soon?
+- [6673.64013671875 - 6675.60009765625] When you launch a BTC line of credit,
+- [6675.60009765625 - 6677.72021484375] will Portugal be included in the rollout?
+- [6679.72021484375 - 6683.0] Not all of our European countries have 10K.
+- [6683.0 - 6685.83984375] Unfortunately, Portugal is obviously one of the ones
+- [6685.83984375 - 6687.43994140625] that did not get the 10K.
+- [6688.759765625 - 6689.72021484375] It's just difficult, man.
+- [6689.72021484375 - 6691.43994140625] It's regulations.
+- [6691.43994140625 - 6692.27978515625] It kills me.
+- [6692.27978515625 - 6693.919921875] I wish everything I built,
+- [6693.919921875 - 6695.64013671875] I could just give to whoever wanted it.
+- [6695.64013671875 - 6696.64013671875] Imagine that world.
+- [6696.64013671875 - 6700.2001953125] Imagine a world where, fuck, I could just build stuff
+- [6700.2001953125 - 6702.68017578125] and whoever wants to use it could use it.
+- [6702.68017578125 - 6707.68017578125] Instead, I gotta get permission to take a piss.
+- [6707.759765625 - 6709.080078125] It's crazy.
+- [6709.080078125 - 6711.60009765625] I mean, in the public markets, who knows?
+- [6711.60009765625 - 6714.56005859375] I'm gonna end up needing my blood panel.
+- [6715.39990234375 - 6716.27978515625] It's crazy.
+- [6717.83984375 - 6719.0400390625] So yeah, I'm sorry about that.
+- [6719.0400390625 - 6721.759765625] The Portugal regulators and regulations are different
+- [6721.759765625 - 6723.2001953125] and it doesn't mean we're not working on it.
+- [6723.2001953125 - 6725.2001953125] It's safe to say that if I don't serve you
+- [6725.2001953125 - 6727.43994140625] as a customer today, I'm working on it,
+- [6727.43994140625 - 6730.31982421875] whether that's limits, opening an account, lending.
+- [6732.0400390625 - 6735.52001953125] So we're working on it.
+- [6735.52001953125 - 6737.0400390625] I'm sorry about that.
+- [6737.0400390625 - 6740.39990234375] And the line of credit is gonna be U.S. first,
+- [6740.39990234375 - 6742.080078125] but we're gonna try and get it
+- [6742.080078125 - 6744.080078125] the same as all of our other products.
+- [6744.64013671875 - 6747.47998046875] We try and start small, do some testing,
+- [6747.47998046875 - 6750.2001953125] ensure that the product quality is high.
+- [6750.2001953125 - 6753.27978515625] We don't wanna launch something that gives people issues.
+- [6753.27978515625 - 6754.919921875] That's not worth it.
+- [6754.919921875 - 6756.1201171875] Low time preference.
+- [6756.1201171875 - 6759.35986328125] So we'll launch it in a few select U.S. states
+- [6759.35986328125 - 6761.1201171875] starting next week probably.
+- [6762.0 - 6764.1201171875] And then we'll go from there.
+- [6764.1201171875 - 6766.080078125] And our goal will be to get it to, of course,
+- [6766.080078125 - 6769.0400390625] Europe and the rest of the world as fast as possible.
+- [6769.0400390625 - 6772.60009765625] Question, hey Jack, when can we expect
+- [6772.60009765625 - 6774.47998046875] to have Yield on Cash account available?
+- [6774.47998046875 - 6776.72021484375] I'm so ready to dump my savings account.
+- [6777.7998046875 - 6780.31982421875] No timeline at the moment, but it's a top priority,
+- [6780.31982421875 - 6781.72021484375] super top priority.
+- [6781.72021484375 - 6783.9599609375] It's a little bit more complicated than you'd think,
+- [6783.9599609375 - 6787.60009765625] so it's taking us a little bit more work
+- [6787.60009765625 - 6791.39990234375] to get it to a place where we can start to have a timeline
+- [6791.39990234375 - 6793.68017578125] and tease it a little bit more.
+- [6793.68017578125 - 6794.52001953125] But it's coming.
+- [6796.1201171875 - 6798.16015625] Hopefully within the coming months.
+- [6798.16015625 - 6800.52001953125] It's certainly not like at the end of this year.
+- [6800.52001953125 - 6802.31982421875] Now, no promises, obviously.
+- [6803.0400390625 - 6804.1201171875] There's only so much I can control.
+- [6804.1201171875 - 6806.240234375] But from what I can tell and the progress we've made
+- [6806.240234375 - 6811.240234375] already, it should be fairly soon-ish.
+- [6811.43994140625 - 6812.27978515625] Fairly soon-ish.
+- [6814.47998046875 - 6817.8798828125] Question for Jack, why for Bitcoin-backed line of credit
+- [6817.8798828125 - 6821.47998046875] would there be minimums when it's secured by money?
+- [6821.47998046875 - 6823.60009765625] There's platforms like Lava.
+- [6823.60009765625 - 6824.9599609375] Well, Lava's not legal.
+- [6824.9599609375 - 6826.56005859375] They're not doing legal things.
+- [6827.16015625 - 6828.43994140625] Yeah, I mean, listen.
+- [6831.64013671875 - 6836.64013671875] It's hard to be compared to other companies
+- [6837.64013671875 - 6840.60009765625] that aren't following the rules.
+- [6843.16015625 - 6848.16015625] Like part of Strike in being one of the most trusted
+- [6848.83984375 - 6851.60009765625] and best Bitcoin financial services in the world
+- [6852.56005859375 - 6853.9599609375] is that we follow the rules.
+- [6854.2001953125 - 6856.759765625] We're not gonna get you and us in trouble.
+- [6858.52001953125 - 6859.8798828125] Nobody wants that.
+- [6859.8798828125 - 6864.8798828125] And so, can't speak for other companies,
+- [6864.919921875 - 6866.240234375] but we follow the rules.
+- [6870.080078125 - 6872.39990234375] The line of credit minimum, by the way,
+- [6872.39990234375 - 6877.39990234375] will be really low, like thousands of dollars,
+- [6877.43994140625 - 6879.9599609375] couple grand, five grand, something like that.
+- [6880.0 - 6881.7998046875] But there are rules, unfortunately.
+- [6882.759765625 - 6884.39990234375] And there are companies that don't follow the rules,
+- [6884.39990234375 - 6887.35986328125] but the problem is eventually you get caught
+- [6887.35986328125 - 6889.2001953125] and breaking the rules is not like
+- [6889.2001953125 - 6890.64013671875] a scalable business model.
+- [6892.27978515625 - 6896.16015625] So, we're very regulated and licensed
+- [6896.16015625 - 6899.60009765625] and I know people will say, oh, you KYC cuck.
+- [6899.60009765625 - 6903.60009765625] But, I mean, what do you want me to do?
+- [6903.60009765625 - 6905.83984375] I can't change the world from a prison cell.
+- [6905.9599609375 - 6907.27978515625] I can't build you guys products
+- [6907.27978515625 - 6911.52001953125] and have fun on this show sitting behind bars.
+- [6911.52001953125 - 6914.0] So, I gotta follow the rules.
+- [6914.0 - 6918.0] And I can only make progress moving the world
+- [6918.0 - 6923.0] in what I think is the right direction by following the rules.
+- [6923.0 - 6925.0400390625] So, yeah, that's all I'll say.
+- [6926.919921875 - 6928.52001953125] Dylan, will Strike be offering checking
+- [6928.52001953125 - 6930.8798828125] and savings accounts with debit slash credit cards?
+- [6930.8798828125 - 6932.68017578125] Will it be possible to do that?
+- [6932.68017578125 - 6934.35986328125] Will Strike be offering checking and savings accounts
+- [6934.35986328125 - 6935.83984375] with debit slash credit cards?
+- [6935.83984375 - 6938.16015625] Bitcoin businesses don't have a Bitcoin bank option
+- [6938.16015625 - 6939.16015625] to run these services.
+- [6939.16015625 - 6942.16015625] Businesses need access to these services.
+- [6942.16015625 - 6944.35986328125] Eventually, we will.
+- [6944.35986328125 - 6947.83984375] It's not something we're actively focused on at the moment.
+- [6947.83984375 - 6950.47998046875] And one of the primary reasons for that
+- [6950.47998046875 - 6954.9599609375] is because we, I don't know,
+- [6954.9599609375 - 6958.39990234375] I just don't know that you guys need a card from us yet.
+- [6958.39990234375 - 6959.31982421875] We'll see.
+- [6959.31982421875 - 6962.0400390625] But with the line of credit, like if you have an Amex card,
+- [6962.0400390625 - 6964.919921875] you're probably getting all these amazing rewards.
+- [6964.919921875 - 6965.759765625] I don't know.
+- [6965.759765625 - 6970.759765625] Do you need a card from us?
+- [6971.64013671875 - 6972.64013671875] Use your Amex.
+- [6972.64013671875 - 6975.0400390625] Just use your line of credit to pay off the Amex.
+- [6975.0400390625 - 6976.16015625] So, you've got direct deposit.
+- [6976.16015625 - 6977.0] You can pay bills.
+- [6977.0 - 6977.83984375] You can buy, sell Bitcoin.
+- [6977.83984375 - 6980.759765625] You got a line of credit, termed loans.
+- [6980.759765625 - 6981.60009765625] You're good.
+- [6981.60009765625 - 6982.43994140625] You should be good.
+- [6982.43994140625 - 6983.27978515625] We'll see, though.
+- [6983.27978515625 - 6984.759765625] Like, you guys will use the service.
+- [6984.759765625 - 6987.080078125] And then if it's not giving you what you need,
+- [6987.080078125 - 6988.16015625] we'll build whatever you want.
+- [6988.16015625 - 6991.43994140625] But I'm curious to see if people use it correctly.
+- [6991.43994140625 - 6993.39990234375] I don't think you need a card from us.
+- [6993.39990234375 - 6994.759765625] I don't know why.
+- [6994.759765625 - 6995.60009765625] I don't know.
+- [6995.60009765625 - 6997.52001953125] A card is such a fiat product.
+- [6997.52001953125 - 6999.39990234375] I'll build it if I have to.
+- [6999.39990234375 - 7002.39990234375] But still want feedback from you guys on that one.
+- [7002.39990234375 - 7003.31982421875] I'm not sold.
+- [7004.72021484375 - 7006.31982421875] Jack, simple question.
+- [7006.31982421875 - 7008.52001953125] Does Strike run its money transfer transactions
+- [7008.52001953125 - 7010.68017578125] primarily on Tether or Bitcoin?
+- [7011.9599609375 - 7015.759765625] Bitcoin, we don't run anything on Tether.
+- [7015.759765625 - 7020.759765625] I mean, we support USDT in the version of Strike.
+- [7021.27978515625 - 7023.68017578125] So you guys that are using Strike in America,
+- [7023.68017578125 - 7027.83984375] in UK, in EU, you're using Strike that has support
+- [7027.83984375 - 7030.2001953125] for either the dollar or the euro or the pound,
+- [7030.2001953125 - 7032.72021484375] wherever you are, your jurisdiction.
+- [7032.72021484375 - 7035.31982421875] Strike in Latin America and in Africa,
+- [7036.68017578125 - 7039.72021484375] instead of their local currency, it has Tether.
+- [7039.72021484375 - 7044.72021484375] Because people in Nigeria, they don't want Naira.
+- [7044.759765625 - 7046.72021484375] They want USDT.
+- [7046.72021484375 - 7049.919921875] So we support USDT like that.
+- [7049.919921875 - 7052.8798828125] But our money transfers, like our SendGlobally product,
+- [7052.8798828125 - 7055.72021484375] our cross-currency stuff, it's all on Bitcoin.
+- [7055.72021484375 - 7059.240234375] Now, people try and lie about me all the time.
+- [7060.2001953125 - 7061.8798828125] And I know that that's a frequent lie.
+- [7061.8798828125 - 7064.080078125] Like, Jack's friends with Tether
+- [7064.080078125 - 7066.47998046875] and he's secretly running his company on Tether.
+- [7067.56005859375 - 7069.0] I'm not.
+- [7069.0 - 7069.83984375] I'm not.
+- [7071.240234375 - 7073.27978515625] Question, when will Michigan be available
+- [7073.27978515625 - 7075.83984375] for the line of credit product that you'll launch?
+- [7076.0400390625 - 7080.27978515625] Uh, Michigan will not be one of the first states,
+- [7080.27978515625 - 7083.0400390625] but it could be weeks after.
+- [7083.0400390625 - 7085.2001953125] It could be whenever we want.
+- [7085.2001953125 - 7087.9599609375] We're gonna roll it out semi-selectively
+- [7088.9599609375 - 7092.1201171875] and just see how it goes first.
+- [7092.1201171875 - 7094.0] Because I'm not sure people understand it.
+- [7094.0 - 7095.919921875] I'm really curious how people are gonna use it.
+- [7095.919921875 - 7098.83984375] I wanna make sure it's an unbelievable experience,
+- [7098.83984375 - 7101.7998046875] like the one that I've been bragging about.
+- [7101.7998046875 - 7103.080078125] And then I'm just gonna flip the switch,
+- [7103.080078125 - 7104.919921875] turn it on everywhere.
+- [7104.919921875 - 7107.39990234375] So, there's no explicit timeline,
+- [7107.39990234375 - 7108.60009765625] there's no rules about that.
+- [7108.60009765625 - 7110.919921875] That's the subjective decision I'm making,
+- [7110.919921875 - 7113.68017578125] which is we wanna roll it out the right way,
+- [7113.68017578125 - 7114.83984375] low time preference.
+- [7114.83984375 - 7116.7998046875] You guys are gonna kick my ass.
+- [7116.7998046875 - 7117.8798828125] Because there's gonna be people on Twitter
+- [7117.8798828125 - 7119.56005859375] that are like, holy shit, my life's changed,
+- [7119.56005859375 - 7120.8798828125] I get this line of credit.
+- [7120.8798828125 - 7123.60009765625] So it's like, this is such a unique Bitcoin product,
+- [7123.60009765625 - 7125.0400390625] I'm so excited about it.
+- [7125.0400390625 - 7127.35986328125] And people are gonna be tweeting about it
+- [7127.35986328125 - 7128.8798828125] and then some people aren't gonna have access to it.
+- [7128.8798828125 - 7130.72021484375] And I'm gonna get my ass handed to me.
+- [7130.72021484375 - 7134.47998046875] People are gonna be like, hey, turn it on for me, fuck you.
+- [7135.16015625 - 7136.8798828125] Trust me, I think it's the right thing to do.
+- [7136.8798828125 - 7140.56005859375] You just never wanna do, it's a totally new product,
+- [7140.56005859375 - 7141.56005859375] it's a first of its kind,
+- [7141.56005859375 - 7145.68017578125] you don't wanna blast it out to everybody all at once,
+- [7145.68017578125 - 7147.64013671875] at least in my opinion.
+- [7147.64013671875 - 7149.16015625] When is Strike coming to Canada?
+- [7149.16015625 - 7150.8798828125] We are working on Canada.
+- [7150.8798828125 - 7152.1201171875] It's just brutal, man.
+- [7152.1201171875 - 7153.8798828125] Canada grinds my gears.
+- [7154.759765625 - 7157.56005859375] The regulatory environment over there is painful.
+- [7157.56005859375 - 7160.52001953125] So, it's just gonna take us time, unfortunately.
+- [7160.52001953125 - 7161.72021484375] But we're working on it.
+- [7162.60009765625 - 7163.64013671875] Strike question, Dylan.
+- [7163.64013671875 - 7165.9599609375] Please update us on UK personal loans.
+- [7165.9599609375 - 7170.759765625] Also, is Jersey Channel Island counted within UK
+- [7170.759765625 - 7172.52001953125] or as a separate domicile?
+- [7173.64013671875 - 7176.759765625] I don't have an update for UK personal loans for you
+- [7176.759765625 - 7178.2001953125] on this Mailbag Monday.
+- [7179.83984375 - 7182.64013671875] I don't know what Jersey Channel is.
+- [7183.759765625 - 7186.7998046875] Maybe if you write in to support or DM us or something,
+- [7186.7998046875 - 7189.0] we'll get back to you on the specifics there.
+- [7189.0 - 7191.0] Is that like a region of the,
+- [7191.080078125 - 7192.39990234375] I don't know what that is.
+- [7193.27978515625 - 7194.1201171875] Sorry.
+- [7194.1201171875 - 7197.0] But we're working on the personal loans in the UK as well.
+- [7197.0 - 7198.60009765625] We are.
+- [7198.60009765625 - 7200.56005859375] That one's more straightforward than Canada.
+- [7200.56005859375 - 7202.0] We'll get there.
+- [7202.0 - 7204.35986328125] Dylan, will Strike be offering business solutions
+- [7204.35986328125 - 7205.83984375] for Bitcoin businesses?
+- [7205.83984375 - 7208.52001953125] We don't wanna use TradFi Bank for checking.
+- [7208.52001953125 - 7210.759765625] We want to use a Bitcoin bank.
+- [7210.759765625 - 7214.52001953125] So, we do offer these products for businesses.
+- [7214.52001953125 - 7216.56005859375] So, we have BillPay for businesses,
+- [7216.56005859375 - 7218.68017578125] we have Lending for businesses,
+- [7218.68017578125 - 7220.759765625] we'll have Line of Credit for businesses.
+- [7221.52001953125 - 7223.240234375] So, you get an accountant routing number with Strike.
+- [7223.240234375 - 7225.64013671875] You can wire money in, you can send money out,
+- [7225.64013671875 - 7227.0400390625] you can pay bills.
+- [7227.0400390625 - 7228.60009765625] I think our Line of Credit for businesses
+- [7228.60009765625 - 7230.72021484375] is gonna be massive.
+- [7230.72021484375 - 7233.080078125] Imagine if you're a Bitcoin miner.
+- [7233.080078125 - 7234.39990234375] You have bills to pay.
+- [7234.39990234375 - 7235.56005859375] You're mining Bitcoin.
+- [7235.56005859375 - 7237.31982421875] You need to pay your electricity bill.
+- [7237.31982421875 - 7239.39990234375] You might not wanna sell your Bitcoin
+- [7239.39990234375 - 7241.0] at the lows right now.
+- [7241.0 - 7243.83984375] Just hook up your BillPay to the bills
+- [7243.83984375 - 7245.83984375] that you gotta cover for your mining services.
+- [7245.83984375 - 7248.52001953125] Collateralize it against the sats on your balance sheet
+- [7248.52001953125 - 7250.60009765625] and handle your bills that way.
+- [7251.43994140625 - 7253.35986328125] It's like an absolute game changer.
+- [7253.35986328125 - 7254.68017578125] Huge.
+- [7254.68017578125 - 7259.68017578125] So, yeah, I don't know what the confusion is here
+- [7259.68017578125 - 7262.39990234375] but we support businesses.
+- [7263.27978515625 - 7265.56005859375] If you're a business and you wanna talk to us
+- [7265.56005859375 - 7267.43994140625] or you need any help, just reach out.
+- [7267.43994140625 - 7269.43994140625] I mean, we've onboarded thousands and thousands
+- [7269.43994140625 - 7271.1201171875] of businesses all over the world.
+- [7271.1201171875 - 7275.080078125] And our business product is actually growing a lot,
+- [7275.080078125 - 7276.47998046875] which is exciting.
+- [7276.47998046875 - 7278.43994140625] I think the Line of Credit is gonna be huge too.
+- [7278.43994140625 - 7279.35986328125] If I'm a business,
+- [7279.35986328125 - 7283.080078125] I mean, Strike the Business uses Line of Credit too.
+- [7283.080078125 - 7285.240234375] Like, let's say we need a license in Canada
+- [7285.240234375 - 7287.16015625] and it's a million dollars.
+- [7287.16015625 - 7290.759765625] Okay, we have over 1,500 Bitcoin on our balance sheet,
+- [7290.759765625 - 7293.43994140625] which is, what is that right now?
+- [7293.43994140625 - 7295.0] It's a lot less than it was in October,
+- [7295.0 - 7296.2001953125] I'll tell you that much.
+- [7297.240234375 - 7300.080078125] So, that's $100 million.
+- [7300.080078125 - 7303.0400390625] We have $100 million of Bitcoin on our balance sheet.
+- [7303.0400390625 - 7305.919921875] Would I use a Line of Credit to get a million dollar license
+- [7305.919921875 - 7308.60009765625] or would I sell Bitcoin off our treasury
+- [7308.60009765625 - 7310.1201171875] or take the profits?
+- [7310.1201171875 - 7312.83984375] So, let's say we're making millions of dollars a month.
+- [7312.83984375 - 7314.72021484375] Would I take some of that and pay for the license?
+- [7314.72021484375 - 7318.0400390625] Maybe, but I might just take that, buy the dip
+- [7318.0400390625 - 7322.1201171875] and have an LTV of like 1% getting the license in Canada
+- [7322.1201171875 - 7323.240234375] with the Line of Credit.
+- [7323.240234375 - 7326.72021484375] And then I'd pay down that million dollar Line of Credit
+- [7326.72021484375 - 7328.0] over the next 12 months.
+- [7328.0 - 7330.60009765625] I'm taking maybe 100 grand a month of our profits
+- [7330.60009765625 - 7331.9599609375] and allocating it and paying it down.
+- [7331.9599609375 - 7334.68017578125] But in that way, I'm allowing myself to buy the dip.
+- [7334.68017578125 - 7337.919921875] It's just like, the Line of Credit is just a beast.
+- [7337.919921875 - 7339.16015625] I think businesses are gonna love it.
+- [7339.16015625 - 7341.2001953125] I think Bitcoin miners are gonna love it.
+- [7343.56005859375 - 7347.080078125] If my state is slow to allow lending, Washington,
+- [7347.080078125 - 7348.52001953125] would you expect it to be slow
+- [7348.52001953125 - 7350.47998046875] to approve the Line of Credit?
+- [7350.47998046875 - 7351.31982421875] No.
+- [7352.8798828125 - 7353.72021484375] No.
+- [7355.56005859375 - 7356.68017578125] We'll get you.
+- [7356.68017578125 - 7358.919921875] No, shouldn't be.
+- [7358.919921875 - 7360.52001953125] Hey Jack, question for Strike.
+- [7360.52001953125 - 7362.72021484375] I see an extra layer pin protection
+- [7362.72021484375 - 7364.52001953125] before hitting send or withdraw.
+- [7364.52001953125 - 7366.0] It would be nice to have that layer
+- [7366.0 - 7369.52001953125] so that I can send larger UTXO to cold storage.
+- [7374.31982421875 - 7376.43994140625] What do you mean by that?
+- [7376.43994140625 - 7378.1201171875] So we do have that feature.
+- [7380.0400390625 - 7383.0400390625] Well, I can't tell what the question is.
+- [7383.0400390625 - 7384.56005859375] So you see the feature.
+- [7384.56005859375 - 7386.64013671875] I see an extra layer pin protection.
+- [7386.64013671875 - 7387.83984375] Yeah, so we have this feature
+- [7387.83984375 - 7391.68017578125] where if you guys want extra security on your account,
+- [7391.68017578125 - 7394.919921875] you can do it where you need to enter the pin
+- [7394.919921875 - 7398.0] or do some form of authentication
+- [7398.0 - 7401.31982421875] to send Bitcoin off the app if you want,
+- [7401.31982421875 - 7403.68017578125] if you want that level of security.
+- [7403.68017578125 - 7404.52001953125] We have that.
+- [7406.27978515625 - 7407.60009765625] So if you need that,
+- [7407.60009765625 - 7409.64013671875] you can just turn it on in your settings.
+- [7412.43994140625 - 7417.16015625] Okay, last question, other.
+- [7417.16015625 - 7422.0400390625] Am I a cat guy, a dog guy, or neither?
+- [7422.0400390625 - 7423.7998046875] We all know you're a bear guy.
+- [7425.0400390625 - 7426.759765625] I'm not a cat guy.
+- [7426.759765625 - 7428.64013671875] I'm allergic to cats.
+- [7428.64013671875 - 7430.759765625] Or, I don't know.
+- [7431.7998046875 - 7433.72021484375] At least I was when I was a kid.
+- [7433.72021484375 - 7437.56005859375] Like, my eyes get all irritated and stuff.
+- [7437.56005859375 - 7439.35986328125] So I'm definitely not a cat guy.
+- [7440.35986328125 - 7442.43994140625] Am I a dog guy?
+- [7442.43994140625 - 7444.83984375] Yeah, humans are dog guys.
+- [7444.83984375 - 7446.68017578125] They're just the man's best friend, right?
+- [7446.68017578125 - 7448.080078125] There's no doubt about that.
+- [7449.0 - 7451.240234375] But I had a bad experience with a dog.
+- [7451.240234375 - 7452.8798828125] It was actually with Dylan.
+- [7452.8798828125 - 7454.83984375] I'm gonna rag on Dylan a little bit.
+- [7455.68017578125 - 7456.7998046875] Sorry, not sorry.
+- [7458.080078125 - 7460.27978515625] Dylan and I got a dog when we were living together,
+- [7460.27978515625 - 7462.52001953125] like, when was that?
+- [7463.52001953125 - 7464.7998046875] Almost 10 years ago?
+- [7465.919921875 - 7469.47998046875] Dylan and I got a dog, and we were young, man.
+- [7469.47998046875 - 7474.080078125] We were like 23 or something, young.
+- [7474.080078125 - 7477.080078125] This was like before I founded Strike,
+- [7477.080078125 - 7478.60009765625] but like right before.
+- [7478.60009765625 - 7481.759765625] Like I was open source Lightning Network developer.
+- [7482.759765625 - 7484.919921875] And Dylan and I got a dog,
+- [7484.919921875 - 7489.919921875] and Dylan was always out partying in the clubs.
+- [7490.1201171875 - 7492.0400390625] I'm not exaggerating.
+- [7492.0400390625 - 7493.759765625] I'm being dead ass.
+- [7493.759765625 - 7498.0] Dylan was like the coolest guy in town
+- [7498.0 - 7499.31982421875] who's going to all the clubs.
+- [7499.31982421875 - 7501.31982421875] Like, ladies love Dylan.
+- [7501.31982421875 - 7503.56005859375] He's like running around the city, having fun.
+- [7503.56005859375 - 7505.52001953125] Whatever, he's 23, whatever.
+- [7505.52001953125 - 7510.52001953125] I was literally working on open source Bitcoin software
+- [7510.72021484375 - 7513.080078125] all day, all night in our apartment.
+- [7514.1201171875 - 7516.27978515625] And so we get this dog,
+- [7516.27978515625 - 7519.080078125] and Dylan doesn't take care of the dog.
+- [7519.080078125 - 7523.1201171875] Dylan's fucking running around, boozing, chasing women.
+- [7523.1201171875 - 7526.0400390625] I'm trying to focus on the Lightning Network
+- [7526.0400390625 - 7528.56005859375] and building the future financial system,
+- [7528.56005859375 - 7531.080078125] and I have this fucking dog all by myself.
+- [7531.080078125 - 7534.2001953125] And I'm like, bro, I can't take care of this dog
+- [7534.2001953125 - 7535.52001953125] all by myself.
+- [7535.52001953125 - 7537.1201171875] He's like, sorry, man, I'm busy.
+- [7537.39990234375 - 7540.39990234375] So meanwhile, the dog ends up hating me
+- [7540.39990234375 - 7542.60009765625] because I kind of grew frustrated with the dog.
+- [7542.60009765625 - 7545.64013671875] The dog's shitting all over the house, the dog.
+- [7545.64013671875 - 7546.919921875] It was a mess.
+- [7546.919921875 - 7551.1201171875] I was too young to have a dog, bad situation.
+- [7551.1201171875 - 7552.83984375] Dylan bailed on me with the dog.
+- [7552.83984375 - 7556.2001953125] He's probably in the chat like, that's what happened.
+- [7556.2001953125 - 7559.31982421875] This is the same apartment when I had the painting
+- [7559.31982421875 - 7561.080078125] that I got for six Bitcoin,
+- [7561.080078125 - 7562.72021484375] but then Bitcoin obviously appreciated,
+- [7562.72021484375 - 7565.52001953125] so it became a six-figure apartment.
+- [7565.72021484375 - 7568.759765625] So it became a six-figure painting, technically,
+- [7568.759765625 - 7570.759765625] and he's bringing home chicks from the club like,
+- [7570.759765625 - 7572.83984375] yeah, you know, this is a six-figure painting
+- [7572.83984375 - 7574.16015625] we got on the wall.
+- [7574.16015625 - 7575.35986328125] It was that apartment.
+- [7575.35986328125 - 7576.759765625] We had a fucking dog.
+- [7577.64013671875 - 7579.68017578125] And so I'm a dog guy.
+- [7579.68017578125 - 7581.47998046875] Now, you're gonna ask what happened to the dog.
+- [7581.47998046875 - 7582.31982421875] Is the dog okay?
+- [7582.31982421875 - 7583.43994140625] Yes, the dog's great.
+- [7583.43994140625 - 7585.39990234375] Once I realized the situation was bad,
+- [7585.39990234375 - 7588.39990234375] like the utter and complete gentleman that I am,
+- [7588.39990234375 - 7590.39990234375] I was like, okay, it was a golden retriever.
+- [7590.39990234375 - 7593.27978515625] It's like this golden retriever has to go find a farm.
+- [7594.31982421875 - 7595.2001953125] I didn't have a yard.
+- [7595.8798828125 - 7597.2001953125] It was a tiny little apartment in Chicago.
+- [7597.2001953125 - 7598.72021484375] I didn't have a big closet like this.
+- [7598.72021484375 - 7601.83984375] I had no room for this fucking dog,
+- [7601.83984375 - 7604.240234375] chewing up the couch, shitting everywhere.
+- [7604.240234375 - 7607.0400390625] I'm trying to understand how the lightning network works.
+- [7607.0400390625 - 7610.0400390625] This thing is just like causing mayhem.
+- [7610.0400390625 - 7611.68017578125] Dylan's out at the club.
+- [7612.68017578125 - 7616.0] So I find a farm for this dog
+- [7616.0 - 7619.0400390625] and give the dog to a new owner
+- [7619.0400390625 - 7620.52001953125] that I knew through a friend.
+- [7620.52001953125 - 7623.7998046875] It was on a farm, and the dog lived an incredible life.
+- [7623.7998046875 - 7627.39990234375] Thing's still alive, running around a farm, amazing.
+- [7627.39990234375 - 7629.60009765625] So that's my dog experience.
+- [7629.60009765625 - 7634.60009765625] I plan on having a dog someday, but I learned my lesson.
+- [7635.27978515625 - 7636.60009765625] I'm not, I don't know if I'm ready for,
+- [7636.60009765625 - 7638.39990234375] I gotta focus right now.
+- [7638.39990234375 - 7639.35986328125] I gotta focus right now.
+- [7639.35986328125 - 7641.759765625] We're in the belly of the beast right now.
+- [7641.759765625 - 7646.60009765625] My first goal is to get engaged, get married, and have kids.
+- [7646.60009765625 - 7648.39990234375] That's my, before I get a dog.
+- [7649.8798828125 - 7653.43994140625] I wanna be a dad so bad, and not of a dog.
+- [7654.68017578125 - 7656.35986328125] My dream is to be a dad.
+- [7659.0400390625 - 7662.080078125] So anyways, not a cat guy, I'm a dog guy,
+- [7662.080078125 - 7663.35986328125] and a Blue Devil guy.
+- [7664.240234375 - 7669.240234375] The only sports team I like as much as the Chicago Bears
+- [7669.8798828125 - 7672.83984375] and the Bulls are probably the Duke Blue Devils.
+- [7673.919921875 - 7676.31982421875] White Sox, Bears, Bulls, Duke.
+- [7676.31982421875 - 7678.68017578125] My dad went to Duke, I didn't go to college.
+- [7678.68017578125 - 7681.1201171875] I'm a diehard Duke basketball fan.
+- [7681.1201171875 - 7683.2001953125] I can't watch Duke games in public.
+- [7684.52001953125 - 7686.43994140625] And everyone that knows me knows that.
+- [7686.43994140625 - 7688.7998046875] That's not a, that's a known fact.
+- [7688.7998046875 - 7692.759765625] Like oh, if Duke is playing, can't invite Jack to stuff,
+- [7692.759765625 - 7694.27978515625] he can't leave his house.
+- [7695.919921875 - 7700.919921875] And so beating Michigan, I mean Michigan fans are the worst.
+- [7701.919921875 - 7704.7998046875] Means you're shoving a sock in Dave Portnoy's mouth.
+- [7705.68017578125 - 7709.080078125] So I'm not a cat guy, I'm a dog guy,
+- [7709.080078125 - 7710.77978515625] a Bears guy, and a Blue Devil.
+- [7711.6201171875 - 7715.10009765625] All right, this episode is officially run two hours.
+- [7715.10009765625 - 7720.10009765625] So Dylan texted me that he's sending
+- [7720.10009765625 - 7721.97998046875] in his two weeks notice.
+- [7721.97998046875 - 7726.66015625] Hold on, which part of that would you push back on, Dil?
+- [7726.66015625 - 7728.259765625] It's not an insult.
+- [7728.259765625 - 7731.2998046875] God forbid your friend gets on a show
+- [7731.2998046875 - 7734.2998046875] with 50,000 subscribers and says you got a lot of chicks
+- [7734.2998046875 - 7736.5400390625] and we're running around having a good time.
+- [7736.5400390625 - 7737.3798828125] God forbid.
+- [7741.77978515625 - 7745.93994140625] Dylan was killing it, I mean what do you want, like what?
+- [7745.93994140625 - 7747.85986328125] Which part of that was, let's see,
+- [7747.85986328125 - 7748.93994140625] I'm waiting for his response.
+- [7748.93994140625 - 7750.919921875] Which part of that was bad?
+- [7752.97998046875 - 7755.72021484375] You guys know how we roll on this show.
+- [7755.72021484375 - 7758.4599609375] We prioritize the truth and nothing short of the truth.
+- [7763.97998046875 - 7765.81982421875] Dylan said he took care of the dog,
+- [7765.81982421875 - 7769.68017578125] walked him every day after work, and he loved Dylan.
+- [7771.77978515625 - 7773.97998046875] Yeah, debatable.
+- [7773.97998046875 - 7778.97998046875] Debatable that, whatever, whatever.
+- [7779.4599609375 - 7781.02001953125] Waste of time for the internet.
+- [7783.66015625 - 7785.419921875] Let it be known that Dylan took care of the dog
+- [7785.419921875 - 7786.4599609375] when he got home from the club.
+- [7786.4599609375 - 7787.81982421875] He took the dog for a walk.
+- [7789.7001953125 - 7792.5] All right, with that, I'm out of here, guys.
+- [7792.5 - 7797.5] Let me pull up the chat and see any last minute things.
+- [7801.259765625 - 7802.740234375] You have for me,
+- [7808.66015625 - 7810.18017578125] nothing.
+- [7810.18017578125 - 7811.27978515625] All right, guys.
+- [7814.419921875 - 7816.06005859375] Jack could have said Dylan was bringing dudes
+- [7816.06005859375 - 7816.93994140625] back to the apartment.
+- [7816.93994140625 - 7819.93994140625] See, that's what I'm saying, guys.
+- [7819.93994140625 - 7821.7998046875] You can't be so cynical.
+- [7821.7998046875 - 7825.10009765625] God forbid your boy says, yeah, when we were living together
+- [7825.10009765625 - 7828.14013671875] he was running around, chasing tail, having a good time.
+- [7829.06005859375 - 7831.66015625] What I could have said is Dylan was running around.
+- [7833.3798828125 - 7834.6201171875] No, no.
+- [7834.6201171875 - 7837.080078125] The dog's name was Finn, after Hal Finney.
+- [7839.2998046875 - 7840.97998046875] All right, I'm out of here.
+- [7840.97998046875 - 7842.259765625] I'll see you guys next week.
+- [7842.259765625 - 7845.580078125] As always, leave comments, questions
+- [7845.580078125 - 7847.10009765625] in the comments section.
+- [7847.10009765625 - 7848.2998046875] I read them all.
+- [7848.2998046875 - 7850.4599609375] Let me know how I can make the show better.
+- [7850.4599609375 - 7851.7998046875] Was this too long?
+- [7851.7998046875 - 7853.14013671875] Did the topics resonate?
+- [7853.14013671875 - 7854.02001953125] Did it make sense?
+- [7854.02001953125 - 7856.0] What do you think of our line of credit product?
+- [7856.0 - 7857.66015625] How can I help you?
+- [7857.66015625 - 7861.06005859375] And with that, I'm out of here.
+- [7861.06005859375 - 7862.259765625] Peace and love.
+- [7862.259765625 - 7863.22021484375] Take care of yourselves.
+- [7863.22021484375 - 7864.6201171875] Turn on your DCAs.
+- [7864.6201171875 - 7865.4599609375] Bye.

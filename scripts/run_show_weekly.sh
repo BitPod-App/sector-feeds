@@ -101,7 +101,7 @@ stable_pointer = str(show.get("stable_pointer") or ("latest_bitpod.md" if show_k
 print(str(repo_root / "transcripts" / show_key / stable_pointer))
 PY
 )"
-  REPORT_NAME="gpt-bitreport-pods-all-$(date -u +%Y%m%d-%H%M).md"
+  REPORT_NAME="gpt-bitreport-pods-all-$(date -u +%Y%m%d-%H%M%S).md"
   .venv311/bin/python scripts/gpt_report_from_transcript.py \
     --transcript-path "$TRANSCRIPT_PATH" \
     --report-name "$REPORT_NAME" \

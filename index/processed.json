@@ -6,6 +6,22 @@
       "status": "failed",
       "updated_at": "2026-02-19T02:40:10.026075+00:00"
     },
+    "jack_mallers_show::266c579c-f69b-4913-ace2-16fad273a221": {
+      "gpt_processed_at": null,
+      "gpt_status": "pending",
+      "media_cache_path": "/Users/cjarguello/bitpod-app/bitpod/cache/media/jack_mallers_show/a327c9c6bbd1facc/a327c9c6bbd1facc.mp3",
+      "media_url": "https://anchor.fm/s/e29097f4/podcast/play/115964814/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-24%2F418716776-44100-2-c358a6276ce4b.mp3",
+      "published_at": "2026-02-24T09:49:52+00:00",
+      "source_mode": "media",
+      "source_type": "rss_audio",
+      "source_url": "https://podcasters.spotify.com/pod/show/thejackmallersshow/episodes/AI-Is-Breaking-The-System--What-It-Means-For-Bitcoin-e3fhfee",
+      "status": "ok",
+      "transcript_path": "/Users/cjarguello/bitpod-app/bitpod/transcripts/jack_mallers_show/2026/2026-02-24__ai-is-breaking-the-system-what-it-means-for-bitcoin.md",
+      "transcript_plain_path": "/Users/cjarguello/bitpod-app/bitpod/transcripts/jack_mallers_show/2026/2026-02-24__ai-is-breaking-the-system-what-it-means-for-bitcoin_plain.txt",
+      "transcript_segments_path": "/Users/cjarguello/bitpod-app/bitpod/transcripts/jack_mallers_show/2026/2026-02-24__ai-is-breaking-the-system-what-it-means-for-bitcoin_segments.jsonl",
+      "transcription_model": "whisper-1",
+      "updated_at": "2026-02-26T02:42:09.413229+00:00"
+    },
     "jack_mallers_show::5810f6f5-a4c5-4f91-8542-a731e0e8fe9a": {
       "reason": "Error code: 413 - {'error': {'message': '413: Maximum content size limit (26214400) exceeded (26318258 bytes read)', 'type': 'server_error', 'param': None, 'code': None}, 'usage': {'type': 'duration', 'seconds': 0}}",
       "source_url": "https://podcasters.spotify.com/pod/show/thejackmallersshow/episodes/Japan--AI---The-Next-Liquidity-Shock-For-Bitcoin-e3f6ucg",

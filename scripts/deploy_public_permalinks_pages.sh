@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-DEPLOY_DIR="$REPO_ROOT/artifacts/public/permalinks"
+DEPLOY_DIR="$REPO_ROOT/artifacts/public/antenna-sector-feeds"
 PROJECT_NAME="${1:-bitpod-public-permalinks}"
 BRANCH_NAME="${2:-main}"
 
@@ -22,4 +22,3 @@ fi
 echo "Deploying '$DEPLOY_DIR' to Cloudflare Pages project '$PROJECT_NAME' (branch '$BRANCH_NAME')"
 npx wrangler whoami
 npx wrangler pages deploy "$DEPLOY_DIR" --project-name "$PROJECT_NAME" --branch "$BRANCH_NAME"
-

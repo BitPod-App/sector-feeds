@@ -95,8 +95,8 @@ Per-show contract (API-like surface):
 - Each show has its own status artifacts (`<stable_pointer_stem>_status.json|md`).
 - Schedules can differ per show while preserving the same output contract.
 - Public permalink publish (semi-paranoid): each show gets
-  - `artifacts/public/permalinks/<opaque_id>/latest.md`
-  - `artifacts/public/permalinks/<opaque_id>/status.json`
+  - `artifacts/public/antenna-sector-feeds/<opaque_id>/latest.md`
+  - `artifacts/public/antenna-sector-feeds/<opaque_id>/status.json`
   - with noindex/nofollow/noarchive + `robots.txt` disallow-all.
   - internal mapping remains private in `artifacts/private/public_permalink_manifest.json`.
 
@@ -163,6 +163,11 @@ bash scripts/bitpod_status.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:M
 bash scripts/bitpod_sync.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"] [--min-episode-age-minutes 180] [--trigger-cmd "<cmd>"]
 bash scripts/bitpod_verify.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"] [--gpt-feedback-file <path>] [--gpt-note "<text>"]
 
+# Operator guidance (MVP):
+# - Primary flow: Status -> Sync -> Deploy
+# - Sync now enforces strict parity checks (same gate as Verify) by default.
+# - Verify remains useful as a standalone audit/recheck command or for recording GPT feedback linkage.
+
 # Deploy public permalink artifacts to Cloudflare Pages (static only):
 bash scripts/deploy_public_permalinks_pages.sh [project_name] [branch]
 
@@ -174,13 +179,13 @@ bash scripts/deploy_public_permalinks_pages.sh [project_name] [branch]
 # default mode sends excerpt only (not full transcript)
 .venv311/bin/python scripts/gpt_report_from_transcript.py \
   --transcript-path transcripts/jack_mallers_show/jack_mallers.md \
-  --report-name gpt-bitreport-pods-all-YYYYMMDD-HHMM.md \
+  --report-name gpt-bitreport-pods-all-YYYYMMDD-HHMMSS.md \
   --show-key jack_mallers_show
 
 # full transcript mode (explicit opt-in only)
 .venv311/bin/python scripts/gpt_report_from_transcript.py \
   --transcript-path transcripts/jack_mallers_show/jack_mallers.md \
-  --report-name gpt-bitreport-pods-all-YYYYMMDD-HHMM.md \
+  --report-name gpt-bitreport-pods-all-YYYYMMDD-HHMMSS.md \
   --show-key jack_mallers_show \
   --full-text
 ```

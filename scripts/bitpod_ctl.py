@@ -82,7 +82,15 @@ def cmd_sync(args: argparse.Namespace) -> int:
     if args.json:
         print(json.dumps({"sync": result, "trigger": trigger}, indent=2, sort_keys=True))
 
-    ok = post["all_feeds_ready"] and post["latest_gpt_bitreport_covers_all_requested_shows"]
+    # Sync now enforces the same strict verify gate by default.
+    verify = verify_payload(show_keys, as_of)
+    print(
+        "- verify_parity_ok="
+        f"{'Yes' if verify['ok'] else 'No'} "
+        f"(gpt_consumed_all={'Yes' if verify['status']['all_gpt_consumed'] else 'No'})"
+    )
+
+    ok = verify["ok"]
     return 0 if ok else 1
 
 

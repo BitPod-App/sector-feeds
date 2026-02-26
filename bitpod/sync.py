@@ -61,6 +61,32 @@ def _next_action_for_stage(stage: str | None) -> str:
     return "Rerun sync and inspect the show status markdown artifact for details."
 
 
+def _sector_tags(show: dict[str, Any]) -> list[str]:
+    tags: list[str] = []
+    raw_sectors = show.get("sectors")
+    if isinstance(raw_sectors, list):
+        for item in raw_sectors:
+            val = str(item).strip()
+            if val:
+                tags.append(val)
+    elif isinstance(raw_sectors, str) and raw_sectors.strip():
+        tags.append(raw_sectors.strip())
+
+    raw_sector = show.get("sector")
+    if isinstance(raw_sector, str) and raw_sector.strip():
+        tags.append(raw_sector.strip())
+
+    deduped: list[str] = []
+    seen: set[str] = set()
+    for tag in tags:
+        key = tag.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(tag)
+    return deduped
+
+
 def _is_live_like_youtube_episode(episode: Any) -> bool:
     source_type = str(getattr(episode, "source_type", "unknown"))
     if not source_type.startswith("youtube"):
@@ -160,6 +186,7 @@ def sync_show(
     status_basename = _status_basename(show)
     status_payload: dict[str, Any] = {
         "show_key": show_key,
+        "sector_tags": _sector_tags(show),
         "run_id": run_id,
         "run_started_at_utc": run_started_at,
         "run_finished_at_utc": None,

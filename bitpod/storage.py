@@ -403,6 +403,26 @@ def _select_processed_window(processed: list[dict[str, Any]]) -> tuple[list[dict
     return selected, meta
 
 
+def _status_sector_tags(status_payload: dict[str, Any]) -> list[str]:
+    raw = status_payload.get("sector_tags")
+    if isinstance(raw, list):
+        tags = [str(v).strip() for v in raw if str(v).strip()]
+    elif isinstance(raw, str) and raw.strip():
+        tags = [raw.strip()]
+    else:
+        tags = []
+    # Preserve order, dedupe case-insensitively.
+    seen: set[str] = set()
+    out: list[str] = []
+    for tag in tags:
+        key = tag.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(tag)
+    return out
+
+
 def write_public_permalink_artifacts(
     *,
     show_key: str,
@@ -468,9 +488,11 @@ def write_public_permalink_artifacts(
         )
 
     status_path = show_root / "status.json"
+    sector_tags = _status_sector_tags(status_payload)
     public_status = {
         "contract_version": "public_permalink_status.v1",
         "public_id": permalink_id,
+        "sector_tags": sector_tags,
         "run_id": status_payload.get("run_id"),
         "run_status": status_payload.get("run_status"),
         "included_in_pointer": bool(status_payload.get("included_in_pointer")),
@@ -511,6 +533,7 @@ def write_public_permalink_artifacts(
     manifest["salt_env"] = "BITPOD_PUBLIC_ID_SALT"
     manifest["shows"][show_key] = {
         "public_id": permalink_id,
+        "sector_tags": sector_tags,
         "public_dir": str(show_root),
         "latest_md_path": str(latest_path),
         "status_json_path": str(status_path),

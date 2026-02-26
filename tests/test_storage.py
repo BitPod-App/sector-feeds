@@ -141,6 +141,7 @@ class StorageTests(unittest.TestCase):
                     "run_id": "20260225T190000Z",
                     "run_status": "ok",
                     "included_in_pointer": True,
+                    "sector_tags": ["Bitcoiners"],
                     "latest_episode_published_at_utc": "2026-02-25T19:00:00+00:00",
                     "pointer_updated_at_utc": "2026-02-25T19:05:00+00:00",
                     "pointer_path": str(pointer),
@@ -172,6 +173,7 @@ class StorageTests(unittest.TestCase):
             status_payload = json.loads(status_path.read_text(encoding="utf-8"))
             self.assertEqual(status_payload["run_status"], "ok")
             self.assertEqual(status_payload["robots"], "noindex, nofollow, noarchive")
+            self.assertEqual(status_payload["sector_tags"], ["Bitcoiners"])
             self.assertEqual(status_payload["processed_count"], 1)
             self.assertEqual(status_payload["processed_total_count"], 1)
             self.assertEqual(status_payload["unprocessed_count"], 1)
@@ -187,6 +189,7 @@ class StorageTests(unittest.TestCase):
 
             manifest_payload = json.loads(manifest_path.read_text(encoding="utf-8"))
             self.assertIn("jack_mallers_show", manifest_payload["shows"])
+            self.assertEqual(manifest_payload["shows"]["jack_mallers_show"]["sector_tags"], ["Bitcoiners"])
 
 
 if __name__ == "__main__":

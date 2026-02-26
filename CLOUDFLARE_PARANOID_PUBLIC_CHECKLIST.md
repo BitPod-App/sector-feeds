@@ -6,7 +6,7 @@ Use this checklist for `bitpod-public-permalinks` hosting with public access but
 
 - Pages project exists: `bitpod-public-permalinks`
 - Public hostname: `bitpod-public-permalinks.pages.dev`
-- Deployed static artifact root: `artifacts/public/permalinks`
+- Deployed static artifact root: `artifacts/public/antenna-sector-feeds`
 - Noindex policy active via `_headers`:
   - `X-Robots-Tag: noindex, nofollow, noarchive`
 - `robots.txt` served with:
@@ -61,4 +61,3 @@ AI Crawl Control is configured at a **Cloudflare zone/domain** level, not on raw
 - Keep dynamic transcript batch window for processors:
   - oldest -> newest processing order
   - bounded by min/max episodes and target total minutes.
-
