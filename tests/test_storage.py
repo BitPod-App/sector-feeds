@@ -1,11 +1,13 @@
 from __future__ import annotations
 
+import json
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from bitpod.storage import (
+    write_public_permalink_artifacts,
     slugify,
     status_paths,
     transcript_path,
@@ -92,6 +94,57 @@ class StorageTests(unittest.TestCase):
                 storage_module.TRANSCRIPTS_ROOT = original_root
 
             self.assertTrue(review_path.exists())
+
+    def test_write_public_permalink_artifacts(self) -> None:
+        with TemporaryDirectory() as tmp:
+            from unittest.mock import patch
+            from bitpod import storage as storage_module
+
+            root = Path(tmp)
+            pointer = root / "transcripts" / "jack_mallers_show" / "jack_mallers.md"
+            pointer.parent.mkdir(parents=True, exist_ok=True)
+            pointer.write_text("# Latest\n\nTranscript body.\n", encoding="utf-8")
+
+            original_root = storage_module.ROOT
+            original_transcripts_root = storage_module.TRANSCRIPTS_ROOT
+            storage_module.ROOT = root
+            storage_module.TRANSCRIPTS_ROOT = root / "transcripts"
+            try:
+                payload = {
+                    "run_id": "20260225T190000Z",
+                    "run_status": "ok",
+                    "included_in_pointer": True,
+                    "latest_episode_published_at_utc": "2026-02-25T19:00:00+00:00",
+                    "pointer_updated_at_utc": "2026-02-25T19:05:00+00:00",
+                    "pointer_path": str(pointer),
+                }
+                with patch.dict("os.environ", {"BITPOD_PUBLIC_ID_SALT": "test-salt"}, clear=False):
+                    first = write_public_permalink_artifacts(show_key="jack_mallers_show", status_payload=payload)
+                    second = write_public_permalink_artifacts(show_key="jack_mallers_show", status_payload=payload)
+            finally:
+                storage_module.ROOT = original_root
+                storage_module.TRANSCRIPTS_ROOT = original_transcripts_root
+
+            self.assertEqual(first["public_permalink_id"], second["public_permalink_id"])
+            self.assertNotIn("jack_mallers_show", first["public_permalink_latest_path"])
+
+            latest_path = Path(first["public_permalink_latest_path"])
+            status_path = Path(first["public_permalink_status_path"])
+            manifest_path = Path(first["public_permalink_manifest_path"])
+            self.assertTrue(latest_path.exists())
+            self.assertTrue(status_path.exists())
+            self.assertTrue(manifest_path.exists())
+
+            latest_text = latest_path.read_text(encoding="utf-8")
+            self.assertIn("robots: noindex, nofollow, noarchive", latest_text)
+            self.assertIn("Transcript body.", latest_text)
+
+            status_payload = json.loads(status_path.read_text(encoding="utf-8"))
+            self.assertEqual(status_payload["run_status"], "ok")
+            self.assertEqual(status_payload["robots"], "noindex, nofollow, noarchive")
+
+            manifest_payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+            self.assertIn("jack_mallers_show", manifest_payload["shows"])
 
 
 if __name__ == "__main__":

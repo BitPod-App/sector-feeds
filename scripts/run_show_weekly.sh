@@ -10,6 +10,15 @@ SHOW_KEY="$1"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
+# Load optional runtime secrets/config once (kept outside committed defaults).
+if [ -f "$REPO_ROOT/.bitpod_runtime.env" ]; then
+  # shellcheck disable=SC1091
+  source "$REPO_ROOT/.bitpod_runtime.env"
+elif [ -f "$REPO_ROOT/scripts/bitpod_runtime.env" ]; then
+  # shellcheck disable=SC1091
+  source "$REPO_ROOT/scripts/bitpod_runtime.env"
+fi
+
 # Load optional budget/runtime defaults once so users do not need to pass env vars every run.
 if [ -f "$REPO_ROOT/.bitpod_budget.env" ]; then
   # shellcheck disable=SC1091

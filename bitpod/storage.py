@@ -1,14 +1,18 @@
 from __future__ import annotations
 
 import json
+import os
 import re
+import hashlib
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from bitpod.paths import TRANSCRIPTS_ROOT
+from bitpod.indexer import now_iso
+from bitpod.paths import ROOT, TRANSCRIPTS_ROOT
 
 SLUG_PATTERN = re.compile(r"[^a-z0-9]+")
+ROBOTS_POLICY = "noindex, nofollow, noarchive"
 
 
 def slugify(value: str) -> str:
@@ -214,3 +218,113 @@ def write_gpt_review_request(
     ]
     review_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return review_path
+
+
+def _permalink_salt() -> str:
+    configured = os.environ.get("BITPOD_PUBLIC_ID_SALT", "").strip()
+    if configured:
+        return configured
+    # Root-derived fallback keeps IDs stable without exposing show keys in public URLs.
+    return hashlib.sha256(str(ROOT).encode("utf-8", errors="ignore")).hexdigest()
+
+
+def _public_permalink_id(show_key: str) -> str:
+    raw = f"{_permalink_salt()}::{show_key}".encode("utf-8", errors="ignore")
+    return hashlib.sha256(raw).hexdigest()[:16]
+
+
+def _public_permalink_root() -> Path:
+    return ROOT / "artifacts" / "public" / "permalinks"
+
+
+def _private_manifest_path() -> Path:
+    return ROOT / "artifacts" / "private" / "public_permalink_manifest.json"
+
+
+def _write_noindex_guards(public_root: Path) -> None:
+    headers_path = public_root / "_headers"
+    headers_path.write_text(f"/*\n  X-Robots-Tag: {ROBOTS_POLICY}\n", encoding="utf-8")
+    robots_path = public_root / "robots.txt"
+    robots_path.write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
+
+
+def write_public_permalink_artifacts(
+    *,
+    show_key: str,
+    status_payload: dict[str, Any],
+) -> dict[str, str]:
+    permalink_id = _public_permalink_id(show_key)
+    public_root = _public_permalink_root()
+    show_root = public_root / permalink_id
+    show_root.mkdir(parents=True, exist_ok=True)
+    _write_noindex_guards(public_root)
+
+    latest_path = show_root / "latest.md"
+    pointer_path = Path(str(status_payload.get("pointer_path") or ""))
+    if pointer_path.exists():
+        content = pointer_path.read_text(encoding="utf-8")
+        prologue = (
+            "<!--\n"
+            f"robots: {ROBOTS_POLICY}\n"
+            f"x-robots-tag: {ROBOTS_POLICY}\n"
+            "-->\n\n"
+        )
+        latest_text = prologue + content.lstrip()
+        if not latest_text.endswith("\n"):
+            latest_text += "\n"
+        latest_path.write_text(latest_text, encoding="utf-8")
+    elif not latest_path.exists():
+        latest_path.write_text(
+            (
+                "<!--\n"
+                f"robots: {ROBOTS_POLICY}\n"
+                f"x-robots-tag: {ROBOTS_POLICY}\n"
+                "-->\n\n"
+                "# Unavailable\n\nLatest transcript not currently available.\n"
+            ),
+            encoding="utf-8",
+        )
+
+    status_path = show_root / "status.json"
+    public_status = {
+        "public_id": permalink_id,
+        "run_id": status_payload.get("run_id"),
+        "run_status": status_payload.get("run_status"),
+        "included_in_pointer": bool(status_payload.get("included_in_pointer")),
+        "latest_episode_published_at_utc": status_payload.get("latest_episode_published_at_utc"),
+        "pointer_updated_at_utc": status_payload.get("pointer_updated_at_utc"),
+        "updated_at_utc": now_iso(),
+        "robots": ROBOTS_POLICY,
+        "latest_path": "latest.md",
+    }
+    status_path.write_text(json.dumps(public_status, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+    manifest_path = _private_manifest_path()
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    manifest: dict[str, Any] = {"version": 1, "generated_at_utc": now_iso(), "shows": {}}
+    if manifest_path.exists():
+        try:
+            existing = json.loads(manifest_path.read_text(encoding="utf-8"))
+            if isinstance(existing, dict):
+                manifest.update(existing)
+                if not isinstance(manifest.get("shows"), dict):
+                    manifest["shows"] = {}
+        except json.JSONDecodeError:
+            pass
+    manifest["generated_at_utc"] = now_iso()
+    manifest["id_strategy"] = "sha256(salt::show_key)[:16]"
+    manifest["salt_env"] = "BITPOD_PUBLIC_ID_SALT"
+    manifest["shows"][show_key] = {
+        "public_id": permalink_id,
+        "public_dir": str(show_root),
+        "latest_md_path": str(latest_path),
+        "status_json_path": str(status_path),
+    }
+    manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+    return {
+        "public_permalink_id": permalink_id,
+        "public_permalink_latest_path": str(latest_path),
+        "public_permalink_status_path": str(status_path),
+        "public_permalink_manifest_path": str(manifest_path),
+    }

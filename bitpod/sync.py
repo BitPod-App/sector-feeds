@@ -122,7 +122,11 @@ def sync_show(
     min_episode_age_minutes: int = 180,
     as_of_utc: datetime | None = None,
 ) -> dict[str, Any]:
-    from bitpod.storage import write_gpt_review_request, write_run_status_artifacts
+    from bitpod.storage import (
+        write_gpt_review_request,
+        write_public_permalink_artifacts,
+        write_run_status_artifacts,
+    )
 
     show_key = show["show_key"]
     run_started_at = now_iso()
@@ -162,6 +166,10 @@ def sync_show(
         "pointer_updated_at_utc": None,
         "plain_artifact_path": None,
         "segments_artifact_path": None,
+        "public_permalink_id": None,
+        "public_permalink_latest_path": None,
+        "public_permalink_status_path": None,
+        "public_permalink_manifest_path": None,
         "failure_stage": None,
         "failure_reason": None,
         "suggested_next_action": None,
@@ -185,6 +193,8 @@ def sync_show(
         status_payload["status_md_path"] = str(status_md_path)
         review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
         status_payload["gpt_review_request_path"] = str(review_path)
+        public_paths = write_public_permalink_artifacts(show_key=show_key, status_payload=status_payload)
+        status_payload.update(public_paths)
         write_run_status_artifacts(
             show_key=show_key,
             payload=status_payload,
@@ -343,6 +353,8 @@ def sync_show(
     status_payload["status_md_path"] = str(status_md_path)
     review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
     status_payload["gpt_review_request_path"] = str(review_path)
+    public_paths = write_public_permalink_artifacts(show_key=show_key, status_payload=status_payload)
+    status_payload.update(public_paths)
     # Persist paths in JSON status too.
     status_json_path, status_md_path = write_run_status_artifacts(
         show_key=show_key,

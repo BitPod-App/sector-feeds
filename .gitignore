@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 .venv/
 .venv311/
+.bitpod_runtime.env
 *.egg-info/
 .DS_Store
 artifacts/review_bundles/
