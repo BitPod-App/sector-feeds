@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import logging
+import re
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -20,6 +21,7 @@ SOURCE_RANK = {
     "rss_link": 4,
     "unknown": 5,
 }
+LIVE_YOUTUBE_TITLE_PATTERN = re.compile(r"\b(live|upcoming|premiere)\b", re.IGNORECASE)
 
 
 @dataclass
@@ -57,6 +59,14 @@ def _next_action_for_stage(stage: str | None) -> str:
     if stage and stage in mapping:
         return mapping[stage]
     return "Rerun sync and inspect the show status markdown artifact for details."
+
+
+def _is_live_like_youtube_episode(episode: Any) -> bool:
+    source_type = str(getattr(episode, "source_type", "unknown"))
+    if not source_type.startswith("youtube"):
+        return False
+    title = str(getattr(episode, "title", "") or "")
+    return bool(LIVE_YOUTUBE_TITLE_PATTERN.search(title))
 
 
 def _status_basename(show: dict[str, Any]) -> str:
@@ -225,14 +235,19 @@ def sync_show(
     mature_cutoff = cutoff_now - timedelta(minutes=max(min_episode_age_minutes, 0))
     matured_episodes: list[Any] = []
     deferred_recent_youtube = 0
+    deferred_live_youtube = 0
     for ep in episodes:
         source_type = str(getattr(ep, "source_type", "unknown"))
+        if _is_live_like_youtube_episode(ep):
+            deferred_live_youtube += 1
+            continue
         if source_type.startswith("youtube") and ep.published_at > mature_cutoff:
             deferred_recent_youtube += 1
             continue
         matured_episodes.append(ep)
 
     stats["deferred_recent_youtube"] = deferred_recent_youtube
+    stats["deferred_live_youtube"] = deferred_live_youtube
     selected = filter_episodes(matured_episodes, max_episodes=max_episodes, since_days=since_days)
     stats["selected"] = len(selected)
 

@@ -7,7 +7,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 import bitpod.sync as sync_module
-from bitpod.sync import _choose_best_source, _status_basename, filter_episodes, get_feed_urls
+from bitpod.sync import _choose_best_source, _is_live_like_youtube_episode, _status_basename, filter_episodes, get_feed_urls
 
 
 @dataclass
@@ -125,6 +125,32 @@ class SyncFilteringTests(unittest.TestCase):
         self.assertIn("rss recent", selected_titles)
         self.assertNotIn("yt recent", selected_titles)
         self.assertEqual(stats["deferred_recent_youtube"], 1)
+
+    def test_is_live_like_youtube_episode(self) -> None:
+        yt_live = DummyEpisode(
+            guid="1",
+            title="LIVE: market update",
+            published_at=datetime.now(timezone.utc),
+            source_url="https://youtube.com/watch?v=1",
+            source_type="youtube_video",
+        )
+        yt_normal = DummyEpisode(
+            guid="2",
+            title="Weekly recap",
+            published_at=datetime.now(timezone.utc),
+            source_url="https://youtube.com/watch?v=2",
+            source_type="youtube_video",
+        )
+        rss_live_word = DummyEpisode(
+            guid="3",
+            title="Live from conference",
+            published_at=datetime.now(timezone.utc),
+            source_url="https://podcast.example/3",
+            source_type="rss_audio",
+        )
+        self.assertTrue(_is_live_like_youtube_episode(yt_live))
+        self.assertFalse(_is_live_like_youtube_episode(yt_normal))
+        self.assertFalse(_is_live_like_youtube_episode(rss_live_word))
 
     def test_refresh_stable_pointer_uses_latest_successful_transcript(self) -> None:
         with TemporaryDirectory() as tmp:
