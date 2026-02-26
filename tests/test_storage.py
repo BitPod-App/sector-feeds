@@ -104,6 +104,33 @@ class StorageTests(unittest.TestCase):
             pointer = root / "transcripts" / "jack_mallers_show" / "jack_mallers.md"
             pointer.parent.mkdir(parents=True, exist_ok=True)
             pointer.write_text("# Latest\n\nTranscript body.\n", encoding="utf-8")
+            transcript_file = root / "transcripts" / "jack_mallers_show" / "2026" / "2026-02-24__episode.md"
+            transcript_file.parent.mkdir(parents=True, exist_ok=True)
+            transcript_file.write_text("# Episode\n\nTranscript body.\n", encoding="utf-8")
+            index_path = root / "index" / "processed.json"
+            index_path.parent.mkdir(parents=True, exist_ok=True)
+            index_path.write_text(
+                json.dumps(
+                    {
+                        "episodes": {
+                            "jack_mallers_show::ok-guid": {
+                                "status": "ok",
+                                "published_at": "2026-02-24T09:49:52+00:00",
+                                "source_url": "https://example.com/ok",
+                                "transcript_path": str(transcript_file),
+                            },
+                            "jack_mallers_show::failed-guid": {
+                                "status": "failed",
+                                "published_at": "2026-02-25T09:49:52+00:00",
+                                "source_url": "https://example.com/failed",
+                                "stage": "transcription",
+                                "reason": "quota",
+                            },
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
 
             original_root = storage_module.ROOT
             original_transcripts_root = storage_module.TRANSCRIPTS_ROOT
@@ -137,11 +164,26 @@ class StorageTests(unittest.TestCase):
 
             latest_text = latest_path.read_text(encoding="utf-8")
             self.assertIn("robots: noindex, nofollow, noarchive", latest_text)
-            self.assertIn("Transcript body.", latest_text)
+            self.assertIn("Processed Episodes (oldest to newest)", latest_text)
+            self.assertIn("episodes/2026-02-24__episode.md", latest_text)
+            self.assertIn("Unprocessed Episodes", latest_text)
+            self.assertIn("processing_order: `oldest_to_newest`", latest_text)
 
             status_payload = json.loads(status_path.read_text(encoding="utf-8"))
             self.assertEqual(status_payload["run_status"], "ok")
             self.assertEqual(status_payload["robots"], "noindex, nofollow, noarchive")
+            self.assertEqual(status_payload["processed_count"], 1)
+            self.assertEqual(status_payload["processed_total_count"], 1)
+            self.assertEqual(status_payload["unprocessed_count"], 1)
+            self.assertEqual(status_payload["processing_order"], "oldest_to_newest")
+            self.assertEqual(status_payload["contract_version"], "public_permalink_status.v1")
+            self.assertEqual(status_payload["processor_mode"], "batch_oldest_to_newest")
+            self.assertEqual(status_payload["processor_queue_count"], 1)
+            self.assertEqual(status_payload["min_episodes_window"], 5)
+            self.assertEqual(status_payload["max_episodes_window"], 10)
+            self.assertEqual(status_payload["target_total_minutes"], 180.0)
+            self.assertEqual(status_payload["processed_episodes"][0]["guid"], "ok-guid")
+            self.assertEqual(status_payload["unprocessed_episodes"][0]["guid"], "failed-guid")
 
             manifest_payload = json.loads(manifest_path.read_text(encoding="utf-8"))
             self.assertIn("jack_mallers_show", manifest_payload["shows"])

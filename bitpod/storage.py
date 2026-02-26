@@ -4,6 +4,7 @@ import json
 import os
 import re
 import hashlib
+from shutil import copyfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -241,11 +242,165 @@ def _private_manifest_path() -> Path:
     return ROOT / "artifacts" / "private" / "public_permalink_manifest.json"
 
 
+def _public_max_episodes() -> int:
+    raw = os.environ.get("BITPOD_PUBLIC_MAX_EPISODES", "10").strip()
+    try:
+        parsed = int(raw)
+    except ValueError:
+        return 10
+    return max(parsed, 1)
+
+
+def _public_min_episodes() -> int:
+    raw = os.environ.get("BITPOD_PUBLIC_MIN_EPISODES", "5").strip()
+    try:
+        parsed = int(raw)
+    except ValueError:
+        return 5
+    return max(parsed, 1)
+
+
+def _public_target_total_minutes() -> float:
+    raw = os.environ.get("BITPOD_PUBLIC_TARGET_TOTAL_MINUTES", "180").strip()
+    try:
+        parsed = float(raw)
+    except ValueError:
+        return 180.0
+    return max(parsed, 1.0)
+
+
 def _write_noindex_guards(public_root: Path) -> None:
     headers_path = public_root / "_headers"
     headers_path.write_text(f"/*\n  X-Robots-Tag: {ROBOTS_POLICY}\n", encoding="utf-8")
     robots_path = public_root / "robots.txt"
     robots_path.write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
+
+
+def _parse_iso_or_min(value: str | None) -> datetime:
+    if not value:
+        return datetime.min.replace(tzinfo=timezone.utc)
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return datetime.min.replace(tzinfo=timezone.utc)
+    if parsed.tzinfo is None:
+        return parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
+
+
+def _show_episode_records(show_key: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    index_path = ROOT / "index" / "processed.json"
+    if not index_path.exists():
+        return [], []
+    try:
+        data = json.loads(index_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return [], []
+
+    processed: list[dict[str, Any]] = []
+    unprocessed: list[dict[str, Any]] = []
+    prefix = f"{show_key}::"
+    for key, payload in (data.get("episodes") or {}).items():
+        if not str(key).startswith(prefix):
+            continue
+        guid = str(key).split("::", 1)[1]
+        status = str(payload.get("status") or "")
+        published_at = payload.get("published_at")
+        if status == "ok":
+            transcript_path = Path(str(payload.get("transcript_path") or ""))
+            if transcript_path.exists():
+                duration_minutes_est = _estimate_episode_minutes(payload, transcript_path)
+                processed.append(
+                    {
+                        "guid": guid,
+                        "status": "processed",
+                        "published_at_utc": published_at,
+                        "source_url": payload.get("source_url"),
+                        "transcript_path": str(transcript_path),
+                        "duration_minutes_est": duration_minutes_est,
+                    }
+                )
+        else:
+            unprocessed.append(
+                {
+                    "guid": guid,
+                    "status": status or "unknown",
+                    "published_at_utc": published_at,
+                    "source_url": payload.get("source_url"),
+                    "failure_stage": payload.get("stage"),
+                    "failure_reason": payload.get("reason"),
+                    "updated_at_utc": payload.get("updated_at"),
+                }
+            )
+
+    processed.sort(key=lambda item: _parse_iso_or_min(item.get("published_at_utc")))
+    unprocessed.sort(key=lambda item: _parse_iso_or_min(item.get("published_at_utc")))
+    return processed, unprocessed
+
+
+def _estimate_episode_minutes(payload: dict[str, Any], transcript_path: Path) -> float:
+    segments_path = Path(str(payload.get("transcript_segments_path") or ""))
+    if segments_path.is_file():
+        max_end = 0.0
+        for line in segments_path.read_text(encoding="utf-8", errors="ignore").splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                row = json.loads(line)
+                end = float(row.get("end") or 0.0)
+            except (ValueError, TypeError, json.JSONDecodeError):
+                continue
+            if end > max_end:
+                max_end = end
+        if max_end > 0:
+            return round(max_end / 60.0, 2)
+
+    if not transcript_path.is_file():
+        return 1.0
+    text = transcript_path.read_text(encoding="utf-8", errors="ignore")
+    words = len(text.split())
+    if words <= 0:
+        return 1.0
+    # Conservative spoken-word estimate.
+    return round(max(words / 150.0, 1.0), 2)
+
+
+def _select_processed_window(processed: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    if not processed:
+        return [], {
+            "min_episodes": _public_min_episodes(),
+            "max_episodes": _public_max_episodes(),
+            "target_total_minutes": _public_target_total_minutes(),
+            "selected_count": 0,
+            "selected_total_minutes_est": 0.0,
+        }
+
+    min_episodes = _public_min_episodes()
+    max_episodes = _public_max_episodes()
+    if min_episodes > max_episodes:
+        min_episodes = max_episodes
+    target_minutes = _public_target_total_minutes()
+
+    chosen_newest_first: list[dict[str, Any]] = []
+    total_minutes = 0.0
+    for item in reversed(processed):
+        if len(chosen_newest_first) >= max_episodes:
+            break
+        chosen_newest_first.append(item)
+        total_minutes += float(item.get("duration_minutes_est") or 0.0)
+        if len(chosen_newest_first) >= min_episodes and total_minutes >= target_minutes:
+            break
+
+    selected = list(reversed(chosen_newest_first))
+    meta = {
+        "min_episodes": min_episodes,
+        "max_episodes": max_episodes,
+        "target_total_minutes": target_minutes,
+        "selected_count": len(selected),
+        "selected_total_minutes_est": round(total_minutes, 2),
+    }
+    return selected, meta
 
 
 def write_public_permalink_artifacts(
@@ -257,36 +412,64 @@ def write_public_permalink_artifacts(
     public_root = _public_permalink_root()
     show_root = public_root / permalink_id
     show_root.mkdir(parents=True, exist_ok=True)
+    episodes_root = show_root / "episodes"
+    episodes_root.mkdir(parents=True, exist_ok=True)
+    for old in episodes_root.glob("*.md"):
+        old.unlink(missing_ok=True)
     _write_noindex_guards(public_root)
 
     latest_path = show_root / "latest.md"
-    pointer_path = Path(str(status_payload.get("pointer_path") or ""))
-    if pointer_path.exists():
-        content = pointer_path.read_text(encoding="utf-8")
-        prologue = (
-            "<!--\n"
-            f"robots: {ROBOTS_POLICY}\n"
-            f"x-robots-tag: {ROBOTS_POLICY}\n"
-            "-->\n\n"
-        )
-        latest_text = prologue + content.lstrip()
-        if not latest_text.endswith("\n"):
-            latest_text += "\n"
-        latest_path.write_text(latest_text, encoding="utf-8")
+    processed, unprocessed = _show_episode_records(show_key)
+    selected_processed, window_meta = _select_processed_window(processed)
+    published_rows: list[dict[str, Any]] = []
+    for item in selected_processed:
+        src = Path(item["transcript_path"])
+        dst = episodes_root / src.name
+        copyfile(src, dst)
+        row = dict(item)
+        row["file"] = f"episodes/{dst.name}"
+        published_rows.append(row)
+
+    prologue = (
+        "<!--\n"
+        f"robots: {ROBOTS_POLICY}\n"
+        f"x-robots-tag: {ROBOTS_POLICY}\n"
+        "-->\n\n"
+    )
+    if published_rows:
+        lines = [prologue.rstrip(), "", "# Transcript Index", ""]
+        lines.append(f"- processed_total_count: `{len(processed)}`")
+        lines.append(f"- processed_published_count: `{len(published_rows)}`")
+        lines.append(f"- processing_order: `oldest_to_newest`")
+        lines.append(f"- min_episodes_window: `{window_meta['min_episodes']}`")
+        lines.append(f"- max_episodes_window: `{window_meta['max_episodes']}`")
+        lines.append(f"- target_total_minutes: `{window_meta['target_total_minutes']}`")
+        lines.append(f"- selected_total_minutes_est: `{window_meta['selected_total_minutes_est']}`")
+        lines.append(f"- unprocessed_count: `{len(unprocessed)}`")
+        lines.append("")
+        lines.append("## Processed Episodes (oldest to newest)")
+        for row in published_rows:
+            lines.append(
+                f"- {row.get('published_at_utc') or 'unknown'} | "
+                f"[{row['file']}]({row['file']}) | guid=`{row['guid']}`"
+            )
+        if unprocessed:
+            lines.extend(["", "## Unprocessed Episodes"])
+            for row in unprocessed:
+                lines.append(
+                    f"- {row.get('published_at_utc') or 'unknown'} | guid=`{row['guid']}` | "
+                    f"status=`{row.get('status')}` | stage=`{row.get('failure_stage')}`"
+                )
+        latest_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     elif not latest_path.exists():
         latest_path.write_text(
-            (
-                "<!--\n"
-                f"robots: {ROBOTS_POLICY}\n"
-                f"x-robots-tag: {ROBOTS_POLICY}\n"
-                "-->\n\n"
-                "# Unavailable\n\nLatest transcript not currently available.\n"
-            ),
+            prologue + "# Unavailable\n\nNo processed transcripts currently available.\n",
             encoding="utf-8",
         )
 
     status_path = show_root / "status.json"
     public_status = {
+        "contract_version": "public_permalink_status.v1",
         "public_id": permalink_id,
         "run_id": status_payload.get("run_id"),
         "run_status": status_payload.get("run_status"),
@@ -296,6 +479,18 @@ def write_public_permalink_artifacts(
         "updated_at_utc": now_iso(),
         "robots": ROBOTS_POLICY,
         "latest_path": "latest.md",
+        "processed_total_count": len(processed),
+        "processed_count": len(published_rows),
+        "unprocessed_count": len(unprocessed),
+        "processing_order": "oldest_to_newest",
+        "min_episodes_window": window_meta["min_episodes"],
+        "max_episodes_window": window_meta["max_episodes"],
+        "target_total_minutes": window_meta["target_total_minutes"],
+        "selected_total_minutes_est": window_meta["selected_total_minutes_est"],
+        "processor_mode": "batch_oldest_to_newest",
+        "processor_queue_count": len(published_rows),
+        "processed_episodes": published_rows,
+        "unprocessed_episodes": unprocessed,
     }
     status_path.write_text(json.dumps(public_status, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 

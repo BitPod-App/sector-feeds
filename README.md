@@ -94,6 +94,11 @@ Per-show contract (API-like surface):
 - Each show has its own stable pointer (`stable_pointer` in `shows.json`).
 - Each show has its own status artifacts (`<stable_pointer_stem>_status.json|md`).
 - Schedules can differ per show while preserving the same output contract.
+- Public permalink publish (semi-paranoid): each show gets
+  - `artifacts/public/permalinks/<opaque_id>/latest.md`
+  - `artifacts/public/permalinks/<opaque_id>/status.json`
+  - with noindex/nofollow/noarchive + `robots.txt` disallow-all.
+  - internal mapping remains private in `artifacts/private/public_permalink_manifest.json`.
 
 ## Supported Feeds (Current)
 
@@ -157,6 +162,9 @@ bash scripts/verify_show_adhoc.sh <show_key>
 bash scripts/bitpod_status.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"]
 bash scripts/bitpod_sync.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"] [--min-episode-age-minutes 180] [--trigger-cmd "<cmd>"]
 bash scripts/bitpod_verify.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"] [--gpt-feedback-file <path>] [--gpt-note "<text>"]
+
+# Deploy public permalink artifacts to Cloudflare Pages (static only):
+bash scripts/deploy_public_permalinks_pages.sh [project_name] [branch]
 
 # Cost-controlled GPT report generation from transcript:
 # default mode sends excerpt only (not full transcript)
