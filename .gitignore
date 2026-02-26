@@ -5,6 +5,7 @@ __pycache__/
 .bitpod_runtime.env
 *.egg-info/
 .DS_Store
+cache/
 .wrangler/
 artifacts/cost-meter/
 artifacts/gpt-bitreports/
