@@ -188,6 +188,9 @@ bash scripts/deploy_public_permalinks_pages.sh [project_name] [branch]
   --report-name gpt-bitreport-pods-all-YYYYMMDD-HHMMSS.md \
   --show-key jack_mallers_show \
   --full-text
+
+# Repo hygiene guard (tracked file size limits):
+bash scripts/check_repo_size.sh
 ```
 
 Timeline policy:
