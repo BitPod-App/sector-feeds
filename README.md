@@ -174,7 +174,14 @@ Timeline policy:
 - Default local timeline is `America/Managua` (no DST drift).
 - `--as-of` is optional and intended for historical debugging/replay.
 - For live-heavy YouTube sources, sync applies a default maturity guard (`--min-episode-age-minutes 180`) to avoid unfinished captures.
-- GPT bridge cost estimates are logged to `artifacts/cost-meter/bridge_cost_estimates.jsonl`.
+- GPT bridge cost estimates are logged to:
+- local: `artifacts/cost-meter/bridge_cost_estimates.jsonl`
+- shared tools source of truth: `/Users/cjarguello/bitpod-app/tools/artifacts/cost-meter/cost_events.jsonl`
+
+Shared cost summary (all repos/commands that write to tools meter):
+```bash
+/Users/cjarguello/bitpod-app/tools/costs/cost_ctl.py
+```
 
 Cadence policy:
 - Unknown-cadence shows should be checked frequently (scan model), but processing remains idempotent: if latest is already transcribed and pointer-ready, ad hoc sync skips work.

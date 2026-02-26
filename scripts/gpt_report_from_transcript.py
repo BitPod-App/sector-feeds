@@ -12,7 +12,20 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from bitpod.cost_meter import estimate_tokens_from_text, excerpt_text
+TOOLS_ROOT = Path("/Users/cjarguello/bitpod-app/tools")
+TOOLS_COSTS = TOOLS_ROOT / "costs"
+if str(TOOLS_COSTS) not in sys.path:
+    sys.path.insert(0, str(TOOLS_COSTS))
+
+try:
+    from cost_meter import append_cost_event, estimate_tokens_from_text, excerpt_text
+except Exception:  # noqa: BLE001
+    from bitpod.cost_meter import estimate_tokens_from_text, excerpt_text
+
+    def append_cost_event(meter_file: Path, event: dict[str, object]) -> None:
+        meter_file.parent.mkdir(parents=True, exist_ok=True)
+        with meter_file.open("a", encoding="utf-8") as f:
+            f.write(json.dumps({"recorded_at_utc": datetime.now(timezone.utc).isoformat(), **event}, sort_keys=True) + "\n")
 
 BRIDGE_ROOT = Path("/Users/cjarguello/bitpod-app/tools/gpt_bridge")
 
@@ -69,11 +82,11 @@ def main() -> int:
     if gpt_md:
         report_path.write_text(gpt_md.rstrip() + "\n", encoding="utf-8")
 
-    meter_dir = REPO_ROOT / "artifacts" / "cost-meter"
-    meter_dir.mkdir(parents=True, exist_ok=True)
-    meter_path = meter_dir / "bridge_cost_estimates.jsonl"
+    local_meter = REPO_ROOT / "artifacts" / "cost-meter" / "bridge_cost_estimates.jsonl"
+    shared_meter = TOOLS_ROOT / "artifacts" / "cost-meter" / "cost_events.jsonl"
     entry = {
         "at_utc": datetime.now(timezone.utc).isoformat(),
+        "source": "bitpod.gpt_report_from_transcript",
         "show_key": args.show_key,
         "transcript_path": str(transcript_path),
         "report_path": str(report_path),
@@ -84,10 +97,20 @@ def main() -> int:
         "output_tokens_est": estimate_tokens_from_text(gpt_md),
         "bridge_returncode": proc.returncode,
     }
-    with meter_path.open("a", encoding="utf-8") as f:
-        f.write(json.dumps(entry, sort_keys=True) + "\n")
+    append_cost_event(local_meter, entry)
+    append_cost_event(shared_meter, entry)
 
-    print(json.dumps({"report_path": str(report_path), "meter_path": str(meter_path), "entry": entry}, indent=2))
+    print(
+        json.dumps(
+            {
+                "report_path": str(report_path),
+                "meter_path_local": str(local_meter),
+                "meter_path_shared": str(shared_meter),
+                "entry": entry,
+            },
+            indent=2,
+        )
+    )
     if stderr.strip():
         print(stderr.strip())
     return 0 if proc.returncode == 0 and bool(gpt_md) else 1
