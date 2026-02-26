@@ -133,6 +133,9 @@ Weekly helper scripts:
 # Monday run (newest 1 episode, status artifacts always written)
 bash scripts/run_mallers_weekly.sh
 
+# Optional: include GPT report generation in weekly run
+WEEKLY_GPT_REPORT=1 bash scripts/run_mallers_weekly.sh
+
 # Tuesday verification report (writes artifacts/jack_mallers_show_weekly_report.md)
 bash scripts/report_mallers_weekly_status.sh
 
@@ -182,6 +185,16 @@ Shared cost summary (all repos/commands that write to tools meter):
 ```bash
 /Users/cjarguello/bitpod-app/tools/costs/cost_ctl.py
 ```
+
+Weekly cost guardrails (automation-friendly):
+- `run_show_weekly.sh` executes cost guard checks when caps are set via env.
+- Defaults are auto-loaded from `scripts/bitpod_budget.env` (or optional override file `.bitpod_budget.env` at repo root).
+- Supported env vars:
+- `COST_SOURCE` (example: `bitpod.gpt_report_from_transcript`)
+- `COST_WINDOW_HOURS` (default from tools CLI is 24)
+- `COST_RUN_WARN`, `COST_RUN_FAIL`
+- `COST_DAILY_WARN`, `COST_DAILY_FAIL`
+- `COST_WARN_EXIT_0=1` to keep warning status non-blocking
 
 Cadence policy:
 - Unknown-cadence shows should be checked frequently (scan model), but processing remains idempotent: if latest is already transcribed and pointer-ready, ad hoc sync skips work.
