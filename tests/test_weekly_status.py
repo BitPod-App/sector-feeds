@@ -94,6 +94,7 @@ class WeeklyStatusTests(unittest.TestCase):
             payload = json.loads(status_json.read_text(encoding="utf-8"))
             self.assertEqual(payload["run_status"], "failed")
             self.assertFalse(payload["included_in_pointer"])
+            self.assertFalse(payload["ready_via_permalink"])
             self.assertEqual(payload["failure_stage"], "transcription")
 
 

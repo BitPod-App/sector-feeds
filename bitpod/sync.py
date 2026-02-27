@@ -270,6 +270,7 @@ def sync_show(
         "pointer_updated_at_utc": None,
         "plain_artifact_path": None,
         "segments_artifact_path": None,
+        "ready_via_permalink": False,
         "public_permalink_id": None,
         "public_permalink_latest_path": None,
         "public_permalink_status_path": None,
@@ -432,10 +433,12 @@ def sync_show(
     if latest_episode_succeeded:
         _refresh_stable_pointer(show, index)
         status_payload["included_in_pointer"] = True
+        status_payload["ready_via_permalink"] = True
         status_payload["pointer_updated_at_utc"] = now_iso()
         status_payload["run_status"] = "ok"
     else:
         status_payload["included_in_pointer"] = False
+        status_payload["ready_via_permalink"] = False
         status_payload["run_status"] = "failed" if stats["failed"] > 0 or selected else "failed"
         if not status_payload["failure_stage"]:
             status_payload["failure_stage"] = "sync"
