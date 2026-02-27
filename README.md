@@ -153,6 +153,11 @@ bash scripts/report_mallers_weekly_status.sh
 bash scripts/run_show_weekly.sh <show_key>
 bash scripts/report_show_weekly_status.sh <show_key>
 
+# Deterministic weekly critical bundle (10-metric gate input):
+python3 scripts/generate_weekly_critical_bundle.py \
+  --report-md ../artifacts/recovery/2026-02-27/weekly_btc_strict_single_pass_7_artifact.md \
+  --output-json artifacts/private/weekly_bundles/weekly_critical_bundle.json
+
 # Ad hoc mode:
 # - sync only if latest selected episode is not already processed
 bash scripts/run_show_adhoc.sh <show_key>
