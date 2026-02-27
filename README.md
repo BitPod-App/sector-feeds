@@ -227,6 +227,8 @@ Weekly cost guardrails (automation-friendly):
 Governance metadata (optional, status artifact only):
 - Sync can embed spec-lock/provenance metadata into `<stable_pointer_stem>_status.json|md`.
 - Default tuple: `origin_actor=OTHER`, `authority_state=PROPOSAL`.
+- Fast setup: `cp .bitpod_runtime.env.example .bitpod_runtime.env` and edit values.
+- Weekly scripts auto-load `.bitpod_runtime.env` when present.
 - Optional env vars:
 - `BITPOD_ORIGIN_ACTOR` (`CJ|GPT|CODEX|TAYLOR|HUMAN_TEAM|OTHER`)
 - `BITPOD_AUTHORITY_STATE` (`PROPOSAL|CJ_ENDORSED|TEAM_ENDORSED|CJ_OVERRIDE`)
