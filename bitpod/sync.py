@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import logging
+import os
 import re
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
@@ -22,6 +23,8 @@ SOURCE_RANK = {
     "unknown": 5,
 }
 LIVE_YOUTUBE_TITLE_PATTERN = re.compile(r"\b(live|upcoming|premiere)\b", re.IGNORECASE)
+VALID_ORIGIN_ACTORS = {"CJ", "GPT", "CODEX", "TAYLOR", "HUMAN_TEAM", "OTHER"}
+VALID_AUTHORITY_STATES = {"PROPOSAL", "CJ_ENDORSED", "TEAM_ENDORSED", "CJ_OVERRIDE"}
 
 
 @dataclass
@@ -99,6 +102,70 @@ def _status_basename(show: dict[str, Any]) -> str:
     stable_name = _stable_pointer_name(show)
     stem = Path(stable_name).stem
     return f"{stem}_status"
+
+
+def _csv_env(name: str) -> list[str]:
+    raw = os.environ.get(name, "").strip()
+    if not raw:
+        return []
+    return [item.strip() for item in raw.split(",") if item.strip()]
+
+
+def _normalized_origin_actor() -> str:
+    raw = os.environ.get("BITPOD_ORIGIN_ACTOR", "OTHER").strip().upper()
+    return raw if raw in VALID_ORIGIN_ACTORS else "OTHER"
+
+
+def _normalized_authority_state() -> str:
+    raw = os.environ.get("BITPOD_AUTHORITY_STATE", "PROPOSAL").strip().upper()
+    return raw if raw in VALID_AUTHORITY_STATES else "PROPOSAL"
+
+
+def _governance_context() -> dict[str, Any]:
+    origin_actor = _normalized_origin_actor()
+    authority_state = _normalized_authority_state()
+    baseline_refs = _csv_env("BITPOD_BASELINE_REFS")
+    spec_lock = {
+        "original_ask": os.environ.get("BITPOD_SPEC_LOCK_ORIGINAL_ASK", "").strip() or None,
+        "success_criteria": _csv_env("BITPOD_SPEC_LOCK_SUCCESS_CRITERIA"),
+        "out_of_scope": _csv_env("BITPOD_SPEC_LOCK_OUT_OF_SCOPE"),
+        "expansion_gate": os.environ.get("BITPOD_EXPANSION_GATE", "BLOCKED").strip() or "BLOCKED",
+        "baseline_refs": baseline_refs,
+    }
+    override_conflict = str(os.environ.get("BITPOD_OVERRIDE_CONFLICT", "0")).strip().lower() in {
+        "1",
+        "true",
+        "yes",
+        "on",
+    }
+    override_conflict_note = os.environ.get("BITPOD_OVERRIDE_CONFLICT_NOTE", "").strip()
+    override_impacted_decision = os.environ.get("BITPOD_OVERRIDE_IMPACTED_DECISION", "").strip()
+    override_broadcast_note = os.environ.get("BITPOD_OVERRIDE_BROADCAST_NOTE", "").strip()
+    override_required = authority_state == "CJ_OVERRIDE" and (override_conflict or bool(baseline_refs))
+    override_missing = []
+    if override_required:
+        if not override_conflict_note:
+            override_missing.append("conflict_note")
+        if not override_impacted_decision:
+            override_missing.append("impacted_decision")
+        if not override_broadcast_note:
+            override_missing.append("broadcast_update_note")
+    return {
+        "provenance_tuple": {
+            "origin_actor": origin_actor,
+            "authority_state": authority_state,
+        },
+        "spec_lock": spec_lock,
+        "override_guard": {
+            "required": override_required,
+            "complete": len(override_missing) == 0,
+            "conflict": override_conflict,
+            "conflict_note": override_conflict_note or None,
+            "impacted_decision_ref": override_impacted_decision or None,
+            "broadcast_update_note": override_broadcast_note or None,
+            "missing_fields": override_missing,
+        },
+    }
 
 
 def get_feed_urls(show: dict[str, Any]) -> list[str]:
@@ -210,6 +277,7 @@ def sync_show(
         "failure_stage": None,
         "failure_reason": None,
         "suggested_next_action": None,
+        "governance": _governance_context(),
     }
 
     if not feed_urls:

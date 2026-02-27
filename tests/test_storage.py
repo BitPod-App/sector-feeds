@@ -59,6 +59,15 @@ class StorageTests(unittest.TestCase):
                     "included_in_pointer": False,
                     "failure_stage": "transcription",
                     "failure_reason": "quota exceeded",
+                    "governance": {
+                        "provenance_tuple": {"origin_actor": "CJ", "authority_state": "CJ_OVERRIDE"},
+                        "spec_lock": {"expansion_gate": "BLOCKED"},
+                        "override_guard": {
+                            "required": True,
+                            "complete": False,
+                            "missing_fields": ["conflict_note"],
+                        },
+                    },
                 }
                 json_path, md_path = write_run_status_artifacts(show_key="jack_mallers_show", payload=payload)
                 expected_json, expected_md = status_paths("jack_mallers_show")
@@ -69,6 +78,10 @@ class StorageTests(unittest.TestCase):
             self.assertEqual(md_path, expected_md)
             self.assertTrue(json_path.exists())
             self.assertTrue(md_path.exists())
+            md_text = md_path.read_text(encoding="utf-8")
+            self.assertIn("## Governance", md_text)
+            self.assertIn("origin_actor: `CJ`", md_text)
+            self.assertIn("authority_state: `CJ_OVERRIDE`", md_text)
 
     def test_write_gpt_review_request(self) -> None:
         with TemporaryDirectory() as tmp:

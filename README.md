@@ -224,6 +224,23 @@ Weekly cost guardrails (automation-friendly):
 - `COST_DAILY_WARN`, `COST_DAILY_FAIL`
 - `COST_WARN_EXIT_0=1` to keep warning status non-blocking
 
+Governance metadata (optional, status artifact only):
+- Sync can embed spec-lock/provenance metadata into `<stable_pointer_stem>_status.json|md`.
+- Default tuple: `origin_actor=OTHER`, `authority_state=PROPOSAL`.
+- Optional env vars:
+- `BITPOD_ORIGIN_ACTOR` (`CJ|GPT|CODEX|TAYLOR|HUMAN_TEAM|OTHER`)
+- `BITPOD_AUTHORITY_STATE` (`PROPOSAL|CJ_ENDORSED|TEAM_ENDORSED|CJ_OVERRIDE`)
+- `BITPOD_EXPANSION_GATE` (default `BLOCKED`)
+- `BITPOD_SPEC_LOCK_ORIGINAL_ASK`
+- `BITPOD_SPEC_LOCK_SUCCESS_CRITERIA` (comma-separated)
+- `BITPOD_SPEC_LOCK_OUT_OF_SCOPE` (comma-separated)
+- `BITPOD_BASELINE_REFS` (comma-separated)
+- Soft override guard inputs (non-blocking visibility):
+- `BITPOD_OVERRIDE_CONFLICT` (`1/true/yes/on`)
+- `BITPOD_OVERRIDE_CONFLICT_NOTE`
+- `BITPOD_OVERRIDE_IMPACTED_DECISION`
+- `BITPOD_OVERRIDE_BROADCAST_NOTE`
+
 Cadence policy:
 - Unknown-cadence shows should be checked frequently (scan model), but processing remains idempotent: if latest is already transcribed and pointer-ready, ad hoc sync skips work.
 

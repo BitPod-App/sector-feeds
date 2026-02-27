@@ -156,6 +156,20 @@ def write_run_status_artifacts(
     lines.append(f"- plain_artifact_path: `{payload.get('plain_artifact_path', '')}`")
     lines.append(f"- segments_artifact_path: `{payload.get('segments_artifact_path', '')}`")
 
+    governance = payload.get("governance")
+    if isinstance(governance, dict):
+        provenance = governance.get("provenance_tuple") or {}
+        spec_lock = governance.get("spec_lock") or {}
+        override_guard = governance.get("override_guard") or {}
+        lines.extend(["", "## Governance"])
+        lines.append(f"- origin_actor: `{provenance.get('origin_actor', '')}`")
+        lines.append(f"- authority_state: `{provenance.get('authority_state', '')}`")
+        lines.append(f"- expansion_gate: `{spec_lock.get('expansion_gate', 'BLOCKED')}`")
+        lines.append(f"- override_guard_required: `{bool(override_guard.get('required'))}`")
+        lines.append(f"- override_guard_complete: `{bool(override_guard.get('complete'))}`")
+        missing = override_guard.get("missing_fields") or []
+        lines.append(f"- override_guard_missing_fields: `{', '.join(missing) if missing else ''}`")
+
     failure_stage = payload.get("failure_stage")
     failure_reason = payload.get("failure_reason")
     if failure_stage or failure_reason:
