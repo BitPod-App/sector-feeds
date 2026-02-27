@@ -100,8 +100,8 @@ Per-show contract (API-like surface):
 - Each show has its own status artifacts (`<stable_pointer_stem>_status.json|md`).
 - Schedules can differ per show while preserving the same output contract.
 - Public permalink publish (semi-paranoid): each show gets
-  - `artifacts/public/antenna-sector-feeds/<opaque_id>/latest.md`
-  - `artifacts/public/antenna-sector-feeds/<opaque_id>/status.json`
+  - `artifacts/public/permalinks/<opaque_id>/latest.md`
+  - `artifacts/public/permalinks/<opaque_id>/status.json`
   - with noindex/nofollow/noarchive + `robots.txt` disallow-all.
   - internal mapping remains private in `artifacts/private/public_permalink_manifest.json`.
 

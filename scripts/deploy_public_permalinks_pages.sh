@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-DEPLOY_DIR="$REPO_ROOT/artifacts/public/antenna-sector-feeds"
+DEPLOY_DIR="$REPO_ROOT/artifacts/public/permalinks"
 PROJECT_NAME="${1:-bitpod-public-permalinks}"
 BRANCH_NAME="${2:-main}"
 
