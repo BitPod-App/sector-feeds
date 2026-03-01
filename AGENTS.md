@@ -89,3 +89,13 @@ export PATH="/Users/cjarguello/bitpod-app/tools/taylor/bin:$PATH"
 - Default merge gate: LOCAL QA artifacts are required for critical surface changes.
 - BRIDGE QA is additive evidence when available, but not required for merge.
 - Missing LOCAL QA artifacts on critical surfaces must fail closed.
+
+## Context Preservation FYI (ExtensionGPT + Taylor)
+
+For future historical continuity, include concise context pointers in PR/commit text when intake gate policy/drift behavior changes:
+- policy path: `milestones/m5_policy.json`
+- daily status artifact: `artifacts/coordination/intake_gate_daily_status.json`
+- daily drift report: `artifacts/coordination/intake_gate_daily_drift_report.md`
+- retrospective learnings: `docs/runbooks/intake_gate_retrospective_learnings.md`
+
+This is an FYI context pattern, not a merge gate.

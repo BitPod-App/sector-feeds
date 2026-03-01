@@ -46,3 +46,4 @@ List paths or files produced/changed (for example transcripts, indexes, config).
 - [ ] Branch naming follows `codex/<type>/<scope>-<short-description>`
 - [ ] PR title follows Conventional Commit format
 - [ ] No unrelated file noise included (for example `.DS_Store`)
+- [ ] Did this change alter operational truth? If yes, update runbook + state/policy file + tests in the same PR.

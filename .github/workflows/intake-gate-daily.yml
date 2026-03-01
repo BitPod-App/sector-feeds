@@ -1,0 +1,51 @@
+name: Intake Gate Daily
+
+on:
+  schedule:
+    - cron: "15 14 * * *"
+  workflow_dispatch:
+
+jobs:
+  intake-gate-daily:
+    if: github.ref == 'refs/heads/main' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    env:
+      SHOW_KEY: jack_mallers_show
+      DECK_ID: deck_weekly_btc
+      INTAKE_JSON: ${{ vars.BITPOD_INTAKE_JSON_PATH || '../bitregime-core/artifacts/intake/jack_mallers_show_intake.json' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install --upgrade pip && pip install -e .
+
+      - name: Taylor runtime keepalive (non-blocking)
+        continue-on-error: true
+        run: bash scripts/taylor_runtime_keepalive.sh
+
+      - name: Run intake gate daily (v2 default)
+        run: bash scripts/run_intake_gate_daily.sh "$INTAKE_JSON" "$DECK_ID"
+
+      - name: Upload intake gate artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: intake-gate-daily-${{ github.run_id }}
+          retention-days: 30
+          if-no-files-found: warn
+          path: |
+            artifacts/coordination/intake_gate_daily_status.json
+            artifacts/coordination/intake_gate_daily_summary.md
+            artifacts/coordination/m5_tracker.md
+            artifacts/coordination/intake_gate_daily_log.jsonl
+            artifacts/coordination/intake_gate_daily_drift_report.json
+            artifacts/coordination/intake_gate_daily_drift_report.md
+            artifacts/coordination/intake_gate_daily_v2_default.json
+            artifacts/coordination/intake_gate_daily_v1_rollback_diagnostic.json
+            artifacts/coordination/taylor_runtime_keepalive.json
