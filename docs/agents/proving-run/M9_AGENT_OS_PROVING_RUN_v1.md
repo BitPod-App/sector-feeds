@@ -45,6 +45,9 @@ Minimum files:
 - `retrospective_<context>_<YYYY-MM-DD>.md` (what to change)
 - `artifact_manifest.json` (maps artifact roles to actual file names)
 
+Artifact metadata:
+- Each generated `.md` artifact starts with a YAML metadata block including `repo`, `run_id`, `context`, `date_utc`, and `artifact_kind`.
+
 ## Workflow (strict order)
 1. Taylor creates/updates Linear issue using best-practice baseline.
 2. Taylor writes `plan_<context>_<YYYY-MM-DD>.md` and dispatch details.

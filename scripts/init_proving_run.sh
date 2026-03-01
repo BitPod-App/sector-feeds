@@ -88,6 +88,7 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+REPO_NAME="$(basename "$REPO_ROOT")"
 TEMPLATE_DIR="$REPO_ROOT/docs/agents/proving-run/templates"
 RUN_DIR="$REPO_ROOT/docs/agents/runs/$RUN_ID"
 MANIFEST_PATH="$RUN_DIR/artifact_manifest.json"
@@ -140,25 +141,40 @@ RETRO_FILE="$(artifact_name retrospective)"
 copy_if_missing() {
   local template_name="$1"
   local dst="$2"
+  local kind="$3"
   local src="$TEMPLATE_DIR/$template_name"
 
   if [ -e "$dst" ]; then
     echo "SKIP existing: ${dst#$REPO_ROOT/}"
   else
-    cp "$src" "$dst"
+    {
+      cat <<EOF
+---
+repo: $REPO_NAME
+run_id: $RUN_ID
+context: $CONTEXT_SLUG
+date_utc: $DATE_UTC
+artifact_kind: $kind
+artifact_file: $(basename "$dst")
+---
+
+EOF
+      cat "$src"
+    } > "$dst"
     echo "CREATE: ${dst#$REPO_ROOT/}"
   fi
 }
 
-copy_if_missing "plan_template_v1.md" "$RUN_DIR/$PLAN_FILE"
-copy_if_missing "execution_notes_template_v1.md" "$RUN_DIR/$EXEC_FILE"
-copy_if_missing "verification_report_template_v1.md" "$RUN_DIR/$QA_FILE"
-copy_if_missing "cj_gate_decision_template_v1.md" "$RUN_DIR/$DECISION_FILE"
-copy_if_missing "result_template_v1.md" "$RUN_DIR/$SUMMARY_FILE"
-copy_if_missing "retrospective_template_v1.md" "$RUN_DIR/$RETRO_FILE"
+copy_if_missing "plan_template_v1.md" "$RUN_DIR/$PLAN_FILE" "plan"
+copy_if_missing "execution_notes_template_v1.md" "$RUN_DIR/$EXEC_FILE" "execution_notes"
+copy_if_missing "verification_report_template_v1.md" "$RUN_DIR/$QA_FILE" "qa_report"
+copy_if_missing "cj_gate_decision_template_v1.md" "$RUN_DIR/$DECISION_FILE" "final_decision"
+copy_if_missing "result_template_v1.md" "$RUN_DIR/$SUMMARY_FILE" "ticket_summary"
+copy_if_missing "retrospective_template_v1.md" "$RUN_DIR/$RETRO_FILE" "retrospective"
 
 cat > "$MANIFEST_PATH" <<MANIFEST
 {
+  "repo": "$REPO_NAME",
   "run_id": "$RUN_ID",
   "context": "$CONTEXT_SLUG",
   "date_utc": "$DATE_UTC",
