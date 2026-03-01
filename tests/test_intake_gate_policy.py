@@ -4,7 +4,14 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from bitpod.intake_gate_policy import close_ready, evaluate_drift, guardrail, load_policy, validate_status_contract
+from bitpod.intake_gate_policy import (
+    close_ready,
+    evaluate_drift,
+    guardrail,
+    load_policy,
+    milestone_close_ready_key,
+    validate_status_contract,
+)
 
 
 class IntakeGatePolicyTests(unittest.TestCase):
@@ -59,6 +66,7 @@ class IntakeGatePolicyTests(unittest.TestCase):
             "failure_reason_categories": [],
             "consecutive_failures": 0,
             "consecutive_greens": 4,
+            "milestone_close_ready": True,
             "m5_close_ready_3_consecutive_greens": True,
             "rollback_guardrail_triggered": False,
             "escalation": "none",
@@ -73,6 +81,16 @@ class IntakeGatePolicyTests(unittest.TestCase):
         record["required_validation_target"] = "bitregime_core_intake.v1"
         drift = evaluate_drift(policy, record)
         self.assertFalse(drift["drift_ok"])
+
+    def test_milestone_close_ready_key(self) -> None:
+        self.assertEqual(
+            milestone_close_ready_key("M-9", 3),
+            "m9_close_ready_3_consecutive_greens",
+        )
+        self.assertEqual(
+            milestone_close_ready_key("Milestone Alpha", 4),
+            "milestonealpha_close_ready_4_consecutive_greens",
+        )
 
 
 if __name__ == "__main__":
