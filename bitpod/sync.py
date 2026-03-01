@@ -9,7 +9,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
-from bitpod.indexer import episode_key, load_processed, now_iso, save_processed
+from bitpod.indexer import canonical_episode_id, episode_key, load_processed, now_iso, save_processed
 from bitpod.paths import ROOT, TRANSCRIPTS_ROOT
 
 LOGGER = logging.getLogger(__name__)
@@ -37,8 +37,59 @@ class ProcessingError(RuntimeError):
 
 
 def _mark(index: dict[str, Any], key: str, status: str, **kwargs: Any) -> None:
-    payload = {"status": status, "updated_at": now_iso(), **kwargs}
+    sector_feed_id = str(kwargs.pop("sector_feed_id", "") or "").strip()
+    feed_episode_id = str(kwargs.pop("feed_episode_id", "") or kwargs.pop("source_episode_id", "") or "").strip()
+    if not (sector_feed_id and feed_episode_id):
+        parts = str(key).split("::", 1)
+        if len(parts) == 2:
+            sector_feed_id = sector_feed_id or parts[0]
+            feed_episode_id = feed_episode_id or parts[1]
+    payload = {
+        "status": status,
+        "updated_at": now_iso(),
+        "sector_feed_id": sector_feed_id,
+        "feed_episode_id": feed_episode_id,
+        # Back-compat alias for older consumers.
+        "source_episode_id": feed_episode_id,
+        "canonical_episode_id": canonical_episode_id(sector_feed_id, feed_episode_id)
+        if sector_feed_id and feed_episode_id
+        else None,
+        **kwargs,
+    }
     index["episodes"][key] = payload
+
+
+# Future policy hook (disabled): retirement for persistent non-membership.
+# -----------------------------------------------------------------------------
+# Context:
+# - A YouTube video can be removed from a selected playlist after ingest.
+# - We may eventually want to remove stale episodes from active windows.
+#
+# Suggested lightweight policy (not active yet):
+# 1) Keep ingest-time truth for audit/history.
+# 2) Track membership checks over time:
+#    - membership_current: bool
+#    - membership_false_streak: int
+#    - membership_last_checked_at_utc: str
+# 3) Retire only after sustained absence:
+#    - if membership_current is False for >= RETIRE_AFTER_DAYS
+#      and membership_false_streak >= RETIRE_AFTER_CHECKS
+#      then set:
+#         - retired_from_active_window = True
+#         - retired_reason = "playlist_membership_stale"
+#         - retired_at_utc = now_iso()
+#
+# Example (commented-out pseudo logic):
+#
+# RETIRE_AFTER_DAYS = 14
+# RETIRE_AFTER_CHECKS = 4
+#
+# if payload.get("membership_current") is False:
+#     if payload.get("membership_false_streak", 0) >= RETIRE_AFTER_CHECKS:
+#         last_checked = _parse_iso(payload.get("membership_last_checked_at_utc"))
+#         if (datetime.now(timezone.utc) - last_checked).days >= RETIRE_AFTER_DAYS:
+#             payload["retired_from_active_window"] = True
+# -----------------------------------------------------------------------------
 
 
 def _source_rank(source_type: str) -> int:
@@ -88,6 +139,39 @@ def _sector_tags(show: dict[str, Any]) -> list[str]:
         seen.add(key)
         deduped.append(tag)
     return deduped
+
+
+def _format_tags(show: dict[str, Any]) -> list[str]:
+    tags: list[str] = []
+    raw = show.get("format_tags")
+    if isinstance(raw, list):
+        tags.extend(str(item).strip() for item in raw if str(item).strip())
+    elif isinstance(raw, str) and raw.strip():
+        tags.append(raw.strip())
+    if not tags:
+        tags = ["podcast"]
+    deduped: list[str] = []
+    seen: set[str] = set()
+    for tag in tags:
+        key = tag.lower()
+        if key in seen:
+            continue
+        seen.add(key)
+        deduped.append(tag)
+    return deduped
+
+
+def _source_platform_tags(show: dict[str, Any]) -> list[str]:
+    feeds = show.get("feeds")
+    out: list[str] = []
+    if isinstance(feeds, dict):
+        for key in feeds:
+            k = str(key).strip().lower()
+            if k and k not in out:
+                out.append(k)
+    if not out:
+        out = ["rss"]
+    return out
 
 
 def _is_live_like_youtube_episode(episode: Any) -> bool:
@@ -253,7 +337,13 @@ def sync_show(
     status_basename = _status_basename(show)
     status_payload: dict[str, Any] = {
         "show_key": show_key,
+        "sector_feed_id": show_key,
         "sector_tags": _sector_tags(show),
+        "format_tags": _format_tags(show),
+        "source_platform_tags": _source_platform_tags(show),
+        # Discovery model: series/playlist/feed is the selectable unit, not whole channel.
+        "series_is_feed_unit": True,
+        "feed_unit_type": "series_or_playlist_or_feed",
         "run_id": run_id,
         "run_started_at_utc": run_started_at,
         "run_finished_at_utc": None,
@@ -272,8 +362,11 @@ def sync_show(
         "segments_artifact_path": None,
         "ready_via_permalink": False,
         "public_permalink_id": None,
+        "public_permalink_intake_path": None,
+        "public_permalink_transcript_path": None,
         "public_permalink_latest_path": None,
         "public_permalink_status_path": None,
+        "public_permalink_discovery_path": None,
         "public_permalink_manifest_path": None,
         "failure_stage": None,
         "failure_reason": None,
@@ -301,6 +394,8 @@ def sync_show(
         status_payload["gpt_review_request_path"] = str(review_path)
         public_paths = write_public_permalink_artifacts(show_key=show_key, status_payload=status_payload)
         status_payload.update(public_paths)
+        review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
+        status_payload["gpt_review_request_path"] = str(review_path)
         write_run_status_artifacts(
             show_key=show_key,
             payload=status_payload,
@@ -468,6 +563,8 @@ def sync_show(
     status_payload["gpt_review_request_path"] = str(review_path)
     public_paths = write_public_permalink_artifacts(show_key=show_key, status_payload=status_payload)
     status_payload.update(public_paths)
+    review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
+    status_payload["gpt_review_request_path"] = str(review_path)
     # Persist paths in JSON status too.
     status_json_path, status_md_path = write_run_status_artifacts(
         show_key=show_key,

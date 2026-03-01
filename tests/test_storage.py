@@ -97,6 +97,7 @@ class StorageTests(unittest.TestCase):
                     "failure_stage": "transcription",
                     "failure_reason": "quota exceeded",
                     "pointer_path": "transcripts/jack_mallers_show/jack_mallers.md",
+                    "public_permalink_transcript_url": "https://bitpod-public-permalinks.pages.dev/abc123/transcript.md",
                 }
                 review_path = write_gpt_review_request(
                     show_key="jack_mallers_show",
@@ -107,6 +108,9 @@ class StorageTests(unittest.TestCase):
                 storage_module.TRANSCRIPTS_ROOT = original_root
 
             self.assertTrue(review_path.exists())
+            review_text = review_path.read_text(encoding="utf-8")
+            self.assertIn("preferred_gpt_input_public_transcript_url", review_text)
+            self.assertIn("https://bitpod-public-permalinks.pages.dev/abc123/transcript.md", review_text)
 
     def test_write_public_permalink_artifacts(self) -> None:
         with TemporaryDirectory() as tmp:
@@ -170,10 +174,16 @@ class StorageTests(unittest.TestCase):
             self.assertNotIn("jack_mallers_show", first["public_permalink_latest_path"])
 
             latest_path = Path(first["public_permalink_latest_path"])
+            transcript_path = Path(first["public_permalink_transcript_path"])
+            intake_path = Path(first["public_permalink_intake_path"])
             status_path = Path(first["public_permalink_status_path"])
+            discovery_path = Path(first["public_permalink_discovery_path"])
             manifest_path = Path(first["public_permalink_manifest_path"])
             self.assertTrue(latest_path.exists())
+            self.assertTrue(transcript_path.exists())
+            self.assertTrue(intake_path.exists())
             self.assertTrue(status_path.exists())
+            self.assertTrue(discovery_path.exists())
             self.assertTrue(manifest_path.exists())
 
             latest_text = latest_path.read_text(encoding="utf-8")
@@ -182,27 +192,78 @@ class StorageTests(unittest.TestCase):
             self.assertIn("episodes/2026-02-24__episode.md", latest_text)
             self.assertIn("Unprocessed Episodes", latest_text)
             self.assertIn("processing_order: `oldest_to_newest`", latest_text)
+            intake_text = intake_path.read_text(encoding="utf-8")
+            self.assertIn("# Transcript Intake", intake_text)
+            self.assertIn("[discovery.json](discovery.json)", intake_text)
+            self.assertIn("[transcript.md](transcript.md)", intake_text)
+            transcript_text = transcript_path.read_text(encoding="utf-8")
+            self.assertIn("# Episode", transcript_text)
 
             status_payload = json.loads(status_path.read_text(encoding="utf-8"))
             self.assertEqual(status_payload["run_status"], "ok")
             self.assertEqual(status_payload["robots"], "noindex, nofollow, noarchive")
             self.assertEqual(status_payload["sector_tags"], ["Bitcoiners"])
+            self.assertEqual(status_payload["format_tags"], [])
+            self.assertEqual(status_payload["source_platform_tags"], [])
+            self.assertEqual(status_payload["sector_feed_id"], "jack_mallers_show")
+            self.assertEqual(status_payload["show_key"], "jack_mallers_show")
+            self.assertTrue(status_payload["series_is_feed_unit"])
+            self.assertEqual(status_payload["feed_unit_type"], "series_or_playlist_or_feed")
+            self.assertEqual(status_payload["intake_path"], "intake.md")
+            self.assertEqual(status_payload["transcript_path"], "transcript.md")
             self.assertEqual(status_payload["processed_count"], 1)
             self.assertEqual(status_payload["processed_total_count"], 1)
             self.assertEqual(status_payload["unprocessed_count"], 1)
             self.assertEqual(status_payload["processing_order"], "oldest_to_newest")
+            self.assertEqual(status_payload["window_profile"], "short_transcript_profile")
             self.assertEqual(status_payload["contract_version"], "public_permalink_status.v1")
             self.assertEqual(status_payload["processor_mode"], "batch_oldest_to_newest")
             self.assertEqual(status_payload["processor_queue_count"], 1)
             self.assertEqual(status_payload["min_episodes_window"], 5)
             self.assertEqual(status_payload["max_episodes_window"], 10)
+            self.assertEqual(status_payload["long_transcript_threshold_chars"], 18000)
             self.assertEqual(status_payload["target_total_minutes"], 180.0)
             self.assertEqual(status_payload["processed_episodes"][0]["guid"], "ok-guid")
+            self.assertEqual(status_payload["processed_episodes"][0]["feed_episode_id"], "ok-guid")
+            self.assertTrue(status_payload["processed_episodes"][0]["canonical_episode_id"])
+            self.assertEqual(
+                status_payload["processed_episodes"][0]["canonical_video_url"],
+                "https://example.com/ok",
+            )
+            self.assertEqual(
+                status_payload["processed_episodes"][0]["playlist_context_url"],
+                "https://example.com/ok",
+            )
             self.assertEqual(status_payload["unprocessed_episodes"][0]["guid"], "failed-guid")
+            self.assertIn("processed_episode_ids", status_payload)
+            self.assertIn("unprocessed_episode_ids", status_payload)
+
+            discovery_payload = json.loads(discovery_path.read_text(encoding="utf-8"))
+            self.assertEqual(discovery_payload["contract_version"], "public_permalink_discovery.v1")
+            self.assertEqual(discovery_payload["sector_feed_id"], "jack_mallers_show")
+            self.assertTrue(discovery_payload["series_is_feed_unit"])
+            self.assertEqual(discovery_payload["feed_unit_type"], "series_or_playlist_or_feed")
+            self.assertEqual(discovery_payload["entrypoints"]["intake_md"], "intake.md")
+            self.assertEqual(discovery_payload["entrypoints"]["transcript_md"], "transcript.md")
+            self.assertEqual(discovery_payload["entrypoints"]["latest_md"], "latest.md")
+            self.assertIn("episodes/2026-02-24__episode.md", discovery_payload["published_episode_files"])
+            self.assertIn("ok-guid", discovery_payload["processed_episode_ids"])
 
             manifest_payload = json.loads(manifest_path.read_text(encoding="utf-8"))
             self.assertIn("jack_mallers_show", manifest_payload["shows"])
             self.assertEqual(manifest_payload["shows"]["jack_mallers_show"]["sector_tags"], ["Bitcoiners"])
+            self.assertEqual(manifest_payload["shows"]["jack_mallers_show"]["format_tags"], [])
+            self.assertEqual(manifest_payload["shows"]["jack_mallers_show"]["source_platform_tags"], [])
+            self.assertTrue(manifest_payload["shows"]["jack_mallers_show"]["series_is_feed_unit"])
+            self.assertIn("intake_md_path", manifest_payload["shows"]["jack_mallers_show"])
+            self.assertEqual(
+                first["public_permalink_transcript_url"],
+                f"https://bitpod-public-permalinks.pages.dev/{first['public_permalink_id']}/transcript.md",
+            )
+            self.assertEqual(
+                first["public_permalink_status_url"],
+                f"https://bitpod-public-permalinks.pages.dev/{first['public_permalink_id']}/status.json",
+            )
 
 
 if __name__ == "__main__":
