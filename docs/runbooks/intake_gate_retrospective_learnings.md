@@ -32,3 +32,6 @@ This keeps retrospectives clearly distinguishable from other runbooks/learning n
 - Keep entries concise and evidence-first.
 - Do not duplicate full logs; link to generated daily artifacts.
 - For now (single engineer), `owner_context` should be `single_engineer_mode`. Add explicit owner only when team rotation exists.
+- For quick capture during execution, use the flag queue command:
+  - `bash scripts/flag_retro_item.sh --note "<item>" --scope "intake_gate" --source "manual"`
+  - Then process queued items in the next retrospective meeting.
