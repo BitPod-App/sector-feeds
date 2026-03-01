@@ -1,3 +1,12 @@
+---
+repo: bitpod
+run_id: M9-PROVING-RUN-003
+context: i22p23
+date_utc: 2026-03-01
+artifact_kind: execution_notes
+artifact_file: execution_notes_i22p23_2026-03-01.md
+---
+
 # execution_notes_i22p23_2026-03-01.md
 
 ## What was done
