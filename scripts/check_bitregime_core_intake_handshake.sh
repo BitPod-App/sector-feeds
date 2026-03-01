@@ -62,6 +62,7 @@ enable_v2_parallel_gate = (os.environ.get("BITPOD_INTAKE_ENABLE_V2_PARALLEL_GATE
 
 errors: list[str] = []
 parallel_v2_errors: list[str] = []
+parallel_v2_ran = False
 payload = {}
 if not intake_path.exists():
     errors.append(f"missing_file:intake_json:{intake_path}")
@@ -71,6 +72,7 @@ else:
         errors.append(f"invalid_json:intake_json:{intake_path}")
     errors.extend(validate_payload(payload, contract_version=validation_target))
     if enable_v2_parallel_gate and validation_target != CONTRACT_VERSION_V2:
+        parallel_v2_ran = True
         parallel_v2_errors = validate_payload(payload, contract_version=CONTRACT_VERSION_V2)
 
 pending = pending_for_deck(payload, deck_id=deck_id) if not errors else []
@@ -87,8 +89,8 @@ out = {
     "contract_ok": not errors,
     "contract_errors": sorted(errors),
     "v2_parallel_gate_enabled": enable_v2_parallel_gate,
-    "v2_parallel_contract_ok": not parallel_v2_errors if enable_v2_parallel_gate and validation_target != CONTRACT_VERSION_V2 else None,
-    "v2_parallel_contract_errors": sorted(parallel_v2_errors) if enable_v2_parallel_gate and validation_target != CONTRACT_VERSION_V2 else [],
+    "v2_parallel_contract_ok": (not parallel_v2_errors) if parallel_v2_ran else None,
+    "v2_parallel_contract_errors": sorted(parallel_v2_errors) if parallel_v2_ran else [],
     "contract_version": payload.get("contract_version"),
     "sector_feed_id": payload.get("sector_feed_id"),
     "sector_feed_source_id": payload.get("sector_feed_source_id"),

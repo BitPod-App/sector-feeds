@@ -152,6 +152,14 @@ class CoreIntakeHandshakeTests(unittest.TestCase):
         errors = validate_payload_v2(payload)
         self.assertIn("invalid:episodes[0].published_at_utc:utc_iso8601", errors)
 
+    def test_v2_fractional_second_utc_z_formats_pass(self) -> None:
+        payload = self._payload_v2()
+        payload["generated_at_utc"] = "2026-02-28T00:00:00.1Z"
+        payload["episodes"][0]["published_at_utc"] = "2026-02-20T00:00:00.12Z"
+        payload["episodes"][0]["processing_state"]["updated_at_utc"] = "2026-02-28T00:00:00.123Z"
+        payload["episodes"][0]["processing_state"]["first_seen_at_utc"] = "2026-02-20T00:00:00.123456Z"
+        self.assertEqual(validate_payload_v2(payload), [])
+
     def test_v2_missing_or_invalid_processing_state_updated_at_utc_fails(self) -> None:
         payload = self._payload_v2()
         del payload["episodes"][0]["processing_state"]["updated_at_utc"]

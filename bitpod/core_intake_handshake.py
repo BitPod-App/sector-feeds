@@ -94,8 +94,14 @@ def _is_utc_iso8601(value: Any) -> bool:
         return False
     if not _UTC_ISO_PATTERN.match(value):
         return False
+    base = value[:-1]
+    if "." in base:
+        head, fractional = base.split(".", 1)
+        normalized = f"{head}.{(fractional + '000000')[:6]}+00:00"
+    else:
+        normalized = f"{base}+00:00"
     try:
-        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        parsed = datetime.fromisoformat(normalized)
     except ValueError:
         return False
     return parsed.tzinfo == timezone.utc
