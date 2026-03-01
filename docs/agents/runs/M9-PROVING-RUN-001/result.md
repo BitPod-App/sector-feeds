@@ -15,7 +15,7 @@
 - merge_commit: `8a5c508938088228fe0a00fc4421496605b848a6`
 
 ## Remaining issues / follow-ups
-- None blocking this proving-run slice; merge pending.
+- None blocking this proving-run slice; PR #14 is merged and recorded.
 
 ## Next recommended action
-- Merge PR #14, then start `M9-PROVING-RUN-002` on a real Linear-linked issue to validate end-to-end orchestration in live workflow.
+- Start `M9-PROVING-RUN-002` on a real Linear-linked issue to validate end-to-end orchestration in live workflow.
