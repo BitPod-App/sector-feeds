@@ -1,4 +1,4 @@
-# cj_gate_decision.md template
+# final_decision_<context>_<YYYY-MM-DD>.md template
 
 ## Decision
 - APPROVED_FOR_MERGE | REJECTED_FOR_MERGE
@@ -7,9 +7,9 @@
 -
 
 ## Preconditions checked
-- [ ] plan.md present
-- [ ] execution_notes.md present
-- [ ] verification_report.md present with explicit QA_VERDICT
+- [ ] plan artifact present
+- [ ] execution notes artifact present
+- [ ] QA report artifact present with explicit QA_VERDICT
 - [ ] evidence links are available
 
 ## If rejected
@@ -17,5 +17,5 @@
 -
 
 ## Signature
-- decided_by: CJ
+- decided_by: gate_owner
 - date_utc:

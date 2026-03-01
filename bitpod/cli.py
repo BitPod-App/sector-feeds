@@ -6,7 +6,7 @@ import logging
 from pathlib import Path
 
 from bitpod.config import get_show, load_config, save_config
-from bitpod.paths import RETROSPECTIVE_FLAG_QUEUE_PATH
+from bitpod.paths import RETRO_FLAG_QUEUE_PATH
 
 
 def _configure_logging(verbose: bool) -> None:
@@ -50,7 +50,7 @@ def _cmd_retro_flags(args: argparse.Namespace) -> int:
     from bitpod.retro_flags import load_flag_entries, summarize_flag_entries
 
     try:
-        path = Path(args.path).expanduser() if args.path else RETROSPECTIVE_FLAG_QUEUE_PATH
+        path = Path(args.path).expanduser() if args.path else RETRO_FLAG_QUEUE_PATH
         entries = load_flag_entries(path=path)
         summary = summarize_flag_entries(entries, limit=args.limit)
     except ValueError as exc:
@@ -132,7 +132,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--path",
         help=(
             "Optional path to retrospective flag queue JSONL "
-            f"(default: {RETROSPECTIVE_FLAG_QUEUE_PATH})"
+            f"(default: {RETRO_FLAG_QUEUE_PATH})"
         ),
     )
     retro_flags_parser.set_defaults(func=_cmd_retro_flags)

@@ -1,4 +1,4 @@
-# plan.md template
+# plan_<context>_<YYYY-MM-DD>.md template
 
 ## Goal
 -

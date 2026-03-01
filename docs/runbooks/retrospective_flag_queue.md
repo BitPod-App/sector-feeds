@@ -19,9 +19,9 @@ python3 -m bitpod retro-flags --limit 20 --json
 ## Output files
 
 - machine-readable queue:
-  - `artifacts/coordination/retrospective_flag_queue.jsonl`
+  - `artifacts/coordination/retro_flag_queue_<YYYY-MM>.jsonl`
 - human-readable queue:
-  - `artifacts/coordination/retrospective_flag_queue.md`
+  - `artifacts/coordination/retro_flag_queue_<YYYY-MM>.md`
 
 ## Suggested meeting workflow
 

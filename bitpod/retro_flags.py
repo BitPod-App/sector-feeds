@@ -4,10 +4,10 @@ import json
 from pathlib import Path
 from typing import Any
 
-from bitpod.paths import RETROSPECTIVE_FLAG_QUEUE_PATH
+from bitpod.paths import RETRO_FLAG_QUEUE_PATH
 
 
-def load_flag_entries(path: Path = RETROSPECTIVE_FLAG_QUEUE_PATH) -> list[dict[str, Any]]:
+def load_flag_entries(path: Path = RETRO_FLAG_QUEUE_PATH) -> list[dict[str, Any]]:
     if not path.exists():
         return []
 
