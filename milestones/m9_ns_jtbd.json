@@ -1,0 +1,19 @@
+{
+  "schema_version": "ns_jtbd.v1",
+  "namespace": "intake_gate",
+  "milestone": "M-9",
+  "status": "PLANNED",
+  "blocked": false,
+  "owner_context": "single_engineer_mode",
+  "objective": "milestone_agnostic_policy_and_drift_governance",
+  "first_slice": {
+    "id": "M9-S1",
+    "name": "policy_and_tracker_bootstrap",
+    "ready_to_execute": true,
+    "scope": [
+      "add_m9_policy",
+      "emit_milestone_close_ready_fields",
+      "add_m9_governance_runbook"
+    ]
+  }
+}
