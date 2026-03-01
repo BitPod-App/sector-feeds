@@ -12,7 +12,7 @@
   - targeted unit tests pass (`tests/test_retro_flags.py`)
 
 ## Merge summary
-- pr: `TBD`
+- pr: `https://github.com/cjarguello/bitpod/pull/23`
 - merge_commit: `PENDING_MERGE`
 
 ## Remaining issues / follow-ups

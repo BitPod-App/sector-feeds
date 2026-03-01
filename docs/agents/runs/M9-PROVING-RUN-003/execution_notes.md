@@ -20,8 +20,9 @@
 
 ## PR / commit refs
 - branch: `codex/m9-proving-run-003-retro-flags-cli`
-- commit: `e806e14`
-- PR: `TBD`
+- implementation_commit: `e806e14`
+- run_artifacts_commit: `4a9a89e`
+- PR: `https://github.com/cjarguello/bitpod/pull/23`
 - tracking issue: `https://github.com/cjarguello/bitpod/issues/22`
 
 ## Verification evidence (engineer-side)
