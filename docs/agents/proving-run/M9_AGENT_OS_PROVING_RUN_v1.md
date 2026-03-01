@@ -52,7 +52,9 @@ Minimum files:
    - `QA_VERDICT: PASSED` or
    - `QA_VERDICT: FAILED`
 5. CJ records gate decision in `cj_gate_decision.md`.
-6. If approved, merge PR and update `result.md` + `retrospective.md`.
+6. If approved, finalize `result.md` + `retrospective.md` before merge.
+7. Merge PR.
+8. Post-merge edits should be metadata-only (for example merge hash), and only when needed.
 
 ## Vera boundary (enforced)
 - Vera decides only `PASSED` or `FAILED`.
@@ -62,6 +64,10 @@ Minimum files:
 
 ## CJ gate rule
 No merge before `cj_gate_decision.md` is present with explicit decision.
+
+## Retros timing rule
+- Retrospective content should be completed pre-merge by default.
+- Post-merge retrospective rewrites are exception-only and should not be expected.
 
 ## Acceptance criteria for proving run
 - one real Linear issue completed end-to-end
