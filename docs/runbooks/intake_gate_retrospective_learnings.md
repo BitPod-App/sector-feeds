@@ -1,6 +1,15 @@
-# Intake Gate Retrospective Learnings
+# Intake Gate Retrospective Learnings (Template)
 
-Use this file for lightweight archived learnings tied to daily intake gate drift.
+Use this file as the template for archived retrospective learnings tied to intake gate operations.
+
+## Naming Convention (Dated Retrospectives)
+
+Store retrospective entries in dated files in this folder using:
+
+- `retrospective_<YYYY-MM-DD>_<milestone>_<scope>.md`
+- example: `retrospective_2026-03-01_m9_day1_intake_gate.md`
+
+This keeps retrospectives clearly distinguishable from other runbooks/learning notes.
 
 ## Entry Template
 
