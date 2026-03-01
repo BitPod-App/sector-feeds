@@ -4,6 +4,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+import hashlib
 
 from bitpod.paths import INDEX_PATH
 
@@ -30,3 +31,8 @@ def save_processed(index: dict[str, Any], path: Path = INDEX_PATH) -> None:
 
 def episode_key(show_key: str, guid_or_link: str) -> str:
     return f"{show_key}::{guid_or_link}"
+
+
+def canonical_episode_id(sector_feed_id: str, feed_episode_id: str) -> str:
+    raw = f"{sector_feed_id}::{feed_episode_id}".encode("utf-8", errors="ignore")
+    return hashlib.sha256(raw).hexdigest()[:16]
