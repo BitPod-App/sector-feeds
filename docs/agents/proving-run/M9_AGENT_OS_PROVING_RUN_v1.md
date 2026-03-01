@@ -31,6 +31,11 @@ Use: `M9-PROVING-RUN-001` (increment for each new run)
 Create:
 - `docs/agents/runs/<run-id>/`
 
+Initializer command:
+```bash
+bash scripts/init_proving_run.sh M9-PROVING-RUN-001
+```
+
 Minimum files:
 - `plan.md` (Taylor)
 - `execution_notes.md` (Engineer)
