@@ -12,7 +12,7 @@
   - fresh run id still scaffolds exactly six files
 
 ## Merge summary
-- pr: `TBD`
+- pr: `https://github.com/cjarguello/bitpod/pull/18`
 - merge_commit: `PENDING_MERGE`
 
 ## Remaining issues / follow-ups

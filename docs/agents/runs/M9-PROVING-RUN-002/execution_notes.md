@@ -19,7 +19,7 @@
 ## PR / commit refs
 - branch: `codex/m9-proving-run-002-preflight-check`
 - commit: `c128c2f`
-- PR: `TBD`
+- PR: `https://github.com/cjarguello/bitpod/pull/18`
 - tracking issue: `https://github.com/cjarguello/bitpod/issues/17`
 
 ## Verification evidence (engineer-side)
