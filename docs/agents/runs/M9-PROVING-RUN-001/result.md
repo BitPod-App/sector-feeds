@@ -12,7 +12,7 @@
 
 ## Merge summary
 - pr: `https://github.com/cjarguello/bitpod/pull/14`
-- merge_commit: `PENDING_MERGE`
+- merge_commit: `8a5c508938088228fe0a00fc4421496605b848a6`
 
 ## Remaining issues / follow-ups
 - None blocking this proving-run slice; merge pending.
