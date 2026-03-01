@@ -1,4 +1,4 @@
-# result.md
+# ticket_summary_i22p23_2026-03-01.md
 
 ## Outcome summary
 - `M9-PROVING-RUN-003` delivered a non-script CLI feature for retrospective meeting prep: queue summary and error-checked parsing via `bitpod retro-flags`.
