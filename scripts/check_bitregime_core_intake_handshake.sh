@@ -5,6 +5,10 @@ usage() {
   cat <<'USAGE'
 Usage: bash scripts/check_bitregime_core_intake_handshake.sh <intake_json_path> <deck_id> [output_json_path]
 
+Optional env vars:
+  BITPOD_INTAKE_VALIDATION_TARGET=bitregime_core_intake.v1|bitregime_core_intake.v2
+  BITPOD_INTAKE_ENABLE_V2_PARALLEL_GATE=0|1
+
 Examples:
   bash scripts/check_bitregime_core_intake_handshake.sh \
     ../bitregime-core/artifacts/intake/jack_mallers_show_intake.json \
@@ -34,22 +38,30 @@ python3 - "$INTAKE_JSON" "$DECK_ID" "$OUTPUT_JSON" <<'PY'
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
 from bitpod.core_intake_handshake import (
+    CONTRACT_VERSION_V1,
+    CONTRACT_VERSION_V2,
+    EXPECTED_CONTRACT_VERSION,
     compatibility_policy,
     load_payload,
     payload_fingerprint_sha256,
     pending_for_deck,
     validate_payload,
+    VALIDATION_OUTPUT_VERSION,
 )
 
 intake_path = Path(sys.argv[1]).expanduser().resolve()
 deck_id = sys.argv[2]
 output_raw = sys.argv[3].strip()
+validation_target = os.environ.get("BITPOD_INTAKE_VALIDATION_TARGET", EXPECTED_CONTRACT_VERSION).strip() or EXPECTED_CONTRACT_VERSION
+enable_v2_parallel_gate = (os.environ.get("BITPOD_INTAKE_ENABLE_V2_PARALLEL_GATE", "0").strip() == "1")
 
 errors: list[str] = []
+parallel_v2_errors: list[str] = []
 payload = {}
 if not intake_path.exists():
     errors.append(f"missing_file:intake_json:{intake_path}")
@@ -57,19 +69,26 @@ else:
     payload = load_payload(intake_path)
     if not payload:
         errors.append(f"invalid_json:intake_json:{intake_path}")
-    errors.extend(validate_payload(payload))
+    errors.extend(validate_payload(payload, contract_version=validation_target))
+    if enable_v2_parallel_gate and validation_target != CONTRACT_VERSION_V2:
+        parallel_v2_errors = validate_payload(payload, contract_version=CONTRACT_VERSION_V2)
 
 pending = pending_for_deck(payload, deck_id=deck_id) if not errors else []
 fingerprint = payload_fingerprint_sha256(payload) if payload else None
 
 out = {
+    "validation_output_version": VALIDATION_OUTPUT_VERSION,
     "validator_version": compatibility_policy()["validator_version"],
     "compatibility_policy": compatibility_policy(),
     "intake_json_path": str(intake_path),
     "payload_fingerprint_sha256": fingerprint,
     "deck_id": deck_id,
+    "validation_target": validation_target,
     "contract_ok": not errors,
     "contract_errors": sorted(errors),
+    "v2_parallel_gate_enabled": enable_v2_parallel_gate,
+    "v2_parallel_contract_ok": not parallel_v2_errors if enable_v2_parallel_gate and validation_target != CONTRACT_VERSION_V2 else None,
+    "v2_parallel_contract_errors": sorted(parallel_v2_errors) if enable_v2_parallel_gate and validation_target != CONTRACT_VERSION_V2 else [],
     "contract_version": payload.get("contract_version"),
     "sector_feed_id": payload.get("sector_feed_id"),
     "sector_feed_source_id": payload.get("sector_feed_source_id"),
