@@ -13,10 +13,10 @@
 
 ## Merge summary
 - pr: `https://github.com/cjarguello/bitpod/pull/18`
-- merge_commit: `PENDING_MERGE`
+- merge_commit: `9eda08d06abe9c22c55c5f2ce261061c241f9423`
 
 ## Remaining issues / follow-ups
 - Linear mirror for issue `#17` remains pending Taylor sync.
 
 ## Next recommended action
-- Merge this run PR, then execute `M9-PROVING-RUN-003` on a real Linear-linked issue with non-script code changes.
+- Execute `M9-PROVING-RUN-003` on a real Linear-linked issue with non-script code changes.
