@@ -9,14 +9,14 @@ Runs default intake handshake validation and writes:
   1) machine-readable daily status JSON
   2) human-readable daily summary Markdown
   3) retained daily history JSONL
-  4) M-5 tracker Markdown
+  4) milestone tracker Markdown
   5) drift report (JSON + Markdown)
 
 Default outputs:
   - artifacts/coordination/intake_gate_daily_status.json
   - artifacts/coordination/intake_gate_daily_summary.md
   - artifacts/coordination/intake_gate_daily_log.jsonl
-  - artifacts/coordination/m5_tracker.md
+  - artifacts/coordination/m5_tracker.md (legacy-compatible default path)
   - artifacts/coordination/intake_gate_daily_drift_report.json
   - artifacts/coordination/intake_gate_daily_drift_report.md
 
@@ -27,6 +27,7 @@ Optional env vars:
   BITPOD_INTAKE_POLICY_JSON=<path>
   BITPOD_INTAKE_DAILY_STATUS_JSON=<path>
   BITPOD_INTAKE_DAILY_SUMMARY_MD=<path>
+  BITPOD_INTAKE_DAILY_MILESTONE_TRACKER_MD=<path>
   BITPOD_INTAKE_DAILY_M5_TRACKER_MD=<path>
   BITPOD_INTAKE_DAILY_DRIFT_JSON=<path>
   BITPOD_INTAKE_DAILY_DRIFT_MD=<path>
@@ -50,7 +51,7 @@ LOG_JSONL="${3:-artifacts/coordination/intake_gate_daily_log.jsonl}"
 POLICY_JSON="${BITPOD_INTAKE_POLICY_JSON:-milestones/m5_policy.json}"
 STATUS_JSON="${BITPOD_INTAKE_DAILY_STATUS_JSON:-artifacts/coordination/intake_gate_daily_status.json}"
 SUMMARY_MD="${BITPOD_INTAKE_DAILY_SUMMARY_MD:-artifacts/coordination/intake_gate_daily_summary.md}"
-M5_TRACKER_MD="${BITPOD_INTAKE_DAILY_M5_TRACKER_MD:-artifacts/coordination/m5_tracker.md}"
+MILESTONE_TRACKER_MD="${BITPOD_INTAKE_DAILY_MILESTONE_TRACKER_MD:-${BITPOD_INTAKE_DAILY_M5_TRACKER_MD:-artifacts/coordination/m5_tracker.md}}"
 DRIFT_JSON="${BITPOD_INTAKE_DAILY_DRIFT_JSON:-artifacts/coordination/intake_gate_daily_drift_report.json}"
 DRIFT_MD="${BITPOD_INTAKE_DAILY_DRIFT_MD:-artifacts/coordination/intake_gate_daily_drift_report.md}"
 TAYLOR_KEEPALIVE_JSON="${BITPOD_TAYLOR_KEEPALIVE_JSON:-artifacts/coordination/taylor_runtime_keepalive.json}"
@@ -94,7 +95,7 @@ if [ "$ENABLE_V1_DIAGNOSTIC" = "1" ]; then
     bash "$SCRIPT_DIR/check_bitregime_core_intake_handshake.sh" "$INTAKE_JSON" "$DECK_ID" "$V1_DIAG_OUT" || true
 fi
 
-if ! python3 - "$POLICY_JSON" "$HANDSHAKE_OUT" "$V1_DIAG_OUT" "$LOG_JSONL" "$STATUS_JSON" "$SUMMARY_MD" "$M5_TRACKER_MD" "$DRIFT_JSON" "$DRIFT_MD" "$TAYLOR_KEEPALIVE_JSON" "$INTAKE_JSON" "$DECK_ID" "$ENABLE_V1_DIAGNOSTIC" "$TARGET_EXIT_CODE" <<'PY'
+if ! python3 - "$POLICY_JSON" "$HANDSHAKE_OUT" "$V1_DIAG_OUT" "$LOG_JSONL" "$STATUS_JSON" "$SUMMARY_MD" "$MILESTONE_TRACKER_MD" "$DRIFT_JSON" "$DRIFT_MD" "$TAYLOR_KEEPALIVE_JSON" "$INTAKE_JSON" "$DECK_ID" "$ENABLE_V1_DIAGNOSTIC" "$TARGET_EXIT_CODE" <<'PY'
 from __future__ import annotations
 
 import json
@@ -104,7 +105,14 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
-from bitpod.intake_gate_policy import close_ready, evaluate_drift, guardrail, load_policy, validate_status_contract
+from bitpod.intake_gate_policy import (
+    close_ready,
+    evaluate_drift,
+    guardrail,
+    load_policy,
+    milestone_close_ready_key,
+    validate_status_contract,
+)
 
 policy_path = Path(sys.argv[1])
 handshake_v2_path = Path(sys.argv[2])
@@ -112,7 +120,7 @@ handshake_v1_path = Path(sys.argv[3])
 log_path = Path(sys.argv[4])
 status_path = Path(sys.argv[5])
 summary_path = Path(sys.argv[6])
-m5_tracker_path = Path(sys.argv[7])
+milestone_tracker_path = Path(sys.argv[7])
 drift_json_path = Path(sys.argv[8])
 drift_md_path = Path(sys.argv[9])
 taylor_keepalive_path = Path(sys.argv[10])
@@ -233,10 +241,16 @@ for row in reversed(rows_with_current):
 
 record["consecutive_failures"] = consecutive_failures
 record["consecutive_greens"] = consecutive_greens
-record["m5_close_ready_3_consecutive_greens"] = close_ready(consecutive_greens, policy)
+record["milestone_close_ready"] = close_ready(consecutive_greens, policy)
 if record["milestone_status"] == "DONE":
     # Administrative closure wins over rolling local log-window counters.
-    record["m5_close_ready_3_consecutive_greens"] = True
+    record["milestone_close_ready"] = True
+
+required_greens = int(policy["close_ready_consecutive_greens"])
+milestone_key = milestone_close_ready_key(str(policy["milestone"]), required_greens)
+record[milestone_key] = bool(record["milestone_close_ready"])
+# Preserve legacy M-5 key for downstream readers that have not migrated yet.
+record["m5_close_ready_3_consecutive_greens"] = bool(record["milestone_close_ready"])
 guardrail_triggered, escalation = guardrail(consecutive_failures, policy)
 record["rollback_guardrail_triggered"] = guardrail_triggered
 record["freeze_action_on_guardrail"] = str(policy["freeze_action_on_guardrail"])
@@ -311,7 +325,9 @@ summary_lines = [
     f"- rollback_guardrail_threshold: `{record['rollback_guardrail_threshold']}`",
     f"- rollback_guardrail_triggered: `{record['rollback_guardrail_triggered']}`",
     f"- escalation: `{record['escalation']}`",
-    f"- m5_close_ready_3_consecutive_greens: `{record['m5_close_ready_3_consecutive_greens']}`",
+    f"- milestone_close_ready: `{record['milestone_close_ready']}`",
+    f"- {milestone_key}: `{record[milestone_key]}`",
+    f"- m5_close_ready_3_consecutive_greens (legacy): `{record['m5_close_ready_3_consecutive_greens']}`",
     f"- status_json: `{status_path.resolve()}`",
     f"- history_log_jsonl: `{log_path.resolve()}`",
     f"- handshake_target_json: `{handshake_v2_path.resolve()}`",
@@ -341,8 +357,8 @@ if not drift_payload["drift_ok"]:
 summary_path.parent.mkdir(parents=True, exist_ok=True)
 summary_path.write_text("\n".join(summary_lines) + "\n", encoding="utf-8")
 
-m5_lines = [
-    "# M-5 Tracker",
+tracker_lines = [
+    "# Milestone Tracker",
     "",
     f"- timestamp_utc: `{record['timestamp_utc']}`",
     f"- normalized_entry: `milestone={record['milestone']} | status={record['milestone_status']} | blocked=false`",
@@ -350,7 +366,9 @@ m5_lines = [
     f"- contract_ok: `{record['contract_ok']}`",
     f"- required_validation_target: `{record['required_validation_target']}`",
     f"- consecutive_greens: `{record['consecutive_greens']}` / `{record['close_ready_required_consecutive_greens']}`",
-    f"- m5_close_ready_3_consecutive_greens: `{record['m5_close_ready_3_consecutive_greens']}`",
+    f"- milestone_close_ready: `{record['milestone_close_ready']}`",
+    f"- {milestone_key}: `{record[milestone_key]}`",
+    f"- m5_close_ready_3_consecutive_greens (legacy): `{record['m5_close_ready_3_consecutive_greens']}`",
     f"- consecutive_failures: `{record['consecutive_failures']}`",
     f"- rollback_guardrail_threshold: `{record['rollback_guardrail_threshold']}`",
     f"- rollback_guardrail_triggered: `{record['rollback_guardrail_triggered']}`",
@@ -362,14 +380,14 @@ m5_lines = [
     f"- daily_drift_report_md: `{drift_md_path.resolve()}`",
 ]
 if contract_errors:
-    m5_lines.extend(["", "## Failure Categories"])
+    tracker_lines.extend(["", "## Failure Categories"])
     for cat, count in sorted(failure_counts.items()):
-        m5_lines.append(f"- {cat}: `{count}`")
+        tracker_lines.append(f"- {cat}: `{count}`")
 else:
-    m5_lines.extend(["", "## Failure Categories", "- none"])
+    tracker_lines.extend(["", "## Failure Categories", "- none"])
 
-m5_tracker_path.parent.mkdir(parents=True, exist_ok=True)
-m5_tracker_path.write_text("\n".join(m5_lines) + "\n", encoding="utf-8")
+milestone_tracker_path.parent.mkdir(parents=True, exist_ok=True)
+milestone_tracker_path.write_text("\n".join(tracker_lines) + "\n", encoding="utf-8")
 
 print(json.dumps(record, indent=2, sort_keys=True))
 raise SystemExit(0 if record["gate_green"] else 1)
@@ -384,7 +402,7 @@ if [ "$TAYLOR_AUTOPOST" = "1" ]; then
     "$STATUS_JSON" \
     "$SUMMARY_MD" \
     "$DRIFT_MD" \
-    "$M5_TRACKER_MD" \
+    "$MILESTONE_TRACKER_MD" \
     "$TAYLOR_AUTOPOST_OUT_MD" || true
 fi
 
