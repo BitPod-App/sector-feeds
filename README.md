@@ -100,10 +100,14 @@ Per-show contract (API-like surface):
 - Each show has its own status artifacts (`<stable_pointer_stem>_status.json|md`).
 - Schedules can differ per show while preserving the same output contract.
 - Public permalink publish (semi-paranoid): each show gets
+  - `artifacts/public/permalinks/<opaque_id>/intake.md`
+  - `artifacts/public/permalinks/<opaque_id>/transcript.md` (stable latest transcript permalink for GPT)
   - `artifacts/public/permalinks/<opaque_id>/latest.md`
   - `artifacts/public/permalinks/<opaque_id>/status.json`
+  - `artifacts/public/permalinks/<opaque_id>/discovery.json`
   - with noindex/nofollow/noarchive + `robots.txt` disallow-all.
   - internal mapping remains private in `artifacts/private/public_permalink_manifest.json`.
+  - feed identity/tags contract reference: `docs/architecture/feed_identity_contract.md`.
 
 ## Supported Feeds (Current)
 
@@ -146,12 +150,100 @@ bash scripts/run_mallers_weekly.sh
 # Optional: include GPT report generation in weekly run
 WEEKLY_GPT_REPORT=1 bash scripts/run_mallers_weekly.sh
 
-# Tuesday verification report (writes artifacts/jack_mallers_show_weekly_report.md)
+# Tuesday verification report (writes artifacts/jack_mallers_show_tuesday_report.md)
+# - includes deterministic intake readiness checks for intake.md/latest.md/status.json/discovery.json
+bash scripts/report_mallers_tuesday_status.sh
+
+# One-shot legacy Tuesday track (sync + report + contract print)
+bash scripts/run_legacy_tuesday_track.sh jack_mallers_show
+
+# Friday verification report (writes artifacts/jack_mallers_show_friday_report.md)
+bash scripts/report_mallers_friday_status.sh
+
+# One-shot legacy Friday track (sync + report + contract print)
+bash scripts/run_legacy_friday_track.sh jack_mallers_show
+
+# One-shot experimental track (collect + process + contract print)
+bash scripts/run_experimental_track.sh jack_mallers_show
+
+# Validate feed identity contract (IDs + canonical catalog path)
+make feed-identity-check SHOW_KEY=jack_mallers_show
+
+# Render one-page board for Tuesday/Friday/Experimental status
+make track-status-board SHOW_KEY=jack_mallers_show
+
+# Fast PASS/FAIL gate from board JSON (non-zero exit on failure)
+make track-status-check SHOW_KEY=jack_mallers_show
+
+# One-command fast operator preflight
+make preflight SHOW_KEY=jack_mallers_show
+
+# Release readiness gate (preflight + key tests)
+make release-ready SHOW_KEY=jack_mallers_show
+
+# Full daily operator cycle (all tracks + board + gate)
+make ops-cycle SHOW_KEY=jack_mallers_show
+
+# Optional DNS helpers (macOS networksetup)
+make dns-set-fast
+make dns-restore-default
+
+# Full session helper (with DNS set/restore)
+make today-run SHOW_KEY=jack_mallers_show
+
+# Full session helper (without DNS changes)
+make today-run-no-dns SHOW_KEY=jack_mallers_show
+
+# Full final gate (today-run-no-dns + handoff refresh + live smoke)
+make final-check SHOW_KEY=jack_mallers_show
+
+# Refresh concise handoff snapshot
+make handoff-refresh SHOW_KEY=jack_mallers_show
+
+# Public smoke test against canonical URLs (HTTP + contract markers)
+make smoke-public SHOW_KEY=jack_mallers_show
+
+# Fail if status timestamp is older than threshold (default 9 days)
+make stale-check SHOW_KEY=jack_mallers_show
+
+# Quiet wrapper mode (compact output)
+QUIET=1 make ops-cycle SHOW_KEY=jack_mallers_show
+
+# Legacy weekly alias (writes artifacts/jack_mallers_show_weekly_report.md)
 bash scripts/report_mallers_weekly_status.sh
+
+# Track-specific runbooks/prompts:
+# - docs/runbooks/legacy_tuesday_report.md
+# - docs/prompts/legacy_tuesday_report_prompt.md
+# - docs/runbooks/experimental_weekly_btc_gate.md
+# - docs/prompts/experimental_weekly_btc_gate_prompt.md
+# - docs/prompts/legacy_tuesday_single_prompt.md
+# - docs/prompts/experimental_weekly_gate_single_prompt.md
+# - docs/runbooks/report_tracks_short_vs_long_term.md
+# - docs/runbooks/weekly_automation_two_track_contract.md
+# - docs/runbooks/recovered_local_trash_report_assets_assessment.md
+# - scripts/experimental_weekly_ctl.sh (transitional decoupled stage wrapper)
 
 # Generic, multi-show equivalents:
 bash scripts/run_show_weekly.sh <show_key>
-bash scripts/report_show_weekly_status.sh <show_key>
+bash scripts/report_show_weekly_status.sh <show_key> [weekly|tuesday|friday]
+
+# bitregime-core intake handshake check (additive; does not change weekly tracks):
+bash scripts/check_bitregime_core_intake_handshake.sh \
+  ../bitregime-core/artifacts/intake/jack_mallers_show_intake.json \
+  deck_weekly_btc
+
+# Make wrapper:
+make intake-handshake-check SHOW_KEY=jack_mallers_show DECK_ID=deck_weekly_btc
+
+# Runbook:
+# - docs/runbooks/bitregime_core_intake_handshake.md
+
+# Daily v2-default intake gate (machine+human artifacts + retained history):
+make intake-gate-daily SHOW_KEY=jack_mallers_show DECK_ID=deck_weekly_btc
+
+# One-command operator triage + rollback diagnostic path:
+make intake-gate-triage SHOW_KEY=jack_mallers_show DECK_ID=deck_weekly_btc
 
 # Deterministic weekly critical bundle (10-metric gate input):
 python3 scripts/generate_weekly_critical_bundle.py \
@@ -172,6 +264,9 @@ bash scripts/verify_show_adhoc.sh <show_key>
 bash scripts/bitpod_status.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"]
 bash scripts/bitpod_sync.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"] [--min-episode-age-minutes 180] [--trigger-cmd "<cmd>"]
 bash scripts/bitpod_verify.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:MM]"] [--gpt-feedback-file <path>] [--gpt-note "<text>"]
+
+# M-5 intake operations runbook:
+# - docs/runbooks/intake_gate_daily_ops.md
 
 # Operator guidance (MVP):
 # - Primary flow: Status -> Sync -> Deploy

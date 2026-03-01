@@ -267,7 +267,7 @@ def compatibility_policy() -> dict[str, Any]:
             "episodes[].processing_state.first_seen_at_utc",
         ],
         "v2_processing_state_status_enum": sorted(V2_ALLOWED_PROCESSING_STATES),
-        "v2_gate_mode": "parallel_non_default",
+        "v2_gate_mode": "default_required_with_v1_rollback_diagnostic",
     }
 
 

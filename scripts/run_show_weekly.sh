@@ -63,6 +63,8 @@ import json
 import sys
 from pathlib import Path
 
+from bitpod.intake import evaluate_intake_readiness
+
 show_key = sys.argv[1]
 repo_root = Path(sys.argv[2])
 shows = json.loads((repo_root / "shows.json").read_text(encoding="utf-8"))
@@ -77,12 +79,15 @@ if not status_path.exists():
 payload = json.loads(status_path.read_text(encoding="utf-8"))
 run_status = payload.get("run_status")
 included = bool(payload.get("included_in_pointer"))
-if run_status == "ok" and included:
-    print(f"Weekly run OK for {show_key}: latest episode included in pointer")
+intake = evaluate_intake_readiness(payload)
+if run_status == "ok" and included and intake.get("ok"):
+    print(f"Weekly run OK for {show_key}: latest episode included and intake-ready")
     raise SystemExit(0)
 
 print(f"Weekly run FAILED for {show_key} or latest not included in pointer")
 print(f"run_status={run_status} included_in_pointer={included}")
+print(f"intake_ready={bool(intake.get('ok'))}")
+print(f"intake_errors={'; '.join(intake.get('errors', []))}")
 print(f"failure_stage={payload.get('failure_stage')} reason={payload.get('failure_reason')}")
 raise SystemExit(1)
 PY

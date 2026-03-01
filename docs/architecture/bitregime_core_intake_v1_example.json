@@ -1,0 +1,27 @@
+{
+  "contract_version": "bitregime_core_intake.v1",
+  "generated_at_utc": "2026-02-28T00:00:00Z",
+  "sector_feed_id": "jack_mallers_show",
+  "sector_feed_source_id": "anchor:e29097f4",
+  "episodes": [
+    {
+      "feed_episode_id": "2e923f13-8f6a-4fd3-8e78-6a18ed9d8734",
+      "source_episode_id": "spotify:episode:7h7PqW...",
+      "canonical_episode_id": "49247c8ed37912ff",
+      "title": "AI Is Breaking The System (What It Means for Bitcoin)",
+      "published_at_utc": "2026-02-24T00:00:00Z",
+      "processing_state": {
+        "status": "new"
+      }
+    },
+    {
+      "feed_episode_id": "3a0dc01f-c413-43c5-b0de-72ac9b4b1984",
+      "source_episode_id": "spotify:episode:2QpR...",
+      "title": "Japan + AI: The Next Liquidity Shock for Bitcoin",
+      "published_at_utc": "2026-02-17T00:00:00Z",
+      "processing_state": {
+        "status": "processed"
+      }
+    }
+  ]
+}

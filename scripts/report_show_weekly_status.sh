@@ -2,32 +2,36 @@
 set -euo pipefail
 
 if [ "$#" -lt 1 ]; then
-  echo "Usage: $0 <show_key>"
+  echo "Usage: $0 <show_key> [report_label]"
   exit 2
 fi
 
 SHOW_KEY="$1"
+REPORT_LABEL="${2:-weekly}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 mkdir -p "$REPO_ROOT/artifacts"
 cd "$REPO_ROOT"
 
-python3 - "$SHOW_KEY" <<'PY'
+python3 - "$SHOW_KEY" "$REPORT_LABEL" <<'PY'
 import json
 import re
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+from bitpod.intake import evaluate_intake_readiness
+
 show_key = sys.argv[1]
+report_label = re.sub(r"[^a-z0-9]+", "_", sys.argv[2].lower()).strip("_") or "weekly"
 repo_root = Path(".")
 shows = json.loads((repo_root / "shows.json").read_text(encoding="utf-8"))
 show = shows.get("shows", {}).get(show_key, {})
 stable_pointer = str(show.get("stable_pointer") or ("latest_bitpod.md" if show_key != "jack_mallers_show" else "jack_mallers.md"))
 stem = Path(stable_pointer).stem
 status_json = repo_root / "transcripts" / show_key / f"{stem}_status.json"
-report_name = re.sub(r"[^a-z0-9]+", "_", show_key.lower()).strip("_") + "_weekly_report.md"
+report_name = re.sub(r"[^a-z0-9]+", "_", show_key.lower()).strip("_") + f"_{report_label}_report.md"
 report_md = repo_root / "artifacts" / report_name
 
 now = datetime.now(timezone.utc)
@@ -54,8 +58,10 @@ if isinstance(finished_raw, str) and finished_raw:
 is_recent = bool(finished_at and finished_at >= (now - timedelta(days=9)))
 included = bool(payload.get("included_in_pointer"))
 run_status = payload.get("run_status", "failed")
+intake = evaluate_intake_readiness(payload)
+intake_ok = bool(intake.get("ok"))
 
-success = run_status == "ok" and included and is_recent
+success = run_status == "ok" and included and is_recent and intake_ok
 headline = "SUCCESS" if success else "FAILED"
 
 lines = [
@@ -70,7 +76,13 @@ lines = [
     f"- latest_episode_published_at_utc: `{payload.get('latest_episode_published_at_utc')}`",
     f"- included_in_pointer: `{included}`",
     f"- run_is_recent: `{is_recent}`",
+    f"- intake_ready: `{intake_ok}`",
+    f"- preferred_gpt_input_public_transcript_url: `{payload.get('public_permalink_transcript_url')}`",
+    f"- public_permalink_transcript_url: `{payload.get('public_permalink_transcript_url')}`",
+    f"- public_permalink_status_url: `{payload.get('public_permalink_status_url')}`",
+    f"- public_permalink_discovery_url: `{payload.get('public_permalink_discovery_url')}`",
     f"- pointer_path: `{payload.get('pointer_path')}`",
+    f"- public_permalink_intake_path: `{payload.get('public_permalink_intake_path')}`",
     f"- plain_artifact_path: `{payload.get('plain_artifact_path')}`",
     f"- segments_artifact_path: `{payload.get('segments_artifact_path')}`",
     f"- gpt_review_request_path: `{payload.get('gpt_review_request_path')}`",
@@ -84,6 +96,7 @@ if not success:
             f"- failure_stage: `{payload.get('failure_stage')}`",
             f"- failure_reason: `{payload.get('failure_reason')}`",
             f"- suggested_next_action: `{payload.get('suggested_next_action')}`",
+            f"- intake_readiness_errors: `{'; '.join(intake.get('errors', []))}`",
             f"- retry_command: `bash scripts/run_show_weekly.sh {show_key}`",
             "- gpt_action: upload review request + available artifacts to GPT for QA feedback",
         ]
