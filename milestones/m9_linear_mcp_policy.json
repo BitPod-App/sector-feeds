@@ -1,0 +1,87 @@
+{
+  "policy_version": "m9_linear_mcp_policy.v1",
+  "milestone": "M-9",
+  "effective_date_utc": "2026-03-01",
+  "policy_mode": "bootstrap_high_autonomy",
+  "owner": "CJ",
+  "best_practices_enforcement": {
+    "required": true,
+    "required_doc": "docs/agents/linear/LINEAR_BEST_PRACTICES_GUIDE_V1.md",
+    "enforcement_level": "baseline_with_contextual_overrides",
+    "override_requirements": [
+      "reason_for_override",
+      "scope_and_duration",
+      "rollback_or_normalization_plan"
+    ]
+  },
+  "global_invariants": [
+    "linear_is_orchestration_hub",
+    "github_is_source_of_truth",
+    "additive_first_changes",
+    "audit_artifacts_required"
+  ],
+  "agent_permissions": {
+    "taylor": {
+      "callsign": "Taylor",
+      "role": "lead_pm",
+      "mcp_server": "linear",
+      "default_access": "read_write_admin",
+      "destructive_actions": {
+        "allowed": true,
+        "requires_change_proposal": true,
+        "requires_pre_change_snapshot": true,
+        "requires_rollback_note": true,
+        "requires_post_change_validation": true,
+        "cj_preapproval_required": false
+      }
+    },
+    "vera": {
+      "callsign": "Vera",
+      "role": "qa_specialist",
+      "mcp_server": "linear",
+      "default_access": "read_write_qa_lane",
+      "destructive_actions": {
+        "allowed": false
+      }
+    },
+    "atlas": {
+      "callsign": "Atlas",
+      "role": "engineer_a",
+      "mcp_server": "linear",
+      "default_access": "read_write_execution_lane",
+      "destructive_actions": {
+        "allowed": false
+      }
+    },
+    "solder": {
+      "callsign": "Solder",
+      "role": "engineer_b",
+      "mcp_server": "linear",
+      "default_access": "read_write_execution_lane",
+      "destructive_actions": {
+        "allowed": false
+      }
+    }
+  },
+  "cj_escalation_rules": {
+    "approval_required_for": [
+      "delete_team_project_workflow",
+      "mass_destructive_change_over_20_entities",
+      "irreversible_data_removal_without_rollback",
+      "integration_auth_or_permission_surface_changes"
+    ]
+  },
+  "audit_artifacts": {
+    "change_proposal_template": "docs/agents/linear/templates/linear_change_proposal_template_v1.md",
+    "schema_change_log": "docs/agents/linear/CHANGELOG_LINEAR_SCHEMA.md"
+  },
+  "lockdown_mode": {
+    "mode": "lockdown_review_required",
+    "trigger_conditions": [
+      "unplanned_schema_breakage",
+      "two_failed_post_change_validations",
+      "issue_traceability_loss"
+    ],
+    "effect": "disable_destructive_actions_except_cj_approved_runs"
+  }
+}
