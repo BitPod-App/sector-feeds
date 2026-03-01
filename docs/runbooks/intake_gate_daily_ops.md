@@ -1,6 +1,6 @@
-# M-5 Intake Gate Daily Ops (v2 Default)
+# Intake Gate Daily Ops (v2 Default)
 
-This runbook covers M-5 operations hardening now that `bitregime_core_intake.v2` is default end-to-end.
+This runbook covers intake gate operations hardening now that `bitregime_core_intake.v2` is default end-to-end.
 
 ## Scope
 
@@ -25,7 +25,7 @@ Outputs:
 - `artifacts/coordination/intake_gate_daily_summary.md` (human-readable)
 - `artifacts/coordination/intake_gate_daily_drift_report.json` (machine-readable drift checks)
 - `artifacts/coordination/intake_gate_daily_drift_report.md` (human-readable drift checks)
-- `artifacts/coordination/m5_tracker.md` (milestone progress tracker)
+- `artifacts/coordination/m5_tracker.md` (legacy-compatible milestone tracker default path)
 - `artifacts/coordination/intake_gate_triage.md` (operator playbook snapshot)
 - `artifacts/coordination/intake_gate_daily_log.jsonl` (retained daily history)
 
@@ -99,7 +99,10 @@ Policy:
 ## M-5 Exit Criterion
 
 - Require at least `3` consecutive daily GREEN runs.
-- Daily status field: `m5_close_ready_3_consecutive_greens`.
+- Daily status fields:
+  - `milestone_close_ready` (milestone-agnostic)
+  - milestone-specific key (example: `m9_close_ready_3_consecutive_greens`)
+  - `m5_close_ready_3_consecutive_greens` (legacy compatibility)
 
 ## Archived Learnings
 

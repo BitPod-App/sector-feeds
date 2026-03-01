@@ -1,0 +1,10 @@
+{
+  "policy_version": "m9_intake_ops_policy.v1",
+  "milestone": "M-9",
+  "required_validation_target": "bitregime_core_intake.v2",
+  "rollback_guardrail_consecutive_failures": 2,
+  "close_ready_consecutive_greens": 3,
+  "freeze_action_on_guardrail": "freeze_intake_contract_changes_and_route_to_incident_triage",
+  "milestone_status": "PLANNED",
+  "owner_oncall": "single_engineer_mode"
+}

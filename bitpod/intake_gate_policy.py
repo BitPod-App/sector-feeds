@@ -5,6 +5,13 @@ from pathlib import Path
 from typing import Any
 
 
+def milestone_close_ready_key(milestone: str, required_consecutive_greens: int) -> str:
+    normalized = "".join(ch.lower() for ch in milestone if ch.isalnum())
+    if not normalized:
+        normalized = "milestone"
+    return f"{normalized}_close_ready_{int(required_consecutive_greens)}_consecutive_greens"
+
+
 def load_policy(path: Path) -> dict[str, Any]:
     try:
         raw = json.loads(path.read_text(encoding="utf-8"))
@@ -62,7 +69,7 @@ def validate_status_contract(record: dict[str, Any]) -> list[str]:
         "failure_reason_categories",
         "consecutive_failures",
         "consecutive_greens",
-        "m5_close_ready_3_consecutive_greens",
+        "milestone_close_ready",
         "rollback_guardrail_triggered",
         "escalation",
         "required_validation_target",
@@ -74,7 +81,7 @@ def validate_status_contract(record: dict[str, Any]) -> list[str]:
     bool_keys = (
         "contract_ok",
         "gate_green",
-        "m5_close_ready_3_consecutive_greens",
+        "milestone_close_ready",
         "rollback_guardrail_triggered",
     )
     for key in bool_keys:
