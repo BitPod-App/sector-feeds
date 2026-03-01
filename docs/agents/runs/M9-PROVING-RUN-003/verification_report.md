@@ -1,0 +1,41 @@
+# verification_report.md (Vera)
+
+## Environment matrix
+- build/version: `codex/m9-proving-run-003-retro-flags-cli` @ `e806e14`
+- platform/device: local macOS dev workspace
+- os/browser: shell + Python CLI verification
+- account/state assumptions: queue file may be absent (empty result expected) or present at default coordination path
+
+## Critical acceptance criteria evidence
+### AC-1
+PASS evidence OR reproducible failure:
+- CLI summary works on real artifact queue:
+  - command: `python3 -m bitpod retro-flags --limit 5 --json`
+  - evidence: JSON output contains `path`, `total`, `open`, `closed`, and `recent`; current queue reports one open item.
+- Unit coverage confirms parser/summarizer and CLI JSON mode:
+  - command: `python3 -m unittest tests/test_retro_flags.py`
+  - evidence: `Ran 5 tests ... OK`
+
+### AC-2
+PASS evidence OR reproducible failure:
+- Error handling paths are explicit and non-zero:
+  - malformed JSONL:
+    - command: `python3 -m bitpod retro-flags --path <tmp_bad_jsonl>`
+    - evidence: `ERROR: Invalid JSONL ... line 1`, exit `2`
+  - invalid limit:
+    - command: `python3 -m bitpod retro-flags --limit 0`
+    - evidence: `ERROR: limit must be >= 1`, exit `2`
+
+## Failure reason (required if FAILED)
+this failed QA because ...
+- failing criteria: n/a
+- concise reason: n/a
+- evidence links:
+  - `docs/agents/runs/M9-PROVING-RUN-003/plan.md`
+  - `docs/agents/runs/M9-PROVING-RUN-003/execution_notes.md`
+  - `https://github.com/cjarguello/bitpod/issues/22`
+
+## Optional small/obvious fix hints (max 1-3)
+- optional: add a `--status` filter (open/closed) if meeting prep grows.
+
+QA_VERDICT: PASSED
