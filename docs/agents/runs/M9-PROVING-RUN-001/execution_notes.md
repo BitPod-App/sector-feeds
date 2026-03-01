@@ -16,8 +16,8 @@
 
 ## PR / commit refs
 - branch: `codex/m9-proving-run-001-impl`
-- commit: `TBD`
-- PR: `TBD`
+- commit: `0aef3fe`
+- PR: `https://github.com/cjarguello/bitpod/pull/14`
 
 ## Verification evidence (engineer-side)
 - tests run:
@@ -28,6 +28,8 @@
   - missing arg exit: `2` with usage text
   - existing run id output: six `SKIP existing` lines + `proving_run_init=OK`
   - new run id output: six `CREATE` lines + `proving_run_init=OK`
+- QA rerun evidence (post-implementation verification pass):
+  - temporary id `M9-PROVING-RUN-001-QA` produced six files and was cleaned up (`tmp_cleanup=OK`)
 
 ## Deviations from plan
 - Ran temporary smoke scaffold for validation using:

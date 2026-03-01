@@ -18,11 +18,11 @@ Out:
 - Automation scheduling or CI workflow changes.
 
 ## Acceptance criteria (3-7)
-- [ ] Running `bash scripts/init_proving_run.sh M9-PROVING-RUN-001` creates all six required run files under `docs/agents/runs/M9-PROVING-RUN-001/`.
-- [ ] Re-running the command does not corrupt existing files (idempotent behavior is documented and verified).
-- [ ] Script exits non-zero with clear usage text when `RUN_ID` is missing.
-- [ ] Runbook includes exact command and expected output paths.
-- [ ] `execution_notes.md` captures command evidence and resulting file list.
+- [x] Running `bash scripts/init_proving_run.sh M9-PROVING-RUN-001` creates all six required run files under `docs/agents/runs/M9-PROVING-RUN-001/`.
+- [x] Re-running the command does not corrupt existing files (idempotent behavior is documented and verified).
+- [x] Script exits non-zero with clear usage text when `RUN_ID` is missing.
+- [x] Runbook includes exact command and expected output paths.
+- [x] `execution_notes.md` captures command evidence and resulting file list.
 
 ## Dependencies
 - Existing template files in `docs/agents/proving-run/templates/`.
@@ -35,7 +35,7 @@ Out:
   - Mitigation: strict `set -euo pipefail`, preflight path checks, and explicit final summary.
 
 ## Dispatch
-- Linear issue: `TBD` (create as Feature: "Scaffold proving-run artifacts via script")
+- Linear issue: `TBD` (Linear track intentionally deferred during proving run bootstrap)
 - Engineer owner: Atlas (default)
 - Vera QA trigger condition: script + runbook doc changes are committed and command evidence is attached.
 - CJ gate required: yes
