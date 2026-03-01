@@ -64,8 +64,9 @@ fi
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 COORD_DIR="$REPO_ROOT/artifacts/coordination"
-QUEUE_JSONL="$COORD_DIR/retrospective_flag_queue.jsonl"
-QUEUE_MD="$COORD_DIR/retrospective_flag_queue.md"
+queue_period="$(date -u +"%Y-%m")"
+QUEUE_JSONL="$COORD_DIR/retro_flag_queue_${queue_period}.jsonl"
+QUEUE_MD="$COORD_DIR/retro_flag_queue_${queue_period}.md"
 
 mkdir -p "$COORD_DIR"
 

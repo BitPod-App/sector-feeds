@@ -1,4 +1,4 @@
-# verification_report.md template (Vera)
+# qa_report_<context>_<YYYY-MM-DD>.md template (Vera)
 
 ## Environment matrix
 - build/version:

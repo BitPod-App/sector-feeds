@@ -33,26 +33,27 @@ Create:
 
 Initializer command:
 ```bash
-bash scripts/init_proving_run.sh M9-PROVING-RUN-001
+bash scripts/init_proving_run.sh M9-PROVING-RUN-001 --context i22p23
 ```
 
 Minimum files:
-- `plan.md` (Taylor)
-- `execution_notes.md` (Engineer)
-- `verification_report.md` (Vera)
-- `cj_gate_decision.md` (CJ)
-- `result.md` (Taylor wrap-up)
-- `retrospective.md` (what to change)
+- `plan_<context>_<YYYY-MM-DD>.md` (Taylor)
+- `execution_notes_<context>_<YYYY-MM-DD>.md` (Engineer)
+- `qa_report_<context>_<YYYY-MM-DD>.md` (Vera)
+- `final_decision_<context>_<YYYY-MM-DD>.md` (gate owner)
+- `ticket_summary_<context>_<YYYY-MM-DD>.md` (Taylor wrap-up)
+- `retrospective_<context>_<YYYY-MM-DD>.md` (what to change)
+- `artifact_manifest.json` (maps artifact roles to actual file names)
 
 ## Workflow (strict order)
 1. Taylor creates/updates Linear issue using best-practice baseline.
-2. Taylor writes `plan.md` and dispatch details.
-3. Engineer executes and writes `execution_notes.md` with PR + test evidence.
-4. Vera runs QA independently and writes `verification_report.md` with final line:
+2. Taylor writes `plan_<context>_<YYYY-MM-DD>.md` and dispatch details.
+3. Engineer executes and writes `execution_notes_<context>_<YYYY-MM-DD>.md` with PR + test evidence.
+4. Vera runs QA independently and writes `qa_report_<context>_<YYYY-MM-DD>.md` with final line:
    - `QA_VERDICT: PASSED` or
    - `QA_VERDICT: FAILED`
-5. CJ records gate decision in `cj_gate_decision.md`.
-6. If approved, finalize `result.md` + `retrospective.md` before merge.
+5. Gate owner records decision in `final_decision_<context>_<YYYY-MM-DD>.md`.
+6. If approved, finalize `ticket_summary_<context>_<YYYY-MM-DD>.md` + `retrospective_<context>_<YYYY-MM-DD>.md` before merge.
 7. Merge PR.
 8. Post-merge edits should be metadata-only (for example merge hash), and only when needed.
 
@@ -63,7 +64,7 @@ Minimum files:
 - Optional fix hints only when small/obvious (max 1-3 bullets).
 
 ## CJ gate rule
-No merge before `cj_gate_decision.md` is present with explicit decision.
+No merge before `final_decision_<context>_<YYYY-MM-DD>.md` is present with explicit decision.
 
 ## Retros timing rule
 - Retrospective content should be completed pre-merge by default.

@@ -1,4 +1,4 @@
-# retrospective.md template
+# retrospective_<context>_<YYYY-MM-DD>.md template
 
 ## What worked
 -

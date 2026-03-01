@@ -1,0 +1,13 @@
+{
+  "run_id": "M9-PROVING-RUN-003",
+  "context": "i22p23",
+  "date_utc": "2026-03-01",
+  "artifacts": {
+    "plan": "plan_i22p23_2026-03-01.md",
+    "execution_notes": "execution_notes_i22p23_2026-03-01.md",
+    "qa_report": "qa_report_i22p23_2026-03-01.md",
+    "final_decision": "final_decision_i22p23_2026-03-01.md",
+    "ticket_summary": "ticket_summary_i22p23_2026-03-01.md",
+    "retrospective": "retrospective_i22p23_2026-03-01.md"
+  }
+}

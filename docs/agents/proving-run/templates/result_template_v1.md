@@ -1,4 +1,4 @@
-# result.md template
+# ticket_summary_<context>_<YYYY-MM-DD>.md template
 
 ## Outcome summary
 -
