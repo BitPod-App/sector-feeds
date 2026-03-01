@@ -10,6 +10,12 @@ This queue is not a retrospective itself. It is an input inbox.
 bash scripts/flag_retro_item.sh --note "Example: handoff drift on run metadata" --scope "m9" --source "codex" --run-id "M9-PROVING-RUN-002"
 ```
 
+Inspect queue summary for retrospective meeting prep:
+
+```bash
+python3 -m bitpod retro-flags --limit 20 --json
+```
+
 ## Output files
 
 - machine-readable queue:
