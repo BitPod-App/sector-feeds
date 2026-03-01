@@ -1,3 +1,12 @@
+---
+repo: bitpod
+run_id: M9-PROVING-RUN-003
+context: i22p23
+date_utc: 2026-03-01
+artifact_kind: ticket_summary
+artifact_file: ticket_summary_i22p23_2026-03-01.md
+---
+
 # ticket_summary_i22p23_2026-03-01.md
 
 ## Outcome summary

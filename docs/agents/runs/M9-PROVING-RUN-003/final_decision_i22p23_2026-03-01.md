@@ -1,3 +1,12 @@
+---
+repo: bitpod
+run_id: M9-PROVING-RUN-003
+context: i22p23
+date_utc: 2026-03-01
+artifact_kind: final_decision
+artifact_file: final_decision_i22p23_2026-03-01.md
+---
+
 # final_decision_i22p23_2026-03-01.md
 
 ## Decision
