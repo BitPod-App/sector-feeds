@@ -26,6 +26,11 @@ def load_policy(path: Path) -> dict[str, Any]:
     owner = raw.get("owner_oncall")
     if owner is not None and (not isinstance(owner, str) or not owner.strip()):
         raise ValueError("invalid_policy_owner_oncall")
+    milestone_status = raw.get("milestone_status")
+    if milestone_status is not None:
+        allowed_statuses = {"PLANNED", "IN_PROGRESS", "DONE"}
+        if not isinstance(milestone_status, str) or milestone_status not in allowed_statuses:
+            raise ValueError("invalid_policy_milestone_status")
     if not isinstance(raw["required_validation_target"], str) or not raw["required_validation_target"].strip():
         raise ValueError("invalid_policy_required_validation_target")
     if not isinstance(raw["freeze_action_on_guardrail"], str) or not raw["freeze_action_on_guardrail"].strip():

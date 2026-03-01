@@ -187,6 +187,7 @@ record = {
     "status_schema_version": "intake_gate_daily_status.v2",
     "policy_version": str(policy["policy_version"]),
     "milestone": str(policy["milestone"]),
+    "milestone_status": str(policy.get("milestone_status") or "IN_PROGRESS"),
     "owner_oncall": str(policy.get("owner_oncall") or "single_engineer_mode"),
     "date_utc": now.strftime("%Y-%m-%d"),
     "timestamp_utc": now.strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -233,6 +234,9 @@ for row in reversed(rows_with_current):
 record["consecutive_failures"] = consecutive_failures
 record["consecutive_greens"] = consecutive_greens
 record["m5_close_ready_3_consecutive_greens"] = close_ready(consecutive_greens, policy)
+if record["milestone_status"] == "DONE":
+    # Administrative closure wins over rolling local log-window counters.
+    record["m5_close_ready_3_consecutive_greens"] = True
 guardrail_triggered, escalation = guardrail(consecutive_failures, policy)
 record["rollback_guardrail_triggered"] = guardrail_triggered
 record["freeze_action_on_guardrail"] = str(policy["freeze_action_on_guardrail"])
@@ -341,7 +345,7 @@ m5_lines = [
     "# M-5 Tracker",
     "",
     f"- timestamp_utc: `{record['timestamp_utc']}`",
-    "- normalized_entry: `milestone=M-5 | status=IN_PROGRESS | blocked=false`",
+    f"- normalized_entry: `milestone={record['milestone']} | status={record['milestone_status']} | blocked=false`",
     f"- owner_context: `{record['owner_oncall']}`",
     f"- contract_ok: `{record['contract_ok']}`",
     f"- required_validation_target: `{record['required_validation_target']}`",

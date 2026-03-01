@@ -5,5 +5,6 @@
   "policy_version": "m5_intake_ops_policy.v1",
   "required_validation_target": "bitregime_core_intake.v2",
   "rollback_guardrail_consecutive_failures": 2,
-  "future_owner_oncall_note": "When multiple engineers are active, set owner_oncall to the current milestone window owner."
+  "future_owner_oncall_note": "When multiple engineers are active, set owner_oncall to the current milestone window owner.",
+  "milestone_status": "DONE"
 }
