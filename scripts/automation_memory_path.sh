@@ -14,6 +14,7 @@ Environment (all optional):
   BITPOD_LOCAL_WORKSPACE_ROOT
   BITPOD_CODEX_STATE_ROOT
   BITPOD_AUTOMATION_MEMORY_ROOT
+  BITPOD_AUTOMATION_MEMORY_FILENAME
   BITPOD_BACKUP_WORKSPACE_ROOT
   BITPOD_EXTRA_ALLOWED_WRITE_ROOTS (colon-separated)
 USAGE
@@ -38,6 +39,7 @@ BITPOD_WORKSPACE_ROOT="${BITPOD_WORKSPACE_ROOT:-$DEFAULT_APP_ROOT}"
 BITPOD_LOCAL_WORKSPACE_ROOT="${BITPOD_LOCAL_WORKSPACE_ROOT:-$BITPOD_WORKSPACE_ROOT/local-workspace}"
 BITPOD_CODEX_STATE_ROOT="${BITPOD_CODEX_STATE_ROOT:-$BITPOD_LOCAL_WORKSPACE_ROOT/local-codex/.codex}"
 BITPOD_AUTOMATION_MEMORY_ROOT="${BITPOD_AUTOMATION_MEMORY_ROOT:-$BITPOD_CODEX_STATE_ROOT/automations}"
+BITPOD_AUTOMATION_MEMORY_FILENAME="${BITPOD_AUTOMATION_MEMORY_FILENAME:-automation_run_journal.md}"
 
 realpath_py() {
   python3 - "$1" <<'PY'
@@ -97,7 +99,7 @@ memory_path_for() {
     echo "automation_id cannot be empty" >&2
     exit 2
   fi
-  echo "$BITPOD_AUTOMATION_MEMORY_ROOT/$automation_id/memory.md"
+  echo "$BITPOD_AUTOMATION_MEMORY_ROOT/$automation_id/$BITPOD_AUTOMATION_MEMORY_FILENAME"
 }
 
 cmd="$1"
@@ -148,9 +150,14 @@ case "$cmd" in
     mkdir -p "$(dirname "$target_path")"
 
     if [ ! -f "$source_path" ]; then
-      echo "Source not found; nothing to migrate: $source_path"
-      echo "target=$target_path"
-      exit 0
+      legacy_local="$BITPOD_AUTOMATION_MEMORY_ROOT/$automation_id/memory.md"
+      if [ -f "$legacy_local" ]; then
+        source_path="$legacy_local"
+      else
+        echo "Source not found; nothing to migrate: $source_path"
+        echo "target=$target_path"
+        exit 0
+      fi
     fi
 
     if [ "$mode" = "copy" ]; then
@@ -169,6 +176,7 @@ case "$cmd" in
     echo "bitpod_local_workspace_root=$BITPOD_LOCAL_WORKSPACE_ROOT"
     echo "bitpod_codex_state_root=$BITPOD_CODEX_STATE_ROOT"
     echo "bitpod_automation_memory_root=$BITPOD_AUTOMATION_MEMORY_ROOT"
+    echo "bitpod_automation_memory_filename=$BITPOD_AUTOMATION_MEMORY_FILENAME"
     ;;
   *)
     echo "Unknown command: $cmd" >&2
