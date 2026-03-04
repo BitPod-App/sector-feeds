@@ -99,3 +99,12 @@ For future historical continuity, include concise context pointers in PR/commit 
 - retrospective learnings: `docs/runbooks/intake_gate_retrospective_learnings.md`
 
 This is an FYI context pattern, not a merge gate.
+
+## Linear Reference Policy (BIT IDs)
+
+- When referencing any Linear issue like `BIT-000`, always use a full markdown hyperlink that includes both identifier and full issue title.
+- Canonical format:
+  - `[BIT-000 — Full Issue Title](https://linear.app/bitpod-app/issue/BIT-000/issue-slug)`
+- If full title cannot be verified in the current context, use fallback format and state degraded formatting:
+  - `BIT-000 (title unavailable) — https://linear.app/bitpod-app/issue/BIT-000/issue-slug`
+- Do not output bare BIT IDs without a link unless the user explicitly asks for ID-only output.
