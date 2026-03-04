@@ -108,3 +108,12 @@ This is an FYI context pattern, not a merge gate.
 - If full title cannot be verified in the current context, use fallback format and state degraded formatting:
   - `BIT-000 (title unavailable) — https://linear.app/bitpod-app/issue/BIT-000/issue-slug`
 - Do not output bare BIT IDs without a link unless the user explicitly asks for ID-only output.
+
+## Pull Request Reference Policy
+
+- When referencing a GitHub PR, always use a full markdown hyperlink with repo and PR number.
+- Canonical format:
+  - `[BitPod-App/repo-name PR #123 — PR Title](https://github.com/BitPod-App/repo-name/pull/123)`
+- If PR title cannot be verified in the current context, use fallback format:
+  - `[BitPod-App/repo-name PR #123](https://github.com/BitPod-App/repo-name/pull/123)` (title unavailable)
+- Do not output bare `#123` or plain PR URLs unless the user explicitly asks for raw/plain format.
