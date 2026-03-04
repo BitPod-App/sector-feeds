@@ -114,6 +114,8 @@ This is an FYI context pattern, not a merge gate.
 - When referencing a GitHub PR, always use a full markdown hyperlink with repo and PR number.
 - Canonical format:
   - `[BitPod-App/repo-name PR #123 — PR Title](https://github.com/BitPod-App/repo-name/pull/123)`
+- Accepted shorthand (preferred in chat):
+  - `[PR #123 — PR Title](https://github.com/BitPod-App/repo-name/pull/123)`
 - If PR title cannot be verified in the current context, use fallback format:
   - `[BitPod-App/repo-name PR #123](https://github.com/BitPod-App/repo-name/pull/123)` (title unavailable)
 - Do not output bare `#123` or plain PR URLs unless the user explicitly asks for raw/plain format.
