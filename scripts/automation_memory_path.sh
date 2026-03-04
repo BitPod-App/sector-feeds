@@ -39,7 +39,7 @@ BITPOD_WORKSPACE_ROOT="${BITPOD_WORKSPACE_ROOT:-$DEFAULT_APP_ROOT}"
 BITPOD_LOCAL_WORKSPACE_ROOT="${BITPOD_LOCAL_WORKSPACE_ROOT:-$BITPOD_WORKSPACE_ROOT/local-workspace}"
 BITPOD_CODEX_STATE_ROOT="${BITPOD_CODEX_STATE_ROOT:-$BITPOD_LOCAL_WORKSPACE_ROOT/local-codex/.codex}"
 BITPOD_AUTOMATION_MEMORY_ROOT="${BITPOD_AUTOMATION_MEMORY_ROOT:-$BITPOD_CODEX_STATE_ROOT/automations}"
-BITPOD_AUTOMATION_MEMORY_FILENAME="${BITPOD_AUTOMATION_MEMORY_FILENAME:-automation_run_journal.md}"
+BITPOD_AUTOMATION_MEMORY_FILENAME="${BITPOD_AUTOMATION_MEMORY_FILENAME:-}"
 
 realpath_py() {
   python3 - "$1" <<'PY'
@@ -99,7 +99,11 @@ memory_path_for() {
     echo "automation_id cannot be empty" >&2
     exit 2
   fi
-  echo "$BITPOD_AUTOMATION_MEMORY_ROOT/$automation_id/$BITPOD_AUTOMATION_MEMORY_FILENAME"
+  local filename="$BITPOD_AUTOMATION_MEMORY_FILENAME"
+  if [ -z "$filename" ]; then
+    filename="${automation_id}_run_journal.md"
+  fi
+  echo "$BITPOD_AUTOMATION_MEMORY_ROOT/$automation_id/$filename"
 }
 
 cmd="$1"
@@ -176,7 +180,11 @@ case "$cmd" in
     echo "bitpod_local_workspace_root=$BITPOD_LOCAL_WORKSPACE_ROOT"
     echo "bitpod_codex_state_root=$BITPOD_CODEX_STATE_ROOT"
     echo "bitpod_automation_memory_root=$BITPOD_AUTOMATION_MEMORY_ROOT"
-    echo "bitpod_automation_memory_filename=$BITPOD_AUTOMATION_MEMORY_FILENAME"
+    if [ -n "$BITPOD_AUTOMATION_MEMORY_FILENAME" ]; then
+      echo "bitpod_automation_memory_filename=$BITPOD_AUTOMATION_MEMORY_FILENAME"
+    else
+      echo "bitpod_automation_memory_filename=<automation_id>_run_journal.md"
+    fi
     ;;
   *)
     echo "Unknown command: $cmd" >&2

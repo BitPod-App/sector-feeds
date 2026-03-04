@@ -21,7 +21,7 @@ Suggested path:
 - Added env-based memory path resolver/migrator:
   - `scripts/automation_memory_path.sh`
 - Default safe destination:
-  - `/Users/cjarguello/bitpod-app/local-workspace/local-codex/.codex/automations/<automation_id>/automation_run_journal.md`
+  - `/Users/cjarguello/bitpod-app/local-workspace/local-codex/.codex/automations/<automation_id>/<automation_id>_run_journal.md`
 - Root safety guard:
   - refuses writes outside approved workspace roots
   - optional backup root via `BITPOD_BACKUP_WORKSPACE_ROOT`
@@ -30,4 +30,4 @@ Suggested path:
   - `BITPOD_LOCAL_WORKSPACE_ROOT`
   - `BITPOD_CODEX_STATE_ROOT`
   - `BITPOD_AUTOMATION_MEMORY_ROOT`
-  - `BITPOD_AUTOMATION_MEMORY_FILENAME`
+  - `BITPOD_AUTOMATION_MEMORY_FILENAME` (optional override; default derives from automation id)
