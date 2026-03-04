@@ -2,15 +2,15 @@
 
 ## Intent
 
-Keep the original Tuesday personal-use readiness flow stable and predictable.
+Keep the original Tuesday personal-use readiness flow stable, predictable, and lowest-cost.
 
 ## Canonical ad hoc commands
 
 ```bash
-# optional bounded freshness check first (no-op if already up-to-date)
-bash scripts/run_show_adhoc.sh jack_mallers_show
+# canonical legacy Tuesday readiness/status check
+bash scripts/run_legacy_tuesday_track.sh jack_mallers_show
 
-# canonical legacy Tuesday report artifact
+# or report-only
 bash scripts/report_show_weekly_status.sh jack_mallers_show tuesday
 ```
 
@@ -28,7 +28,8 @@ bash scripts/report_show_weekly_status.sh jack_mallers_show tuesday
 
 ## Notes
 
-- This flow is the stable "legacy" track.
+- This flow is a read-only readiness check against existing status artifacts.
+- It does not run discovery/sync/transcription/GPT report generation by default.
 - Avoid changing command path/semantics unless explicitly approved.
 - Supersedes prompt:
   - `docs/prompts/legacy_tuesday_report_prompt.md`
