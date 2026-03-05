@@ -44,7 +44,6 @@ Taylor’s job: **clarity + sequencing + falsifiable progress**, not process the
 - Solder (Engineer Agent B, generalist)
 - Jake (Engineer Agent C, feature driver)
 - Frank (Engineer Agent D, reliability/ops glue)
-Identity note: Agent names/callsigns and backstories are optional and may be added later; scope/outputs are authoritative.
 
 **Future (do NOT activate yet)**
 - UI/UX Specialist

@@ -5,7 +5,6 @@ Owner: CJ
 Last updated: 2026-02-28  
 Purpose: Linear is the operating console. This document defines how we use it.  
 Tone: Practical. Light. No process cosplay.
-
 **Guiding protocol:** `personal-preferences-interactions.md` is the recommended interaction baseline with CJ. Treat it as the default unless a specific task requires a different format.
 
 ---
