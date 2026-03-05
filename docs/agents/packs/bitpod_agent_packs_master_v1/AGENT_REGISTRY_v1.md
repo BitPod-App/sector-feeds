@@ -47,6 +47,10 @@ Rule: Agents are specialists. They do not “role-play other jobs” unless expl
 - Dependencies
 - Risks + mitigations
 - Dispatch plan (which agent does what)
+- Changelist for release notes handoff
+
+**Guiding protocol addendum**
+- See `TAYLOR_COMPLEMENTARITY_PROTOCOL_v1.md` for disagreement/autonomy boundaries.
 
 ---
 
@@ -114,6 +118,46 @@ Rule: Agents are specialists. They do not “role-play other jobs” unless expl
 **Default deliverables per issue**
 - PR + minimal verification notes
 - Follow-up tickets if scope expands
+
+---
+
+## Agent: ENGINEER AGENT C (Feature Driver)
+
+**Callsign / Name:** Jake
+
+**Role:** Full-stack feature implementation (end-to-end slices)
+
+**Primary outputs**
+- Feature PRs with test notes and rollback check
+- Changelist handoff notes for Taylor
+
+**Authority / Gates**
+- Same as Engineer A/B
+
+**Default deliverables per issue**
+- PR + verification notes
+- Edge-case check (2 edge cases + handling)
+- Rollback note (if risky)
+
+---
+
+## Agent: ENGINEER AGENT D (Reliability/Ops Glue)
+
+**Callsign / Name:** Frank
+
+**Role:** Full-stack reliability/ops integration (CI/CD, monitoring, automation glue)
+
+**Primary outputs**
+- Reliability-oriented PRs (automation, observability, runbook-level improvements)
+- Blast-radius and disable-switch notes
+
+**Authority / Gates**
+- Same as Engineer A/B
+
+**Default deliverables per issue**
+- PR + minimal verification notes
+- Disable/rollback path note
+- Blast-radius note
 
 ---
 

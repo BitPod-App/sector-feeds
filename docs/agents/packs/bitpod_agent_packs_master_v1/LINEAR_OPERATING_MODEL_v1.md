@@ -5,7 +5,6 @@ Owner: CJ
 Last updated: 2026-02-28  
 Purpose: Linear is the operating console. This document defines how we use it.  
 Tone: Practical. Light. No process cosplay.
-
 **Guiding protocol:** `personal-preferences-interactions.md` is the recommended interaction baseline with CJ. Treat it as the default unless a specific task requires a different format.
 
 ---
@@ -69,8 +68,8 @@ Rule: Keep taxonomy small. Add labels only when repeated friction forces it.
 
 ## Ownership
 - Taylor owns triage + priority + scope.
-- QA owns verification and bug quality.
-- Eng agents own implementation.
+- QA (Vera) owns verification and bug quality.
+- Eng agents (Atlas, Solder, Jake, Frank) own implementation.
 
 ---
 
