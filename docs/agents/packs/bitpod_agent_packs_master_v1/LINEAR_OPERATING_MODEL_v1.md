@@ -69,8 +69,8 @@ Rule: Keep taxonomy small. Add labels only when repeated friction forces it.
 
 ## Ownership
 - Taylor owns triage + priority + scope.
-- QA owns verification and bug quality.
-- Eng agents own implementation.
+- QA (Vera) owns verification and bug quality.
+- Eng agents (Atlas, Solder, Jake, Frank) own implementation.
 
 ---
 

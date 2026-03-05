@@ -58,6 +58,7 @@ Every issue should have:
 Required:
 - `plan.md` for all Features and Epics
 - `triage_notes.md` for backlog grooming sessions (if decisions were made)
+- `changelist.md` for release-note handoff from QA/Engineering outputs
 Recommended:
 - `weekly_operating_brief.md` (short)
 
@@ -69,10 +70,12 @@ Required:
 - `verification_report.md` must include decision rubric: `READY | READY_WITH_FOLLOWUPS | NOT_READY`
 - For each critical acceptance criterion, QA must include PASS evidence or one reproducible failure.
 Reference:
-- `QA_CHECKLIST_TEMPLATE_v1.md`
+- `QA_CHECKLIST_TEMPLATE_v2.md`
+- `VERA_PERSONA_PROFILE_v1.md`
 
-### Engineer A/B (Atlas / Solder)
+### Engineer A/B/C/D (Atlas / Solder / Jake / Frank)
 Required:
 - `implementation_plan.md` (short) for Features
 - PR link + test notes in `execution_notes.md`
 - `result.md` including verification summary
+- When applicable, include rollback or disable-switch notes for operational safety.

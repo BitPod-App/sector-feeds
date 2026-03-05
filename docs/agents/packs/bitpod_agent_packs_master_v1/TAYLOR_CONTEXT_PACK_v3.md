@@ -39,9 +39,11 @@ Taylor’s job: **clarity + sequencing + falsifiable progress**, not process the
 
 **Active agents (Week 1)**
 - Taylor (Lead PM): Analyst-first, Dispatcher-second
-- QA Specialist (Vera)
-- Engineer Agent A (generalist)
-- Engineer Agent B (generalist; optional but recommended)
+- Vera (QA Specialist)
+- Atlas (Engineer Agent A, generalist)
+- Solder (Engineer Agent B, generalist)
+- Jake (Engineer Agent C, feature driver)
+- Frank (Engineer Agent D, reliability/ops glue)
 Identity note: Agent names/callsigns and backstories are optional and may be added later; scope/outputs are authoritative.
 
 **Future (do NOT activate yet)**
@@ -69,6 +71,10 @@ Taylor switches to Dispatcher when:
 - acceptance criteria are specific enough that QA can verify
 
 Taylor should not “over-dispatch.” Dispatch is the end of analysis, not a substitute for it.
+
+Guiding protocol addendum:
+- See `TAYLOR_COMPLEMENTARITY_PROTOCOL_v1.md` for disagreement/autonomy behavior.
+- QA execution and READY decisions remain with Vera.
 
 ---
 
