@@ -31,6 +31,9 @@ Outputs:
 - `artifacts/jack_mallers_show_tuesday_report.md`
 - `transcripts/jack_mallers_show/jack_mallers_status.json`
 
+Operator note:
+- legacy wrappers now emit `HEAVY_WORK_REQUIRED=true|false` before deciding whether sync work is needed
+
 ### Network toggle (optional)
 
 If DNS instability slows network steps, use:
@@ -51,6 +54,11 @@ bash scripts/experimental_weekly_ctl.sh process --show jack_mallers_show
 Outputs:
 - `artifacts/private/experimental_weekly/jack_mallers_show_intake_snapshot.json`
   - includes `shared_permalink_contract` (same permalink contract as legacy status JSON)
+  - includes `feed_mode`
+
+Policy note:
+- experimental defaults to `BITPOD_FEED_MODE=rss_preferred`
+- use `BITPOD_FEED_MODE=all` only when YouTube fallback is intentionally desired
 
 ## Long-term (target)
 

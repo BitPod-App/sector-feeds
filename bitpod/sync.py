@@ -4,6 +4,7 @@ import hashlib
 import logging
 import os
 import re
+import unicodedata
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -23,8 +24,10 @@ SOURCE_RANK = {
     "unknown": 5,
 }
 LIVE_YOUTUBE_TITLE_PATTERN = re.compile(r"\b(live|upcoming|premiere)\b", re.IGNORECASE)
+TITLE_TOKEN_PATTERN = re.compile(r"[^a-z0-9]+")
 VALID_ORIGIN_ACTORS = {"CJ", "GPT", "CODEX", "TAYLOR", "HUMAN_TEAM", "OTHER"}
 VALID_AUTHORITY_STATES = {"PROPOSAL", "CJ_ENDORSED", "TEAM_ENDORSED", "CJ_OVERRIDE"}
+SOURCE_PAIR_DEDUPE_WINDOW = timedelta(days=3)
 
 
 @dataclass
@@ -182,6 +185,49 @@ def _is_live_like_youtube_episode(episode: Any) -> bool:
     return bool(LIVE_YOUTUBE_TITLE_PATTERN.search(title))
 
 
+def _normalized_episode_title(title: str) -> str:
+    normalized = unicodedata.normalize("NFKD", title).encode("ascii", "ignore").decode("ascii")
+    normalized = TITLE_TOKEN_PATTERN.sub(" ", normalized.lower()).strip()
+    return " ".join(normalized.split())
+
+
+def _should_cross_source_dedupe(existing: Any, candidate: Any) -> bool:
+    existing_type = str(getattr(existing, "source_type", "unknown"))
+    candidate_type = str(getattr(candidate, "source_type", "unknown"))
+    if not (existing_type != candidate_type and existing_type != "unknown" and candidate_type != "unknown"):
+        return False
+    if not ({existing_type.startswith("rss"), candidate_type.startswith("rss")} == {True, False}):
+        return False
+    if not ({existing_type.startswith("youtube"), candidate_type.startswith("youtube")} == {True, False}):
+        return False
+
+    existing_title = _normalized_episode_title(str(getattr(existing, "title", "") or ""))
+    candidate_title = _normalized_episode_title(str(getattr(candidate, "title", "") or ""))
+    if not existing_title or existing_title != candidate_title:
+        return False
+
+    existing_published = getattr(existing, "published_at", None)
+    candidate_published = getattr(candidate, "published_at", None)
+    if not isinstance(existing_published, datetime) or not isinstance(candidate_published, datetime):
+        return False
+    return abs(existing_published - candidate_published) <= SOURCE_PAIR_DEDUPE_WINDOW
+
+
+def _dedupe_cross_source_variants(episodes: list[Any]) -> list[Any]:
+    deduped: list[Any] = []
+    for episode in sorted(episodes, key=lambda ep: getattr(ep, "published_at", datetime.min.replace(tzinfo=timezone.utc))):
+        match_index: int | None = None
+        for idx, existing in enumerate(deduped):
+            if _should_cross_source_dedupe(existing, episode):
+                match_index = idx
+                break
+        if match_index is None:
+            deduped.append(episode)
+            continue
+        deduped[match_index] = _choose_best_source(deduped[match_index], episode)
+    return deduped
+
+
 def _status_basename(show: dict[str, Any]) -> str:
     stable_name = _stable_pointer_name(show)
     stem = Path(stable_name).stem
@@ -252,7 +298,7 @@ def _governance_context() -> dict[str, Any]:
     }
 
 
-def get_feed_urls(show: dict[str, Any]) -> list[str]:
+def get_feed_urls(show: dict[str, Any], feed_mode: str = "all") -> list[str]:
     feeds = show.get("feeds", {})
     urls: list[str] = []
 
@@ -264,7 +310,8 @@ def get_feed_urls(show: dict[str, Any]) -> list[str]:
         urls.extend([str(url) for url in rss_feeds if url])
 
     youtube_feed = feeds.get("youtube")
-    if youtube_feed:
+    include_youtube = feed_mode == "all" or (feed_mode == "rss_preferred" and not urls)
+    if youtube_feed and include_youtube:
         urls.append(str(youtube_feed))
 
     deduped: list[str] = []
@@ -303,6 +350,7 @@ def sync_show(
     max_episodes: int = 3,
     since_days: int | None = None,
     dry_run: bool = False,
+    feed_mode: str = "all",
     source_policy: str = "balanced",
     no_youtube_download: bool = False,
     min_caption_words: int = 120,
@@ -318,7 +366,7 @@ def sync_show(
     show_key = show["show_key"]
     run_started_at = now_iso()
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    feed_urls = get_feed_urls(show)
+    feed_urls = get_feed_urls(show, feed_mode=feed_mode)
 
     stats: dict[str, Any] = {
         "seen": 0,
@@ -329,6 +377,7 @@ def sync_show(
         "caption_used": 0,
         "dry_run": dry_run,
         "feeds": feed_urls,
+        "feed_mode": feed_mode,
         "source_policy": source_policy,
         "min_episode_age_minutes": min_episode_age_minutes,
     }
@@ -417,7 +466,7 @@ def sync_show(
         current = deduped_by_guid.get(guid)
         deduped_by_guid[guid] = episode if current is None else _choose_best_source(current, episode)
 
-    episodes = list(deduped_by_guid.values())
+    episodes = _dedupe_cross_source_variants(list(deduped_by_guid.values()))
     cutoff_now = as_of_utc or datetime.now(timezone.utc)
     episodes = [ep for ep in episodes if ep.published_at <= cutoff_now]
     stats["seen"] = len(episodes)

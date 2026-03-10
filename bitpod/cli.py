@@ -37,6 +37,7 @@ def _cmd_sync(args: argparse.Namespace) -> int:
         max_episodes=args.max_episodes,
         since_days=args.since_days,
         dry_run=args.dry_run,
+        feed_mode=args.feed_mode,
         source_policy=args.source_policy,
         no_youtube_download=args.no_youtube_download,
         min_caption_words=args.min_caption_words,
@@ -96,6 +97,12 @@ def build_parser() -> argparse.ArgumentParser:
     sync_parser.add_argument("--max-episodes", type=int, default=3)
     sync_parser.add_argument("--since-days", type=int)
     sync_parser.add_argument("--dry-run", action="store_true")
+    sync_parser.add_argument(
+        "--feed-mode",
+        choices=["all", "rss_preferred", "rss_only"],
+        default="all",
+        help="Which feed sources are eligible for this run",
+    )
     sync_parser.add_argument(
         "--source-policy",
         choices=["audio-first", "balanced", "caption-first", "media-first"],

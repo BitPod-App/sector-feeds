@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -27,7 +28,26 @@ except Exception:  # noqa: BLE001
         with meter_file.open("a", encoding="utf-8") as f:
             f.write(json.dumps({"recorded_at_utc": datetime.now(timezone.utc).isoformat(), **event}, sort_keys=True) + "\n")
 
-BRIDGE_ROOT = Path("/Users/cjarguello/bitpod-app/tools/gpt_bridge")
+def _resolve_bridge_root() -> Path:
+    candidates = [
+        os.environ.get("BITPOD_GPT_BRIDGE_ROOT", "").strip(),
+        "/Users/cjarguello/bitpod-app/bitpod-tools/gpt_bridge",
+        "/Users/cjarguello/bitpod-app/tools/gpt_bridge",
+        str(REPO_ROOT.parent / "bitpod-tools" / "gpt_bridge"),
+        str(REPO_ROOT.parent / "tools" / "gpt_bridge"),
+    ]
+    for raw in candidates:
+        if not raw:
+            continue
+        path = Path(raw).expanduser()
+        if (path / "bridge_chat.sh").exists():
+            return path
+    raise SystemExit(
+        "ERROR: could not resolve gpt_bridge root. Set BITPOD_GPT_BRIDGE_ROOT to a directory containing bridge_chat.sh."
+    )
+
+
+BRIDGE_ROOT = _resolve_bridge_root()
 
 
 def _extract_gpt_payload(stdout: str) -> str:

@@ -26,6 +26,10 @@ bash scripts/print_show_contract.sh jack_mallers_show
 Primary output:
 - `artifacts/jack_mallers_show_tuesday_report.md`
 
+Preflight behavior:
+- wrapper emits `HEAVY_WORK_REQUIRED=true|false` before any heavy sync step
+- if `false`, it skips the sync step and only uses the latest available status artifacts
+
 ## Legacy Friday (stable status check)
 
 Reference prompt:
@@ -73,6 +77,14 @@ Primary outputs:
 - `artifacts/private/experimental_weekly/jack_mallers_show_intake_snapshot.json`
 - `artifacts/private/weekly_bundles/weekly_critical_bundle.json` (if generated)
 - `/Users/cjarguello/bitpod-app/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json` (if generated)
+
+Feed-policy default:
+- experimental wrapper defaults `BITPOD_FEED_MODE=rss_preferred`
+- accepted values: `all`, `rss_preferred`, `rss_only`
+
+Preflight behavior:
+- wrapper emits `HEAVY_WORK_REQUIRED=true|false` with reason before heavy work
+- intake snapshot now records the effective `feed_mode`
 
 ## Shared contract URLs (canonical for both tracks)
 
