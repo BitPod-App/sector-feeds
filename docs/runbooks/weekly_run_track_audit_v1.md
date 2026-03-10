@@ -111,6 +111,30 @@ This means the documented weekly automation contract currently depends on non-ve
 - current contract does not make "used by GPT" obvious unless the GPT ack artifact exists and matches the current `run_id`
 - because runtime outputs are not present in a clean clone, a human cannot tell from repo state alone whether the automations are currently healthy or merely documented
 
+
+## GPT consumer framing (cross-check)
+
+GPT was asked to evaluate the weekly tracks from the perspective that GPT is currently the only consumer of `sector-feeds` outputs and the only current user of the permalink.
+
+Result:
+- `legacy_tuesday_track` only makes sense as a reliability/backfill lane
+- `experimental_track` only makes sense as a safe diff/evaluation lane
+
+Operator-facing interpretation:
+- legacy should prove that it catches missed or late-changing episodes and produces one canonical record GPT can trust
+- experimental should prove new processing logic against the same latest episode and emit a comparison artifact, not just another opaque run
+
+Useful GPT-oriented fields that are currently missing or non-obvious:
+- `latest_episode_id`
+- `last_seen_episode_id`
+- `processed_at`
+- `used_by_gpt_at`
+- `gpt_run_id`
+- optional `gpt_use_count`
+- optional `experiment_version`
+
+This strengthens the audit conclusion: the weekly runs should stay only if they answer discovery / processing / GPT consumption explicitly for the latest episode in one operator-facing summary.
+
 ## Audit conclusion
 
 The two-track model is directionally valid, but the current weekly automation setup is not justified in its live form.
