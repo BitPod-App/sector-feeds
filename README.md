@@ -58,6 +58,9 @@ python -m bitpod sync --show jack_mallers_show
 # choose source behavior
 python -m bitpod sync --show jack_mallers_show --source-policy balanced
 
+# restrict which feed families are eligible
+python -m bitpod sync --show jack_mallers_show --feed-mode rss_preferred
+
 # fail fast if youtube captions are low quality (no media download fallback)
 python -m bitpod sync --show jack_mallers_show --no-youtube-download
 
@@ -165,6 +168,9 @@ bash scripts/run_legacy_friday_track.sh jack_mallers_show
 
 # One-shot experimental track (collect + process + contract print)
 bash scripts/run_experimental_track.sh jack_mallers_show
+
+# Force experimental track to use RSS only
+BITPOD_FEED_MODE=rss_only bash scripts/run_experimental_track.sh jack_mallers_show
 
 # Validate feed identity contract (IDs + canonical catalog path)
 make feed-identity-check SHOW_KEY=jack_mallers_show

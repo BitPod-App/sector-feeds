@@ -7,7 +7,15 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 import bitpod.sync as sync_module
-from bitpod.sync import _choose_best_source, _is_live_like_youtube_episode, _status_basename, filter_episodes, get_feed_urls
+from bitpod.sync import (
+    _choose_best_source,
+    _dedupe_cross_source_variants,
+    _is_live_like_youtube_episode,
+    _normalized_episode_title,
+    _status_basename,
+    filter_episodes,
+    get_feed_urls,
+)
 
 
 @dataclass
@@ -51,6 +59,35 @@ class SyncFilteringTests(unittest.TestCase):
             ],
         )
 
+    def test_get_feed_urls_rss_preferred_skips_youtube_when_rss_exists(self) -> None:
+        show = {
+            "feeds": {
+                "youtube": "https://www.youtube.com/feeds/videos.xml?channel_id=abc",
+                "rss": ["https://example.com/feed.xml"],
+            }
+        }
+        self.assertEqual(get_feed_urls(show, feed_mode="rss_preferred"), ["https://example.com/feed.xml"])
+
+    def test_get_feed_urls_rss_preferred_falls_back_to_youtube(self) -> None:
+        show = {
+            "feeds": {
+                "youtube": "https://www.youtube.com/feeds/videos.xml?channel_id=abc",
+            }
+        }
+        self.assertEqual(
+            get_feed_urls(show, feed_mode="rss_preferred"),
+            ["https://www.youtube.com/feeds/videos.xml?channel_id=abc"],
+        )
+
+    def test_get_feed_urls_rss_only_excludes_youtube(self) -> None:
+        show = {
+            "feeds": {
+                "youtube": "https://www.youtube.com/feeds/videos.xml?channel_id=abc",
+                "rss": ["https://example.com/feed.xml"],
+            }
+        }
+        self.assertEqual(get_feed_urls(show, feed_mode="rss_only"), ["https://example.com/feed.xml"])
+
     def test_choose_best_source_prefers_rss_audio_over_youtube(self) -> None:
         newer_youtube = DummyEpisode(
             guid="same",
@@ -68,6 +105,50 @@ class SyncFilteringTests(unittest.TestCase):
         )
         chosen = _choose_best_source(newer_youtube, older_rss)
         self.assertEqual(chosen.source_type, "rss_audio")
+
+    def test_normalized_episode_title_ignores_punctuation(self) -> None:
+        self.assertEqual(
+            _normalized_episode_title("Oil, Bonds, and Bitcoin: The Rules Are That There Are No Rules"),
+            "oil bonds and bitcoin the rules are that there are no rules",
+        )
+
+    def test_cross_source_dedupe_prefers_rss_when_title_and_date_match(self) -> None:
+        published = datetime(2026, 3, 1, tzinfo=timezone.utc)
+        rss = DummyEpisode(
+            guid="rss-guid",
+            title="Oil, Bonds, and Bitcoin: The Rules Are That There Are No Rules",
+            published_at=published,
+            source_url="https://podcast.example/oil-bonds",
+            source_type="rss_audio",
+        )
+        youtube = DummyEpisode(
+            guid="yt-guid",
+            title="Oil, Bonds, and Bitcoin: The Rules Are That There Are No Rules",
+            published_at=published + timedelta(hours=2),
+            source_url="https://youtube.com/watch?v=abc",
+            source_type="youtube_video",
+        )
+        deduped = _dedupe_cross_source_variants([rss, youtube])
+        self.assertEqual(len(deduped), 1)
+        self.assertEqual(deduped[0].source_type, "rss_audio")
+
+    def test_cross_source_dedupe_does_not_merge_far_apart_reposts(self) -> None:
+        rss = DummyEpisode(
+            guid="rss-guid",
+            title="What Is Money? (And Why Bitcoin Matters)",
+            published_at=datetime(2025, 12, 30, tzinfo=timezone.utc),
+            source_url="https://podcast.example/what-is-money",
+            source_type="rss_audio",
+        )
+        youtube = DummyEpisode(
+            guid="yt-guid",
+            title="What Is Money? (And Why Bitcoin Matters)",
+            published_at=datetime(2026, 1, 6, tzinfo=timezone.utc),
+            source_url="https://youtube.com/watch?v=def",
+            source_type="youtube_video",
+        )
+        deduped = _dedupe_cross_source_variants([rss, youtube])
+        self.assertEqual(len(deduped), 2)
 
     def test_status_basename_uses_stable_pointer_stem(self) -> None:
         show = {"show_key": "demo_show", "stable_pointer": "demo_latest.md"}

@@ -31,6 +31,7 @@ fi
 MIN_CAPTION_WORDS="${2:-${MIN_CAPTION_WORDS:-120}}"
 MIN_EPISODE_AGE_MINUTES="${3:-${MIN_EPISODE_AGE_MINUTES:-180}}"
 WEEKLY_GPT_REPORT="${WEEKLY_GPT_REPORT:-0}"
+BITPOD_FEED_MODE="${BITPOD_FEED_MODE:-all}"
 TOOLS_COST_CTL="/Users/cjarguello/bitpod-app/tools/costs/cost_ctl.py"
 
 run_cost_guard() {
@@ -54,6 +55,7 @@ run_cost_guard
 .venv311/bin/python -m bitpod sync \
   --show "$SHOW_KEY" \
   --max-episodes 1 \
+  --feed-mode "$BITPOD_FEED_MODE" \
   --source-policy balanced \
   --min-caption-words "$MIN_CAPTION_WORDS" \
   --min-episode-age-minutes "$MIN_EPISODE_AGE_MINUTES"

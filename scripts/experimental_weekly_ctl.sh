@@ -6,6 +6,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 PY="$REPO_ROOT/.venv311/bin/python"
 SHOW_KEY="${SHOW_KEY:-jack_mallers_show}"
 ART_ROOT="$REPO_ROOT/artifacts/private/experimental_weekly"
+BITPOD_FEED_MODE="${BITPOD_FEED_MODE:-all}"
 
 usage() {
   cat <<'EOF'
@@ -49,7 +50,7 @@ cmd_collect() {
   elif ! "$PY" -m bitpod discover --show "$SHOW_KEY"; then
     echo "WARN: discover failed; proceeding with local-only snapshot fallback." >&2
   fi
-  "$PY" - "$SHOW_KEY" "$ART_ROOT" <<'PY'
+  "$PY" - "$SHOW_KEY" "$ART_ROOT" "$BITPOD_FEED_MODE" <<'PY'
 import json
 import sys
 from datetime import datetime, timezone
@@ -61,9 +62,10 @@ from bitpod.sync import _choose_best_source, get_feed_urls
 
 show_key = sys.argv[1]
 art_root = Path(sys.argv[2])
+feed_mode = sys.argv[3]
 config = load_config()
 show = get_show(config, show_key)
-feed_urls = get_feed_urls(show)
+feed_urls = get_feed_urls(show, feed_mode=feed_mode)
 episodes = []
 parse_errors = []
 for url in feed_urls:
@@ -105,6 +107,7 @@ payload = {
     "contract_version": "experimental_intake_snapshot.v1",
     "captured_at_utc": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
     "show_key": show_key,
+    "feed_mode": feed_mode,
     "feed_urls": feed_urls,
     "feed_parse_errors": parse_errors,
     "episode_count": len(deduped),
