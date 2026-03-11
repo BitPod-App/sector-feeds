@@ -19,17 +19,19 @@ TARGET_BYTES = 24 * 1024 * 1024
 
 
 class OpenAITranscriptionProvider(TranscriptionProvider):
+    TRANSIENT_RETRY_DELAYS_SECONDS = (2, 5)
+
     def __init__(self, api_key: str | None = None) -> None:
         self.client = OpenAI(api_key=api_key)
 
     def transcribe_audio(self, path: str, model: str = "gpt-4o-mini-transcribe", **options: Any) -> TranscriptResult:
         try:
-            response = self._transcribe_with_payload_fallback(path, model, **options)
+            response = self._transcribe_with_retries(path, model, **options)
             model_used = model
         except Exception as exc:  # noqa: BLE001
             if not self._is_model_error(exc) or model == "whisper-1":
                 raise
-            response = self._transcribe_with_payload_fallback(path, "whisper-1", **options)
+            response = self._transcribe_with_retries(path, "whisper-1", **options)
             model_used = "whisper-1"
 
         text = getattr(response, "text", "") or ""
@@ -73,6 +75,27 @@ class OpenAITranscriptionProvider(TranscriptionProvider):
                 return self._transcribe(str(compressed), model, **options)
             finally:
                 shutil.rmtree(temp_dir, ignore_errors=True)
+
+    def _transcribe_with_retries(self, path: str, model: str, **options: Any) -> Any:
+        delays = self.TRANSIENT_RETRY_DELAYS_SECONDS
+        attempt = 0
+        while True:
+            try:
+                return self._transcribe_with_payload_fallback(path, model, **options)
+            except Exception as exc:  # noqa: BLE001
+                if attempt >= len(delays) or not self._is_retryable_transcription_error(exc):
+                    raise
+                delay = delays[attempt]
+                attempt += 1
+                LOGGER.warning(
+                    "Transient transcription failure for %s on attempt %s/%s; retrying in %ss: %s",
+                    path,
+                    attempt,
+                    len(delays) + 1,
+                    delay,
+                    exc,
+                )
+                time.sleep(delay)
 
     def _compress_audio_for_transcription(self, path: str) -> tuple[Path, Path]:
         source = Path(path)
@@ -124,4 +147,20 @@ class OpenAITranscriptionProvider(TranscriptionProvider):
     def _is_payload_too_large(self, exc: Exception) -> bool:
         text = str(exc).lower()
         markers = ["413", "payload too large", "maximum content size limit", "content size limit"]
+        return any(marker in text for marker in markers)
+
+    def _is_retryable_transcription_error(self, exc: Exception) -> bool:
+        text = str(exc).lower()
+        markers = [
+            "error code: 500",
+            "error code: 502",
+            "error code: 503",
+            "error code: 504",
+            "internal server error",
+            "gateway timeout",
+            "service unavailable",
+            "timed out",
+            "timeout",
+            "connection error",
+        ]
         return any(marker in text for marker in markers)
