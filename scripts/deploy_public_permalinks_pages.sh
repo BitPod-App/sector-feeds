@@ -15,8 +15,10 @@ fi
 
 # Optional local runtime secrets.
 if [ -f "$REPO_ROOT/.bitpod_runtime.env" ]; then
+  set -a
   # shellcheck disable=SC1091
   source "$REPO_ROOT/.bitpod_runtime.env"
+  set +a
 fi
 
 echo "Deploying '$DEPLOY_DIR' to Cloudflare Pages project '$PROJECT_NAME' (branch '$BRANCH_NAME')"
