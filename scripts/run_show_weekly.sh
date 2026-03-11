@@ -12,20 +12,29 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 # Load optional runtime secrets/config once (kept outside committed defaults).
 if [ -f "$REPO_ROOT/.bitpod_runtime.env" ]; then
+  # Export repo-local runtime overrides so child Python processes receive them.
+  set -a
   # shellcheck disable=SC1091
   source "$REPO_ROOT/.bitpod_runtime.env"
+  set +a
 elif [ -f "$REPO_ROOT/scripts/bitpod_runtime.env" ]; then
+  set -a
   # shellcheck disable=SC1091
   source "$REPO_ROOT/scripts/bitpod_runtime.env"
+  set +a
 fi
 
 # Load optional budget/runtime defaults once so users do not need to pass env vars every run.
 if [ -f "$REPO_ROOT/.bitpod_budget.env" ]; then
+  set -a
   # shellcheck disable=SC1091
   source "$REPO_ROOT/.bitpod_budget.env"
+  set +a
 elif [ -f "$REPO_ROOT/scripts/bitpod_budget.env" ]; then
+  set -a
   # shellcheck disable=SC1091
   source "$REPO_ROOT/scripts/bitpod_budget.env"
+  set +a
 fi
 
 MIN_CAPTION_WORDS="${2:-${MIN_CAPTION_WORDS:-120}}"

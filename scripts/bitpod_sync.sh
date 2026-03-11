@@ -4,11 +4,15 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
 if [ -f "$REPO_ROOT/.bitpod_runtime.env" ]; then
+  set -a
   # shellcheck disable=SC1091
   source "$REPO_ROOT/.bitpod_runtime.env"
+  set +a
 elif [ -f "$REPO_ROOT/scripts/bitpod_runtime.env" ]; then
+  set -a
   # shellcheck disable=SC1091
   source "$REPO_ROOT/scripts/bitpod_runtime.env"
+  set +a
 fi
 
 cd "$REPO_ROOT"
