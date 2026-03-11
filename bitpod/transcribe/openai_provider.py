@@ -141,8 +141,16 @@ class OpenAITranscriptionProvider(TranscriptionProvider):
 
     def _is_model_error(self, exc: Exception) -> bool:
         text = str(exc).lower()
-        model_markers = ["model", "not found", "does not exist", "invalid"]
-        return any(marker in text for marker in model_markers)
+        explicit_model_markers = [
+            "model does not exist",
+            "the model does not exist",
+            "model not found",
+            "unknown model",
+            "unsupported model",
+            "invalid model",
+            "model is not supported",
+        ]
+        return any(marker in text for marker in explicit_model_markers)
 
     def _is_payload_too_large(self, exc: Exception) -> bool:
         text = str(exc).lower()

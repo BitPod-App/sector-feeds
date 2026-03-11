@@ -17,6 +17,16 @@ class OpenAIProviderErrorDetectionTests(unittest.TestCase):
         err = RuntimeError("The model does not exist")
         self.assertTrue(provider._is_model_error(err))
 
+    def test_model_error_detection_does_not_treat_generic_bad_request_as_model_error(self) -> None:
+        provider = OpenAITranscriptionProvider.__new__(OpenAITranscriptionProvider)
+        err = RuntimeError("HTTP/1.1 400 Bad Request")
+        self.assertFalse(provider._is_model_error(err))
+
+    def test_model_error_detection_does_not_treat_invalid_api_key_as_model_error(self) -> None:
+        provider = OpenAITranscriptionProvider.__new__(OpenAITranscriptionProvider)
+        err = RuntimeError("Error code: 401 - invalid_api_key")
+        self.assertFalse(provider._is_model_error(err))
+
     def test_retryable_transcription_error_detection(self) -> None:
         provider = OpenAITranscriptionProvider.__new__(OpenAITranscriptionProvider)
         err = RuntimeError("Error code: 500 - Internal Server Error")
