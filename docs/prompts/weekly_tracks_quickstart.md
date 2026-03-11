@@ -25,6 +25,7 @@ bash scripts/print_show_contract.sh jack_mallers_show
 
 Primary output:
 - `artifacts/jack_mallers_show_tuesday_report.md`
+- `artifacts/runs/legacy_tuesday_track/jack_mallers_show/<timestamp>__summary.md`
 
 Preflight behavior:
 - wrapper emits `HEAVY_WORK_REQUIRED=true|false` before any heavy sync step
@@ -75,6 +76,7 @@ bash scripts/experimental_weekly_ctl.sh render-experimental --report-md /absolut
 
 Primary outputs:
 - `artifacts/private/experimental_weekly/jack_mallers_show_intake_snapshot.json`
+- `artifacts/runs/experimental_track/jack_mallers_show/<timestamp>__summary.md`
 - `artifacts/private/weekly_bundles/weekly_critical_bundle.json` (if generated)
 - `/Users/cjarguello/bitpod-app/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json` (if generated)
 
