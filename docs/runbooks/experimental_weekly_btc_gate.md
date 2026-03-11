@@ -40,6 +40,8 @@ python3 /Users/cjarguello/bitpod-app/bitregime-core/scripts/gate_weekly_bundle.p
 
 - `artifacts/private/experimental_weekly/jack_mallers_show_intake_snapshot.json`
   - includes `shared_permalink_contract` (same permalink intake/discovery/status/transcript URLs used by legacy track when available)
+- `artifacts/runs/experimental_track/jack_mallers_show/<timestamp>__summary.md`
+- `artifacts/runs/experimental_track/jack_mallers_show/<timestamp>__status.json`
 - `artifacts/private/weekly_bundles/weekly_critical_bundle.json`
 - `/Users/cjarguello/bitpod-app/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json`
 - Prompt: `docs/prompts/experimental_weekly_gate_single_prompt.md`
@@ -56,5 +58,6 @@ python3 /Users/cjarguello/bitpod-app/bitregime-core/scripts/gate_weekly_bundle.p
 - Do not use this flow to replace legacy Tuesday behavior yet.
 - `experimental_weekly_ctl.sh` is a transitional decoupled wrapper, not the final engine CLI.
 - `collect` is fail-closed and emits a local snapshot even when network discovery is unavailable.
+- Experimental track should share the same permalink/status contract surface as legacy, but it remains the heavier evaluation lane.
 - Supersedes prompt:
   - `docs/prompts/experimental_weekly_btc_gate_prompt.md`

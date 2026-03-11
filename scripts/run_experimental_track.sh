@@ -30,4 +30,5 @@ else
   run_cmd env EXPERIMENTAL_SKIP_DISCOVER=1 BITPOD_FEED_MODE="$BITPOD_FEED_MODE" bash "$SCRIPT_DIR/experimental_weekly_ctl.sh" collect --show "$SHOW_KEY"
 fi
 run_cmd env BITPOD_FEED_MODE="$BITPOD_FEED_MODE" bash "$SCRIPT_DIR/experimental_weekly_ctl.sh" process --show "$SHOW_KEY"
+python3 "$SCRIPT_DIR/render_weekly_run_summary.py" --show "$SHOW_KEY" --track experimental_track --feed-mode "$BITPOD_FEED_MODE"
 bash "$SCRIPT_DIR/print_show_contract.sh" "$SHOW_KEY"

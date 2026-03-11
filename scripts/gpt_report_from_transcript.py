@@ -28,6 +28,8 @@ except Exception:  # noqa: BLE001
         with meter_file.open("a", encoding="utf-8") as f:
             f.write(json.dumps({"recorded_at_utc": datetime.now(timezone.utc).isoformat(), **event}, sort_keys=True) + "\n")
 
+from bitpod.ops import record_gpt_feedback
+
 def _resolve_bridge_root() -> Path:
     candidates = [
         os.environ.get("BITPOD_GPT_BRIDGE_ROOT", "").strip(),
@@ -101,6 +103,13 @@ def main() -> int:
     report_path = report_dir / args.report_name
     if gpt_md:
         report_path.write_text(gpt_md.rstrip() + "\n", encoding="utf-8")
+        feedback_entry = record_gpt_feedback(
+            args.show_key,
+            feedback_path=str(report_path),
+            note=f"auto-recorded from {args.report_name}",
+        )
+    else:
+        feedback_entry = None
 
     local_meter = REPO_ROOT / "artifacts" / "cost-meter" / "bridge_cost_estimates.jsonl"
     shared_meter = TOOLS_ROOT / "artifacts" / "cost-meter" / "cost_events.jsonl"
@@ -127,6 +136,7 @@ def main() -> int:
                 "meter_path_local": str(local_meter),
                 "meter_path_shared": str(shared_meter),
                 "entry": entry,
+                "feedback_entry": feedback_entry,
             },
             indent=2,
         )
