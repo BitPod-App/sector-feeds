@@ -123,7 +123,7 @@ Primary stable transcript pointer (Jack Mallers):
 - `transcripts/jack_mallers_show/jack_mallers.md`
 
 Raw GitHub URL:
-- `https://raw.githubusercontent.com/cjarguello/bitpod/main/transcripts/jack_mallers_show/jack_mallers.md`
+- `https://raw.githubusercontent.com/BitPod-App/sector-feeds/main/transcripts/jack_mallers_show/jack_mallers.md`
 
 Note:
 - If the repository is private, GPT cannot fetch the raw URL directly.
@@ -138,7 +138,7 @@ How it updates:
 Operational commands:
 
 ```bash
-cd /Users/cjarguello/bitpod-app/bitpod
+cd /Users/cjarguello/bitpod-app/sector-feeds
 source .venv311/bin/activate
 python -m bitpod discover --show jack_mallers_show
 python -m bitpod sync --show jack_mallers_show --max-episodes 1

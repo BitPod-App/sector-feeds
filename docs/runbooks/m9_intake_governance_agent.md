@@ -6,7 +6,7 @@ Promote intake-gate operations to milestone-agnostic governance while preserving
 
 ## Independent Agent Scope
 
-- repo focus: `bitpod`
+- repo focus: `sector-feeds`
 - writes:
   - `milestones/m9_policy.json`
   - `artifacts/coordination/intake_gate_daily_status.json`
@@ -70,7 +70,7 @@ Human-readable:
 
 ## Validation Commands
 
-From `/Users/cjarguello/bitpod-app/bitpod`:
+From `/Users/cjarguello/bitpod-app/sector-feeds`:
 
 ```bash
 python3 -m unittest tests/test_intake_gate_policy.py
