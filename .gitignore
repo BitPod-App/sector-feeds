@@ -5,6 +5,7 @@ __pycache__/
 .bitpod_runtime.env
 *.egg-info/
 .DS_Store
+.worktrees/
 cache/
 .wrangler/
 artifacts/cost-meter/
@@ -14,8 +15,10 @@ artifacts/private/
 artifacts/public/
 artifacts/review_bundles/
 artifacts/taylor_qa/
+artifacts/runs/
 artifacts/mallers_weekly_report.md
 artifacts/*_weekly_report.md
+artifacts/*_tuesday_report.md
 artifacts/*_adhoc_verify.md
 artifacts/*_gpt_ack.json
 transcripts/*/*_status.json
