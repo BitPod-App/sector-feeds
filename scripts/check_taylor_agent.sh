@@ -2,12 +2,19 @@
 
 set -euo pipefail
 
-TOOLS_ROOT="${TOOLS_ROOT:-/Users/cjarguello/bitpod-app/tools}"
-TAYLOR_BIN="${TAYLOR_BIN:-${TOOLS_ROOT}/taylor/bin/taylor}"
+STRICT="${BITPOD_TAYLOR_AGENT_CHECK_STRICT:-0}"
+TAYLOR_BIN="${TAYLOR_BIN:-}"
 
-if [[ ! -x "${TAYLOR_BIN}" ]]; then
-  echo "Missing Taylor runtime binary: ${TAYLOR_BIN}"
-  exit 1
+if [[ -z "${TAYLOR_BIN}" ]] && command -v taylor >/dev/null 2>&1; then
+  TAYLOR_BIN="$(command -v taylor)"
+fi
+
+if [[ -z "${TAYLOR_BIN}" ]] || [[ ! -x "${TAYLOR_BIN}" ]]; then
+  echo "Taylor agent check skipped: no installed taylor CLI (set TAYLOR_BIN or add taylor to PATH)"
+  if [[ "${STRICT}" == "1" ]]; then
+    exit 1
+  fi
+  exit 0
 fi
 
 WHOAMI_OUT="$(${TAYLOR_BIN} whoami)"

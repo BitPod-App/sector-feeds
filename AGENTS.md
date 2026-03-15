@@ -9,14 +9,13 @@ Do not duplicate or override Taylor's canonical behavior/spec in this repo.
 ## Taylor Skill Folder Status
 
 - Keep `~/.agents/skills/taylor` as the canonical Taylor spec + references (required).
-- Taylor runtime implementation lives in `tools/taylor` (repo-level runtime code).
-- Repo docs are pointer + health-check surfaces only; do not duplicate spec text.
+- Current Taylor runtime code lives outside this repo in `bitpod-taylor-runtime`; `sector-feeds` should not depend on Taylor for steady-state feed execution.
+- Repo docs are pointer + optional health-check surfaces only; do not duplicate spec text.
 
 ### Deprecation Criteria (future, not current)
 
 Only consider deprecating the external skill folder after all are true:
-- `tools/taylor/policy/taylor_policy.yaml` is versioned and stable.
-- `tools/taylor` CLI/API behavior is stable.
+- a stable `taylor` CLI or equivalent runtime contract is available and documented.
 - Determinism tests + manifests are in place.
 - Canonical contract docs are mirrored in-repo without split-brain.
 - A single source of truth is explicitly selected (external or in-repo), never both.
@@ -33,6 +32,11 @@ Run from repo root:
 
 ```bash
 bash scripts/check_taylor_skill.sh
+```
+
+Optional, only when a real `taylor` CLI is installed or `TAYLOR_BIN` is set:
+
+```bash
 bash scripts/check_taylor_agent.sh
 ```
 
@@ -67,16 +71,14 @@ When ending a Bridge GPT planning/review session, memory summary must be structu
 
 ## Taylor Runtime Commands
 
+If a `taylor` CLI is installed and intended for use:
+
 - `taylor whoami`
 - `taylor self-test`
 - `taylor ask "<question>" [--context <path>]`
 - `taylor chat`
 
-If `taylor` is not on your PATH yet:
-
-```bash
-export PATH="/Users/cjarguello/bitpod-app/tools/taylor/bin:$PATH"
-```
+Do not assume a repo-local `tools/taylor` path in this repository.
 
 ## QA Modes
 
