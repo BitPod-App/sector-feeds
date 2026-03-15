@@ -43,6 +43,8 @@ if [[ "${critical_touched}" -eq 0 ]]; then
 fi
 
 commit_sha="$(git rev-parse HEAD)"
+# Historical path name only. The independent QA lane is moving toward Vera / qa-specialist,
+# but existing local artifacts still live under artifacts/taylor_qa for compatibility.
 qa_dir="${repo_root}/artifacts/taylor_qa/${commit_sha}"
 qa_review="${qa_dir}/qa_review.md"
 manifest="${qa_dir}/qa_run_manifest.json"

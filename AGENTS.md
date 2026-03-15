@@ -83,7 +83,7 @@ Do not assume a repo-local `tools/taylor` path in this repository.
 ## QA Modes
 
 - LOCAL (offline, enforced): deterministic local QA artifacts; merge gate for critical surfaces.
-- BRIDGE (optional, stronger proof): GPT-backed Taylor QA with header/footer/hash verification.
+- BRIDGE (optional, stronger proof): GPT-backed independent QA evidence path; historical docs may still refer to Taylor-era QA naming.
 - CHAT (human workflow): planning and interpretation, not a merge gate.
 
 ## Merge Policy
