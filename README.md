@@ -1,10 +1,30 @@
-# bitpod
+# sector-feeds
 
-Convert podcast and social-feed episodes into clean text transcripts for downstream BTC analysis and reporting.
+Canonical antenna-feed intake and transcript generation repo for BitPod
+App baseline inputs.
+
+## Identity Notes
+
+- The repository name `sector-feeds` is the canonical repo identity.
+- The Python package and several commands are still named `bitpod` for
+  historical reasons.
+- This repo is not the main BitPod workspace repo. It is the antenna
+  feed and transcription input lane.
+
+## Core Paths
+
+- `bitpod/` - Python package for discovery, sync, and transcription.
+- `transcripts/` - tracked canonical transcript artifacts.
+- `index/` - processing-state indexes and stable pointers.
+- `scripts/` - operator helpers and track wrappers.
+- `docs/` - repo-local feed, intake, and transcription runbooks only.
+
+Convert antenna sector feed episodes into clean text transcripts and
+deterministic intake artifacts for downstream BitPod analysis.
 
 ## What This Repo Does
 
-`bitpod` automates this workflow:
+The pipeline in this repo automates this workflow:
 
 1. Discover and poll configured feeds.
 2. Identify new episodes.
@@ -23,8 +43,17 @@ Convert podcast and social-feed episodes into clean text transcripts for downstr
 
 ## Why This Exists
 
-Immediate goal: reliable transcript generation from high-signal feeds.
-Primary consumer: GPT workflows that currently require clean text transcripts as input.
+Immediate goal: reliable antenna-feed intake and transcript generation
+from high-signal sources.
+Primary consumers: `bitregime-core`, operator workflows, and GPT
+contexts that require clean transcript inputs.
+
+## What This Repo Is Not
+
+- Not the shared tooling repo. Tooling belongs in `bitpod-tools/`.
+- Not the shared workspace policy or archive repo. That belongs in
+  `bitpod-docs/`.
+- Not the legacy `bitpod/` clone kept for migration reference.
 
 ## Quickstart
 
@@ -40,7 +69,7 @@ export OPENAI_API_KEY="your_key_here"
 Optional: override root path for generated artifacts.
 
 ```bash
-export BITPOD_ROOT="/path/to/bitpod"
+export BITPOD_ROOT="/path/to/sector-feeds"
 ```
 
 ## Usage
