@@ -1,0 +1,33 @@
+# Legacy Retrospective: 2026-03-01 M-9 Day 1 Intake Gate
+
+- date_utc: `2026-03-01`
+- milestone: `M-9`
+- owner_context: `single_engineer_mode`
+- signal: `First live M-9 daily gate run on main completed GREEN with policy drift checks passing.`
+- expected_policy:
+  - `policy_version=m9_intake_ops_policy.v1`
+  - `required_validation_target=bitregime_core_intake.v2`
+  - `rollback_guardrail_consecutive_failures=2`
+  - `close_ready_consecutive_greens=3`
+- observed_run_metadata:
+  - `timestamp_utc=2026-03-01T03:50:24Z`
+  - `contract_ok=true`
+  - `status_contract_ok=true`
+  - `drift_ok=true`
+  - `milestone_close_ready=true`
+  - `m9_close_ready_3_consecutive_greens=true`
+  - `rollback_guardrail_triggered=false`
+  - `escalation=none`
+- root_cause: `N/A (baseline validation run, no incident).`
+- action_taken:
+  - `Merged M-9A planning/context PR #8 for historical continuity.`
+  - `Executed first live M-9 gate run using milestones/legacy_m9_intake_policy.json.`
+  - `Adopted dated retrospective naming convention for future retro archives.`
+- validation_proof:
+  - drift_report: `artifacts/coordination/intake_gate_daily_drift_report.md`
+  - status_json: `artifacts/coordination/intake_gate_daily_status.json`
+  - tests:
+    - `python3 -m unittest tests/test_intake_gate_policy.py`
+    - `BITPOD_INTAKE_POLICY_JSON=milestones/legacy_m9_intake_policy.json BITPOD_INTAKE_DAILY_MILESTONE_TRACKER_MD=artifacts/coordination/m9_tracker.md bash scripts/run_intake_gate_daily.sh ../bitregime-core/artifacts/intake/jack_mallers_show_intake.json deck_weekly_btc`
+- follow_up:
+  - `When Taylor runtime is available, resolve keepalive signal from taylor_binary_not_found to a healthy heartbeat.`

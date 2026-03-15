@@ -7,7 +7,7 @@ Use this file as the template for archived retrospective learnings tied to intak
 Store retrospective entries in dated files in this folder using:
 
 - `retrospective_<YYYY-MM-DD>_<milestone>_<scope>.md`
-- example: `retrospective_2026-03-01_m9_day1_intake_gate.md`
+- example: `legacy_retrospective_2026-03-01_m9_day1_intake_gate.md`
 
 This keeps retrospectives clearly distinguishable from other runbooks/learning notes.
 

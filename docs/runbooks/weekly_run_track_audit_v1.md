@@ -193,7 +193,7 @@ The following docs still contain obsolete `/bitpod` path references and should b
 - `docs/runbooks/intake_gate_daily_ops.md`
 - `docs/runbooks/bitregime_core_intake_handshake.md`
 - `docs/runbooks/show_onboarding_template.md`
-- `docs/runbooks/m9_intake_governance_agent.md`
+- `docs/runbooks/legacy_m9_intake_governance_agent.md`
 
 ## Decision rule
 
