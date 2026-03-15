@@ -41,7 +41,7 @@ MIN_CAPTION_WORDS="${2:-${MIN_CAPTION_WORDS:-120}}"
 MIN_EPISODE_AGE_MINUTES="${3:-${MIN_EPISODE_AGE_MINUTES:-180}}"
 WEEKLY_GPT_REPORT="${WEEKLY_GPT_REPORT:-0}"
 BITPOD_FEED_MODE="${BITPOD_FEED_MODE:-all}"
-TOOLS_COST_CTL="/Users/cjarguello/bitpod-app/tools/costs/cost_ctl.py"
+TOOLS_COST_CTL="/Users/cjarguello/bitpod-app/bitpod-tools/costs/cost_ctl.py"
 
 run_cost_guard() {
   if [ ! -x "$TOOLS_COST_CTL" ]; then
