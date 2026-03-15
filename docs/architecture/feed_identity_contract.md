@@ -27,7 +27,7 @@ Tags are kept flat and explicit for filtering. No deep taxonomy tree is required
 
 ## bitregime-core Intake Handshake
 
-For bitpod consumption of bitregime-core thin-slice intake artifacts, see:
+For `sector-feeds` consumption of `bitregime-core` thin-slice intake artifacts through the current `bitpod` consumer package, see:
 
 - `docs/runbooks/bitregime_core_intake_handshake.md`
 

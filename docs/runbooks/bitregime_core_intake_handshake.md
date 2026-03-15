@@ -1,6 +1,6 @@
-# bitregime-core Intake Handshake (bitpod Consumer)
+# bitregime-core Intake Handshake (`sector-feeds` Consumer via `bitpod` Namespace)
 
-This runbook locks the bitpod-facing intake handshake for the first thin slice of `bitregime-core`.
+This runbook locks the `sector-feeds`-facing intake handshake for the first thin slice of `bitregime-core`, using the current `bitpod` Python package namespace inside `sector-feeds`.
 
 Current operations mode:
 
@@ -14,9 +14,9 @@ Current operations mode:
 - Accept a minimal intake artifact from `bitregime-core`.
 - Use deck processing-state markers in `index/deck_state.json` to avoid duplicate episode handling.
 
-## Intake Contract (bitpod expectation)
+## Intake Contract (current `sector-feeds` consumer expectation)
 
-Bitpod expects one JSON artifact per feed intake run with this contract:
+The current `sector-feeds` consumer expects one JSON artifact per feed intake run with this contract:
 
 - `contract_version`: `bitregime_core_intake.v1`
 - `sector_feed_id`: canonical internal feed identity (RSS-first when available)
@@ -50,7 +50,7 @@ Episode row fields:
 | `source_episode_id` | No | string | Yes | Platform/source-native episode id. |
 | `published_at_utc` | No | string | Yes | Episode publish timestamp in UTC ISO-8601 when available. |
 | `title` | No | string | Yes | Human-readable episode title. |
-| `canonical_episode_id` | No | string | Yes | If omitted, bitpod derives canonical ID from `sector_feed_id + feed_episode_id`. |
+| `canonical_episode_id` | No | string | Yes | If omitted, the current `sector-feeds` consumer derives canonical ID from `sector_feed_id + feed_episode_id`. |
 
 Canonical sample artifact:
 
@@ -59,7 +59,7 @@ Canonical sample artifact:
 ## Contract Evolution + Compatibility Policy
 
 - Current latest contract: `bitregime_core_intake.v2`
-- Bitpod reader mode: `backward_compatible_reader_fail_closed_on_unknown_major`
+- Current `sector-feeds` consumer reader mode: `backward_compatible_reader_fail_closed_on_unknown_major`
 - Supported versions right now: `bitregime_core_intake.v1`, `bitregime_core_intake.v2`
 - Unknown/newer contract versions fail closed at handshake validation.
 - Contract evolution rule:
@@ -68,7 +68,7 @@ Canonical sample artifact:
 
 ### Validator Readiness Checklist (Before Supporting `v2`)
 
-Use this checklist before declaring `bitregime_core_intake.v2` support in bitpod:
+Use this checklist before declaring `bitregime_core_intake.v2` support in the current `sector-feeds` consumer:
 
 1. Update validator constants:
 - add `bitregime_core_intake.v2` to supported versions in `bitpod/core_intake_handshake.py`.
@@ -91,7 +91,7 @@ Use this checklist before declaring `bitregime_core_intake.v2` support in bitpod
 - update this runbook compatibility section with `v2` status.
 - keep copy/paste compatibility note templates aligned with validator behavior.
 
-Processing-state semantics used by bitpod in this handshake:
+Processing-state semantics used by the current `sector-feeds` consumer in this handshake:
 
 - terminal states skipped for intake planning: `processed`, `consumed`, `done`, `failed`, `error`, `skipped`
 - non-terminal episodes are candidate rows unless already consumed in deck state
@@ -124,7 +124,7 @@ bash scripts/check_bitregime_core_intake_handshake.sh \
 ## Example Paths
 
 - Input (bitregime-core): `../bitregime-core/artifacts/intake/jack_mallers_show_intake.json`
-- Output (bitpod): `artifacts/coordination/bitregime_intake_handshake_jack_mallers_show_deck_weekly_btc.json`
+- Output (`sector-feeds` consumer): `artifacts/coordination/bitregime_intake_handshake_jack_mallers_show_deck_weekly_btc.json`
 - Processing state store: `index/deck_state.json`
 
 ## Deterministic Validation Output
@@ -181,7 +181,7 @@ Compatibility Note (Intake Handshake)
 - required fields: unchanged
 - validator/output changes: consumer-side only
 - action for Core Intake Thin Slice thread: none
-- action for bitpod ops thread: none
+- action for `sector-feeds` ops thread: none
 ```
 
 Producer required change:
@@ -192,7 +192,7 @@ Compatibility Note (Intake Handshake)
 - required producer delta: <field/rule change>
 - effective date: <YYYY-MM-DD>
 - action for Core Intake Thin Slice thread: update producer artifact to include new required field/rule
-- action for bitpod ops thread: none unless handshake check command/paths changed
+- action for `sector-feeds` ops thread: none unless handshake check command/paths changed
 ```
 
 Breaking major change:
@@ -201,8 +201,8 @@ Breaking major change:
 Compatibility Note (Intake Handshake)
 - new contract_version: bitregime_core_intake.v2
 - compatibility mode: fail-closed for unknown major until validator update lands
-- action for Core Intake Thin Slice thread: do not switch default producer to v2 until bitpod validator supports v2
-- action for bitpod ops thread: none unless explicit consumer command changes are required
+- action for Core Intake Thin Slice thread: do not switch default producer to v2 until the current `sector-feeds` validator supports v2
+- action for `sector-feeds` ops thread: none unless explicit consumer command changes are required
 ```
 
 ## Weekly Track Stability Note

@@ -342,11 +342,11 @@ Timeline policy:
 - For live-heavy YouTube sources, sync applies a default maturity guard (`--min-episode-age-minutes 180`) to avoid unfinished captures.
 - GPT bridge cost estimates are logged to:
 - local: `artifacts/cost-meter/bridge_cost_estimates.jsonl`
-- shared tools source of truth: `/Users/cjarguello/bitpod-app/tools/artifacts/cost-meter/cost_events.jsonl`
+- shared tools source of truth: `/Users/cjarguello/bitpod-app/bitpod-tools/artifacts/cost-meter/cost_events.jsonl`
 
-Shared cost summary (all repos/commands that write to tools meter):
+Shared cost summary (all repos/commands that write to the shared tools meter):
 ```bash
-/Users/cjarguello/bitpod-app/tools/costs/cost_ctl.py
+/Users/cjarguello/bitpod-app/bitpod-tools/costs/cost_ctl.py
 ```
 
 Weekly cost guardrails (automation-friendly):
