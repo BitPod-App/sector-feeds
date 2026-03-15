@@ -38,7 +38,7 @@ if [[ -n "${changed_files}" ]] && echo "${changed_files}" | rg -q -i "${critical
 fi
 
 if [[ "${critical_touched}" -eq 0 ]]; then
-  echo "No critical surfaces touched; LOCAL Taylor QA gate not required."
+  echo "No critical surfaces touched; local QA artifact gate not required."
   exit 0
 fi
 
@@ -48,12 +48,12 @@ qa_review="${qa_dir}/qa_review.md"
 manifest="${qa_dir}/qa_run_manifest.json"
 
 if [[ ! -f "${qa_review}" ]]; then
-  echo "Missing required LOCAL QA artifact: ${qa_review}"
+  echo "Missing required local QA artifact: ${qa_review}"
   exit 1
 fi
 
 if [[ ! -f "${manifest}" ]]; then
-  echo "Missing required LOCAL QA manifest: ${manifest}"
+  echo "Missing required local QA manifest: ${manifest}"
   exit 1
 fi
 
@@ -100,5 +100,5 @@ if errors:
         print(f"FAIL: {e}")
     sys.exit(1)
 
-print("LOCAL Taylor QA gate passed.")
+print("Local QA artifact gate passed.")
 PY

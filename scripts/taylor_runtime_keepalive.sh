@@ -21,9 +21,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$REPO_ROOT"
 
-TOOLS_ROOT="${TOOLS_ROOT:-/Users/cjarguello/bitpod-app/tools}"
-TAYLOR_BIN="${TAYLOR_BIN:-${TOOLS_ROOT}/taylor/bin/taylor}"
-if command -v taylor >/dev/null 2>&1; then
+TAYLOR_BIN="${TAYLOR_BIN:-}"
+if [[ -z "${TAYLOR_BIN}" ]] && command -v taylor >/dev/null 2>&1; then
   TAYLOR_BIN="$(command -v taylor)"
 fi
 
@@ -36,7 +35,7 @@ if [ ! -x "$TAYLOR_BIN" ]; then
   "timestamp_utc": "$timestamp_utc",
   "keepalive_ok": false,
   "reason": "taylor_binary_not_found",
-  "taylor_bin": "$TAYLOR_BIN"
+  "taylor_bin": "${TAYLOR_BIN:-unset}"
 }
 EOF
   echo "taylor_keepalive=SKIP (binary not found)"
