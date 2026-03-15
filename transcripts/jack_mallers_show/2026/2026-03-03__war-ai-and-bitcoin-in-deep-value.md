@@ -1,0 +1,1717 @@
+---
+show_key: "jack_mallers_show"
+episode_title: "War, AI, and Bitcoin In Deep Value"
+published_at: "2026-03-03T06:48:26+00:00"
+source_url: "https://podcasters.spotify.com/pod/show/thejackmallersshow/episodes/War--AI--and-Bitcoin-In-Deep-Value-e3fs2l2"
+guid: "11992a40-08f2-409b-b3aa-ed7ce3d2b0ed"
+fetched_at: "2026-03-03T12:12:46+00:00"
+transcription_model: "whisper-1"
+transcript_source: "audio_transcription"
+speaker_strategy: "guest_priority"
+guest_weighting_hint: "guest_over_host"
+speaker_segments_present: "True"
+---
+
+Yo, welcome back to another episode of the Jack Mallers show. I am your host, Jack, and you are listening to yet another edition of Mailbag Monday. All signal, no noise, and no ads. Episode 107, wow. Happy Monday, ladies and gentlemen. Without further ado, let's get this bad boy time stamped. I'm talking to you all at a Bitcoin price of $69,420. I'm just kidding. Close though, $69,460. Putting Bitcoin's market cap at 1.39 trillion USD. That still is 45% below our established all-time high of $126,160 set on October 6th, 2024. 45, 147 days from today. For those of you that keep track of time and block height, I salute you. You know I do. You know I do. You know I do. The last Bitcoin block mined since I hit stream was Bitcoin block height 939,059. All right, boys and girls, here's the deal. Hey, Jack. Come on, get your head out of the gutter. Jack, I, referencing myself, have something to be at at 6.30. I'm in Chicago. It's 5.03 right now. These things can go two hours if I'm really feeling it, which I usually am, so this one's going to have to be shorter, which is kind of unfortunate, but I'll tell you why it's not that big of a deal. All of the Iran stuff, all that's going on, keeps updating in real time. Today, the oil market closed up, and now oil's back down. Bonds are flying all over the place. The stock market closed green. I mean, I'm getting real time. You know how many times I updated my slides in the last 10 minutes? Every time I refresh the internet, you're getting new information, new market signals, so in the beginning, I was like, you know what? I got to move my 6.30. I really cannot afford to make this episode short, and then I realized it's really going to be next week once markets calm down and we get some more information where we're going to be able to really dig in deep. Right now, I'm just going to tie together all that's going on and why I think it matters and the higher level story that's relevant to us Bitcoiners, and then we're going to revisit everything next week once we get a little bit more information, a little bit more signal. So, without further ado, the title of this is War, AI, and Deep Value, Why the System is More Fragile Than You Think. Okay, so we're going to talk about Iran, we're going to talk about oil, we're going to talk about the fragility of everything, a little bit of AI, and the deep value is Bitcoin. I continue to think this is the time to turn on those DCAs. I think it's critically important. I'm also going to try and fly through this stuff because the star of today's show, it might actually be Strike. Strike has probably the biggest week in our history this week, tremendously exciting, and I need some time to walk you guys through that. All right, let's get into it. First and foremost, the regime is dead, okay? So for those that have been living under a rock, I hate to be the one to break the news to you, but the United States is in war or has declared war, but even that I'm not entirely sure because you need Congress to go to war. But do you? Because I thought post 9-11 the president has discrepancy to start war but not declare it. See, this is the thing. I'm not a politics guy. I vote orange. I'm not left, right, blue, red, up, down, blah, blah. You guys have heard me say this a million times, it's just not who I am. It's not my expertise, okay? So take this all with a grain of salt. I don't know if we're officially in war because I think Congress needs to declare war. Did we bomb Iran? Yes. Did we terminate and kill the regime? Yes. And so this screenshot, by the way, as we'll see in a second, this is US and Israel. So US and Israel launch major combat operations in Iran. This post was from the White House, the White House. And in Trump's screenshotted true social post, it's one of the most evil people in history is dead. This is not only justice for the people of Iran, but for all great Americans and those people from many countries throughout the world, okay? So we go on. Now, the question is why? Why now? What's going on geopolitically? And let me just say, the official stance of the Jack Mallers show is I'm not sure we know, okay? We're going to take a look at the oil markets, the gold markets. The oil markets, the gold markets led this. Bitcoin as the smoke alarm led this. It sold off hard over the weekend. It rallied over 5% today, which was very, very interesting. So markets were all over this. Free markets are the best. It's the best capitalistic system to incentivize progress we've ever seen. Free markets are the best. They're the best. And so all you've got to do is look at markets to look at the truth. So I think I have a good idea, but I'm not entirely sure. Now this was posted like an hour ago. So this is Marco Rubio of the US government. I want you guys to listen to this, because this is the first time we've heard from the US government, why now and what's going on. I was a little shocked when I heard this, but let's listen. The second question that's been asked is, why now? Well, there's two reasons why now. The first is it was abundantly clear that if Iran came under attack by anyone, the United States or Israel or anyone, they were going to respond and respond against the United States. The missile forces had been delegated down to the field commanders. It was automatic. And in fact, it bared to be true, because in fact, within an hour of the initial attack on the leadership compound, the missile forces in the south and in the north, for that matter, had already been activated to launch. In fact, those had already been pre-positioned. The third is the assessment that was made that if we stood and waited for that attack to come first, before we hit them, we would suffer much higher casualties. And so the president made the very wise decision. We knew that there was going to be an Israeli action. We knew that that would precipitate an attack against American forces. And we knew that if we didn't preemptively go after them before they launched those attacks, we would suffer higher casualties and perhaps even higher those killed. And then we would all be here answering questions about why we knew that indeed. Interesting. So my interpretation after listening to that, and again, this is hot off the press. That was just live TV. I guess it was known that if the West, which all leads back to the US, right, like the European defense is the West, excuse me, is America, Israeli defense obviously is America. And so if anyone hit Iran, it was known information that Iran would hit the United States, I guess, or retaliate to the United States. And then it was known that Israel was going to hit Iran. So then by proxy, it meant Iran was going to attack the United States. So Trump said, screw that. If we're going to get attacked, we might as well, the best defense is offense. That's my interpretation of that, which is, again, this is all so fresh and so new and so classic. I mean, politics is just a joke. It's an utter and complete joke. I mean, I'm sorry. I hate to be that guy. But if you think you're going to change the world by putting the right person in office, I mean, who are you kidding? I mean, can we be serious? No, you're going to change the world through open source software, through engineering, through distributed systems, through hard money, through health, through truth, through morals, through principles, through family. That's my message on my platforms. We're getting married. We're having kids. We're stacking sacks. We're building software. These guys, I mean, it doesn't matter who you put in office. What are they talking about? So if someone hurt Iran, Iran would hurt us. So the fact that someone was going to hurt Iran by proxy meant Iran was going to attack us. We didn't have them attacking us. We just fucked them up. What the? All right. So anyways, why now? Why Operation Midnight Hammer? I get, I don't know, okay? And again, I'm not a politician. I don't know the answer. Here's another angle that's very important, okay? This is not just the Middle East story. Now whether this is the motivation, whether this is the driver, again, I don't know. I think next week's show is going to have a lot more depth. I'm going to be able to do a lot more research. It's coming off hot off the press. It's hotter than a Gigi sauna right now, okay? But for you guys to know, this is very important information, China buys 90% of Iran's oil, okay? So this is not just a Middle East story. This is always, at the end of the day, if you zoom out far enough, you know on Google Maps where you just hit zoom out, zoom out, zoom out, zoom out, zoom out until you're at the peak of the zoom out, bird's eye view to the max. That's what, it's always U.S. and China, always, always, always U.S. and China, okay? And so the U.S.-China aspect of this is, think about it guys, what was Venezuela? Venezuela was selling China oil at a discount. What was Iran? Iran was selling China oil at a discount. Who was involved in Venezuela? Who had boots in the ground in Venezuela? There were three primary countries, we went over this, who was entering the United States hemisphere, according to the U.S. government, that's what they used, get out of our hemisphere. Who was in the United States hemisphere via Venezuela? They were three countries. Can you take a wild guess? It was Iran, China, and Russia, okay? So keep in mind the oil story here, because we're going to talk about the oil market right now. Now, there is the Strait of Hormuz, okay, where a lot of oil trade, oil settlement goes down. Now, there were rumors that I still, I try to get accurately what was as of right this second, because over the weekend, there were rumors that it was going to close, because of the conflict, it was going to close. Brent crude started trading up 10%. Now, guys, keep in mind, the reason oil matters so much is because energy prices are the most sensitive to inflation. You can do a lot to try and tame consumer, consumer inflation, okay? What do I mean by this? Well, inflation, saying that inflation is one number is so idiotic, it's so dumb, it's so Keynesian. They're trying to literally hypnotize the public into thinking moronic things. Inflation can't possibly be one thing. I'll tell you your inflation rate if you tell me what you want in your life. If you want to live in your parents' basement, only consume Netflix and Caesar salad for the rest of your life, your inflation is effectively zero. I can always cut leaves off a tree and put ranch on it and serve it to you for fucking lunch. And you can get a Netflix subscription and you'll never pay rent and inflation is zero. Don't worry about monetary policy. Don't worry about saving hard money. Don't worry about anything because your quality of life is dog shit, okay? If you want to have a nice house with a yard and four kids and a wife, and you want a two-car garage that guzzles a bunch of oil, well, your inflation rate actually isn't the 2% the government's trying to convince you. It's probably 5%. Actually, post-COVID, it's probably 10%. And it depends. Do you want to live in one of these urban cities that's declining and murder rates all over the place, like my city, like Chicago? Or do you want to live in Miami? Or do you want to live in Texas? Or do you want to live in Manhattan? Then your inflation rate's probably 20%, 30%, 40%. So when anyone tells you, oh, this is the inflation rate, it depends. What type of life do you want? If you want a good, high-quality life, the inflation rate is double-digit percentages, okay? Now, when I say you can try and control consumer inflation, what do we know, guys? Energy is the nucleus of a... Energy is the currency of the universe. The currency of the universe. You need to travel, you need to have electricity, you need to have lights, you need to communicate. You need energy. The story of humanity is commercializing energy from the sun, okay? The latest iteration of that for us is fossil fuels, okay? And so the price of oil is extremely important. It's the most important commodity price when you think about inflation. So if oil gaps up 10% over the weekend because of combat and a conflict in the Middle East, that's a huge, huge, huge deal. And this tweet from Luke is super, super interesting. In the red, you see the crude prices trending up. In the blue, you see the UST yields trending down. Interesting. Now, the question is, which one's going to bite? We'll get back to that in a second. So this morning, after crude is up, futures are up 10% over the weekend, we're seeing the conflict go down, CME says that circuit breakers hit on open this morning. And so oil markets are going bananas. Now, put yourself in this. Oil markets are going bananas, gold is going up, and risk is entirely off. Bitcoin is bleeding, everyone's calling for below 60K, below 60K, below 60K. And by the way, it was really interesting because markets seemed to, it was weird, markets seemed to know what was going on before we all did, the public, and even the headlines seemed to know. So I want you guys to look at this tweet on the left, I'm going to read it out loud, there's a flurry of reports over the last 72 hours from the US media, New York Times, Washington, what is, Wall Street Journal, excuse me, Wall Street Journal, Washington Post, Axios, CBS, et cetera, raising questions on US readiness for major war with Iran. There's too much for it to be a coincidence. Either the White House is trying to signal to its allies that they're taking a deal, or the Pentagon is trying to tie Trump's hands to make sure they're not blamed for the results of the war. And then there's a Washington Post article, Trump's top general foresees acute risks in an attack on Iran. And so I guess, here's the thing I want to convey to you guys, and sorry if I'm being repetitive but, we just don't really know what's going on yet. Because leading up to what ended up being a strike on Iran, all of US media was saying, don't do it, don't do it, there's a lot of risk. Let me read these headlines to you guys. Trump's top general warns of Iran strike risks. Trump growing frustrated with limits of Iran military options. Fixed funerals and blocked toilets, Iran deployment takes a toll on US sailors. Trump's top general foresees acute risks in an attack on Iran. This is not a coincidence, this is not a mistake. These are not all independent journalists arriving at the same conclusions at the same time right before an event. As the tweet said, this is one of two things. This is the White House trying to signal to its allies, which it sounds like was Israel according to Marco Rubio, like hey don't do this. Or it was the Pentagon trying to signal to the world like, this isn't our decision. Again really interesting stuff, really interesting stuff. But on the back of these headlines, and obviously the free market is the most efficient. So someone knew something, gold started to move, oil started to move. Was really, really interesting guys. And I love this tweet from Luke. In war, truth is the first casualty. So in war, one thing I can guarantee you is we're going to get fed a bunch of bullshit, a bunch of lies, a bunch of trash. Don't trust a politician, don't trust a headline you read. Hopefully this show can serve you guys a little bit of truth, a little bit of substance. I'm always going to keep it as real, as authentic, as honest as I possibly can to my utmost being, to the neurons I'm made up of. I always will, you guys always hold me accountable to that. But the first casualty in war is truth. The second casualty, bonds. Because one, it was really weird. So anyways, so I'm looking at markets and I'm seeing gold up, oil up, dollar up. And that is risk off. Bitcoin was getting smoked. And I'm thinking, the S&P 500 is going to get hammered and maybe this is the time the stock market gets its correction, all the leverage combined with all the AI stuff is going to wipe everybody out, they're going to have to take out the money printer. It was really interesting. And then all of a sudden, the S&P 500 closed green. Risk came back on. Bitcoin closed up 5%. So I had wrote in the tweet I tweeted out today promoting the show, I said, on the Monday of war in Iran, the S&P 500 closing green is maybe one of the scariest things in financial markets. It was so bizarre. So war in Iran, oil hit circuit breakers, bonds are selling off. But by noon, by lunch, the stock market had rebounded and erased everything that happened over the weekend. It was super interesting to me. It was really, really interesting. So anyways, I found it bizarre. We'll get into the bond price action in a second. But I don't know, I mean, I guess that's where my head's at in regards to Iran right now. Why did we do it? Again, I guess because supposedly Iran made it known that if anyone hurt them, they'd hurt us. And then we were told that Israel was going to hurt them, which mean by proxy meant Iran was going to hurt us. So instead of letting them hurt us, we hurt them first. And is oil, is the supply chain of oil going to be impacted? I first saw it news yes, and then news no. So then oil went from up 10% to up 5%. And then it was back yes, and then it was back no. And oil's been extremely volatile. Super weird. The dollar definitely strengthened. But the bond market sold off. Again, really, really bizarre stuff. We went from risk off, where Bitcoin looked like it was going to make new recent lows lower than 60, and then it closed at 70. The market's still trying to digest what the fuck is going on. All right, for the sake of time, let's transition into AI. So again, the title of the show is just how fragile the system is. You know, the theme that I'll have for you guys today is the timeline we're living through is absolutely bananas. I wouldn't have it any other way. I mean, if you want to pout and whine like a little baby, that's your decision. I only get one life. I'm here to live. I'm here to have a ball. I'm here to build. I'm here to disrupt. I'm here to deliver the future that I want my kids to live in. First of all, I'm here to have kids. Okay, I'm going to have so many kids. I'm in love. I'm going to get married. I'm going to have kids. I'm going to build stuff. I'm going to save money. I'm going to change the world. And what a time to be alive and to do that. I've got AI. I've got Bitcoin. We're living through fourth turnings. I mean, this is it. This is the moment. If you want to pout and whine like a little baby in Doomscroll on all these social media apps, that's your decision. But for me, I want to just break down how fragile the system is, the timeline we're living through, try and tie together what are really intense real-time topics like Iran and AI, and try and make Bitcoin reasonable as it relates to why you should turn your DCAs on. All right, so AI. The Fed keeps commenting on it, which is the biggest tell. If you want to know how real this stuff is, the Federal Reserve, the central bank of the US dollar, is commenting, okay? And so I thought this comment, which we've talked about, Fed's Waller, the Cetrini report on AI overstates the risk to jobs. I mean, I think it was Luke Groman that made this comparison. This is like when Ben Bernanke said subprime was contained in 2007. It's like, yeah, the risk to job market, don't even worry about it, it's totally overstated. And then next year, we're in an absolute financial collapse. It's exactly what happened in 2007, 2008, same thing. The Fed was all over subprime until they weren't. Honestly, it reminds me of COVID too. It's all transitory, it's all transitory, right? So literally, right after the Fed said the reports on AI is overstating the risk to the job market, literally, I think it was the day after he said that, Dorsey laid off half his company because of AI. I mean, unbelievable. Hey, guys, don't worry about it. It's all overstated. The job market's fine. Literally, the next day, a S&P 500 company with 10,000 employees lays off 40% of their workforce because of AI. And listen, there's probably some nuance here. I think Blocks still has more employees than Coinbase and Robinhood. So, you know, were they bloated? Whatever. The guy in charge said it was because of AI. The market traded up 25%. Look at this from CNBC. Block shares soar as much as 24% as company slashes workforce by nearly half. Blocks said Thursday it's laying off more than 4,000. 4,000 employees are about half of its headcount. Shares of the payment companies skyrocketed as much as 24% in extended trading. And here's the really interesting thing, guys. When you hyper-financialize, so remember, the United States has hyper-financialized. We've hollowed out the middle class. We've hollowed out our industrial base. We've hollowed out any blue-collar work. It's all white-collar. It's all jobs on the coast, right? We've talked about this time and time again on this show. Our major export is the U.S. dollar. It is hyper-financialization. What do the smartest people in this country work on? They're hedge fund managers. They're high-frequency traders. They're fucking Citadel traders trying to pick off your Robin Hood trades. That's the policy and the culture that we've built in the United States. We've hyper-financialized. What happens when you hyper-financialize? The market rewards you because you're increasing your margins by firing 4,000 people. That's the incentive. The incentive is to replace all of the labor with robots and grow your margins so you're optimizing the best for shareholders, which is optimizing the best for all the passive flows and the endowments and the... I mean, that's policy. When you're the world reserve currency and you've hyper-financialized, that, like, you've created this beast. This is a result of decisions that have been made over decades. It's crazy that on this show I sound like a fortune teller or a genius where it's just, it's so simple. It's so obvious. You just don't listen to the ludicrous bullshit of mainstream media and modern-day universities. You just think for yourself. Think for first principles. So, anyways, the Fed says everything's fine. The next day we learn, like, no, it's absolutely not. And by the way, we've lived through this. I remember what Bernanke said in 2007. I remember what Jay Pao said in 2000. Oh, it's transitory. It's transitory. No, it turns out it wasn't. Okay, now what's your next gig? AI risk to jobs is overstated? Yeah, okay, that means it probably isn't. And then this from Tech Layoff Tracker on Twitter just got this DM. Shit is getting real out there. I'm going to read the DM. I'm an M2 at a fang. Just got out of an unscheduled all-hands. Management confirmed a workforce reduction of approximately 25% company-wide with org-specific targets and tied directly to accelerating AI investments. That's from a fang. Okay, now let's look at the data. The Fed wants to blow smoke up everyone's ass? Let's look at the data. Okay, this is job on the left. This is job openings in finance and in insurance. Again, I'm just sorting by white collar. Guys, please look at the job openings for finance and insurance. We're at levels lower than COVID. We are at post-global financial crisis levels. This is, by the way, this is the U.S. Bureau of Labor and Statistics via Fred. I didn't make these images myself. Look at the job openings on the right, information. I mean, again, like, I'm a college dropout. I'm not a, I'm no genius. Like, just look at the data. Now this shows you how fast AI is moving. To me, the title of this slide is the most important chart in the world. So AI capability is doubling every four months. It's growing 100% every four months, and it's grown 26,000 times since GPT-2 came out. I want to read this tweet to you guys. This is banana land. We estimate that Claude Opus 4.6, so the new Claude model, has a 50% time horizon of around 14 and a half hours on software tasks. Let me translate that to language for you guys to understand. What that means is that the latest Claude model has about a 50% chance of achieving a task that would have taken a human 14 and a half hours, and it can do it in seconds. Let me say that one more time. The latest Claude model has a coin flip of a chance of achieving something in a matter of seconds or maybe minutes that it would have taken a human 14 and a half hours to do. And look at the title of my slide. AI capability is doubling every four months. So in four months from now, it'll take seconds to do what it took a human more than a day to do, and then four more months from there, it'll take seconds for what it took a human half a week to do. And it's only a matter of time before it is seconds before it can do what a human can do in a year. The rate of change, it's hard to comprehend. No, but your jobs are fine. Your jobs are fine, though, according to the Fed. The subprime market was fine. The COVID inflation was transitory. Your jobs are all good. All good. Markets are fine. Well, let's look at how confident people are. U.S. adults' optimism about their future has fallen to 59.2%, the lowest ever. Here we are, K-shaped economy, AI disruption, wealth is being highly concentrated into the most elite class we've ever seen. Stock markets are at all-time highs, but everyone's depressed, overdosing on pills, substance abuse all-time highs, obesity all-time highs, assassination attempts are rivaling the mid-1800s, which was the Civil War. How am I more accurate in speaking more truth than the Fed, than mainstream media, than the government? It's outrageous. It's all in our face, too. Like, all you have to do is read the news. Okay, now, chapter three here I've titled, Leverage Kills. And the point of this chapter is just, what I'm, here, I want to be super clear. I'm not saying AI is going to take everyone's job, because I've gotten that feedback. It's like, dude, you're, like, being so pessimistic, it's so depressing listening to you, like, we're all going to be, like, sitting in on our phone on TikTok and watching Elon's robots do everything. That's not what I'm saying. In fact, I'm on record saying I think we're going to have an art renaissance. With Bitcoin and AI, we can be future-oriented artists and creators. We don't need to do the white-collar, mundane tasks of doing other people's taxes, for example. But whatever. Back to my point. My point is, I'm not saying all the jobs are going to be taken. Not at all, actually. What's relevant when it comes to macro, when it comes to money printing, when it comes to a lot of the things we talk about, is the system is so highly levered. You're talking about $40 trillion of debt, okay? All it takes is a little bit of pain for a system this levered to collapse on itself. How do I know that? Well, just take a look at 2008. So this slide reads, the lesson of 2008. In February 2008, the mortgage delinquency and foreclosure rate hit 7.3%. Now let documentaries tell it, let exaggerators on Twitter tell it. You'd think it hit 73%, it hit 7.3%. So what does that mean? 100 minus 7.3. That means 92.7% of mortgages were still current. But that 7.3% combined with all of the systemic leverage that the fiat financial system requires was enough to collapse the global banking system and just flatten it on its face. So what's my point? My point is, AI doesn't need to take all the jobs. AI needs to take a little bit of the jobs. If unemployment gets to 6% to 8%, this fiat system is toast, like completely and utterly screwed. Mind you, also, if we're going to be in war in the Middle East, if oil is going to start to market up 10%, inflation is coming back, bond market is selling off, guys, if there's a flight to safety, the bond market's not supposed to sell off, okay? You combine all of this at once? And here's my thing, if you think Bitcoin's going to zero, I don't know why you're listening to this podcast. Maybe it's my big, beautiful blue eyes and these luscious locks, ladies, ladies, keep it together now, I'm taking, okay? But if you think Bitcoin's going to zero, I don't know why you're listening to this podcast. If you don't think Bitcoin's going to zero, that means you probably think it's going to a million, to 10 million. There's no in between. It's either the best money we've ever invented and come across, or it's not. And if you think it's going to work, you have to turn on your DCAs. There's no better timeline to be living through. So anyways, knowing that all it's going to take is unemployment to get to 6% to 8% and the stress of the banking system. By the way, the banks in the S&P 500 on Friday closed down almost 4%, okay? Well, let's take a look at delinquencies again. This feels like a weekly recurrence on this show is looking at delinquencies. This from Yahoo Finance. Americans are defaulting at a crisis level pace. Credit card delinquencies are now at 12.7%. Auto loan delinquencies are now over 5%. 49% of Americans are struggling to pay their rent or their mortgage now. And an all-time high in student loan delinquencies, an all-time high of 16.3%. This is all a combination of Bloomberg, Yahoo Finance, and Redfin. Again, I'm not saying AI is going to take all the jobs. I'm saying AI is absolutely going to push unemployment to 6%. Delinquencies are going to reach a level where either they print the money or we go into an austerity so painful that there might not even be a history book about it. It's just math that I, by the way, learned in high school. I didn't take a college degree to learn this math, okay? I found this interesting. Jamie Dimon is like the private market sacred. He's like a de facto arm of the US government. How many times has he helped restructure fucked up fiat situations on behalf of the US government? And so when he says something, it's effectively an arm of the establishment. I found this astonishing, breaking. Jamie Dimon says he's starting to see parallels to the era before the 2008 financial crisis when a rush to make loans ended disastrously. If that was a Jack Mallers quote, okay, we'd be busting balls about it on Twitter. That's a Jamie Dimon quote? Yikes. Yikes. Okay? The image on the right, there are 44% more home sellers than buyers. Guys, that means there's stress. If you are nervous about your future, if you are nervous about your job, if you are nervous about your finances, if you are nervous about the economy, the first thing you do is stop looking for a house. Ah, screw it. I'll extend my rent one more year. Extend my lease one more year. 44% more sellers than buyers? Yikes. Yikes. Not good. Not good. Okay, the fiscal doom loop. This is the math on you either have to print or default. This image I got from Luke. Shout out, Luke. So this is U.S. true interest expense as a percent of U.S. tax receipts. So from a high level, what is our expense versus how much are we making? How much do we have to spend versus how much are we making, right? So employment is over 50% of federal receipts and true interest expense is already almost 100% of receipts. Think about that. True interest expense is almost all of the revenue we're making, basically. So even the tiniest bit of an AI-driven uptick or a correction in the stock market or a war, the tiniest bit, boom, goodbye. So the point of this episode, you've got new conflict in the Middle East, so you've got war spending now. Initially Trump said, oh, this is only a quick operation. We just need to take the regime out. Then it was four weeks. Now Trump, as I hit record or stream, was saying it might be more than four weeks. Okay, so we might be on the brink of wartime spending. It's unclear how the oil market's going to respond, which would trigger some inflationary tendencies. So you've got war spending in oil shock, AI deflation, which is impacting unemployment, which impacts receipts. And we're already at true interest expense of 100% of our receipts, nearly. Good game. Turn on your DCAs. When Bitcoin hits the moon, you can't say I didn't tell you so. You cannot say I didn't tell you so. And this is from Michael Howell, Cross Border Capital. I already had mentioned him. I would subscribe to his newsletters if you don't. I really have been enjoying his stuff. The Fed's already printing. Now it's modest. It's not anything crazy yet, but the balance sheet is going the other way. Just a reminder, guys, they stopped QT in December. Now what they started isn't technically QE. I count it as QE, but it's balance sheet expansion, $525 billion in three months, 20% of annualized Fed liquidity growth over the past six months. I don't know, okay? Another really, really important one, ISM Manufacturing Print came in expansionary again. So manufacturing is expanding. Two months in a row is a trend. ISM PMI came in at 52.4. This historically has been incredibly bullish for Bitcoin. This means the business cycle is here. Traditionally, when the business cycle starts to pick up like this, when ISM starts to pick up like this, this is the beginning of a Bitcoin bull market. This is where Bitcoin finds its bottom. Now, please don't take that as financial advice. Just turn on your DCA, stay humble and stack stats. But these are all really important signal, guys, really, really important signals. So let's get to the last chapter, which I call Deep Value, where generational wealth is built. This is the most oversold, according to RSI, Relative Strength Index, that Bitcoin has ever been. Bitcoin at $65,000 is the most oversold, according to RSI, in Bitcoin's history. History! I've seen Bitcoin post Mt. Gox. I've seen Bitcoin, the 2015 bear market was the worst. Guys, I remember running up to my dad's room when Bitcoin hit, it was almost $1,300, and just freaking out, like, oh my gosh, what's happening, holy smokes. And then it fell from, call it $1,300 to a little over $200 over years. It just grinded, it looked like it was just slowly dying to zero. And we had nothing, no exchanges, no support from any industry, from any government. We had nothing. I didn't even know how to code at the time. We had nothing. You're telling me it's more oversold now than then, at a $200 Bitcoin? I mean, all of these charts, by the way, this guy's a great follow on Twitter, this Frank guy. Just turn on your DCAs. I mean, this slide says it all. Sorry, I'm looking at the clock. I want to be able to run you guys through these strike announcements. So this slide reads, this is where wealth is built. The system needs the printer. Talk about war, oil marketing up, talk about AI deflationary tendencies, talk about true interest expense near 100% of our receipts. I mean, it's math. It's math. People say, wow, how do you Bitcoiners know the future? I mean, is knowing that two plus two equals four, knowing the future, does that make me a fortune teller? Jack, what's five plus five? 10. Wow, you know the future. I don't know about that. I know how to do math. The system needs the printer. The only question is when, not if. Bitcoin is on sale at historic oversold levels. Turn on your DCA. Turn it on. Turn it on. All right, a quick grind my gears section. I got one topic for grind my gears, but it's an important one, so let's do it. You know what really grinds my gears this week? War. What the fuck, man? Seriously. All jokes aside, what the fuck? Enough with the war. It doesn't matter who we vote in, what they believe in, what the policy is, what the stock market's at. None of this shit matters. I was born in 1994. You know, I was taken out of school on 9-11. I was in second grade. So all I know, what's the United States to me? War, debt, inflation. This is bullshit. What the fuck? I mean, it's hard for me to really understand what's AI, what's not, what's fake news, what's not. But you're seeing places like Dubai getting hit. I'm seeing friends of mine like, oh, I was just at that restaurant, and as it's exploding. I mean, my prayers are just with humanity, man. I just don't believe, again, I'm not a political guy, I'm going to leave the geopolitics stuff for the experts on Twitter and on CNN, wherever they are. I don't even know where they are. I don't. It's not my thing, okay? So whether some authoritarian regime needed to get executed, that's not my place. I'm anti-violence, anti-war, pro-peace. Let's fix the world with software. Bitcoin is our peaceful exit. What grinds my gears is fucking war. I mean, how many politicians my whole life have campaigned, no more war, no more spending, no more debt. They're all full of shit. So I'm convinced it's not the people, it's the system. The government's gotten too big, the money is too corrupt, I'm out. Historically, we have two ways to express ourselves, express power, express the individual sovereignty that we, in theory, are born with. One is through our voice. But when your voice is no longer sufficient, which it is not any longer, I don't believe that there's a protest we need to host, or a podcast we need to record, or a tweet we need to write. Our voice doesn't work anymore. They're going to print money, they're going to spend and exceed their means, they're going to bomb people, they're going to murder people. No matter how we vote, no matter what we believe in, no matter how much technology we build, no matter how many fucking podcasts I record, people are going to die. So what's left? Exit. I'm out. If you go back and look at the tweet storm I put together when I said I own zero dollars, read why I did that. Did I do it because I think it's a financially good thing? Yes, I did. Because the dollar only goes down, and bitcoin, if you hold it long enough, only goes up. That's one of the reasons I did it. But I stated even more important than that was I refuse to support this system. Fuck that. They will not get my time and energy. Because at what point is enough enough? Seriously. I protest, I vote, I donate, and no matter what, it's a humiliation ritual, just get spit in the face by every single government. We go to every single war. We drop every single bomb. And what is a 31 year old young man looking to have a family like me supposed to do? Am I seriously supposed to sit inside my living room and look out at the sunset and say, well, I was born at the wrong time. I guess I'm just going to support war. I guess my kids are just going to be born into these modern day cities full of violence, full of indebtedness, where they're up to their eyeballs in debt to learn calculus while Elon's robots take their job. Fuck that. Fuck that. And fuck you. No. I'm sorry, that's just not how I was raised. I'm not going to lay over and peel over like a dog and die. Fuck that. We're going to build an alternative system, and I'm going to take my time and energy and put it over there. It's crazy, man. You wake up, and by the way, they do these things over the weekend. It really is. It's like breaking up with someone over text. If you're going to go drop bombs on people's head, and there's going to be U.S. casualties, and now they're saying they're sleeper cells, so Iran and these other crazy terrorist regimes have sleepers inside the country, and so they're trying to keep an eye on anyone that would harm innocent civilians inside of America in major cities. What the fuck? At least be up front about it. You're going to do it on a Friday night while I'm sleeping? I mean, at what point do you have any decency? What the fuck? I don't know, man. If I'm going to be blessed to have a life on this earth, I'm going to work on Bitcoin. That's just it. It's the most hopeful thing I got. I'm not going to peel over and die. I'm not going to give up. I'm not going to give in, but I'm also not going to protest, so people say, oh, dude, you don't vote? What the fuck? What do you mean? What's voting going to do? What the fuck? Come on. Oh, yeah, I need to go make sure I go tally my ... No, I mean, sure, whatever. Next time I'll vote. If it makes you guys happier, I'll vote next time. I'll make sure I vote. No, I'm going to build Strike. I'm going to fund open source development. I'm going to give as many keynotes at these conferences. I'm going to record this podcast every Monday. No matter how bad I do, no matter how dumb my ideas are, it doesn't matter. That's how we change shit. That's how we revolutionize. Fuck. It's crazy, man. What year is it? Am I in second grade, or am I 31? It's the same shit my whole life. You watch these documentaries about America. You hear these stories about America. I mean, don't get me wrong. Best country in the world. I wouldn't want to live anywhere else. I'm so blessed, but what the fuck, man? This country. I mean, we've just been in war as long as I can remember. Financial crisis, war, lies, bigger and bigger government. All right, well, that's what grinds my gears. That's what grinds my gears this week. War. Just war. All war. War and violence. All of it. It grinds my fucking gears. All right, let's talk about Strike, because we have a huge week. I have some awesome announcements for you guys. I've got to be a little bit quick, so it's 5.53. I've got 6.30 event, but the 6.30 event is super close to my house, so I can maybe... I was targeting the 6.15 end time. I might need to extend that. Cooking. We're cooking. That was a rant right there. That was a rant. I'm going to go get some water real quick. Okay, Strike. Line of credit. So, our line of credit product has begun rolling out. I'm going to officially, hopefully, announce it in the way that I traditionally announce products tomorrow. I just want to reread this post I put on Noster a little while ago. I put this out in October. I wrote, I like owning as much Bitcoin as possible and no fiat as well, so check this out. We're working on a line of credit product that will, in real time, extend a credit line against your Bitcoin to make lightning payments, pay your bills, etc. This way, you don't have to part with your Bitcoin or own fiat to live in today's society. You hoard Bitcoins, you borrow fiat paper for your payments and everyday expenses. You manage the line of credit and pay it down via your direct deposit or any other funding method. It works just like a credit card today, except it's secured with Bitcoin. So, I've been talking about this idea, right? This is our line of credit logo. This is what it looks like inside your app. When you see this, you'll think of our line of credit. So, anyways, check this out, guys. You guys want to see how amazing AI is? I'll show you what I built over the weekend to support this thing. So, I was really trying to conceptualize how I can communicate to you guys and to the broader public how powerful this line of credit product is. Because you guys have heard me say things like, this is probably my favorite thing I've ever built in my career, by far. I think this is the most powerful thing I've ever built, is this Bitcoin line of credit product. It allows anybody that has access to it to short fiat and live on Bitcoin effortlessly. And our Bitcoin lending product was useful in this regard, but getting a 12-month term loan is really difficult, because you have to borrow a large lump sum of cash up front. And when you're taking out a large lump sum of cash, you're risking that the market goes down. You might get yourself in a margin call. You're also paying interest on cash that you might not need for 10 months. So, let's say my annual expenses are $100,000, and I borrow $100,000 over 12 months. Well, I'm paying interest on all $100,000. Whereas, if I'm only spending like $7,000, $8,000, $9,000 a month, I want to only pay interest on what I spend in real time. I don't want to have to pay for it up front. So, these weird 12-month duration products, and also it expires at 12 months, and so there's the manual process of rolling it over. Obviously, like I said before, if you have a large expense in your life, you're putting a down payment on a house, you're financing your wedding, maybe these 12-month loans are good, because you're saying, hey, I'm going to finance over 12 months my wedding expense collateralized with my Bitcoin. That makes sense to me. But if you want to live on Bitcoin in the way I do, I always told my strike team the dream is a line of credit product, a perpetual product. So, I was trying to think how can I give people the math of how I use it and how can I correctly explain what I invented, basically. So, check this out. This is on the internet, but it's password protected. So, this is, hold on. Let's see. What is it? It's live on Bitcoin. So, I created this tool. It's at liveonbitcoin.jackmallers.com and you guys are going to be able to go to it right now, but it is password protected and you don't know the password yet. So, I will unleash this tomorrow without a password protection for the world to use. So, you won't be able to get into it yet, but check this out. So, I built this dashboard this weekend and it effectively is able to, let me blow this up a little bit here, it's able to really walk us through the math of why this is such a life hack. Okay, so here's what we're looking at here. Here's the dashboard I built. And so, this is living on Bitcoin, see what the Bitcoin line of credit can do for your life. Okay, so check this out guys. So, here's what I did. Let me make my face smaller here. Because basically, here's the thing. You're living off one core basic assumption here. The assumption is, do you think Bitcoin can outperform the APR that you're paying? When people say like, oh, strike loans are way too expensive, they're 9%, 10%, 11%, 12%, 13%, whatever they are, people say they're too expensive. And I don't think that's the case at all. As long as Bitcoin can comfortably outperform what you're paying to borrow, it's an absolute smashing home run. Like right now, think about it. Saylor's paying 11.5%, 12%, whatever it is, for his stretch product. And that's not a problem to him because he thinks Bitcoin's CAGR, its annual compounding rate, is going to be higher than that. So, here's what I did. This tool I built pulls in the current Bitcoin price, rounded to the nearest thousand. So, it's got it at $70,000 right now. And it says, what's your monthly income? And what's your monthly expenses? So, it defaults to monthly income at $8,000, monthly expenses at $5,000. Now it says, what's Bitcoin's CAGR? Now, I have moderate at 50%. You can put conservative at 30%, historical at 80%. You can drag it to zero if you want. Let's keep it at 50% for now, and I'll change it in a second. And then set your inflation rate. So, the Fed's target is 2%. I think realistic is more like 5%. I think if you want a high quality of life, inflation rate's closer to 10%. And if you want really nice things, your inflation rate, like beachfront real estate in Miami, your inflation rate's probably 20%. Okay, let's keep it at 5% for now. And then it's, what's your time horizon? Are you talking about a year or are you talking about 10 years? Let's put it at five. Now, what the tool does is it walks through what I call different strategies, okay? This is a stack stats strategy. This is the strategy that I want to walk you guys through. This smart lock, smart line of credit. This is a sell to live. So, if you were to not use the line of credit at all, and you were to just sell Bitcoin to cover your expenses. So, the point is, sorry, to take a step back, the point is, how do I maximize the amount of Bitcoin I own and live on a Bitcoin standard? Because that's what I've done for myself. And I've told you guys, like this product changes my life. And it can change everyone's life. And I want to really like spend the time and walk you guys through this. And this is obviously if you don't own any Bitcoin at all. So, again, this person or this family's monthly income is $8,000 a month, which means they're bringing in, what, like around 90 grand a year, a little higher? What's eight times 12, 96. So, they're bringing in 96 grand a year. They're spending $5,000 a month. So, here's the strategy. Stack sat strategy means you're only paying off the interest you're accruing. And everything else is going to Bitcoin. So, you build up a line of credit balance over five years. So, I have the time at five years. So, what is monthly expenses of five grand times 12 is 60, times another five is 300. This is adding a ton of leverage, okay? This means you're never managing your line of credit. All you're doing is taking on the most leverage possible. And if I take this five years and I drag it to the left to four years or three years or two years or one year, you see the stack sat strategy, you're getting liquidated if the Bitcoin price crashes 80%. So, I have down here as the stress test, what if Bitcoin crashes 80%? Will I be okay? And the stack sats, if Bitcoin isn't compounding over a long period of time at a high CAGR, and all you're doing is adding maximum amounts of leverage, you can find yourself in trouble. Now, obviously, if you take this, so this is assuming you have one Bitcoin. If you say you have 100 Bitcoin, well, then you're totally fine, right? If you have an ability to severely over-collateralize yourself, no problem. But let's assume you have this one Bitcoin again. Now, the point of my whole idea of why we built this at Strike is that if you believe Bitcoin's not going to zero, if you believe Bitcoin can outperform a 10% or 11% or 12% or 13% APR, and we built a line of credit product that can help you pay your bills and can cover your expenses, and you can get your direct deposit to Strike, this is a bank account on steroids. It can absolutely change your life. The question is, what's the right amount of leverage? What's the right amount? What's the right way to use the line of credit product? What's the math? At the end of the day, it's a math problem. And so I call it Smart Line of Credit. So I go to Smart Lock over here. And so let me read this to you guys. The one assumption that changes everything. Bitcoin has been the best-performing asset in human history, averaging over 80% annually for more than a decade. The Strike line of credit costs 13% APR. If Bitcoin keeps outperforming 13% and the data says it has by a lot, you borrow cheap money, your collateral grows faster than your debt, and you never have to sell a SAT. Your Bitcoin stays intact. Your life is funded. The interest is just noise. The Smart Lock, Smart Line of Credit, manages the only real risk, which is a crash of Bitcoin bear market. By keeping your loan-to-value ratio below 15%, even an 80% Bitcoin collapse can't liquidate your position. Enter your numbers, and we'll tell you exactly how to use it. This is not on Strike's website. This is on my website. This is not financial advice. I backed on this. I literally built this over the weekend. But if you take, let's say you have $8,000 of income and $5,000 of monthly expenses. So your monthly surplus is $3,000 of cash. Your income-to-expense ratio is 1.6. So, again, I've talked about on my show a lot, guys, where I say, hey, if you want to build wealth, like when people say, Jack, give me advice on how to build wealth. I say, here's my advice for you. My advice is either be more valuable, which means you're getting paid more, doing more valuable stuff for the market, or consume less shit, which is spend less money. And you need a healthy income-to-expenses ratio. If you're spending more than you're earning, there's no product I can build for you to solve that problem. So we have to start with, let's say your monthly income is zero and you need to spend $5,000 a month, you're not viable to use this product. Do not use this tool. So there's going to be plenty of people that are like, well, I make $5,000 a month and I spend $5,000 a month. What the fuck? Why aren't your products saving my life and helping me own a home in the future? Well, because you're not earning more than you're spending. And, by the way, Bitcoiners, by definition, are net producers because we all, by definition, have to produce more value than we're consuming, which means we have excess left over to allocate to Bitcoin. Okay, right? So let's put it back at $8,000. And so the tool is very simple. It says, here's how the math works. So the smart lock is, I'm just going to read this. Here's the strategy. The smart lock separates two things that people usually conflate, income and living expense. And this is how I live, guys. So everyone's always asking, like, how do you do it? What changed your life? Like, how did you build the ultimate Bitcoin tool? This is like the coolest thing I've ever done And, you know, I want to be able to really explain it to you guys. I want you guys to be able to leave questions in the YouTube comments because I'm going to record the video I'll release tomorrow, either tonight or in the morning. So your feedback will really help me make sure I answer everyone's questions and make a good announcement. So, anyways, the smart lock separates two things that people usually conflate, income and living expenses. Instead of spending your income on life and investments and the leftovers, you invest all of your income into Bitcoin and borrow against a collateral to fund your life. Strike charges 13% APR on the loan. Bitcoin has historically compounded at 50% to 80% annually. The arbitrage is the point. It's like running your own personal micro-strategy. The line of credit balance grows over time from drawn expenses and capitalized interest. But as long as Bitcoin appreciates faster than the 13%, your collateral grows faster than your debt and your net Bitcoin position improves every year. Again, so the point is, if you think Bitcoin is going to zero, I don't know why you're listening to this, I don't know why you would use Strike. If you think Bitcoin is not going to zero and is going to outperform whatever, 13%, then this is an absolute life hack. So the point of smart lock, this strategy, is keeping your LTV at 15% and below. Now, Strike liquidates positions at 85% loan to value. To survive an 80% Bitcoin crash without liquidation, you need your LTV to stay below 85% even after collateral drops to 20% of its current value. So LTV after an 80% crash equals current LTV divided by 0.20. So that's how you get to the 15% number. So anyways, the point is, the way my strategy works here, so I'll go back to this tab, is this is extreme leverage, the one on the far left. If you don't have the ability to severely over collateralize yourself, you're not sitting on a ton of Bitcoin, you really, really, really should not do this because you're at risk of a bear market wiping you out. Now, what's the smart mathematical way to do this? You do smart lock. Smart lock is paid out, so basically, here's what happens. Let me go back to this one. You open up a line of credit. If your LTV is below 15%, then you just stack SATs. If your LTV is above 15%, so let's go as the strategy plays out. Here's a month where the LTV is at 17.2%, so a pay down would be triggered. So you would have, let's say you're making $8,000 a month. $3,600 goes towards your line of credit pay down. $4,300 goes towards buying Bitcoin. You're drawing $5,000 to cover your expenses. Now, here's what this looks like, guys. If you're using smart lock, let me actually go back to this one. You are going, your net worth, look at your net worth and your real return compared to if you were to sell to live and incur taxable events. It's an absolute life hack. Now, check this out. If you were to say, oh, well, what happens if Bitcoin crashes one year into the strategy? Check, as I scroll this thing, check the smart lock, the stress test. Well, what if Bitcoin falls 80% from any price it's at? You're always healthy, always healthy. So basically, the tool is, so for the line of credit, you're only paying interest on what you actually use. And so it's this rolling line of credit that keeps you all in on Bitcoin. You never have to sell Bitcoin, and it doesn't really matter when Bitcoin gets in a bull market or a bear market. You just keep stacking. Now, what happens if Bitcoin's CAGR is not 50%? Let's say Bitcoin's CAGR is 0%. You're still super healthy. Now, a Bitcoin CAGR of 0% wouldn't be ideal because obviously the whole point of this strategy is the Bitcoin CAGR should outperform the APR that you need. So you see the real return now is negative 24% for smart lock, where the real return of just not owning Bitcoin at all is negative 21%. So you're better off not owning Bitcoin at all if Bitcoin's going to stay flat for the next five years. But even if Bitcoin's at 20% CAGR, you're killing it. Look at your returns. You're absolutely killing it. And so the point is, it doesn't matter how Bitcoin performs. It doesn't matter when Bitcoin goes into a bear market. The line of credit is not excessive leverage. It's how do I maximize my Bitcoin exposure, never sell a SAT, and use these tools to speculatively attack the dollar, to short the dollar in long Bitcoin. So let's say your income is $8,000 and your monthly expenses are five grand. Well, the tool will recommend, open a line of credit with 1.45 Bitcoin. Now, the minimum that you would need is 0.48, but the recommendation is 1.45 Bitcoin. That starts your LTV at 5%. And so on the first month when your paycheck comes in, you're buying 100% Bitcoin. You're drawing the $5,000 that you need to cover your mortgage, to cover your credit card bill, that you can pay these bills with strike. You're using your line of credit. And then let's go to month two. You're just smash-buying Bitcoin with your entire income. Okay, now month five. And again, this is just assuming a 50% CAGR. So if I drag this all the way through, it ends up getting to enough growth where you're just smash-buying Bitcoin again. But if it gets into months where your LTV exceeds 15%, it's like, okay, if Bitcoin drops 80% from here, I'll start getting into margin call territory. So what it does is it says, okay, we're going to take 45% of our paycheck, of our income this month, and we're going to allocate it towards paying down the line of credit, and we're going to take the excess that we have, and we're going to buy Bitcoin. Bitcoin can fall 80%, and we're totally fine. If I go back to the stress test, guys, we're totally fine. Bitcoin can fall as far as it's ever fallen, and you're good. And so this is how I live on Bitcoin. It's an unbelievable... Guys, I'm so fucking excited to give you guys this tool, because here's the thing that we all want. What we all want is how do I take all of my work, all my effort, stack as much stats as possible, and find a tool that will lend me the money to actually pay my expenses? And I don't want to take out these 12-month loans. I just want a perpetual loan, a perpetual line of credit. And I've been trying to explain this to you guys, and I was like, fuck it. I have to code up a dashboard for people to input numbers just so they can do the math themselves. Because here, you guys can see. Let me take out this one, because this is just degenerate leverage, unless you've got a huge stack. If you've got hundreds of Bitcoin, you're good. But if you're not, look at how much you outperform on the smart lock. And again, you just have to assume some cagger. Put it at 30%. I mean, you're killing it. You're absolutely killing it. No taxable event. See, tax is paid over here on the cell to live. So you end up building over five years. You build up a line of credit balance of $48,000. You pay 16 grand of interest, but your net worth has gone from one Bitcoin to over half a million dollars. And so, yeah, you can come in here and you can say, well, Jack, my family actually makes $15,000 a month. You just type it in. And we spend $10,000 a month. Okay, great. You've got an income to expense ratio of 1.5. The recommendation would be put up just under three Bitcoin, open up a line of credit. I mean, if you have more Bitcoin than that, absolutely do it. And you guys can click on this tool and see the graphs change. Obviously, if I over collateralize, that means my LTV is going to be even healthier and I'll end up with way more Bitcoin. But let's just put this. Let's put this at 30%. Your family's making 15 grand a month. You're spending 10 of it to live. And you've got 2.9 Bitcoin to put up. By the way, this line of credit is for businesses and for individuals. So if you're a business and you want to just collateralize your business and your balance sheet on Bitcoin and pay off all your expenses with line of credit, Strike has bill pay, guys. We have bill pay and direct deposit. So you have everything you need to hack the system. You're your own micro strategy. Right? So obviously, if I over collateralize, I'm always in a good LTV state and I'm stacking so much Bitcoin, I'm never selling Bitcoin. If you were to stack with only your surplus and not use Smart Lock, you'd end up with 9.6 Bitcoin over five years. If you were to use Smart Lock, you're ending up with three more full coins and obviously at 50%, 30% CAGR over five years, Bitcoin is what? 500K or something. So you ended up with millions of more dollars. Right? Now let's put it at 2.9 and you can see how it changes. And you guys can just click through the tool and play with it and input your own numbers. It's pulling in a live Bitcoin price. So I'm not assuming that Bitcoin's at 500K or anything. And you can come and just see. And this, at the bottom, you can click and expand how the math works. And I walk you guys through the point and how I got to the strategy. So the whole point of the strategy is, and listen, if you don't think Bitcoin's going to go down 80% and you want to add some leverage, you absolutely can. But this point of the strategy is, Bitcoin's only ever gone down 80% in one bear market. How do I make sure that no matter what, throughout what Bitcoin's been through, no matter what version of Bitcoin, like I should be fine and I'm just going to focus on converting as much of my paycheck and my family's earnings or my business's earnings into Bitcoin. And I'm going to use Strike and What Jack Built to finance my life. And I'm going to ultimately short the dollar. I'm going to run on a Bitcoin standard. And look at the wealth this is building, guys. Like, look at the fucking, look at the net worth. You're talking about like over five years making millions of dollars just hoarding Bitcoin, trusting the process, shorting fiat. I mean, this can change people's lives. There's just never been a tool that makes Bitcoin credit perpetual like this. Like a consumer line of credit that you can live on. Like there's never, all these like 12-month DeFi variable rate, like wrapped Bitcoin bullshit. Like no, I want people to live on a Bitcoin standard. This is what I, this is how I live. Isn't this unbelievable? Hopefully you guys are understanding this enough to give me feedback tonight so that I can, so that I can record a really good video tomorrow for the public. I'll post it on Twitter and I'll walk everyone through what we just built. I think this is the coolest thing I've ever built by far. Because anyone that grasps this idea, I mean, it's mind-blowing. You can fully build, fully live your life on a Bitcoin standard. And let me pull up, hold on. Like people talk about hyper-Bitcoinization and stuff and like listen, no one more than me or me as much as anyone else wants to be able to just not touch fiat at all. That's just not the world we live in right now. And for the world we live in right now, like this is unbelievable. I get to speculatively attack the dollar, like it's crazy. So hold on, let me pull up really quickly here. How else the line of credit works? Sorry, give me two seconds. Yeah, so here. I'm going to make sure I'm not sharing any trade secrets. This is our internal Figma files. Sorry to my team if I'm sharing too many trade secrets. But just so you guys know, I should have put this in my own slides. Like you can pay your bills with your line of credit. So if you guys don't know, Strike has bill pay. So like how do I live my life on the line of credit? Well, my line of credit, the month just ended, I owed my HOA payment, I owed my credit card bill, I owed my electricity bill, and I paid it with my line of credit. So the bills came into Strike and it just pulled money and Strike just paid it with the cash from my line of credit. And then my paychecks will come in and depending on what the LTV is, obviously if Bitcoin drops to 40K, I'll need to use some of my paycheck and help pay down the line of credit to get into a healthy LTV state around that 15% number. If Bitcoin remains at 70K or gets to 75K, my entire paycheck is going to smash by Bitcoin. And I'm just living my life on, and obviously I'm smashing buying Bitcoin, Bitcoin's growing, it means my LTV is getting healthier, my line of credit can expand. Are you guys following what I'm putting down here? This tool is incredible, guys. By the way, I can buy Bitcoin with my line of credit too. So if Bitcoin goes up a lot, and you're like, wow, my LTV's at 4%, I might as well turn on a DCA, you can pay people with your line of credit on Strike, you can pay bills with your line of credit, you can buy Bitcoin with your line of credit, you can do anything, you can withdraw cash with your line of credit. It's a payment method. It's like a Bitcoiner's dream. It's like Bitcoin on steroids. Look at this stuff, guys. It's crazy. You only pay interest on what you use. So if you have a month where like, hey, like me and the family, we didn't spend that much, you don't get charged for it. It's all good. You know what I'm saying? This is like, this is it. Like, I've been working my whole career for this product. It's this product, and then on top of this, once we launch our yield on cash, then any like excess cash that you do feel like you need to save for the people that feel like they need cash. I mean, with this strategy, I don't know why you would hold cash. I mean, then we're like the most powerful financial account in the world. How insane is this? Anyways, I'm so excited. This is liveonbitcoin.jackmallers.com, and it's password protected right now, but I will lift the password tomorrow, and we'll announce this. We'll roll it out. Okay, I do have to share some news with you guys, and then I got to go, because it's 621. Fuck, I forgot we were going to have Q&A. Damn it, I totally botched that. Shit. Okay, well anyways, we're going to roll this out only to a few states at a time in the beginning to make sure it's perfect. So you'll hear about how we're going to do that tomorrow. I know it's going to piss a lot of you off. You're going to be like, damn it, I'm not included in the initial rollout. It's fine. We're going to turn it on. As soon as we feel comfortable, we're going to turn it on. I just want it to be perfect. It's a one of one. No one's ever built a product like this. It's so important and precious to me. I just want to make sure it's right. So we're going to roll it out. I'll tell you guys what states have access to it starting tomorrow. Honestly, if you check your apps, you might have gotten it today, and I'll unleash my tool. I'll walk everyone through how I use it and how to use it, and we'll go from there. The other thing about... Oh, damn. Ah, fuck. I'm botching this. I'm running out of time. The other thing about... Hold on. About... About this week for Strike. Oh, damn. You can only kind of see it. We got our BitLicense, guys. We got our BitLicense. Strike is officially BitLicensed. You will see this announcement. This announcement needs all sorts of approvals to actually hit the press. So you'll see this come from me probably this week, but we did get approved for our BitLicense, and we will begin serving New Yorkers this week. So if you're in New York, don't ruin my announcement and go running around the Internet and spoiling my announcement. I've been working on this license for almost four years. But if you're in New York, check Strike. See if you can download it. Today's your lucky day. We finally got it. This I Strike New York shirt, I love New York shirt. We are hosting a party at Pubkey later this month, and this is some of the merch that we'll have handed out to you guys. So I'll keep you posted on when I'm coming down in New York. It'll be drinks on us. Just want to give you guys a hug. It's been a long time coming that we've wanted to serve New Yorkers, and over the next month, New Yorkers should get our full suite of products. So we're very, very excited about that. Finally got our BitLicense. Okay. On 21, oh, damn, here we go. On 21, really quick, I just want to say something. So for people that say, you know, there are people that say, hey, Jack, like, why aren't you giving us any updates? Why aren't you giving us any announcements? Why aren't you letting us know what's going on? Why aren't you doing stock buyback programs? Why aren't you doing stuff? Some people are disingenuous when they say that, and they just want to be mad at me, and I've already said, I totally get that. There's so many things that I think Tether, SoftBank, myself, the whole team, that we would have done differently. This has been the furthest from easy, obviously. It's been a journey, and so I get that. You guys have, you know, you want to be mad at me, you have every right. I own that. I accept that. If you're genuinely curious about the answer, I've talked about this before, and I just want you guys to be able to look this up and understand why. I'm not trying to hold information. I'm not making a conscious decision to be secretive. There's something called non-public information, NPI. So if I have access to, so when I say we're working on operating company stuff, we're potentially looking at some deals that we could do. When I say things like that, that means I might have access to information that other people don't, and if that's the case, I have to be extremely careful. I can't do a stock buyback program. I can't talk to you guys about our strategy or communicate expected deadlines and tell you guys when exactly you should expect things, because not only will I get in trouble and the business will get in trouble, but then ultimately what we all want, which is 21 to be the Bitcoin company, the public Bitcoin equity, that'll never happen. And so I've mentioned it before, and for people that genuinely want to know the answer of why my communication style has been the way it is, because I mean, I pride myself on transparency, on honesty, on being as accessible and approachable as a public company CEO as you'll ever find. I don't think there's any, like I don't think Brian Armstrong's running podcasts like this, which I don't know, maybe that's a bad or good thing. I don't know. This is just who I am. I think it's important. I think it's part of Bitcoin that guys like me can exist. And so that's why. That's why. So I can talk about it more next week. I obviously didn't leave us any time for Q&A, but that's why. And I wanted for people that actually wanted to know the answer, that is why. For people that just want to be mad at me and don't accept that answer, I also get that too. I don't blame you. No problem. I own that. I own that. Proof of work is all that matters at the end of the day. We'll either build a great company or we won't. And in the meantime, if you're upset, that's part of being the CEO. Direct your bullets this way. All right. I left us zero time for Q&A. I fucked that up. My bad. I was just running the line of credit explanation until I had to go. And I totally forgot about Q&A. So Dylan documented it all. I'm looking at it. We'll just run it back next week or maybe I can record an ad hoc and upload it to YouTube separately at some point in the week. But give me feedback on the line of credit. Give me feedback on the show. You'll hear from me hopefully tomorrow in a more professional way on the line of credit. I'll give you guys my tool and show you guys how exactly to live on a Bitcoin standard, to use Bitcoin credit products. Again, I never advocate for people to use it irresponsibly. It is a loan. It is credit. Of course there's risks. This is not financial advice. The people that accuse me of being an immoral asshole or a criminal, that's never the case. But I think that this tool can change your business, change your life, change your family like it has changed mine. I think it's the coolest thing I've ever built. So with that, I'm out of here. I got to run. My girlfriend's going to kill me. I love you guys. And I'll see you next week. I mean, we're going to announce we've got our BitLicense and our line of credit products. Huge week for Strike. So proud of the team. So I'm sure you'll hear from me plenty this week. So talk then. Peace and love. Take care.
+
+## Segments
+- [0.0 - 7.28000020980835] Yo, welcome back to another episode of the Jack Mallers show.
+- [7.28000020980835 - 13.960000038146973] I am your host, Jack, and you are listening to yet another edition of Mailbag Monday.
+- [13.960000038146973 - 17.239999771118164] All signal, no noise, and no ads.
+- [17.239999771118164 - 21.799999237060547] Episode 107, wow.
+- [21.799999237060547 - 23.280000686645508] Happy Monday, ladies and gentlemen.
+- [23.280000686645508 - 26.559999465942383] Without further ado, let's get this bad boy time stamped.
+- [26.559999465942383 - 31.719999313354492] I'm talking to you all at a Bitcoin price of $69,420.
+- [31.719999313354492 - 36.15999984741211] I'm just kidding.
+- [36.15999984741211 - 40.15999984741211] Close though, $69,460.
+- [40.15999984741211 - 46.36000061035156] Putting Bitcoin's market cap at 1.39 trillion USD.
+- [46.36000061035156 - 56.52000045776367] That still is 45% below our established all-time high of $126,160 set on October 6th, 2024.
+- [56.52000045776367 - 60.439998626708984] 45, 147 days from today.
+- [60.439998626708984 - 65.12000274658203] For those of you that keep track of time and block height, I salute you.
+- [65.12000274658203 - 66.4000015258789] You know I do.
+- [66.4000015258789 - 67.4000015258789] You know I do.
+- [67.4000015258789 - 69.36000061035156] You know I do.
+- [69.36000061035156 - 74.5199966430664] The last Bitcoin block mined since I hit stream was Bitcoin block height 939,059.
+- [74.5199966430664 - 81.68000030517578] All right, boys and girls, here's the deal.
+- [82.68000030517578 - 83.68000030517578] Hey, Jack.
+- [83.68000030517578 - 86.68000030517578] Come on, get your head out of the gutter.
+- [86.68000030517578 - 91.4800033569336] Jack, I, referencing myself, have something to be at at 6.30.
+- [91.4800033569336 - 92.4800033569336] I'm in Chicago.
+- [92.4800033569336 - 94.63999938964844] It's 5.03 right now.
+- [94.63999938964844 - 99.63999938964844] These things can go two hours if I'm really feeling it, which I usually am, so this one's
+- [99.63999938964844 - 103.16000366210938] going to have to be shorter, which is kind of unfortunate, but I'll tell you why it's
+- [103.16000366210938 - 104.72000122070312] not that big of a deal.
+- [104.72000122070312 - 109.04000091552734] All of the Iran stuff, all that's going on, keeps updating in real time.
+- [109.36000061035156 - 116.23999786376953] Today, the oil market closed up, and now oil's back down.
+- [116.23999786376953 - 117.5199966430664] Bonds are flying all over the place.
+- [117.5199966430664 - 119.68000030517578] The stock market closed green.
+- [119.68000030517578 - 121.08000183105469] I mean, I'm getting real time.
+- [121.08000183105469 - 125.08000183105469] You know how many times I updated my slides in the last 10 minutes?
+- [125.08000183105469 - 129.5399932861328] Every time I refresh the internet, you're getting new information, new market signals,
+- [129.5399932861328 - 131.67999267578125] so in the beginning, I was like, you know what?
+- [131.67999267578125 - 133.1999969482422] I got to move my 6.30.
+- [133.1999969482422 - 138.32000732421875] I really cannot afford to make this episode short, and then I realized it's really going
+- [138.32000732421875 - 142.60000610351562] to be next week once markets calm down and we get some more information where we're going
+- [142.60000610351562 - 144.39999389648438] to be able to really dig in deep.
+- [144.39999389648438 - 150.1199951171875] Right now, I'm just going to tie together all that's going on and why I think it matters
+- [150.1199951171875 - 154.47999572753906] and the higher level story that's relevant to us Bitcoiners, and then we're going to
+- [154.47999572753906 - 161.52000427246094] revisit everything next week once we get a little bit more information, a little bit
+- [161.52000427246094 - 163.44000244140625] more signal.
+- [163.44000244140625 - 171.67999267578125] So, without further ado, the title of this is War, AI, and Deep Value, Why the System
+- [171.67999267578125 - 174.1199951171875] is More Fragile Than You Think.
+- [174.1199951171875 - 177.32000732421875] Okay, so we're going to talk about Iran, we're going to talk about oil, we're going to talk
+- [177.32000732421875 - 183.8800048828125] about the fragility of everything, a little bit of AI, and the deep value is Bitcoin.
+- [183.8800048828125 - 189.63999938964844] I continue to think this is the time to turn on those DCAs.
+- [189.63999938964844 - 191.75999450683594] I think it's critically important.
+- [191.75999450683594 - 195.9600067138672] I'm also going to try and fly through this stuff because the star of today's show, it
+- [195.9600067138672 - 198.52000427246094] might actually be Strike.
+- [198.52000427246094 - 204.52000427246094] Strike has probably the biggest week in our history this week, tremendously exciting,
+- [204.52000427246094 - 207.16000366210938] and I need some time to walk you guys through that.
+- [207.16000366210938 - 209.36000061035156] All right, let's get into it.
+- [209.36000061035156 - 213.75999450683594] First and foremost, the regime is dead, okay?
+- [213.75999450683594 - 218.44000244140625] So for those that have been living under a rock, I hate to be the one to break the news
+- [218.44000244140625 - 226.1999969482422] to you, but the United States is in war or has declared war, but even that I'm not entirely
+- [226.1999969482422 - 229.44000244140625] sure because you need Congress to go to war.
+- [229.44000244140625 - 230.9199981689453] But do you?
+- [230.9199981689453 - 238.52000427246094] Because I thought post 9-11 the president has discrepancy to start war but not declare
+- [238.52000427246094 - 239.52000427246094] it.
+- [239.52000427246094 - 240.52000427246094] See, this is the thing.
+- [240.52000427246094 - 242.24000549316406] I'm not a politics guy.
+- [242.24000549316406 - 243.55999755859375] I vote orange.
+- [243.55999755859375 - 246.9199981689453] I'm not left, right, blue, red, up, down, blah, blah.
+- [246.9199981689453 - 250.72000122070312] You guys have heard me say this a million times, it's just not who I am.
+- [250.72000122070312 - 252.52000427246094] It's not my expertise, okay?
+- [252.52000427246094 - 254.63999938964844] So take this all with a grain of salt.
+- [254.63999938964844 - 260.55999755859375] I don't know if we're officially in war because I think Congress needs to declare war.
+- [260.55999755859375 - 262.44000244140625] Did we bomb Iran?
+- [262.44000244140625 - 263.44000244140625] Yes.
+- [263.44000244140625 - 267.32000732421875] Did we terminate and kill the regime?
+- [267.32000732421875 - 268.32000732421875] Yes.
+- [268.32000732421875 - 274.6400146484375] And so this screenshot, by the way, as we'll see in a second, this is US and Israel.
+- [274.6400146484375 - 279.0400085449219] So US and Israel launch major combat operations in Iran.
+- [279.0400085449219 - 284.4599914550781] This post was from the White House, the White House.
+- [284.4599914550781 - 290.67999267578125] And in Trump's screenshotted true social post, it's one of the most evil people in history
+- [290.67999267578125 - 291.67999267578125] is dead.
+- [291.67999267578125 - 296.2799987792969] This is not only justice for the people of Iran, but for all great Americans and those
+- [296.2799987792969 - 300.9599914550781] people from many countries throughout the world, okay?
+- [300.9599914550781 - 302.0400085449219] So we go on.
+- [302.0400085449219 - 304.9599914550781] Now, the question is why?
+- [304.9599914550781 - 305.9599914550781] Why now?
+- [305.9599914550781 - 308.8399963378906] What's going on geopolitically?
+- [308.8399963378906 - 316.239990234375] And let me just say, the official stance of the Jack Mallers show is I'm not sure we know,
+- [316.239990234375 - 317.239990234375] okay?
+- [317.239990234375 - 319.8399963378906] We're going to take a look at the oil markets, the gold markets.
+- [319.8399963378906 - 321.9599914550781] The oil markets, the gold markets led this.
+- [321.9599914550781 - 324.0] Bitcoin as the smoke alarm led this.
+- [324.0 - 326.6400146484375] It sold off hard over the weekend.
+- [326.6400146484375 - 331.239990234375] It rallied over 5% today, which was very, very interesting.
+- [331.239990234375 - 333.239990234375] So markets were all over this.
+- [333.239990234375 - 336.1199951171875] Free markets are the best.
+- [336.1199951171875 - 343.6000061035156] It's the best capitalistic system to incentivize progress we've ever seen.
+- [343.6000061035156 - 344.6000061035156] Free markets are the best.
+- [344.6000061035156 - 345.6000061035156] They're the best.
+- [345.6000061035156 - 348.760009765625] And so all you've got to do is look at markets to look at the truth.
+- [348.760009765625 - 352.0799865722656] So I think I have a good idea, but I'm not entirely sure.
+- [352.0799865722656 - 354.6000061035156] Now this was posted like an hour ago.
+- [354.6000061035156 - 359.1600036621094] So this is Marco Rubio of the US government.
+- [359.1600036621094 - 362.760009765625] I want you guys to listen to this, because this is the first time we've heard from the
+- [362.760009765625 - 369.0] US government, why now and what's going on.
+- [369.0 - 372.760009765625] I was a little shocked when I heard this, but let's listen.
+- [372.760009765625 - 376.6400146484375] The second question that's been asked is, why now?
+- [376.6400146484375 - 378.6400146484375] Well, there's two reasons why now.
+- [378.6400146484375 - 383.4800109863281] The first is it was abundantly clear that if Iran came under attack by anyone, the United
+- [383.4800109863281 - 387.6000061035156] States or Israel or anyone, they were going to respond and respond against the United
+- [387.6000061035156 - 388.6000061035156] States.
+- [389.0400085449219 - 391.2799987792969] The missile forces had been delegated down to the field commanders.
+- [391.2799987792969 - 392.2799987792969] It was automatic.
+- [392.2799987792969 - 397.9200134277344] And in fact, it bared to be true, because in fact, within an hour of the initial attack
+- [397.9200134277344 - 403.8800048828125] on the leadership compound, the missile forces in the south and in the north, for that matter,
+- [403.8800048828125 - 405.3599853515625] had already been activated to launch.
+- [405.3599853515625 - 408.1600036621094] In fact, those had already been pre-positioned.
+- [408.1600036621094 - 412.20001220703125] The third is the assessment that was made that if we stood and waited for that attack
+- [412.20001220703125 - 417.5199890136719] to come first, before we hit them, we would suffer much higher casualties.
+- [417.5199890136719 - 420.20001220703125] And so the president made the very wise decision.
+- [420.20001220703125 - 422.55999755859375] We knew that there was going to be an Israeli action.
+- [422.55999755859375 - 425.9200134277344] We knew that that would precipitate an attack against American forces.
+- [425.9200134277344 - 430.0] And we knew that if we didn't preemptively go after them before they launched those attacks,
+- [430.0 - 434.1199951171875] we would suffer higher casualties and perhaps even higher those killed.
+- [434.1199951171875 - 438.32000732421875] And then we would all be here answering questions about why we knew that indeed.
+- [438.32000732421875 - 439.9599914550781] Interesting.
+- [439.9599914550781 - 444.0400085449219] So my interpretation after listening to that, and again, this is hot off the press.
+- [444.0400085449219 - 448.6000061035156] That was just live TV.
+- [448.6000061035156 - 457.1600036621094] I guess it was known that if the West, which all leads back to the US, right, like the
+- [457.1600036621094 - 464.2799987792969] European defense is the West, excuse me, is America, Israeli defense obviously is America.
+- [464.2799987792969 - 472.9599914550781] And so if anyone hit Iran, it was known information that Iran would hit the United States, I guess,
+- [472.9599914550781 - 476.239990234375] or retaliate to the United States.
+- [476.239990234375 - 479.3999938964844] And then it was known that Israel was going to hit Iran.
+- [479.3999938964844 - 484.0799865722656] So then by proxy, it meant Iran was going to attack the United States.
+- [484.0799865722656 - 487.1600036621094] So Trump said, screw that.
+- [487.1600036621094 - 492.9599914550781] If we're going to get attacked, we might as well, the best defense is offense.
+- [492.9599914550781 - 497.9599914550781] That's my interpretation of that, which is, again, this is all so fresh and so new and
+- [497.9599914550781 - 498.9599914550781] so classic.
+- [498.9599914550781 - 502.0] I mean, politics is just a joke.
+- [502.0400085449219 - 503.9599914550781] It's an utter and complete joke.
+- [503.9599914550781 - 505.760009765625] I mean, I'm sorry.
+- [505.760009765625 - 507.67999267578125] I hate to be that guy.
+- [507.67999267578125 - 512.0800170898438] But if you think you're going to change the world by putting the right person in office,
+- [512.0800170898438 - 514.3200073242188] I mean, who are you kidding?
+- [514.3200073242188 - 518.3200073242188] I mean, can we be serious?
+- [518.3200073242188 - 523.5999755859375] No, you're going to change the world through open source software, through engineering,
+- [523.5999755859375 - 528.8800048828125] through distributed systems, through hard money, through health, through truth, through
+- [528.8800048828125 - 533.5999755859375] morals, through principles, through family.
+- [533.5999755859375 - 537.0800170898438] That's my message on my platforms.
+- [537.0800170898438 - 538.0800170898438] We're getting married.
+- [538.0800170898438 - 539.0800170898438] We're having kids.
+- [539.0800170898438 - 540.0800170898438] We're stacking sacks.
+- [540.0800170898438 - 541.0800170898438] We're building software.
+- [541.0800170898438 - 545.9600219726562] These guys, I mean, it doesn't matter who you put in office.
+- [545.9600219726562 - 548.5599975585938] What are they talking about?
+- [548.5599975585938 - 551.47998046875] So if someone hurt Iran, Iran would hurt us.
+- [551.47998046875 - 555.239990234375] So the fact that someone was going to hurt Iran by proxy meant Iran was going to attack
+- [555.239990234375 - 556.239990234375] us.
+- [556.239990234375 - 557.239990234375] We didn't have them attacking us.
+- [557.239990234375 - 558.239990234375] We just fucked them up.
+- [558.239990234375 - 559.239990234375] What the?
+- [559.239990234375 - 560.239990234375] All right.
+- [560.239990234375 - 562.0399780273438] So anyways, why now?
+- [562.0399780273438 - 564.52001953125] Why Operation Midnight Hammer?
+- [564.52001953125 - 567.47998046875] I get, I don't know, okay?
+- [567.47998046875 - 569.239990234375] And again, I'm not a politician.
+- [569.239990234375 - 572.3200073242188] I don't know the answer.
+- [572.3200073242188 - 575.2000122070312] Here's another angle that's very important, okay?
+- [575.2000122070312 - 577.280029296875] This is not just the Middle East story.
+- [577.280029296875 - 582.5999755859375] Now whether this is the motivation, whether this is the driver, again, I don't know.
+- [582.5999755859375 - 585.8400268554688] I think next week's show is going to have a lot more depth.
+- [586.4400024414062 - 587.8800048828125] I'm going to be able to do a lot more research.
+- [587.8800048828125 - 590.8800048828125] It's coming off hot off the press.
+- [590.8800048828125 - 596.1599731445312] It's hotter than a Gigi sauna right now, okay?
+- [596.1599731445312 - 602.7999877929688] But for you guys to know, this is very important information, China buys 90% of Iran's oil,
+- [602.7999877929688 - 603.7999877929688] okay?
+- [603.7999877929688 - 605.1199951171875] So this is not just a Middle East story.
+- [605.1199951171875 - 608.6799926757812] This is always, at the end of the day, if you zoom out far enough, you know on Google
+- [608.6799926757812 - 611.760009765625] Maps where you just hit zoom out, zoom out, zoom out, zoom out, zoom out until you're
+- [611.760009765625 - 616.7999877929688] at the peak of the zoom out, bird's eye view to the max.
+- [616.7999877929688 - 622.5599975585938] That's what, it's always U.S. and China, always, always, always U.S. and China, okay?
+- [622.5599975585938 - 627.6400146484375] And so the U.S.-China aspect of this is, think about it guys, what was Venezuela?
+- [627.6400146484375 - 631.719970703125] Venezuela was selling China oil at a discount.
+- [631.719970703125 - 632.719970703125] What was Iran?
+- [632.719970703125 - 636.52001953125] Iran was selling China oil at a discount.
+- [636.52001953125 - 638.9199829101562] Who was involved in Venezuela?
+- [638.9199829101562 - 641.47998046875] Who had boots in the ground in Venezuela?
+- [641.47998046875 - 646.7999877929688] There were three primary countries, we went over this, who was entering the United States
+- [646.7999877929688 - 652.6400146484375] hemisphere, according to the U.S. government, that's what they used, get out of our hemisphere.
+- [652.6400146484375 - 656.5599975585938] Who was in the United States hemisphere via Venezuela?
+- [656.5599975585938 - 657.8800048828125] They were three countries.
+- [657.8800048828125 - 659.719970703125] Can you take a wild guess?
+- [659.719970703125 - 667.280029296875] It was Iran, China, and Russia, okay?
+- [667.4000244140625 - 673.0399780273438] So keep in mind the oil story here, because we're going to talk about the oil market right now.
+- [673.0399780273438 - 683.0399780273438] Now, there is the Strait of Hormuz, okay, where a lot of oil trade, oil settlement goes down.
+- [683.0399780273438 - 689.9600219726562] Now, there were rumors that I still, I try to get accurately what was as of right this
+- [689.9600219726562 - 695.5999755859375] second, because over the weekend, there were rumors that it was going to close, because
+- [695.6400146484375 - 699.2000122070312] of the conflict, it was going to close.
+- [699.2000122070312 - 702.0800170898438] Brent crude started trading up 10%.
+- [702.0800170898438 - 710.1599731445312] Now, guys, keep in mind, the reason oil matters so much is because energy prices are the most
+- [710.1599731445312 - 712.280029296875] sensitive to inflation.
+- [712.280029296875 - 718.0800170898438] You can do a lot to try and tame consumer, consumer inflation, okay?
+- [718.0800170898438 - 719.239990234375] What do I mean by this?
+- [719.239990234375 - 724.7999877929688] Well, inflation, saying that inflation is one number is so idiotic, it's so dumb, it's
+- [724.7999877929688 - 726.239990234375] so Keynesian.
+- [726.239990234375 - 732.5599975585938] They're trying to literally hypnotize the public into thinking moronic things.
+- [732.5599975585938 - 734.47998046875] Inflation can't possibly be one thing.
+- [734.47998046875 - 739.3200073242188] I'll tell you your inflation rate if you tell me what you want in your life.
+- [739.3200073242188 - 743.719970703125] If you want to live in your parents' basement, only consume Netflix and Caesar salad for
+- [743.719970703125 - 746.8800048828125] the rest of your life, your inflation is effectively zero.
+- [746.8800048828125 - 752.0800170898438] I can always cut leaves off a tree and put ranch on it and serve it to you for fucking
+- [752.0800170898438 - 753.0800170898438] lunch.
+- [753.0800170898438 - 758.3599853515625] And you can get a Netflix subscription and you'll never pay rent and inflation is zero.
+- [758.3599853515625 - 760.239990234375] Don't worry about monetary policy.
+- [760.239990234375 - 762.0] Don't worry about saving hard money.
+- [762.0 - 766.4400024414062] Don't worry about anything because your quality of life is dog shit, okay?
+- [766.4400024414062 - 772.9600219726562] If you want to have a nice house with a yard and four kids and a wife, and you want a two-car
+- [772.9600219726562 - 778.0] garage that guzzles a bunch of oil, well, your inflation rate actually isn't the 2%
+- [778.0 - 779.5599975585938] the government's trying to convince you.
+- [779.5599975585938 - 780.5599975585938] It's probably 5%.
+- [780.5999755859375 - 782.8400268554688] Actually, post-COVID, it's probably 10%.
+- [782.8400268554688 - 783.8400268554688] And it depends.
+- [783.8400268554688 - 787.760009765625] Do you want to live in one of these urban cities that's declining and murder rates all
+- [787.760009765625 - 790.0399780273438] over the place, like my city, like Chicago?
+- [790.0399780273438 - 791.8400268554688] Or do you want to live in Miami?
+- [791.8400268554688 - 793.47998046875] Or do you want to live in Texas?
+- [793.47998046875 - 795.3200073242188] Or do you want to live in Manhattan?
+- [795.3200073242188 - 798.8800048828125] Then your inflation rate's probably 20%, 30%, 40%.
+- [798.8800048828125 - 803.0] So when anyone tells you, oh, this is the inflation rate, it depends.
+- [803.0 - 804.280029296875] What type of life do you want?
+- [804.280029296875 - 809.1199951171875] If you want a good, high-quality life, the inflation rate is double-digit percentages,
+- [809.1199951171875 - 810.1199951171875] okay?
+- [810.6799926757812 - 816.7999877929688] Now, when I say you can try and control consumer inflation, what do we know, guys?
+- [816.7999877929688 - 820.1599731445312] Energy is the nucleus of a...
+- [820.1599731445312 - 822.4000244140625] Energy is the currency of the universe.
+- [822.4000244140625 - 824.8400268554688] The currency of the universe.
+- [824.8400268554688 - 830.760009765625] You need to travel, you need to have electricity, you need to have lights, you need to communicate.
+- [830.760009765625 - 832.719970703125] You need energy.
+- [832.719970703125 - 837.4000244140625] The story of humanity is commercializing energy from the sun, okay?
+- [837.4000244140625 - 841.2000122070312] The latest iteration of that for us is fossil fuels, okay?
+- [841.2000122070312 - 843.9600219726562] And so the price of oil is extremely important.
+- [843.9600219726562 - 849.0] It's the most important commodity price when you think about inflation.
+- [849.0 - 855.719970703125] So if oil gaps up 10% over the weekend because of combat and a conflict in the Middle East,
+- [855.719970703125 - 859.0800170898438] that's a huge, huge, huge deal.
+- [859.0800170898438 - 862.0800170898438] And this tweet from Luke is super, super interesting.
+- [862.0800170898438 - 865.9199829101562] In the red, you see the crude prices trending up.
+- [865.9199829101562 - 869.719970703125] In the blue, you see the UST yields trending down.
+- [869.719970703125 - 870.719970703125] Interesting.
+- [870.719970703125 - 875.2000122070312] Now, the question is, which one's going to bite?
+- [875.2000122070312 - 878.0399780273438] We'll get back to that in a second.
+- [878.0399780273438 - 885.239990234375] So this morning, after crude is up, futures are up 10% over the weekend, we're seeing
+- [885.239990234375 - 892.0800170898438] the conflict go down, CME says that circuit breakers hit on open this morning.
+- [892.0800170898438 - 894.7999877929688] And so oil markets are going bananas.
+- [894.7999877929688 - 897.9600219726562] Now, put yourself in this.
+- [897.9600219726562 - 902.9199829101562] Oil markets are going bananas, gold is going up, and risk is entirely off.
+- [902.9199829101562 - 909.6400146484375] Bitcoin is bleeding, everyone's calling for below 60K, below 60K, below 60K.
+- [909.6400146484375 - 917.5999755859375] And by the way, it was really interesting because markets seemed to, it was weird, markets
+- [917.5999755859375 - 926.0399780273438] seemed to know what was going on before we all did, the public, and even the headlines
+- [926.0399780273438 - 927.0399780273438] seemed to know.
+- [927.0399780273438 - 932.47998046875] So I want you guys to look at this tweet on the left, I'm going to read it out loud, there's
+- [932.47998046875 - 940.719970703125] a flurry of reports over the last 72 hours from the US media, New York Times, Washington,
+- [940.719970703125 - 946.6400146484375] what is, Wall Street Journal, excuse me, Wall Street Journal, Washington Post, Axios, CBS,
+- [946.6400146484375 - 951.6400146484375] et cetera, raising questions on US readiness for major war with Iran.
+- [951.6400146484375 - 953.719970703125] There's too much for it to be a coincidence.
+- [953.719970703125 - 958.2000122070312] Either the White House is trying to signal to its allies that they're taking a deal,
+- [958.2000122070312 - 962.52001953125] or the Pentagon is trying to tie Trump's hands to make sure they're not blamed for the results
+- [962.52001953125 - 964.3800048828125] of the war.
+- [964.3800048828125 - 969.3599853515625] And then there's a Washington Post article, Trump's top general foresees acute risks in
+- [969.3599853515625 - 971.9600219726562] an attack on Iran.
+- [971.9600219726562 - 975.8800048828125] And so I guess, here's the thing I want to convey to you guys, and sorry if I'm being
+- [975.8800048828125 - 981.47998046875] repetitive but, we just don't really know what's going on yet.
+- [981.47998046875 - 991.7999877929688] Because leading up to what ended up being a strike on Iran, all of US media was saying,
+- [991.7999877929688 - 995.280029296875] don't do it, don't do it, there's a lot of risk.
+- [995.280029296875 - 996.8400268554688] Let me read these headlines to you guys.
+- [996.8400268554688 - 1000.1199951171875] Trump's top general warns of Iran strike risks.
+- [1000.1199951171875 - 1004.1599731445312] Trump growing frustrated with limits of Iran military options.
+- [1004.1599731445312 - 1009.1599731445312] Fixed funerals and blocked toilets, Iran deployment takes a toll on US sailors.
+- [1009.1599731445312 - 1013.9400024414062] Trump's top general foresees acute risks in an attack on Iran.
+- [1013.9400024414062 - 1015.8800048828125] This is not a coincidence, this is not a mistake.
+- [1015.8800048828125 - 1019.7999877929688] These are not all independent journalists arriving at the same conclusions at the same
+- [1019.7999877929688 - 1023.0800170898438] time right before an event.
+- [1023.0800170898438 - 1025.280029296875] As the tweet said, this is one of two things.
+- [1025.280029296875 - 1029.9200439453125] This is the White House trying to signal to its allies, which it sounds like was Israel
+- [1029.9200439453125 - 1034.800048828125] according to Marco Rubio, like hey don't do this.
+- [1034.800048828125 - 1042.1199951171875] Or it was the Pentagon trying to signal to the world like, this isn't our decision.
+- [1042.1199951171875 - 1046.0400390625] Again really interesting stuff, really interesting stuff.
+- [1046.0400390625 - 1051.0400390625] But on the back of these headlines, and obviously the free market is the most efficient.
+- [1051.0400390625 - 1054.6400146484375] So someone knew something, gold started to move, oil started to move.
+- [1054.6400146484375 - 1057.56005859375] Was really, really interesting guys.
+- [1057.56005859375 - 1060.5999755859375] And I love this tweet from Luke.
+- [1060.5999755859375 - 1064.1199951171875] In war, truth is the first casualty.
+- [1064.1199951171875 - 1068.8800048828125] So in war, one thing I can guarantee you is we're going to get fed a bunch of bullshit,
+- [1068.8800048828125 - 1071.4000244140625] a bunch of lies, a bunch of trash.
+- [1071.4000244140625 - 1075.239990234375] Don't trust a politician, don't trust a headline you read.
+- [1075.239990234375 - 1079.8800048828125] Hopefully this show can serve you guys a little bit of truth, a little bit of substance.
+- [1079.8800048828125 - 1087.3199462890625] I'm always going to keep it as real, as authentic, as honest as I possibly can to my utmost
+- [1087.3599853515625 - 1089.6800537109375] being, to the neurons I'm made up of.
+- [1089.6800537109375 - 1094.0] I always will, you guys always hold me accountable to that.
+- [1094.0 - 1097.4000244140625] But the first casualty in war is truth.
+- [1097.4000244140625 - 1101.0799560546875] The second casualty, bonds.
+- [1101.0799560546875 - 1104.199951171875] Because one, it was really weird.
+- [1104.199951171875 - 1113.199951171875] So anyways, so I'm looking at markets and I'm seeing gold up, oil up, dollar up.
+- [1113.199951171875 - 1115.199951171875] And that is risk off.
+- [1115.6800537109375 - 1117.56005859375] Bitcoin was getting smoked.
+- [1117.56005859375 - 1122.9599609375] And I'm thinking, the S&P 500 is going to get hammered and maybe this is the time the
+- [1122.9599609375 - 1127.3199462890625] stock market gets its correction, all the leverage combined with all the AI stuff is
+- [1127.3199462890625 - 1131.43994140625] going to wipe everybody out, they're going to have to take out the money printer.
+- [1131.43994140625 - 1132.719970703125] It was really interesting.
+- [1132.719970703125 - 1137.4000244140625] And then all of a sudden, the S&P 500 closed green.
+- [1137.4000244140625 - 1138.9200439453125] Risk came back on.
+- [1138.9200439453125 - 1141.8399658203125] Bitcoin closed up 5%.
+- [1141.8399658203125 - 1149.0400390625] So I had wrote in the tweet I tweeted out today promoting the show, I said, on the Monday
+- [1149.0400390625 - 1156.9200439453125] of war in Iran, the S&P 500 closing green is maybe one of the scariest things in financial
+- [1156.9200439453125 - 1158.1199951171875] markets.
+- [1158.1199951171875 - 1160.8399658203125] It was so bizarre.
+- [1160.8399658203125 - 1166.9599609375] So war in Iran, oil hit circuit breakers, bonds are selling off.
+- [1166.9599609375 - 1173.43994140625] But by noon, by lunch, the stock market had rebounded and erased everything that happened
+- [1173.43994140625 - 1175.280029296875] over the weekend.
+- [1175.280029296875 - 1177.5400390625] It was super interesting to me.
+- [1177.5400390625 - 1180.0] It was really, really interesting.
+- [1180.0 - 1185.8800048828125] So anyways, I found it bizarre.
+- [1185.8800048828125 - 1188.8800048828125] We'll get into the bond price action in a second.
+- [1188.8800048828125 - 1195.3599853515625] But I don't know, I mean, I guess that's where my head's at in regards to Iran right now.
+- [1195.3599853515625 - 1196.8399658203125] Why did we do it?
+- [1196.8399658203125 - 1203.3199462890625] Again, I guess because supposedly Iran made it known that if anyone hurt them, they'd
+- [1203.3199462890625 - 1204.3199462890625] hurt us.
+- [1204.3199462890625 - 1208.8399658203125] And then we were told that Israel was going to hurt them, which mean by proxy meant Iran
+- [1208.8399658203125 - 1210.3800048828125] was going to hurt us.
+- [1210.3800048828125 - 1215.47998046875] So instead of letting them hurt us, we hurt them first.
+- [1215.47998046875 - 1224.4000244140625] And is oil, is the supply chain of oil going to be impacted?
+- [1224.4000244140625 - 1229.239990234375] I first saw it news yes, and then news no.
+- [1229.239990234375 - 1232.8800048828125] So then oil went from up 10% to up 5%.
+- [1232.8800048828125 - 1235.0799560546875] And then it was back yes, and then it was back no.
+- [1235.0799560546875 - 1237.47998046875] And oil's been extremely volatile.
+- [1237.47998046875 - 1239.0] Super weird.
+- [1239.0 - 1241.1199951171875] The dollar definitely strengthened.
+- [1241.1199951171875 - 1243.5999755859375] But the bond market sold off.
+- [1243.5999755859375 - 1247.0799560546875] Again, really, really bizarre stuff.
+- [1247.0799560546875 - 1251.199951171875] We went from risk off, where Bitcoin looked like it was going to make new recent lows
+- [1251.199951171875 - 1256.719970703125] lower than 60, and then it closed at 70.
+- [1256.719970703125 - 1260.6800537109375] The market's still trying to digest what the fuck is going on.
+- [1260.6800537109375 - 1265.760009765625] All right, for the sake of time, let's transition into AI.
+- [1265.760009765625 - 1271.6400146484375] So again, the title of the show is just how fragile the system is.
+- [1271.6400146484375 - 1276.800048828125] You know, the theme that I'll have for you guys today is the timeline we're living through
+- [1276.800048828125 - 1278.43994140625] is absolutely bananas.
+- [1278.43994140625 - 1280.43994140625] I wouldn't have it any other way.
+- [1280.6800537109375 - 1285.43994140625] I mean, if you want to pout and whine like a little baby, that's your decision.
+- [1285.43994140625 - 1286.8399658203125] I only get one life.
+- [1286.8399658203125 - 1287.8800048828125] I'm here to live.
+- [1287.8800048828125 - 1289.0] I'm here to have a ball.
+- [1289.0 - 1290.1199951171875] I'm here to build.
+- [1290.1199951171875 - 1291.3199462890625] I'm here to disrupt.
+- [1291.3199462890625 - 1294.9200439453125] I'm here to deliver the future that I want my kids to live in.
+- [1294.9200439453125 - 1296.9200439453125] First of all, I'm here to have kids.
+- [1296.9200439453125 - 1299.199951171875] Okay, I'm going to have so many kids.
+- [1299.199951171875 - 1300.3199462890625] I'm in love.
+- [1300.3199462890625 - 1301.1199951171875] I'm going to get married.
+- [1301.1199951171875 - 1301.9200439453125] I'm going to have kids.
+- [1301.9200439453125 - 1302.9599609375] I'm going to build stuff.
+- [1302.9599609375 - 1304.4000244140625] I'm going to save money.
+- [1304.4000244140625 - 1306.1199951171875] I'm going to change the world.
+- [1306.1199951171875 - 1309.3199462890625] And what a time to be alive and to do that.
+- [1309.3599853515625 - 1310.199951171875] I've got AI.
+- [1310.199951171875 - 1311.760009765625] I've got Bitcoin.
+- [1311.760009765625 - 1313.800048828125] We're living through fourth turnings.
+- [1313.800048828125 - 1314.8399658203125] I mean, this is it.
+- [1314.8399658203125 - 1316.0400390625] This is the moment.
+- [1316.0400390625 - 1321.6800537109375] If you want to pout and whine like a little baby in Doomscroll on all these social media apps,
+- [1321.6800537109375 - 1322.9599609375] that's your decision.
+- [1322.9599609375 - 1328.199951171875] But for me, I want to just break down how fragile the system is, the timeline we're living through,
+- [1328.199951171875 - 1334.6400146484375] try and tie together what are really intense real-time topics like Iran and AI,
+- [1334.6400146484375 - 1343.56005859375] and try and make Bitcoin reasonable as it relates to why you should turn your DCAs on.
+- [1343.56005859375 - 1344.8399658203125] All right, so AI.
+- [1347.4000244140625 - 1351.4000244140625] The Fed keeps commenting on it, which is the biggest tell.
+- [1351.4000244140625 - 1357.239990234375] If you want to know how real this stuff is, the Federal Reserve,
+- [1358.0799560546875 - 1361.760009765625] the central bank of the US dollar, is commenting, okay?
+- [1361.760009765625 - 1364.1199951171875] And so I thought this comment, which we've talked about,
+- [1364.1199951171875 - 1369.0400390625] Fed's Waller, the Cetrini report on AI overstates the risk to jobs.
+- [1369.0400390625 - 1375.8399658203125] I mean, I think it was Luke Groman that made this comparison.
+- [1375.8399658203125 - 1380.5999755859375] This is like when Ben Bernanke said subprime was contained in 2007.
+- [1380.5999755859375 - 1386.3199462890625] It's like, yeah, the risk to job market, don't even worry about it, it's totally overstated.
+- [1386.3199462890625 - 1390.47998046875] And then next year, we're in an absolute financial collapse.
+- [1390.47998046875 - 1394.52001953125] It's exactly what happened in 2007, 2008, same thing.
+- [1394.52001953125 - 1397.6800537109375] The Fed was all over subprime until they weren't.
+- [1397.6800537109375 - 1399.6400146484375] Honestly, it reminds me of COVID too.
+- [1399.6400146484375 - 1402.199951171875] It's all transitory, it's all transitory, right?
+- [1402.199951171875 - 1410.1600341796875] So literally, right after the Fed said the reports on AI is overstating the risk to the job market,
+- [1410.1600341796875 - 1413.8800048828125] literally, I think it was the day after he said that,
+- [1413.8800048828125 - 1417.0799560546875] Dorsey laid off half his company because of AI.
+- [1418.0799560546875 - 1421.0799560546875] I mean, unbelievable.
+- [1421.0799560546875 - 1424.9200439453125] Hey, guys, don't worry about it.
+- [1424.9200439453125 - 1426.239990234375] It's all overstated.
+- [1426.239990234375 - 1427.6800537109375] The job market's fine.
+- [1427.6800537109375 - 1433.6400146484375] Literally, the next day, a S&P 500 company with 10,000 employees
+- [1433.6400146484375 - 1438.199951171875] lays off 40% of their workforce because of AI.
+- [1438.199951171875 - 1442.0] And listen, there's probably some nuance here.
+- [1442.0 - 1446.8800048828125] I think Blocks still has more employees than Coinbase and Robinhood.
+- [1447.47998046875 - 1449.719970703125] So, you know, were they bloated?
+- [1449.719970703125 - 1451.800048828125] Whatever.
+- [1451.800048828125 - 1455.199951171875] The guy in charge said it was because of AI.
+- [1455.199951171875 - 1457.239990234375] The market traded up 25%.
+- [1457.239990234375 - 1458.719970703125] Look at this from CNBC.
+- [1458.719970703125 - 1464.6400146484375] Block shares soar as much as 24% as company slashes workforce by nearly half.
+- [1464.6400146484375 - 1468.0799560546875] Blocks said Thursday it's laying off more than 4,000.
+- [1468.0799560546875 - 1471.5999755859375] 4,000 employees are about half of its headcount.
+- [1471.719970703125 - 1475.9200439453125] Shares of the payment companies skyrocketed as much as 24%
+- [1475.9200439453125 - 1477.3199462890625] in extended trading.
+- [1477.3199462890625 - 1479.1600341796875] And here's the really interesting thing, guys.
+- [1479.1600341796875 - 1480.6800537109375] When you hyper-financialize,
+- [1480.6800537109375 - 1484.239990234375] so remember, the United States has hyper-financialized.
+- [1484.239990234375 - 1485.56005859375] We've hollowed out the middle class.
+- [1485.56005859375 - 1487.0799560546875] We've hollowed out our industrial base.
+- [1487.0799560546875 - 1489.52001953125] We've hollowed out any blue-collar work.
+- [1489.52001953125 - 1490.52001953125] It's all white-collar.
+- [1490.52001953125 - 1492.0799560546875] It's all jobs on the coast, right?
+- [1492.0799560546875 - 1494.52001953125] We've talked about this time and time again on this show.
+- [1494.52001953125 - 1496.760009765625] Our major export is the U.S. dollar.
+- [1496.760009765625 - 1498.9599609375] It is hyper-financialization.
+- [1498.9599609375 - 1501.280029296875] What do the smartest people in this country work on?
+- [1501.280029296875 - 1502.3599853515625] They're hedge fund managers.
+- [1502.3599853515625 - 1504.1600341796875] They're high-frequency traders.
+- [1504.1600341796875 - 1509.3199462890625] They're fucking Citadel traders trying to pick off your Robin Hood trades.
+- [1509.3199462890625 - 1513.239990234375] That's the policy and the culture that we've built in the United States.
+- [1513.239990234375 - 1514.9599609375] We've hyper-financialized.
+- [1514.9599609375 - 1517.4000244140625] What happens when you hyper-financialize?
+- [1517.4000244140625 - 1521.239990234375] The market rewards you because you're increasing your margins
+- [1521.239990234375 - 1524.9599609375] by firing 4,000 people.
+- [1524.9599609375 - 1525.8800048828125] That's the incentive.
+- [1525.8800048828125 - 1530.760009765625] The incentive is to replace all of the labor with robots
+- [1530.760009765625 - 1534.0] and grow your margins so you're optimizing the best for shareholders,
+- [1534.0 - 1536.280029296875] which is optimizing the best for all the passive flows
+- [1536.280029296875 - 1539.43994140625] and the endowments and the...
+- [1539.43994140625 - 1541.0400390625] I mean, that's policy.
+- [1541.0400390625 - 1544.5999755859375] When you're the world reserve currency and you've hyper-financialized,
+- [1544.5999755859375 - 1547.719970703125] that, like, you've created this beast.
+- [1547.719970703125 - 1551.8800048828125] This is a result of decisions that have been made over decades.
+- [1551.8800048828125 - 1557.719970703125] It's crazy that on this show I sound like a fortune teller or a genius
+- [1557.719970703125 - 1559.6800537109375] where it's just, it's so simple.
+- [1559.6800537109375 - 1560.9599609375] It's so obvious.
+- [1560.9599609375 - 1565.280029296875] You just don't listen to the ludicrous bullshit of mainstream media
+- [1565.280029296875 - 1566.6800537109375] and modern-day universities.
+- [1566.6800537109375 - 1567.8800048828125] You just think for yourself.
+- [1567.8800048828125 - 1569.719970703125] Think for first principles.
+- [1569.719970703125 - 1572.47998046875] So, anyways, the Fed says everything's fine.
+- [1572.47998046875 - 1576.0] The next day we learn, like, no, it's absolutely not.
+- [1576.0 - 1577.8399658203125] And by the way, we've lived through this.
+- [1577.8399658203125 - 1580.719970703125] I remember what Bernanke said in 2007.
+- [1580.719970703125 - 1584.1199951171875] I remember what Jay Pao said in 2000.
+- [1584.1199951171875 - 1585.0400390625] Oh, it's transitory.
+- [1585.0400390625 - 1586.0] It's transitory.
+- [1586.0 - 1587.6400146484375] No, it turns out it wasn't.
+- [1587.6400146484375 - 1589.4000244140625] Okay, now what's your next gig?
+- [1589.4000244140625 - 1591.3199462890625] AI risk to jobs is overstated?
+- [1591.3199462890625 - 1593.8399658203125] Yeah, okay, that means it probably isn't.
+- [1593.8399658203125 - 1598.8399658203125] And then this from Tech Layoff Tracker on Twitter just got this DM.
+- [1598.8399658203125 - 1601.56005859375] Shit is getting real out there.
+- [1601.56005859375 - 1603.4000244140625] I'm going to read the DM.
+- [1603.4000244140625 - 1605.9200439453125] I'm an M2 at a fang.
+- [1605.9200439453125 - 1608.9599609375] Just got out of an unscheduled all-hands.
+- [1608.9599609375 - 1615.8800048828125] Management confirmed a workforce reduction of approximately 25% company-wide
+- [1615.8800048828125 - 1622.43994140625] with org-specific targets and tied directly to accelerating AI investments.
+- [1622.43994140625 - 1627.56005859375] That's from a fang.
+- [1627.56005859375 - 1629.9200439453125] Okay, now let's look at the data.
+- [1629.9200439453125 - 1632.5999755859375] The Fed wants to blow smoke up everyone's ass?
+- [1632.5999755859375 - 1634.760009765625] Let's look at the data.
+- [1634.760009765625 - 1636.5999755859375] Okay, this is job on the left.
+- [1636.5999755859375 - 1640.0400390625] This is job openings in finance and in insurance.
+- [1640.0400390625 - 1644.9200439453125] Again, I'm just sorting by white collar.
+- [1644.9599609375 - 1651.1199951171875] Guys, please look at the job openings for finance and insurance.
+- [1651.1199951171875 - 1654.47998046875] We're at levels lower than COVID.
+- [1654.47998046875 - 1658.800048828125] We are at post-global financial crisis levels.
+- [1658.800048828125 - 1665.280029296875] This is, by the way, this is the U.S. Bureau of Labor and Statistics via Fred.
+- [1665.280029296875 - 1669.719970703125] I didn't make these images myself.
+- [1669.719970703125 - 1675.1600341796875] Look at the job openings on the right, information.
+- [1675.1600341796875 - 1679.0799560546875] I mean, again, like, I'm a college dropout.
+- [1679.0799560546875 - 1681.719970703125] I'm not a, I'm no genius.
+- [1681.719970703125 - 1686.1600341796875] Like, just look at the data.
+- [1686.1600341796875 - 1689.8800048828125] Now this shows you how fast AI is moving.
+- [1689.8800048828125 - 1694.56005859375] To me, the title of this slide is the most important chart in the world.
+- [1694.56005859375 - 1698.1600341796875] So AI capability is doubling every four months.
+- [1698.1600341796875 - 1706.8399658203125] It's growing 100% every four months, and it's grown 26,000 times since GPT-2 came out.
+- [1706.8399658203125 - 1708.1600341796875] I want to read this tweet to you guys.
+- [1708.1600341796875 - 1710.0400390625] This is banana land.
+- [1710.0400390625 - 1717.43994140625] We estimate that Claude Opus 4.6, so the new Claude model, has a 50% time horizon of around
+- [1717.43994140625 - 1721.3199462890625] 14 and a half hours on software tasks.
+- [1721.3199462890625 - 1725.4000244140625] Let me translate that to language for you guys to understand.
+- [1725.4000244140625 - 1733.0400390625] What that means is that the latest Claude model has about a 50% chance of achieving
+- [1733.0400390625 - 1740.9599609375] a task that would have taken a human 14 and a half hours, and it can do it in seconds.
+- [1740.9599609375 - 1745.199951171875] Let me say that one more time.
+- [1745.199951171875 - 1752.0799560546875] The latest Claude model has a coin flip of a chance of achieving something in a matter
+- [1752.0799560546875 - 1763.1199951171875] of seconds or maybe minutes that it would have taken a human 14 and a half hours to do.
+- [1763.1199951171875 - 1765.6400146484375] And look at the title of my slide.
+- [1765.6400146484375 - 1768.9200439453125] AI capability is doubling every four months.
+- [1768.9200439453125 - 1774.6800537109375] So in four months from now, it'll take seconds to do what it took a human more than a day
+- [1774.6800537109375 - 1779.6800537109375] to do, and then four more months from there, it'll take seconds for what it took a human
+- [1779.6800537109375 - 1781.56005859375] half a week to do.
+- [1781.56005859375 - 1786.0799560546875] And it's only a matter of time before it is seconds before it can do what a human can
+- [1786.0799560546875 - 1789.47998046875] do in a year.
+- [1789.47998046875 - 1794.6800537109375] The rate of change, it's hard to comprehend.
+- [1794.6800537109375 - 1801.56005859375] No, but your jobs are fine.
+- [1801.56005859375 - 1805.199951171875] Your jobs are fine, though, according to the Fed.
+- [1805.199951171875 - 1808.0] The subprime market was fine.
+- [1808.0 - 1810.6800537109375] The COVID inflation was transitory.
+- [1810.6800537109375 - 1812.43994140625] Your jobs are all good.
+- [1812.43994140625 - 1813.43994140625] All good.
+- [1813.43994140625 - 1814.43994140625] Markets are fine.
+- [1814.43994140625 - 1818.6400146484375] Well, let's look at how confident people are.
+- [1818.6400146484375 - 1829.719970703125] U.S. adults' optimism about their future has fallen to 59.2%, the lowest ever.
+- [1829.719970703125 - 1838.43994140625] Here we are, K-shaped economy, AI disruption, wealth is being highly concentrated into the
+- [1838.43994140625 - 1841.9599609375] most elite class we've ever seen.
+- [1841.9599609375 - 1847.4000244140625] Stock markets are at all-time highs, but everyone's depressed, overdosing on pills, substance
+- [1847.4000244140625 - 1855.52001953125] abuse all-time highs, obesity all-time highs, assassination attempts are rivaling the mid-1800s,
+- [1855.52001953125 - 1860.8800048828125] which was the Civil War.
+- [1860.8800048828125 - 1867.0799560546875] How am I more accurate in speaking more truth than the Fed, than mainstream media, than
+- [1867.0799560546875 - 1871.199951171875] the government?
+- [1871.199951171875 - 1872.8399658203125] It's outrageous.
+- [1872.8399658203125 - 1874.800048828125] It's all in our face, too.
+- [1874.800048828125 - 1881.1600341796875] Like, all you have to do is read the news.
+- [1881.1600341796875 - 1889.43994140625] Okay, now, chapter three here I've titled, Leverage Kills.
+- [1889.43994140625 - 1895.56005859375] And the point of this chapter is just, what I'm, here, I want to be super clear.
+- [1895.56005859375 - 1900.280029296875] I'm not saying AI is going to take everyone's job, because I've gotten that feedback.
+- [1900.280029296875 - 1905.280029296875] It's like, dude, you're, like, being so pessimistic, it's so depressing listening to you, like,
+- [1905.280029296875 - 1909.47998046875] we're all going to be, like, sitting in on our phone on TikTok and watching Elon's robots
+- [1909.47998046875 - 1910.47998046875] do everything.
+- [1910.47998046875 - 1911.47998046875] That's not what I'm saying.
+- [1911.47998046875 - 1915.0799560546875] In fact, I'm on record saying I think we're going to have an art renaissance.
+- [1915.0799560546875 - 1921.6800537109375] With Bitcoin and AI, we can be future-oriented artists and creators.
+- [1921.6800537109375 - 1927.8800048828125] We don't need to do the white-collar, mundane tasks of doing other people's taxes, for example.
+- [1927.8800048828125 - 1929.4599609375] But whatever.
+- [1929.4599609375 - 1930.52001953125] Back to my point.
+- [1930.52001953125 - 1935.3199462890625] My point is, I'm not saying all the jobs are going to be taken.
+- [1935.3199462890625 - 1937.9599609375] Not at all, actually.
+- [1937.9599609375 - 1941.199951171875] What's relevant when it comes to macro, when it comes to money printing, when it comes
+- [1941.199951171875 - 1944.9200439453125] to a lot of the things we talk about, is the system is so highly levered.
+- [1944.9200439453125 - 1949.280029296875] You're talking about $40 trillion of debt, okay?
+- [1949.280029296875 - 1956.56005859375] All it takes is a little bit of pain for a system this levered to collapse on itself.
+- [1956.56005859375 - 1957.56005859375] How do I know that?
+- [1957.56005859375 - 1959.199951171875] Well, just take a look at 2008.
+- [1959.199951171875 - 1961.47998046875] So this slide reads, the lesson of 2008.
+- [1961.47998046875 - 1967.3199462890625] In February 2008, the mortgage delinquency and foreclosure rate hit 7.3%.
+- [1967.3199462890625 - 1973.52001953125] Now let documentaries tell it, let exaggerators on Twitter tell it.
+- [1973.52001953125 - 1978.260009765625] You'd think it hit 73%, it hit 7.3%.
+- [1978.260009765625 - 1979.260009765625] So what does that mean?
+- [1979.260009765625 - 1980.9000244140625] 100 minus 7.3.
+- [1980.9000244140625 - 1985.260009765625] That means 92.7% of mortgages were still current.
+- [1985.260009765625 - 1992.260009765625] But that 7.3% combined with all of the systemic leverage that the fiat financial system requires
+- [1992.260009765625 - 1998.260009765625] was enough to collapse the global banking system and just flatten it on its face.
+- [1998.260009765625 - 1999.260009765625] So what's my point?
+- [1999.260009765625 - 2003.1800537109375] My point is, AI doesn't need to take all the jobs.
+- [2003.1800537109375 - 2006.8199462890625] AI needs to take a little bit of the jobs.
+- [2006.8199462890625 - 2014.6600341796875] If unemployment gets to 6% to 8%, this fiat system is toast, like completely and utterly
+- [2014.6600341796875 - 2015.6600341796875] screwed.
+- [2015.6600341796875 - 2022.300048828125] Mind you, also, if we're going to be in war in the Middle East, if oil is going to start
+- [2022.300048828125 - 2028.260009765625] to market up 10%, inflation is coming back, bond market is selling off, guys, if there's
+- [2028.260009765625 - 2034.1800537109375] a flight to safety, the bond market's not supposed to sell off, okay?
+- [2034.8199462890625 - 2037.5400390625] You combine all of this at once?
+- [2037.5400390625 - 2045.260009765625] And here's my thing, if you think Bitcoin's going to zero, I don't know why you're listening
+- [2045.260009765625 - 2046.260009765625] to this podcast.
+- [2046.260009765625 - 2053.260009765625] Maybe it's my big, beautiful blue eyes and these luscious locks, ladies, ladies, keep
+- [2053.260009765625 - 2055.260009765625] it together now, I'm taking, okay?
+- [2055.260009765625 - 2058.580078125] But if you think Bitcoin's going to zero, I don't know why you're listening to this
+- [2058.580078125 - 2060.639892578125] podcast.
+- [2060.639892578125 - 2064.02001953125] If you don't think Bitcoin's going to zero, that means you probably think it's going to
+- [2064.860107421875 - 2066.580078125] a million, to 10 million.
+- [2066.580078125 - 2067.840087890625] There's no in between.
+- [2067.840087890625 - 2072.6201171875] It's either the best money we've ever invented and come across, or it's not.
+- [2072.6201171875 - 2079.860107421875] And if you think it's going to work, you have to turn on your DCAs.
+- [2079.860107421875 - 2083.02001953125] There's no better timeline to be living through.
+- [2083.02001953125 - 2089.780029296875] So anyways, knowing that all it's going to take is unemployment to get to 6% to 8% and
+- [2089.780029296875 - 2091.5] the stress of the banking system.
+- [2091.5 - 2098.419921875] By the way, the banks in the S&P 500 on Friday closed down almost 4%, okay?
+- [2098.419921875 - 2101.0400390625] Well, let's take a look at delinquencies again.
+- [2101.0400390625 - 2105.219970703125] This feels like a weekly recurrence on this show is looking at delinquencies.
+- [2105.219970703125 - 2106.93994140625] This from Yahoo Finance.
+- [2106.93994140625 - 2110.02001953125] Americans are defaulting at a crisis level pace.
+- [2110.02001953125 - 2113.179931640625] Credit card delinquencies are now at 12.7%.
+- [2113.179931640625 - 2115.93994140625] Auto loan delinquencies are now over 5%.
+- [2116.139892578125 - 2121.179931640625] 49% of Americans are struggling to pay their rent or their mortgage now.
+- [2121.179931640625 - 2127.4599609375] And an all-time high in student loan delinquencies, an all-time high of 16.3%.
+- [2127.4599609375 - 2131.02001953125] This is all a combination of Bloomberg, Yahoo Finance, and Redfin.
+- [2134.860107421875 - 2140.06005859375] Again, I'm not saying AI is going to take all the jobs.
+- [2140.06005859375 - 2144.860107421875] I'm saying AI is absolutely going to push unemployment to 6%.
+- [2144.89990234375 - 2149.419921875] Delinquencies are going to reach a level where either they print the money or we go into an
+- [2149.419921875 - 2153.340087890625] austerity so painful that there might not even be a history book about it.
+- [2153.340087890625 - 2160.6201171875] It's just math that I, by the way, learned in high school.
+- [2160.6201171875 - 2165.340087890625] I didn't take a college degree to learn this math, okay?
+- [2165.340087890625 - 2166.97998046875] I found this interesting.
+- [2166.97998046875 - 2171.02001953125] Jamie Dimon is like the private market sacred.
+- [2171.02001953125 - 2173.300048828125] He's like a de facto arm of the US government.
+- [2173.699951171875 - 2179.4599609375] How many times has he helped restructure fucked up fiat situations on behalf of the US government?
+- [2179.4599609375 - 2188.5] And so when he says something, it's effectively an arm of the establishment.
+- [2188.5 - 2191.5] I found this astonishing, breaking.
+- [2191.5 - 2196.580078125] Jamie Dimon says he's starting to see parallels to the era before the 2008 financial crisis
+- [2196.580078125 - 2202.739990234375] when a rush to make loans ended disastrously.
+- [2202.739990234375 - 2209.219970703125] If that was a Jack Mallers quote, okay, we'd be busting balls about it on Twitter.
+- [2209.219970703125 - 2212.219970703125] That's a Jamie Dimon quote?
+- [2212.219970703125 - 2213.219970703125] Yikes.
+- [2213.219970703125 - 2214.219970703125] Yikes.
+- [2214.219970703125 - 2215.219970703125] Okay?
+- [2215.219970703125 - 2221.300048828125] The image on the right, there are 44% more home sellers than buyers.
+- [2221.300048828125 - 2225.10009765625] Guys, that means there's stress.
+- [2225.10009765625 - 2231.580078125] If you are nervous about your future, if you are nervous about your job, if you are nervous
+- [2231.580078125 - 2237.97998046875] about your finances, if you are nervous about the economy, the first thing you do is stop
+- [2237.97998046875 - 2238.97998046875] looking for a house.
+- [2238.97998046875 - 2239.97998046875] Ah, screw it.
+- [2239.97998046875 - 2242.260009765625] I'll extend my rent one more year.
+- [2242.260009765625 - 2245.10009765625] Extend my lease one more year.
+- [2245.10009765625 - 2249.89990234375] 44% more sellers than buyers?
+- [2249.89990234375 - 2251.300048828125] Yikes.
+- [2251.300048828125 - 2253.10009765625] Yikes.
+- [2253.10009765625 - 2254.739990234375] Not good.
+- [2254.739990234375 - 2256.739990234375] Not good.
+- [2256.739990234375 - 2259.840087890625] Okay, the fiscal doom loop.
+- [2259.840087890625 - 2262.919921875] This is the math on you either have to print or default.
+- [2262.919921875 - 2264.39990234375] This image I got from Luke.
+- [2264.39990234375 - 2265.39990234375] Shout out, Luke.
+- [2265.39990234375 - 2269.840087890625] So this is U.S. true interest expense as a percent of U.S. tax receipts.
+- [2269.840087890625 - 2274.800048828125] So from a high level, what is our expense versus how much are we making?
+- [2274.800048828125 - 2277.5400390625] How much do we have to spend versus how much are we making, right?
+- [2277.5400390625 - 2282.43994140625] So employment is over 50% of federal receipts and true interest expense is already almost
+- [2282.43994140625 - 2284.320068359375] 100% of receipts.
+- [2284.320068359375 - 2286.320068359375] Think about that.
+- [2286.320068359375 - 2292.0] True interest expense is almost all of the revenue we're making, basically.
+- [2292.0 - 2300.1201171875] So even the tiniest bit of an AI-driven uptick or a correction in the stock market or a war,
+- [2300.1201171875 - 2307.9599609375] the tiniest bit, boom, goodbye.
+- [2307.9599609375 - 2314.360107421875] So the point of this episode, you've got new conflict in the Middle East, so you've got
+- [2314.360107421875 - 2317.199951171875] war spending now.
+- [2317.199951171875 - 2320.1201171875] Initially Trump said, oh, this is only a quick operation.
+- [2320.1201171875 - 2321.919921875] We just need to take the regime out.
+- [2321.919921875 - 2323.0] Then it was four weeks.
+- [2323.0 - 2327.840087890625] Now Trump, as I hit record or stream, was saying it might be more than four weeks.
+- [2327.840087890625 - 2332.3798828125] Okay, so we might be on the brink of wartime spending.
+- [2332.3798828125 - 2336.47998046875] It's unclear how the oil market's going to respond, which would trigger some inflationary
+- [2336.47998046875 - 2337.47998046875] tendencies.
+- [2337.47998046875 - 2343.56005859375] So you've got war spending in oil shock, AI deflation, which is impacting unemployment,
+- [2343.56005859375 - 2346.639892578125] which impacts receipts.
+- [2346.639892578125 - 2352.719970703125] And we're already at true interest expense of 100% of our receipts, nearly.
+- [2352.719970703125 - 2354.639892578125] Good game.
+- [2354.639892578125 - 2356.9599609375] Turn on your DCAs.
+- [2356.9599609375 - 2361.639892578125] When Bitcoin hits the moon, you can't say I didn't tell you so.
+- [2361.639892578125 - 2363.919921875] You cannot say I didn't tell you so.
+- [2363.919921875 - 2366.52001953125] And this is from Michael Howell, Cross Border Capital.
+- [2366.52001953125 - 2368.39990234375] I already had mentioned him.
+- [2368.39990234375 - 2371.0400390625] I would subscribe to his newsletters if you don't.
+- [2371.0400390625 - 2374.080078125] I really have been enjoying his stuff.
+- [2374.080078125 - 2376.159912109375] The Fed's already printing.
+- [2376.159912109375 - 2378.800048828125] Now it's modest.
+- [2378.800048828125 - 2385.47998046875] It's not anything crazy yet, but the balance sheet is going the other way.
+- [2385.47998046875 - 2388.8798828125] Just a reminder, guys, they stopped QT in December.
+- [2388.8798828125 - 2391.800048828125] Now what they started isn't technically QE.
+- [2391.800048828125 - 2400.080078125] I count it as QE, but it's balance sheet expansion, $525 billion in three months, 20% of annualized
+- [2400.1201171875 - 2404.8798828125] Fed liquidity growth over the past six months.
+- [2404.8798828125 - 2410.159912109375] I don't know, okay?
+- [2410.159912109375 - 2417.159912109375] Another really, really important one, ISM Manufacturing Print came in expansionary again.
+- [2417.43994140625 - 2419.719970703125] So manufacturing is expanding.
+- [2419.719970703125 - 2422.43994140625] Two months in a row is a trend.
+- [2422.43994140625 - 2425.679931640625] ISM PMI came in at 52.4.
+- [2425.679931640625 - 2428.760009765625] This historically has been incredibly bullish for Bitcoin.
+- [2428.760009765625 - 2431.1201171875] This means the business cycle is here.
+- [2431.1201171875 - 2435.159912109375] Traditionally, when the business cycle starts to pick up like this, when ISM starts to pick
+- [2435.159912109375 - 2438.800048828125] up like this, this is the beginning of a Bitcoin bull market.
+- [2438.800048828125 - 2441.0400390625] This is where Bitcoin finds its bottom.
+- [2441.0400390625 - 2444.9599609375] Now, please don't take that as financial advice.
+- [2444.9599609375 - 2448.10009765625] Just turn on your DCA, stay humble and stack stats.
+- [2448.10009765625 - 2452.659912109375] But these are all really important signal, guys, really, really important signals.
+- [2452.659912109375 - 2457.280029296875] So let's get to the last chapter, which I call Deep Value, where generational wealth
+- [2457.280029296875 - 2458.52001953125] is built.
+- [2458.52001953125 - 2464.639892578125] This is the most oversold, according to RSI, Relative Strength Index, that Bitcoin has
+- [2464.639892578125 - 2465.800048828125] ever been.
+- [2465.800048828125 - 2474.800048828125] Bitcoin at $65,000 is the most oversold, according to RSI, in Bitcoin's history.
+- [2474.800048828125 - 2477.800048828125] History!
+- [2477.800048828125 - 2481.239990234375] I've seen Bitcoin post Mt. Gox.
+- [2481.239990234375 - 2485.919921875] I've seen Bitcoin, the 2015 bear market was the worst.
+- [2486.320068359375 - 2495.159912109375] Guys, I remember running up to my dad's room when Bitcoin hit, it was almost $1,300, and
+- [2495.159912109375 - 2501.080078125] just freaking out, like, oh my gosh, what's happening, holy smokes.
+- [2501.080078125 - 2510.0] And then it fell from, call it $1,300 to a little over $200 over years.
+- [2510.0 - 2515.719970703125] It just grinded, it looked like it was just slowly dying to zero.
+- [2515.719970703125 - 2523.47998046875] And we had nothing, no exchanges, no support from any industry, from any government.
+- [2523.47998046875 - 2524.47998046875] We had nothing.
+- [2524.47998046875 - 2528.3798828125] I didn't even know how to code at the time.
+- [2528.3798828125 - 2530.639892578125] We had nothing.
+- [2530.639892578125 - 2542.800048828125] You're telling me it's more oversold now than then, at a $200 Bitcoin?
+- [2542.800048828125 - 2549.43994140625] I mean, all of these charts, by the way, this guy's a great follow on Twitter, this
+- [2549.43994140625 - 2550.43994140625] Frank guy.
+- [2550.43994140625 - 2552.360107421875] Just turn on your DCAs.
+- [2552.360107421875 - 2554.159912109375] I mean, this slide says it all.
+- [2554.159912109375 - 2555.39990234375] Sorry, I'm looking at the clock.
+- [2555.39990234375 - 2559.52001953125] I want to be able to run you guys through these strike announcements.
+- [2559.52001953125 - 2562.800048828125] So this slide reads, this is where wealth is built.
+- [2562.800048828125 - 2564.280029296875] The system needs the printer.
+- [2564.280029296875 - 2570.760009765625] Talk about war, oil marketing up, talk about AI deflationary tendencies, talk about true
+- [2570.760009765625 - 2573.56005859375] interest expense near 100% of our receipts.
+- [2573.56005859375 - 2575.840087890625] I mean, it's math.
+- [2575.840087890625 - 2576.840087890625] It's math.
+- [2576.840087890625 - 2581.360107421875] People say, wow, how do you Bitcoiners know the future?
+- [2581.360107421875 - 2588.719970703125] I mean, is knowing that two plus two equals four, knowing the future, does that make me
+- [2588.719970703125 - 2590.0] a fortune teller?
+- [2590.0 - 2592.239990234375] Jack, what's five plus five?
+- [2592.239990234375 - 2593.239990234375] 10.
+- [2593.239990234375 - 2594.239990234375] Wow, you know the future.
+- [2594.239990234375 - 2596.199951171875] I don't know about that.
+- [2596.199951171875 - 2601.159912109375] I know how to do math.
+- [2601.159912109375 - 2602.760009765625] The system needs the printer.
+- [2602.760009765625 - 2605.159912109375] The only question is when, not if.
+- [2605.159912109375 - 2610.0] Bitcoin is on sale at historic oversold levels.
+- [2610.0 - 2616.199951171875] Turn on your DCA.
+- [2616.199951171875 - 2618.080078125] Turn it on.
+- [2618.080078125 - 2620.080078125] Turn it on.
+- [2620.080078125 - 2624.52001953125] All right, a quick grind my gears section.
+- [2624.52001953125 - 2629.239990234375] I got one topic for grind my gears, but it's an important one, so let's do it.
+- [2629.239990234375 - 2632.639892578125] You know what really grinds my gears this week?
+- [2632.639892578125 - 2634.52001953125] War.
+- [2634.52001953125 - 2638.360107421875] What the fuck, man?
+- [2638.360107421875 - 2640.280029296875] Seriously.
+- [2640.280029296875 - 2645.0] All jokes aside, what the fuck?
+- [2645.0 - 2647.840087890625] Enough with the war.
+- [2647.840087890625 - 2653.56005859375] It doesn't matter who we vote in, what they believe in, what the policy is, what the stock
+- [2653.60009765625 - 2654.60009765625] market's at.
+- [2654.60009765625 - 2659.080078125] None of this shit matters.
+- [2659.080078125 - 2661.840087890625] I was born in 1994.
+- [2661.840087890625 - 2666.43994140625] You know, I was taken out of school on 9-11.
+- [2666.43994140625 - 2669.360107421875] I was in second grade.
+- [2669.360107421875 - 2673.320068359375] So all I know, what's the United States to me?
+- [2673.320068359375 - 2676.47998046875] War, debt, inflation.
+- [2676.47998046875 - 2679.0400390625] This is bullshit.
+- [2679.0400390625 - 2682.47998046875] What the fuck?
+- [2682.47998046875 - 2688.080078125] I mean, it's hard for me to really understand what's AI, what's not, what's fake news, what's
+- [2688.080078125 - 2689.080078125] not.
+- [2689.080078125 - 2692.360107421875] But you're seeing places like Dubai getting hit.
+- [2692.360107421875 - 2699.360107421875] I'm seeing friends of mine like, oh, I was just at that restaurant, and as it's exploding.
+- [2699.360107421875 - 2703.47998046875] I mean, my prayers are just with humanity, man.
+- [2703.47998046875 - 2710.159912109375] I just don't believe, again, I'm not a political guy, I'm going to leave the geopolitics stuff
+- [2710.239990234375 - 2713.60009765625] for the experts on Twitter and on CNN, wherever they are.
+- [2713.60009765625 - 2715.639892578125] I don't even know where they are.
+- [2715.639892578125 - 2716.639892578125] I don't.
+- [2716.639892578125 - 2719.239990234375] It's not my thing, okay?
+- [2719.239990234375 - 2727.56005859375] So whether some authoritarian regime needed to get executed, that's not my place.
+- [2727.56005859375 - 2732.760009765625] I'm anti-violence, anti-war, pro-peace.
+- [2732.760009765625 - 2735.39990234375] Let's fix the world with software.
+- [2735.39990234375 - 2738.800048828125] Bitcoin is our peaceful exit.
+- [2738.800048828125 - 2741.39990234375] What grinds my gears is fucking war.
+- [2741.39990234375 - 2750.0400390625] I mean, how many politicians my whole life have campaigned, no more war, no more spending,
+- [2750.0400390625 - 2751.360107421875] no more debt.
+- [2751.360107421875 - 2754.56005859375] They're all full of shit.
+- [2754.56005859375 - 2758.199951171875] So I'm convinced it's not the people, it's the system.
+- [2758.199951171875 - 2764.0400390625] The government's gotten too big, the money is too corrupt, I'm out.
+- [2764.280029296875 - 2770.760009765625] Historically, we have two ways to express ourselves, express power, express the individual
+- [2770.760009765625 - 2775.52001953125] sovereignty that we, in theory, are born with.
+- [2775.52001953125 - 2778.60009765625] One is through our voice.
+- [2778.60009765625 - 2786.0] But when your voice is no longer sufficient, which it is not any longer, I don't believe
+- [2786.0 - 2790.840087890625] that there's a protest we need to host, or a podcast we need to record, or a tweet we
+- [2790.840087890625 - 2792.0400390625] need to write.
+- [2792.0400390625 - 2795.159912109375] Our voice doesn't work anymore.
+- [2795.159912109375 - 2798.60009765625] They're going to print money, they're going to spend and exceed their means, they're going
+- [2798.60009765625 - 2801.199951171875] to bomb people, they're going to murder people.
+- [2801.199951171875 - 2806.719970703125] No matter how we vote, no matter what we believe in, no matter how much technology we build,
+- [2806.719970703125 - 2812.47998046875] no matter how many fucking podcasts I record, people are going to die.
+- [2812.47998046875 - 2813.47998046875] So what's left?
+- [2813.47998046875 - 2814.47998046875] Exit.
+- [2814.47998046875 - 2815.47998046875] I'm out.
+- [2815.47998046875 - 2822.679931640625] If you go back and look at the tweet storm I put together when I said I own zero dollars,
+- [2822.679931640625 - 2824.0400390625] read why I did that.
+- [2824.0400390625 - 2826.840087890625] Did I do it because I think it's a financially good thing?
+- [2826.840087890625 - 2827.9599609375] Yes, I did.
+- [2827.9599609375 - 2833.360107421875] Because the dollar only goes down, and bitcoin, if you hold it long enough, only goes up.
+- [2833.360107421875 - 2835.1201171875] That's one of the reasons I did it.
+- [2835.1201171875 - 2841.760009765625] But I stated even more important than that was I refuse to support this system.
+- [2841.760009765625 - 2842.8798828125] Fuck that.
+- [2842.8798828125 - 2845.320068359375] They will not get my time and energy.
+- [2845.320068359375 - 2847.60009765625] Because at what point is enough enough?
+- [2847.60009765625 - 2848.60009765625] Seriously.
+- [2848.60009765625 - 2856.080078125] I protest, I vote, I donate, and no matter what, it's a humiliation ritual, just get
+- [2856.080078125 - 2860.39990234375] spit in the face by every single government.
+- [2860.39990234375 - 2862.919921875] We go to every single war.
+- [2862.919921875 - 2867.919921875] We drop every single bomb.
+- [2867.919921875 - 2873.320068359375] And what is a 31 year old young man looking to have a family like me supposed to do?
+- [2873.320068359375 - 2878.360107421875] Am I seriously supposed to sit inside my living room and look out at the sunset and
+- [2878.360107421875 - 2880.760009765625] say, well, I was born at the wrong time.
+- [2880.760009765625 - 2883.199951171875] I guess I'm just going to support war.
+- [2883.199951171875 - 2888.52001953125] I guess my kids are just going to be born into these modern day cities full of violence,
+- [2888.52001953125 - 2894.47998046875] full of indebtedness, where they're up to their eyeballs in debt to learn calculus while
+- [2894.47998046875 - 2897.0] Elon's robots take their job.
+- [2897.0 - 2898.56005859375] Fuck that.
+- [2898.56005859375 - 2899.56005859375] Fuck that.
+- [2899.56005859375 - 2900.56005859375] And fuck you.
+- [2900.56005859375 - 2901.56005859375] No.
+- [2902.56005859375 - 2906.0] I'm sorry, that's just not how I was raised.
+- [2906.0 - 2910.8798828125] I'm not going to lay over and peel over like a dog and die.
+- [2910.8798828125 - 2913.239990234375] Fuck that.
+- [2913.239990234375 - 2917.0] We're going to build an alternative system, and I'm going to take my time and energy and
+- [2917.0 - 2923.840087890625] put it over there.
+- [2923.840087890625 - 2925.52001953125] It's crazy, man.
+- [2925.52001953125 - 2929.840087890625] You wake up, and by the way, they do these things over the weekend.
+- [2930.239990234375 - 2933.43994140625] It really is.
+- [2933.43994140625 - 2936.1201171875] It's like breaking up with someone over text.
+- [2936.1201171875 - 2941.239990234375] If you're going to go drop bombs on people's head, and there's going to be U.S. casualties,
+- [2941.239990234375 - 2947.60009765625] and now they're saying they're sleeper cells, so Iran and these other crazy terrorist regimes
+- [2947.60009765625 - 2953.280029296875] have sleepers inside the country, and so they're trying to keep an eye on anyone that would
+- [2953.280029296875 - 2957.47998046875] harm innocent civilians inside of America in major cities.
+- [2957.47998046875 - 2958.60009765625] What the fuck?
+- [2958.60009765625 - 2961.0] At least be up front about it.
+- [2961.0 - 2963.8798828125] You're going to do it on a Friday night while I'm sleeping?
+- [2963.8798828125 - 2967.320068359375] I mean, at what point do you have any decency?
+- [2967.320068359375 - 2968.320068359375] What the fuck?
+- [2968.320068359375 - 2976.39990234375] I don't know, man.
+- [2976.39990234375 - 2986.0] If I'm going to be blessed to have a life on this earth, I'm going to work on Bitcoin.
+- [2986.0 - 2987.39990234375] That's just it.
+- [2987.39990234375 - 2989.719970703125] It's the most hopeful thing I got.
+- [2989.719970703125 - 2991.639892578125] I'm not going to peel over and die.
+- [2991.639892578125 - 2992.800048828125] I'm not going to give up.
+- [2992.800048828125 - 2999.360107421875] I'm not going to give in, but I'm also not going to protest, so people say, oh, dude,
+- [2999.360107421875 - 3000.360107421875] you don't vote?
+- [3000.360107421875 - 3001.360107421875] What the fuck?
+- [3001.360107421875 - 3002.360107421875] What do you mean?
+- [3002.360107421875 - 3003.360107421875] What's voting going to do?
+- [3003.360107421875 - 3004.360107421875] What the fuck?
+- [3004.360107421875 - 3005.360107421875] Come on.
+- [3005.360107421875 - 3012.8798828125] Oh, yeah, I need to go make sure I go tally my ... No, I mean, sure, whatever.
+- [3012.8798828125 - 3013.8798828125] Next time I'll vote.
+- [3013.8798828125 - 3015.679931640625] If it makes you guys happier, I'll vote next time.
+- [3015.679931640625 - 3018.280029296875] I'll make sure I vote.
+- [3018.280029296875 - 3022.0] No, I'm going to build Strike.
+- [3022.0 - 3026.320068359375] I'm going to fund open source development.
+- [3026.320068359375 - 3030.800048828125] I'm going to give as many keynotes at these conferences.
+- [3030.800048828125 - 3033.39990234375] I'm going to record this podcast every Monday.
+- [3033.39990234375 - 3040.239990234375] No matter how bad I do, no matter how dumb my ideas are, it doesn't matter.
+- [3040.239990234375 - 3041.719970703125] That's how we change shit.
+- [3041.719970703125 - 3043.719970703125] That's how we revolutionize.
+- [3044.719970703125 - 3045.719970703125] Fuck.
+- [3045.719970703125 - 3048.47998046875] It's crazy, man.
+- [3048.47998046875 - 3049.47998046875] What year is it?
+- [3049.47998046875 - 3052.199951171875] Am I in second grade, or am I 31?
+- [3052.199951171875 - 3057.199951171875] It's the same shit my whole life.
+- [3057.199951171875 - 3059.159912109375] You watch these documentaries about America.
+- [3059.159912109375 - 3061.159912109375] You hear these stories about America.
+- [3061.159912109375 - 3063.239990234375] I mean, don't get me wrong.
+- [3063.239990234375 - 3064.239990234375] Best country in the world.
+- [3064.239990234375 - 3065.360107421875] I wouldn't want to live anywhere else.
+- [3065.360107421875 - 3068.60009765625] I'm so blessed, but what the fuck, man?
+- [3068.60009765625 - 3069.60009765625] This country.
+- [3069.60009765625 - 3075.60009765625] I mean, we've just been in war as long as I can remember.
+- [3075.60009765625 - 3080.60009765625] Financial crisis, war, lies, bigger and bigger government.
+- [3080.60009765625 - 3088.60009765625] All right, well, that's what grinds my gears.
+- [3088.60009765625 - 3090.60009765625] That's what grinds my gears this week.
+- [3090.60009765625 - 3091.60009765625] War.
+- [3091.60009765625 - 3092.60009765625] Just war.
+- [3092.60009765625 - 3093.60009765625] All war.
+- [3093.60009765625 - 3094.60009765625] War and violence.
+- [3094.60009765625 - 3095.60009765625] All of it.
+- [3095.60009765625 - 3097.60009765625] It grinds my fucking gears.
+- [3097.60009765625 - 3105.60009765625] All right, let's talk about Strike, because we have a huge week.
+- [3105.60009765625 - 3107.60009765625] I have some awesome announcements for you guys.
+- [3107.60009765625 - 3110.60009765625] I've got to be a little bit quick, so it's 5.53.
+- [3110.60009765625 - 3115.60009765625] I've got 6.30 event, but the 6.30 event is super close to my house, so I can maybe...
+- [3115.60009765625 - 3118.60009765625] I was targeting the 6.15 end time.
+- [3118.60009765625 - 3120.60009765625] I might need to extend that.
+- [3120.60009765625 - 3121.60009765625] Cooking.
+- [3121.60009765625 - 3122.60009765625] We're cooking.
+- [3122.60009765625 - 3123.60009765625] That was a rant right there.
+- [3123.60009765625 - 3124.60009765625] That was a rant.
+- [3124.60009765625 - 3125.60009765625] I'm going to go get some water real quick.
+- [3147.60009765625 - 3149.60009765625] Okay, Strike.
+- [3149.60009765625 - 3151.60009765625] Line of credit.
+- [3151.60009765625 - 3155.60009765625] So, our line of credit product has begun rolling out.
+- [3155.60009765625 - 3161.60009765625] I'm going to officially, hopefully, announce it in the way that I traditionally announce
+- [3161.60009765625 - 3164.60009765625] products tomorrow.
+- [3164.60009765625 - 3170.60009765625] I just want to reread this post I put on Noster a little while ago.
+- [3170.60009765625 - 3173.60009765625] I put this out in October.
+- [3173.60009765625 - 3179.60009765625] I wrote, I like owning as much Bitcoin as possible and no fiat as well, so check this out.
+- [3179.60009765625 - 3183.60009765625] We're working on a line of credit product that will, in real time, extend a credit line
+- [3183.60009765625 - 3188.60009765625] against your Bitcoin to make lightning payments, pay your bills, etc.
+- [3188.60009765625 - 3194.60009765625] This way, you don't have to part with your Bitcoin or own fiat to live in today's society.
+- [3194.60009765625 - 3199.60009765625] You hoard Bitcoins, you borrow fiat paper for your payments and everyday expenses.
+- [3199.60009765625 - 3203.60009765625] You manage the line of credit and pay it down via your direct deposit or any other funding method.
+- [3203.60009765625 - 3207.60009765625] It works just like a credit card today, except it's secured with Bitcoin.
+- [3208.60009765625 - 3211.60009765625] So, I've been talking about this idea, right?
+- [3211.60009765625 - 3214.60009765625] This is our line of credit logo.
+- [3214.60009765625 - 3217.60009765625] This is what it looks like inside your app.
+- [3217.60009765625 - 3221.60009765625] When you see this, you'll think of our line of credit.
+- [3221.60009765625 - 3225.60009765625] So, anyways, check this out, guys.
+- [3225.60009765625 - 3227.60009765625] You guys want to see how amazing AI is?
+- [3227.60009765625 - 3231.60009765625] I'll show you what I built over the weekend to support this thing.
+- [3231.60009765625 - 3239.60009765625] So, I was really trying to conceptualize how I can communicate to you guys and to the broader public
+- [3239.60009765625 - 3242.60009765625] how powerful this line of credit product is.
+- [3242.60009765625 - 3244.60009765625] Because you guys have heard me say things like,
+- [3244.60009765625 - 3249.60009765625] this is probably my favorite thing I've ever built in my career, by far.
+- [3249.60009765625 - 3253.60009765625] I think this is the most powerful thing I've ever built, is this Bitcoin line of credit product.
+- [3253.60009765625 - 3261.60009765625] It allows anybody that has access to it to short fiat and live on Bitcoin effortlessly.
+- [3261.60009765625 - 3266.60009765625] And our Bitcoin lending product was useful in this regard,
+- [3266.60009765625 - 3269.60009765625] but getting a 12-month term loan is really difficult,
+- [3269.60009765625 - 3273.60009765625] because you have to borrow a large lump sum of cash up front.
+- [3273.60009765625 - 3276.60009765625] And when you're taking out a large lump sum of cash,
+- [3276.60009765625 - 3279.60009765625] you're risking that the market goes down.
+- [3279.60009765625 - 3282.60009765625] You might get yourself in a margin call.
+- [3282.60009765625 - 3287.60009765625] You're also paying interest on cash that you might not need for 10 months.
+- [3287.60009765625 - 3290.60009765625] So, let's say my annual expenses are $100,000,
+- [3290.60009765625 - 3292.60009765625] and I borrow $100,000 over 12 months.
+- [3292.60009765625 - 3295.60009765625] Well, I'm paying interest on all $100,000.
+- [3295.60009765625 - 3300.60009765625] Whereas, if I'm only spending like $7,000, $8,000, $9,000 a month,
+- [3300.60009765625 - 3303.60009765625] I want to only pay interest on what I spend in real time.
+- [3303.60009765625 - 3305.60009765625] I don't want to have to pay for it up front.
+- [3305.60009765625 - 3309.60009765625] So, these weird 12-month duration products, and also it expires at 12 months,
+- [3309.60009765625 - 3312.60009765625] and so there's the manual process of rolling it over.
+- [3312.60009765625 - 3316.60009765625] Obviously, like I said before, if you have a large expense in your life,
+- [3316.60009765625 - 3319.60009765625] you're putting a down payment on a house, you're financing your wedding,
+- [3319.60009765625 - 3322.60009765625] maybe these 12-month loans are good,
+- [3322.60009765625 - 3325.60009765625] because you're saying, hey, I'm going to finance over 12 months
+- [3325.60009765625 - 3328.60009765625] my wedding expense collateralized with my Bitcoin.
+- [3328.60009765625 - 3329.60009765625] That makes sense to me.
+- [3329.60009765625 - 3332.60009765625] But if you want to live on Bitcoin in the way I do,
+- [3332.60009765625 - 3336.60009765625] I always told my strike team the dream is a line of credit product,
+- [3336.60009765625 - 3338.60009765625] a perpetual product.
+- [3338.60009765625 - 3343.60009765625] So, I was trying to think how can I give people the math of how I use it
+- [3343.60009765625 - 3350.60009765625] and how can I correctly explain what I invented, basically.
+- [3350.60009765625 - 3352.60009765625] So, check this out.
+- [3352.60009765625 - 3355.60009765625] This is on the internet, but it's password protected.
+- [3355.60009765625 - 3358.60009765625] So, this is, hold on.
+- [3361.60009765625 - 3363.60009765625] Let's see.
+- [3363.60009765625 - 3364.60009765625] What is it?
+- [3364.60009765625 - 3367.60009765625] It's live on Bitcoin.
+- [3368.60009765625 - 3373.60009765625] So, I created this tool.
+- [3373.60009765625 - 3377.60009765625] It's at liveonbitcoin.jackmallers.com
+- [3377.60009765625 - 3381.60009765625] and you guys are going to be able to go to it right now,
+- [3381.60009765625 - 3385.60009765625] but it is password protected and you don't know the password yet.
+- [3385.60009765625 - 3391.60009765625] So, I will unleash this tomorrow without a password protection
+- [3391.60009765625 - 3394.60009765625] for the world to use.
+- [3394.60009765625 - 3396.60009765625] So, you won't be able to get into it yet, but check this out.
+- [3396.60009765625 - 3399.60009765625] So, I built this dashboard this weekend
+- [3399.60009765625 - 3405.60009765625] and it effectively is able to,
+- [3405.60009765625 - 3407.60009765625] let me blow this up a little bit here,
+- [3407.60009765625 - 3414.60009765625] it's able to really walk us through the math of why this is such a life hack.
+- [3414.60009765625 - 3416.60009765625] Okay, so here's what we're looking at here.
+- [3416.60009765625 - 3417.60009765625] Here's the dashboard I built.
+- [3417.60009765625 - 3419.60009765625] And so, this is living on Bitcoin,
+- [3419.60009765625 - 3422.60009765625] see what the Bitcoin line of credit can do for your life.
+- [3422.60009765625 - 3425.60009765625] Okay, so check this out guys.
+- [3425.60009765625 - 3426.60009765625] So, here's what I did.
+- [3426.60009765625 - 3429.60009765625] Let me make my face smaller here.
+- [3429.60009765625 - 3431.60009765625] Because basically, here's the thing.
+- [3431.60009765625 - 3437.60009765625] You're living off one core basic assumption here.
+- [3437.60009765625 - 3443.60009765625] The assumption is, do you think Bitcoin can outperform the APR that you're paying?
+- [3443.60009765625 - 3446.60009765625] When people say like, oh, strike loans are way too expensive,
+- [3446.60009765625 - 3450.60009765625] they're 9%, 10%, 11%, 12%, 13%, whatever they are,
+- [3450.60009765625 - 3451.60009765625] people say they're too expensive.
+- [3451.60009765625 - 3453.60009765625] And I don't think that's the case at all.
+- [3454.60009765625 - 3458.60009765625] As long as Bitcoin can comfortably outperform what you're paying to borrow,
+- [3458.60009765625 - 3460.60009765625] it's an absolute smashing home run.
+- [3460.60009765625 - 3462.60009765625] Like right now, think about it.
+- [3462.60009765625 - 3467.60009765625] Saylor's paying 11.5%, 12%, whatever it is, for his stretch product.
+- [3467.60009765625 - 3470.60009765625] And that's not a problem to him because he thinks Bitcoin's CAGR,
+- [3470.60009765625 - 3474.60009765625] its annual compounding rate, is going to be higher than that.
+- [3474.60009765625 - 3475.60009765625] So, here's what I did.
+- [3475.60009765625 - 3478.60009765625] This tool I built pulls in the current Bitcoin price,
+- [3478.60009765625 - 3480.60009765625] rounded to the nearest thousand.
+- [3480.60009765625 - 3483.60009765625] So, it's got it at $70,000 right now.
+- [3483.60009765625 - 3485.60009765625] And it says, what's your monthly income?
+- [3485.60009765625 - 3487.60009765625] And what's your monthly expenses?
+- [3487.60009765625 - 3490.60009765625] So, it defaults to monthly income at $8,000,
+- [3490.60009765625 - 3492.60009765625] monthly expenses at $5,000.
+- [3492.60009765625 - 3495.60009765625] Now it says, what's Bitcoin's CAGR?
+- [3495.60009765625 - 3497.60009765625] Now, I have moderate at 50%.
+- [3497.60009765625 - 3501.60009765625] You can put conservative at 30%, historical at 80%.
+- [3501.60009765625 - 3503.60009765625] You can drag it to zero if you want.
+- [3503.60009765625 - 3507.60009765625] Let's keep it at 50% for now, and I'll change it in a second.
+- [3507.60009765625 - 3509.60009765625] And then set your inflation rate.
+- [3509.60009765625 - 3512.60009765625] So, the Fed's target is 2%.
+- [3512.60009765625 - 3515.60009765625] I think realistic is more like 5%.
+- [3515.60009765625 - 3518.60009765625] I think if you want a high quality of life,
+- [3518.60009765625 - 3520.60009765625] inflation rate's closer to 10%.
+- [3520.60009765625 - 3522.60009765625] And if you want really nice things,
+- [3522.60009765625 - 3525.60009765625] your inflation rate, like beachfront real estate in Miami,
+- [3525.60009765625 - 3527.60009765625] your inflation rate's probably 20%.
+- [3527.60009765625 - 3529.60009765625] Okay, let's keep it at 5% for now.
+- [3529.60009765625 - 3531.60009765625] And then it's, what's your time horizon?
+- [3531.60009765625 - 3533.60009765625] Are you talking about a year or are you talking about 10 years?
+- [3533.60009765625 - 3534.60009765625] Let's put it at five.
+- [3534.60009765625 - 3537.60009765625] Now, what the tool does is it walks through
+- [3537.60009765625 - 3539.60009765625] what I call different strategies, okay?
+- [3539.60009765625 - 3541.60009765625] This is a stack stats strategy.
+- [3541.60009765625 - 3545.60009765625] This is the strategy that I want to walk you guys through.
+- [3545.60009765625 - 3548.60009765625] This smart lock, smart line of credit.
+- [3548.60009765625 - 3550.60009765625] This is a sell to live.
+- [3550.60009765625 - 3552.60009765625] So, if you were to not use the line of credit at all,
+- [3552.60009765625 - 3555.60009765625] and you were to just sell Bitcoin to cover your expenses.
+- [3555.60009765625 - 3557.60009765625] So, the point is, sorry, to take a step back,
+- [3557.60009765625 - 3560.60009765625] the point is, how do I maximize the amount of Bitcoin
+- [3560.60009765625 - 3563.60009765625] I own and live on a Bitcoin standard?
+- [3563.60009765625 - 3564.60009765625] Because that's what I've done for myself.
+- [3564.60009765625 - 3567.60009765625] And I've told you guys, like this product changes my life.
+- [3567.60009765625 - 3570.60009765625] And it can change everyone's life.
+- [3570.60009765625 - 3572.60009765625] And I want to really like spend the time
+- [3572.60009765625 - 3573.60009765625] and walk you guys through this.
+- [3573.60009765625 - 3576.60009765625] And this is obviously if you don't own any Bitcoin at all.
+- [3576.60009765625 - 3580.60009765625] So, again, this person or this family's monthly income
+- [3580.60009765625 - 3583.60009765625] is $8,000 a month, which means they're bringing in,
+- [3583.60009765625 - 3585.60009765625] what, like around 90 grand a year, a little higher?
+- [3585.60009765625 - 3588.60009765625] What's eight times 12, 96.
+- [3588.60009765625 - 3591.60009765625] So, they're bringing in 96 grand a year.
+- [3592.60009765625 - 3594.60009765625] They're spending $5,000 a month.
+- [3594.60009765625 - 3595.60009765625] So, here's the strategy.
+- [3595.60009765625 - 3599.60009765625] Stack sat strategy means you're only paying off
+- [3599.60009765625 - 3601.60009765625] the interest you're accruing.
+- [3601.60009765625 - 3603.60009765625] And everything else is going to Bitcoin.
+- [3603.60009765625 - 3606.60009765625] So, you build up a line of credit balance over five years.
+- [3606.60009765625 - 3608.60009765625] So, I have the time at five years.
+- [3608.60009765625 - 3611.60009765625] So, what is monthly expenses of five grand
+- [3611.60009765625 - 3614.60009765625] times 12 is 60, times another five is 300.
+- [3614.60009765625 - 3617.60009765625] This is adding a ton of leverage, okay?
+- [3617.60009765625 - 3620.60009765625] This means you're never managing your line of credit.
+- [3620.60009765625 - 3623.60009765625] All you're doing is taking on the most leverage possible.
+- [3623.60009765625 - 3626.60009765625] And if I take this five years and I drag it to the left
+- [3626.60009765625 - 3628.60009765625] to four years or three years or two years or one year,
+- [3628.60009765625 - 3632.60009765625] you see the stack sat strategy, you're getting liquidated
+- [3632.60009765625 - 3635.60009765625] if the Bitcoin price crashes 80%.
+- [3635.60009765625 - 3637.60009765625] So, I have down here as the stress test,
+- [3637.60009765625 - 3639.60009765625] what if Bitcoin crashes 80%?
+- [3639.60009765625 - 3641.60009765625] Will I be okay?
+- [3641.60009765625 - 3644.60009765625] And the stack sats, if Bitcoin isn't compounding
+- [3644.60009765625 - 3647.60009765625] over a long period of time at a high CAGR,
+- [3647.60009765625 - 3650.60009765625] and all you're doing is adding maximum amounts of leverage,
+- [3650.60009765625 - 3652.60009765625] you can find yourself in trouble.
+- [3652.60009765625 - 3654.60009765625] Now, obviously, if you take this,
+- [3654.60009765625 - 3656.60009765625] so this is assuming you have one Bitcoin.
+- [3656.60009765625 - 3659.60009765625] If you say you have 100 Bitcoin, well, then you're totally fine, right?
+- [3659.60009765625 - 3662.60009765625] If you have an ability to severely over-collateralize yourself,
+- [3662.60009765625 - 3664.60009765625] no problem.
+- [3664.60009765625 - 3666.60009765625] But let's assume you have this one Bitcoin again.
+- [3666.60009765625 - 3671.60009765625] Now, the point of my whole idea of why we built this at Strike
+- [3671.60009765625 - 3674.60009765625] is that if you believe Bitcoin's not going to zero,
+- [3674.60009765625 - 3681.60009765625] if you believe Bitcoin can outperform a 10% or 11% or 12% or 13% APR,
+- [3681.60009765625 - 3685.60009765625] and we built a line of credit product that can help you pay your bills
+- [3685.60009765625 - 3687.60009765625] and can cover your expenses,
+- [3687.60009765625 - 3689.60009765625] and you can get your direct deposit to Strike,
+- [3689.60009765625 - 3691.60009765625] this is a bank account on steroids.
+- [3691.60009765625 - 3693.60009765625] It can absolutely change your life.
+- [3693.60009765625 - 3696.60009765625] The question is, what's the right amount of leverage?
+- [3696.60009765625 - 3698.60009765625] What's the right amount?
+- [3698.60009765625 - 3701.60009765625] What's the right way to use the line of credit product?
+- [3701.60009765625 - 3703.60009765625] What's the math?
+- [3703.60009765625 - 3705.60009765625] At the end of the day, it's a math problem.
+- [3705.60009765625 - 3708.60009765625] And so I call it Smart Line of Credit.
+- [3708.60009765625 - 3710.60009765625] So I go to Smart Lock over here.
+- [3710.60009765625 - 3712.60009765625] And so let me read this to you guys.
+- [3712.60009765625 - 3714.60009765625] The one assumption that changes everything.
+- [3714.60009765625 - 3717.60009765625] Bitcoin has been the best-performing asset in human history,
+- [3717.60009765625 - 3720.60009765625] averaging over 80% annually for more than a decade.
+- [3720.60009765625 - 3723.60009765625] The Strike line of credit costs 13% APR.
+- [3723.60009765625 - 3729.60009765625] If Bitcoin keeps outperforming 13% and the data says it has by a lot,
+- [3729.60009765625 - 3732.60009765625] you borrow cheap money, your collateral grows faster than your debt,
+- [3732.60009765625 - 3734.60009765625] and you never have to sell a SAT.
+- [3734.60009765625 - 3736.60009765625] Your Bitcoin stays intact.
+- [3736.60009765625 - 3737.60009765625] Your life is funded.
+- [3737.60009765625 - 3739.60009765625] The interest is just noise.
+- [3739.60009765625 - 3743.60009765625] The Smart Lock, Smart Line of Credit, manages the only real risk,
+- [3743.60009765625 - 3746.60009765625] which is a crash of Bitcoin bear market.
+- [3746.60009765625 - 3749.60009765625] By keeping your loan-to-value ratio below 15%,
+- [3749.60009765625 - 3753.60009765625] even an 80% Bitcoin collapse can't liquidate your position.
+- [3753.60009765625 - 3756.60009765625] Enter your numbers, and we'll tell you exactly how to use it.
+- [3756.60009765625 - 3758.60009765625] This is not on Strike's website.
+- [3758.60009765625 - 3759.60009765625] This is on my website.
+- [3759.60009765625 - 3761.60009765625] This is not financial advice.
+- [3761.60009765625 - 3762.60009765625] I backed on this.
+- [3762.60009765625 - 3764.60009765625] I literally built this over the weekend.
+- [3764.60009765625 - 3767.60009765625] But if you take, let's say you have $8,000 of income
+- [3767.60009765625 - 3769.60009765625] and $5,000 of monthly expenses.
+- [3769.60009765625 - 3772.60009765625] So your monthly surplus is $3,000 of cash.
+- [3772.60009765625 - 3774.60009765625] Your income-to-expense ratio is 1.6.
+- [3774.60009765625 - 3778.60009765625] So, again, I've talked about on my show a lot, guys,
+- [3778.60009765625 - 3782.60009765625] where I say, hey, if you want to build wealth,
+- [3782.60009765625 - 3785.60009765625] like when people say, Jack, give me advice on how to build wealth.
+- [3785.60009765625 - 3787.60009765625] I say, here's my advice for you.
+- [3787.60009765625 - 3790.60009765625] My advice is either be more valuable,
+- [3790.60009765625 - 3792.60009765625] which means you're getting paid more,
+- [3792.60009765625 - 3794.60009765625] doing more valuable stuff for the market,
+- [3794.60009765625 - 3798.60009765625] or consume less shit, which is spend less money.
+- [3798.60009765625 - 3802.60009765625] And you need a healthy income-to-expenses ratio.
+- [3802.60009765625 - 3804.60009765625] If you're spending more than you're earning,
+- [3804.60009765625 - 3807.60009765625] there's no product I can build for you to solve that problem.
+- [3807.60009765625 - 3812.60009765625] So we have to start with, let's say your monthly income is zero
+- [3812.60009765625 - 3814.60009765625] and you need to spend $5,000 a month,
+- [3814.60009765625 - 3816.60009765625] you're not viable to use this product.
+- [3816.60009765625 - 3818.60009765625] Do not use this tool.
+- [3818.60009765625 - 3820.60009765625] So there's going to be plenty of people that are like,
+- [3820.60009765625 - 3824.60009765625] well, I make $5,000 a month and I spend $5,000 a month.
+- [3824.60009765625 - 3825.60009765625] What the fuck?
+- [3825.60009765625 - 3827.60009765625] Why aren't your products saving my life
+- [3827.60009765625 - 3829.60009765625] and helping me own a home in the future?
+- [3829.60009765625 - 3833.60009765625] Well, because you're not earning more than you're spending.
+- [3833.60009765625 - 3837.60009765625] And, by the way, Bitcoiners, by definition, are net producers
+- [3837.60009765625 - 3839.60009765625] because we all, by definition,
+- [3839.60009765625 - 3842.60009765625] have to produce more value than we're consuming,
+- [3842.60009765625 - 3845.60009765625] which means we have excess left over to allocate to Bitcoin.
+- [3845.60009765625 - 3846.60009765625] Okay, right?
+- [3846.60009765625 - 3848.60009765625] So let's put it back at $8,000.
+- [3848.60009765625 - 3850.60009765625] And so the tool is very simple.
+- [3850.60009765625 - 3854.60009765625] It says, here's how the math works.
+- [3854.60009765625 - 3857.60009765625] So the smart lock is, I'm just going to read this.
+- [3857.60009765625 - 3858.60009765625] Here's the strategy.
+- [3858.60009765625 - 3861.60009765625] The smart lock separates two things that people usually conflate,
+- [3861.60009765625 - 3862.60009765625] income and living expense.
+- [3862.60009765625 - 3864.60009765625] And this is how I live, guys.
+- [3864.60009765625 - 3866.60009765625] So everyone's always asking, like, how do you do it?
+- [3866.60009765625 - 3867.60009765625] What changed your life?
+- [3867.60009765625 - 3869.60009765625] Like, how did you build the ultimate Bitcoin tool?
+- [3869.60009765625 - 3872.60009765625] This is like the coolest thing I've ever done
+- [3872.60009765625 - 3875.60009765625] And, you know, I want to be able to really explain it to you guys.
+- [3875.60009765625 - 3878.60009765625] I want you guys to be able to leave questions in the YouTube comments
+- [3878.60009765625 - 3881.60009765625] because I'm going to record the video I'll release tomorrow,
+- [3881.60009765625 - 3882.60009765625] either tonight or in the morning.
+- [3882.60009765625 - 3887.60009765625] So your feedback will really help me make sure I answer everyone's questions
+- [3887.60009765625 - 3888.60009765625] and make a good announcement.
+- [3888.60009765625 - 3892.60009765625] So, anyways, the smart lock separates two things that people usually conflate,
+- [3892.60009765625 - 3894.60009765625] income and living expenses.
+- [3894.60009765625 - 3898.60009765625] Instead of spending your income on life and investments and the leftovers,
+- [3898.60009765625 - 3900.60009765625] you invest all of your income into Bitcoin
+- [3900.60009765625 - 3902.60009765625] and borrow against a collateral to fund your life.
+- [3902.60009765625 - 3905.60009765625] Strike charges 13% APR on the loan.
+- [3905.60009765625 - 3909.60009765625] Bitcoin has historically compounded at 50% to 80% annually.
+- [3909.60009765625 - 3911.60009765625] The arbitrage is the point.
+- [3911.60009765625 - 3914.60009765625] It's like running your own personal micro-strategy.
+- [3914.60009765625 - 3918.60009765625] The line of credit balance grows over time from drawn expenses
+- [3918.60009765625 - 3920.60009765625] and capitalized interest.
+- [3920.60009765625 - 3923.60009765625] But as long as Bitcoin appreciates faster than the 13%,
+- [3923.60009765625 - 3925.60009765625] your collateral grows faster than your debt
+- [3925.60009765625 - 3927.60009765625] and your net Bitcoin position improves every year.
+- [3928.60009765625 - 3931.60009765625] Again, so the point is, if you think Bitcoin is going to zero,
+- [3931.60009765625 - 3932.60009765625] I don't know why you're listening to this,
+- [3932.60009765625 - 3933.60009765625] I don't know why you would use Strike.
+- [3933.60009765625 - 3935.60009765625] If you think Bitcoin is not going to zero
+- [3935.60009765625 - 3939.60009765625] and is going to outperform whatever, 13%,
+- [3939.60009765625 - 3942.60009765625] then this is an absolute life hack.
+- [3942.60009765625 - 3945.60009765625] So the point of smart lock, this strategy,
+- [3945.60009765625 - 3950.60009765625] is keeping your LTV at 15% and below.
+- [3950.60009765625 - 3954.60009765625] Now, Strike liquidates positions at 85% loan to value.
+- [3954.60009765625 - 3957.60009765625] To survive an 80% Bitcoin crash without liquidation,
+- [3957.60009765625 - 3960.60009765625] you need your LTV to stay below 85%
+- [3960.60009765625 - 3964.60009765625] even after collateral drops to 20% of its current value.
+- [3964.60009765625 - 3970.60009765625] So LTV after an 80% crash equals current LTV divided by 0.20.
+- [3970.60009765625 - 3973.60009765625] So that's how you get to the 15% number.
+- [3973.60009765625 - 3978.60009765625] So anyways, the point is, the way my strategy works here,
+- [3978.60009765625 - 3980.60009765625] so I'll go back to this tab,
+- [3980.60009765625 - 3983.60009765625] is this is extreme leverage, the one on the far left.
+- [3983.60009765625 - 3987.60009765625] If you don't have the ability to severely over collateralize yourself,
+- [3987.60009765625 - 3989.60009765625] you're not sitting on a ton of Bitcoin,
+- [3989.60009765625 - 3991.60009765625] you really, really, really should not do this
+- [3991.60009765625 - 3994.60009765625] because you're at risk of a bear market wiping you out.
+- [3994.60009765625 - 3997.60009765625] Now, what's the smart mathematical way to do this?
+- [3997.60009765625 - 3998.60009765625] You do smart lock.
+- [3998.60009765625 - 4004.60009765625] Smart lock is paid out, so basically, here's what happens.
+- [4004.60009765625 - 4009.60009765625] Let me go back to this one.
+- [4009.60009765625 - 4011.60009765625] You open up a line of credit.
+- [4011.60009765625 - 4019.60009765625] If your LTV is below 15%, then you just stack SATs.
+- [4019.60009765625 - 4024.60009765625] If your LTV is above 15%, so let's go as the strategy plays out.
+- [4024.60009765625 - 4028.60009765625] Here's a month where the LTV is at 17.2%,
+- [4028.60009765625 - 4030.60009765625] so a pay down would be triggered.
+- [4030.60009765625 - 4033.60009765625] So you would have, let's say you're making $8,000 a month.
+- [4033.60009765625 - 4036.60009765625] $3,600 goes towards your line of credit pay down.
+- [4036.60009765625 - 4038.60009765625] $4,300 goes towards buying Bitcoin.
+- [4038.60009765625 - 4042.60009765625] You're drawing $5,000 to cover your expenses.
+- [4042.60009765625 - 4044.60009765625] Now, here's what this looks like, guys.
+- [4044.60009765625 - 4050.60009765625] If you're using smart lock, let me actually go back to this one.
+- [4050.60009765625 - 4053.60009765625] You are going, your net worth, look at your net worth
+- [4053.60009765625 - 4056.60009765625] and your real return compared to if you were to sell to live
+- [4056.60009765625 - 4058.60009765625] and incur taxable events.
+- [4058.60009765625 - 4059.60009765625] It's an absolute life hack.
+- [4059.60009765625 - 4061.60009765625] Now, check this out.
+- [4061.60009765625 - 4064.60009765625] If you were to say, oh, well, what happens if Bitcoin crashes
+- [4064.60009765625 - 4066.60009765625] one year into the strategy?
+- [4066.60009765625 - 4072.60009765625] Check, as I scroll this thing, check the smart lock, the stress test.
+- [4072.60009765625 - 4076.60009765625] Well, what if Bitcoin falls 80% from any price it's at?
+- [4076.60009765625 - 4079.60009765625] You're always healthy, always healthy.
+- [4079.60009765625 - 4082.60009765625] So basically, the tool is, so for the line of credit,
+- [4082.60009765625 - 4086.60009765625] you're only paying interest on what you actually use.
+- [4086.60009765625 - 4090.60009765625] And so it's this rolling line of credit that keeps you all in on Bitcoin.
+- [4090.60009765625 - 4094.60009765625] You never have to sell Bitcoin, and it doesn't really matter
+- [4094.60009765625 - 4097.60009765625] when Bitcoin gets in a bull market or a bear market.
+- [4097.60009765625 - 4100.60009765625] You just keep stacking.
+- [4100.60009765625 - 4103.60009765625] Now, what happens if Bitcoin's CAGR is not 50%?
+- [4103.60009765625 - 4105.60009765625] Let's say Bitcoin's CAGR is 0%.
+- [4105.60009765625 - 4107.60009765625] You're still super healthy.
+- [4107.60009765625 - 4111.60009765625] Now, a Bitcoin CAGR of 0% wouldn't be ideal
+- [4111.60009765625 - 4114.60009765625] because obviously the whole point of this strategy
+- [4114.60009765625 - 4118.60009765625] is the Bitcoin CAGR should outperform the APR that you need.
+- [4118.60009765625 - 4123.60009765625] So you see the real return now is negative 24% for smart lock,
+- [4123.60009765625 - 4126.60009765625] where the real return of just not owning Bitcoin at all is negative 21%.
+- [4126.60009765625 - 4128.60009765625] So you're better off not owning Bitcoin at all
+- [4128.60009765625 - 4131.60009765625] if Bitcoin's going to stay flat for the next five years.
+- [4131.60009765625 - 4136.60009765625] But even if Bitcoin's at 20% CAGR, you're killing it.
+- [4136.60009765625 - 4140.60009765625] Look at your returns. You're absolutely killing it.
+- [4140.60009765625 - 4144.60009765625] And so the point is, it doesn't matter how Bitcoin performs.
+- [4144.60009765625 - 4147.60009765625] It doesn't matter when Bitcoin goes into a bear market.
+- [4147.60009765625 - 4150.60009765625] The line of credit is not excessive leverage.
+- [4150.60009765625 - 4153.60009765625] It's how do I maximize my Bitcoin exposure,
+- [4153.60009765625 - 4155.60009765625] never sell a SAT,
+- [4155.60009765625 - 4159.60009765625] and use these tools to speculatively attack the dollar,
+- [4159.60009765625 - 4162.60009765625] to short the dollar in long Bitcoin.
+- [4162.60009765625 - 4164.60009765625] So let's say your income is $8,000
+- [4164.60009765625 - 4167.60009765625] and your monthly expenses are five grand.
+- [4167.60009765625 - 4169.60009765625] Well, the tool will recommend,
+- [4169.60009765625 - 4172.60009765625] open a line of credit with 1.45 Bitcoin.
+- [4172.60009765625 - 4175.60009765625] Now, the minimum that you would need is 0.48,
+- [4175.60009765625 - 4177.60009765625] but the recommendation is 1.45 Bitcoin.
+- [4178.60009765625 - 4180.60009765625] That starts your LTV at 5%.
+- [4180.60009765625 - 4183.60009765625] And so on the first month when your paycheck comes in,
+- [4183.60009765625 - 4186.60009765625] you're buying 100% Bitcoin.
+- [4186.60009765625 - 4189.60009765625] You're drawing the $5,000 that you need to cover your mortgage,
+- [4189.60009765625 - 4191.60009765625] to cover your credit card bill,
+- [4191.60009765625 - 4193.60009765625] that you can pay these bills with strike.
+- [4193.60009765625 - 4195.60009765625] You're using your line of credit.
+- [4195.60009765625 - 4197.60009765625] And then let's go to month two.
+- [4197.60009765625 - 4200.60009765625] You're just smash-buying Bitcoin with your entire income.
+- [4200.60009765625 - 4202.60009765625] Okay, now month five.
+- [4202.60009765625 - 4208.60009765625] And again, this is just assuming a 50% CAGR.
+- [4208.60009765625 - 4210.60009765625] So if I drag this all the way through,
+- [4210.60009765625 - 4212.60009765625] it ends up getting to enough growth
+- [4212.60009765625 - 4214.60009765625] where you're just smash-buying Bitcoin again.
+- [4214.60009765625 - 4218.60009765625] But if it gets into months where your LTV exceeds 15%,
+- [4218.60009765625 - 4221.60009765625] it's like, okay, if Bitcoin drops 80% from here,
+- [4221.60009765625 - 4223.60009765625] I'll start getting into margin call territory.
+- [4223.60009765625 - 4225.60009765625] So what it does is it says,
+- [4225.60009765625 - 4228.60009765625] okay, we're going to take 45% of our paycheck,
+- [4228.60009765625 - 4230.60009765625] of our income this month,
+- [4230.60009765625 - 4232.60009765625] and we're going to allocate it towards paying down the line of credit,
+- [4232.60009765625 - 4234.60009765625] and we're going to take the excess that we have,
+- [4234.60009765625 - 4236.60009765625] and we're going to buy Bitcoin.
+- [4236.60009765625 - 4240.60009765625] Bitcoin can fall 80%, and we're totally fine.
+- [4240.60009765625 - 4242.60009765625] If I go back to the stress test, guys,
+- [4242.60009765625 - 4244.60009765625] we're totally fine.
+- [4244.60009765625 - 4247.60009765625] Bitcoin can fall as far as it's ever fallen,
+- [4247.60009765625 - 4249.60009765625] and you're good.
+- [4249.60009765625 - 4252.60009765625] And so this is how I live on Bitcoin.
+- [4252.60009765625 - 4254.60009765625] It's an unbelievable...
+- [4254.60009765625 - 4258.60009765625] Guys, I'm so fucking excited to give you guys this tool,
+- [4258.60009765625 - 4260.60009765625] because here's the thing that we all want.
+- [4260.60009765625 - 4263.60009765625] What we all want is how do I take all of my work,
+- [4263.60009765625 - 4266.60009765625] all my effort, stack as much stats as possible,
+- [4266.60009765625 - 4269.60009765625] and find a tool that will lend me the money
+- [4269.60009765625 - 4272.60009765625] to actually pay my expenses?
+- [4272.60009765625 - 4274.60009765625] And I don't want to take out these 12-month loans.
+- [4274.60009765625 - 4276.60009765625] I just want a perpetual loan,
+- [4276.60009765625 - 4279.60009765625] a perpetual line of credit.
+- [4279.60009765625 - 4283.60009765625] And I've been trying to explain this to you guys,
+- [4283.60009765625 - 4284.60009765625] and I was like, fuck it.
+- [4284.60009765625 - 4286.60009765625] I have to code up a dashboard
+- [4286.60009765625 - 4287.60009765625] for people to input numbers
+- [4287.60009765625 - 4289.60009765625] just so they can do the math themselves.
+- [4289.60009765625 - 4290.60009765625] Because here, you guys can see.
+- [4290.60009765625 - 4292.60009765625] Let me take out this one,
+- [4292.60009765625 - 4294.60009765625] because this is just degenerate leverage,
+- [4294.60009765625 - 4295.60009765625] unless you've got a huge stack.
+- [4295.60009765625 - 4298.60009765625] If you've got hundreds of Bitcoin, you're good.
+- [4298.60009765625 - 4299.60009765625] But if you're not,
+- [4299.60009765625 - 4302.60009765625] look at how much you outperform on the smart lock.
+- [4302.60009765625 - 4305.60009765625] And again, you just have to assume some cagger.
+- [4305.60009765625 - 4307.60009765625] Put it at 30%.
+- [4307.60009765625 - 4309.60009765625] I mean, you're killing it.
+- [4309.60009765625 - 4311.60009765625] You're absolutely killing it.
+- [4311.60009765625 - 4314.60009765625] No taxable event.
+- [4314.60009765625 - 4318.60009765625] See, tax is paid over here on the cell to live.
+- [4318.60009765625 - 4321.60009765625] So you end up building over five years.
+- [4321.60009765625 - 4325.60009765625] You build up a line of credit balance of $48,000.
+- [4325.60009765625 - 4327.60009765625] You pay 16 grand of interest,
+- [4327.60009765625 - 4330.60009765625] but your net worth has gone from one Bitcoin
+- [4330.60009765625 - 4335.60009765625] to over half a million dollars.
+- [4335.60009765625 - 4337.60009765625] And so, yeah, you can come in here and you can say,
+- [4337.60009765625 - 4341.60009765625] well, Jack, my family actually makes $15,000 a month.
+- [4341.60009765625 - 4343.60009765625] You just type it in.
+- [4343.60009765625 - 4346.60009765625] And we spend $10,000 a month.
+- [4346.60009765625 - 4348.60009765625] Okay, great.
+- [4348.60009765625 - 4351.60009765625] You've got an income to expense ratio of 1.5.
+- [4351.60009765625 - 4354.60009765625] The recommendation would be put up just under three Bitcoin,
+- [4354.60009765625 - 4355.60009765625] open up a line of credit.
+- [4355.60009765625 - 4357.60009765625] I mean, if you have more Bitcoin than that,
+- [4357.60009765625 - 4358.60009765625] absolutely do it.
+- [4358.60009765625 - 4360.60009765625] And you guys can click on this tool
+- [4360.60009765625 - 4363.60009765625] and see the graphs change.
+- [4363.60009765625 - 4367.60009765625] Obviously, if I over collateralize,
+- [4367.60009765625 - 4369.60009765625] that means my LTV is going to be even healthier
+- [4369.60009765625 - 4371.60009765625] and I'll end up with way more Bitcoin.
+- [4371.60009765625 - 4372.60009765625] But let's just put this.
+- [4372.60009765625 - 4374.60009765625] Let's put this at 30%.
+- [4374.60009765625 - 4376.60009765625] Your family's making 15 grand a month.
+- [4376.60009765625 - 4379.60009765625] You're spending 10 of it to live.
+- [4379.60009765625 - 4381.60009765625] And you've got 2.9 Bitcoin to put up.
+- [4381.60009765625 - 4383.60009765625] By the way, this line of credit is for businesses
+- [4383.60009765625 - 4385.60009765625] and for individuals.
+- [4385.60009765625 - 4386.60009765625] So if you're a business
+- [4386.60009765625 - 4388.60009765625] and you want to just collateralize your business
+- [4388.60009765625 - 4390.60009765625] and your balance sheet on Bitcoin
+- [4390.60009765625 - 4392.60009765625] and pay off all your expenses with line of credit,
+- [4392.60009765625 - 4394.60009765625] Strike has bill pay, guys.
+- [4394.60009765625 - 4396.60009765625] We have bill pay and direct deposit.
+- [4396.60009765625 - 4399.60009765625] So you have everything you need to hack the system.
+- [4399.60009765625 - 4402.60009765625] You're your own micro strategy.
+- [4402.60009765625 - 4403.60009765625] Right?
+- [4403.60009765625 - 4405.60009765625] So obviously, if I over collateralize,
+- [4405.60009765625 - 4407.60009765625] I'm always in a good LTV state
+- [4407.60009765625 - 4410.60009765625] and I'm stacking so much Bitcoin,
+- [4410.60009765625 - 4412.60009765625] I'm never selling Bitcoin.
+- [4412.60009765625 - 4415.60009765625] If you were to stack with only your surplus
+- [4415.60009765625 - 4417.60009765625] and not use Smart Lock,
+- [4417.60009765625 - 4420.60009765625] you'd end up with 9.6 Bitcoin over five years.
+- [4420.60009765625 - 4422.60009765625] If you were to use Smart Lock,
+- [4422.60009765625 - 4426.60009765625] you're ending up with three more full coins
+- [4426.60009765625 - 4429.60009765625] and obviously at 50%, 30% CAGR over five years,
+- [4429.60009765625 - 4430.60009765625] Bitcoin is what?
+- [4430.60009765625 - 4431.60009765625] 500K or something.
+- [4431.60009765625 - 4433.60009765625] So you ended up with millions of more dollars.
+- [4433.60009765625 - 4434.60009765625] Right?
+- [4434.60009765625 - 4436.60009765625] Now let's put it at 2.9
+- [4436.60009765625 - 4437.60009765625] and you can see how it changes.
+- [4437.60009765625 - 4439.60009765625] And you guys can just click through the tool
+- [4439.60009765625 - 4442.60009765625] and play with it and input your own numbers.
+- [4442.60009765625 - 4444.60009765625] It's pulling in a live Bitcoin price.
+- [4444.60009765625 - 4448.60009765625] So I'm not assuming that Bitcoin's at 500K or anything.
+- [4448.60009765625 - 4450.60009765625] And you can come and just see.
+- [4450.60009765625 - 4452.60009765625] And this, at the bottom,
+- [4452.60009765625 - 4455.60009765625] you can click and expand how the math works.
+- [4455.60009765625 - 4458.60009765625] And I walk you guys through the point
+- [4458.60009765625 - 4459.60009765625] and how I got to the strategy.
+- [4459.60009765625 - 4462.60009765625] So the whole point of the strategy is,
+- [4462.60009765625 - 4463.60009765625] and listen,
+- [4463.60009765625 - 4465.60009765625] if you don't think Bitcoin's going to go down 80%
+- [4465.60009765625 - 4466.60009765625] and you want to add some leverage,
+- [4466.60009765625 - 4467.60009765625] you absolutely can.
+- [4467.60009765625 - 4469.60009765625] But this point of the strategy is,
+- [4469.60009765625 - 4473.60009765625] Bitcoin's only ever gone down 80% in one bear market.
+- [4473.60009765625 - 4475.60009765625] How do I make sure that no matter what,
+- [4475.60009765625 - 4477.60009765625] throughout what Bitcoin's been through,
+- [4477.60009765625 - 4478.60009765625] no matter what version of Bitcoin,
+- [4478.60009765625 - 4479.60009765625] like I should be fine
+- [4479.60009765625 - 4481.60009765625] and I'm just going to focus on converting
+- [4481.60009765625 - 4484.60009765625] as much of my paycheck and my family's earnings
+- [4484.60009765625 - 4487.60009765625] or my business's earnings into Bitcoin.
+- [4487.60009765625 - 4489.60009765625] And I'm going to use Strike and What Jack Built
+- [4489.60009765625 - 4490.60009765625] to finance my life.
+- [4490.60009765625 - 4492.60009765625] And I'm going to ultimately short the dollar.
+- [4492.60009765625 - 4494.60009765625] I'm going to run on a Bitcoin standard.
+- [4494.60009765625 - 4496.60009765625] And look at the wealth this is building, guys.
+- [4496.60009765625 - 4498.60009765625] Like, look at the fucking,
+- [4498.60009765625 - 4499.60009765625] look at the net worth.
+- [4499.60009765625 - 4501.60009765625] You're talking about like over five years
+- [4501.60009765625 - 4503.60009765625] making millions of dollars
+- [4503.60009765625 - 4504.60009765625] just hoarding Bitcoin,
+- [4504.60009765625 - 4506.60009765625] trusting the process,
+- [4506.60009765625 - 4508.60009765625] shorting fiat.
+- [4508.60009765625 - 4510.60009765625] I mean, this can change people's lives.
+- [4510.60009765625 - 4512.60009765625] There's just never been a tool
+- [4512.60009765625 - 4514.60009765625] that makes Bitcoin credit
+- [4514.60009765625 - 4515.60009765625] perpetual like this.
+- [4515.60009765625 - 4517.60009765625] Like a consumer line of credit
+- [4517.60009765625 - 4518.60009765625] that you can live on.
+- [4518.60009765625 - 4519.60009765625] Like there's never,
+- [4519.60009765625 - 4523.60009765625] all these like 12-month DeFi variable rate,
+- [4523.60009765625 - 4526.60009765625] like wrapped Bitcoin bullshit.
+- [4526.60009765625 - 4529.60009765625] Like no, I want people to live on a Bitcoin standard.
+- [4529.60009765625 - 4530.60009765625] This is what I,
+- [4530.60009765625 - 4533.60009765625] this is how I live.
+- [4533.60009765625 - 4535.60009765625] Isn't this unbelievable?
+- [4535.60009765625 - 4538.60009765625] Hopefully you guys are understanding this
+- [4538.60009765625 - 4540.60009765625] enough to give me feedback tonight
+- [4540.60009765625 - 4541.60009765625] so that I can,
+- [4541.60009765625 - 4544.60009765625] so that I can
+- [4544.60009765625 - 4546.60009765625] record a really good video tomorrow
+- [4546.60009765625 - 4547.60009765625] for the public.
+- [4547.60009765625 - 4549.60009765625] I'll post it on Twitter
+- [4549.60009765625 - 4552.60009765625] and I'll walk everyone through what we just built.
+- [4552.60009765625 - 4554.60009765625] I think this is the coolest thing I've ever built
+- [4554.60009765625 - 4555.60009765625] by far.
+- [4555.60009765625 - 4558.60009765625] Because anyone that grasps this idea,
+- [4558.60009765625 - 4560.60009765625] I mean, it's mind-blowing.
+- [4560.60009765625 - 4561.60009765625] You can fully build,
+- [4561.60009765625 - 4564.60009765625] fully live your life on a Bitcoin standard.
+- [4564.60009765625 - 4566.60009765625] And let me pull up,
+- [4566.60009765625 - 4567.60009765625] hold on.
+- [4567.60009765625 - 4571.60009765625] Like people talk about hyper-Bitcoinization and stuff
+- [4571.60009765625 - 4572.60009765625] and like listen,
+- [4572.60009765625 - 4574.60009765625] no one more than me
+- [4574.60009765625 - 4576.60009765625] or me as much as anyone else
+- [4576.60009765625 - 4579.60009765625] wants to be able to just not touch fiat at all.
+- [4579.60009765625 - 4581.60009765625] That's just not the world we live in right now.
+- [4581.60009765625 - 4583.60009765625] And for the world we live in right now,
+- [4583.60009765625 - 4585.60009765625] like this is unbelievable.
+- [4585.60009765625 - 4587.60009765625] I get to speculatively attack the dollar,
+- [4587.60009765625 - 4592.60009765625] like it's crazy.
+- [4592.60009765625 - 4593.60009765625] So hold on,
+- [4593.60009765625 - 4596.60009765625] let me pull up really quickly here.
+- [4597.60009765625 - 4600.60009765625] How else the line of credit works?
+- [4600.60009765625 - 4604.60009765625] Sorry, give me two seconds.
+- [4604.60009765625 - 4611.60009765625] Yeah, so here.
+- [4611.60009765625 - 4614.60009765625] I'm going to make sure I'm not sharing any trade secrets.
+- [4614.60009765625 - 4616.60009765625] This is our internal Figma files.
+- [4616.60009765625 - 4620.60009765625] Sorry to my team if I'm sharing too many trade secrets.
+- [4620.60009765625 - 4623.60009765625] But just so you guys know,
+- [4623.60009765625 - 4625.60009765625] I should have put this in my own slides.
+- [4625.60009765625 - 4628.60009765625] Like you can pay your bills with your line of credit.
+- [4628.60009765625 - 4629.60009765625] So if you guys don't know,
+- [4629.60009765625 - 4630.60009765625] Strike has bill pay.
+- [4630.60009765625 - 4633.60009765625] So like how do I live my life on the line of credit?
+- [4633.60009765625 - 4635.60009765625] Well, my line of credit,
+- [4635.60009765625 - 4636.60009765625] the month just ended,
+- [4636.60009765625 - 4638.60009765625] I owed my HOA payment,
+- [4638.60009765625 - 4639.60009765625] I owed my credit card bill,
+- [4639.60009765625 - 4641.60009765625] I owed my electricity bill,
+- [4641.60009765625 - 4642.60009765625] and I paid it with my line of credit.
+- [4642.60009765625 - 4644.60009765625] So the bills came into Strike
+- [4644.60009765625 - 4645.60009765625] and it just pulled money
+- [4645.60009765625 - 4648.60009765625] and Strike just paid it with the cash from my line of credit.
+- [4648.60009765625 - 4650.60009765625] And then my paychecks will come in
+- [4650.60009765625 - 4652.60009765625] and depending on what the LTV is,
+- [4652.60009765625 - 4654.60009765625] obviously if Bitcoin drops to 40K,
+- [4654.60009765625 - 4656.60009765625] I'll need to use some of my paycheck
+- [4656.60009765625 - 4658.60009765625] and help pay down the line of credit
+- [4658.60009765625 - 4660.60009765625] to get into a healthy LTV state
+- [4660.60009765625 - 4662.60009765625] around that 15% number.
+- [4662.60009765625 - 4665.60009765625] If Bitcoin remains at 70K or gets to 75K,
+- [4665.60009765625 - 4669.60009765625] my entire paycheck is going to smash by Bitcoin.
+- [4669.60009765625 - 4672.60009765625] And I'm just living my life on,
+- [4672.60009765625 - 4674.60009765625] and obviously I'm smashing buying Bitcoin,
+- [4674.60009765625 - 4675.60009765625] Bitcoin's growing,
+- [4675.60009765625 - 4677.60009765625] it means my LTV is getting healthier,
+- [4677.60009765625 - 4678.60009765625] my line of credit can expand.
+- [4678.60009765625 - 4681.60009765625] Are you guys following what I'm putting down here?
+- [4681.60009765625 - 4684.60009765625] This tool is incredible, guys.
+- [4684.60009765625 - 4688.60009765625] By the way, I can buy Bitcoin with my line of credit too.
+- [4688.60009765625 - 4689.60009765625] So if Bitcoin goes up a lot,
+- [4689.60009765625 - 4691.60009765625] and you're like, wow, my LTV's at 4%,
+- [4691.60009765625 - 4693.60009765625] I might as well turn on a DCA,
+- [4693.60009765625 - 4695.60009765625] you can pay people with your line of credit on Strike,
+- [4695.60009765625 - 4697.60009765625] you can pay bills with your line of credit,
+- [4697.60009765625 - 4699.60009765625] you can buy Bitcoin with your line of credit,
+- [4699.60009765625 - 4700.60009765625] you can do anything,
+- [4700.60009765625 - 4702.60009765625] you can withdraw cash with your line of credit.
+- [4702.60009765625 - 4704.60009765625] It's a payment method.
+- [4704.60009765625 - 4707.60009765625] It's like a Bitcoiner's dream.
+- [4707.60009765625 - 4709.60009765625] It's like Bitcoin on steroids.
+- [4709.60009765625 - 4710.60009765625] Look at this stuff, guys.
+- [4710.60009765625 - 4711.60009765625] It's crazy.
+- [4711.60009765625 - 4714.60009765625] You only pay interest on what you use.
+- [4714.60009765625 - 4715.60009765625] So if you have a month where like,
+- [4715.60009765625 - 4717.60009765625] hey, like me and the family,
+- [4717.60009765625 - 4718.60009765625] we didn't spend that much,
+- [4718.60009765625 - 4721.60009765625] you don't get charged for it.
+- [4721.60009765625 - 4722.60009765625] It's all good.
+- [4722.60009765625 - 4725.60009765625] You know what I'm saying?
+- [4725.60009765625 - 4726.60009765625] This is like, this is it.
+- [4726.60009765625 - 4730.60009765625] Like, I've been working my whole career for this product.
+- [4730.60009765625 - 4731.60009765625] It's this product,
+- [4731.60009765625 - 4732.60009765625] and then on top of this,
+- [4732.60009765625 - 4737.60009765625] once we launch our yield on cash,
+- [4737.60009765625 - 4738.60009765625] then any like excess cash
+- [4738.60009765625 - 4739.60009765625] that you do feel like you need to save
+- [4739.60009765625 - 4741.60009765625] for the people that feel like they need cash.
+- [4741.60009765625 - 4742.60009765625] I mean, with this strategy,
+- [4742.60009765625 - 4744.60009765625] I don't know why you would hold cash.
+- [4744.60009765625 - 4745.60009765625] I mean, then we're like
+- [4745.60009765625 - 4748.60009765625] the most powerful financial account in the world.
+- [4748.60009765625 - 4752.60009765625] How insane is this?
+- [4752.60009765625 - 4755.60009765625] Anyways, I'm so excited.
+- [4755.60009765625 - 4760.60009765625] This is liveonbitcoin.jackmallers.com,
+- [4760.60009765625 - 4762.60009765625] and it's password protected right now,
+- [4762.60009765625 - 4765.60009765625] but I will lift the password tomorrow,
+- [4765.60009765625 - 4767.60009765625] and we'll announce this.
+- [4767.60009765625 - 4769.60009765625] We'll roll it out.
+- [4769.60009765625 - 4771.60009765625] Okay, I do have to share some news with you guys,
+- [4771.60009765625 - 4772.60009765625] and then I got to go,
+- [4772.60009765625 - 4775.60009765625] because it's 621.
+- [4775.60009765625 - 4778.60009765625] Fuck, I forgot we were going to have Q&A.
+- [4778.60009765625 - 4780.60009765625] Damn it, I totally botched that.
+- [4780.60009765625 - 4784.60009765625] Shit.
+- [4784.60009765625 - 4785.60009765625] Okay, well anyways,
+- [4785.60009765625 - 4786.60009765625] we're going to roll this out
+- [4786.60009765625 - 4789.60009765625] only to a few states at a time in the beginning
+- [4789.60009765625 - 4791.60009765625] to make sure it's perfect.
+- [4791.60009765625 - 4793.60009765625] So you'll hear about how we're going to do that tomorrow.
+- [4793.60009765625 - 4795.60009765625] I know it's going to piss a lot of you off.
+- [4795.60009765625 - 4796.60009765625] You're going to be like,
+- [4796.60009765625 - 4798.60009765625] damn it, I'm not included in the initial rollout.
+- [4798.60009765625 - 4799.60009765625] It's fine.
+- [4799.60009765625 - 4800.60009765625] We're going to turn it on.
+- [4800.60009765625 - 4802.60009765625] As soon as we feel comfortable,
+- [4802.60009765625 - 4803.60009765625] we're going to turn it on.
+- [4803.60009765625 - 4804.60009765625] I just want it to be perfect.
+- [4804.60009765625 - 4806.60009765625] It's a one of one.
+- [4806.60009765625 - 4808.60009765625] No one's ever built a product like this.
+- [4808.60009765625 - 4811.60009765625] It's so important and precious to me.
+- [4811.60009765625 - 4814.60009765625] I just want to make sure it's right.
+- [4814.60009765625 - 4815.60009765625] So we're going to roll it out.
+- [4815.60009765625 - 4817.60009765625] I'll tell you guys what states have access to it
+- [4817.60009765625 - 4818.60009765625] starting tomorrow.
+- [4818.60009765625 - 4820.60009765625] Honestly, if you check your apps,
+- [4820.60009765625 - 4822.60009765625] you might have gotten it today,
+- [4822.60009765625 - 4824.60009765625] and I'll unleash my tool.
+- [4824.60009765625 - 4826.60009765625] I'll walk everyone through how I use it
+- [4826.60009765625 - 4827.60009765625] and how to use it,
+- [4827.60009765625 - 4828.60009765625] and we'll go from there.
+- [4828.60009765625 - 4830.60009765625] The other thing about...
+- [4830.60009765625 - 4831.60009765625] Oh, damn.
+- [4832.60009765625 - 4833.60009765625] Ah, fuck.
+- [4833.60009765625 - 4835.60009765625] I'm botching this.
+- [4835.60009765625 - 4836.60009765625] I'm running out of time.
+- [4836.60009765625 - 4839.60009765625] The other thing about...
+- [4841.60009765625 - 4842.60009765625] Hold on.
+- [4842.60009765625 - 4844.60009765625] About...
+- [4850.60009765625 - 4852.60009765625] About this week for Strike.
+- [4852.60009765625 - 4853.60009765625] Oh, damn.
+- [4853.60009765625 - 4854.60009765625] You can only kind of see it.
+- [4854.60009765625 - 4856.60009765625] We got our BitLicense, guys.
+- [4856.60009765625 - 4858.60009765625] We got our BitLicense.
+- [4858.60009765625 - 4861.60009765625] Strike is officially BitLicensed.
+- [4861.60009765625 - 4862.60009765625] You will see this announcement.
+- [4862.60009765625 - 4865.60009765625] This announcement needs all sorts of approvals
+- [4865.60009765625 - 4867.60009765625] to actually hit the press.
+- [4867.60009765625 - 4870.60009765625] So you'll see this come from me probably this week,
+- [4870.60009765625 - 4873.60009765625] but we did get approved for our BitLicense,
+- [4873.60009765625 - 4877.60009765625] and we will begin serving New Yorkers this week.
+- [4877.60009765625 - 4878.60009765625] So if you're in New York,
+- [4878.60009765625 - 4880.60009765625] don't ruin my announcement
+- [4880.60009765625 - 4882.60009765625] and go running around the Internet
+- [4882.60009765625 - 4883.60009765625] and spoiling my announcement.
+- [4883.60009765625 - 4887.60009765625] I've been working on this license for almost four years.
+- [4887.60009765625 - 4889.60009765625] But if you're in New York,
+- [4889.60009765625 - 4890.60009765625] check Strike.
+- [4890.60009765625 - 4892.60009765625] See if you can download it.
+- [4892.60009765625 - 4893.60009765625] Today's your lucky day.
+- [4893.60009765625 - 4895.60009765625] We finally got it.
+- [4895.60009765625 - 4897.60009765625] This I Strike New York shirt,
+- [4897.60009765625 - 4899.60009765625] I love New York shirt.
+- [4899.60009765625 - 4904.60009765625] We are hosting a party at Pubkey later this month,
+- [4904.60009765625 - 4905.60009765625] and this is some of the merch
+- [4905.60009765625 - 4907.60009765625] that we'll have handed out to you guys.
+- [4907.60009765625 - 4908.60009765625] So I'll keep you posted
+- [4908.60009765625 - 4911.60009765625] on when I'm coming down in New York.
+- [4911.60009765625 - 4913.60009765625] It'll be drinks on us.
+- [4913.60009765625 - 4914.60009765625] Just want to give you guys a hug.
+- [4914.60009765625 - 4915.60009765625] It's been a long time coming
+- [4915.60009765625 - 4917.60009765625] that we've wanted to serve New Yorkers,
+- [4917.60009765625 - 4919.60009765625] and over the next month,
+- [4919.60009765625 - 4921.60009765625] New Yorkers should get our full suite of products.
+- [4921.60009765625 - 4923.60009765625] So we're very, very excited about that.
+- [4923.60009765625 - 4926.60009765625] Finally got our BitLicense.
+- [4926.60009765625 - 4927.60009765625] Okay.
+- [4927.60009765625 - 4930.60009765625] On 21,
+- [4930.60009765625 - 4931.60009765625] oh, damn, here we go.
+- [4931.60009765625 - 4933.60009765625] On 21, really quick,
+- [4933.60009765625 - 4934.60009765625] I just want to say something.
+- [4934.60009765625 - 4936.60009765625] So for people that say,
+- [4936.60009765625 - 4937.60009765625] you know, there are people that say,
+- [4937.60009765625 - 4938.60009765625] hey, Jack, like,
+- [4938.60009765625 - 4940.60009765625] why aren't you giving us any updates?
+- [4940.60009765625 - 4941.60009765625] Why aren't you giving us any announcements?
+- [4941.60009765625 - 4943.60009765625] Why aren't you letting us know what's going on?
+- [4943.60009765625 - 4945.60009765625] Why aren't you doing stock buyback programs?
+- [4945.60009765625 - 4947.60009765625] Why aren't you doing stuff?
+- [4947.60009765625 - 4950.60009765625] Some people are disingenuous when they say that,
+- [4950.60009765625 - 4951.60009765625] and they just want to be mad at me,
+- [4951.60009765625 - 4952.60009765625] and I've already said,
+- [4952.60009765625 - 4954.60009765625] I totally get that.
+- [4954.60009765625 - 4955.60009765625] There's so many things that I think
+- [4955.60009765625 - 4956.60009765625] Tether, SoftBank, myself,
+- [4956.60009765625 - 4957.60009765625] the whole team,
+- [4957.60009765625 - 4959.60009765625] that we would have done differently.
+- [4959.60009765625 - 4962.60009765625] This has been the furthest from easy, obviously.
+- [4962.60009765625 - 4963.60009765625] It's been a journey,
+- [4963.60009765625 - 4964.60009765625] and so I get that.
+- [4964.60009765625 - 4965.60009765625] You guys have, you know,
+- [4965.60009765625 - 4966.60009765625] you want to be mad at me,
+- [4966.60009765625 - 4967.60009765625] you have every right.
+- [4967.60009765625 - 4968.60009765625] I own that.
+- [4968.60009765625 - 4969.60009765625] I accept that.
+- [4969.60009765625 - 4972.60009765625] If you're genuinely curious about the answer,
+- [4972.60009765625 - 4974.60009765625] I've talked about this before,
+- [4974.60009765625 - 4975.60009765625] and I just want you guys
+- [4975.60009765625 - 4976.60009765625] to be able to look this up
+- [4976.60009765625 - 4978.60009765625] and understand why.
+- [4978.60009765625 - 4980.60009765625] I'm not trying to hold information.
+- [4980.60009765625 - 4982.60009765625] I'm not making a conscious decision
+- [4982.60009765625 - 4984.60009765625] to be secretive.
+- [4984.60009765625 - 4985.60009765625] There's something called
+- [4985.60009765625 - 4989.60009765625] non-public information, NPI.
+- [4989.60009765625 - 4991.60009765625] So if I have access to,
+- [4991.60009765625 - 4992.60009765625] so when I say we're working on
+- [4992.60009765625 - 4994.60009765625] operating company stuff,
+- [4994.60009765625 - 4996.60009765625] we're potentially looking at some deals
+- [4996.60009765625 - 4998.60009765625] that we could do.
+- [4998.60009765625 - 4999.60009765625] When I say things like that,
+- [4999.60009765625 - 5002.60009765625] that means I might have access to information
+- [5002.60009765625 - 5004.60009765625] that other people don't,
+- [5004.60009765625 - 5005.60009765625] and if that's the case,
+- [5005.60009765625 - 5008.60009765625] I have to be extremely careful.
+- [5008.60009765625 - 5010.60009765625] I can't do a stock buyback program.
+- [5010.60009765625 - 5011.60009765625] I can't talk to you guys
+- [5011.60009765625 - 5013.60009765625] about our strategy
+- [5013.60009765625 - 5015.60009765625] or communicate expected deadlines
+- [5015.60009765625 - 5016.60009765625] and tell you guys
+- [5016.60009765625 - 5018.60009765625] when exactly you should expect things,
+- [5018.60009765625 - 5020.60009765625] because not only will I get in trouble
+- [5020.60009765625 - 5021.60009765625] and the business will get in trouble,
+- [5021.60009765625 - 5024.60009765625] but then ultimately what we all want,
+- [5024.60009765625 - 5026.60009765625] which is 21 to be the Bitcoin company,
+- [5026.60009765625 - 5027.60009765625] the public Bitcoin equity,
+- [5027.60009765625 - 5029.60009765625] that'll never happen.
+- [5029.60009765625 - 5031.60009765625] And so I've mentioned it before,
+- [5031.60009765625 - 5033.60009765625] and for people that genuinely
+- [5033.60009765625 - 5034.60009765625] want to know the answer
+- [5034.60009765625 - 5036.60009765625] of why my communication style
+- [5036.60009765625 - 5037.60009765625] has been the way it is,
+- [5037.60009765625 - 5038.60009765625] because I mean,
+- [5038.60009765625 - 5039.60009765625] I pride myself on transparency,
+- [5039.60009765625 - 5040.60009765625] on honesty,
+- [5040.60009765625 - 5041.60009765625] on being as accessible
+- [5041.60009765625 - 5042.60009765625] and approachable
+- [5042.60009765625 - 5043.60009765625] as a public company CEO
+- [5043.60009765625 - 5045.60009765625] as you'll ever find.
+- [5045.60009765625 - 5046.60009765625] I don't think there's any,
+- [5046.60009765625 - 5047.60009765625] like I don't think Brian Armstrong's
+- [5047.60009765625 - 5049.60009765625] running podcasts like this,
+- [5049.60009765625 - 5050.60009765625] which I don't know,
+- [5050.60009765625 - 5051.60009765625] maybe that's a bad or good thing.
+- [5051.60009765625 - 5052.60009765625] I don't know.
+- [5052.60009765625 - 5053.60009765625] This is just who I am.
+- [5053.60009765625 - 5054.60009765625] I think it's important.
+- [5055.60009765625 - 5057.60009765625] I think it's part of Bitcoin
+- [5057.60009765625 - 5060.60009765625] that guys like me can exist.
+- [5060.60009765625 - 5062.60009765625] And so that's why.
+- [5062.60009765625 - 5063.60009765625] That's why.
+- [5063.60009765625 - 5066.60009765625] So I can talk about it more next week.
+- [5066.60009765625 - 5067.60009765625] I obviously didn't leave us
+- [5067.60009765625 - 5069.60009765625] any time for Q&A,
+- [5069.60009765625 - 5070.60009765625] but that's why.
+- [5070.60009765625 - 5071.60009765625] And I wanted for people
+- [5071.60009765625 - 5075.60009765625] that actually wanted to know the answer,
+- [5075.60009765625 - 5077.60009765625] that is why.
+- [5077.60009765625 - 5079.60009765625] For people that just want to be mad at me
+- [5079.60009765625 - 5080.60009765625] and don't accept that answer,
+- [5080.60009765625 - 5081.60009765625] I also get that too.
+- [5081.60009765625 - 5082.60009765625] I don't blame you.
+- [5082.60009765625 - 5083.60009765625] No problem.
+- [5083.60009765625 - 5084.60009765625] I own that.
+- [5084.60009765625 - 5085.60009765625] I own that.
+- [5085.60009765625 - 5086.60009765625] Proof of work is all that matters
+- [5086.60009765625 - 5087.60009765625] at the end of the day.
+- [5087.60009765625 - 5089.60009765625] We'll either build a great company
+- [5089.60009765625 - 5090.60009765625] or we won't.
+- [5090.60009765625 - 5091.60009765625] And in the meantime,
+- [5091.60009765625 - 5093.60009765625] if you're upset,
+- [5094.60009765625 - 5096.60009765625] that's part of being the CEO.
+- [5096.60009765625 - 5099.60009765625] Direct your bullets this way.
+- [5099.60009765625 - 5100.60009765625] All right.
+- [5100.60009765625 - 5102.60009765625] I left us zero time for Q&A.
+- [5102.60009765625 - 5103.60009765625] I fucked that up.
+- [5103.60009765625 - 5104.60009765625] My bad.
+- [5104.60009765625 - 5105.60009765625] I was just running
+- [5105.60009765625 - 5107.60009765625] the line of credit explanation
+- [5107.60009765625 - 5109.60009765625] until I had to go.
+- [5109.60009765625 - 5111.60009765625] And I totally forgot about Q&A.
+- [5111.60009765625 - 5113.60009765625] So Dylan documented it all.
+- [5113.60009765625 - 5115.60009765625] I'm looking at it.
+- [5115.60009765625 - 5117.60009765625] We'll just run it back next week
+- [5117.60009765625 - 5119.60009765625] or maybe I can record an ad hoc
+- [5119.60009765625 - 5121.60009765625] and upload it to YouTube separately
+- [5121.60009765625 - 5123.60009765625] at some point in the week.
+- [5123.60009765625 - 5125.60009765625] But give me feedback on the line of credit.
+- [5125.60009765625 - 5127.60009765625] Give me feedback on the show.
+- [5127.60009765625 - 5129.60009765625] You'll hear from me hopefully tomorrow
+- [5129.60009765625 - 5130.60009765625] in a more professional way
+- [5130.60009765625 - 5131.60009765625] on the line of credit.
+- [5131.60009765625 - 5132.60009765625] I'll give you guys my tool
+- [5132.60009765625 - 5134.60009765625] and show you guys how exactly
+- [5134.60009765625 - 5136.60009765625] to live on a Bitcoin standard,
+- [5136.60009765625 - 5138.60009765625] to use Bitcoin credit products.
+- [5138.60009765625 - 5140.60009765625] Again, I never advocate for people
+- [5140.60009765625 - 5141.60009765625] to use it irresponsibly.
+- [5141.60009765625 - 5142.60009765625] It is a loan.
+- [5142.60009765625 - 5143.60009765625] It is credit.
+- [5143.60009765625 - 5144.60009765625] Of course there's risks.
+- [5144.60009765625 - 5146.60009765625] This is not financial advice.
+- [5146.60009765625 - 5147.60009765625] The people that accuse me
+- [5147.60009765625 - 5148.60009765625] of being an immoral asshole
+- [5148.60009765625 - 5149.60009765625] or a criminal,
+- [5149.60009765625 - 5151.60009765625] that's never the case.
+- [5151.60009765625 - 5152.60009765625] But I think that this tool
+- [5152.60009765625 - 5153.60009765625] can change your business,
+- [5153.60009765625 - 5154.60009765625] change your life,
+- [5154.60009765625 - 5155.60009765625] change your family
+- [5155.60009765625 - 5156.60009765625] like it has changed mine.
+- [5156.60009765625 - 5157.60009765625] I think it's the coolest thing
+- [5157.60009765625 - 5158.60009765625] I've ever built.
+- [5158.60009765625 - 5160.60009765625] So with that,
+- [5160.60009765625 - 5161.60009765625] I'm out of here.
+- [5161.60009765625 - 5162.60009765625] I got to run.
+- [5162.60009765625 - 5164.60009765625] My girlfriend's going to kill me.
+- [5164.60009765625 - 5165.60009765625] I love you guys.
+- [5165.60009765625 - 5167.60009765625] And I'll see you next week.
+- [5167.60009765625 - 5169.60009765625] I mean, we're going to announce
+- [5169.60009765625 - 5170.60009765625] we've got our BitLicense
+- [5170.60009765625 - 5171.60009765625] and our line of credit products.
+- [5171.60009765625 - 5173.60009765625] Huge week for Strike.
+- [5173.60009765625 - 5174.60009765625] So proud of the team.
+- [5174.60009765625 - 5176.60009765625] So I'm sure you'll hear from me
+- [5176.60009765625 - 5178.60009765625] plenty this week.
+- [5178.60009765625 - 5179.60009765625] So talk then.
+- [5179.60009765625 - 5180.60009765625] Peace and love.
+- [5180.60009765625 - 5181.60009765625] Take care.
