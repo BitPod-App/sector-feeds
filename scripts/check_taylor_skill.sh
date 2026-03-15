@@ -8,7 +8,7 @@ if ! command -v rg >/dev/null 2>&1; then
 fi
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-skill_root="${HOME}/.agents/skills/taylor"
+skill_root="/Users/cjarguello/bitpod-app/local-workspace/local-codex/skills/taylor"
 skill_file="${skill_root}/SKILL.md"
 app_mission_file="${skill_root}/references/app-mission-vision.md"
 agent_contract_file="${skill_root}/references/taylor-agent-contract.md"

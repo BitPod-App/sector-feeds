@@ -1,14 +1,15 @@
 # Taylor Skill Pointer (Repo-Portable)
 
-This repository points to the external canonical Taylor skill at:
+This repository points to the canonical local Taylor skill at:
 
-- `~/.agents/skills/taylor/SKILL.md`
+- `/Users/cjarguello/bitpod-app/local-workspace/local-codex/skills/taylor/SKILL.md`
 
 Do not duplicate or override Taylor's canonical behavior/spec in this repo.
 
 ## Taylor Skill Folder Status
 
-- Keep `~/.agents/skills/taylor` as the canonical Taylor spec + references (required).
+- Keep `/Users/cjarguello/bitpod-app/local-workspace/local-codex/skills/taylor` as the canonical local Taylor spec + references (required).
+- Treat `~/.agents/skills/taylor` only as legacy mirror state under review, not the preferred active path.
 - Current Taylor runtime code lives outside this repo in `bitpod-taylor-runtime`; `sector-feeds` should not depend on Taylor for steady-state feed execution.
 - Repo docs are pointer + optional health-check surfaces only; do not duplicate spec text.
 
@@ -22,9 +23,9 @@ Only consider deprecating the external skill folder after all are true:
 
 ## Canonical Reference Anchors
 
-- `~/.agents/skills/taylor/references/taylor-agent-contract.md`
-- `~/.agents/skills/taylor/references/report-template.md` (periodic + ad hoc)
-- `~/.agents/skills/taylor/references/bridge-gpt-team-sessions.md`
+- `/Users/cjarguello/bitpod-app/local-workspace/local-codex/skills/taylor/references/taylor-agent-contract.md`
+- `/Users/cjarguello/bitpod-app/local-workspace/local-codex/skills/taylor/references/report-template.md` (periodic + ad hoc)
+- `/Users/cjarguello/bitpod-app/local-workspace/local-codex/skills/taylor/references/bridge-gpt-team-sessions.md`
 
 ## Health Check
 
