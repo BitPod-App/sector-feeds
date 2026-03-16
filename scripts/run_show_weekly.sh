@@ -46,8 +46,7 @@ if [ -z "$TOOLS_COST_CTL" ]; then
   for candidate in \
     "$REPO_ROOT/../bitpod-tools/costs/cost_ctl.py" \
     "$REPO_ROOT/../tools/costs/cost_ctl.py" \
-    "/Users/cjarguello/BitPod-App/bitpod-tools/costs/cost_ctl.py" \
-    "/Users/cjarguello/BitPod-App/tools/costs/cost_ctl.py"
+    "/Users/cjarguello/BitPod-App/bitpod-tools/costs/cost_ctl.py"
   do
     if [ -f "$candidate" ]; then
       TOOLS_COST_CTL="$candidate"

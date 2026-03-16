@@ -24,8 +24,7 @@ cd "$REPO_ROOT"
 TOOLS_ROOT="${TOOLS_ROOT:-}"
 if [ -z "$TOOLS_ROOT" ]; then
   for candidate in \
-    "/Users/cjarguello/BitPod-App/bitpod-tools" \
-    "/Users/cjarguello/BitPod-App/tools"
+    "/Users/cjarguello/BitPod-App/bitpod-tools"
   do
     if [ -d "$candidate" ]; then
       TOOLS_ROOT="$candidate"

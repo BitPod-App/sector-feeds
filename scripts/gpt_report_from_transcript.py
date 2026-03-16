@@ -16,9 +16,7 @@ if str(REPO_ROOT) not in sys.path:
 def _resolve_tools_root() -> Path:
     candidates = [
         "/Users/cjarguello/BitPod-App/bitpod-tools",
-        "/Users/cjarguello/BitPod-App/tools",
         str(REPO_ROOT.parent / "bitpod-tools"),
-        str(REPO_ROOT.parent / "tools"),
     ]
     for raw in candidates:
         path = Path(raw).expanduser()
@@ -48,9 +46,7 @@ def _resolve_bridge_root() -> Path:
     candidates = [
         os.environ.get("BITPOD_GPT_BRIDGE_ROOT", "").strip(),
         "/Users/cjarguello/BitPod-App/bitpod-tools/gpt_bridge",
-        "/Users/cjarguello/BitPod-App/tools/gpt_bridge",
         str(REPO_ROOT.parent / "bitpod-tools" / "gpt_bridge"),
-        str(REPO_ROOT.parent / "tools" / "gpt_bridge"),
     ]
     for raw in candidates:
         if not raw:

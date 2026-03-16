@@ -40,8 +40,7 @@ if [ -z "$TAYLOR_BIN" ]; then
   else
     for root in \
       "${TOOLS_ROOT:-}" \
-      "/Users/cjarguello/BitPod-App/bitpod-tools" \
-      "/Users/cjarguello/BitPod-App/tools"
+      "/Users/cjarguello/BitPod-App/bitpod-tools"
     do
       if [ -n "$root" ] && [ -x "${root}/taylor/bin/taylor" ]; then
         TAYLOR_BIN="${root}/taylor/bin/taylor"

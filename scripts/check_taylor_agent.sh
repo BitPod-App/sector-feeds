@@ -33,8 +33,6 @@ DEFAULT_TOOLS_ROOTS=(
   "${repo_root}/../tools"
   "${repo_root}/../bitpod-tools/tools"
   "/Users/cjarguello/BitPod-App/bitpod-tools"
-  "/Users/cjarguello/BitPod-App/tools"
-  "/Users/cjarguello/bitpod-app/tools"
 )
 
 resolve_taylor_bin() {
