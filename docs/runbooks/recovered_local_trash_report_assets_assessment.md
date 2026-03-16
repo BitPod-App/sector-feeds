@@ -4,13 +4,13 @@
 
 Assessment of potentially useful report-related files found under:
 
-- `/Users/cjarguello/bitpod-app/local-workspace/local-trash-delete`
+- `/Users/cjarguello/BitPod-App/local-workspace/local-trash-delete`
 
 Focus: prompts/templates and GPT-report-output-relevant contracts.
 
 ## High-value recovered asset
 
-- Source: `/Users/cjarguello/bitpod-app/local-workspace/local-trash-delete/local-disposed-20260227__local-references__local-agents__local-taylor__weekly-report-template.md`
+- Source: `/Users/cjarguello/BitPod-App/local-workspace/local-trash-delete/local-disposed-20260227__local-references__local-agents__local-taylor__weekly-report-template.md`
 - Value: high
 - Why:
   - provides a deterministic report contract

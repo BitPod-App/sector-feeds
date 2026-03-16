@@ -24,7 +24,7 @@ bash scripts/experimental_weekly_ctl.sh render-experimental --report-md /absolut
 Primary artifacts:
 - `artifacts/private/experimental_weekly/jack_mallers_show_intake_snapshot.json`
 - `artifacts/private/weekly_bundles/weekly_critical_bundle.json` (if generated)
-- `/Users/cjarguello/bitpod-app/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json` (if generated)
+- `/Users/cjarguello/BitPod-App/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json` (if generated)
 
 ```text
 You are running and evaluating the experimental weekly BTC gate flow.
@@ -33,7 +33,7 @@ Inputs:
 1) artifacts/private/experimental_weekly/jack_mallers_show_intake_snapshot.json
    - use `shared_permalink_contract` if present as the preferred intake/discovery source
 2) artifacts/private/weekly_bundles/weekly_critical_bundle.json (if present)
-3) /Users/cjarguello/bitpod-app/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json (if present)
+3) /Users/cjarguello/BitPod-App/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json (if present)
 4) transcripts/jack_mallers_show/jack_mallers_status.json
 
 Task:

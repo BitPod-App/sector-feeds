@@ -70,7 +70,7 @@ Human-readable:
 
 ## Validation Commands
 
-From `/Users/cjarguello/bitpod-app/bitpod`:
+From `/Users/cjarguello/BitPod-App/bitpod`:
 
 ```bash
 python3 -m unittest tests/test_intake_gate_policy.py
