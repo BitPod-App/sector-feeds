@@ -36,6 +36,10 @@ bash scripts/check_taylor_skill.sh
 bash scripts/check_taylor_agent.sh
 ```
 
+Behavior:
+- If Taylor prerequisites are missing in local workspace context, these scripts return `SKIP` with an explicit reason (exit 0).
+- Set `BITPOD_TAYLOR_PREREQ_STRICT=1` to force hard-fail behavior.
+
 ## Review Bundle Gate
 
 - No bundle = no review claim.
