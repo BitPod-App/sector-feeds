@@ -86,7 +86,7 @@ printf 'Missing repo config count: %d\n' "$missing"
 
 section "Stale path references in workspace .codex"
 if command -v rg >/dev/null 2>&1; then
-  rg -n "/Users/cjarguello/bitpod-app-rebuild|bitpod-app-retired|/Users/cjarguello/bitpod-app" \
+  rg -n "/Users/cjarguello/bitpod-app-rebuild|/Users/cjarguello/bitpod-app-retired" \
     "$workspace_root/.codex" "$workspace_root"/*/.codex 2>/dev/null || true
 else
   warn "ripgrep not found; skipping stale path scan"
