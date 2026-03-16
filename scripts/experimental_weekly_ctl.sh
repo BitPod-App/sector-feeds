@@ -186,7 +186,7 @@ cmd_render_legacy() {
 cmd_render_experimental() {
   local report_md=""
   local output_bundle="$REPO_ROOT/artifacts/private/weekly_bundles/weekly_critical_bundle.json"
-  local output_gate="/Users/cjarguello/bitpod-app/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json"
+  local output_gate="/Users/cjarguello/BitPod-App/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json"
 
   while [ "$#" -gt 0 ]; do
     case "$1" in
@@ -221,7 +221,7 @@ cmd_render_experimental() {
     --report-md "$report_md" \
     --output-json "$output_bundle"
 
-  python3 /Users/cjarguello/bitpod-app/bitregime-core/scripts/gate_weekly_bundle.py \
+  python3 /Users/cjarguello/BitPod-App/bitregime-core/scripts/gate_weekly_bundle.py \
     --bundle-json "$output_bundle" \
     --output-json "$output_gate"
 

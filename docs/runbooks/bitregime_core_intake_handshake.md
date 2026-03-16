@@ -98,7 +98,7 @@ Processing-state semantics used by bitpod in this handshake:
 
 ## Adapter + Validation Command Flow (Ad Hoc)
 
-From `/Users/cjarguello/bitpod-app/bitpod`:
+From `/Users/cjarguello/BitPod-App/bitpod`:
 
 ```bash
 # 1) Validate bitregime-core intake contract and compute pending rows for a deck context.

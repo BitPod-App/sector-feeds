@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-TOOLS_ROOT="${TOOLS_ROOT:-/Users/cjarguello/bitpod-app/tools}"
+TOOLS_ROOT="${TOOLS_ROOT:-/Users/cjarguello/BitPod-App/tools}"
 TAYLOR_BIN="${TAYLOR_BIN:-${TOOLS_ROOT}/taylor/bin/taylor}"
 
 if [[ ! -x "${TAYLOR_BIN}" ]]; then
