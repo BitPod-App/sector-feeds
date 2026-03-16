@@ -218,6 +218,27 @@ QUIET=1 make ops-cycle SHOW_KEY=jack_mallers_show
 # Legacy weekly alias (writes artifacts/jack_mallers_show_weekly_report.md)
 bash scripts/report_mallers_weekly_status.sh
 
+
+## Codex Workspace Rebuild Diagnostics
+
+When debugging BitPod workspace cutover/path issues on macOS, run:
+
+```bash
+# explicit root
+bash scripts/diagnose_codex_workspace_rebuild.sh /Users/cjarguello/BitPod-App
+
+# or auto-detect (prefers BitPod-App, then falls back to bitpod-app)
+bash scripts/diagnose_codex_workspace_rebuild.sh
+```
+
+This script checks:
+- root `.codex` presence and `org-workspace.toml` root path,
+- allows canonical root path casing (`BitPod-App`) with lowercase fallback (`bitpod-app`),
+- repo-local `.codex/config.toml` coverage across the active repo set,
+- stale references to rebuild/retired paths,
+- whether Taylor health-check scripts are being run from the correct repo root,
+- origin remotes + current branch for each active repo.
+
 # Track-specific runbooks/prompts:
 # - docs/runbooks/legacy_tuesday_report.md
 # - docs/prompts/legacy_tuesday_report_prompt.md

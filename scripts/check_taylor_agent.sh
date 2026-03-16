@@ -2,13 +2,48 @@
 
 set -euo pipefail
 
-TOOLS_ROOT="${TOOLS_ROOT:-/Users/cjarguello/BitPod-App/tools}"
-TAYLOR_BIN="${TAYLOR_BIN:-${TOOLS_ROOT}/taylor/bin/taylor}"
+if ! command -v rg >/dev/null 2>&1; then
+  echo "Missing dependency: rg (ripgrep). Install with: brew install ripgrep"
+  exit 1
+fi
+
+DEFAULT_TOOLS_ROOTS=(
+  "/Users/cjarguello/BitPod-App/tools"
+  "/Users/cjarguello/bitpod-app/tools"
+)
+
+resolve_taylor_bin() {
+  if [[ -n "${TAYLOR_BIN:-}" ]]; then
+    printf '%s' "${TAYLOR_BIN}"
+    return
+  fi
+
+  if [[ -n "${TOOLS_ROOT:-}" ]]; then
+    printf '%s' "${TOOLS_ROOT}/taylor/bin/taylor"
+    return
+  fi
+
+  local root=""
+  for root in "${DEFAULT_TOOLS_ROOTS[@]}"; do
+    if [[ -x "${root}/taylor/bin/taylor" ]]; then
+      printf '%s' "${root}/taylor/bin/taylor"
+      return
+    fi
+  done
+
+  printf '%s' "${DEFAULT_TOOLS_ROOTS[0]}/taylor/bin/taylor"
+}
+
+TAYLOR_BIN="$(resolve_taylor_bin)"
 
 if [[ ! -x "${TAYLOR_BIN}" ]]; then
   echo "Missing Taylor runtime binary: ${TAYLOR_BIN}"
+  echo "Checked defaults: ${DEFAULT_TOOLS_ROOTS[*]}"
+  echo "Override with TOOLS_ROOT=/path/to/tools or TAYLOR_BIN=/path/to/taylor"
   exit 1
 fi
+
+echo "Using Taylor runtime: ${TAYLOR_BIN}"
 
 WHOAMI_OUT="$(${TAYLOR_BIN} whoami)"
 if [[ -z "${WHOAMI_OUT}" ]]; then
