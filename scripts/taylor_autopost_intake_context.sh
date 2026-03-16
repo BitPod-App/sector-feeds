@@ -38,10 +38,16 @@ if [ -z "$TAYLOR_BIN" ]; then
   if command -v taylor >/dev/null 2>&1; then
     TAYLOR_BIN="$(command -v taylor)"
   else
-    TOOLS_ROOT="${TOOLS_ROOT:-/Users/cjarguello/BitPod-App/tools}"
-    if [ -x "${TOOLS_ROOT}/taylor/bin/taylor" ]; then
-      TAYLOR_BIN="${TOOLS_ROOT}/taylor/bin/taylor"
-    fi
+    for root in \
+      "${TOOLS_ROOT:-}" \
+      "/Users/cjarguello/BitPod-App/bitpod-tools" \
+      "/Users/cjarguello/BitPod-App/tools"
+    do
+      if [ -n "$root" ] && [ -x "${root}/taylor/bin/taylor" ]; then
+        TAYLOR_BIN="${root}/taylor/bin/taylor"
+        break
+      fi
+    done
   fi
 fi
 

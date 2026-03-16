@@ -52,7 +52,7 @@ Automation store currently contains eight paused weekly jobs:
 - `mallers-tuesday-verify-2`
 - `mallers-tuesday-verify-3`
 
-All inspected automation TOMLs still point at the obsolete workspace cwd:
+All inspected automation TOMLs previously pointed at the obsolete workspace cwd:
 - `/Users/cjarguello/BitPod-App/bitpod`
 
 The canonical repo path is now:

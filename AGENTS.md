@@ -79,7 +79,8 @@ When ending a Bridge GPT planning/review session, memory summary must be structu
 If `taylor` is not on your PATH yet:
 
 ```bash
-export PATH="/Users/cjarguello/BitPod-App/tools/taylor/bin:$PATH"
+export TOOLS_ROOT="/Users/cjarguello/BitPod-App/bitpod-tools"
+export PATH="${TOOLS_ROOT}/taylor/bin:$PATH"
 ```
 
 ## QA Modes

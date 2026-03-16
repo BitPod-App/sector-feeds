@@ -13,7 +13,21 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-TOOLS_ROOT = Path("/Users/cjarguello/BitPod-App/tools")
+def _resolve_tools_root() -> Path:
+    candidates = [
+        "/Users/cjarguello/BitPod-App/bitpod-tools",
+        "/Users/cjarguello/BitPod-App/tools",
+        str(REPO_ROOT.parent / "bitpod-tools"),
+        str(REPO_ROOT.parent / "tools"),
+    ]
+    for raw in candidates:
+        path = Path(raw).expanduser()
+        if (path / "costs" / "cost_ctl.py").exists() or (path / "gpt_bridge" / "bridge_chat.sh").exists():
+            return path
+    return Path("/Users/cjarguello/BitPod-App/bitpod-tools")
+
+
+TOOLS_ROOT = _resolve_tools_root()
 TOOLS_COSTS = TOOLS_ROOT / "costs"
 if str(TOOLS_COSTS) not in sys.path:
     sys.path.insert(0, str(TOOLS_COSTS))

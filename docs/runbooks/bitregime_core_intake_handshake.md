@@ -98,7 +98,7 @@ Processing-state semantics used by bitpod in this handshake:
 
 ## Adapter + Validation Command Flow (Ad Hoc)
 
-From `/Users/cjarguello/BitPod-App/bitpod`:
+From `/Users/cjarguello/BitPod-App/sector-feeds`:
 
 ```bash
 # 1) Validate bitregime-core intake contract and compute pending rows for a deck context.
@@ -124,7 +124,7 @@ bash scripts/check_bitregime_core_intake_handshake.sh \
 ## Example Paths
 
 - Input (bitregime-core): `../bitregime-core/artifacts/intake/jack_mallers_show_intake.json`
-- Output (bitpod): `artifacts/coordination/bitregime_intake_handshake_jack_mallers_show_deck_weekly_btc.json`
+- Output (sector-feeds): `artifacts/coordination/bitregime_intake_handshake_jack_mallers_show_deck_weekly_btc.json`
 - Processing state store: `index/deck_state.json`
 
 ## Deterministic Validation Output
