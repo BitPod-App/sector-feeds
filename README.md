@@ -95,6 +95,8 @@ Outputs
 
 Artifact tracking policy:
 - Runtime/cache outputs are local-only and git-ignored (for example: `cache/`, `.wrangler/`, `artifacts/public/`, `artifacts/private/`, cost logs, and feedback logs).
+- Retained per-run GPT QA artifacts are written to `artifacts/private/gpt-qa/`.
+- Latest deploy preview pointer is written to `artifacts/private/coordination/latest_deploy_url.txt`.
 - Canonical transcript artifacts under `transcripts/` remain tracked unless explicitly changed by project policy.
 - Before push, run `make audit` to enforce size guard + unit tests.
 

@@ -35,8 +35,8 @@ echo "$DEPLOY_OUT"
 
 LATEST_URL="$(printf '%s\n' "$DEPLOY_OUT" | grep -Eo 'https://[a-z0-9]+\.bitpod-public-permalinks\.pages\.dev' | tail -n 1 || true)"
 if [ -n "$LATEST_URL" ]; then
-  mkdir -p "$REPO_ROOT/artifacts/coordination"
-  printf '%s\n' "$LATEST_URL" > "$REPO_ROOT/artifacts/coordination/latest_deploy_url.txt"
+  mkdir -p "$REPO_ROOT/artifacts/private/coordination"
+  printf '%s\n' "$LATEST_URL" > "$REPO_ROOT/artifacts/private/coordination/latest_deploy_url.txt"
   echo "latest_deploy_url_saved=$LATEST_URL"
 fi
 

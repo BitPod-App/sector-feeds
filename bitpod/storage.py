@@ -288,7 +288,7 @@ def write_gpt_review_artifact(
     payload: dict[str, Any],
     artifact_tag: str | None = None,
 ) -> Path:
-    artifact_root = ROOT / "artifacts" / "gpt-qa"
+    artifact_root = ROOT / "artifacts" / "private" / "gpt-qa"
     artifact_root.mkdir(parents=True, exist_ok=True)
     slug = slugify(show_key)
     raw_tag = str(artifact_tag or payload.get("run_id") or now_iso()).strip()

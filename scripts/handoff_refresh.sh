@@ -23,7 +23,9 @@ if not board_json.exists():
     raise SystemExit(f"Missing board JSON: {board_json}. Run `make track-status-board SHOW_KEY={show_key}` first.")
 
 board = json.loads(board_json.read_text(encoding="utf-8"))
-deploy_file = coord / "latest_deploy_url.txt"
+private_deploy_file = art / "private" / "coordination" / "latest_deploy_url.txt"
+legacy_deploy_file = coord / "latest_deploy_url.txt"
+deploy_file = private_deploy_file if private_deploy_file.exists() else legacy_deploy_file
 deploy_url = deploy_file.read_text(encoding="utf-8").strip() if deploy_file.exists() else None
 
 status = board.get("shared_permalink_contract") or {}
@@ -53,4 +55,3 @@ out = coord / "current_handoff.md"
 out.write_text("\n".join(lines) + "\n", encoding="utf-8")
 print(out)
 PY
-
