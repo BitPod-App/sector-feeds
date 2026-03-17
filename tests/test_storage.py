@@ -94,11 +94,23 @@ class StorageTests(unittest.TestCase):
                     "show_key": "jack_mallers_show",
                     "run_id": "20260225T190000Z",
                     "run_status": "failed",
+                    "new_episode_detected": True,
+                    "included_in_pointer": False,
+                    "episode_title": "Big Interview",
+                    "episode_guid": "ep-1",
+                    "episode_url": "https://example.com/ep-1",
+                    "published_at_utc": "2026-02-25T19:00:00+00:00",
                     "transcript_provenance": "failed",
+                    "source_mode": None,
+                    "transcript_quality_state": "failed",
+                    "transcript_degraded": False,
                     "failure_stage": "transcription",
                     "failure_reason": "quota exceeded",
                     "pointer_path": "transcripts/jack_mallers_show/jack_mallers.md",
+                    "public_permalink_status_url": "https://bitpod-public-permalinks.pages.dev/abc123/status.json",
+                    "public_permalink_intake_url": "https://bitpod-public-permalinks.pages.dev/abc123/intake.md",
                     "public_permalink_transcript_url": "https://bitpod-public-permalinks.pages.dev/abc123/transcript.md",
+                    "public_permalink_discovery_url": "https://bitpod-public-permalinks.pages.dev/abc123/discovery.json",
                 }
                 review_path = write_gpt_review_request(
                     show_key="jack_mallers_show",
@@ -110,8 +122,9 @@ class StorageTests(unittest.TestCase):
 
             self.assertTrue(review_path.exists())
             review_text = review_path.read_text(encoding="utf-8")
-            self.assertIn("preferred_gpt_input_public_transcript_url", review_text)
-            self.assertIn("https://bitpod-public-permalinks.pages.dev/abc123/transcript.md", review_text)
+            self.assertIn("Use the public permalink bundle as the canonical input surface", review_text)
+            self.assertIn("status_json_url: `https://bitpod-public-permalinks.pages.dev/abc123/status.json`", review_text)
+            self.assertIn("### 6. Basic BTC output report", review_text)
             self.assertIn("transcript_provenance: `failed`", review_text)
 
     def test_write_public_permalink_artifacts(self) -> None:
@@ -159,8 +172,19 @@ class StorageTests(unittest.TestCase):
                 payload = {
                     "run_id": "20260225T190000Z",
                     "run_status": "ok",
+                    "new_episode_detected": True,
                     "included_in_pointer": True,
                     "sector_tags": ["Bitcoiners"],
+                    "episode_title": "Big Interview",
+                    "episode_guid": "ok-guid",
+                    "episode_url": "https://example.com/ok",
+                    "published_at_utc": "2026-02-25T19:00:00+00:00",
+                    "transcript_provenance": "youtube_auto_captions",
+                    "source_mode": "captions",
+                    "transcript_quality_state": "usable",
+                    "transcript_degraded": False,
+                    "failure_stage": None,
+                    "failure_reason": None,
                     "latest_episode_published_at_utc": "2026-02-25T19:00:00+00:00",
                     "pointer_updated_at_utc": "2026-02-25T19:05:00+00:00",
                     "pointer_path": str(pointer),
@@ -198,11 +222,15 @@ class StorageTests(unittest.TestCase):
             self.assertIn("# Transcript Intake", intake_text)
             self.assertIn("[discovery.json](discovery.json)", intake_text)
             self.assertIn("[transcript.md](transcript.md)", intake_text)
+            self.assertIn("new_episode_detected: `True`", intake_text)
+            self.assertIn("episode_title: `Big Interview`", intake_text)
+            self.assertIn("transcript_provenance: `youtube_auto_captions`", intake_text)
             transcript_text = transcript_path.read_text(encoding="utf-8")
             self.assertIn("# Episode", transcript_text)
 
             status_payload = json.loads(status_path.read_text(encoding="utf-8"))
             self.assertEqual(status_payload["run_status"], "ok")
+            self.assertTrue(status_payload["new_episode_detected"])
             self.assertEqual(status_payload["robots"], "noindex, nofollow, noarchive")
             self.assertEqual(status_payload["sector_tags"], ["Bitcoiners"])
             self.assertEqual(status_payload["format_tags"], [])
@@ -213,6 +241,14 @@ class StorageTests(unittest.TestCase):
             self.assertEqual(status_payload["feed_unit_type"], "series_or_playlist_or_feed")
             self.assertEqual(status_payload["intake_path"], "intake.md")
             self.assertEqual(status_payload["transcript_path"], "transcript.md")
+            self.assertEqual(status_payload["episode_title"], "Big Interview")
+            self.assertEqual(status_payload["episode_guid"], "ok-guid")
+            self.assertEqual(status_payload["episode_url"], "https://example.com/ok")
+            self.assertEqual(status_payload["published_at_utc"], "2026-02-25T19:00:00+00:00")
+            self.assertEqual(status_payload["transcript_provenance"], "youtube_auto_captions")
+            self.assertEqual(status_payload["source_mode"], "captions")
+            self.assertEqual(status_payload["transcript_quality_state"], "usable")
+            self.assertFalse(status_payload["transcript_degraded"])
             self.assertEqual(status_payload["processed_count"], 1)
             self.assertEqual(status_payload["processed_total_count"], 1)
             self.assertEqual(status_payload["unprocessed_count"], 1)

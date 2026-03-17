@@ -51,6 +51,26 @@ def evaluate_intake_readiness(status_payload: dict[str, Any]) -> dict[str, Any]:
             errors.append("unexpected_intake_path")
         if status_json.get("discovery_path") != "discovery.json":
             errors.append("unexpected_discovery_path")
+        required_status_keys = (
+            "show_key",
+            "run_id",
+            "run_status",
+            "new_episode_detected",
+            "included_in_pointer",
+            "episode_title",
+            "episode_guid",
+            "episode_url",
+            "published_at_utc",
+            "transcript_provenance",
+            "source_mode",
+            "transcript_quality_state",
+            "transcript_degraded",
+            "failure_stage",
+            "failure_reason",
+        )
+        for key in required_status_keys:
+            if key not in status_json:
+                errors.append(f"missing_status_key:{key}")
 
     discovery_json = _read_json(required_paths["public_permalink_discovery_path"]) if "public_permalink_discovery_path" in required_paths else None
     if discovery_json is None:

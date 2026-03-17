@@ -423,9 +423,14 @@ def sync_show(
         "run_started_at_utc": run_started_at,
         "run_finished_at_utc": None,
         "run_status": "failed",
+        "new_episode_detected": False,
         "latest_episode_guid": None,
         "latest_episode_title": None,
         "latest_episode_published_at_utc": None,
+        "episode_guid": None,
+        "episode_title": None,
+        "episode_url": None,
+        "published_at_utc": None,
         "attempted_episode_guid": None,
         "attempted_episode_title": None,
         "attempted_source_type": None,
@@ -438,6 +443,14 @@ def sync_show(
         "transcript_provenance": "failed",
         "transcript_source_url": None,
         "transcript_source_type": None,
+        "source_mode": None,
+        "fallback_used": False,
+        "fallback_note": None,
+        "transcript_quality_state": "failed",
+        "transcript_degraded": False,
+        "quality_word_count": None,
+        "quality_repetition_ratio_5gram": None,
+        "quality_lexical_diversity": None,
         "ready_via_permalink": False,
         "public_permalink_id": None,
         "public_permalink_intake_path": None,
@@ -552,9 +565,14 @@ def sync_show(
     latest_episode_succeeded = False
 
     if latest_episode is not None:
+        status_payload["new_episode_detected"] = True
         status_payload["latest_episode_guid"] = str(latest_episode.guid)
         status_payload["latest_episode_title"] = latest_episode.title
         status_payload["latest_episode_published_at_utc"] = latest_episode.published_at.isoformat()
+        status_payload["episode_guid"] = str(latest_episode.guid)
+        status_payload["episode_title"] = latest_episode.title
+        status_payload["episode_url"] = latest_episode.source_url
+        status_payload["published_at_utc"] = latest_episode.published_at.isoformat()
 
     if not selected:
         status_payload["failure_stage"] = "discovery"
@@ -623,6 +641,7 @@ def sync_show(
         status_payload["ready_via_permalink"] = True
         status_payload["pointer_updated_at_utc"] = now_iso()
         status_payload["run_status"] = "ok"
+        status_payload["transcript_quality_state"] = "usable"
     else:
         status_payload["included_in_pointer"] = False
         status_payload["ready_via_permalink"] = False
@@ -640,11 +659,26 @@ def sync_show(
         status_payload["transcript_provenance"] = latest_payload.get("transcript_provenance", "failed")
         status_payload["transcript_source_url"] = latest_payload.get("transcript_source_url")
         status_payload["transcript_source_type"] = latest_payload.get("transcript_source_type")
+        status_payload["source_mode"] = latest_payload.get("source_mode")
+        status_payload["fallback_used"] = bool(latest_payload.get("fallback_used", False))
+        if status_payload["fallback_used"]:
+            status_payload["fallback_note"] = "Caption-first path was attempted, then the run fell back to direct audio transcription."
+        status_payload["quality_word_count"] = latest_payload.get("quality_word_count")
+        status_payload["quality_repetition_ratio_5gram"] = latest_payload.get("quality_repetition_ratio_5gram")
+        status_payload["quality_lexical_diversity"] = latest_payload.get("quality_lexical_diversity")
+        status_payload["transcript_degraded"] = bool(latest_payload.get("transcript_degraded", False))
+        if status_payload["run_status"] == "ok" and status_payload["included_in_pointer"]:
+            status_payload["transcript_quality_state"] = "degraded" if status_payload["transcript_degraded"] else "usable"
+        elif status_payload["new_episode_detected"]:
+            status_payload["transcript_quality_state"] = "failed"
         if status_payload["attempted_episode_guid"] is None:
             status_payload["attempted_episode_guid"] = str(latest_episode.guid)
             status_payload["attempted_episode_title"] = latest_episode.title
             status_payload["attempted_source_type"] = getattr(latest_episode, "source_type", "unknown")
             status_payload["attempted_source_url"] = latest_episode.source_url
+
+    if not status_payload["new_episode_detected"]:
+        status_payload["transcript_quality_state"] = "no-new-episode"
 
     status_payload["run_finished_at_utc"] = now_iso()
     status_json_path, status_md_path = write_run_status_artifacts(
@@ -760,7 +794,13 @@ def _maybe_use_captions(
         transcript_provenance=payload.provenance,
         transcript_source_url=caption_episode.source_url,
         transcript_source_type=getattr(caption_episode, "source_type", "unknown"),
+        transcript_degraded=False,
+        quality_word_count=payload.quality.get("word_count"),
+        quality_repetition_ratio_5gram=payload.quality.get("repetition_ratio_5gram"),
+        quality_lexical_diversity=payload.quality.get("lexical_diversity"),
         matched_source_url=selected_episode.source_url if caption_episode.source_url != selected_episode.source_url else None,
+        caption_attempted=True,
+        fallback_used=False,
         gpt_status="pending",
         gpt_processed_at=None,
     )
@@ -898,6 +938,10 @@ def _process_episode(
         transcript_provenance="direct_audio_transcription",
         transcript_source_url=episode.source_url,
         transcript_source_type=source_type,
+        transcript_degraded=False,
+        caption_attempted=try_captions,
+        fallback_used=bool(try_captions),
+        caption_target_source_url=getattr(caption_episode, "source_url", None) if try_captions else None,
         gpt_status="pending",
         gpt_processed_at=None,
     )

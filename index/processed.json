@@ -40,6 +40,29 @@
       "transcript_path": "/Users/cjarguello/bitpod/transcripts/jack_mallers_show/2026/2026-02-17__japan-ai-the-next-liquidity-shock-for-bitcoin.md",
       "transcription_model": "youtube_caption_auto",
       "updated_at": "2026-02-19T02:32:09.362621+00:00"
+    },
+    "jack_mallers_show::yt:video:dnAMN9Kn8zI": {
+      "canonical_episode_id": "c3b39edb6d6eeff2",
+      "feed_episode_id": "yt:video:dnAMN9Kn8zI",
+      "gpt_processed_at": null,
+      "gpt_status": "pending",
+      "matched_source_url": null,
+      "media_url": null,
+      "published_at": "2026-03-16T23:42:10+00:00",
+      "sector_feed_id": "jack_mallers_show",
+      "source_episode_id": "yt:video:dnAMN9Kn8zI",
+      "source_mode": "captions",
+      "source_type": "youtube_video",
+      "source_url": "https://www.youtube.com/watch?v=dnAMN9Kn8zI",
+      "status": "ok",
+      "transcript_path": "/Users/cjarguello/BitPod-App/sector-feeds/transcripts/jack_mallers_show/2026/2026-03-16__uncle-not-taco-bitcoin-in-a-world-on-fire.md",
+      "transcript_plain_path": "/Users/cjarguello/BitPod-App/sector-feeds/transcripts/jack_mallers_show/2026/2026-03-16__uncle-not-taco-bitcoin-in-a-world-on-fire_plain.txt",
+      "transcript_provenance": "youtube_auto_captions",
+      "transcript_segments_path": "/Users/cjarguello/BitPod-App/sector-feeds/transcripts/jack_mallers_show/2026/2026-03-16__uncle-not-taco-bitcoin-in-a-world-on-fire_segments.jsonl",
+      "transcript_source_type": "youtube_video",
+      "transcript_source_url": "https://www.youtube.com/watch?v=dnAMN9Kn8zI",
+      "transcription_model": "youtube_auto_captions",
+      "updated_at": "2026-03-17T04:00:14.944156+00:00"
     }
   }
 }

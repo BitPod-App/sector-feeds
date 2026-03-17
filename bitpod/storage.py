@@ -200,51 +200,82 @@ def write_gpt_review_request(
     review_path.parent.mkdir(parents=True, exist_ok=True)
 
     lines = [
-        "# GPT Review Request",
+        "# GPT QA Handoff",
         "",
-        "Use this file to review the latest ingestion/transcription run and provide actionable QA feedback.",
+        "Use the public permalink bundle as the canonical input surface for this run.",
+        "Do not rely on local filesystem paths as the primary evidence surface.",
         "",
-        "## Run Summary",
+        "## Canonical Permalink Bundle",
+        f"- status_json_url: `{payload.get('public_permalink_status_url')}`",
+        f"- intake_md_url: `{payload.get('public_permalink_intake_url')}`",
+        f"- transcript_md_url: `{payload.get('public_permalink_transcript_url')}`",
+        f"- discovery_json_url: `{payload.get('public_permalink_discovery_url')}`",
+        "",
+        "## Run Contract Summary",
         f"- show_key: `{payload.get('show_key')}`",
         f"- run_id: `{payload.get('run_id')}`",
         f"- run_status: `{payload.get('run_status')}`",
-        f"- latest_episode_title: `{payload.get('latest_episode_title')}`",
-        f"- latest_episode_guid: `{payload.get('latest_episode_guid')}`",
-        f"- latest_episode_published_at_utc: `{payload.get('latest_episode_published_at_utc')}`",
-        f"- included_in_pointer: `{payload.get('included_in_pointer')}`",
+        f"- new_episode_detected: `{bool(payload.get('new_episode_detected'))}`",
+        f"- included_in_pointer: `{bool(payload.get('included_in_pointer'))}`",
+        f"- episode_title: `{payload.get('episode_title') or payload.get('latest_episode_title')}`",
+        f"- episode_guid: `{payload.get('episode_guid') or payload.get('latest_episode_guid')}`",
+        f"- episode_url: `{payload.get('episode_url') or payload.get('attempted_source_url')}`",
+        f"- published_at_utc: `{payload.get('published_at_utc') or payload.get('latest_episode_published_at_utc')}`",
         f"- transcript_provenance: `{payload.get('transcript_provenance', 'failed')}`",
-        f"- transcript_source_type: `{payload.get('transcript_source_type')}`",
-        f"- transcript_source_url: `{payload.get('transcript_source_url')}`",
+        f"- source_mode: `{payload.get('source_mode')}`",
+        f"- transcript_quality_state: `{payload.get('transcript_quality_state')}`",
+        f"- transcript_degraded: `{bool(payload.get('transcript_degraded'))}`",
+        f"- fallback_used: `{bool(payload.get('fallback_used'))}`",
+        f"- fallback_note: `{payload.get('fallback_note')}`",
+        f"- failure_stage: `{payload.get('failure_stage')}`",
+        f"- failure_reason: `{payload.get('failure_reason')}`",
         "",
-        "## Artifacts",
-        f"- preferred_gpt_input_public_transcript_url: `{payload.get('public_permalink_transcript_url')}`",
-        f"- public_permalink_transcript_url: `{payload.get('public_permalink_transcript_url')}`",
-        f"- public_permalink_intake_url: `{payload.get('public_permalink_intake_url')}`",
-        f"- public_permalink_status_url: `{payload.get('public_permalink_status_url')}`",
-        f"- public_permalink_discovery_url: `{payload.get('public_permalink_discovery_url')}`",
-        f"- pointer_path: `{payload.get('pointer_path')}`",
+        "## Secondary Local Debug Paths",
         f"- status_json_path: `{payload.get('status_json_path')}`",
         f"- status_md_path: `{payload.get('status_md_path')}`",
+        f"- pointer_path: `{payload.get('pointer_path')}`",
         f"- plain_artifact_path: `{payload.get('plain_artifact_path')}`",
         f"- segments_artifact_path: `{payload.get('segments_artifact_path')}`",
         f"- gpt_review_artifact_path: `{payload.get('gpt_review_artifact_path')}`",
         "",
-        "## Failure Context",
-        f"- failure_stage: `{payload.get('failure_stage')}`",
-        f"- failure_reason: `{payload.get('failure_reason')}`",
-        f"- suggested_next_action: `{payload.get('suggested_next_action')}`",
+        "## Required ChatGPT Tasks",
+        "1. Determine whether there is a new episode or not.",
+        "2. Assess the intake/transcript state as exactly one of: `usable`, `degraded`, `failed`, `no-new-episode`.",
+        "3. Provide immediate QA feedback for this run.",
+        "4. Provide intake-system improvement feedback based on the evidence in the permalink bundle.",
+        "5. Produce a basic BTC output report whose wording changes honestly based on intake outcome.",
         "",
-        "## GPT Instructions",
-        "- If run failed: explain root cause, likely fix, and lowest-risk retry path.",
-        "- If run succeeded: assess transcript quality (clarity, duplication, structure, speaker usefulness).",
-        "- Provide concise patch recommendations to improve reliability and quality.",
-        "- Flag whether transcript is usable for downstream macro/bitcoin event processing.",
+        "## Truthful Output Rules",
+        "- If a successful new episode intake occurred: mention the episode title and transcript provenance, and treat the episode as low-weight context by default unless clearly material.",
+        "- If no new episode was detected: explicitly say no new episode was incorporated.",
+        "- If a new episode was detected but intake/transcript failed: explicitly say the episode was not incorporated due to intake failure.",
+        "- If transcript quality was degraded: explicitly say the episode was incorporated only as low-confidence context.",
+        "- Always produce the BTC output report, even if intake failed or no new episode exists.",
         "",
-        "## Expected GPT Output Format",
-        "1. Status assessment (`usable` / `degraded` / `failed`)",
-        "2. Quality findings (ordered by severity)",
-        "3. Suggested fixes (specific and testable)",
-        "4. Retry recommendation (yes/no + command)",
+        "## Required ChatGPT Response Structure",
+        "### 1. Intake status assessment",
+        "Return exactly one of: `usable`, `degraded`, `failed`, `no-new-episode`.",
+        "",
+        "### 2. Run findings",
+        "Ordered by severity, concise and actionable.",
+        "",
+        "### 3. Immediate suggested fixes",
+        "Specific fixes for the current run failure or degradation, if any.",
+        "",
+        "### 4. Intake-system recommendations",
+        "Recommend serious intake and artifact improvements when supported by the evidence, including source preference, matching logic, fallback behavior, caption/transcript quality gates, permalink fields, and artifact clarity.",
+        "",
+        "### 5. Episode incorporation guidance",
+        "Classify the episode as exactly one of: `omitted`, `noise`, `low-confidence context`, `normal context`.",
+        "",
+        "### 6. Basic BTC output report",
+        "Always include:",
+        "- intake state note",
+        "- whether a new episode was incorporated",
+        "- 7-day outlook",
+        "- 30-day outlook",
+        "- key factors",
+        "- confidence/caveats",
     ]
     review_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return review_path
@@ -264,12 +295,25 @@ def write_gpt_review_artifact(
     artifact_path = artifact_root / f"{slug}__{tag}__gpt_review_request.md"
 
     lines = [
-        "# GPT Review Request",
+        "# GPT QA Handoff",
         "",
         f"- generated_at_utc: `{now_iso()}`",
         f"- show_key: `{payload.get('show_key')}`",
         f"- run_id: `{payload.get('run_id')}`",
+        f"- status_json_url: `{payload.get('public_permalink_status_url')}`",
+        f"- intake_md_url: `{payload.get('public_permalink_intake_url')}`",
+        f"- transcript_md_url: `{payload.get('public_permalink_transcript_url')}`",
+        f"- discovery_json_url: `{payload.get('public_permalink_discovery_url')}`",
+        f"- new_episode_detected: `{bool(payload.get('new_episode_detected'))}`",
+        f"- included_in_pointer: `{bool(payload.get('included_in_pointer'))}`",
         f"- transcript_provenance: `{payload.get('transcript_provenance', 'failed')}`",
+        f"- source_mode: `{payload.get('source_mode')}`",
+        f"- transcript_quality_state: `{payload.get('transcript_quality_state')}`",
+        f"- transcript_degraded: `{bool(payload.get('transcript_degraded'))}`",
+        f"- fallback_used: `{bool(payload.get('fallback_used'))}`",
+        f"- fallback_note: `{payload.get('fallback_note')}`",
+        f"- failure_stage: `{payload.get('failure_stage')}`",
+        f"- failure_reason: `{payload.get('failure_reason')}`",
         f"- transcript_source_type: `{payload.get('transcript_source_type')}`",
         f"- transcript_source_url: `{payload.get('transcript_source_url')}`",
         f"- pointer_path: `{payload.get('pointer_path')}`",
@@ -278,13 +322,23 @@ def write_gpt_review_artifact(
         f"- stable_gpt_review_request_path: `{payload.get('gpt_review_request_path')}`",
         "",
         "## GPT Instructions",
-        "- Review the latest ingestion/transcription outcome.",
-        "- If run failed: explain root cause, likely fix, and lowest-risk retry path.",
-        "- If run succeeded: assess transcript quality and downstream usability.",
-        "- Call out whether caption-first routing behaved as intended for this show.",
+        "- Use the public permalink bundle as the primary evidence surface.",
+        "- Return the six required sections from the stable GPT QA handoff contract.",
+        "- Always produce a BTC output report, even for failed or no-new-episode runs.",
+        "- Keep local file paths as secondary debug context only.",
     ]
     artifact_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return artifact_path
+
+
+def _transcript_quality_state(status_payload: dict[str, Any]) -> str:
+    if not bool(status_payload.get("new_episode_detected")):
+        return "no-new-episode"
+    if status_payload.get("run_status") != "ok" or not bool(status_payload.get("included_in_pointer")):
+        return "failed"
+    if bool(status_payload.get("transcript_degraded")):
+        return "degraded"
+    return "usable"
 
 
 def _permalink_salt() -> str:
@@ -727,6 +781,25 @@ def write_public_permalink_artifacts(
     processed_episode_ids = [str(row.get("feed_episode_id") or row.get("guid")) for row in published_rows]
     processed_canonical_ids = [str(row.get("canonical_episode_id") or "") for row in published_rows if row.get("canonical_episode_id")]
     unprocessed_episode_ids = [str(row.get("feed_episode_id") or row.get("guid")) for row in unprocessed]
+    episode_title = status_payload.get("episode_title") or status_payload.get("latest_episode_title")
+    episode_guid = status_payload.get("episode_guid") or status_payload.get("latest_episode_guid")
+    episode_url = status_payload.get("episode_url") or status_payload.get("attempted_source_url")
+    published_at_utc = status_payload.get("published_at_utc") or status_payload.get("latest_episode_published_at_utc")
+    transcript_quality_state = str(
+        status_payload.get("transcript_quality_state") or _transcript_quality_state(status_payload)
+    )
+    transcript_degraded = bool(status_payload.get("transcript_degraded") or transcript_quality_state == "degraded")
+    fallback_used = bool(status_payload.get("fallback_used"))
+    fallback_note = status_payload.get("fallback_note")
+    transcript_quality_metrics = {
+        "word_count": status_payload.get("quality_word_count"),
+        "repetition_ratio_5gram": status_payload.get("quality_repetition_ratio_5gram"),
+        "lexical_diversity": status_payload.get("quality_lexical_diversity"),
+    }
+    transcript_quality_metrics = {k: v for k, v in transcript_quality_metrics.items() if v is not None}
+    source_mode = status_payload.get("source_mode")
+    if not source_mode and published_rows:
+        source_mode = published_rows[-1].get("source_mode")
     intake_lines = [
         prologue.rstrip(),
         "",
@@ -736,11 +809,34 @@ def write_public_permalink_artifacts(
         f"- show_key: `{show_key}`",
         f"- run_id: `{status_payload.get('run_id')}`",
         f"- run_status: `{status_payload.get('run_status')}`",
+        f"- new_episode_detected: `{bool(status_payload.get('new_episode_detected'))}`",
+        f"- intake_status_hint: `{transcript_quality_state}`",
         f"- series_is_feed_unit: `{bool(status_payload.get('series_is_feed_unit', True))}`",
         f"- feed_unit_type: `{status_payload.get('feed_unit_type') or 'series_or_playlist_or_feed'}`",
         f"- included_in_pointer: `{bool(status_payload.get('included_in_pointer'))}`",
+        f"- episode_title: `{episode_title}`",
+        f"- episode_guid: `{episode_guid}`",
+        f"- episode_url: `{episode_url}`",
+        f"- published_at_utc: `{published_at_utc}`",
+        f"- source_mode: `{source_mode}`",
+        f"- transcript_provenance: `{status_payload.get('transcript_provenance', 'failed')}`",
+        f"- transcript_source_type: `{status_payload.get('transcript_source_type')}`",
+        f"- transcript_source_url: `{status_payload.get('transcript_source_url')}`",
+        f"- transcript_quality_state: `{transcript_quality_state}`",
+        f"- transcript_degraded: `{transcript_degraded}`",
+        f"- fallback_used: `{fallback_used}`",
+        f"- fallback_note: `{fallback_note}`",
+        f"- failure_stage: `{status_payload.get('failure_stage')}`",
+        f"- failure_reason: `{status_payload.get('failure_reason')}`",
         f"- processed_published_count: `{len(published_rows)}`",
         f"- unprocessed_count: `{len(unprocessed)}`",
+        "",
+        "## Run Summary",
+        f"- selected_episode: `{episode_title or 'none'}`",
+        f"- selected_episode_new: `{bool(status_payload.get('new_episode_detected'))}`",
+        f"- selected_source_path: `{source_mode or 'unknown'}` via `{status_payload.get('transcript_source_type') or status_payload.get('attempted_source_type') or 'unknown'}`",
+        f"- transcript_incorporated: `{bool(status_payload.get('included_in_pointer'))}`",
+        f"- degradation_or_fallback: `{fallback_note or status_payload.get('failure_reason') or ('none' if not transcript_degraded else transcript_quality_state)}`",
         "",
         "## Stable Discovery Entrypoints",
         "- Human intake: [intake.md](intake.md)",
@@ -798,7 +894,23 @@ def write_public_permalink_artifacts(
         "show_root": show_root_rel,
         "run_id": status_payload.get("run_id"),
         "run_status": status_payload.get("run_status"),
+        "new_episode_detected": bool(status_payload.get("new_episode_detected")),
         "included_in_pointer": bool(status_payload.get("included_in_pointer")),
+        "episode_title": episode_title,
+        "episode_guid": episode_guid,
+        "episode_url": episode_url,
+        "published_at_utc": published_at_utc,
+        "transcript_provenance": status_payload.get("transcript_provenance", "failed"),
+        "source_mode": source_mode,
+        "transcript_degraded": transcript_degraded,
+        "fallback_used": fallback_used,
+        "fallback_note": fallback_note,
+        "transcript_quality_state": transcript_quality_state,
+        "transcript_quality_metrics": transcript_quality_metrics,
+        "failure_stage": status_payload.get("failure_stage"),
+        "failure_reason": status_payload.get("failure_reason"),
+        "transcript_source_type": status_payload.get("transcript_source_type"),
+        "transcript_source_url": status_payload.get("transcript_source_url"),
         "latest_episode_published_at_utc": status_payload.get("latest_episode_published_at_utc"),
         "pointer_updated_at_utc": status_payload.get("pointer_updated_at_utc"),
         "updated_at_utc": now_iso(),
