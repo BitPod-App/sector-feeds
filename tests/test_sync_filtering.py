@@ -10,6 +10,7 @@ import bitpod.sync as sync_module
 from bitpod.sync import (
     _choose_best_source,
     _dedupe_cross_source_variants,
+    _find_matching_youtube_episode,
     _is_live_like_youtube_episode,
     _normalized_episode_title,
     _status_basename,
@@ -149,6 +150,24 @@ class SyncFilteringTests(unittest.TestCase):
         )
         deduped = _dedupe_cross_source_variants([rss, youtube])
         self.assertEqual(len(deduped), 2)
+
+    def test_find_matching_youtube_episode_prefers_matching_youtube_variant(self) -> None:
+        published = datetime(2026, 3, 1, tzinfo=timezone.utc)
+        rss = DummyEpisode(
+            guid="rss-guid",
+            title="Mail Bag Monday: Japan, AI, and Bitcoin",
+            published_at=published,
+            source_url="https://podcast.example/mailbag",
+            source_type="rss_audio",
+        )
+        youtube = DummyEpisode(
+            guid="yt-guid",
+            title="Mail Bag Monday: Japan, AI, and Bitcoin",
+            published_at=published + timedelta(hours=1),
+            source_url="https://youtube.com/watch?v=mailbag",
+            source_type="youtube_video",
+        )
+        self.assertEqual(_find_matching_youtube_episode(rss, [rss, youtube]), youtube)
 
     def test_status_basename_uses_stable_pointer_stem(self) -> None:
         show = {"show_key": "demo_show", "stable_pointer": "demo_latest.md"}

@@ -94,6 +94,7 @@ class StorageTests(unittest.TestCase):
                     "show_key": "jack_mallers_show",
                     "run_id": "20260225T190000Z",
                     "run_status": "failed",
+                    "transcript_provenance": "failed",
                     "failure_stage": "transcription",
                     "failure_reason": "quota exceeded",
                     "pointer_path": "transcripts/jack_mallers_show/jack_mallers.md",
@@ -111,6 +112,7 @@ class StorageTests(unittest.TestCase):
             review_text = review_path.read_text(encoding="utf-8")
             self.assertIn("preferred_gpt_input_public_transcript_url", review_text)
             self.assertIn("https://bitpod-public-permalinks.pages.dev/abc123/transcript.md", review_text)
+            self.assertIn("transcript_provenance: `failed`", review_text)
 
     def test_write_public_permalink_artifacts(self) -> None:
         with TemporaryDirectory() as tmp:

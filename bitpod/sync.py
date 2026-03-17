@@ -99,6 +99,10 @@ def _source_rank(source_type: str) -> int:
     return SOURCE_RANK.get(source_type, SOURCE_RANK["unknown"])
 
 
+def _show_prefers_matching_youtube_captions(show: dict[str, Any]) -> bool:
+    return bool(show.get("prefer_matching_youtube_captions"))
+
+
 def _cache_key(show_key: str, guid: str) -> str:
     payload = f"{show_key}::{guid}".encode("utf-8", errors="ignore")
     return hashlib.sha1(payload).hexdigest()[:16]
@@ -226,6 +230,27 @@ def _dedupe_cross_source_variants(episodes: list[Any]) -> list[Any]:
             continue
         deduped[match_index] = _choose_best_source(deduped[match_index], episode)
     return deduped
+
+
+def _find_matching_youtube_episode(episode: Any, episodes: list[Any]) -> Any | None:
+    matches: list[Any] = []
+    for candidate in episodes:
+        if candidate is episode:
+            continue
+        if not str(getattr(candidate, "source_type", "unknown")).startswith("youtube"):
+            continue
+        if _should_cross_source_dedupe(episode, candidate):
+            matches.append(candidate)
+    if not matches:
+        return None
+    return min(
+        matches,
+        key=lambda item: (
+            abs(getattr(item, "published_at", datetime.min.replace(tzinfo=timezone.utc)) - getattr(episode, "published_at", datetime.min.replace(tzinfo=timezone.utc))),
+            0 if str(getattr(item, "source_type", "unknown")).startswith("youtube") else 1,
+            str(getattr(item, "source_url", "")),
+        ),
+    )
 
 
 def _status_basename(show: dict[str, Any]) -> str:
@@ -358,6 +383,7 @@ def sync_show(
     as_of_utc: datetime | None = None,
 ) -> dict[str, Any]:
     from bitpod.storage import (
+        write_gpt_review_artifact,
         write_gpt_review_request,
         write_public_permalink_artifacts,
         write_run_status_artifacts,
@@ -409,6 +435,9 @@ def sync_show(
         "pointer_updated_at_utc": None,
         "plain_artifact_path": None,
         "segments_artifact_path": None,
+        "transcript_provenance": "failed",
+        "transcript_source_url": None,
+        "transcript_source_type": None,
         "ready_via_permalink": False,
         "public_permalink_id": None,
         "public_permalink_intake_path": None,
@@ -441,10 +470,14 @@ def sync_show(
         status_payload["status_md_path"] = str(status_md_path)
         review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
         status_payload["gpt_review_request_path"] = str(review_path)
+        qa_artifact_path = write_gpt_review_artifact(show_key=show_key, payload=status_payload, artifact_tag=run_id)
+        status_payload["gpt_review_artifact_path"] = str(qa_artifact_path)
         public_paths = write_public_permalink_artifacts(show_key=show_key, status_payload=status_payload)
         status_payload.update(public_paths)
         review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
         status_payload["gpt_review_request_path"] = str(review_path)
+        qa_artifact_path = write_gpt_review_artifact(show_key=show_key, payload=status_payload, artifact_tag=run_id)
+        status_payload["gpt_review_artifact_path"] = str(qa_artifact_path)
         write_run_status_artifacts(
             show_key=show_key,
             payload=status_payload,
@@ -466,7 +499,8 @@ def sync_show(
         current = deduped_by_guid.get(guid)
         deduped_by_guid[guid] = episode if current is None else _choose_best_source(current, episode)
 
-    episodes = _dedupe_cross_source_variants(list(deduped_by_guid.values()))
+    source_variants = list(deduped_by_guid.values())
+    episodes = _dedupe_cross_source_variants(source_variants)
     cutoff_now = as_of_utc or datetime.now(timezone.utc)
     episodes = [ep for ep in episodes if ep.published_at <= cutoff_now]
     stats["seen"] = len(episodes)
@@ -474,6 +508,7 @@ def sync_show(
     # Live streams and very fresh uploads can be incomplete; hold recent YouTube episodes by default.
     mature_cutoff = cutoff_now - timedelta(minutes=max(min_episode_age_minutes, 0))
     matured_episodes: list[Any] = []
+    matured_source_variants: list[Any] = []
     deferred_recent_youtube = 0
     deferred_live_youtube = 0
     for ep in episodes:
@@ -485,6 +520,13 @@ def sync_show(
             deferred_recent_youtube += 1
             continue
         matured_episodes.append(ep)
+    for ep in source_variants:
+        source_type = str(getattr(ep, "source_type", "unknown"))
+        if _is_live_like_youtube_episode(ep):
+            continue
+        if source_type.startswith("youtube") and ep.published_at > mature_cutoff:
+            continue
+        matured_source_variants.append(ep)
 
     stats["deferred_recent_youtube"] = deferred_recent_youtube
     stats["deferred_live_youtube"] = deferred_live_youtube
@@ -544,6 +586,7 @@ def sync_show(
                 show=show,
                 show_key=show_key,
                 episode=episode,
+                source_variants=matured_source_variants,
                 index=index,
                 key=key,
                 model=model,
@@ -553,7 +596,7 @@ def sync_show(
                 min_caption_words=min_caption_words,
             )
             stats["processed"] += 1
-            if used_caption:
+            if used_caption in {"official_youtube_captions", "youtube_auto_captions"}:
                 stats["caption_used"] += 1
             if latest_episode and str(episode.guid) == str(latest_episode.guid):
                 latest_episode_succeeded = True
@@ -594,6 +637,9 @@ def sync_show(
         latest_payload = index["episodes"].get(latest_key, {})
         status_payload["plain_artifact_path"] = latest_payload.get("transcript_plain_path")
         status_payload["segments_artifact_path"] = latest_payload.get("transcript_segments_path")
+        status_payload["transcript_provenance"] = latest_payload.get("transcript_provenance", "failed")
+        status_payload["transcript_source_url"] = latest_payload.get("transcript_source_url")
+        status_payload["transcript_source_type"] = latest_payload.get("transcript_source_type")
         if status_payload["attempted_episode_guid"] is None:
             status_payload["attempted_episode_guid"] = str(latest_episode.guid)
             status_payload["attempted_episode_title"] = latest_episode.title
@@ -610,10 +656,14 @@ def sync_show(
     status_payload["status_md_path"] = str(status_md_path)
     review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
     status_payload["gpt_review_request_path"] = str(review_path)
+    qa_artifact_path = write_gpt_review_artifact(show_key=show_key, payload=status_payload, artifact_tag=run_id)
+    status_payload["gpt_review_artifact_path"] = str(qa_artifact_path)
     public_paths = write_public_permalink_artifacts(show_key=show_key, status_payload=status_payload)
     status_payload.update(public_paths)
     review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
     status_payload["gpt_review_request_path"] = str(review_path)
+    qa_artifact_path = write_gpt_review_artifact(show_key=show_key, payload=status_payload, artifact_tag=run_id)
+    status_payload["gpt_review_artifact_path"] = str(qa_artifact_path)
     # Persist paths in JSON status too.
     status_json_path, status_md_path = write_run_status_artifacts(
         show_key=show_key,
@@ -623,6 +673,7 @@ def sync_show(
     stats["status_json_path"] = str(status_json_path)
     stats["status_md_path"] = str(status_md_path)
     stats["gpt_review_request_path"] = str(review_path)
+    stats["gpt_review_artifact_path"] = str(qa_artifact_path)
     stats["latest_included_in_pointer"] = bool(status_payload["included_in_pointer"])
     stats["run_status"] = status_payload["run_status"]
     return stats
@@ -631,18 +682,19 @@ def sync_show(
 def _maybe_use_captions(
     *,
     show_key: str,
-    episode: Any,
+    selected_episode: Any,
+    caption_episode: Any,
     index: dict[str, Any],
     key: str,
     min_caption_words: int,
-) -> bool:
+) -> str | None:
     from bitpod.audio import extract_youtube_caption_payload
     from bitpod.storage import write_output_artifacts, write_transcript
 
-    caption_dir = ROOT / "cache" / "captions" / show_key / _cache_key(show_key, str(episode.guid))
-    payload = extract_youtube_caption_payload(str(episode.source_url), caption_dir, min_words=min_caption_words)
+    caption_dir = ROOT / "cache" / "captions" / show_key / _cache_key(show_key, str(caption_episode.guid))
+    payload = extract_youtube_caption_payload(str(caption_episode.source_url), caption_dir, min_words=min_caption_words)
     if not payload:
-        return False
+        return None
 
     segments = [
         {
@@ -658,12 +710,12 @@ def _maybe_use_captions(
     try:
         transcript_file = write_transcript(
             show_key=show_key,
-            episode_title=episode.title,
-            published_at=episode.published_at,
-            source_url=episode.source_url,
-            guid=episode.guid,
+            episode_title=selected_episode.title,
+            published_at=selected_episode.published_at,
+            source_url=caption_episode.source_url,
+            guid=selected_episode.guid,
             transcript_text=payload.text,
-            transcription_model="youtube_caption_auto",
+            transcription_model=payload.provenance,
             segments=segments,
             transcript_source="youtube_caption",
             speaker_strategy="unknown",
@@ -674,14 +726,14 @@ def _maybe_use_captions(
             segments=segments,
             metadata={
                 "source_platform": "youtube",
-                "source_url": episode.source_url,
-                "source_id": str(episode.guid),
+                "source_url": caption_episode.source_url,
+                "source_id": str(selected_episode.guid),
                 "show_name": show_key,
-                "episode_title": episode.title,
-                "published_at_utc": episode.published_at.isoformat(),
+                "episode_title": selected_episode.title,
+                "published_at_utc": selected_episode.published_at.isoformat(),
                 "retrieved_at_utc": now_iso(),
                 "pipeline_version": "0.2.1.1",
-                "transcription_method": "youtube_captions_stitched",
+                "transcription_method": payload.provenance,
                 "speaker_mode": "unknown",
                 "speakers_detected": "unknown",
                 "quality_word_count": payload.quality.get("word_count", 0),
@@ -699,16 +751,20 @@ def _maybe_use_captions(
         transcript_path=str(transcript_file),
         transcript_plain_path=str(plain_path),
         transcript_segments_path=str(segments_path),
-        source_url=episode.source_url,
-        published_at=episode.published_at.isoformat(),
-        transcription_model="youtube_caption_auto",
-        source_type=getattr(episode, "source_type", "unknown"),
-        media_url=getattr(episode, "media_url", None),
+        source_url=caption_episode.source_url,
+        published_at=selected_episode.published_at.isoformat(),
+        transcription_model=payload.provenance,
+        source_type=getattr(selected_episode, "source_type", "unknown"),
+        media_url=getattr(selected_episode, "media_url", None),
         source_mode="captions",
+        transcript_provenance=payload.provenance,
+        transcript_source_url=caption_episode.source_url,
+        transcript_source_type=getattr(caption_episode, "source_type", "unknown"),
+        matched_source_url=selected_episode.source_url if caption_episode.source_url != selected_episode.source_url else None,
         gpt_status="pending",
         gpt_processed_at=None,
     )
-    return True
+    return payload.provenance
 
 
 def _resolve_cached_media(existing: dict[str, Any] | None) -> Path | None:
@@ -738,6 +794,7 @@ def _process_episode(
     show: dict[str, Any],
     show_key: str,
     episode: Any,
+    source_variants: list[Any],
     index: dict[str, Any],
     key: str,
     model: str,
@@ -750,19 +807,30 @@ def _process_episode(
     from bitpod.transcribe import transcribe_audio
 
     source_type = str(getattr(episode, "source_type", "unknown"))
-    try_captions = source_type.startswith("youtube") and source_policy in {"balanced", "audio-first", "caption-first"}
-    caption_used = False
+    caption_episode = episode
+    if _show_prefers_matching_youtube_captions(show):
+        matched_youtube = _find_matching_youtube_episode(episode, source_variants)
+        if matched_youtube is not None:
+            caption_episode = matched_youtube
+
+    try_captions = str(getattr(caption_episode, "source_type", "unknown")).startswith("youtube") and source_policy in {
+        "balanced",
+        "audio-first",
+        "caption-first",
+    }
+    transcript_provenance: str | None = None
 
     if try_captions:
-        caption_used = _maybe_use_captions(
+        transcript_provenance = _maybe_use_captions(
             show_key=show_key,
-            episode=episode,
+            selected_episode=episode,
+            caption_episode=caption_episode,
             index=index,
             key=key,
             min_caption_words=min_caption_words,
         )
-        if caption_used:
-            return True
+        if transcript_provenance:
+            return transcript_provenance
 
     if source_type.startswith("youtube") and no_youtube_download:
         raise ProcessingError(
@@ -805,7 +873,7 @@ def _process_episode(
                 "published_at_utc": episode.published_at.isoformat(),
                 "retrieved_at_utc": now_iso(),
                 "pipeline_version": "0.2.1.1",
-                "transcription_method": f"asr_{result.model_used}",
+                "transcription_method": "direct_audio_transcription",
                 "speaker_mode": "unknown",
                 "speakers_detected": "unknown",
             },
@@ -827,10 +895,13 @@ def _process_episode(
         media_url=getattr(episode, "media_url", None),
         media_cache_path=str(media_path),
         source_mode="media",
+        transcript_provenance="direct_audio_transcription",
+        transcript_source_url=episode.source_url,
+        transcript_source_type=source_type,
         gpt_status="pending",
         gpt_processed_at=None,
     )
-    return False
+    return "direct_audio_transcription"
 
 
 def _parse_iso(ts: str | None) -> datetime:

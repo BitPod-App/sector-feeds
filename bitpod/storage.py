@@ -155,8 +155,12 @@ def write_run_status_artifacts(
     lines.append(f"- included_in_pointer: `{payload.get('included_in_pointer', False)}`")
     lines.append(f"- pointer_path: `{payload.get('pointer_path', '')}`")
     lines.append(f"- pointer_updated_at_utc: `{payload.get('pointer_updated_at_utc', '')}`")
+    lines.append(f"- transcript_provenance: `{payload.get('transcript_provenance', 'failed')}`")
+    lines.append(f"- transcript_source_type: `{payload.get('transcript_source_type', '')}`")
+    lines.append(f"- transcript_source_url: `{payload.get('transcript_source_url', '')}`")
     lines.append(f"- plain_artifact_path: `{payload.get('plain_artifact_path', '')}`")
     lines.append(f"- segments_artifact_path: `{payload.get('segments_artifact_path', '')}`")
+    lines.append(f"- gpt_review_artifact_path: `{payload.get('gpt_review_artifact_path', '')}`")
 
     governance = payload.get("governance")
     if isinstance(governance, dict):
@@ -208,6 +212,9 @@ def write_gpt_review_request(
         f"- latest_episode_guid: `{payload.get('latest_episode_guid')}`",
         f"- latest_episode_published_at_utc: `{payload.get('latest_episode_published_at_utc')}`",
         f"- included_in_pointer: `{payload.get('included_in_pointer')}`",
+        f"- transcript_provenance: `{payload.get('transcript_provenance', 'failed')}`",
+        f"- transcript_source_type: `{payload.get('transcript_source_type')}`",
+        f"- transcript_source_url: `{payload.get('transcript_source_url')}`",
         "",
         "## Artifacts",
         f"- preferred_gpt_input_public_transcript_url: `{payload.get('public_permalink_transcript_url')}`",
@@ -220,6 +227,7 @@ def write_gpt_review_request(
         f"- status_md_path: `{payload.get('status_md_path')}`",
         f"- plain_artifact_path: `{payload.get('plain_artifact_path')}`",
         f"- segments_artifact_path: `{payload.get('segments_artifact_path')}`",
+        f"- gpt_review_artifact_path: `{payload.get('gpt_review_artifact_path')}`",
         "",
         "## Failure Context",
         f"- failure_stage: `{payload.get('failure_stage')}`",
@@ -240,6 +248,43 @@ def write_gpt_review_request(
     ]
     review_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return review_path
+
+
+def write_gpt_review_artifact(
+    *,
+    show_key: str,
+    payload: dict[str, Any],
+    artifact_tag: str | None = None,
+) -> Path:
+    artifact_root = ROOT / "artifacts" / "gpt-qa"
+    artifact_root.mkdir(parents=True, exist_ok=True)
+    slug = slugify(show_key)
+    raw_tag = str(artifact_tag or payload.get("run_id") or now_iso()).strip()
+    tag = re.sub(r"[^a-zA-Z0-9_-]+", "_", raw_tag).strip("_") or "artifact"
+    artifact_path = artifact_root / f"{slug}__{tag}__gpt_review_request.md"
+
+    lines = [
+        "# GPT Review Request",
+        "",
+        f"- generated_at_utc: `{now_iso()}`",
+        f"- show_key: `{payload.get('show_key')}`",
+        f"- run_id: `{payload.get('run_id')}`",
+        f"- transcript_provenance: `{payload.get('transcript_provenance', 'failed')}`",
+        f"- transcript_source_type: `{payload.get('transcript_source_type')}`",
+        f"- transcript_source_url: `{payload.get('transcript_source_url')}`",
+        f"- pointer_path: `{payload.get('pointer_path')}`",
+        f"- status_json_path: `{payload.get('status_json_path')}`",
+        f"- status_md_path: `{payload.get('status_md_path')}`",
+        f"- stable_gpt_review_request_path: `{payload.get('gpt_review_request_path')}`",
+        "",
+        "## GPT Instructions",
+        "- Review the latest ingestion/transcription outcome.",
+        "- If run failed: explain root cause, likely fix, and lowest-risk retry path.",
+        "- If run succeeded: assess transcript quality and downstream usability.",
+        "- Call out whether caption-first routing behaved as intended for this show.",
+    ]
+    artifact_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return artifact_path
 
 
 def _permalink_salt() -> str:

@@ -40,6 +40,7 @@
         "podcast",
         "interview"
       ],
+      "prefer_matching_youtube_captions": true,
       "sector": "Bitcoiners",
       "sector_feed_id": "jack_mallers_show",
       "sector_feed_source_id": "rss_show:e29097f4",

@@ -30,6 +30,7 @@ class CaptionExtraction:
     text: str
     cues: list[CaptionCue]
     quality: dict[str, float | int | bool]
+    provenance: str
 
 
 def download_youtube_audio(source_url: str, output_dir: Path) -> Path:
@@ -178,14 +179,20 @@ def _captions_are_bad(stitched_text: str, cue_count: int, min_words: int) -> tup
     }
 
 
-def extract_youtube_caption_payload(source_url: str, output_dir: Path, min_words: int = 120) -> CaptionExtraction | None:
+def _extract_youtube_caption_payload_once(
+    source_url: str,
+    output_dir: Path,
+    *,
+    min_words: int,
+    automatic_only: bool,
+) -> CaptionExtraction | None:
     output_dir.mkdir(parents=True, exist_ok=True)
     outtmpl = str(output_dir / "%(id)s.%(ext)s")
     opts = {
         "quiet": True,
         "skip_download": True,
-        "writesubtitles": True,
-        "writeautomaticsub": True,
+        "writesubtitles": not automatic_only,
+        "writeautomaticsub": automatic_only,
         "subtitleslangs": ["en", "en-US", "en-GB"],
         "subtitlesformat": "vtt",
         "outtmpl": outtmpl,
@@ -217,7 +224,25 @@ def extract_youtube_caption_payload(source_url: str, output_dir: Path, min_words
     bad, quality = _captions_are_bad(stitched_text, len(cues), min_words=min_words)
     if bad:
         return None
-    return CaptionExtraction(text=stitched_text, cues=cues, quality=quality)
+    provenance = "youtube_auto_captions" if automatic_only else "official_youtube_captions"
+    return CaptionExtraction(text=stitched_text, cues=cues, quality=quality, provenance=provenance)
+
+
+def extract_youtube_caption_payload(source_url: str, output_dir: Path, min_words: int = 120) -> CaptionExtraction | None:
+    official = _extract_youtube_caption_payload_once(
+        source_url,
+        output_dir / "official",
+        min_words=min_words,
+        automatic_only=False,
+    )
+    if official is not None:
+        return official
+    return _extract_youtube_caption_payload_once(
+        source_url,
+        output_dir / "automatic",
+        min_words=min_words,
+        automatic_only=True,
+    )
 
 
 def extract_youtube_captions(source_url: str, output_dir: Path, min_words: int = 120) -> str | None:
