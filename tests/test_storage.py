@@ -249,6 +249,14 @@ class StorageTests(unittest.TestCase):
             self.assertEqual(status_payload["source_mode"], "captions")
             self.assertEqual(status_payload["transcript_quality_state"], "usable")
             self.assertFalse(status_payload["transcript_degraded"])
+            self.assertTrue(status_payload["public_bundle_complete"])
+            self.assertEqual(status_payload["public_bundle_missing"], [])
+            self.assertTrue(status_payload["public_bundle_readability"]["status.json"]["readable"])
+            self.assertEqual(status_payload["public_bundle_readability"]["status.json"]["verified_via"], "local_fs")
+            self.assertEqual(
+                status_payload["public_bundle_readability"]["intake.md"]["url"],
+                f"https://bitpod-public-permalinks.pages.dev/{first['public_permalink_id']}/intake.md",
+            )
             self.assertEqual(status_payload["processed_count"], 1)
             self.assertEqual(status_payload["processed_total_count"], 1)
             self.assertEqual(status_payload["unprocessed_count"], 1)

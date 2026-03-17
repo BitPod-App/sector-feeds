@@ -16,6 +16,7 @@ from bitpod.paths import ROOT, TRANSCRIPTS_ROOT
 
 SLUG_PATTERN = re.compile(r"[^a-z0-9]+")
 ROBOTS_POLICY = "noindex, nofollow, noarchive"
+PUBLIC_BUNDLE_FILES = ("status.json", "intake.md", "transcript.md", "discovery.json")
 
 
 def slugify(value: str) -> str:
@@ -441,9 +442,44 @@ def _public_target_total_minutes() -> float:
 
 def _write_noindex_guards(public_root: Path) -> None:
     headers_path = public_root / "_headers"
-    headers_path.write_text(f"/*\n  X-Robots-Tag: {ROBOTS_POLICY}\n", encoding="utf-8")
+    headers_path.write_text(
+        (
+            "/*\n"
+            f"  X-Robots-Tag: {ROBOTS_POLICY}\n"
+            "  Access-Control-Allow-Origin: *\n"
+            "\n"
+            "/*.md\n"
+            "  Content-Type: text/markdown; charset=utf-8\n"
+            "\n"
+            "/*.json\n"
+            "  Content-Type: application/json; charset=utf-8\n"
+        ),
+        encoding="utf-8",
+    )
     robots_path = public_root / "robots.txt"
     robots_path.write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
+
+
+def default_public_bundle_health(*, show_root: Path, base_url: str, permalink_id: str) -> dict[str, Any]:
+    readability: dict[str, Any] = {}
+    missing: list[str] = []
+    for name in PUBLIC_BUNDLE_FILES:
+        target = show_root / name
+        readable = target.exists()
+        if not readable:
+            missing.append(name)
+        readability[name] = {
+            "url": f"{base_url}/{permalink_id}/{name}",
+            "http_status": None,
+            "content_type": None,
+            "readable": readable,
+            "verified_via": "local_fs",
+        }
+    return {
+        "public_bundle_complete": len(missing) == 0,
+        "public_bundle_readability": readability,
+        "public_bundle_missing": missing,
+    }
 
 
 def _parse_iso_or_min(value: str | None) -> datetime:
@@ -800,6 +836,7 @@ def write_public_permalink_artifacts(
     source_mode = status_payload.get("source_mode")
     if not source_mode and published_rows:
         source_mode = published_rows[-1].get("source_mode")
+    bundle_health = default_public_bundle_health(show_root=show_root, base_url=base_url, permalink_id=permalink_id)
     intake_lines = [
         prologue.rstrip(),
         "",
@@ -911,6 +948,9 @@ def write_public_permalink_artifacts(
         "failure_reason": status_payload.get("failure_reason"),
         "transcript_source_type": status_payload.get("transcript_source_type"),
         "transcript_source_url": status_payload.get("transcript_source_url"),
+        "public_bundle_complete": bundle_health["public_bundle_complete"],
+        "public_bundle_readability": bundle_health["public_bundle_readability"],
+        "public_bundle_missing": bundle_health["public_bundle_missing"],
         "latest_episode_published_at_utc": status_payload.get("latest_episode_published_at_utc"),
         "pointer_updated_at_utc": status_payload.get("pointer_updated_at_utc"),
         "updated_at_utc": now_iso(),

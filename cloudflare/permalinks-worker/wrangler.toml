@@ -1,0 +1,7 @@
+name = "bitpod-public-permalinks-worker"
+main = "src/index.js"
+compatibility_date = "2026-03-17"
+
+[assets]
+binding = "ASSETS"
+directory = "../../artifacts/public/permalinks"

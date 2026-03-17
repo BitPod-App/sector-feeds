@@ -108,9 +108,14 @@ Per-show contract (API-like surface):
   - `artifacts/public/permalinks/<opaque_id>/latest.md`
   - `artifacts/public/permalinks/<opaque_id>/status.json`
   - `artifacts/public/permalinks/<opaque_id>/discovery.json`
+  - `<opaque_id>` is stable per `show_key` / `sector_feed_id`, not per run
   - with noindex/nofollow/noarchive + `robots.txt` disallow-all.
   - internal mapping remains private in `artifacts/private/public_permalink_manifest.json`.
   - feed identity/tags contract reference: `docs/architecture/feed_identity_contract.md`.
+  - `status.json` now includes machine-readable public bundle health:
+    - `public_bundle_complete`
+    - `public_bundle_readability`
+    - `public_bundle_missing`
 
 ## Supported Feeds (Current)
 
@@ -300,8 +305,23 @@ bash scripts/bitpod_verify.sh [--show all|<show_key>] [--as-of "YYYY-MM-DD[ HH:M
 # - Sync now enforces strict parity checks (same gate as Verify) by default.
 # - Verify remains useful as a standalone audit/recheck command or for recording GPT feedback linkage.
 
-# Deploy public permalink artifacts to Cloudflare Pages (static only):
-bash scripts/deploy_public_permalinks_pages.sh [project_name] [branch]
+# Refresh permalink artifacts from the current local status contract:
+python3 scripts/refresh_public_permalinks.py [show_key]
+
+# Verify deployed public readability and print machine-readable health:
+python3 scripts/verify_public_permalink_bundle.py --show jack_mallers_show --base-url https://permalinks.bitpod.app
+
+# Deploy public permalink artifacts to Cloudflare Pages:
+# - refreshes local permalink bundle first
+# - verifies actual deployed public URLs
+# - writes public bundle health back into status.json
+bash scripts/deploy_public_permalinks_pages.sh [project_name] [branch] [show_key]
+
+# Long-term Cloudflare architecture scaffold:
+# - Worker + Static Assets, with one opaque URL per show and embedded run contract
+# - see cloudflare/permalinks-worker/
+# - deploy preview worker:
+bash scripts/deploy_public_permalinks_worker.sh [worker_name] [show_key]
 
 # Paranoid-public Cloudflare hardening checklist:
 # - custom domain + AI crawler controls + bot policy
