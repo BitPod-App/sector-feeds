@@ -9,6 +9,7 @@ fi
 SHOW_KEY="$1"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+WORKSPACE_ROOT="$(cd "$REPO_ROOT/.." && pwd)"
 
 # Load optional runtime secrets/config once (kept outside committed defaults).
 if [ -f "$REPO_ROOT/.bitpod_runtime.env" ]; then
@@ -44,7 +45,7 @@ BITPOD_FEED_MODE="${BITPOD_FEED_MODE:-all}"
 TOOLS_COST_CTL="${TOOLS_COST_CTL:-}"
 if [ -z "$TOOLS_COST_CTL" ]; then
   for candidate in \
-    "$REPO_ROOT/../bitpod-tools/costs/cost_ctl.py" \
+    "$WORKSPACE_ROOT/bitpod-tools/costs/cost_ctl.py" \
     "/Users/cjarguello/BitPod-App/bitpod-tools/costs/cost_ctl.py"
   do
     if [ -f "$candidate" ]; then

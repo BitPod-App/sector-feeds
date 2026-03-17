@@ -28,6 +28,17 @@
       "status": "failed",
       "updated_at": "2026-02-19T02:38:33.997707+00:00"
     },
+    "jack_mallers_show::6c8929da-9267-4bdf-932e-2007aa22d900": {
+      "canonical_episode_id": "c5f1c9d676ff4b19",
+      "feed_episode_id": "6c8929da-9267-4bdf-932e-2007aa22d900",
+      "reason": "Error code: 400 - {'error': {'message': 'Audio file might be corrupted or unsupported', 'type': 'invalid_request_error', 'param': 'file', 'code': 'invalid_value'}}",
+      "sector_feed_id": "jack_mallers_show",
+      "source_episode_id": "6c8929da-9267-4bdf-932e-2007aa22d900",
+      "source_url": "https://podcasters.spotify.com/pod/show/thejackmallersshow/episodes/Oil--Bonds--and-Bitcoin-The-Rules-Are-That-There-Are-No-Rules-e3g76iv",
+      "stage": "transcription",
+      "status": "failed",
+      "updated_at": "2026-03-17T02:21:07.197349+00:00"
+    },
     "jack_mallers_show::yt:video:BFt82dw0ci8": {
       "gpt_processed_at": null,
       "gpt_status": "pending",
