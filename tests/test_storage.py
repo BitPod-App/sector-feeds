@@ -232,7 +232,7 @@ class StorageTests(unittest.TestCase):
             landing_text = landing_path.read_text(encoding="utf-8")
             self.assertIn("BitPod Permalink Bundle", landing_text)
             self.assertIn('id="bitpod-run-contract"', landing_text)
-            self.assertIn("Public Readability", landing_text)
+            self.assertIn("Canonical evidence", landing_text)
             self.assertIn("local_fs_only", landing_text)
             self.assertIn(
                 f'href="https://bitpod-public-permalinks.pages.dev/{first["public_permalink_id"]}/status.json"',
