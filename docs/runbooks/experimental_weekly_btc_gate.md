@@ -31,9 +31,9 @@ python3 scripts/generate_weekly_critical_bundle.py \
 4. Run bitregime gate:
 
 ```bash
-python3 /Users/cjarguello/BitPod-App/bitregime-core/scripts/gate_weekly_bundle.py \
-  --bundle-json /Users/cjarguello/BitPod-App/sector-feeds/artifacts/private/weekly_bundles/weekly_critical_bundle.json \
-  --output-json /Users/cjarguello/BitPod-App/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json
+python3 ../bitregime-core/scripts/gate_weekly_bundle.py \
+  --bundle-json artifacts/private/weekly_bundles/weekly_critical_bundle.json \
+  --output-json ../bitregime-core/artifacts/gates/weekly_bundle_gate_status.json
 ```
 
 ## Canonical outputs
@@ -43,7 +43,7 @@ python3 /Users/cjarguello/BitPod-App/bitregime-core/scripts/gate_weekly_bundle.p
 - `artifacts/runs/experimental_track/jack_mallers_show/<timestamp>__summary.md`
 - `artifacts/runs/experimental_track/jack_mallers_show/<timestamp>__status.json`
 - `artifacts/private/weekly_bundles/weekly_critical_bundle.json`
-- `/Users/cjarguello/BitPod-App/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json`
+- `../bitregime-core/artifacts/gates/weekly_bundle_gate_status.json`
 - Prompt: `docs/prompts/experimental_weekly_gate_single_prompt.md`
 
 ## Success criteria

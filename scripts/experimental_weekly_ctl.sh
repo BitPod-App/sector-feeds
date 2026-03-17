@@ -3,6 +3,8 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+WORKSPACE_ROOT="$(cd "$REPO_ROOT/.." && pwd)"
+BITREGIME_CORE_ROOT="${BITREGIME_CORE_ROOT:-$WORKSPACE_ROOT/bitregime-core}"
 PY="$REPO_ROOT/.venv311/bin/python"
 SHOW_KEY="${SHOW_KEY:-jack_mallers_show}"
 ART_ROOT="$REPO_ROOT/artifacts/private/experimental_weekly"
@@ -186,7 +188,7 @@ cmd_render_legacy() {
 cmd_render_experimental() {
   local report_md=""
   local output_bundle="$REPO_ROOT/artifacts/private/weekly_bundles/weekly_critical_bundle.json"
-  local output_gate="/Users/cjarguello/BitPod-App/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json"
+  local output_gate="$BITREGIME_CORE_ROOT/artifacts/gates/weekly_bundle_gate_status.json"
 
   while [ "$#" -gt 0 ]; do
     case "$1" in
@@ -221,7 +223,7 @@ cmd_render_experimental() {
     --report-md "$report_md" \
     --output-json "$output_bundle"
 
-  python3 /Users/cjarguello/BitPod-App/bitregime-core/scripts/gate_weekly_bundle.py \
+  python3 "$BITREGIME_CORE_ROOT/scripts/gate_weekly_bundle.py" \
     --bundle-json "$output_bundle" \
     --output-json "$output_gate"
 
