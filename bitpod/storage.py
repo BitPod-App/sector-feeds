@@ -18,6 +18,7 @@ from bitpod.paths import ROOT, TRANSCRIPTS_ROOT
 SLUG_PATTERN = re.compile(r"[^a-z0-9]+")
 ROBOTS_POLICY = "noindex, nofollow, noarchive"
 PUBLIC_BUNDLE_FILES = ("status.json", "intake.md", "transcript.md", "discovery.json")
+LANDING_LOGO_PATH = ROOT.parent / "bitpod-assets" / "assets" / "brand" / "logo" / "svg" / "bitpod-logo-avatar-square-color.svg"
 
 
 def slugify(value: str) -> str:
@@ -461,8 +462,23 @@ def _write_noindex_guards(public_root: Path) -> None:
     robots_path.write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
 
 
+def _landing_logo_markup() -> str:
+    try:
+        if LANDING_LOGO_PATH.exists():
+            return LANDING_LOGO_PATH.read_text(encoding="utf-8")
+    except OSError:
+        return ""
+    return ""
+
+
 def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[str, Any]) -> str:
     landing_url = f"{base_url}/{permalink_id}"
+    logo_markup = _landing_logo_markup()
+    run_status = str(public_status.get("run_status") or "unknown")
+    quality_state = str(public_status.get("transcript_quality_state") or "unknown")
+    transcript_provenance = str(public_status.get("transcript_provenance") or "unknown")
+    episode_title = str(public_status.get("episode_title") or "No episode selected")
+    published_at = str(public_status.get("published_at_utc") or "unknown")
     links = [
         ("status.json", f"{landing_url}/status.json"),
         ("intake.md", f"{landing_url}/intake.md"),
@@ -483,22 +499,53 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
             "    <title>BitPod Permalink Bundle</title>",
             "    <style>",
             "      :root { color-scheme: light; }",
-            "      body { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; margin: 2rem; line-height: 1.55; color: #111; background: #fafaf8; }",
-            "      main { max-width: 960px; margin: 0 auto; }",
-            "      h1, h2 { margin-bottom: 0.5rem; }",
-            "      .muted { color: #666; }",
-            "      .card { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 1rem 1.25rem; margin: 1rem 0; }",
-            "      code, pre { background: #f3f1ec; border-radius: 6px; }",
+            "      * { box-sizing: border-box; }",
+            "      body { margin: 0; line-height: 1.55; color: #f5efe4; background: radial-gradient(circle at top left, rgba(255,120,35,0.22), transparent 28%), radial-gradient(circle at bottom right, rgba(117,72,255,0.28), transparent 32%), linear-gradient(180deg, #0d1230 0%, #111734 100%); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }",
+            "      main { max-width: 1040px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; position: relative; }",
+            "      h1, h2 { margin: 0 0 0.5rem; }",
+            "      h1 { font-size: clamp(2rem, 5vw, 3.75rem); line-height: 0.96; letter-spacing: -0.04em; max-width: 9ch; }",
+            "      h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.08em; color: #c9cedf; }",
+            "      p { margin: 0; }",
+            "      .hero { position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); border-radius: 28px; padding: 1.5rem 1.5rem 1.75rem; background: linear-gradient(180deg, rgba(20,28,62,0.88), rgba(14,18,43,0.92)); box-shadow: 0 28px 80px rgba(0,0,0,0.28); }",
+            "      .hero-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 1.25rem; align-items: end; }",
+            "      .muted { color: #b5bbce; max-width: 58ch; }",
+            "      .brand { position: absolute; top: 1rem; right: 1rem; width: 88px; height: 88px; opacity: 0.98; filter: drop-shadow(0 14px 28px rgba(0,0,0,0.28)); }",
+            "      .brand svg { width: 100%; height: 100%; display: block; }",
+            "      .meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-top: 1.5rem; }",
+            "      .pill { display: inline-flex; align-items: center; padding: 0.35rem 0.65rem; border-radius: 999px; background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.12); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; }",
+            "      .keyline { margin-top: 0.85rem; color: #fff; font-size: 1.05rem; }",
+            "      .stack { display: grid; gap: 1rem; }",
+            "      .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 22px; padding: 1.1rem 1.2rem; backdrop-filter: blur(10px); }",
+            "      code, pre { background: rgba(255,255,255,0.07); border-radius: 10px; }",
             "      code { padding: 0.15rem 0.3rem; }",
-            "      pre { padding: 1rem; overflow-x: auto; }",
-            "      ul { padding-left: 1.25rem; }",
-            "      a { color: #0b57d0; }",
+            "      pre { padding: 1rem; overflow-x: auto; color: #f5efe4; }",
+            "      ul { padding-left: 1.1rem; margin: 0.65rem 0 0; }",
+            "      li + li { margin-top: 0.35rem; }",
+            "      a { color: #ffd785; }",
+            "      .contract { max-height: 420px; overflow: auto; }",
+            "      @media (max-width: 760px) { .hero-grid { grid-template-columns: 1fr; } .brand { width: 64px; height: 64px; } }",
             "    </style>",
             "  </head>",
             "  <body>",
             "    <main>",
-            "      <h1>BitPod Permalink Bundle</h1>",
-            '      <p class="muted">Stable opaque show URL. Use the raw links below or the embedded machine-readable run contract.</p>',
+            '      <section class="hero">',
+            f'        <div class="brand">{logo_markup}</div>' if logo_markup else "",
+            '        <div class="hero-grid">',
+            "          <div>",
+            '            <div class="pill">BitPod public run surface</div>',
+            "            <h1>Permalink Bundle</h1>",
+            '            <p class="muted">Stable opaque show URL. Use the raw artifacts below or the embedded machine-readable contract for downstream GPT handoff.</p>',
+            f'            <p class="keyline">{html_escape(episode_title)}</p>',
+            "          </div>",
+            '          <div class="meta">',
+            f'            <div class="card"><h2>Run Status</h2><p>{html_escape(run_status)}</p></div>',
+            f'            <div class="card"><h2>Transcript State</h2><p>{html_escape(quality_state)}</p></div>',
+            f'            <div class="card"><h2>Provenance</h2><p>{html_escape(transcript_provenance)}</p></div>',
+            f'            <div class="card"><h2>Published</h2><p>{html_escape(published_at)}</p></div>',
+            "          </div>",
+            "        </div>",
+            "      </section>",
+            '      <section class="stack" style="margin-top: 1rem;">',
             '      <div class="card">',
             "        <h2>Canonical Artifacts</h2>",
             "        <ul>",
@@ -508,8 +555,9 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
             '      <div class="card">',
             "        <h2>Run Contract</h2>",
             f'        <script id="bitpod-run-contract" type="application/json" data-public-id="{html_escape(permalink_id)}">{status_json_attr}</script>',
-            f"        <pre>{html_escape(status_json)}</pre>",
+            f'        <pre class="contract">{html_escape(status_json)}</pre>',
             "      </div>",
+            "      </section>",
             "    </main>",
             "  </body>",
             "</html>",
