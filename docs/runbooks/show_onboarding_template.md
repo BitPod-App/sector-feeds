@@ -1,6 +1,6 @@
 # Show Onboarding Template
 
-Use `show_scaffold_template` in [shows.json](/Users/cjarguello/BitPod-App/bitpod/shows.json) as the copy source for a new show entry under `shows`.
+Use `show_scaffold_template` in [shows.json](/Users/cjarguello/BitPod-App/sector-feeds/shows.json) as the copy source for a new show entry under `shows`.
 
 ## Minimal checklist
 
@@ -27,4 +27,3 @@ bash scripts/print_show_contract.sh <new_show_key>
 make track-status-board SHOW_KEY=<new_show_key>
 make track-status-check SHOW_KEY=<new_show_key>
 ```
-

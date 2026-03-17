@@ -13,7 +13,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-TOOLS_ROOT = Path("/Users/cjarguello/BitPod-App/tools")
+TOOLS_ROOT = Path("/Users/cjarguello/BitPod-App/bitpod-tools")
 TOOLS_COSTS = TOOLS_ROOT / "costs"
 if str(TOOLS_COSTS) not in sys.path:
     sys.path.insert(0, str(TOOLS_COSTS))
@@ -34,7 +34,7 @@ def _resolve_bridge_root() -> Path:
     candidates = [
         os.environ.get("BITPOD_GPT_BRIDGE_ROOT", "").strip(),
         "/Users/cjarguello/BitPod-App/bitpod-tools/gpt_bridge",
-        "/Users/cjarguello/BitPod-App/tools/gpt_bridge",
+        "/Users/cjarguello/BitPod-App/bitpod-tools/gpt_bridge",
         str(REPO_ROOT.parent / "bitpod-tools" / "gpt_bridge"),
         str(REPO_ROOT.parent / "tools" / "gpt_bridge"),
     ]

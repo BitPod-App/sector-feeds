@@ -43,6 +43,12 @@ Optional: override root path for generated artifacts.
 export BITPOD_ROOT="/path/to/bitpod"
 ```
 
+Optional: set the canonical public permalink base URL explicitly.
+
+```bash
+export BITPOD_PUBLIC_PERMALINK_BASE_URL="https://permalinks.bitpod.app"
+```
+
 ## Usage
 
 ```bash
@@ -82,6 +88,7 @@ python -m bitpod sync --show jack_mallers_show --model gpt-4o-mini-transcribe
 Inputs
 - Show/feed definitions in `shows.json`.
 - Runtime config: `OPENAI_API_KEY` (required), `BITPOD_ROOT` (optional).
+- Public permalink config: `BITPOD_PUBLIC_PERMALINK_BASE_URL` (recommended when using a custom `bitpod.app` domain).
 
 Outputs
 - Transcript Markdown files in `transcripts/<show_key>/<YYYY>/`.
@@ -138,7 +145,7 @@ How it updates:
 Operational commands:
 
 ```bash
-cd /Users/cjarguello/BitPod-App/bitpod
+cd /Users/cjarguello/BitPod-App/sector-feeds
 source .venv311/bin/activate
 python -m bitpod discover --show jack_mallers_show
 python -m bitpod sync --show jack_mallers_show --max-episodes 1
@@ -334,11 +341,11 @@ Timeline policy:
 - For live-heavy YouTube sources, sync applies a default maturity guard (`--min-episode-age-minutes 180`) to avoid unfinished captures.
 - GPT bridge cost estimates are logged to:
 - local: `artifacts/cost-meter/bridge_cost_estimates.jsonl`
-- shared tools source of truth: `/Users/cjarguello/BitPod-App/tools/artifacts/cost-meter/cost_events.jsonl`
+- shared tools source of truth: `/Users/cjarguello/BitPod-App/bitpod-tools/artifacts/cost-meter/cost_events.jsonl`
 
 Shared cost summary (all repos/commands that write to tools meter):
 ```bash
-/Users/cjarguello/BitPod-App/tools/costs/cost_ctl.py
+/Users/cjarguello/BitPod-App/bitpod-tools/costs/cost_ctl.py
 ```
 
 Weekly cost guardrails (automation-friendly):

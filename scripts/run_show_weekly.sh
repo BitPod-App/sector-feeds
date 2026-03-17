@@ -41,7 +41,18 @@ MIN_CAPTION_WORDS="${2:-${MIN_CAPTION_WORDS:-120}}"
 MIN_EPISODE_AGE_MINUTES="${3:-${MIN_EPISODE_AGE_MINUTES:-180}}"
 WEEKLY_GPT_REPORT="${WEEKLY_GPT_REPORT:-0}"
 BITPOD_FEED_MODE="${BITPOD_FEED_MODE:-all}"
-TOOLS_COST_CTL="/Users/cjarguello/BitPod-App/tools/costs/cost_ctl.py"
+TOOLS_COST_CTL="${TOOLS_COST_CTL:-}"
+if [ -z "$TOOLS_COST_CTL" ]; then
+  for candidate in \
+    "$REPO_ROOT/../bitpod-tools/costs/cost_ctl.py" \
+    "/Users/cjarguello/BitPod-App/bitpod-tools/costs/cost_ctl.py"
+  do
+    if [ -f "$candidate" ]; then
+      TOOLS_COST_CTL="$candidate"
+      break
+    fi
+  done
+fi
 
 run_cost_guard() {
   if [ ! -x "$TOOLS_COST_CTL" ]; then

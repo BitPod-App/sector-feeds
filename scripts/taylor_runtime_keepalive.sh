@@ -21,7 +21,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$REPO_ROOT"
 
-TOOLS_ROOT="${TOOLS_ROOT:-/Users/cjarguello/BitPod-App/tools}"
+TOOLS_ROOT="${TOOLS_ROOT:-/Users/cjarguello/BitPod-App/bitpod-tools}"
 TAYLOR_BIN="${TAYLOR_BIN:-${TOOLS_ROOT}/taylor/bin/taylor}"
 if command -v taylor >/dev/null 2>&1; then
   TAYLOR_BIN="$(command -v taylor)"

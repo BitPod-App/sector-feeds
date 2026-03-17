@@ -32,7 +32,7 @@ python3 scripts/generate_weekly_critical_bundle.py \
 
 ```bash
 python3 /Users/cjarguello/BitPod-App/bitregime-core/scripts/gate_weekly_bundle.py \
-  --bundle-json /Users/cjarguello/BitPod-App/bitpod/artifacts/private/weekly_bundles/weekly_critical_bundle.json \
+  --bundle-json /Users/cjarguello/BitPod-App/sector-feeds/artifacts/private/weekly_bundles/weekly_critical_bundle.json \
   --output-json /Users/cjarguello/BitPod-App/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json
 ```
 
