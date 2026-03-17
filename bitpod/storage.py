@@ -484,6 +484,17 @@ def _bundle_verification_mode(readability: dict[str, Any] | None) -> str:
     return "unknown"
 
 
+def _artifact_readable_label(entry: dict[str, Any] | None) -> str:
+    if not isinstance(entry, dict):
+        return "unverified"
+    readable = entry.get("readable")
+    if readable is True:
+        return "readable"
+    if readable is False:
+        return "unreadable"
+    return "unverified"
+
+
 def render_public_landing_page(*, public_status: dict[str, Any], landing_path: Path, base_url: str | None = None) -> Path:
     permalink_id = str(public_status.get("public_id") or "").strip()
     resolved_base_url = (base_url or _public_permalink_base_url()).rstrip("/")
@@ -510,6 +521,9 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
     run_id = str(public_status.get("run_id") or "unknown")
     failure_reason = str(public_status.get("failure_reason") or "")
     fallback_note = str(public_status.get("fallback_note") or "")
+    source_mode = str(public_status.get("source_mode") or "unknown")
+    transcript_source_type = str(public_status.get("transcript_source_type") or "unknown")
+    transcript_source_url = str(public_status.get("transcript_source_url") or public_status.get("episode_url") or "")
     bundle_complete = bool(public_status.get("public_bundle_complete"))
     bundle_missing = public_status.get("public_bundle_missing") or []
     readability = public_status.get("public_bundle_readability") or {}
@@ -520,13 +534,7 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
     readability_rows = []
     for name in PUBLIC_BUNDLE_FILES:
         entry = readability.get(name) or {}
-        readable = entry.get("readable")
-        if readable is True:
-            readable_label = "readable"
-        elif readable is False:
-            readable_label = "unreadable"
-        else:
-            readable_label = "unverified"
+        readable_label = _artifact_readable_label(entry)
         readability_rows.append(
             f'          <li><strong>{html_escape(name)}</strong> '
             f'<span>{html_escape(readable_label)}</span> '
@@ -548,8 +556,36 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
     else:
         summary_text = "No new episode was incorporated on this run."
     detail_line = fallback_note or failure_reason or "Public permalink bundle verified and readable."
+    if run_status == "ok" and included_in_pointer:
+        outcome_line = "Episode was incorporated into the stable pointer."
+    elif new_episode_detected and not included_in_pointer:
+        outcome_line = "Episode was detected but not incorporated."
+    else:
+        outcome_line = "No episode incorporation occurred on this run."
+    findings_items = [
+        f"Run status: {run_status}.",
+        f"Transcript provenance: {transcript_provenance}.",
+        f"Verification mode: {verification_mode}.",
+    ]
+    if fallback_note:
+        findings_items.append(f"Fallback note: {fallback_note}.")
+    if failure_reason:
+        findings_items.append(f"Failure reason: {failure_reason}.")
+    recommendations_items = [
+        f"Keep source mode explicit. Current mode: {source_mode}.",
+        f"Preserve transcript source visibility. Current type: {transcript_source_type}.",
+        "Keep public readability visible on the page, not just in raw JSON.",
+    ]
+    if not bundle_complete:
+        recommendations_items.insert(0, "Do not treat this page as canonical until public readability finishes verifying.")
+    provenance_items = [
+        ("Published", published_at),
+        ("Run ID", run_id),
+        ("Verification", verification_mode),
+        ("Verified At", verified_at),
+    ]
     artifact_links_markup = [
-        f'              <a class="artifact-link" href="{html_escape(href)}"><span>{html_escape(label)}</span><span>public</span></a>'
+        f'              <a class="artifact-link" href="{html_escape(href)}"><span>{html_escape(label)}</span><span>{html_escape(_artifact_readable_label(readability.get(label)) if label in readability else "public")}</span></a>'
         for label, href in links
     ]
     status_json = json.dumps(public_status, indent=2, sort_keys=True)
@@ -670,14 +706,20 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
             '            <span class="eyebrow">Executive summary</span>',
             '            <h3>What happened</h3>',
             f'            <p class="muted">{html_escape(summary_text)}</p>',
+            f'            <p class="muted" style="margin-top: 12px;">{html_escape(outcome_line)}</p>',
             "          </article>",
             '          <article class="section-card">',
             '            <span class="eyebrow">Run findings</span>',
             '            <h3>Current intake surface</h3>',
             "            <ul>",
-            f'              <li>Episode title: {html_escape(episode_title)}</li>',
-            f'              <li>Transcript provenance: {html_escape(transcript_provenance)}</li>',
-            f'              <li>Verification mode: {html_escape(verification_mode)}</li>',
+            *[f'              <li>{html_escape(item)}</li>' for item in findings_items],
+            "            </ul>",
+            "          </article>",
+            '          <article class="section-card">',
+            '            <span class="eyebrow">Recommendations</span>',
+            '            <h3>Current system posture</h3>',
+            "            <ul>",
+            *[f'              <li>{html_escape(item)}</li>' for item in recommendations_items],
             "            </ul>",
             "          </article>",
             '          <article class="section-card">',
@@ -707,16 +749,18 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
             '            <span class="eyebrow">Metadata</span>',
             '            <h3>Run surface</h3>',
             '            <div class="meta-list">',
-            f'              <div class="meta-line"><span>Published</span><span>{html_escape(published_at)}</span></div>',
-            f'              <div class="meta-line"><span>Run ID</span><span>{html_escape(run_id)}</span></div>',
-            f'              <div class="meta-line"><span>Verification</span><span>{html_escape(verification_mode)}</span></div>',
+            *[
+                f'              <div class="meta-line"><span>{html_escape(label)}</span><span>{html_escape(value)}</span></div>'
+                for label, value in provenance_items
+            ],
             f'              <div class="meta-line"><span>Bundle health</span><span>{"complete" if bundle_complete else "not fully verified"}</span></div>',
             "            </div>",
             "          </article>",
             '          <article class="rail-card">',
             '            <span class="eyebrow">Provenance</span>',
             '            <h3>Minimal footer context</h3>',
-            '            <p class="muted">Generated by BitPod App from the latest stable run bundle. Keep provenance compact and explicit: timestamp, verification mode, and source surface.</p>',
+            f'            <p class="muted">Generated by BitPod App from the latest stable run bundle. Source mode: {html_escape(source_mode)}. Transcript source: {html_escape(transcript_source_type)}.</p>',
+            f'            <p class="muted" style="margin-top: 12px;">{"Source URL available." if transcript_source_url else "No source URL published."}</p>',
             "          </article>",
             "        </aside>",
             "      </section>",
