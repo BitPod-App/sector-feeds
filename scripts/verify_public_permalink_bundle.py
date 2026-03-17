@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 import time
 from pathlib import Path
 from typing import Any
@@ -10,6 +11,10 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from bitpod.storage import render_public_landing_page, _bundle_verification_mode
 
 ARTIFACT_RULES = {
     "status.json": {"must_contain": "public_permalink_status.v1"},
@@ -124,6 +129,8 @@ def main() -> int:
         "public_bundle_complete": len(missing) == 0,
         "public_bundle_readability": readability,
         "public_bundle_missing": missing,
+        "public_bundle_verification_mode": _bundle_verification_mode(readability),
+        "public_bundle_verified_at_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
     }
 
     if args.write:
@@ -131,6 +138,11 @@ def main() -> int:
         public_status = json.loads(public_status_path.read_text(encoding="utf-8"))
         public_status.update(health)
         public_status_path.write_text(json.dumps(public_status, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        render_public_landing_page(
+            public_status=public_status,
+            landing_path=Path(local_status["public_permalink_landing_path"]),
+            base_url=base_url.rsplit("/", 1)[0] if base_url.endswith(f"/{permalink_id}") else base_url,
+        )
 
         local_status.update(health)
         local_status_path.write_text(json.dumps(local_status, indent=2, sort_keys=True) + "\n", encoding="utf-8")

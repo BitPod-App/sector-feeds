@@ -232,6 +232,8 @@ class StorageTests(unittest.TestCase):
             landing_text = landing_path.read_text(encoding="utf-8")
             self.assertIn("BitPod Permalink Bundle", landing_text)
             self.assertIn('id="bitpod-run-contract"', landing_text)
+            self.assertIn("Public Readability", landing_text)
+            self.assertIn("local_fs_only", landing_text)
             self.assertIn(
                 f'href="https://bitpod-public-permalinks.pages.dev/{first["public_permalink_id"]}/status.json"',
                 landing_text,
@@ -259,10 +261,13 @@ class StorageTests(unittest.TestCase):
             self.assertEqual(status_payload["source_mode"], "captions")
             self.assertEqual(status_payload["transcript_quality_state"], "usable")
             self.assertFalse(status_payload["transcript_degraded"])
-            self.assertTrue(status_payload["public_bundle_complete"])
+            self.assertFalse(status_payload["public_bundle_complete"])
             self.assertEqual(status_payload["public_bundle_missing"], [])
-            self.assertTrue(status_payload["public_bundle_readability"]["status.json"]["readable"])
+            self.assertIsNone(status_payload["public_bundle_readability"]["status.json"]["readable"])
             self.assertEqual(status_payload["public_bundle_readability"]["status.json"]["verified_via"], "local_fs")
+            self.assertTrue(status_payload["public_bundle_readability"]["status.json"]["local_exists"])
+            self.assertEqual(status_payload["public_bundle_verification_mode"], "local_fs_only")
+            self.assertIsNone(status_payload["public_bundle_verified_at_utc"])
             self.assertEqual(
                 status_payload["public_bundle_readability"]["intake.md"]["url"],
                 f"https://bitpod-public-permalinks.pages.dev/{first['public_permalink_id']}/intake.md",

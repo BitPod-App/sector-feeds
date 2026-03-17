@@ -36,7 +36,13 @@ def main() -> int:
 
         public_status_path = Path(public_paths["public_permalink_status_path"])
         public_status = json.loads(public_status_path.read_text(encoding="utf-8"))
-        for key in ("public_bundle_complete", "public_bundle_readability", "public_bundle_missing"):
+        for key in (
+            "public_bundle_complete",
+            "public_bundle_readability",
+            "public_bundle_missing",
+            "public_bundle_verification_mode",
+            "public_bundle_verified_at_utc",
+        ):
             payload[key] = public_status.get(key)
 
         status_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")

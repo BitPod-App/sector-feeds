@@ -471,6 +471,32 @@ def _landing_logo_markup() -> str:
     return ""
 
 
+def _bundle_verification_mode(readability: dict[str, Any] | None) -> str:
+    if not isinstance(readability, dict) or not readability:
+        return "unknown"
+    modes = {str((value or {}).get("verified_via") or "unknown") for value in readability.values()}
+    if modes == {"public_http"}:
+        return "public_http"
+    if modes == {"local_fs"}:
+        return "local_fs_only"
+    if "public_http" in modes and "local_fs" in modes:
+        return "mixed"
+    return "unknown"
+
+
+def render_public_landing_page(*, public_status: dict[str, Any], landing_path: Path, base_url: str | None = None) -> Path:
+    permalink_id = str(public_status.get("public_id") or "").strip()
+    resolved_base_url = (base_url or _public_permalink_base_url()).rstrip("/")
+    if not permalink_id:
+        raise ValueError("public_status missing public_id")
+    landing_path.parent.mkdir(parents=True, exist_ok=True)
+    landing_path.write_text(
+        _landing_page_html(permalink_id=permalink_id, base_url=resolved_base_url, public_status=public_status),
+        encoding="utf-8",
+    )
+    return landing_path
+
+
 def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[str, Any]) -> str:
     landing_url = f"{base_url}/{permalink_id}"
     logo_markup = _landing_logo_markup()
@@ -479,6 +505,28 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
     transcript_provenance = str(public_status.get("transcript_provenance") or "unknown")
     episode_title = str(public_status.get("episode_title") or "No episode selected")
     published_at = str(public_status.get("published_at_utc") or "unknown")
+    bundle_complete = bool(public_status.get("public_bundle_complete"))
+    bundle_missing = public_status.get("public_bundle_missing") or []
+    readability = public_status.get("public_bundle_readability") or {}
+    verification_mode = str(
+        public_status.get("public_bundle_verification_mode") or _bundle_verification_mode(readability)
+    )
+    verified_at = str(public_status.get("public_bundle_verified_at_utc") or "pending")
+    readability_rows = []
+    for name in PUBLIC_BUNDLE_FILES:
+        entry = readability.get(name) or {}
+        readable = entry.get("readable")
+        if readable is True:
+            readable_label = "readable"
+        elif readable is False:
+            readable_label = "unreadable"
+        else:
+            readable_label = "unverified"
+        readability_rows.append(
+            f'          <li><strong>{html_escape(name)}</strong> '
+            f'<span>{html_escape(readable_label)}</span> '
+            f'<span class="muted-inline">via {html_escape(str(entry.get("verified_via") or "unknown"))}</span></li>'
+        )
     links = [
         ("status.json", f"{landing_url}/status.json"),
         ("intake.md", f"{landing_url}/intake.md"),
@@ -516,6 +564,7 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
             "      .keyline { margin-top: 0.85rem; color: #fff; font-size: 1.05rem; }",
             "      .stack { display: grid; gap: 1rem; }",
             "      .card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 22px; padding: 1.1rem 1.2rem; backdrop-filter: blur(10px); }",
+            "      .card p { margin-top: 0.2rem; }",
             "      code, pre { background: rgba(255,255,255,0.07); border-radius: 10px; }",
             "      code { padding: 0.15rem 0.3rem; }",
             "      pre { padding: 1rem; overflow-x: auto; color: #f5efe4; }",
@@ -523,6 +572,7 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
             "      li + li { margin-top: 0.35rem; }",
             "      a { color: #ffd785; }",
             "      .contract { max-height: 420px; overflow: auto; }",
+            "      .muted-inline { color: #b5bbce; font-size: 0.9em; }",
             "      @media (max-width: 760px) { .hero-grid { grid-template-columns: 1fr; } .brand { width: 64px; height: 64px; } }",
             "    </style>",
             "  </head>",
@@ -542,6 +592,8 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
             f'            <div class="card"><h2>Transcript State</h2><p>{html_escape(quality_state)}</p></div>',
             f'            <div class="card"><h2>Provenance</h2><p>{html_escape(transcript_provenance)}</p></div>',
             f'            <div class="card"><h2>Published</h2><p>{html_escape(published_at)}</p></div>',
+            f'            <div class="card"><h2>Bundle Health</h2><p>{"complete" if bundle_complete else "not fully verified"}</p></div>',
+            f'            <div class="card"><h2>Verification</h2><p>{html_escape(verification_mode)}</p></div>',
             "          </div>",
             "        </div>",
             "      </section>",
@@ -550,6 +602,14 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
             "        <h2>Canonical Artifacts</h2>",
             "        <ul>",
             *[f'          <li><a href="{html_escape(href)}">{html_escape(label)}</a></li>' for label, href in links],
+            "        </ul>",
+            "      </div>",
+            '      <div class="card">',
+            "        <h2>Public Readability</h2>",
+            f'        <p>{"Verified via public reads." if verification_mode == "public_http" else "Public verification is incomplete or mixed."} Last check: {html_escape(verified_at)}</p>',
+            f'        <p class="muted">Missing after verification: {html_escape(", ".join(bundle_missing) if bundle_missing else "none")}</p>',
+            "        <ul>",
+            *readability_rows,
             "        </ul>",
             "      </div>",
             '      <div class="card">',
@@ -571,20 +631,23 @@ def default_public_bundle_health(*, show_root: Path, base_url: str, permalink_id
     missing: list[str] = []
     for name in PUBLIC_BUNDLE_FILES:
         target = show_root / name
-        readable = target.exists()
-        if not readable:
+        local_exists = target.exists()
+        if not local_exists:
             missing.append(name)
         readability[name] = {
             "url": f"{base_url}/{permalink_id}/{name}",
             "http_status": None,
             "content_type": None,
-            "readable": readable,
+            "readable": None,
+            "local_exists": local_exists,
             "verified_via": "local_fs",
         }
     return {
-        "public_bundle_complete": len(missing) == 0,
+        "public_bundle_complete": False,
         "public_bundle_readability": readability,
         "public_bundle_missing": missing,
+        "public_bundle_verification_mode": "local_fs_only",
+        "public_bundle_verified_at_utc": None,
     }
 
 
@@ -1059,6 +1122,8 @@ def write_public_permalink_artifacts(
         "public_bundle_complete": bundle_health["public_bundle_complete"],
         "public_bundle_readability": bundle_health["public_bundle_readability"],
         "public_bundle_missing": bundle_health["public_bundle_missing"],
+        "public_bundle_verification_mode": bundle_health["public_bundle_verification_mode"],
+        "public_bundle_verified_at_utc": bundle_health["public_bundle_verified_at_utc"],
         "latest_episode_published_at_utc": status_payload.get("latest_episode_published_at_utc"),
         "pointer_updated_at_utc": status_payload.get("pointer_updated_at_utc"),
         "updated_at_utc": now_iso(),
@@ -1089,10 +1154,7 @@ def write_public_permalink_artifacts(
         "unprocessed_episodes": unprocessed,
     }
     status_path.write_text(json.dumps(public_status, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    landing_path.write_text(
-        _landing_page_html(permalink_id=permalink_id, base_url=base_url, public_status=public_status),
-        encoding="utf-8",
-    )
+    render_public_landing_page(public_status=public_status, landing_path=landing_path, base_url=base_url)
 
     manifest_path = _private_manifest_path()
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
