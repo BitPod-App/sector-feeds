@@ -423,15 +423,8 @@ def sync_show(
         "governance": _governance_context(),
     }
 
-    if not feed_urls:
-        if dry_run:
-            stats["would_process"] = []
-            stats["note"] = "No feeds configured yet. Run discover first."
-            return stats
-        status_payload["failure_stage"] = "discovery"
-        status_payload["failure_reason"] = "No feed URL found. Run discover first."
-        status_payload["suggested_next_action"] = _next_action_for_stage("discovery")
-        status_payload["run_finished_at_utc"] = now_iso()
+    def _finalize_status_artifacts() -> None:
+        status_payload["run_finished_at_utc"] = status_payload.get("run_finished_at_utc") or now_iso()
         status_json_path, status_md_path = write_run_status_artifacts(
             show_key=show_key,
             payload=status_payload,
@@ -439,192 +432,210 @@ def sync_show(
         )
         status_payload["status_json_path"] = str(status_json_path)
         status_payload["status_md_path"] = str(status_md_path)
-        review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
-        status_payload["gpt_review_request_path"] = str(review_path)
-        public_paths = write_public_permalink_artifacts(show_key=show_key, status_payload=status_payload)
-        status_payload.update(public_paths)
-        review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
-        status_payload["gpt_review_request_path"] = str(review_path)
-        write_run_status_artifacts(
+        review_path = write_gpt_review_request(
             show_key=show_key,
             payload=status_payload,
             status_basename=status_basename,
         )
-        raise RuntimeError(f"No feed URL found for show {show_key}. Run discover first.")
+        status_payload["gpt_review_request_path"] = str(review_path)
+        public_paths = write_public_permalink_artifacts(show_key=show_key, status_payload=status_payload)
+        status_payload.update(public_paths)
+        review_path = write_gpt_review_request(
+            show_key=show_key,
+            payload=status_payload,
+            status_basename=status_basename,
+        )
+        status_payload["gpt_review_request_path"] = str(review_path)
+        status_json_path, status_md_path = write_run_status_artifacts(
+            show_key=show_key,
+            payload=status_payload,
+            status_basename=status_basename,
+        )
+        stats["status_json_path"] = str(status_json_path)
+        stats["status_md_path"] = str(status_md_path)
+        stats["gpt_review_request_path"] = str(review_path)
+        stats["latest_included_in_pointer"] = bool(status_payload["included_in_pointer"])
+        stats["run_status"] = status_payload["run_status"]
 
-    index = load_processed()
+    finalize_error: Exception | None = None
 
-    from bitpod.feeds import parse_feed
+    try:
+        if not feed_urls:
+            if dry_run:
+                stats["would_process"] = []
+                stats["note"] = "No feeds configured yet. Run discover first."
+                return stats
+            status_payload["failure_stage"] = "discovery"
+            status_payload["failure_reason"] = "No feed URL found. Run discover first."
+            status_payload["suggested_next_action"] = _next_action_for_stage("discovery")
+            raise RuntimeError(f"No feed URL found for show {show_key}. Run discover first.")
 
-    episodes: list[Any] = []
-    for feed_url in feed_urls:
-        episodes.extend(parse_feed(feed_url))
+        index = load_processed()
 
-    deduped_by_guid: dict[str, Any] = {}
-    for episode in episodes:
-        guid = str(episode.guid)
-        current = deduped_by_guid.get(guid)
-        deduped_by_guid[guid] = episode if current is None else _choose_best_source(current, episode)
+        from bitpod.feeds import parse_feed
 
-    episodes = _dedupe_cross_source_variants(list(deduped_by_guid.values()))
-    cutoff_now = as_of_utc or datetime.now(timezone.utc)
-    episodes = [ep for ep in episodes if ep.published_at <= cutoff_now]
-    stats["seen"] = len(episodes)
+        episodes: list[Any] = []
+        for feed_url in feed_urls:
+            episodes.extend(parse_feed(feed_url))
 
-    # Live streams and very fresh uploads can be incomplete; hold recent YouTube episodes by default.
-    mature_cutoff = cutoff_now - timedelta(minutes=max(min_episode_age_minutes, 0))
-    matured_episodes: list[Any] = []
-    deferred_recent_youtube = 0
-    deferred_live_youtube = 0
-    for ep in episodes:
-        source_type = str(getattr(ep, "source_type", "unknown"))
-        if _is_live_like_youtube_episode(ep):
-            deferred_live_youtube += 1
-            continue
-        if source_type.startswith("youtube") and ep.published_at > mature_cutoff:
-            deferred_recent_youtube += 1
-            continue
-        matured_episodes.append(ep)
+        deduped_by_guid: dict[str, Any] = {}
+        for episode in episodes:
+            guid = str(episode.guid)
+            current = deduped_by_guid.get(guid)
+            deduped_by_guid[guid] = episode if current is None else _choose_best_source(current, episode)
 
-    stats["deferred_recent_youtube"] = deferred_recent_youtube
-    stats["deferred_live_youtube"] = deferred_live_youtube
-    selected = filter_episodes(matured_episodes, max_episodes=max_episodes, since_days=since_days)
-    stats["selected"] = len(selected)
+        episodes = _dedupe_cross_source_variants(list(deduped_by_guid.values()))
+        cutoff_now = as_of_utc or datetime.now(timezone.utc)
+        episodes = [ep for ep in episodes if ep.published_at <= cutoff_now]
+        stats["seen"] = len(episodes)
 
-    if dry_run:
-        stats["would_process"] = [
-            {
-                "title": ep.title,
-                "published_at": ep.published_at.isoformat(),
-                "source_url": ep.source_url,
-                "feed_url": ep.feed_url,
-                "source_type": getattr(ep, "source_type", "unknown"),
-                "source_rank": _source_rank(str(getattr(ep, "source_type", "unknown"))),
-            }
-            for ep in selected
-        ]
-        return stats
+        # Live streams and very fresh uploads can be incomplete; hold recent YouTube episodes by default.
+        mature_cutoff = cutoff_now - timedelta(minutes=max(min_episode_age_minutes, 0))
+        matured_episodes: list[Any] = []
+        deferred_recent_youtube = 0
+        deferred_live_youtube = 0
+        for ep in episodes:
+            source_type = str(getattr(ep, "source_type", "unknown"))
+            if _is_live_like_youtube_episode(ep):
+                deferred_live_youtube += 1
+                continue
+            if source_type.startswith("youtube") and ep.published_at > mature_cutoff:
+                deferred_recent_youtube += 1
+                continue
+            matured_episodes.append(ep)
 
-    latest_episode = selected[0] if selected else None
-    attempted_episode = latest_episode
-    latest_episode_succeeded = False
+        stats["deferred_recent_youtube"] = deferred_recent_youtube
+        stats["deferred_live_youtube"] = deferred_live_youtube
+        selected = filter_episodes(matured_episodes, max_episodes=max_episodes, since_days=since_days)
+        stats["selected"] = len(selected)
 
-    if latest_episode is not None:
-        status_payload["latest_episode_guid"] = str(latest_episode.guid)
-        status_payload["latest_episode_title"] = latest_episode.title
-        status_payload["latest_episode_published_at_utc"] = latest_episode.published_at.isoformat()
+        if dry_run:
+            stats["would_process"] = [
+                {
+                    "title": ep.title,
+                    "published_at": ep.published_at.isoformat(),
+                    "source_url": ep.source_url,
+                    "feed_url": ep.feed_url,
+                    "source_type": getattr(ep, "source_type", "unknown"),
+                    "source_rank": _source_rank(str(getattr(ep, "source_type", "unknown"))),
+                }
+                for ep in selected
+            ]
+            return stats
 
-    if not selected:
-        status_payload["failure_stage"] = "discovery"
-        if deferred_recent_youtube > 0:
-            status_payload["failure_reason"] = (
-                f"No eligible episodes yet; deferred {deferred_recent_youtube} recent YouTube item(s) "
-                f"under min_episode_age_minutes={min_episode_age_minutes}."
-            )
+        latest_episode = selected[0] if selected else None
+        latest_episode_succeeded = False
+
+        if latest_episode is not None:
+            status_payload["latest_episode_guid"] = str(latest_episode.guid)
+            status_payload["latest_episode_title"] = latest_episode.title
+            status_payload["latest_episode_published_at_utc"] = latest_episode.published_at.isoformat()
+
+        if not selected:
+            status_payload["failure_stage"] = "discovery"
+            if deferred_recent_youtube > 0:
+                status_payload["failure_reason"] = (
+                    f"No eligible episodes yet; deferred {deferred_recent_youtube} recent YouTube item(s) "
+                    f"under min_episode_age_minutes={min_episode_age_minutes}."
+                )
+            else:
+                status_payload["failure_reason"] = "No episodes selected under current filters and maturity guard."
+            status_payload["suggested_next_action"] = _next_action_for_stage("discovery")
+
+        for episode in selected:
+            key = episode_key(show_key, episode.guid)
+            existing = index["episodes"].get(key)
+            if existing and existing.get("status") == "ok":
+                stats["skipped"] += 1
+                if latest_episode and str(episode.guid) == str(latest_episode.guid):
+                    latest_episode_succeeded = True
+                continue
+
+            status_payload["attempted_episode_guid"] = str(episode.guid)
+            status_payload["attempted_episode_title"] = episode.title
+            status_payload["attempted_source_type"] = getattr(episode, "source_type", "unknown")
+            status_payload["attempted_source_url"] = episode.source_url
+            LOGGER.info("Processing: %s", episode.title)
+            try:
+                used_caption = _process_episode(
+                    show=show,
+                    show_key=show_key,
+                    episode=episode,
+                    index=index,
+                    key=key,
+                    model=model,
+                    existing=existing,
+                    source_policy=source_policy,
+                    no_youtube_download=no_youtube_download,
+                    min_caption_words=min_caption_words,
+                )
+                stats["processed"] += 1
+                if used_caption:
+                    stats["caption_used"] += 1
+                if latest_episode and str(episode.guid) == str(latest_episode.guid):
+                    latest_episode_succeeded = True
+            except ProcessingError as exc:
+                LOGGER.exception("Failed episode %s: %s", episode.source_url, exc)
+                _mark(index, key, "failed", reason=exc.reason, stage=exc.stage, source_url=episode.source_url)
+                stats["failed"] += 1
+                status_payload["failure_stage"] = exc.stage
+                status_payload["failure_reason"] = exc.reason
+                status_payload["suggested_next_action"] = _next_action_for_stage(exc.stage)
+            except Exception as exc:  # noqa: BLE001
+                LOGGER.exception("Failed episode %s: %s", episode.source_url, exc)
+                _mark(index, key, "failed", reason=str(exc), stage="sync", source_url=episode.source_url)
+                stats["failed"] += 1
+                status_payload["failure_stage"] = "sync"
+                status_payload["failure_reason"] = str(exc)
+                status_payload["suggested_next_action"] = _next_action_for_stage("sync")
+            finally:
+                save_processed(index)
+
+        if latest_episode_succeeded:
+            _refresh_stable_pointer(show, index)
+            status_payload["included_in_pointer"] = True
+            status_payload["ready_via_permalink"] = True
+            status_payload["pointer_updated_at_utc"] = now_iso()
+            status_payload["run_status"] = "ok"
         else:
-            status_payload["failure_reason"] = "No episodes selected under current filters and maturity guard."
-        status_payload["suggested_next_action"] = _next_action_for_stage("discovery")
+            status_payload["included_in_pointer"] = False
+            status_payload["ready_via_permalink"] = False
+            status_payload["run_status"] = "failed" if stats["failed"] > 0 or selected else "failed"
+            if not status_payload["failure_stage"]:
+                status_payload["failure_stage"] = "sync"
+                status_payload["failure_reason"] = "Latest episode was not included in pointer update."
+                status_payload["suggested_next_action"] = _next_action_for_stage("sync")
 
-    for episode in selected:
-        key = episode_key(show_key, episode.guid)
-        existing = index["episodes"].get(key)
-        if existing and existing.get("status") == "ok":
-            stats["skipped"] += 1
-            if latest_episode and str(episode.guid) == str(latest_episode.guid):
-                latest_episode_succeeded = True
-            continue
+        if latest_episode is not None:
+            latest_key = episode_key(show_key, latest_episode.guid)
+            latest_payload = index["episodes"].get(latest_key, {})
+            status_payload["plain_artifact_path"] = latest_payload.get("transcript_plain_path")
+            status_payload["segments_artifact_path"] = latest_payload.get("transcript_segments_path")
+            if status_payload["attempted_episode_guid"] is None:
+                status_payload["attempted_episode_guid"] = str(latest_episode.guid)
+                status_payload["attempted_episode_title"] = latest_episode.title
+                status_payload["attempted_source_type"] = getattr(latest_episode, "source_type", "unknown")
+                status_payload["attempted_source_url"] = latest_episode.source_url
+    except Exception as exc:  # noqa: BLE001
+        finalize_error = exc
+        if not dry_run:
+            if not status_payload.get("failure_stage"):
+                status_payload["failure_stage"] = "sync"
+            if not status_payload.get("failure_reason"):
+                status_payload["failure_reason"] = str(exc)
+            if not status_payload.get("suggested_next_action"):
+                status_payload["suggested_next_action"] = _next_action_for_stage(status_payload.get("failure_stage"))
+    finally:
+        if not dry_run:
+            try:
+                _finalize_status_artifacts()
+            except Exception:
+                LOGGER.exception("Failed to persist show status/permalink artifacts for %s", show_key)
+                if finalize_error is None:
+                    raise
 
-        status_payload["attempted_episode_guid"] = str(episode.guid)
-        status_payload["attempted_episode_title"] = episode.title
-        status_payload["attempted_source_type"] = getattr(episode, "source_type", "unknown")
-        status_payload["attempted_source_url"] = episode.source_url
-        LOGGER.info("Processing: %s", episode.title)
-        try:
-            used_caption = _process_episode(
-                show=show,
-                show_key=show_key,
-                episode=episode,
-                index=index,
-                key=key,
-                model=model,
-                existing=existing,
-                source_policy=source_policy,
-                no_youtube_download=no_youtube_download,
-                min_caption_words=min_caption_words,
-            )
-            stats["processed"] += 1
-            if used_caption:
-                stats["caption_used"] += 1
-            if latest_episode and str(episode.guid) == str(latest_episode.guid):
-                latest_episode_succeeded = True
-        except ProcessingError as exc:
-            LOGGER.exception("Failed episode %s: %s", episode.source_url, exc)
-            _mark(index, key, "failed", reason=exc.reason, stage=exc.stage, source_url=episode.source_url)
-            stats["failed"] += 1
-            status_payload["failure_stage"] = exc.stage
-            status_payload["failure_reason"] = exc.reason
-            status_payload["suggested_next_action"] = _next_action_for_stage(exc.stage)
-        except Exception as exc:  # noqa: BLE001
-            LOGGER.exception("Failed episode %s: %s", episode.source_url, exc)
-            _mark(index, key, "failed", reason=str(exc), stage="sync", source_url=episode.source_url)
-            stats["failed"] += 1
-            status_payload["failure_stage"] = "sync"
-            status_payload["failure_reason"] = str(exc)
-            status_payload["suggested_next_action"] = _next_action_for_stage("sync")
-        finally:
-            save_processed(index)
-
-    if latest_episode_succeeded:
-        _refresh_stable_pointer(show, index)
-        status_payload["included_in_pointer"] = True
-        status_payload["ready_via_permalink"] = True
-        status_payload["pointer_updated_at_utc"] = now_iso()
-        status_payload["run_status"] = "ok"
-    else:
-        status_payload["included_in_pointer"] = False
-        status_payload["ready_via_permalink"] = False
-        status_payload["run_status"] = "failed" if stats["failed"] > 0 or selected else "failed"
-        if not status_payload["failure_stage"]:
-            status_payload["failure_stage"] = "sync"
-            status_payload["failure_reason"] = "Latest episode was not included in pointer update."
-            status_payload["suggested_next_action"] = _next_action_for_stage("sync")
-
-    if latest_episode is not None:
-        latest_key = episode_key(show_key, latest_episode.guid)
-        latest_payload = index["episodes"].get(latest_key, {})
-        status_payload["plain_artifact_path"] = latest_payload.get("transcript_plain_path")
-        status_payload["segments_artifact_path"] = latest_payload.get("transcript_segments_path")
-        if status_payload["attempted_episode_guid"] is None:
-            status_payload["attempted_episode_guid"] = str(latest_episode.guid)
-            status_payload["attempted_episode_title"] = latest_episode.title
-            status_payload["attempted_source_type"] = getattr(latest_episode, "source_type", "unknown")
-            status_payload["attempted_source_url"] = latest_episode.source_url
-
-    status_payload["run_finished_at_utc"] = now_iso()
-    status_json_path, status_md_path = write_run_status_artifacts(
-        show_key=show_key,
-        payload=status_payload,
-        status_basename=status_basename,
-    )
-    status_payload["status_json_path"] = str(status_json_path)
-    status_payload["status_md_path"] = str(status_md_path)
-    review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
-    status_payload["gpt_review_request_path"] = str(review_path)
-    public_paths = write_public_permalink_artifacts(show_key=show_key, status_payload=status_payload)
-    status_payload.update(public_paths)
-    review_path = write_gpt_review_request(show_key=show_key, payload=status_payload, status_basename=status_basename)
-    status_payload["gpt_review_request_path"] = str(review_path)
-    # Persist paths in JSON status too.
-    status_json_path, status_md_path = write_run_status_artifacts(
-        show_key=show_key,
-        payload=status_payload,
-        status_basename=status_basename,
-    )
-    stats["status_json_path"] = str(status_json_path)
-    stats["status_md_path"] = str(status_md_path)
-    stats["gpt_review_request_path"] = str(review_path)
-    stats["latest_included_in_pointer"] = bool(status_payload["included_in_pointer"])
-    stats["run_status"] = status_payload["run_status"]
+    if finalize_error is not None:
+        raise finalize_error
     return stats
 
 
