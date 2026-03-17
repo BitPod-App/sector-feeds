@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SHOW_KEY="${1:-jack_mallers_show}"
-BASE_URL="${2:-https://bitpod-public-permalinks.pages.dev}"
+BASE_URL="${2:-${BITPOD_PUBLIC_PERMALINK_BASE_URL:-https://bitpod-public-permalinks.pages.dev}}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$REPO_ROOT"
@@ -60,6 +60,8 @@ for name, url in urls.items():
         print(f"{name}=FAIL http_{code}")
         ok = False
         continue
+    if base_url and not str(url).startswith(base_url):
+        print(f"{name}=WARN unexpected_base_url expected_prefix={base_url}")
     if name == "status" and "public_permalink_status.v1" not in body:
         print(f"{name}=FAIL missing_contract_marker")
         ok = False

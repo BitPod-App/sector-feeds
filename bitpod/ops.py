@@ -12,7 +12,7 @@ from zoneinfo import ZoneInfo
 from bitpod.config import load_config
 from bitpod.feeds import parse_feed
 from bitpod.indexer import episode_key, load_processed, now_iso
-from bitpod.paths import ROOT
+from bitpod.paths import ROOT, resolve_repo_path
 from bitpod.sync import _choose_best_source, get_feed_urls, sync_show
 
 LOCAL_TZ = ZoneInfo("America/Managua")
@@ -119,7 +119,8 @@ def build_show_state(show_key: str, as_of_utc: datetime) -> ShowState:
         key = episode_key(show_key, latest.guid)
         existing = index.get("episodes", {}).get(key, {})
         transcript_path = existing.get("transcript_path")
-        latest_ready = bool(existing.get("status") == "ok" and isinstance(transcript_path, str) and transcript_path and Path(transcript_path).exists())
+        resolved = resolve_repo_path(transcript_path if isinstance(transcript_path, str) else None, root=ROOT)
+        latest_ready = bool(existing.get("status") == "ok" and resolved and resolved.exists())
     else:
         # If feed lookup is temporarily unavailable, trust last successful pointer status artifact.
         latest_ready = bool(

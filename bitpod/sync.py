@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from bitpod.indexer import canonical_episode_id, episode_key, load_processed, now_iso, save_processed
-from bitpod.paths import ROOT, TRANSCRIPTS_ROOT
+from bitpod.paths import ROOT, TRANSCRIPTS_ROOT, resolve_repo_path
 
 LOGGER = logging.getLogger(__name__)
 
@@ -714,11 +714,9 @@ def _maybe_use_captions(
 def _resolve_cached_media(existing: dict[str, Any] | None) -> Path | None:
     if not existing:
         return None
-    cache_path = existing.get("media_cache_path")
-    if isinstance(cache_path, str) and cache_path:
-        path = Path(cache_path)
-        if path.exists():
-            return path
+    path = resolve_repo_path(existing.get("media_cache_path"), root=ROOT)
+    if path and path.exists():
+        return path
     return None
 
 
@@ -869,9 +867,9 @@ def _refresh_stable_pointer(show: dict[str, Any], index: dict[str, Any]) -> None
         if not isinstance(transcript_path_raw, str) or not transcript_path_raw:
             continue
 
-        transcript_path = Path(transcript_path_raw)
-        if not transcript_path.is_absolute():
-            transcript_path = ROOT / transcript_path
+        transcript_path = resolve_repo_path(transcript_path_raw, root=ROOT)
+        if transcript_path is None:
+            continue
         if not transcript_path.exists():
             continue
 

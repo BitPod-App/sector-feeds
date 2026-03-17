@@ -265,6 +265,63 @@ class StorageTests(unittest.TestCase):
                 f"https://bitpod-public-permalinks.pages.dev/{first['public_permalink_id']}/status.json",
             )
 
+    def test_write_public_permalink_artifacts_remaps_stale_absolute_transcript_paths(self) -> None:
+        with TemporaryDirectory() as tmp:
+            from unittest.mock import patch
+            from bitpod import storage as storage_module
+
+            root = Path(tmp)
+            pointer = root / "transcripts" / "jack_mallers_show" / "jack_mallers.md"
+            pointer.parent.mkdir(parents=True, exist_ok=True)
+            pointer.write_text("# Latest\n\nTranscript body.\n", encoding="utf-8")
+            transcript_file = root / "transcripts" / "jack_mallers_show" / "2026" / "2026-02-24__episode.md"
+            transcript_file.parent.mkdir(parents=True, exist_ok=True)
+            transcript_file.write_text("# Episode\n\nTranscript body.\n", encoding="utf-8")
+            index_path = root / "index" / "processed.json"
+            index_path.parent.mkdir(parents=True, exist_ok=True)
+            stale_transcript = "/Users/cjarguello/bitpod-app/sector-feeds/transcripts/jack_mallers_show/2026/2026-02-24__episode.md"
+            index_path.write_text(
+                json.dumps(
+                    {
+                        "episodes": {
+                            "jack_mallers_show::ok-guid": {
+                                "status": "ok",
+                                "published_at": "2026-02-24T09:49:52+00:00",
+                                "source_url": "https://example.com/ok",
+                                "transcript_path": stale_transcript,
+                            }
+                        }
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            original_root = storage_module.ROOT
+            original_transcripts_root = storage_module.TRANSCRIPTS_ROOT
+            storage_module.ROOT = root
+            storage_module.TRANSCRIPTS_ROOT = root / "transcripts"
+            try:
+                payload = {
+                    "run_id": "20260225T190000Z",
+                    "run_status": "ok",
+                    "included_in_pointer": True,
+                    "latest_episode_published_at_utc": "2026-02-25T19:00:00+00:00",
+                    "pointer_updated_at_utc": "2026-02-25T19:05:00+00:00",
+                    "pointer_path": str(pointer),
+                }
+                with patch.dict("os.environ", {"BITPOD_PUBLIC_ID_SALT": "test-salt"}, clear=False):
+                    result = write_public_permalink_artifacts(show_key="jack_mallers_show", status_payload=payload)
+            finally:
+                storage_module.ROOT = original_root
+                storage_module.TRANSCRIPTS_ROOT = original_transcripts_root
+
+            status_payload = json.loads(Path(result["public_permalink_status_path"]).read_text(encoding="utf-8"))
+            self.assertEqual(status_payload["processed_count"], 1)
+            self.assertEqual(
+                Path(status_payload["processed_episodes"][0]["transcript_path"]).resolve(strict=False),
+                transcript_file.resolve(strict=False),
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

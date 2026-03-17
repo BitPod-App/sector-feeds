@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-cd /Users/cjarguello/bitpod
-source .venv311/bin/activate
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$REPO_ROOT"
+
+if [[ -f .venv311/bin/activate ]]; then
+  # Legacy local env name.
+  # shellcheck disable=SC1091
+  source .venv311/bin/activate
+elif [[ -f .venv/bin/activate ]]; then
+  # shellcheck disable=SC1091
+  source .venv/bin/activate
+fi
 
 if [ -z "${OPENAI_API_KEY:-}" ]; then
   echo "OPENAI_API_KEY is required"
@@ -11,18 +21,25 @@ fi
 
 VIDEO_URL="https://www.youtube.com/watch?v=BFt82dw0ci8"
 ANCHOR_MP3="https://anchor.fm/s/e29097f4/podcast/play/115619664/https%3A%2F%2Fd3ctxlq1ktw2nl.cloudfront.net%2Fstaging%2F2026-1-17%2F418255357-44100-2-b07eb0f35b621.mp3"
-OUT_DIR="/Users/cjarguello/bitpod/transcripts/jack_mallers_show/compare"
+OUT_DIR="$REPO_ROOT/transcripts/jack_mallers_show/compare"
+CACHE_YOUTUBE_DIR="$REPO_ROOT/cache/compare/youtube"
+CACHE_ANCHOR_DIR="$REPO_ROOT/cache/compare/anchor"
+CACHE_ANCHOR_CHUNKS_DIR="$CACHE_ANCHOR_DIR/chunks"
 STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
-mkdir -p "$OUT_DIR" /Users/cjarguello/bitpod/cache/compare/youtube /Users/cjarguello/bitpod/cache/compare/anchor/chunks
-echo "$STAMP" > /tmp/bitpod_stamp
+mkdir -p "$OUT_DIR" "$CACHE_YOUTUBE_DIR" "$CACHE_ANCHOR_CHUNKS_DIR"
+STAMP_FILE="$(mktemp /tmp/bitpod_stamp.XXXXXX)"
+echo "$STAMP" > "$STAMP_FILE"
+trap 'rm -f "$STAMP_FILE"' EXIT
 
-python - <<'PY'
+BITPOD_REPO_ROOT="$REPO_ROOT" BITPOD_STAMP_FILE="$STAMP_FILE" python3 - <<'PY'
+import os
 from pathlib import Path
 from bitpod.audio import extract_youtube_captions
 video_url = "https://www.youtube.com/watch?v=BFt82dw0ci8"
-out = Path("/Users/cjarguello/bitpod/transcripts/jack_mallers_show/compare")
-stamp = Path('/tmp/bitpod_stamp').read_text().strip()
-work = Path("/Users/cjarguello/bitpod/cache/compare/youtube")
+repo_root = Path(os.environ["BITPOD_REPO_ROOT"])
+out = repo_root / "transcripts" / "jack_mallers_show" / "compare"
+stamp = Path(os.environ["BITPOD_STAMP_FILE"]).read_text().strip()
+work = repo_root / "cache" / "compare" / "youtube"
 text = extract_youtube_captions(video_url, work, min_words=50)
 if not text:
     raise SystemExit("Could not extract YouTube captions")
@@ -31,20 +48,22 @@ print(out / f"{stamp}_youtube_plain.txt")
 PY
 
 # download anchor media once
-curl -L --fail --silent --show-error "$ANCHOR_MP3" -o "/Users/cjarguello/bitpod/cache/compare/anchor/${STAMP}_anchor.mp3"
+curl -L --fail --silent --show-error "$ANCHOR_MP3" -o "$CACHE_ANCHOR_DIR/${STAMP}_anchor.mp3"
 
 # split to API-safe chunks (8 minutes each)
 ffmpeg -hide_banner -loglevel error -y \
-  -i "/Users/cjarguello/bitpod/cache/compare/anchor/${STAMP}_anchor.mp3" \
+  -i "$CACHE_ANCHOR_DIR/${STAMP}_anchor.mp3" \
   -f segment -segment_time 480 -c copy \
-  "/Users/cjarguello/bitpod/cache/compare/anchor/chunks/${STAMP}_%03d.mp3"
+  "$CACHE_ANCHOR_CHUNKS_DIR/${STAMP}_%03d.mp3"
 
-python - <<'PY'
+BITPOD_REPO_ROOT="$REPO_ROOT" BITPOD_STAMP_FILE="$STAMP_FILE" python3 - <<'PY'
+import os
 from pathlib import Path
 from bitpod.transcribe import transcribe_audio
-out = Path("/Users/cjarguello/bitpod/transcripts/jack_mallers_show/compare")
-stamp = Path('/tmp/bitpod_stamp').read_text().strip()
-chunk_dir = Path("/Users/cjarguello/bitpod/cache/compare/anchor/chunks")
+repo_root = Path(os.environ["BITPOD_REPO_ROOT"])
+out = repo_root / "transcripts" / "jack_mallers_show" / "compare"
+stamp = Path(os.environ["BITPOD_STAMP_FILE"]).read_text().strip()
+chunk_dir = repo_root / "cache" / "compare" / "anchor" / "chunks"
 parts = sorted(chunk_dir.glob(f"{stamp}_*.mp3"))
 if not parts:
     raise SystemExit("No Anchor chunks produced")

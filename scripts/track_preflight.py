@@ -13,6 +13,7 @@ if str(REPO_ROOT) not in sys.path:
 from bitpod.config import get_show, load_config
 from bitpod.feeds import parse_feed
 from bitpod.indexer import episode_key, load_processed
+from bitpod.paths import ROOT, resolve_repo_path
 from bitpod.sync import _choose_best_source, filter_episodes, get_feed_urls
 
 
@@ -54,7 +55,8 @@ def main() -> int:
     status = existing.get("status")
     path = existing.get("transcript_path")
 
-    if status == "ok" and isinstance(path, str) and path and Path(path).exists():
+    resolved = resolve_repo_path(path if isinstance(path, str) else None, root=ROOT)
+    if status == "ok" and resolved and resolved.exists():
         print("HEAVY_WORK_REQUIRED=false")
         print("HEAVY_WORK_REASON=latest_selected_episode_already_processed")
         print(f"LATEST_EPISODE_TITLE={json.dumps(latest.title)}")
