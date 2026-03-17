@@ -105,12 +105,14 @@ Per-show contract (API-like surface):
 - Each show has its own status artifacts (`<stable_pointer_stem>_status.json|md`).
 - Schedules can differ per show while preserving the same output contract.
 - Public permalink publish (semi-paranoid): each show gets
+  - `artifacts/public/permalinks/<opaque_id>/index.html`
   - `artifacts/public/permalinks/<opaque_id>/intake.md`
   - `artifacts/public/permalinks/<opaque_id>/transcript.md` (stable latest transcript permalink for GPT)
   - `artifacts/public/permalinks/<opaque_id>/latest.md`
   - `artifacts/public/permalinks/<opaque_id>/status.json`
   - `artifacts/public/permalinks/<opaque_id>/discovery.json`
   - `<opaque_id>` is stable per `show_key` / `sector_feed_id`, not per run
+  - the stable single-URL show page is `https://permalinks.bitpod.app/<opaque_id>`
   - with noindex/nofollow/noarchive + `robots.txt` disallow-all.
   - internal mapping remains private in `artifacts/private/public_permalink_manifest.json`.
   - feed identity/tags contract reference: `docs/architecture/feed_identity_contract.md`.

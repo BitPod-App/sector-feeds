@@ -4,6 +4,7 @@ import json
 import os
 import re
 import hashlib
+from html import escape as html_escape
 from shutil import copyfile
 from datetime import datetime, timezone
 from pathlib import Path
@@ -460,6 +461,63 @@ def _write_noindex_guards(public_root: Path) -> None:
     robots_path.write_text("User-agent: *\nDisallow: /\n", encoding="utf-8")
 
 
+def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[str, Any]) -> str:
+    landing_url = f"{base_url}/{permalink_id}"
+    links = [
+        ("status.json", f"{landing_url}/status.json"),
+        ("intake.md", f"{landing_url}/intake.md"),
+        ("transcript.md", f"{landing_url}/transcript.md"),
+        ("discovery.json", f"{landing_url}/discovery.json"),
+        ("latest.md", f"{landing_url}/latest.md"),
+    ]
+    status_json = json.dumps(public_status, indent=2, sort_keys=True)
+    status_json_attr = html_escape(json.dumps(public_status, sort_keys=True))
+    return "\n".join(
+        [
+            "<!doctype html>",
+            '<html lang="en">',
+            "  <head>",
+            '    <meta charset="utf-8">',
+            '    <meta name="viewport" content="width=device-width, initial-scale=1">',
+            '    <meta name="robots" content="noindex,nofollow,noarchive">',
+            "    <title>BitPod Permalink Bundle</title>",
+            "    <style>",
+            "      :root { color-scheme: light; }",
+            "      body { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; margin: 2rem; line-height: 1.55; color: #111; background: #fafaf8; }",
+            "      main { max-width: 960px; margin: 0 auto; }",
+            "      h1, h2 { margin-bottom: 0.5rem; }",
+            "      .muted { color: #666; }",
+            "      .card { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 1rem 1.25rem; margin: 1rem 0; }",
+            "      code, pre { background: #f3f1ec; border-radius: 6px; }",
+            "      code { padding: 0.15rem 0.3rem; }",
+            "      pre { padding: 1rem; overflow-x: auto; }",
+            "      ul { padding-left: 1.25rem; }",
+            "      a { color: #0b57d0; }",
+            "    </style>",
+            "  </head>",
+            "  <body>",
+            "    <main>",
+            "      <h1>BitPod Permalink Bundle</h1>",
+            '      <p class="muted">Stable opaque show URL. Use the raw links below or the embedded machine-readable run contract.</p>',
+            '      <div class="card">',
+            "        <h2>Canonical Artifacts</h2>",
+            "        <ul>",
+            *[f'          <li><a href="{html_escape(href)}">{html_escape(label)}</a></li>' for label, href in links],
+            "        </ul>",
+            "      </div>",
+            '      <div class="card">',
+            "        <h2>Run Contract</h2>",
+            f'        <script id="bitpod-run-contract" type="application/json" data-public-id="{html_escape(permalink_id)}">{status_json_attr}</script>',
+            f"        <pre>{html_escape(status_json)}</pre>",
+            "      </div>",
+            "    </main>",
+            "  </body>",
+            "</html>",
+            "",
+        ]
+    )
+
+
 def default_public_bundle_health(*, show_root: Path, base_url: str, permalink_id: str) -> dict[str, Any]:
     readability: dict[str, Any] = {}
     missing: list[str] = []
@@ -738,6 +796,7 @@ def write_public_permalink_artifacts(
     transcript_path = show_root / "transcript.md"
     intake_path = show_root / "intake.md"
     discovery_path = show_root / "discovery.json"
+    landing_path = show_root / "index.html"
     processed, unprocessed = _show_episode_records(show_key)
     selected_processed, window_meta = _select_processed_window(processed)
     published_rows: list[dict[str, Any]] = []
@@ -898,6 +957,7 @@ def write_public_permalink_artifacts(
         "sector_feed_id": show_key,
         "updated_at_utc": now_iso(),
         "entrypoints": {
+            "landing_html": "index.html",
             "intake_md": "intake.md",
             "transcript_md": "transcript.md",
             "latest_md": "latest.md",
@@ -955,6 +1015,7 @@ def write_public_permalink_artifacts(
         "pointer_updated_at_utc": status_payload.get("pointer_updated_at_utc"),
         "updated_at_utc": now_iso(),
         "robots": ROBOTS_POLICY,
+        "landing_path": "index.html",
         "intake_path": "intake.md",
         "transcript_path": "transcript.md",
         "latest_path": "latest.md",
@@ -980,6 +1041,10 @@ def write_public_permalink_artifacts(
         "unprocessed_episodes": unprocessed,
     }
     status_path.write_text(json.dumps(public_status, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    landing_path.write_text(
+        _landing_page_html(permalink_id=permalink_id, base_url=base_url, public_status=public_status),
+        encoding="utf-8",
+    )
 
     manifest_path = _private_manifest_path()
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
@@ -1004,6 +1069,7 @@ def write_public_permalink_artifacts(
         "series_is_feed_unit": bool(status_payload.get("series_is_feed_unit", True)),
         "feed_unit_type": status_payload.get("feed_unit_type") or "series_or_playlist_or_feed",
         "public_dir": str(show_root),
+        "landing_html_path": str(landing_path),
         "intake_md_path": str(intake_path),
         "transcript_md_path": str(transcript_path),
         "latest_md_path": str(latest_path),
@@ -1019,7 +1085,9 @@ def write_public_permalink_artifacts(
         "public_permalink_latest_path": str(latest_path),
         "public_permalink_status_path": str(status_path),
         "public_permalink_discovery_path": str(discovery_path),
+        "public_permalink_landing_path": str(landing_path),
         "public_permalink_manifest_path": str(manifest_path),
+        "public_permalink_landing_url": f"{base_url}/{permalink_id}",
         "public_permalink_intake_url": f"{base_url}/{permalink_id}/intake.md",
         "public_permalink_transcript_url": f"{base_url}/{permalink_id}/transcript.md",
         "public_permalink_latest_url": f"{base_url}/{permalink_id}/latest.md",

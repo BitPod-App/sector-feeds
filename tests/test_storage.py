@@ -204,12 +204,14 @@ class StorageTests(unittest.TestCase):
             intake_path = Path(first["public_permalink_intake_path"])
             status_path = Path(first["public_permalink_status_path"])
             discovery_path = Path(first["public_permalink_discovery_path"])
+            landing_path = Path(first["public_permalink_landing_path"])
             manifest_path = Path(first["public_permalink_manifest_path"])
             self.assertTrue(latest_path.exists())
             self.assertTrue(transcript_path.exists())
             self.assertTrue(intake_path.exists())
             self.assertTrue(status_path.exists())
             self.assertTrue(discovery_path.exists())
+            self.assertTrue(landing_path.exists())
             self.assertTrue(manifest_path.exists())
 
             latest_text = latest_path.read_text(encoding="utf-8")
@@ -227,6 +229,13 @@ class StorageTests(unittest.TestCase):
             self.assertIn("transcript_provenance: `youtube_auto_captions`", intake_text)
             transcript_text = transcript_path.read_text(encoding="utf-8")
             self.assertIn("# Episode", transcript_text)
+            landing_text = landing_path.read_text(encoding="utf-8")
+            self.assertIn("BitPod Permalink Bundle", landing_text)
+            self.assertIn('id="bitpod-run-contract"', landing_text)
+            self.assertIn(
+                f'href="https://bitpod-public-permalinks.pages.dev/{first["public_permalink_id"]}/status.json"',
+                landing_text,
+            )
 
             status_payload = json.loads(status_path.read_text(encoding="utf-8"))
             self.assertEqual(status_payload["run_status"], "ok")
@@ -239,6 +248,7 @@ class StorageTests(unittest.TestCase):
             self.assertEqual(status_payload["show_key"], "jack_mallers_show")
             self.assertTrue(status_payload["series_is_feed_unit"])
             self.assertEqual(status_payload["feed_unit_type"], "series_or_playlist_or_feed")
+            self.assertEqual(status_payload["landing_path"], "index.html")
             self.assertEqual(status_payload["intake_path"], "intake.md")
             self.assertEqual(status_payload["transcript_path"], "transcript.md")
             self.assertEqual(status_payload["episode_title"], "Big Interview")
@@ -289,6 +299,7 @@ class StorageTests(unittest.TestCase):
             self.assertEqual(discovery_payload["sector_feed_id"], "jack_mallers_show")
             self.assertTrue(discovery_payload["series_is_feed_unit"])
             self.assertEqual(discovery_payload["feed_unit_type"], "series_or_playlist_or_feed")
+            self.assertEqual(discovery_payload["entrypoints"]["landing_html"], "index.html")
             self.assertEqual(discovery_payload["entrypoints"]["intake_md"], "intake.md")
             self.assertEqual(discovery_payload["entrypoints"]["transcript_md"], "transcript.md")
             self.assertEqual(discovery_payload["entrypoints"]["latest_md"], "latest.md")
@@ -301,7 +312,12 @@ class StorageTests(unittest.TestCase):
             self.assertEqual(manifest_payload["shows"]["jack_mallers_show"]["format_tags"], [])
             self.assertEqual(manifest_payload["shows"]["jack_mallers_show"]["source_platform_tags"], [])
             self.assertTrue(manifest_payload["shows"]["jack_mallers_show"]["series_is_feed_unit"])
+            self.assertIn("landing_html_path", manifest_payload["shows"]["jack_mallers_show"])
             self.assertIn("intake_md_path", manifest_payload["shows"]["jack_mallers_show"])
+            self.assertEqual(
+                first["public_permalink_landing_url"],
+                f"https://bitpod-public-permalinks.pages.dev/{first['public_permalink_id']}",
+            )
             self.assertEqual(
                 first["public_permalink_transcript_url"],
                 f"https://bitpod-public-permalinks.pages.dev/{first['public_permalink_id']}/transcript.md",

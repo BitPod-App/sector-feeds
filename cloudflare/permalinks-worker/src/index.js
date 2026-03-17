@@ -16,6 +16,11 @@ async function fetchAsset(request, env, pathname) {
 }
 
 async function renderShowPage(request, env, opaqueId) {
+  const assetResp = await fetchAsset(request, env, `/${opaqueId}/index.html`);
+  if (assetResp.status === 200) {
+    return assetResp;
+  }
+
   const statusResp = await fetchAsset(request, env, `/${opaqueId}/status.json`);
   if (statusResp.status !== 200) {
     return new Response("Not Found", { status: 404 });
