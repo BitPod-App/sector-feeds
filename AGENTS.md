@@ -1,31 +1,10 @@
-# Taylor Skill Pointer (Repo-Portable)
+# sector-feeds AGENTS
 
-This repository points to the external canonical Taylor skill at:
+Read the umbrella policy first:
 
-- `~/.agents/skills/taylor/SKILL.md`
+- `/Users/cjarguello/BitPod-App/policy.md`
 
-Do not duplicate or override Taylor's canonical behavior/spec in this repo.
-
-## Taylor Skill Folder Status
-
-- Keep `~/.agents/skills/taylor` as the canonical Taylor spec + references (required).
-- Taylor runtime implementation lives in `tools/taylor` (repo-level runtime code).
-- Repo docs are pointer + health-check surfaces only; do not duplicate spec text.
-
-### Deprecation Criteria (future, not current)
-
-Only consider deprecating the external skill folder after all are true:
-- `tools/taylor/policy/taylor_policy.yaml` is versioned and stable.
-- `tools/taylor` CLI/API behavior is stable.
-- Determinism tests + manifests are in place.
-- Canonical contract docs are mirrored in-repo without split-brain.
-- A single source of truth is explicitly selected (external or in-repo), never both.
-
-## Canonical Reference Anchors
-
-- `~/.agents/skills/taylor/references/taylor-agent-contract.md`
-- `~/.agents/skills/taylor/references/report-template.md` (periodic + ad hoc)
-- `~/.agents/skills/taylor/references/bridge-gpt-team-sessions.md`
+This file adds repo-specific rules only.
 
 ## Health Check
 
@@ -68,38 +47,3 @@ When ending a Bridge GPT planning/review session, memory summary must be structu
 - Invariants (locked)
 - Next Actions (who/what)
 - Risks / Unknowns
-
-## Taylor Runtime Commands
-
-- `taylor whoami`
-- `taylor self-test`
-- `taylor ask "<question>" [--context <path>]`
-- `taylor chat`
-
-If `taylor` is not on your PATH yet:
-
-```bash
-export PATH="/Users/cjarguello/BitPod-App/tools/taylor/bin:$PATH"
-```
-
-## QA Modes
-
-- LOCAL (offline, enforced): deterministic local QA artifacts; merge gate for critical surfaces.
-- BRIDGE (optional, stronger proof): GPT-backed Taylor QA with header/footer/hash verification.
-- CHAT (human workflow): planning and interpretation, not a merge gate.
-
-## Merge Policy
-
-- Default merge gate: LOCAL QA artifacts are required for critical surface changes.
-- BRIDGE QA is additive evidence when available, but not required for merge.
-- Missing LOCAL QA artifacts on critical surfaces must fail closed.
-
-## Context Preservation FYI (ExtensionGPT + Taylor)
-
-For future historical continuity, include concise context pointers in PR/commit text when intake gate policy/drift behavior changes:
-- policy path: `milestones/m5_policy.json`
-- daily status artifact: `artifacts/coordination/intake_gate_daily_status.json`
-- daily drift report: `artifacts/coordination/intake_gate_daily_drift_report.md`
-- retrospective learnings: `docs/runbooks/intake_gate_retrospective_learnings.md`
-
-This is an FYI context pattern, not a merge gate.
