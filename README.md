@@ -120,6 +120,11 @@ Per-show contract (API-like surface):
     - `public_bundle_complete`
     - `public_bundle_readability`
     - `public_bundle_missing`
+  - the landing page is the preferred single GPT entry point:
+    - it embeds the machine-readable run contract
+    - it links the canonical raw artifacts
+    - its executive summary and artifact rail should vary honestly for `usable`, `degraded`, `failed`, and `no-new-episode`
+    - it must not imply full bundle health unless public HTTP verification has actually completed
 
 ## Supported Feeds (Current)
 

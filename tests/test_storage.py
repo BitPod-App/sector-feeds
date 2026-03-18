@@ -7,6 +7,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from bitpod.storage import (
+    _landing_page_html,
     write_public_permalink_artifacts,
     slugify,
     status_paths,
@@ -18,6 +19,77 @@ from bitpod.storage import (
 
 
 class StorageTests(unittest.TestCase):
+    def test_landing_page_html_uses_distinct_state_copy(self) -> None:
+        base_payload = {
+            "public_id": "opaque123",
+            "run_id": "20260317T051151Z",
+            "run_status": "ok",
+            "new_episode_detected": True,
+            "included_in_pointer": True,
+            "episode_title": "Big Interview",
+            "published_at_utc": "2026-03-16T23:42:10+00:00",
+            "transcript_provenance": "youtube_auto_captions",
+            "transcript_quality_state": "usable",
+            "transcript_degraded": False,
+            "source_mode": "captions",
+            "transcript_source_type": "youtube_video",
+            "transcript_source_url": "https://example.com/video",
+            "public_bundle_complete": True,
+            "public_bundle_missing": [],
+            "public_bundle_verification_mode": "public_http",
+            "public_bundle_verified_at_utc": "2026-03-17T07:25:05Z",
+            "public_bundle_readability": {
+                "status.json": {"readable": True, "verified_via": "public_http"},
+                "intake.md": {"readable": True, "verified_via": "public_http"},
+                "transcript.md": {"readable": True, "verified_via": "public_http"},
+                "discovery.json": {"readable": True, "verified_via": "public_http"},
+            },
+        }
+
+        usable_html = _landing_page_html(permalink_id="opaque123", base_url="https://example.com", public_status=base_payload)
+        self.assertIn("usable transcript", usable_html)
+        self.assertIn("low-weight context", usable_html)
+
+        degraded_payload = dict(base_payload, transcript_quality_state="degraded", transcript_degraded=True)
+        degraded_html = _landing_page_html(
+            permalink_id="opaque123",
+            base_url="https://example.com",
+            public_status=degraded_payload,
+        )
+        self.assertIn("low-confidence context", degraded_html)
+        self.assertIn("Transcript quality state: degraded.", degraded_html)
+
+        failed_payload = dict(
+            base_payload,
+            run_status="failed",
+            included_in_pointer=False,
+            transcript_quality_state="failed",
+            failure_stage="transcription",
+            failure_reason="quota exceeded",
+        )
+        failed_html = _landing_page_html(
+            permalink_id="opaque123",
+            base_url="https://example.com",
+            public_status=failed_payload,
+        )
+        self.assertIn("intake failed", failed_html)
+        self.assertIn("Failure stage: transcription.", failed_html)
+        self.assertIn("Failure reason: quota exceeded.", failed_html)
+
+        no_new_payload = dict(
+            base_payload,
+            new_episode_detected=False,
+            included_in_pointer=False,
+            transcript_quality_state="no-new-episode",
+        )
+        no_new_html = _landing_page_html(
+            permalink_id="opaque123",
+            base_url="https://example.com",
+            public_status=no_new_payload,
+        )
+        self.assertIn("No new episode was detected on this run.", no_new_html)
+        self.assertIn("no-new-episode", no_new_html)
+
     def test_slugify_basic(self) -> None:
         self.assertEqual(slugify("Hello, World! Episode #1"), "hello-world-episode-1")
 

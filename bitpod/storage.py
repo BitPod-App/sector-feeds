@@ -495,6 +495,134 @@ def _artifact_readable_label(entry: dict[str, Any] | None) -> str:
     return "unverified"
 
 
+def _landing_intake_state(public_status: dict[str, Any]) -> str:
+    quality_state = str(public_status.get("transcript_quality_state") or "").strip()
+    if quality_state:
+        return quality_state
+    return _transcript_quality_state(public_status)
+
+
+def _landing_state_content(
+    *,
+    public_status: dict[str, Any],
+    intake_state: str,
+    verification_mode: str,
+    bundle_complete: bool,
+) -> dict[str, Any]:
+    run_status = str(public_status.get("run_status") or "unknown")
+    included_in_pointer = bool(public_status.get("included_in_pointer"))
+    new_episode_detected = bool(public_status.get("new_episode_detected"))
+    transcript_provenance = str(public_status.get("transcript_provenance") or "unknown")
+    failure_stage = str(public_status.get("failure_stage") or "").strip()
+    failure_reason = str(public_status.get("failure_reason") or "").strip()
+    fallback_note = str(public_status.get("fallback_note") or "").strip()
+    source_mode = str(public_status.get("source_mode") or "unknown")
+    transcript_source_type = str(public_status.get("transcript_source_type") or "unknown")
+
+    if intake_state == "usable":
+        summary_text = (
+            "New episode detected and incorporated with a usable transcript. Treat it as low-weight context by default unless downstream analysis finds clear signal."
+        )
+        outcome_line = "Episode was incorporated into the stable pointer with a usable transcript."
+        findings_items = [
+            "New episode detected: true.",
+            "Episode incorporated into pointer: true.",
+            f"Transcript provenance: {transcript_provenance}.",
+            f"Verification mode: {verification_mode}.",
+        ]
+        recommendations_items = [
+            "Keep the episode as low-weight default context, not a forced driver of the BTC output.",
+            f"Keep source mode explicit. Current mode: {source_mode}.",
+            f"Preserve transcript source visibility. Current type: {transcript_source_type}.",
+        ]
+        provenance_note = (
+            f"Generated from the latest stable run bundle. Source mode: {source_mode}. Transcript source: {transcript_source_type}."
+        )
+    elif intake_state == "degraded":
+        summary_text = (
+            "New episode detected and incorporated, but transcript quality is degraded. Treat it only as low-confidence context."
+        )
+        outcome_line = "Episode was incorporated into the stable pointer with degraded transcript quality."
+        findings_items = [
+            "New episode detected: true.",
+            "Episode incorporated into pointer: true.",
+            "Transcript quality state: degraded.",
+            f"Transcript provenance: {transcript_provenance}.",
+        ]
+        if fallback_note:
+            findings_items.append(f"Fallback note: {fallback_note}.")
+        recommendations_items = [
+            "Do not treat this transcript as normal-confidence evidence.",
+            "Inspect transcript quality and consider rerunning intake before depending on the episode heavily.",
+            f"Keep source mode explicit. Current mode: {source_mode}.",
+        ]
+        provenance_note = (
+            f"Generated from a degraded but incorporated run. Source mode: {source_mode}. Transcript source: {transcript_source_type}."
+        )
+    elif intake_state == "failed":
+        if new_episode_detected:
+            summary_text = "New episode detected, but intake failed. The episode was not incorporated into the pointer surface."
+            outcome_line = "Episode was omitted from the stable pointer because intake did not complete cleanly."
+            findings_items = [
+                "New episode detected: true.",
+                "Episode incorporated into pointer: false.",
+                f"Run status: {run_status}.",
+            ]
+        else:
+            summary_text = "Run failed before a usable new-episode incorporation decision was completed."
+            outcome_line = "No episode incorporation occurred because the run failed."
+            findings_items = [f"Run status: {run_status}."]
+        if failure_stage:
+            findings_items.append(f"Failure stage: {failure_stage}.")
+        if failure_reason:
+            findings_items.append(f"Failure reason: {failure_reason}.")
+        findings_items.append(f"Verification mode: {verification_mode}.")
+        recommendations_items = [
+            "Do not treat the current episode as incorporated context for downstream output.",
+            "Fix the failure condition, rerun intake, and verify the public bundle again before relying on this page.",
+            f"Keep source mode explicit. Current mode: {source_mode}.",
+        ]
+        provenance_note = (
+            f"Generated from a failed intake run. Source mode: {source_mode}. Transcript source: {transcript_source_type}."
+        )
+    else:
+        summary_text = "No new episode was detected on this run. The stable pointer remains unchanged."
+        outcome_line = "No episode incorporation occurred because there was no new episode."
+        findings_items = [
+            "New episode detected: false.",
+            "Episode incorporated into pointer: false.",
+            f"Verification mode: {verification_mode}.",
+        ]
+        recommendations_items = [
+            "State explicitly that no new episode was incorporated in downstream output.",
+            "Keep the prior stable pointer intact until a real new episode is detected.",
+            f"Keep source mode explicit. Current mode: {source_mode}.",
+        ]
+        provenance_note = (
+            f"Generated from a no-new-episode run. Source mode: {source_mode}. Transcript source: {transcript_source_type}."
+        )
+
+    if not bundle_complete:
+        summary_text = f"{summary_text} Public bundle verification is not complete yet."
+        recommendations_items.insert(0, "Do not treat this page as canonical until public readability finishes verifying.")
+
+    detail_line = fallback_note or failure_reason
+    if not detail_line:
+        if bundle_complete and verification_mode == "public_http":
+            detail_line = "Public permalink bundle verified via public reads."
+        else:
+            detail_line = "Public permalink bundle is still waiting on complete public verification."
+
+    return {
+        "summary_text": summary_text,
+        "detail_line": detail_line,
+        "outcome_line": outcome_line,
+        "findings_items": findings_items,
+        "recommendations_items": recommendations_items,
+        "provenance_note": provenance_note,
+    }
+
+
 def render_public_landing_page(*, public_status: dict[str, Any], landing_path: Path, base_url: str | None = None) -> Path:
     permalink_id = str(public_status.get("public_id") or "").strip()
     resolved_base_url = (base_url or _public_permalink_base_url()).rstrip("/")
@@ -514,13 +642,11 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
     run_status = str(public_status.get("run_status") or "unknown")
     included_in_pointer = bool(public_status.get("included_in_pointer"))
     new_episode_detected = bool(public_status.get("new_episode_detected"))
-    quality_state = str(public_status.get("transcript_quality_state") or "unknown")
+    quality_state = _landing_intake_state(public_status)
     transcript_provenance = str(public_status.get("transcript_provenance") or "unknown")
     episode_title = str(public_status.get("episode_title") or "No episode selected")
     published_at = str(public_status.get("published_at_utc") or "unknown")
     run_id = str(public_status.get("run_id") or "unknown")
-    failure_reason = str(public_status.get("failure_reason") or "")
-    fallback_note = str(public_status.get("fallback_note") or "")
     source_mode = str(public_status.get("source_mode") or "unknown")
     transcript_source_type = str(public_status.get("transcript_source_type") or "unknown")
     transcript_source_url = str(public_status.get("transcript_source_url") or public_status.get("episode_url") or "")
@@ -547,45 +673,28 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
         ("discovery.json", f"{landing_url}/discovery.json"),
         ("latest.md", f"{landing_url}/latest.md"),
     ]
-    if new_episode_detected and included_in_pointer:
-        summary_text = (
-            "New episode detected and incorporated. Treat this episode as low-weight context by default unless the downstream analysis finds clearly material signal."
-        )
-    elif new_episode_detected and not included_in_pointer:
-        summary_text = "New episode detected, but it was not incorporated into the pointer surface."
-    else:
-        summary_text = "No new episode was incorporated on this run."
-    detail_line = fallback_note or failure_reason or "Public permalink bundle verified and readable."
-    if run_status == "ok" and included_in_pointer:
-        outcome_line = "Episode was incorporated into the stable pointer."
-    elif new_episode_detected and not included_in_pointer:
-        outcome_line = "Episode was detected but not incorporated."
-    else:
-        outcome_line = "No episode incorporation occurred on this run."
-    findings_items = [
-        f"Run status: {run_status}.",
-        f"Transcript provenance: {transcript_provenance}.",
-        f"Verification mode: {verification_mode}.",
-    ]
-    if fallback_note:
-        findings_items.append(f"Fallback note: {fallback_note}.")
-    if failure_reason:
-        findings_items.append(f"Failure reason: {failure_reason}.")
-    recommendations_items = [
-        f"Keep source mode explicit. Current mode: {source_mode}.",
-        f"Preserve transcript source visibility. Current type: {transcript_source_type}.",
-        "Keep public readability visible on the page, not just in raw JSON.",
-    ]
-    if not bundle_complete:
-        recommendations_items.insert(0, "Do not treat this page as canonical until public readability finishes verifying.")
+    state_content = _landing_state_content(
+        public_status=public_status,
+        intake_state=quality_state,
+        verification_mode=verification_mode,
+        bundle_complete=bundle_complete,
+    )
+    summary_text = str(state_content["summary_text"])
+    detail_line = str(state_content["detail_line"])
+    outcome_line = str(state_content["outcome_line"])
+    findings_items = [str(item) for item in state_content["findings_items"]]
+    recommendations_items = [str(item) for item in state_content["recommendations_items"]]
+    provenance_note = str(state_content["provenance_note"])
+    recommendations_items.append("Keep public readability visible on the page, not just in raw JSON.")
     provenance_items = [
         ("Published", published_at),
         ("Run ID", run_id),
         ("Verification", verification_mode),
         ("Verified At", verified_at),
+        ("Intake State", quality_state),
     ]
     artifact_links_markup = [
-        f'              <a class="artifact-link" href="{html_escape(href)}"><span>{html_escape(label)}</span><span>{html_escape(_artifact_readable_label(readability.get(label)) if label in readability else "public")}</span></a>'
+        f'              <a class="artifact-link" href="{html_escape(href)}"><span>{html_escape(label)}</span><span>{html_escape(_artifact_readable_label(readability.get(label)) if label in readability else ("stable-pointer" if label == "latest.md" else "public"))}</span></a>'
         for label, href in links
     ]
     status_json = json.dumps(public_status, indent=2, sort_keys=True)
@@ -725,7 +834,7 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
             '          <article class="section-card">',
             '            <span class="eyebrow">Public readability</span>',
             '            <h3>Nested artifact state</h3>',
-            f'            <p class="muted">{"Verified via public reads." if verification_mode == "public_http" else "Public verification is incomplete or mixed."} Missing after verification: {html_escape(", ".join(bundle_missing) if bundle_missing else "none")}.</p>',
+            f'            <p class="muted">{"Verified via public reads." if verification_mode == "public_http" and bundle_complete else "Public verification is incomplete or mixed."} Missing after verification: {html_escape(", ".join(bundle_missing) if bundle_missing else "none")}.</p>',
             "            <ul>",
             *readability_rows,
             "            </ul>",
@@ -759,7 +868,7 @@ def _landing_page_html(*, permalink_id: str, base_url: str, public_status: dict[
             '          <article class="rail-card">',
             '            <span class="eyebrow">Provenance</span>',
             '            <h3>Minimal footer context</h3>',
-            f'            <p class="muted">Generated by BitPod App from the latest stable run bundle. Source mode: {html_escape(source_mode)}. Transcript source: {html_escape(transcript_source_type)}.</p>',
+            f'            <p class="muted">{html_escape(provenance_note)}</p>',
             f'            <p class="muted" style="margin-top: 12px;">{"Source URL available." if transcript_source_url else "No source URL published."}</p>',
             "          </article>",
             "        </aside>",
