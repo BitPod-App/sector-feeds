@@ -112,10 +112,17 @@ class StorageTests(unittest.TestCase):
                 transcript_file=transcript_file,
                 transcript_text="Hello world",
                 segments=[{"start": 0.0, "end": 2.0, "speaker": "SPEAKER_0", "text": "Hello"}],
-                metadata={"source_platform": "youtube", "transcription_method": "youtube_captions_stitched"},
+                metadata={
+                    "source_platform": "youtube",
+                    "source_episode_id": "yt:video:abc123",
+                    "transcription_method": "youtube_captions_stitched",
+                },
             )
             self.assertTrue(plain.exists())
             self.assertTrue(segments.exists())
+            text = plain.read_text(encoding="utf-8")
+            self.assertIn('source_episode_id: "yt:video:abc123"', text)
+            self.assertNotIn('source_id: "', text)
 
     def test_write_run_status_artifacts(self) -> None:
         with TemporaryDirectory() as tmp:

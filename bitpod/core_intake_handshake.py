@@ -81,6 +81,10 @@ def _non_empty(value: Any) -> str:
     return text
 
 
+def _context_deck_or_stream_id(context: dict[str, Any]) -> str:
+    return _non_empty(context.get("deck_id")) or _non_empty(context.get("stream_id"))
+
+
 def load_payload(path: Path) -> dict[str, Any]:
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
@@ -162,8 +166,8 @@ def validate_payload_v2(payload: dict[str, Any]) -> list[str]:
     if not isinstance(context, dict):
         errors.append("missing:context")
         context = {}
-    if not _non_empty(context.get("deck_id")):
-        errors.append("missing:context.deck_id")
+    if not _context_deck_or_stream_id(context):
+        errors.append("missing:context.deck_id_or_stream_id")
     if not _non_empty(context.get("user_id")):
         errors.append("missing:context.user_id")
 
@@ -259,6 +263,7 @@ def compatibility_policy() -> dict[str, Any]:
         "required_top_level_fields": list(REQUIRED_TOP_LEVEL_FIELDS),
         "required_episode_fields": list(REQUIRED_EPISODE_FIELDS),
         "v2_required_top_level_fields": list(V2_REQUIRED_TOP_LEVEL_FIELDS),
+        "v2_context_aliases": {"stream_id": "deck_id"},
         "v2_required_episode_fields": list(V2_REQUIRED_EPISODE_FIELDS),
         "v2_required_utc_fields": [
             "generated_at_utc",
@@ -306,3 +311,12 @@ def pending_for_deck(
         )
     rows.sort(key=lambda item: str(item.get("published_at_utc") or ""))
     return rows
+
+
+def pending_for_stream(
+    payload: dict[str, Any],
+    *,
+    stream_id: str,
+    deck_state_path: Path = DECK_STATE_PATH,
+) -> list[dict[str, Any]]:
+    return pending_for_deck(payload, deck_id=stream_id, deck_state_path=deck_state_path)

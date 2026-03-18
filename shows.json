@@ -2,6 +2,11 @@
   "show_scaffold_template": {
     "anchor_show_id": "<optional_anchor_show_id>",
     "catalog_permalink_path": "/antenna/sector-feeds/<sector_feed_id>",
+    "channel_id": "<optional_parent_channel_id>",
+    "channel_name": "<optional_parent_channel_name>",
+    "canonical_url": "<optional_provider_parent_url>",
+    "display_handle": "@<optional_handle>",
+    "display_slug": "<optional_slug>",
     "discover_anchor_holy_grail": true,
     "feed_unit_type": "series_or_playlist_or_feed",
     "feeds": {
@@ -14,6 +19,8 @@
     "format_tags": [
       "podcast"
     ],
+    "platform": "<platform>",
+    "platform_channel_id": "<immutable_provider_parent_id>",
     "sector": "<sector_label>",
     "sector_feed_id": "<sector_feed_id>",
     "sector_feed_source_id": "<platform_source_id>",
@@ -27,7 +34,10 @@
     "jack_mallers_show": {
       "anchor_show_id": "e29097f4",
       "catalog_permalink_path": "/antenna/sector-feeds/jack_mallers_show",
+      "channel_name": "The Jack Mallers Show",
+      "canonical_url": "https://youtube.com/@thejackmallersshow",
       "discover_anchor_holy_grail": true,
+      "display_handle": "@thejackmallersshow",
       "feed_unit_type": "series_or_playlist_or_feed",
       "feeds": {
         "rss": [
@@ -40,6 +50,8 @@
         "podcast",
         "interview"
       ],
+      "platform": "rss",
+      "platform_channel_id": "e29097f4",
       "prefer_matching_youtube_captions": true,
       "sector": "Bitcoiners",
       "sector_feed_id": "jack_mallers_show",

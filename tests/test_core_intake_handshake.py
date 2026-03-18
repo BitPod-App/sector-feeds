@@ -11,6 +11,7 @@ from bitpod.core_intake_handshake import (
     compatibility_policy,
     payload_fingerprint_sha256,
     pending_for_deck,
+    pending_for_stream,
     validate_payload,
     validate_payload_v2,
 )
@@ -136,6 +137,14 @@ class CoreIntakeHandshakeTests(unittest.TestCase):
         self.assertEqual(validate_payload_v2(self._payload_v2()), [])
         self.assertEqual(validate_payload(self._payload_v2(), contract_version=CONTRACT_VERSION_V2), [])
 
+    def test_v2_stream_id_alias_passes_without_deck_id(self) -> None:
+        payload = self._payload_v2()
+        payload["context"] = {
+            "stream_id": "stream_weekly_btc",
+            "user_id": "user_123",
+        }
+        self.assertEqual(validate_payload_v2(payload), [])
+
     def test_v2_missing_generated_at_fails(self) -> None:
         payload = self._payload_v2()
         del payload["generated_at_utc"]
@@ -224,6 +233,15 @@ class CoreIntakeHandshakeTests(unittest.TestCase):
             pending = pending_for_deck(payload, deck_id="deck-weekly-btc", deck_state_path=deck_state_path)
             self.assertEqual(pending, [])
 
+    def test_pending_for_stream_alias_matches_deck_behavior(self) -> None:
+        payload = self._payload_v1()
+        payload["episodes"][1]["processing_state"]["status"] = "new"
+        with tempfile.TemporaryDirectory() as tmp:
+            deck_state_path = Path(tmp) / "deck_state.json"
+            pending = pending_for_stream(payload, stream_id="stream-weekly-btc", deck_state_path=deck_state_path)
+            ids = [row["feed_episode_id"] for row in pending]
+            self.assertEqual(ids, ["guid-1", "guid-2"])
+
     def test_pending_for_deck_keeps_non_terminal(self) -> None:
         payload = self._payload_v1()
         payload["episodes"][1]["processing_state"]["status"] = "new"
@@ -278,6 +296,7 @@ class CoreIntakeHandshakeTests(unittest.TestCase):
         self.assertIn("sector_feed_id", policy["required_top_level_fields"])
         self.assertIn("feed_episode_id", policy["required_episode_fields"])
         self.assertIn("context.deck_id", policy["v2_required_top_level_fields"])
+        self.assertEqual(policy["v2_context_aliases"]["stream_id"], "deck_id")
         self.assertEqual(VALIDATION_OUTPUT_VERSION, "bitpod_intake_handshake_validation_output.v1")
 
 

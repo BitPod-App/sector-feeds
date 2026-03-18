@@ -761,7 +761,7 @@ def _maybe_use_captions(
             metadata={
                 "source_platform": "youtube",
                 "source_url": caption_episode.source_url,
-                "source_id": str(selected_episode.guid),
+                "source_episode_id": str(selected_episode.guid),
                 "show_name": show_key,
                 "episode_title": selected_episode.title,
                 "published_at_utc": selected_episode.published_at.isoformat(),
@@ -907,7 +907,7 @@ def _process_episode(
             metadata={
                 "source_platform": "rss" if source_type.startswith("rss") else "youtube",
                 "source_url": episode.source_url,
-                "source_id": str(episode.guid),
+                "source_episode_id": str(episode.guid),
                 "show_name": show_key,
                 "episode_title": episode.title,
                 "published_at_utc": episode.published_at.isoformat(),

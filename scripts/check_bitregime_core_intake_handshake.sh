@@ -18,6 +18,10 @@ Examples:
     ../bitregime-core/artifacts/intake/jack_mallers_show_intake.json \
     deck_weekly_btc \
     artifacts/coordination/bitregime_intake_handshake_jack_mallers_show_deck_weekly_btc.json
+
+Compatibility note:
+  - The second positional argument is still named <deck_id> for backward compatibility.
+  - Producers may emit context.stream_id instead of context.deck_id in v2 payloads.
 USAGE
 }
 

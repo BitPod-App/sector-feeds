@@ -50,3 +50,15 @@ def mark_consumed(deck_id: str, sector_feed_id: str, feed_episode_id: str, path=
     feed_payload["updated_at_utc"] = now_iso()
     save_deck_state(state, path=path)
     return feed_payload
+
+
+def load_stream_state(path=DECK_STATE_PATH) -> dict[str, Any]:
+    return load_deck_state(path=path)
+
+
+def is_consumed_for_stream(stream_id: str, sector_feed_id: str, feed_episode_id: str, path=DECK_STATE_PATH) -> bool:
+    return is_consumed(stream_id, sector_feed_id, feed_episode_id, path=path)
+
+
+def mark_stream_consumed(stream_id: str, sector_feed_id: str, feed_episode_id: str, path=DECK_STATE_PATH) -> dict[str, Any]:
+    return mark_consumed(stream_id, sector_feed_id, feed_episode_id, path=path)

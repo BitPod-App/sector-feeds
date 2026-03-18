@@ -12,7 +12,7 @@ Current operations mode:
 
 - Keep legacy + experimental weekly report tracks unchanged.
 - Accept a minimal intake artifact from `bitregime-core`.
-- Use deck processing-state markers in `index/deck_state.json` to avoid duplicate episode handling.
+- Use stream/deck processing-state markers in `index/deck_state.json` to avoid duplicate episode handling.
 
 ## Intake Contract (bitpod expectation)
 
@@ -21,6 +21,8 @@ Bitpod expects one JSON artifact per feed intake run with this contract:
 - `contract_version`: `bitregime_core_intake.v1`
 - `sector_feed_id`: canonical internal feed identity (RSS-first when available)
 - `sector_feed_source_id`: platform/source identity (`youtube_playlist_id`, `spotify_show_id`, etc.)
+- `context.deck_id` remains accepted as the legacy personalization container field.
+- `context.stream_id` is now accepted as the forward-looking alias for the same personalization container.
 - `episodes`: list of episode rows
   - required per row: `feed_episode_id`
   - required per row: `processing_state.status`
@@ -39,6 +41,7 @@ Top-level fields:
 | `sector_feed_source_id` | Yes | string | No | Platform/source unit identity (for example `youtube_playlist_id`, `spotify_show_id`). Non-empty after trim. |
 | `episodes` | Yes | array<object> | No | Intake episode rows for this feed run. Empty array allowed. |
 | `generated_at_utc` | No | string | Yes | Producer generation timestamp in UTC ISO-8601 when available. |
+| `context.stream_id` | Alias | string | Yes | Forward-looking alias for `context.deck_id`. Either `context.deck_id` or `context.stream_id` must be present in `v2`. |
 
 Episode row fields:
 
@@ -94,14 +97,14 @@ Use this checklist before declaring `bitregime_core_intake.v2` support in bitpod
 Processing-state semantics used by bitpod in this handshake:
 
 - terminal states skipped for intake planning: `processed`, `consumed`, `done`, `failed`, `error`, `skipped`
-- non-terminal episodes are candidate rows unless already consumed in deck state
+- non-terminal episodes are candidate rows unless already consumed in stream/deck state
 
 ## Adapter + Validation Command Flow (Ad Hoc)
 
 From `/Users/cjarguello/BitPod-App/bitpod`:
 
 ```bash
-# 1) Validate bitregime-core intake contract and compute pending rows for a deck context.
+# 1) Validate bitregime-core intake contract and compute pending rows for a stream/deck context.
 bash scripts/check_bitregime_core_intake_handshake.sh \
   ../bitregime-core/artifacts/intake/jack_mallers_show_intake.json \
   deck_weekly_btc
@@ -109,7 +112,7 @@ bash scripts/check_bitregime_core_intake_handshake.sh \
 # 2) Inspect pending rows (from the generated output JSON path printed by step 1).
 cat artifacts/coordination/bitregime_intake_handshake_jack_mallers_show_deck_weekly_btc.json
 
-# 3) Mark one processed episode as consumed for this deck/feed context.
+# 3) Mark one processed episode as consumed for this stream/deck + feed context.
 python3 scripts/deck_state_ctl.py mark \
   --deck-id deck_weekly_btc \
   --sector-feed-id jack_mallers_show \
@@ -125,7 +128,7 @@ bash scripts/check_bitregime_core_intake_handshake.sh \
 
 - Input (bitregime-core): `../bitregime-core/artifacts/intake/jack_mallers_show_intake.json`
 - Output (bitpod): `artifacts/coordination/bitregime_intake_handshake_jack_mallers_show_deck_weekly_btc.json`
-- Processing state store: `index/deck_state.json`
+- Processing state store: `index/deck_state.json` (legacy filename retained while `stream_id` terminology is phased in)
 
 ## Deterministic Validation Output
 
@@ -155,7 +158,7 @@ Producer default must not switch from `bitregime_core_intake.v1` to `bitregime_c
 
 3. Required schema/format conformance (no exceptions):
 - producer emits `contract_version: bitregime_core_intake.v2`
-- producer emits `context.deck_id` and `context.user_id`
+- producer emits either `context.deck_id` or `context.stream_id`, plus `context.user_id`
 - all required `v2` timestamps are strict UTC ISO-8601 with `Z` suffix
 - `processing_state.status` values are in the allowed enum only
 - `processing_state.attempt_count` is integer `>= 0` for all episodes
