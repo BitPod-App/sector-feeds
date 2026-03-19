@@ -1,10 +1,50 @@
 # sector-feeds AGENTS
 
-Read the umbrella policy first:
+Read the root policy chain first:
 
-- `/Users/cjarguello/BitPod-App/policy.md`
+- `/Users/cjarguello/BitPod-App/taylored-policy.md`
+- `/Users/cjarguello/BitPod-App/bitpod-docs/process/taylored-rule-registry.md`
 
 This file adds repo-specific rules only.
+
+Repo rule:
+
+- this file adds instructions only
+- it does not suspend root prohibitions
+- any exception to a root prohibition requires an explicit `AGENTS.override.md`
+  with exact rule IDs
+
+## Repo Focus
+
+- use this repo for transcript ingestion, transformation, validation, and
+  operator-facing content outputs
+- use repo docs and README for domain context, but prefer this file for
+  execution guidance
+- keep stable pointers and permalink-facing files intact when the repo contract
+  requires them
+
+## Agent Routing
+
+- `Engineer` / implementation agents: ingestion, parsing, storage, and output
+  contract work
+- `Explorer` / analysis agents: runbook lookup, contract tracing, and drift
+  analysis
+- `QA` / review agents: transcript quality checks, metadata quality, summary
+  quality, and operator-facing output review
+
+## Model Defaults
+
+- prefer a lightweight/cost-efficient model for bulk transcript preparation and
+  mechanical transformation work
+- prefer a stronger frontier reasoning model for QA, review, metadata
+  enrichment, and operator-facing summary quality
+- treat these as repo defaults, not immutable global requirements
+
+## Canonical Pointers
+
+- README for repo purpose and navigation
+- `docs/runbooks/` for run-specific contract details
+- `docs/prompts/` only when a runbook explicitly points there
 
 ## Health Check
 
