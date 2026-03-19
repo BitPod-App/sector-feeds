@@ -52,7 +52,7 @@ else
 fi
 
 section "Root Codex config"
-for f in .codex/org-workspace.toml .codex/environments/environment.toml .codex/policy.md; do
+for f in .codex/org-workspace.toml .codex/environments/environment.toml taylored-policy.md; do
   if [[ -f "$workspace_root/$f" ]]; then
     ok "$f"
   else
