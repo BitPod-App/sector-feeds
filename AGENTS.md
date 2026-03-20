@@ -10,9 +10,13 @@ This file adds repo-specific rules only.
 Repo rule:
 
 - this file adds instructions only
-- it does not suspend root prohibitions
-- any exception to a root prohibition requires an explicit `AGENTS.override.md`
-  with exact rule IDs
+- it does not suspend root prohibitions unless it declares an explicit allowed exception
+- any exception to a root prohibition must cite exact rule IDs and include scope,
+  reason, conditions, owner role, and duration
+
+## Rule Exceptions
+
+- none
 
 ## Repo Focus
 
