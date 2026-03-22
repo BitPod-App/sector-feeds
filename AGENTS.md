@@ -9,6 +9,11 @@ retrospective decision, follow:
 
 - `/Users/cjarguello/BitPod-App/bitpod-docs/process/file-creation-and-artifact-placement-policy.md`
 
+For Linear issue updates:
+
+- treat `update Linear` as `make the issue materially more truthful`
+- use `/Users/cjarguello/BitPod-App/bitpod-tools/linear/docs/process/linear_operating_guide_v3.md` for the canonical detailed rule
+
 This file adds repo-specific rules only.
 
 ## Health Check
