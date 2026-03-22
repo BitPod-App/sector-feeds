@@ -348,8 +348,10 @@ def _permalink_salt() -> str:
     configured = os.environ.get("BITPOD_PUBLIC_ID_SALT", "").strip()
     if configured:
         return configured
-    # Root-derived fallback keeps IDs stable without exposing show keys in public URLs.
-    return hashlib.sha256(str(ROOT).encode("utf-8", errors="ignore")).hexdigest()
+    # Preserve the existing live permalink namespace across environments.
+    # This value matches the pre-fix local ROOT-derived salt that produced the
+    # already-published jack_mallers_show public ID `0ceb2e6abdba17e0`.
+    return "31127c8e6eb412a254367fea28815324cb200c3c8b06e55a6bcbbb917f3685f2"
 
 
 def _public_permalink_id(show_key: str) -> str:
