@@ -26,8 +26,8 @@ jobs:
     env:
       BITPOD_PUBLIC_PERMALINK_BASE_URL: https://permalinks.bitpod.app
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      PERMALINKS_PROJECT_NAME: ${{ secrets.CLOUDFLARE_PAGES_PROJECT_NAME }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID || secrets.CLOUDFLARE_ACCOUNT_ID }}
+      PERMALINKS_PROJECT_NAME: ${{ vars.CLOUDFLARE_PAGES_PROJECT_NAME || secrets.CLOUDFLARE_PAGES_PROJECT_NAME || 'bitpod-public-permalinks' }}
       PERMALINKS_SHOW_KEY: jack_mallers_show
     steps:
       - name: Checkout
@@ -48,9 +48,14 @@ jobs:
 
       - name: Validate Cloudflare configuration
         run: |
-          test -n "$CLOUDFLARE_API_TOKEN" || { echo "Missing CLOUDFLARE_API_TOKEN secret"; exit 1; }
-          test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo "Missing CLOUDFLARE_ACCOUNT_ID secret"; exit 1; }
-          test -n "$PERMALINKS_PROJECT_NAME" || { echo "Missing CLOUDFLARE_PAGES_PROJECT_NAME secret"; exit 1; }
+          missing=()
+          [ -n "$CLOUDFLARE_API_TOKEN" ] || missing+=("CLOUDFLARE_API_TOKEN")
+          [ -n "$CLOUDFLARE_ACCOUNT_ID" ] || missing+=("CLOUDFLARE_ACCOUNT_ID")
+          if [ "${#missing[@]}" -gt 0 ]; then
+            echo "Missing required GitHub Actions Cloudflare config: ${missing[*]}"
+            exit 1
+          fi
+          echo "Using Cloudflare Pages project: $PERMALINKS_PROJECT_NAME"
 
       - name: Deploy permalink bundle to Cloudflare Pages
         run: bash scripts/deploy_public_permalinks_pages.sh "$PERMALINKS_PROJECT_NAME" main "$PERMALINKS_SHOW_KEY"

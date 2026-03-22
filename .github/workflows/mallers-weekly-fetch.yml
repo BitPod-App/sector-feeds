@@ -20,8 +20,8 @@ jobs:
       BITPOD_PUBLIC_PERMALINK_BASE_URL: https://permalinks.bitpod.app
       WEEKLY_GPT_REPORT: "0"
       CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      PERMALINKS_PROJECT_NAME: ${{ secrets.CLOUDFLARE_PAGES_PROJECT_NAME }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID || secrets.CLOUDFLARE_ACCOUNT_ID }}
+      PERMALINKS_PROJECT_NAME: ${{ vars.CLOUDFLARE_PAGES_PROJECT_NAME || secrets.CLOUDFLARE_PAGES_PROJECT_NAME || 'bitpod-public-permalinks' }}
       PERMALINKS_SHOW_KEY: jack_mallers_show
     steps:
       - name: Checkout
@@ -51,13 +51,27 @@ jobs:
       - name: Refresh permalink bundle from latest local status
         run: python3 scripts/refresh_public_permalinks.py jack_mallers_show
 
+      - name: Check Cloudflare deploy readiness
+        id: cloudflare
+        run: |
+          missing=()
+          [ -n "$CLOUDFLARE_API_TOKEN" ] || missing+=("CLOUDFLARE_API_TOKEN")
+          [ -n "$CLOUDFLARE_ACCOUNT_ID" ] || missing+=("CLOUDFLARE_ACCOUNT_ID")
+          if [ "${#missing[@]}" -eq 0 ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+            echo "project_name=${PERMALINKS_PROJECT_NAME}" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            printf 'missing_names=%s\n' "$(IFS=,; echo "${missing[*]}")" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Deploy refreshed permalink bundle
-        if: env.CLOUDFLARE_API_TOKEN != '' && env.CLOUDFLARE_ACCOUNT_ID != '' && env.PERMALINKS_PROJECT_NAME != ''
+        if: steps.cloudflare.outputs.ready == 'true'
         run: bash scripts/deploy_public_permalinks_pages.sh "$PERMALINKS_PROJECT_NAME" main "$PERMALINKS_SHOW_KEY"
 
       - name: Note skipped permalink deploy
-        if: env.CLOUDFLARE_API_TOKEN == '' || env.CLOUDFLARE_ACCOUNT_ID == '' || env.PERMALINKS_PROJECT_NAME == ''
-        run: echo "::warning::Skipping public permalink deploy because Cloudflare secrets are not fully configured."
+        if: steps.cloudflare.outputs.ready != 'true'
+        run: echo "::warning::Skipping public permalink deploy; missing GitHub Actions config: ${{ steps.cloudflare.outputs.missing_names }}"
 
       - name: Upload weekly fetch artifacts
         if: always()
