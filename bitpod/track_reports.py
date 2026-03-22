@@ -71,15 +71,26 @@ def build_track_run_summary(show_key: str, track_name: str, feed_mode: str) -> d
         "latest_episode_guid": show.get("latest_episode_guid"),
         "latest_episode_title": show.get("latest_episode_title"),
         "latest_episode_published_at_utc": show.get("latest_episode_published_at_utc"),
-        "source_platform": raw_status.get("source_platform"),
-        "source_url": raw_status.get("source_url"),
-        "source_episode_id": raw_status.get("source_episode_id"),
-        "canonical_episode_id": raw_status.get("canonical_episode_id"),
+        "source_platform": raw_status.get("source_platform")
+        or raw_status.get("transcript_source_type")
+        or raw_status.get("attempted_source_type"),
+        "source_url": raw_status.get("source_url")
+        or raw_status.get("transcript_source_url")
+        or raw_status.get("attempted_source_url")
+        or raw_status.get("episode_url"),
+        "source_episode_id": raw_status.get("source_episode_id")
+        or raw_status.get("episode_guid")
+        or raw_status.get("latest_episode_guid"),
+        "canonical_episode_id": raw_status.get("canonical_episode_id")
+        or raw_status.get("episode_guid")
+        or raw_status.get("latest_episode_guid"),
         "run_id": show.get("run_id"),
         "run_status": show.get("run_status"),
         "processed_successfully": show.get("run_status") == "ok",
+        "new_episode_detected": bool(raw_status.get("new_episode_detected")),
         "included_in_pointer": bool(raw_status.get("included_in_pointer")),
         "ready_via_permalink": bool(show.get("ready_via_permalink")),
+        "transcript_quality_state": raw_status.get("transcript_quality_state"),
         "permalink_ready": permalink_ready,
         "shared_permalink_contract": shared_permalink,
         "shared_permalink_paths": permalink_paths,
@@ -118,6 +129,16 @@ def build_track_run_summary(show_key: str, track_name: str, feed_mode: str) -> d
                 summary["permalink_ready"],
                 summary["gpt_consumed"],
                 summary["latest_report_includes_show"],
+            ]
+        )
+    elif track_name == "mallers_weekly_fetch":
+        summary["track_purpose"] = "active Monday fetch automation for transcript/status/permalink refresh"
+        summary["success"] = all(
+            [
+                summary["processed_successfully"],
+                summary["included_in_pointer"],
+                summary["ready_via_permalink"],
+                summary["permalink_ready"],
             ]
         )
     else:
@@ -162,8 +183,10 @@ def write_track_run_summary(show_key: str, track_name: str, feed_mode: str) -> t
         f"- run_id: `{summary.get('run_id')}`",
         f"- run_status: `{summary.get('run_status')}`",
         f"- processed_successfully: `{summary.get('processed_successfully')}`",
+        f"- new_episode_detected: `{summary.get('new_episode_detected')}`",
         f"- included_in_pointer: `{summary.get('included_in_pointer')}`",
         f"- ready_via_permalink: `{summary.get('ready_via_permalink')}`",
+        f"- transcript_quality_state: `{summary.get('transcript_quality_state')}`",
         f"- permalink_ready: `{summary.get('permalink_ready')}`",
         f"- failure_stage: `{summary.get('failure_stage')}`",
         f"- failure_reason: `{summary.get('failure_reason')}`",
