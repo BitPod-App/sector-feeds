@@ -369,6 +369,8 @@ bash scripts/deploy_public_permalinks_worker.sh [worker_name] [show_key]
 #   - optional: CLOUDFLARE_PAGES_PROJECT_NAME
 #   - optional: CLOUDFLARE_WORKER_NAME
 #   - optional: PERMALINKS_WORKER_CUSTOM_DOMAIN
+#   - optional during cutover: PERMALINKS_WORKER_PREVIEW_BASE_URL
+#     - lets refresh rebuild from the preview Worker status URL if canonical is temporarily unavailable
 
 # Cloudflare permalink Worker architecture and cutover steps:
 # - see cloudflare/permalinks-worker/

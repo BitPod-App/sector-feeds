@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 from urllib.error import HTTPError, URLError
@@ -18,17 +19,33 @@ def _status_path(repo_root: Path, show_key: str, stable_pointer: str) -> Path:
     return repo_root / "transcripts" / show_key / f"{Path(stable_pointer).stem}_status.json"
 
 
-def _remote_status_payload(show_key: str) -> dict | None:
+def _remote_status_urls(show_key: str) -> list[str]:
     public_id = _public_permalink_id(show_key)
-    url = f"{_public_permalink_base_url()}/{public_id}/status.json"
-    req = Request(url, headers={"User-Agent": "sector-feeds-refresh-public-permalinks/1.0"})
-    try:
-        with urlopen(req, timeout=20) as resp:  # nosec B310
-            if getattr(resp, "status", 200) != 200:
-                return None
-            return json.loads(resp.read().decode("utf-8", errors="ignore"))
-    except (HTTPError, URLError, json.JSONDecodeError):
-        return None
+    bases: list[str] = []
+    for raw in (
+        _public_permalink_base_url(),
+        str((REPO_ROOT / "artifacts" / "private" / "coordination" / "latest_worker_deploy_url.txt").read_text(encoding="utf-8")).strip()
+        if (REPO_ROOT / "artifacts" / "private" / "coordination" / "latest_worker_deploy_url.txt").exists()
+        else "",
+        os.environ.get("PERMALINKS_WORKER_PREVIEW_BASE_URL", "").strip(),
+    ):
+        base = raw.rstrip("/")
+        if base and base not in bases:
+            bases.append(base)
+    return [f"{base}/{public_id}/status.json" for base in bases]
+
+
+def _remote_status_payload(show_key: str) -> dict | None:
+    for url in _remote_status_urls(show_key):
+        req = Request(url, headers={"User-Agent": "sector-feeds-refresh-public-permalinks/1.0"})
+        try:
+            with urlopen(req, timeout=20) as resp:  # nosec B310
+                if getattr(resp, "status", 200) != 200:
+                    continue
+                return json.loads(resp.read().decode("utf-8", errors="ignore"))
+        except (HTTPError, URLError, json.JSONDecodeError):
+            continue
+    return None
 
 
 def main() -> int:
