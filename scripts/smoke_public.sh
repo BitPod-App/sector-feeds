@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SHOW_KEY="${1:-jack_mallers_show}"
-BASE_URL="${2:-https://bitpod-public-permalinks.pages.dev}"
+BASE_URL="${2:-https://permalinks.bitpod.app}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 cd "$REPO_ROOT"

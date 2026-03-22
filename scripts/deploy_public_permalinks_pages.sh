@@ -23,7 +23,7 @@ if [ -f "$REPO_ROOT/.bitpod_runtime.env" ]; then
   set +a
 fi
 
-CANONICAL_BASE_URL="${BITPOD_PUBLIC_PERMALINK_BASE_URL:-https://bitpod-public-permalinks.pages.dev}"
+CANONICAL_BASE_URL="${BITPOD_PUBLIC_PERMALINK_BASE_URL:-https://permalinks.bitpod.app}"
 
 echo "Refreshing public permalink artifacts from current run status"
 "$PYTHON_BIN" "$REPO_ROOT/scripts/refresh_public_permalinks.py" "$SHOW_KEY"

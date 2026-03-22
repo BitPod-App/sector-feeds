@@ -5,6 +5,9 @@ on:
     - cron: "15 14 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   intake-gate-daily:
     if: github.ref == 'refs/heads/main' || github.event_name == 'schedule'
@@ -12,7 +15,9 @@ jobs:
     env:
       SHOW_KEY: jack_mallers_show
       DECK_ID: deck_weekly_btc
-      INTAKE_JSON: ${{ vars.BITPOD_INTAKE_JSON_PATH || '../bitregime-core/artifacts/intake/jack_mallers_show_intake.json' }}
+      INTAKE_JSON: ${{ vars.BITPOD_INTAKE_JSON_PATH || 'bitregime-core/artifacts/intake/jack_mallers_show_intake.json' }}
+      BITREGIME_CORE_PATH: bitregime-core
+      BITPOD_CROSS_REPO_TOKEN: ${{ secrets.BITPOD_CROSS_REPO_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,8 +34,58 @@ jobs:
         continue-on-error: true
         run: bash scripts/taylor_runtime_keepalive.sh
 
+      - name: Resolve intake artifact strategy
+        id: intake_strategy
+        run: |
+          if [ -n "${{ vars.BITPOD_INTAKE_JSON_PATH }}" ]; then
+            echo "mode=override_path" >> "$GITHUB_OUTPUT"
+            echo "Using BITPOD_INTAKE_JSON_PATH override."
+            exit 0
+          fi
+
+          if [ -z "$BITPOD_CROSS_REPO_TOKEN" ]; then
+            echo "mode=skip" >> "$GITHUB_OUTPUT"
+            echo "::warning::Skipping Intake Gate Daily because BITPOD_CROSS_REPO_TOKEN is not configured and no BITPOD_INTAKE_JSON_PATH override is set."
+            exit 0
+          fi
+
+          echo "mode=checkout_bitregime_core" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout bitregime-core
+        if: steps.intake_strategy.outputs.mode == 'checkout_bitregime_core'
+        uses: actions/checkout@v4
+        with:
+          repository: BitPod-App/bitregime-core
+          token: ${{ secrets.BITPOD_CROSS_REPO_TOKEN }}
+          path: bitregime-core
+
+      - name: Produce intake artifact from bitregime-core
+        if: steps.intake_strategy.outputs.mode == 'checkout_bitregime_core'
+        run: |
+          python "$BITREGIME_CORE_PATH/scripts/intake_thin_slice.py" collect \
+            --feed-id "$SHOW_KEY" \
+            --deck-id "$DECK_ID" \
+            --user-id github_actions \
+            --registry-json "$BITREGIME_CORE_PATH/configs/intake_feeds.json" \
+            --artifacts-root "$BITREGIME_CORE_PATH/artifacts/intake"
+
+          python "$BITREGIME_CORE_PATH/scripts/intake_thin_slice.py" produce-intake \
+            --feed-id "$SHOW_KEY" \
+            --deck-id "$DECK_ID" \
+            --user-id github_actions \
+            --registry-json "$BITREGIME_CORE_PATH/configs/intake_feeds.json" \
+            --artifacts-root "$BITREGIME_CORE_PATH/artifacts/intake" \
+            --output-json "$INTAKE_JSON"
+
       - name: Run intake gate daily (v2 default)
+        if: steps.intake_strategy.outputs.mode != 'skip'
         run: bash scripts/run_intake_gate_daily.sh "$INTAKE_JSON" "$DECK_ID"
+
+      - name: Record skipped daily gate reason
+        if: steps.intake_strategy.outputs.mode == 'skip'
+        run: |
+          echo "Intake Gate Daily skipped: missing BITPOD_CROSS_REPO_TOKEN and no BITPOD_INTAKE_JSON_PATH override." >> "$GITHUB_STEP_SUMMARY"
+          echo "The workflow definition is installed, but cross-repo producer access is not configured yet." >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload intake gate artifacts
         if: always()

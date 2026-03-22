@@ -3,10 +3,10 @@
 - generated_at_utc: `2026-03-17T04:23:06.940808+00:00`
 - show_key: `jack_mallers_show`
 - run_id: `20260317T042306Z`
-- status_json_url: `https://bitpod-public-permalinks.pages.dev/0ceb2e6abdba17e0/status.json`
-- intake_md_url: `https://bitpod-public-permalinks.pages.dev/0ceb2e6abdba17e0/intake.md`
-- transcript_md_url: `https://bitpod-public-permalinks.pages.dev/0ceb2e6abdba17e0/transcript.md`
-- discovery_json_url: `https://bitpod-public-permalinks.pages.dev/0ceb2e6abdba17e0/discovery.json`
+- status_json_url: `https://permalinks.bitpod.app/0ceb2e6abdba17e0/status.json`
+- intake_md_url: `https://permalinks.bitpod.app/0ceb2e6abdba17e0/intake.md`
+- transcript_md_url: `https://permalinks.bitpod.app/0ceb2e6abdba17e0/transcript.md`
+- discovery_json_url: `https://permalinks.bitpod.app/0ceb2e6abdba17e0/discovery.json`
 - new_episode_detected: `True`
 - included_in_pointer: `False`
 - transcript_provenance: `failed`

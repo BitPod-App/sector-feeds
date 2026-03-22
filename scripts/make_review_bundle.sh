@@ -91,31 +91,55 @@ base_sha="$(git rev-parse "${base_ref}")"
   echo "## D) verification outputs"
 
   ran_any=0
-  if [[ -x "${repo_root}/scripts/check_taylor_skill.sh" ]]; then
+  if [[ -f "${repo_root}/scripts/refresh_public_permalinks.py" ]]; then
     ran_any=1
     echo
     echo "### Command"
     echo '```bash'
-    echo "bash scripts/check_taylor_skill.sh"
+    echo "python3 scripts/refresh_public_permalinks.py jack_mallers_show"
     echo '```'
     echo "### Output"
     echo '```text'
-    bash "${repo_root}/scripts/check_taylor_skill.sh"
+    python3 "${repo_root}/scripts/refresh_public_permalinks.py" jack_mallers_show
     echo '```'
   fi
 
-  if [[ -x "${repo_root}/scripts/check_taylor_agent.sh" ]]; then
+  if [[ -f "${repo_root}/tests/test_storage.py" ]]; then
     ran_any=1
     echo
     echo "### Command"
     echo '```bash'
-    echo "bash scripts/check_taylor_agent.sh"
+    echo "python3 -m pytest tests/test_storage.py"
     echo '```'
     echo "### Output"
     echo '```text'
-    bash "${repo_root}/scripts/check_taylor_agent.sh"
+    python3 -m pytest "${repo_root}/tests/test_storage.py"
     echo '```'
   fi
+
+  if [[ -f "${repo_root}/scripts/verify_public_permalink_bundle.py" && -f "${repo_root}/transcripts/jack_mallers_show/jack_mallers_status.json" ]]; then
+    ran_any=1
+    echo
+    echo "### Command"
+    echo '```bash'
+    echo "python3 scripts/verify_public_permalink_bundle.py --show jack_mallers_show --base-url https://permalinks.bitpod.app"
+    echo '```'
+    echo "### Output"
+    echo '```text'
+    python3 "${repo_root}/scripts/verify_public_permalink_bundle.py" --show jack_mallers_show --base-url https://permalinks.bitpod.app
+    echo '```'
+  fi
+
+  ran_any=1
+  echo
+  echo "### Command"
+  echo '```bash'
+  echo "git diff --check"
+  echo '```'
+  echo "### Output"
+  echo '```text'
+  git diff --check
+  echo '```'
 
   if [[ ${ran_any} -eq 0 ]]; then
     echo "No verification commands configured."
