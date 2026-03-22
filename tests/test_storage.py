@@ -49,6 +49,10 @@ class StorageTests(unittest.TestCase):
         usable_html = _landing_page_html(permalink_id="opaque123", base_url="https://example.com", public_status=base_payload)
         self.assertIn("usable transcript", usable_html)
         self.assertIn("low-weight context", usable_html)
+        self.assertIn("Speak transcript", usable_html)
+        self.assertIn("speechSynthesis", usable_html)
+        self.assertIn("Pause</button>", usable_html)
+        self.assertIn("https://example.com/opaque123/transcript.md", usable_html)
 
         degraded_payload = dict(base_payload, transcript_quality_state="degraded", transcript_degraded=True)
         degraded_html = _landing_page_html(
