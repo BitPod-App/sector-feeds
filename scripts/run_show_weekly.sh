@@ -9,6 +9,7 @@ fi
 SHOW_KEY="$1"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+WORKSPACE_ROOT="$(cd "$REPO_ROOT/.." && pwd)"
 
 # Load optional runtime secrets/config once (kept outside committed defaults).
 if [ -f "$REPO_ROOT/.bitpod_runtime.env" ]; then
@@ -41,7 +42,7 @@ MIN_CAPTION_WORDS="${2:-${MIN_CAPTION_WORDS:-120}}"
 MIN_EPISODE_AGE_MINUTES="${3:-${MIN_EPISODE_AGE_MINUTES:-180}}"
 WEEKLY_GPT_REPORT="${WEEKLY_GPT_REPORT:-0}"
 BITPOD_FEED_MODE="${BITPOD_FEED_MODE:-all}"
-TOOLS_COST_CTL="/Users/cjarguello/BitPod-App/tools/costs/cost_ctl.py"
+TOOLS_COST_CTL="${TOOLS_COST_CTL:-$WORKSPACE_ROOT/tools/costs/cost_ctl.py}"
 
 run_cost_guard() {
   if [ ! -x "$TOOLS_COST_CTL" ]; then

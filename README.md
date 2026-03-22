@@ -152,7 +152,7 @@ How it updates:
 Operational commands:
 
 ```bash
-cd /Users/cjarguello/BitPod-App/bitpod
+cd "$WORKSPACE/sector-feeds"
 source .venv311/bin/activate
 python -m bitpod discover --show jack_mallers_show
 python -m bitpod sync --show jack_mallers_show --max-episodes 1
@@ -239,7 +239,7 @@ When debugging BitPod workspace cutover/path issues on macOS, run:
 
 ```bash
 # explicit root
-bash scripts/diagnose_codex_workspace_rebuild.sh /Users/cjarguello/BitPod-App
+bash scripts/diagnose_codex_workspace_rebuild.sh "$WORKSPACE"
 
 # or auto-detect (prefers BitPod-App, then falls back to bitpod-app)
 bash scripts/diagnose_codex_workspace_rebuild.sh
@@ -363,11 +363,11 @@ Timeline policy:
 - For live-heavy YouTube sources, sync applies a default maturity guard (`--min-episode-age-minutes 180`) to avoid unfinished captures.
 - GPT bridge cost estimates are logged to:
 - local: `artifacts/cost-meter/bridge_cost_estimates.jsonl`
-- shared tools source of truth: `/Users/cjarguello/BitPod-App/tools/artifacts/cost-meter/cost_events.jsonl`
+- shared tools source of truth: `$WORKSPACE/tools/artifacts/cost-meter/cost_events.jsonl`
 
 Shared cost summary (all repos/commands that write to tools meter):
 ```bash
-/Users/cjarguello/BitPod-App/tools/costs/cost_ctl.py
+$WORKSPACE/tools/costs/cost_ctl.py
 ```
 
 Weekly cost guardrails (automation-friendly):

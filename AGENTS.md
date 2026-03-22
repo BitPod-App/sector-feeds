@@ -1,18 +1,18 @@
 # sector-feeds AGENTS
 
-Read the umbrella agent entrypoint first:
+Read the umbrella agent entrypoint first from the active workspace root:
 
-- `/Users/cjarguello/BitPod-App/AGENTS.md`
+- `$WORKSPACE/AGENTS.md`
 
 For any new-file, retained-artifact, temporary-handoff, local-working-file, or
 retrospective decision, follow:
 
-- `/Users/cjarguello/BitPod-App/bitpod-docs/process/file-creation-and-artifact-placement-policy.md`
+- `$WORKSPACE/bitpod-docs/process/file-creation-and-artifact-placement-policy.md`
 
 For Linear issue updates:
 
 - treat `update Linear` as `make the issue materially more truthful`
-- use `/Users/cjarguello/BitPod-App/bitpod-tools/linear/docs/process/linear_operating_guide_v3.md` for the canonical detailed rule
+- use `$WORKSPACE/bitpod-tools/linear/docs/process/linear_operating_guide_v3.md` for the canonical detailed rule
 
 This file adds repo-specific rules only.
 
