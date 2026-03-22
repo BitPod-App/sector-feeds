@@ -71,6 +71,7 @@ jobs:
             artifacts/public/permalinks/**
             artifacts/private/public_permalink_manifest.json
             artifacts/gpt-qa/**
+            artifacts/runs/**
             index/processed.json
 
       - name: Commit updated Mallers artifacts

@@ -16,7 +16,11 @@ from bitpod.track_reports import write_track_run_summary
 def main() -> int:
     parser = argparse.ArgumentParser(prog="render_weekly_run_summary")
     parser.add_argument("--show", required=True)
-    parser.add_argument("--track", required=True, choices=["legacy_tuesday_track", "experimental_track"])
+    parser.add_argument(
+        "--track",
+        required=True,
+        choices=["legacy_tuesday_track", "experimental_track", "mallers_weekly_fetch"],
+    )
     parser.add_argument("--feed-mode", required=True)
     args = parser.parse_args()
 

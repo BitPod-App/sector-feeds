@@ -238,7 +238,18 @@ GitHub automation ownership:
 - weekly fetch automation: `.github/workflows/mallers-weekly-fetch.yml`
   - schedule: Monday 9:15 PM CST (`15 3 * * 2` UTC)
   - command target: `bash scripts/run_mallers_weekly.sh`
-  - scope: transcript/status/permalink refresh only, no GPT report generation
+  - scope: transcript/status/permalink refresh only, no GPT report generation by default
+  - local ad hoc behavior matches the workflow unless you explicitly set `WEEKLY_GPT_REPORT=1`
+  - stable status surface:
+    - `transcripts/jack_mallers_show/jack_mallers_status.json`
+    - `transcripts/jack_mallers_show/jack_mallers_status.md`
+    - `transcripts/jack_mallers_show/jack_mallers_gpt_review_request.md`
+  - unique per-run debug surface:
+    - `artifacts/runs/mallers_weekly_fetch/jack_mallers_show/<timestamp>__summary.md`
+    - `artifacts/runs/mallers_weekly_fetch/jack_mallers_show/<timestamp>__status.json`
+  - interpretation:
+    - stable status files answer "what is the current latest known state?"
+    - unique run summaries answer "what happened on this specific weekly run?"
 - daily intake gate: `.github/workflows/intake-gate-daily.yml`
   - produces or consumes the `bitregime-core` intake artifact before running the v2-default handshake gate
   - requires `BITPOD_CROSS_REPO_TOKEN` only when the workflow must check out the private `bitregime-core` repo itself

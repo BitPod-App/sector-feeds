@@ -81,6 +81,68 @@ class TrackReportTests(unittest.TestCase):
             self.assertTrue(summary["success"])
             self.assertTrue(summary["gpt_consumed"])
 
+    def test_weekly_fetch_track_summary_uses_active_track_contract(self) -> None:
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            run_time = datetime(2026, 3, 22, 16, 41, 53, tzinfo=timezone.utc)
+            fake_payload = {
+                "latest_gpt_bitreport_path": None,
+                "latest_gpt_bitreport_coverage": None,
+                "shows": [
+                    {
+                        "show_key": "jack_mallers_show",
+                        "latest_episode_guid": "ep-guid",
+                        "latest_episode_title": "Episode X",
+                        "latest_episode_published_at_utc": "2026-03-17T07:04:50+00:00",
+                        "ready_via_permalink": True,
+                        "run_status": "ok",
+                        "run_id": "run-456",
+                        "failure_stage": None,
+                        "failure_reason": None,
+                        "gpt_consumed": False,
+                        "gpt_check_count": 0,
+                        "latest_feedback_path": None,
+                        "latest_feedback_note": None,
+                        "status_json": str(root / "transcripts" / "jack_mallers_show" / "jack_mallers_status.json"),
+                        "status_md": str(root / "transcripts" / "jack_mallers_show" / "jack_mallers_status.md"),
+                        "gpt_review_request": str(root / "transcripts" / "jack_mallers_show" / "jack_mallers_gpt_review_request.md"),
+                        "latest_report_includes_show": False,
+                    }
+                ],
+            }
+
+            status_json = root / "transcripts" / "jack_mallers_show" / "jack_mallers_status.json"
+            status_json.parent.mkdir(parents=True, exist_ok=True)
+            status_json.write_text(
+                json.dumps(
+                    {
+                        "new_episode_detected": False,
+                        "transcript_quality_state": "no-new-episode",
+                        "included_in_pointer": True,
+                        "public_permalink_transcript_url": "https://example.com/transcript.md",
+                        "public_permalink_status_url": "https://example.com/status.json",
+                        "public_permalink_discovery_url": "https://example.com/discovery.json",
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            with patch.object(reports_module, "ROOT", root), patch.object(
+                reports_module, "status_payload", lambda show_keys, as_of: fake_payload
+            ), patch.object(reports_module, "_utc_now", lambda: run_time), patch.object(
+                ops_module, "parse_as_of_local", lambda value=None: run_time
+            ):
+                md_path, json_path, summary = reports_module.write_track_run_summary(
+                    "jack_mallers_show", "mallers_weekly_fetch", "all"
+                )
+
+            self.assertTrue(md_path.exists())
+            self.assertTrue(json_path.exists())
+            self.assertIn("mallers_weekly_fetch/jack_mallers_show", md_path.as_posix())
+            self.assertTrue(summary["success"])
+            self.assertFalse(summary["new_episode_detected"])
+            self.assertEqual(summary["transcript_quality_state"], "no-new-episode")
+
 
 if __name__ == "__main__":
     unittest.main()

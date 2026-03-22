@@ -12,6 +12,7 @@ artifacts/gpt-bitreports/
 artifacts/gpt-feedback/
 artifacts/private/
 artifacts/public/
+artifacts/runs/
 artifacts/review_bundles/
 artifacts/taylor_qa/
 artifacts/mallers_weekly_report.md
