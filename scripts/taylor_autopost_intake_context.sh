@@ -30,6 +30,7 @@ OUT_MD="${5:-artifacts/coordination/intake_gate_daily_taylor_autopost.md}"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+WORKSPACE_ROOT="$(cd "$REPO_ROOT/.." && pwd)"
 cd "$REPO_ROOT"
 
 TAYLOR_BIN="${TAYLOR_BIN:-}"
@@ -38,7 +39,7 @@ if [ -z "$TAYLOR_BIN" ]; then
   if command -v taylor >/dev/null 2>&1; then
     TAYLOR_BIN="$(command -v taylor)"
   else
-    TOOLS_ROOT="${TOOLS_ROOT:-/Users/cjarguello/BitPod-App/tools}"
+    TOOLS_ROOT="${TOOLS_ROOT:-$WORKSPACE_ROOT/tools}"
     if [ -x "${TOOLS_ROOT}/taylor/bin/taylor" ]; then
       TAYLOR_BIN="${TOOLS_ROOT}/taylor/bin/taylor"
     fi

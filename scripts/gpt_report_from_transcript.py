@@ -10,10 +10,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+WORKSPACE_ROOT = REPO_ROOT.parent
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-TOOLS_ROOT = Path("/Users/cjarguello/BitPod-App/tools")
+TOOLS_ROOT = Path(os.environ.get("TOOLS_ROOT", str(WORKSPACE_ROOT / "tools"))).expanduser()
 TOOLS_COSTS = TOOLS_ROOT / "costs"
 if str(TOOLS_COSTS) not in sys.path:
     sys.path.insert(0, str(TOOLS_COSTS))
@@ -33,8 +34,8 @@ from bitpod.ops import record_gpt_feedback
 def _resolve_bridge_root() -> Path:
     candidates = [
         os.environ.get("BITPOD_GPT_BRIDGE_ROOT", "").strip(),
-        "/Users/cjarguello/BitPod-App/bitpod-tools/gpt_bridge",
-        "/Users/cjarguello/BitPod-App/tools/gpt_bridge",
+        str(WORKSPACE_ROOT / "bitpod-tools" / "gpt_bridge"),
+        str(WORKSPACE_ROOT / "tools" / "gpt_bridge"),
         str(REPO_ROOT.parent / "bitpod-tools" / "gpt_bridge"),
         str(REPO_ROOT.parent / "tools" / "gpt_bridge"),
     ]

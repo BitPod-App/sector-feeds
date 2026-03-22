@@ -19,9 +19,10 @@ fi
 OUT_JSON="${1:-artifacts/coordination/taylor_runtime_keepalive.json}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+WORKSPACE_ROOT="$(cd "$REPO_ROOT/.." && pwd)"
 cd "$REPO_ROOT"
 
-TOOLS_ROOT="${TOOLS_ROOT:-/Users/cjarguello/BitPod-App/tools}"
+TOOLS_ROOT="${TOOLS_ROOT:-$WORKSPACE_ROOT/tools}"
 TAYLOR_BIN="${TAYLOR_BIN:-${TOOLS_ROOT}/taylor/bin/taylor}"
 if command -v taylor >/dev/null 2>&1; then
   TAYLOR_BIN="$(command -v taylor)"

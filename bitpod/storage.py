@@ -13,7 +13,7 @@ from urllib.parse import parse_qs, urlencode, urlparse
 
 from bitpod.indexer import now_iso
 from bitpod.indexer import canonical_episode_id
-from bitpod.paths import ROOT, TRANSCRIPTS_ROOT
+from bitpod.paths import ROOT, TRANSCRIPTS_ROOT, resolve_repo_path
 
 SLUG_PATTERN = re.compile(r"[^a-z0-9]+")
 ROBOTS_POLICY = "noindex, nofollow, noarchive"
@@ -1060,7 +1060,7 @@ def _show_episode_records(show_key: str) -> tuple[list[dict[str, Any]], list[dic
         status = str(payload.get("status") or "")
         published_at = payload.get("published_at")
         if status == "ok":
-            transcript_path = Path(str(payload.get("transcript_path") or ""))
+            transcript_path = resolve_repo_path(str(payload.get("transcript_path") or ""))
             if transcript_path.exists():
                 duration_minutes_est = _estimate_episode_minutes(payload, transcript_path)
                 transcript_chars_est = _estimate_transcript_chars(transcript_path)
@@ -1100,7 +1100,7 @@ def _show_episode_records(show_key: str) -> tuple[list[dict[str, Any]], list[dic
 
 
 def _estimate_episode_minutes(payload: dict[str, Any], transcript_path: Path) -> float:
-    segments_path = Path(str(payload.get("transcript_segments_path") or ""))
+    segments_path = resolve_repo_path(str(payload.get("transcript_segments_path") or ""))
     if segments_path.is_file():
         max_end = 0.0
         for line in segments_path.read_text(encoding="utf-8", errors="ignore").splitlines():
@@ -1286,7 +1286,7 @@ def write_public_permalink_artifacts(
     selected_processed, window_meta = _select_processed_window(processed)
     published_rows: list[dict[str, Any]] = []
     for item in selected_processed:
-        src = Path(item["transcript_path"])
+        src = resolve_repo_path(item["transcript_path"])
         dst = episodes_root / src.name
         copyfile(src, dst)
         row = dict(item)

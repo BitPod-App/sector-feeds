@@ -78,7 +78,7 @@ Primary outputs:
 - `artifacts/private/experimental_weekly/jack_mallers_show_intake_snapshot.json`
 - `artifacts/runs/experimental_track/jack_mallers_show/<timestamp>__summary.md`
 - `artifacts/private/weekly_bundles/weekly_critical_bundle.json` (if generated)
-- `/Users/cjarguello/BitPod-App/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json` (if generated)
+- `$WORKSPACE/bitregime-core/artifacts/gates/weekly_bundle_gate_status.json` (if generated)
 
 Feed-policy default:
 - experimental wrapper defaults `BITPOD_FEED_MODE=rss_preferred`
