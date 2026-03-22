@@ -29,7 +29,10 @@ if [ -n "$CUSTOM_DOMAIN" ]; then
   DEPLOY_ARGS+=(--domains "$CUSTOM_DOMAIN")
 fi
 
-DEPLOY_OUT="$(npx wrangler "${DEPLOY_ARGS[@]}" 2>&1)"
+if ! DEPLOY_OUT="$(npx wrangler "${DEPLOY_ARGS[@]}" 2>&1)"; then
+  echo "$DEPLOY_OUT"
+  exit 1
+fi
 echo "$DEPLOY_OUT"
 
 WORKERS_DEV_URL="$(printf '%s\n' "$DEPLOY_OUT" | grep -Eo 'https://[a-z0-9-]+\.[a-z0-9-]+\.workers\.dev' | tail -n 1 || true)"
@@ -69,7 +72,10 @@ fi
 
 if [ "$VERIFY_WRITE" = "1" ] || { [ "$VERIFY_WRITE" = "auto" ] && [ -n "$CUSTOM_DOMAIN" ] && [ "$VERIFY_BASE_URL" = "$CANONICAL_BASE_URL" ]; }; then
   echo "Redeploying Worker after writing canonical bundle health"
-  DEPLOY_OUT="$(npx wrangler "${DEPLOY_ARGS[@]}" 2>&1)"
+  if ! DEPLOY_OUT="$(npx wrangler "${DEPLOY_ARGS[@]}" 2>&1)"; then
+    echo "$DEPLOY_OUT"
+    exit 1
+  fi
   echo "$DEPLOY_OUT"
 
   echo "Final public verification via $VERIFY_BASE_URL"
