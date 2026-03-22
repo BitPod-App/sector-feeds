@@ -190,10 +190,10 @@ class StorageTests(unittest.TestCase):
                     "failure_stage": "transcription",
                     "failure_reason": "quota exceeded",
                     "pointer_path": "transcripts/jack_mallers_show/jack_mallers.md",
-                    "public_permalink_status_url": "https://bitpod-public-permalinks.pages.dev/abc123/status.json",
-                    "public_permalink_intake_url": "https://bitpod-public-permalinks.pages.dev/abc123/intake.md",
-                    "public_permalink_transcript_url": "https://bitpod-public-permalinks.pages.dev/abc123/transcript.md",
-                    "public_permalink_discovery_url": "https://bitpod-public-permalinks.pages.dev/abc123/discovery.json",
+                    "public_permalink_status_url": "https://permalinks.bitpod.app/abc123/status.json",
+                    "public_permalink_intake_url": "https://permalinks.bitpod.app/abc123/intake.md",
+                    "public_permalink_transcript_url": "https://permalinks.bitpod.app/abc123/transcript.md",
+                    "public_permalink_discovery_url": "https://permalinks.bitpod.app/abc123/discovery.json",
                 }
                 review_path = write_gpt_review_request(
                     show_key="jack_mallers_show",
@@ -206,7 +206,7 @@ class StorageTests(unittest.TestCase):
             self.assertTrue(review_path.exists())
             review_text = review_path.read_text(encoding="utf-8")
             self.assertIn("Use the public permalink bundle as the canonical input surface", review_text)
-            self.assertIn("status_json_url: `https://bitpod-public-permalinks.pages.dev/abc123/status.json`", review_text)
+            self.assertIn("status_json_url: `https://permalinks.bitpod.app/abc123/status.json`", review_text)
             self.assertIn("### 6. Basic BTC output report", review_text)
             self.assertIn("transcript_provenance: `failed`", review_text)
 
@@ -318,7 +318,7 @@ class StorageTests(unittest.TestCase):
             self.assertIn("Canonical evidence", landing_text)
             self.assertIn("local_fs_only", landing_text)
             self.assertIn(
-                f'href="https://bitpod-public-permalinks.pages.dev/{first["public_permalink_id"]}/status.json"',
+                f'href="https://permalinks.bitpod.app/{first["public_permalink_id"]}/status.json"',
                 landing_text,
             )
 
@@ -353,7 +353,7 @@ class StorageTests(unittest.TestCase):
             self.assertIsNone(status_payload["public_bundle_verified_at_utc"])
             self.assertEqual(
                 status_payload["public_bundle_readability"]["intake.md"]["url"],
-                f"https://bitpod-public-permalinks.pages.dev/{first['public_permalink_id']}/intake.md",
+                f"https://permalinks.bitpod.app/{first['public_permalink_id']}/intake.md",
             )
             self.assertEqual(status_payload["processed_count"], 1)
             self.assertEqual(status_payload["processed_total_count"], 1)
@@ -404,15 +404,15 @@ class StorageTests(unittest.TestCase):
             self.assertIn("intake_md_path", manifest_payload["shows"]["jack_mallers_show"])
             self.assertEqual(
                 first["public_permalink_landing_url"],
-                f"https://bitpod-public-permalinks.pages.dev/{first['public_permalink_id']}",
+                f"https://permalinks.bitpod.app/{first['public_permalink_id']}",
             )
             self.assertEqual(
                 first["public_permalink_transcript_url"],
-                f"https://bitpod-public-permalinks.pages.dev/{first['public_permalink_id']}/transcript.md",
+                f"https://permalinks.bitpod.app/{first['public_permalink_id']}/transcript.md",
             )
             self.assertEqual(
                 first["public_permalink_status_url"],
-                f"https://bitpod-public-permalinks.pages.dev/{first['public_permalink_id']}/status.json",
+                f"https://permalinks.bitpod.app/{first['public_permalink_id']}/status.json",
             )
 
 

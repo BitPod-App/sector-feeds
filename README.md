@@ -231,6 +231,17 @@ QUIET=1 make ops-cycle SHOW_KEY=jack_mallers_show
 
 # Legacy weekly alias (writes artifacts/jack_mallers_show_weekly_report.md)
 bash scripts/report_mallers_weekly_status.sh
+```
+
+GitHub automation ownership:
+
+- weekly fetch automation: `.github/workflows/mallers-weekly-fetch.yml`
+  - schedule: Monday 9:15 PM CST (`15 3 * * 2` UTC)
+  - command target: `bash scripts/run_mallers_weekly.sh`
+  - scope: transcript/status/permalink refresh only, no GPT report generation
+- daily intake gate: `.github/workflows/intake-gate-daily.yml`
+  - produces or consumes the `bitregime-core` intake artifact before running the v2-default handshake gate
+  - requires `BITPOD_CROSS_REPO_TOKEN` only when the workflow must check out the private `bitregime-core` repo itself
 
 
 ## Codex Workspace Rebuild Diagnostics

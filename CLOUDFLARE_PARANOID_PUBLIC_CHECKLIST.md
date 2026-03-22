@@ -5,8 +5,9 @@ Use this checklist for `bitpod-public-permalinks` hosting with public access but
 ## Current State (Already Applied)
 
 - Pages project exists: `bitpod-public-permalinks`
-- Public hostname: `bitpod-public-permalinks.pages.dev`
-- Deployed static artifact root: `artifacts/public/antenna-sector-feeds`
+- Canonical public hostname: `permalinks.bitpod.app`
+- Pages preview hostname: `bitpod-public-permalinks.pages.dev`
+- Deployed static artifact root: `artifacts/public/permalinks`
 - Noindex policy active via `_headers`:
   - `X-Robots-Tag: noindex, nofollow, noarchive`
 - `robots.txt` served with:

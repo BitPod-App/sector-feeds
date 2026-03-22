@@ -1,0 +1,70 @@
+name: Mallers Weekly Fetch
+
+on:
+  schedule:
+    - cron: "15 3 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mallers-weekly-fetch-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  mallers-weekly-fetch:
+    if: github.ref == 'refs/heads/main' || github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    env:
+      BITPOD_PUBLIC_PERMALINK_BASE_URL: https://permalinks.bitpod.app
+      WEEKLY_GPT_REPORT: "0"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Create runtime venv
+        run: |
+          python -m venv .venv311
+          .venv311/bin/pip install --upgrade pip
+          .venv311/bin/pip install -e .
+
+      - name: Run weekly Mallers fetch
+        run: bash scripts/run_mallers_weekly.sh
+
+      - name: Refresh permalink bundle from latest local status
+        run: python3 scripts/refresh_public_permalinks.py jack_mallers_show
+
+      - name: Upload weekly fetch artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mallers-weekly-fetch-${{ github.run_id }}
+          retention-days: 30
+          if-no-files-found: warn
+          path: |
+            transcripts/jack_mallers_show/**
+            artifacts/public/permalinks/**
+            artifacts/private/public_permalink_manifest.json
+            artifacts/gpt-qa/**
+            index/processed.json
+
+      - name: Commit updated Mallers artifacts
+        run: |
+          if git diff --quiet -- transcripts/jack_mallers_show artifacts/public/permalinks artifacts/private/public_permalink_manifest.json artifacts/gpt-qa index/processed.json; then
+            echo "No tracked artifact changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add transcripts/jack_mallers_show artifacts/public/permalinks artifacts/private/public_permalink_manifest.json artifacts/gpt-qa index/processed.json
+          git commit -m "chore: refresh mallers weekly artifacts"
+          git push origin HEAD:main

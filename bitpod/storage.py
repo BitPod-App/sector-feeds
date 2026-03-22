@@ -366,7 +366,7 @@ def _private_manifest_path() -> Path:
 
 
 def _public_permalink_base_url() -> str:
-    raw = os.environ.get("BITPOD_PUBLIC_PERMALINK_BASE_URL", "https://bitpod-public-permalinks.pages.dev").strip()
+    raw = os.environ.get("BITPOD_PUBLIC_PERMALINK_BASE_URL", "https://permalinks.bitpod.app").strip()
     return raw.rstrip("/")
 
 
