@@ -79,6 +79,9 @@ GitHub Actions configuration:
 - optional:
   - `CLOUDFLARE_WORKER_NAME`
   - `PERMALINKS_WORKER_CUSTOM_DOMAIN`
+  - `PERMALINKS_WORKER_PREVIEW_BASE_URL`
+    - use this during cutover if canonical `permalinks.bitpod.app` is temporarily unavailable
+    - example: `https://bitpod-public-permalinks-worker.cjarguello.workers.dev`
 
 Workflow behavior:
 
@@ -87,6 +90,7 @@ Workflow behavior:
   - `deploy-public-permalinks-worker.yml` keeps the Worker preview surface current
   - Worker verification targets the preview hostname
   - if the Worker workflow fails with Cloudflare auth error `10000`, add or replace `CLOUDFLARE_WORKERS_API_TOKEN` with a token that has Workers deploy permissions
+  - if the Worker workflow cannot rebuild the bundle on a clean checkout because the canonical status URL is gone, set `PERMALINKS_WORKER_PREVIEW_BASE_URL` so refresh can fall back to the preview Worker status URL
 - after cutover:
   - set `PERMALINKS_WORKER_CUSTOM_DOMAIN=permalinks.bitpod.app`
   - switch canonical workflows to the Worker path
