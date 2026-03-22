@@ -250,7 +250,7 @@ This script checks:
 - allows canonical root path casing (`BitPod-App`) with lowercase fallback (`bitpod-app`),
 - repo-local `.codex/config.toml` coverage across the active repo set,
 - stale references to rebuild/retired paths,
-- whether Taylor health-check scripts are being run from the correct repo root,
+- whether repo-local verification scripts are being run from the correct repo root,
 - origin remotes + current branch for each active repo.
 
 # Track-specific runbooks/prompts:
@@ -325,6 +325,16 @@ python3 scripts/verify_public_permalink_bundle.py --show jack_mallers_show --bas
 # - verifies actual deployed public URLs
 # - writes public bundle health back into status.json
 bash scripts/deploy_public_permalinks_pages.sh [project_name] [branch] [show_key]
+
+# Automated deploys after permalink-related changes merge to main:
+# - workflow: .github/workflows/deploy-public-permalinks.yml
+# - required GitHub Actions secrets:
+#   - CLOUDFLARE_API_TOKEN
+#   - CLOUDFLARE_ACCOUNT_ID
+#   - CLOUDFLARE_PAGES_PROJECT_NAME
+# - trigger scope includes permalink renderer inputs such as bitpod/**,
+#   scripts/refresh_public_permalinks.py, scripts/verify_public_permalink_bundle.py,
+#   transcripts/**, and index/processed.json
 
 # Long-term Cloudflare architecture scaffold:
 # - Worker + Static Assets, with one opaque URL per show and embedded run contract

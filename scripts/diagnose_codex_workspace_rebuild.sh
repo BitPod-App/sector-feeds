@@ -51,8 +51,8 @@ else
   warn "workspace .codex is missing"
 fi
 
-section "Root Codex config"
-for f in .codex/org-workspace.toml .codex/environments/environment.toml .codex/policy.md; do
+section "Root Codex config and policy"
+for f in .codex/org-workspace.toml .codex/environments/environment.toml taylored-policy.md bitpod-docs/process/taylored-policy-rules.md; do
   if [[ -f "$workspace_root/$f" ]]; then
     ok "$f"
   else
