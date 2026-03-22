@@ -41,11 +41,20 @@ if [ -n "$LATEST_URL" ]; then
 fi
 
 echo "Verifying canonical public bundle readability via $CANONICAL_BASE_URL"
-"$PYTHON_BIN" "$REPO_ROOT/scripts/verify_public_permalink_bundle.py" --show "$SHOW_KEY" --base-url "$CANONICAL_BASE_URL" --write
+"$PYTHON_BIN" "$REPO_ROOT/scripts/verify_public_permalink_bundle.py" \
+  --show "$SHOW_KEY" \
+  --base-url "$CANONICAL_BASE_URL" \
+  --retries 18 \
+  --retry-delay 5 \
+  --write
 
 echo "Redeploying updated status.json bundle health"
 DEPLOY_OUT="$(npx wrangler pages deploy "$DEPLOY_DIR" --project-name "$PROJECT_NAME" --branch "$BRANCH_NAME" --commit-dirty=true 2>&1)"
 echo "$DEPLOY_OUT"
 
 echo "Final public verification"
-"$PYTHON_BIN" "$REPO_ROOT/scripts/verify_public_permalink_bundle.py" --show "$SHOW_KEY" --base-url "$CANONICAL_BASE_URL"
+"$PYTHON_BIN" "$REPO_ROOT/scripts/verify_public_permalink_bundle.py" \
+  --show "$SHOW_KEY" \
+  --base-url "$CANONICAL_BASE_URL" \
+  --retries 18 \
+  --retry-delay 5
