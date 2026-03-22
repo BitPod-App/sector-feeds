@@ -342,27 +342,35 @@ python3 scripts/refresh_public_permalinks.py [show_key]
 # Verify deployed public readability and print machine-readable health:
 python3 scripts/verify_public_permalink_bundle.py --show jack_mallers_show --base-url https://permalinks.bitpod.app
 
-# Deploy public permalink artifacts to Cloudflare Pages:
+# Current continuity deploy path while custom-domain cutover is blocked:
+# - Cloudflare Pages remains the temporary canonical continuity surface
 # - refreshes local permalink bundle first
 # - verifies actual deployed public URLs
 # - writes public bundle health back into status.json
 bash scripts/deploy_public_permalinks_pages.sh [project_name] [branch] [show_key]
 
-# Automated deploys after permalink-related changes merge to main:
-# - workflow: .github/workflows/deploy-public-permalinks.yml
-# - required GitHub Actions secrets:
+# Worker preview deploy path:
+# - refreshes the local permalink bundle first
+# - verifies the Worker preview by default
+# - if PERMALINKS_WORKER_CUSTOM_DOMAIN is set, verifies the canonical custom domain
+# - writes public bundle health back into status.json only during canonical verification
+bash scripts/deploy_public_permalinks_worker.sh [worker_name] [show_key]
+
+# Automated permalink deploys:
+# - current canonical continuity workflow:
+#   - .github/workflows/deploy-public-permalinks.yml
+# - Worker preview parity workflow:
+#   - .github/workflows/deploy-public-permalinks-worker.yml
+# - required GitHub Actions secrets / vars:
 #   - CLOUDFLARE_API_TOKEN
 #   - CLOUDFLARE_ACCOUNT_ID
-#   - CLOUDFLARE_PAGES_PROJECT_NAME
-# - trigger scope includes permalink renderer inputs such as bitpod/**,
-#   scripts/refresh_public_permalinks.py, scripts/verify_public_permalink_bundle.py,
-#   transcripts/**, and index/processed.json
+#   - optional: CLOUDFLARE_PAGES_PROJECT_NAME
+#   - optional: CLOUDFLARE_WORKER_NAME
+#   - optional: PERMALINKS_WORKER_CUSTOM_DOMAIN
 
-# Long-term Cloudflare architecture scaffold:
-# - Worker + Static Assets, with one opaque URL per show and embedded run contract
+# Cloudflare permalink Worker architecture and cutover steps:
 # - see cloudflare/permalinks-worker/
-# - deploy preview worker:
-bash scripts/deploy_public_permalinks_worker.sh [worker_name] [show_key]
+# - see docs/runbooks/permalink_worker_cutover.md
 
 # Paranoid-public Cloudflare hardening checklist:
 # - custom domain + AI crawler controls + bot policy
