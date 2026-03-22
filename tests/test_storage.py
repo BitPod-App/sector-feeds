@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import json
+import os
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
 from bitpod.storage import (
     _landing_page_html,
@@ -414,6 +416,23 @@ class StorageTests(unittest.TestCase):
                 first["public_permalink_status_url"],
                 f"https://permalinks.bitpod.app/{first['public_permalink_id']}/status.json",
             )
+
+    def test_public_permalink_id_default_salt_is_root_portable(self) -> None:
+        from bitpod import storage as storage_module
+
+        original_root = storage_module.ROOT
+        original_transcripts_root = storage_module.TRANSCRIPTS_ROOT
+        storage_module.ROOT = Path("/tmp/alt-sector-feeds-root")
+        storage_module.TRANSCRIPTS_ROOT = storage_module.ROOT / "transcripts"
+        try:
+            with patch.dict("os.environ", {}, clear=False):
+                os.environ.pop("BITPOD_PUBLIC_ID_SALT", None)
+                public_id = storage_module._public_permalink_id("jack_mallers_show")
+        finally:
+            storage_module.ROOT = original_root
+            storage_module.TRANSCRIPTS_ROOT = original_transcripts_root
+
+        self.assertEqual(public_id, "0ceb2e6abdba17e0")
 
 
 if __name__ == "__main__":
