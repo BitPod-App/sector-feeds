@@ -71,7 +71,8 @@ jobs:
 
       - name: Note skipped permalink deploy
         if: steps.cloudflare.outputs.ready != 'true'
-        run: echo "::warning::Skipping public permalink deploy; missing GitHub Actions config: ${{ steps.cloudflare.outputs.missing_names }}"
+        run: |
+          echo "::warning::Skipping public permalink deploy; missing GitHub Actions config: ${{ steps.cloudflare.outputs.missing_names }}"
 
       - name: Upload weekly fetch artifacts
         if: always()
