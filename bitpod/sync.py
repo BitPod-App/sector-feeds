@@ -564,8 +564,12 @@ def sync_show(
     attempted_episode = latest_episode
     latest_episode_succeeded = False
 
+    latest_episode_already_processed = False
     if latest_episode is not None:
-        status_payload["new_episode_detected"] = True
+        latest_key = episode_key(show_key, latest_episode.guid)
+        latest_existing = index["episodes"].get(latest_key)
+        latest_episode_already_processed = bool(latest_existing and latest_existing.get("status") == "ok")
+        status_payload["new_episode_detected"] = not latest_episode_already_processed
         status_payload["latest_episode_guid"] = str(latest_episode.guid)
         status_payload["latest_episode_title"] = latest_episode.title
         status_payload["latest_episode_published_at_utc"] = latest_episode.published_at.isoformat()

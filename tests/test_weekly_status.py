@@ -97,6 +97,89 @@ class WeeklyStatusTests(unittest.TestCase):
             self.assertFalse(payload["ready_via_permalink"])
             self.assertEqual(payload["failure_stage"], "transcription")
 
+    def test_status_marks_no_new_episode_when_latest_is_already_processed(self) -> None:
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            transcripts_root = root / "transcripts"
+            show_dir = transcripts_root / "jack_mallers_show"
+            show_dir.mkdir(parents=True, exist_ok=True)
+            pointer = show_dir / "jack_mallers.md"
+            pointer.write_text("existing pointer\n", encoding="utf-8")
+            transcript = show_dir / "2026-03-17__episode.md"
+            transcript.write_text("# Episode\nexisting transcript\n", encoding="utf-8")
+
+            episode = DummyEpisode(
+                guid="ep1",
+                title="Episode 1",
+                published_at=datetime(2026, 3, 17, tzinfo=timezone.utc),
+                source_url="https://example.com/ep1",
+                feed_url="https://example.com/feed.xml",
+            )
+
+            original_root = sync_module.ROOT
+            original_transcripts_root = sync_module.TRANSCRIPTS_ROOT
+            from bitpod import storage as storage_module
+
+            original_storage_root = storage_module.TRANSCRIPTS_ROOT
+            original_parse_feed = None
+            original_load_processed = sync_module.load_processed
+            original_save_processed = sync_module.save_processed
+
+            try:
+                sync_module.ROOT = root
+                sync_module.TRANSCRIPTS_ROOT = transcripts_root
+                storage_module.TRANSCRIPTS_ROOT = transcripts_root
+
+                import bitpod.feeds as feeds_module
+
+                original_parse_feed = feeds_module.parse_feed
+                feeds_module.parse_feed = lambda _: [episode]
+
+                sync_module.load_processed = lambda: {
+                    "episodes": {
+                        "jack_mallers_show::ep1": {
+                            "status": "ok",
+                            "transcript_path": str(transcript),
+                            "published_at": "2026-03-17T00:00:00+00:00",
+                            "updated_at": "2026-03-17T01:00:00+00:00",
+                            "transcript_provenance": "youtube_auto_captions",
+                            "transcript_source_url": "https://example.com/ep1",
+                            "transcript_source_type": "rss_audio",
+                            "source_mode": "captions",
+                            "fallback_used": False,
+                            "transcript_degraded": False,
+                        }
+                    }
+                }
+                sync_module.save_processed = lambda _: None
+
+                stats = sync_module.sync_show(
+                    show={
+                        "show_key": "jack_mallers_show",
+                        "stable_pointer": "jack_mallers.md",
+                        "feeds": {"rss": ["https://example.com/feed.xml"]},
+                    },
+                    max_episodes=1,
+                )
+            finally:
+                sync_module.ROOT = original_root
+                sync_module.TRANSCRIPTS_ROOT = original_transcripts_root
+                storage_module.TRANSCRIPTS_ROOT = original_storage_root
+                sync_module.load_processed = original_load_processed
+                sync_module.save_processed = original_save_processed
+                if original_parse_feed is not None:
+                    feeds_module.parse_feed = original_parse_feed
+
+            self.assertEqual(stats["run_status"], "ok")
+            self.assertTrue(stats["latest_included_in_pointer"])
+
+            status_json = show_dir / "jack_mallers_status.json"
+            payload = json.loads(status_json.read_text(encoding="utf-8"))
+            self.assertFalse(payload["new_episode_detected"])
+            self.assertTrue(payload["included_in_pointer"])
+            self.assertEqual(payload["run_status"], "ok")
+            self.assertEqual(payload["transcript_quality_state"], "no-new-episode")
+
 
 if __name__ == "__main__":
     unittest.main()
