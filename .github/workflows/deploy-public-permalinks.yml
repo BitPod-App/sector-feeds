@@ -57,5 +57,8 @@ jobs:
           fi
           echo "Using Cloudflare Pages project: $PERMALINKS_PROJECT_NAME"
 
+      - name: Refresh permalink bundle from current tracked status
+        run: python3 scripts/refresh_public_permalinks.py jack_mallers_show
+
       - name: Deploy permalink bundle to Cloudflare Pages
         run: bash scripts/deploy_public_permalinks_pages.sh "$PERMALINKS_PROJECT_NAME" main "$PERMALINKS_SHOW_KEY"
