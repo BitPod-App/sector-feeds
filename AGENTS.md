@@ -12,6 +12,7 @@ retrospective decision, follow:
 For Linear issue updates:
 
 - treat `update Linear` as `make the issue materially more truthful`
+- preserve existing Linear assignee/delegate by default; do not assign/delegate issues to Codex or mention `@Codex` unless the user explicitly wants a Codex cloud task from Linear
 - use `$WORKSPACE/bitpod-tools/linear/docs/process/linear_operating_guide_v3.md` for the canonical detailed rule
 
 This file adds repo-specific rules only.
