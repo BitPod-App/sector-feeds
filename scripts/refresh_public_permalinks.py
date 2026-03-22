@@ -4,16 +4,31 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from bitpod.storage import write_public_permalink_artifacts
+from bitpod.storage import _public_permalink_base_url, _public_permalink_id, write_public_permalink_artifacts
 
 
 def _status_path(repo_root: Path, show_key: str, stable_pointer: str) -> Path:
     return repo_root / "transcripts" / show_key / f"{Path(stable_pointer).stem}_status.json"
+
+
+def _remote_status_payload(show_key: str) -> dict | None:
+    public_id = _public_permalink_id(show_key)
+    url = f"{_public_permalink_base_url()}/{public_id}/status.json"
+    req = Request(url, headers={"User-Agent": "sector-feeds-refresh-public-permalinks/1.0"})
+    try:
+        with urlopen(req, timeout=20) as resp:  # nosec B310
+            if getattr(resp, "status", 200) != 200:
+                return None
+            return json.loads(resp.read().decode("utf-8", errors="ignore"))
+    except (HTTPError, URLError, json.JSONDecodeError):
+        return None
 
 
 def main() -> int:
@@ -28,9 +43,9 @@ def main() -> int:
             continue
         stable_pointer = str(show.get("stable_pointer") or ("jack_mallers.md" if show_key == "jack_mallers_show" else "latest_bitpod.md"))
         status_path = _status_path(repo_root, show_key, stable_pointer)
-        if not status_path.exists():
+        payload = json.loads(status_path.read_text(encoding="utf-8")) if status_path.exists() else _remote_status_payload(show_key)
+        if payload is None:
             continue
-        payload = json.loads(status_path.read_text(encoding="utf-8"))
         public_paths = write_public_permalink_artifacts(show_key=show_key, status_payload=payload)
         payload.update(public_paths)
 
