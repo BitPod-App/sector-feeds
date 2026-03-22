@@ -1,8 +1,13 @@
 # sector-feeds AGENTS
 
-Read the umbrella policy first:
+Read the umbrella agent entrypoint first:
 
-- `/Users/cjarguello/BitPod-App/policy.md`
+- `/Users/cjarguello/BitPod-App/AGENTS.md`
+
+For any new-file, retained-artifact, temporary-handoff, local-working-file, or
+retrospective decision, follow:
+
+- `/Users/cjarguello/BitPod-App/bitpod-docs/process/file-creation-and-artifact-placement-policy.md`
 
 This file adds repo-specific rules only.
 
