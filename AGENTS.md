@@ -1,34 +1,40 @@
 # sector-feeds AGENTS
 
-Read the umbrella agent entrypoint first from the active workspace root:
+This file contains repo-specific instructions only.
 
-- `$WORKSPACE/AGENTS.md`
+## Permalink / public-surface verification
 
-For any new-file, retained-artifact, temporary-handoff, local-working-file, or
-retrospective decision, follow:
+When you change permalink landing-page HTML, permalink bundle generation, or
+Cloudflare deployment logic, verify from repo root with commands that do not
+depend on external local-only tooling.
 
-- `$WORKSPACE/bitpod-docs/process/file-creation-and-artifact-placement-policy.md`
-
-For Linear issue updates:
-
-- treat `update Linear` as `make the issue materially more truthful`
-- preserve existing Linear assignee/delegate by default; do not assign/delegate issues to Codex or mention `@Codex` unless the user explicitly wants a Codex cloud task from Linear
-- use `$WORKSPACE/bitpod-tools/linear/docs/process/linear_operating_guide_v3.md` for the canonical detailed rule
-
-This file adds repo-specific rules only.
-
-## Health Check
-
-Run from repo root:
+Preferred checks:
 
 ```bash
-bash scripts/check_taylor_skill.sh
-bash scripts/check_taylor_agent.sh
+python3 scripts/refresh_public_permalinks.py jack_mallers_show
+python3 -m pytest tests/test_storage.py
+git diff --check
 ```
 
-Behavior:
-- If Taylor prerequisites are missing in local workspace context, these scripts return `SKIP` with an explicit reason (exit 0).
-- Set `BITPOD_TAYLOR_PREREQ_STRICT=1` to force hard-fail behavior.
+Use the generated permalink outputs to confirm:
+- `artifacts/public/permalinks/<opaque_id>/index.html` contains the expected UI
+  changes,
+- `status.json`, `transcript.md`, and `discovery.json` are still emitted,
+- public verification output stays truthful about real deploy/readability state.
+
+If the repo already has a fresh local status artifact for the show, optionally run:
+
+```bash
+python3 scripts/verify_public_permalink_bundle.py --show jack_mallers_show --base-url https://permalinks.bitpod.app
+```
+
+## Transcript changes
+
+When changing transcript rendering or selection behavior:
+- inspect `transcripts/jack_mallers_show/` and `index/processed.json`,
+- confirm the latest permalink transcript still points at the intended episode,
+- prefer tests in `tests/test_storage.py` and `tests/test_sync_filtering.py`
+  when the change affects public permalink outputs or transcript selection.
 
 ## Review Bundle Gate
 

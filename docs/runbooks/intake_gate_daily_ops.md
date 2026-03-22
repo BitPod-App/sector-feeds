@@ -11,7 +11,7 @@ This runbook covers intake gate operations hardening now that `bitregime_core_in
 
 ## One-Command Operator Triage
 
-From `/Users/cjarguello/BitPod-App/bitpod`:
+From `$WORKSPACE/bitpod`:
 
 ```bash
 bash scripts/run_intake_gate_triage.sh \

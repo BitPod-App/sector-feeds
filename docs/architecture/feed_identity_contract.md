@@ -4,7 +4,7 @@ This repository currently implements a lightweight, feed-centric identity model 
 
 Shared product-MVP architecture canon for the broader feed/stream model lives in:
 
-- `/Users/cjarguello/BitPod-App/bitpod-docs/product-mvp/SECTOR_FEEDS_STREAM_MVP_ARCHITECTURE.md`
+- `$WORKSPACE/bitpod-docs/product-mvp/SECTOR_FEEDS_STREAM_MVP_ARCHITECTURE.md`
 
 This file is the repo-local implementation contract and migration bridge.
 

@@ -53,10 +53,10 @@ Automation store currently contains eight paused weekly jobs:
 - `mallers-tuesday-verify-3`
 
 All inspected automation TOMLs still point at the obsolete workspace cwd:
-- `/Users/cjarguello/BitPod-App/bitpod`
+- `$WORKSPACE/bitpod`
 
 The canonical repo path is now:
-- `/Users/cjarguello/BitPod-App/sector-feeds`
+- `$WORKSPACE/sector-feeds`
 
 ## What the scripts actually do
 
@@ -160,7 +160,7 @@ Why:
 - delete all duplicate `mallers-tuesday-verify*` jobs
 
 ### Fix before re-activation
-1. repoint canonical jobs to `/Users/cjarguello/BitPod-App/sector-feeds`
+1. repoint canonical jobs to `$WORKSPACE/sector-feeds`
 2. define one operator-facing evidence surface per run
 3. ensure useful recurring artifacts use unique, timestamped or context-keyed names when they represent run results rather than stable docs
 4. make GPT consumption state explicit and queryable from one summary artifact
