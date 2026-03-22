@@ -8,6 +8,7 @@ if ! command -v rg >/dev/null 2>&1; then
 fi
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+workspace_root="$(cd "${repo_root}/.." && pwd)"
 STRICT_PREREQ="${BITPOD_TAYLOR_PREREQ_STRICT:-0}"
 
 is_truthy() {
@@ -31,8 +32,7 @@ skip_or_fail() {
 DEFAULT_TOOLS_ROOTS=(
   "${repo_root}/../tools"
   "${repo_root}/../bitpod-tools/tools"
-  "/Users/cjarguello/BitPod-App/tools"
-  "/Users/cjarguello/bitpod-app/tools"
+  "${workspace_root}/tools"
 )
 
 resolve_taylor_bin() {
