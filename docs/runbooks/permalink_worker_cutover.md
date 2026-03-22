@@ -71,8 +71,11 @@ Cutover acceptance:
 GitHub Actions configuration:
 
 - required:
-  - `CLOUDFLARE_API_TOKEN`
+  - `CLOUDFLARE_API_TOKEN` for current Pages continuity
   - `CLOUDFLARE_ACCOUNT_ID`
+- preferred for Worker deploys:
+  - `CLOUDFLARE_WORKERS_API_TOKEN`
+  - this secret should include Workers deploy permissions for `bitpod-public-permalinks-worker`
 - optional:
   - `CLOUDFLARE_WORKER_NAME`
   - `PERMALINKS_WORKER_CUSTOM_DOMAIN`
@@ -83,6 +86,7 @@ Workflow behavior:
   - `deploy-public-permalinks.yml` and `mallers-weekly-fetch.yml` keep Pages continuity current
   - `deploy-public-permalinks-worker.yml` keeps the Worker preview surface current
   - Worker verification targets the preview hostname
+  - if the Worker workflow fails with Cloudflare auth error `10000`, add or replace `CLOUDFLARE_WORKERS_API_TOKEN` with a token that has Workers deploy permissions
 - after cutover:
   - set `PERMALINKS_WORKER_CUSTOM_DOMAIN=permalinks.bitpod.app`
   - switch canonical workflows to the Worker path

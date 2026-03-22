@@ -362,8 +362,10 @@ bash scripts/deploy_public_permalinks_worker.sh [worker_name] [show_key]
 # - Worker preview parity workflow:
 #   - .github/workflows/deploy-public-permalinks-worker.yml
 # - required GitHub Actions secrets / vars:
-#   - CLOUDFLARE_API_TOKEN
+#   - CLOUDFLARE_API_TOKEN (Pages continuity)
 #   - CLOUDFLARE_ACCOUNT_ID
+#   - preferred for Worker deploys: CLOUDFLARE_WORKERS_API_TOKEN
+#     - should include Workers deploy permissions, not just Pages permissions
 #   - optional: CLOUDFLARE_PAGES_PROJECT_NAME
 #   - optional: CLOUDFLARE_WORKER_NAME
 #   - optional: PERMALINKS_WORKER_CUSTOM_DOMAIN
