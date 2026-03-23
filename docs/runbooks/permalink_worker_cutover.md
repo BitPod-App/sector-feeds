@@ -91,6 +91,7 @@ Workflow behavior:
 - workflows verify the canonical domain when `PERMALINKS_WORKER_CUSTOM_DOMAIN=permalinks.bitpod.app`
 - canonical verification writes bundle health back into `status.json` and redeploys once
 - if the workflow cannot rebuild the bundle on a clean checkout because the canonical status URL is temporarily unavailable, set `PERMALINKS_WORKER_PREVIEW_BASE_URL` so refresh can fall back to the preview Worker status URL
+- if the canonical domain returns CI-only `403` responses while public/manual verification is healthy, the workflow falls back to preview-host verification and warns instead of failing the deploy
 
 Rollback:
 
