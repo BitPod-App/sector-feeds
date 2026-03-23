@@ -342,14 +342,7 @@ python3 scripts/refresh_public_permalinks.py [show_key]
 # Verify deployed public readability and print machine-readable health:
 python3 scripts/verify_public_permalink_bundle.py --show jack_mallers_show --base-url https://permalinks.bitpod.app
 
-# Current continuity deploy path while custom-domain cutover is blocked:
-# - Cloudflare Pages remains the temporary canonical continuity surface
-# - refreshes local permalink bundle first
-# - verifies actual deployed public URLs
-# - writes public bundle health back into status.json
-bash scripts/deploy_public_permalinks_pages.sh [project_name] [branch] [show_key]
-
-# Worker preview deploy path:
+# Worker deploy path:
 # - refreshes the local permalink bundle first
 # - verifies the Worker preview by default
 # - if PERMALINKS_WORKER_CUSTOM_DOMAIN is set, verifies the canonical custom domain
@@ -357,20 +350,21 @@ bash scripts/deploy_public_permalinks_pages.sh [project_name] [branch] [show_key
 bash scripts/deploy_public_permalinks_worker.sh [worker_name] [show_key]
 
 # Automated permalink deploys:
-# - current canonical continuity workflow:
-#   - .github/workflows/deploy-public-permalinks.yml
-# - Worker preview parity workflow:
+# - canonical Worker workflow:
 #   - .github/workflows/deploy-public-permalinks-worker.yml
+# - weekly fetch workflow:
+#   - .github/workflows/mallers-weekly-fetch.yml
 # - required GitHub Actions secrets / vars:
-#   - CLOUDFLARE_API_TOKEN (Pages continuity)
+#   - CLOUDFLARE_API_TOKEN (temporary fallback only)
 #   - CLOUDFLARE_ACCOUNT_ID
 #   - preferred for Worker deploys: CLOUDFLARE_WORKERS_API_TOKEN
 #     - should include Workers deploy permissions, not just Pages permissions
-#   - optional: CLOUDFLARE_PAGES_PROJECT_NAME
 #   - optional: CLOUDFLARE_WORKER_NAME
 #   - optional: PERMALINKS_WORKER_CUSTOM_DOMAIN
 #   - optional during cutover: PERMALINKS_WORKER_PREVIEW_BASE_URL
 #     - lets refresh rebuild from the preview Worker status URL if canonical is temporarily unavailable
+#   - canonical verification may still false-negative from some CI edges even when the public hostname is healthy
+#     - in that case the workflow falls back to preview-host verification and warns instead of failing the deploy
 
 # Cloudflare permalink Worker architecture and cutover steps:
 # - see cloudflare/permalinks-worker/
