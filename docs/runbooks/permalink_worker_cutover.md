@@ -71,12 +71,9 @@ Cutover acceptance:
 GitHub Actions configuration:
 
 - required:
-  - `CLOUDFLARE_ACCOUNT_ID`
-- preferred for Worker deploys:
   - `CLOUDFLARE_WORKERS_API_TOKEN`
-  - this secret should include Workers deploy permissions for `bitpod-public-permalinks-worker`
-- temporary fallback only:
-  - `CLOUDFLARE_API_TOKEN`
+  - `CLOUDFLARE_ACCOUNT_ID`
+  - `CLOUDFLARE_WORKERS_API_TOKEN` should include Workers deploy permissions for `bitpod-public-permalinks-worker`
 - optional:
   - `CLOUDFLARE_WORKER_NAME`
   - `PERMALINKS_WORKER_CUSTOM_DOMAIN`

@@ -355,10 +355,9 @@ bash scripts/deploy_public_permalinks_worker.sh [worker_name] [show_key]
 # - weekly fetch workflow:
 #   - .github/workflows/mallers-weekly-fetch.yml
 # - required GitHub Actions secrets / vars:
-#   - CLOUDFLARE_API_TOKEN (temporary fallback only)
+#   - CLOUDFLARE_WORKERS_API_TOKEN
 #   - CLOUDFLARE_ACCOUNT_ID
-#   - preferred for Worker deploys: CLOUDFLARE_WORKERS_API_TOKEN
-#     - should include Workers deploy permissions, not just Pages permissions
+#     - should include Workers deploy permissions for the permalink Worker
 #   - optional: CLOUDFLARE_WORKER_NAME
 #   - optional: PERMALINKS_WORKER_CUSTOM_DOMAIN
 #   - optional during cutover: PERMALINKS_WORKER_PREVIEW_BASE_URL
