@@ -2,7 +2,7 @@
 
 Purpose:
 
-- complete the permalink hosting cutover from Cloudflare Pages continuity to Worker-backed serving
+- complete the permalink hosting cutover to Worker-backed serving
 - preserve the existing public bundle contract and generated landing page UI
 - provide one ordered cutover and rollback path so future agents do not need to re-investigate the architecture
 
@@ -25,9 +25,9 @@ Known parity fixture:
 
 Current architecture:
 
-- temporary continuity: Cloudflare Pages project `bitpod-public-permalinks`
-- target architecture: Worker `bitpod-public-permalinks-worker` with static assets from `artifacts/public/permalinks`
-- current blocker: `permalinks.bitpod.app` still has an existing DNS/domain binding, so direct Worker attachment fails until Cloudflare-side domain ownership is detached or overridden
+- production architecture: Worker `bitpod-public-permalinks-worker` with static assets from `artifacts/public/permalinks`
+- canonical hostname: `permalinks.bitpod.app`
+- preview hostname: `bitpod-public-permalinks-worker.cjarguello.workers.dev`
 
 Worker preview verification:
 
@@ -71,11 +71,12 @@ Cutover acceptance:
 GitHub Actions configuration:
 
 - required:
-  - `CLOUDFLARE_API_TOKEN` for current Pages continuity
   - `CLOUDFLARE_ACCOUNT_ID`
 - preferred for Worker deploys:
   - `CLOUDFLARE_WORKERS_API_TOKEN`
   - this secret should include Workers deploy permissions for `bitpod-public-permalinks-worker`
+- temporary fallback only:
+  - `CLOUDFLARE_API_TOKEN`
 - optional:
   - `CLOUDFLARE_WORKER_NAME`
   - `PERMALINKS_WORKER_CUSTOM_DOMAIN`
@@ -85,27 +86,14 @@ GitHub Actions configuration:
 
 Workflow behavior:
 
-- before cutover:
-  - `deploy-public-permalinks.yml` and `mallers-weekly-fetch.yml` keep Pages continuity current
-  - `deploy-public-permalinks-worker.yml` keeps the Worker preview surface current
-  - Worker verification targets the preview hostname
-  - if the Worker workflow fails with Cloudflare auth error `10000`, add or replace `CLOUDFLARE_WORKERS_API_TOKEN` with a token that has Workers deploy permissions
-  - if the Worker workflow cannot rebuild the bundle on a clean checkout because the canonical status URL is gone, set `PERMALINKS_WORKER_PREVIEW_BASE_URL` so refresh can fall back to the preview Worker status URL
-- after cutover:
-  - set `PERMALINKS_WORKER_CUSTOM_DOMAIN=permalinks.bitpod.app`
-  - switch canonical workflows to the Worker path
-  - workflows verify the canonical domain
-  - canonical verification writes bundle health back into `status.json` and redeploys once
+- `deploy-public-permalinks-worker.yml` is the canonical permalink deploy workflow
+- `mallers-weekly-fetch.yml` deploys refreshed bundles through the Worker path
+- workflows verify the canonical domain when `PERMALINKS_WORKER_CUSTOM_DOMAIN=permalinks.bitpod.app`
+- canonical verification writes bundle health back into `status.json` and redeploys once
+- if the workflow cannot rebuild the bundle on a clean checkout because the canonical status URL is temporarily unavailable, set `PERMALINKS_WORKER_PREVIEW_BASE_URL` so refresh can fall back to the preview Worker status URL
 
 Rollback:
 
 1. remove the Worker custom-domain attachment for `permalinks.bitpod.app`
-2. restore the Pages project custom-domain binding
-3. unset `PERMALINKS_WORKER_CUSTOM_DOMAIN` in GitHub Actions vars if workflows should return to preview-only verification
-4. verify the known fixture on the restored Pages continuity surface
-
-Retirement condition for Pages:
-
-- custom-domain cutover succeeds
-- Worker-backed canonical verification succeeds from CI and from a normal public client
-- no remaining production workflow depends on `wrangler pages deploy`
+2. unset `PERMALINKS_WORKER_CUSTOM_DOMAIN` in GitHub Actions vars if workflows should return to preview-only verification
+3. verify the known fixture on the preview Worker surface
